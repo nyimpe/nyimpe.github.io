@@ -1,12 +1,11 @@
 name: Deploy static content to Pages
 
 on:
-  # 기본 브랜치에 대한 푸시 이벤트 발생 시 실행
   push:
     branches: ["main"]
 
-  # Actions 탭에서 수동으로 워크플로우를 실행할 수 있도록 구성
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
@@ -23,21 +22,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: "npm"
+
       - name: Install dependencies
         run: npm install
+
       - name: Build
         run: npm run build
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: "./dist"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
