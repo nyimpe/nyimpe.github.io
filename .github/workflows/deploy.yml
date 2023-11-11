@@ -3,7 +3,7 @@ name: Deploy static content to Pages
 on:
   # 기본 브랜치에 대한 푸시 이벤트 발생 시 실행
   push:
-    branches: ['main']
+    branches: ["main"]
 
   # Actions 탭에서 수동으로 워크플로우를 실행할 수 있도록 구성
   workflow_dispatch:
@@ -13,22 +13,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 14
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build
-      run: npm run build
+      - name: Build
+        run: npm run build
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+      - name: Deploy
+        run: npm run deploy
+
+    # - name: Deploy to GitHub Pages
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: ./dist
