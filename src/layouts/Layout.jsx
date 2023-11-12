@@ -3,7 +3,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Box, CssBaseline } from "@mui/material";
 
 import Sidebar from "../components/Sidebar";
-import Breadcrum from "../components/Breadcrum";
+// import Breadcrum from "../components/Breadcrum";
 
 const darkTheme = createTheme({
   palette: {
