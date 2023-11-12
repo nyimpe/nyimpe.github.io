@@ -15,7 +15,7 @@ import {
   Typography,
 } from "@mui/material";
 
-const Sidebar = () => {
+const SideBar = () => {
   const navigate = useNavigate();
   return (
     <Drawer
@@ -74,4 +74,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;

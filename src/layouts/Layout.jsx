@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Box, CssBaseline } from "@mui/material";
 
-import Sidebar from "../components/Sidebar";
+import SideBar from "../components/SideBar";
 // import Breadcrum from "../components/Breadcrum";
 
 const darkTheme = createTheme({
@@ -16,7 +16,7 @@ const Layout = () => {
     <ThemeProvider theme={darkTheme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <Sidebar />
+        <SideBar />
         {/* <Breadcrum /> */}
         <Outlet />
       </Box>
