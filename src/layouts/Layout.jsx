@@ -54,13 +54,11 @@ const Layout = () => {
   // }, [dataList]);
 
   useEffect(() => {
-    // const env = import.meta.env;
-    // Object.entries(env).forEach((item) => {
-    //   sessionStorage.setItem(item[0], item[1]);
-    // });
-    const mdFiles = import.meta.glob("/nyimpe.github.io/posts/*.md", {
+    const mdFiles = import.meta.glob("../posts/*.md", {
       eager: true,
+      as: "raw",
     });
+    console.log("mdFiles->", mdFiles);
 
     const fetchData = async () => {
       const contents = await Promise.all(
