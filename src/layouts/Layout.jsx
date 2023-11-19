@@ -54,7 +54,11 @@ const Layout = () => {
   // }, [dataList]);
 
   useEffect(() => {
-    const mdFiles = import.meta.glob("../posts/*.md");
+    const env = import.meta.env;
+    Object.entries(env).forEach((item) => {
+      sessionStorage.setItem(item[0], item[1]);
+    });
+    const mdFiles = import.meta.glob("../posts/*.md", { eager: true });
 
     const fetchData = async () => {
       const contents = await Promise.all(
