@@ -58,16 +58,17 @@ const Layout = () => {
       eager: true,
       as: "raw",
     });
-    console.log("mdFiles->", mdFiles);
+    // console.log("mdFiles->", mdFiles);
 
     const fetchData = async () => {
       const contents = await Promise.all(
         Object.entries(mdFiles).map(async (file) => {
-          const content = await import(file[0]).then(
-            (module) => module.default
-          );
-          const data = await fetch(content).then((res) => res.text());
-          return data;
+          console.log("file ->", file);
+          // const content = await import(file[0]).then(
+          //   (module) => module.default
+          // );
+          // const data = await fetch(content).then((res) => res.text());
+          return file[1];
         })
       );
       handleData(contents);
