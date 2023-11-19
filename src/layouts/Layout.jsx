@@ -63,7 +63,7 @@ const Layout = () => {
     const fetchData = async () => {
       const contents = await Promise.all(
         Object.entries(mdFiles).map(async (file) => {
-          console.log("file ->", file);
+          // console.log("file ->", file);
           // const content = await import(file[0]).then(
           //   (module) => module.default
           // );
