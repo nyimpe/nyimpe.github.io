@@ -26,7 +26,6 @@ const ListPage = () => {
     <Box sx={{ my: 3 }}>
       {!isEmptyValue(list)
         ? list.map((item) => {
-            console.log(item);
             return (
               <Card key={nanoid()} sx={{ my: 2 }} variant="outlined">
                 <CardContent>
