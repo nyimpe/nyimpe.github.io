@@ -1,6 +1,7 @@
-import Content from "./components/Content";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layouts/Layout";
+import ListPage from "./pages/ListPage";
+import DetailPage from "./pages/DetailPage";
 
 const router = createBrowserRouter([
   {
@@ -9,7 +10,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Content />,
+        element: <ListPage />,
+      },
+      {
+        path: "/:category",
+        element: <ListPage />,
+      },
+      {
+        path: "/:category/:id",
+        element: <DetailPage />,
       },
     ],
   },

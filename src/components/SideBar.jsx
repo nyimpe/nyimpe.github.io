@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Avatar,
@@ -13,10 +12,8 @@ import {
 } from "@mui/material";
 
 import HomeIcon from "@mui/icons-material/Home";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
-import EmailIcon from "@mui/icons-material/Email";
-import MenuIcon from "@mui/icons-material/Menu";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 import DataArrayIcon from "@mui/icons-material/DataArray";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import CodeIcon from "@mui/icons-material/Code";
@@ -26,6 +23,7 @@ import BuildIcon from "@mui/icons-material/Build";
 // import BoltIcon from "@mui/icons-material/Bolt";
 // import JavascriptIcon from "@mui/icons-material/Javascript";
 import img from "../assets/images/profile.png";
+import { useSelector } from "react-redux";
 
 const ICONS = [
   <DataArrayIcon key={0} />,
@@ -34,9 +32,9 @@ const ICONS = [
   <BuildIcon key={3} />,
 ];
 
-const SideBar = ({ mode, modeToggle, dataList }) => {
+const SideBar = ({ mode, modeToggle, drawerToggle, setDrawerToggle }) => {
+  const { category } = useSelector((state) => state.data);
   const navigate = useNavigate();
-  const [drawerToggle, setDrawerToggle] = useState(false);
 
   const drawer = () => {
     return (
@@ -61,10 +59,7 @@ const SideBar = ({ mode, modeToggle, dataList }) => {
               fontSize: 12,
             }}
             gap={1}
-          >
-            <EmailIcon />
-            nyimpe52@gmail.com
-          </Typography>
+          ></Typography>
         </Box>
         <Box sx={{ height: "90%" }}>
           <List>
@@ -76,12 +71,16 @@ const SideBar = ({ mode, modeToggle, dataList }) => {
                 HOME
               </ListItemButton>
             </ListItem>
-            {Object.keys(dataList).length > 0 ? (
+            {Object.keys(category).length > 0 ? (
               <>
-                {Object.keys(dataList).map((e, i) => {
+                {Object.keys(category).map((e, i) => {
                   return (
                     <ListItem key={e}>
-                      <ListItemButton component="a" href="#actionable">
+                      <ListItemButton
+                        onClick={() =>
+                          navigate(`/${category[e][0].categoryId}`)
+                        }
+                      >
                         <ListItemIcon>{ICONS[i]}</ListItemIcon>
                         <Typography>{e}</Typography>
                       </ListItemButton>
@@ -94,7 +93,7 @@ const SideBar = ({ mode, modeToggle, dataList }) => {
         </Box>
         <Box sx={{ textAlign: "center", mb: 3 }}>
           <IconButton onClick={modeToggle} color="inherit">
-            {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
+            {mode === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
           </IconButton>
         </Box>
       </>
@@ -103,11 +102,6 @@ const SideBar = ({ mode, modeToggle, dataList }) => {
 
   return (
     <>
-      <Box sx={{ m: 1 }}>
-        <IconButton onClick={() => setDrawerToggle(true)}>
-          <MenuIcon />
-        </IconButton>
-      </Box>
       <Drawer
         sx={{
           width: 250,

@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Outlet } from "react-router-dom";
-import { load } from "js-yaml";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { Box, Container, CssBaseline } from "@mui/material";
+import { Box, Container, CssBaseline, Toolbar } from "@mui/material";
 
 import SideBar from "../components/SideBar";
 import Breadcrum from "../components/Breadcrum";
+import Header from "../components/Header";
+import { dataInitialize } from "../features/dataSlice";
 
 const Layout = () => {
+  const dispatch = useDispatch();
   const [mode, setMode] = useState("dark");
-  const [dataList, setDataList] = useState({});
+  const [drawerToggle, setDrawerToggle] = useState(false);
   const darkTheme = createTheme({
     palette: {
       mode: mode,
@@ -32,57 +35,27 @@ const Layout = () => {
     setMode(mode === "dark" ? "light" : "dark");
   };
 
-  const handleData = (data) => {
-    const frontMatterRegex = /^---\n([\s\S]*?)\n---/;
-    const list = {};
-    data.forEach((item) => {
-      const match = item.match(frontMatterRegex);
-      const header = load(match[1]);
-      const content = { header: header, content: item.split(match[0])[1] };
-
-      if (list?.[header.categories[0]]?.length > 0) {
-        list[header.categories[0]] = [...list[header.categories[0]], content];
-      } else {
-        list[header.categories[0]] = [content];
-      }
-    });
-    setDataList(list);
-  };
-
-  // useEffect(() => {
-  //   console.log("dataList->", dataList);
-  // }, [dataList]);
-
   useEffect(() => {
-    const mdFiles = import.meta.glob("../posts/*.md", {
-      eager: true,
-      as: "raw",
-    });
-    // console.log("mdFiles->", mdFiles);
-
-    const fetchData = async () => {
-      const contents = await Promise.all(
-        Object.entries(mdFiles).map(async (file) => {
-          // console.log("file ->", file);
-          // const content = await import(file[0]).then(
-          //   (module) => module.default
-          // );
-          // const data = await fetch(content).then((res) => res.text());
-          return file[1];
-        })
-      );
-      handleData(contents);
-    };
-
-    fetchData();
-  }, []);
+    dispatch(dataInitialize());
+  }, [dispatch]);
 
   return (
     <ThemeProvider theme={darkTheme}>
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
-        <SideBar mode={mode} modeToggle={modelToggle} dataList={dataList} />
-        <Container fixed>
+        <Header handleMenuIcon={() => setDrawerToggle(true)} />
+        <SideBar
+          mode={mode}
+          modeToggle={modelToggle}
+          drawerToggle={drawerToggle}
+          setDrawerToggle={setDrawerToggle}
+        />
+        <Container>
+          <Toolbar
+            sx={{
+              display: { lg: "none", md: "none", sm: "block", xs: "block" },
+            }}
+          />
           <Breadcrum />
           <Outlet />
         </Container>
