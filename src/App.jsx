@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import Layout from "./layouts/Layout";
 import ListPage from "./pages/ListPage";
 import DetailPage from "./pages/DetailPage";
@@ -10,14 +14,14 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <Navigate replace to="home" />,
+      },
+      {
+        path: ":category",
         element: <ListPage />,
       },
       {
-        path: "/:category",
-        element: <ListPage />,
-      },
-      {
-        path: "/:category/:id",
+        path: ":category/:id",
         element: <DetailPage />,
       },
     ],

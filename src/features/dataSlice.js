@@ -17,7 +17,6 @@ export const dataInitialize = createAsyncThunk(
 const initialState = {
   data: [],
   list: [],
-  detail: {},
   category: {},
 };
 
@@ -26,9 +25,9 @@ export const dataSlice = createSlice({
   initialState,
   reducers: {
     getList: (state, action) => {
-      const id = action?.payload?.replace(" ", "-")?.toLowerCase();
+      const id = action?.payload?.replaceAll(" ", "-")?.toLowerCase();
       const c = current(state.category);
-      if (isEmptyValue(id)) {
+      if (isEmptyValue(id) || id === "home") {
         let list = [];
         Object.entries(c).forEach((item) => {
           list = [...list, ...item[1]];
@@ -36,8 +35,8 @@ export const dataSlice = createSlice({
         state.list = list;
       } else {
         state.list = Object.entries(c).find(
-          (e) => e[0].replace(" ", "-")?.toLowerCase() === id
-        )[1];
+          (e) => e[0].replaceAll(" ", "-")?.toLowerCase() === id
+        )?.[1];
       }
     },
   },
@@ -54,17 +53,19 @@ export const dataSlice = createSlice({
       contents.forEach((item) => {
         const match = item.match(frontMatterRegex);
         const header = load(match[1]);
-        const id = header.category;
+        const { category, title } = header;
+        const pageId = title.replaceAll(" ", "-")?.toLowerCase();
         const content = {
-          categoryId: id?.replace(" ", "-")?.toLowerCase(),
-          header: header,
+          categoryId: category?.replaceAll(" ", "-")?.toLowerCase(),
+          pageId: pageId,
+          header: { ...header, id: pageId },
           content: item.split(match[0])[1],
         };
 
-        if (list?.[id]?.length > 0) {
-          list[id] = [...list[id], content];
+        if (list?.[category]?.length > 0) {
+          list[category] = [...list[category], content];
         } else {
-          list[id] = [content];
+          list[category] = [content];
         }
       });
 

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { nanoid } from "@reduxjs/toolkit";
 import dayjs from "dayjs";
 import { Box, Card, CardContent, Typography } from "@mui/material";
@@ -11,14 +11,17 @@ import { getList } from "../features/dataSlice";
 import { isEmptyValue } from "../common/utils";
 
 const ListPage = () => {
+  const { pathname } = useLocation();
   const param = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { category, list } = useSelector((state) => state.data);
 
   useEffect(() => {
     if (isEmptyValue(category)) {
       return;
     }
+
     dispatch(getList(param.category));
   }, [category, param, dispatch]);
 
@@ -29,7 +32,13 @@ const ListPage = () => {
             return (
               <Card key={nanoid()} sx={{ my: 2 }} variant="outlined">
                 <CardContent>
-                  <Typography fontSize={18} fontWeight={"bold"} gutterBottom>
+                  <Typography
+                    fontSize={18}
+                    fontWeight={"bold"}
+                    gutterBottom
+                    sx={{ cursor: "pointer" }}
+                    onClick={() => navigate(`${pathname}/${item.header.id}`)}
+                  >
                     {item.header.title}
                   </Typography>
                   <Typography
@@ -38,8 +47,10 @@ const ListPage = () => {
                       maxHeight: 50,
                       overflow: "hidden",
                       wordBreak: "break-word",
+                      cursor: "pointer",
                     }}
                     color="text.secondary"
+                    onClick={() => navigate(`${pathname}/${item.header.id}`)}
                   >
                     {item.content}
                   </Typography>
@@ -61,7 +72,11 @@ const ListPage = () => {
                     </Typography>
 
                     <JavascriptIcon />
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      onClick={() => navigate(`/${item.categoryId}`)}
+                    >
                       {item.header.category}
                     </Typography>
                   </Box>

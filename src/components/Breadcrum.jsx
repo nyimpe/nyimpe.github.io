@@ -13,6 +13,7 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
     cursor: "pointer",
     backgroundColor,
     height: theme.spacing(3),
+    maxWidth: 200,
     color: theme.palette.text.primary,
     fontWeight: theme.typography.fontWeightRegular,
     "&:hover, &:focus": {
