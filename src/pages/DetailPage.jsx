@@ -47,6 +47,13 @@ const DetailPage = () => {
                 language={match[1]}
                 PreTag="div"
                 {...props}
+                codeTagProps={{
+                  style: {
+                    fontFamily: "IBMPlexSansKR",
+                    wordSpacing: "1px",
+                    letterSpacing: "1px",
+                  },
+                }}
                 style={
                   theme.palette.mode === "dark" ? materialDark : materialLight
                 }

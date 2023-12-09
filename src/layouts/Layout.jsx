@@ -8,6 +8,7 @@ import SideBar from "../components/SideBar";
 import Breadcrum from "../components/Breadcrum";
 import Header from "../components/Header";
 import { dataInitialize } from "../features/dataSlice";
+import "../assets/css/global.css";
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -17,14 +18,17 @@ const Layout = () => {
     palette: {
       mode: mode,
     },
+    typography: {
+      fontFamily: "IBMPlexSansKR",
+    },
     components: {
       MuiCssBaseline: {
         styleOverrides: {
           html: {
-            fontFamily: "Poppins, sans-serif",
+            fontFamily: "IBMPlexSansKR",
           },
           body: {
-            fontFamily: "Poppins, sans-serif",
+            fontFamily: "IBMPlexSansKR",
           },
         },
       },
