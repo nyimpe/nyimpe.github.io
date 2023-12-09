@@ -27,11 +27,8 @@ const DetailPage = () => {
 
   useEffect(() => {
     const { id } = param;
-    console.log("param->", param);
-    console.log("category->", category);
     Object.entries(category).forEach((item) => {
       const data = item[1].find((e) => e.pageId === id);
-      console.log("data->", data);
       if (data) {
         setDetail(data);
         return;

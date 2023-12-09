@@ -27,7 +27,7 @@ export const dataSlice = createSlice({
     getList: (state, action) => {
       const id = action?.payload?.replaceAll(" ", "-")?.toLowerCase();
       const c = current(state.category);
-      if (isEmptyValue(id) || id === "home") {
+      if (isEmptyValue(id)) {
         let list = [];
         Object.entries(c).forEach((item) => {
           list = [...list, ...item[1]];

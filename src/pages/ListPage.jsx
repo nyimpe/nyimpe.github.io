@@ -17,11 +17,15 @@ const ListPage = () => {
   const navigate = useNavigate();
   const { category, list } = useSelector((state) => state.data);
 
+  const handleDetailPage = (id) => {
+    const url = `${pathname === "/" ? "/home" : pathname}/${id}`;
+    navigate(url);
+  };
+
   useEffect(() => {
     if (isEmptyValue(category)) {
       return;
     }
-
     dispatch(getList(param.category));
   }, [category, param, dispatch]);
 
@@ -37,7 +41,7 @@ const ListPage = () => {
                     fontWeight={"bold"}
                     gutterBottom
                     sx={{ cursor: "pointer" }}
-                    onClick={() => navigate(`${pathname}/${item.header.id}`)}
+                    onClick={() => handleDetailPage(item.header.id)}
                   >
                     {item.header.title}
                   </Typography>
@@ -50,7 +54,7 @@ const ListPage = () => {
                       cursor: "pointer",
                     }}
                     color="text.secondary"
-                    onClick={() => navigate(`${pathname}/${item.header.id}`)}
+                    onClick={() => handleDetailPage(item.header.id)}
                   >
                     {item.content}
                   </Typography>
