@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import {
   Avatar,
   Box,
@@ -11,26 +12,21 @@ import {
   Typography,
 } from "@mui/material";
 
-import HomeIcon from "@mui/icons-material/Home";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import DataArrayIcon from "@mui/icons-material/DataArray";
-import DataObjectIcon from "@mui/icons-material/DataObject";
-import CodeIcon from "@mui/icons-material/Code";
-import BuildIcon from "@mui/icons-material/Build";
-// import NewspaperIcon from "@mui/icons-material/Newspaper";
-// import ApiIcon from "@mui/icons-material/Api";
-// import BoltIcon from "@mui/icons-material/Bolt";
-// import JavascriptIcon from "@mui/icons-material/Javascript";
 import img from "../assets/images/profile.png";
-import { useSelector } from "react-redux";
+import { IoLogoJavascript } from "react-icons/io5";
+import { FaHome } from "react-icons/fa";
+import { FaRegNewspaper } from "react-icons/fa6";
+import { FaReact } from "react-icons/fa";
+import { SiFlutter } from "react-icons/si";
 
-const ICONS = [
-  <DataArrayIcon key={0} />,
-  <DataObjectIcon key={1} />,
-  <CodeIcon key={2} />,
-  <BuildIcon key={3} />,
-];
+const ICONS = {
+  javascript: <IoLogoJavascript />,
+  react: <FaReact />,
+  news: <FaRegNewspaper />,
+  flutter: <SiFlutter />,
+};
 
 const SideBar = ({ mode, modeToggle, drawerToggle, setDrawerToggle }) => {
   const { category } = useSelector((state) => state.data);
@@ -66,7 +62,7 @@ const SideBar = ({ mode, modeToggle, drawerToggle, setDrawerToggle }) => {
             <ListItem>
               <ListItemButton onClick={() => navigate("/")}>
                 <ListItemIcon>
-                  <HomeIcon />
+                  <FaHome />
                 </ListItemIcon>
                 HOME
               </ListItemButton>
@@ -81,8 +77,8 @@ const SideBar = ({ mode, modeToggle, drawerToggle, setDrawerToggle }) => {
                           navigate(`/${category[e][0].categoryId}`)
                         }
                       >
-                        <ListItemIcon>{ICONS[i]}</ListItemIcon>
-                        <Typography>{e}</Typography>
+                        <ListItemIcon>{ICONS[e.toLowerCase()]}</ListItemIcon>
+                        <Typography>{e.toUpperCase()}</Typography>
                       </ListItemButton>
                     </ListItem>
                   );
