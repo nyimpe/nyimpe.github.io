@@ -34,16 +34,21 @@ export const dataSlice = createSlice({
         });
       } else {
         list = Object.entries(c).find(
-          (e) => e[0].replaceAll(" ", "-")?.toLowerCase() === id
+          (e) => e?.[0].replaceAll(" ", "-")?.toLowerCase() === id
         )?.[1];
       }
-      // 날짜 내림차순
-      state.list = list.sort((a, b) => {
-        const dateA = a.header.date;
-        const dateB = b.header.date;
 
-        return dateB - dateA;
-      });
+      // 날짜 내림차순
+      // if (list.length > 1) {
+      //   list?.sort((a, b) => {
+      //     const dateA = a?.header?.date;
+      //     const dateB = b?.header?.date;
+
+      //     return dateB - dateA;
+      //   });
+      // }
+
+      state.list = list;
     },
   },
   extraReducers: (builder) => {
