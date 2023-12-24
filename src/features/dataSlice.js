@@ -27,17 +27,23 @@ export const dataSlice = createSlice({
     getList: (state, action) => {
       const id = action?.payload?.replaceAll(" ", "-")?.toLowerCase();
       const c = current(state.category);
+      let list = [];
       if (isEmptyValue(id)) {
-        let list = [];
         Object.entries(c).forEach((item) => {
           list = [...list, ...item[1]];
         });
-        state.list = list;
       } else {
-        state.list = Object.entries(c).find(
+        list = Object.entries(c).find(
           (e) => e[0].replaceAll(" ", "-")?.toLowerCase() === id
         )?.[1];
       }
+      // 날짜 내림차순
+      state.list = list.sort((a, b) => {
+        const dateA = a.header.date;
+        const dateB = b.header.date;
+
+        return dateB - dateA;
+      });
     },
   },
   extraReducers: (builder) => {
