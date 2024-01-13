@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { nanoid } from "@reduxjs/toolkit";
@@ -16,6 +16,7 @@ const ListPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { category, list } = useSelector((state) => state.data);
+  const [contents, setContents] = useState([]);
 
   const handleDetailPage = (id) => {
     const url = `${pathname === "/" ? "/home" : pathname}/${id}`;
@@ -29,10 +30,23 @@ const ListPage = () => {
     dispatch(getList(param.category));
   }, [category, param, dispatch]);
 
+  useEffect(() => {
+    if (list.length < 1) {
+      return;
+    }
+
+    const sortedList = [...list];
+    sortedList.sort((a, b) => {
+      return b.header.date - a.header.date;
+    });
+
+    setContents(sortedList);
+  }, [list]);
+
   return (
     <Box sx={{ my: 3 }}>
-      {!isEmptyValue(list)
-        ? list.map((item) => {
+      {!isEmptyValue(contents)
+        ? contents.map((item) => {
             return (
               <Card key={nanoid()} sx={{ my: 2 }} variant="outlined">
                 <CardContent>
