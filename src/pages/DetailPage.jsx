@@ -12,11 +12,13 @@ import typescript from "react-syntax-highlighter/dist/cjs/languages/prism/typesc
 import bash from "react-syntax-highlighter/dist/cjs/languages/prism/bash";
 import markdown from "react-syntax-highlighter/dist/cjs/languages/prism/markdown";
 import json from "react-syntax-highlighter/dist/cjs/languages/prism/json";
+import dart from "react-syntax-highlighter/dist/cjs/languages/prism/dart";
 
 SyntaxHighlighter.registerLanguage("typescript", typescript);
 SyntaxHighlighter.registerLanguage("bash", bash);
 SyntaxHighlighter.registerLanguage("markdown", markdown);
 SyntaxHighlighter.registerLanguage("json", json);
+SyntaxHighlighter.registerLanguage("dart", dart);
 
 const DetailPage = () => {
   const theme = useTheme();
