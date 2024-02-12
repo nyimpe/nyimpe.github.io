@@ -18,6 +18,7 @@ SyntaxHighlighter.registerLanguage("typescript", typescript);
 SyntaxHighlighter.registerLanguage("bash", bash);
 SyntaxHighlighter.registerLanguage("markdown", markdown);
 SyntaxHighlighter.registerLanguage("json", json);
+//  dart
 SyntaxHighlighter.registerLanguage("dart", dart);
 
 const DetailPage = () => {

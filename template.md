@@ -1,6 +1,6 @@
 ---
 title: "JavaScript 마스터하기: Optional Chaining과 Nullish Coalescing"
-date: 2023-12-10
+date: 2024-02-10
 category: "Javascript"
 ---
 
