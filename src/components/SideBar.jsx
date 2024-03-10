@@ -20,12 +20,14 @@ import { FaHome } from "react-icons/fa";
 import { FaRegNewspaper } from "react-icons/fa6";
 import { FaReact } from "react-icons/fa";
 import { SiFlutter } from "react-icons/si";
+import { BsBoxFill } from "react-icons/bs";
 
 const ICONS = {
   javascript: <IoLogoJavascript />,
   react: <FaReact />,
   news: <FaRegNewspaper />,
   flutter: <SiFlutter />,
+  scrap: <BsBoxFill />,
 };
 
 const SideBar = ({ mode, modeToggle, drawerToggle, setDrawerToggle }) => {
