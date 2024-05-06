@@ -19,14 +19,16 @@ const ENC_KEY = process.env.ENC_KEY;
 
 app.get("/getRtms", async (req, res) => {
   try {
-    const filePath = path.join(cwd, "data.json");
+    const MONTH = dayjs().format("YYYYMM");
+    console.log(`getRtms Start -> ${MONTH}`);
+    const dataDir = path.join(cwd, "data");
+    const filePath = path.join(dataDir, `${MONTH}.json`);
     let data = [];
-    const thisMonth = dayjs().format("YYYYMM");
 
     console.time("start");
 
     for (const code of [...SEOUL, ...GYEONGGI]) {
-      const queryParams = `?serviceKey=${ENC_KEY}&LAWD_CD=${code}&DEAL_YMD=${thisMonth}`;
+      const queryParams = `?serviceKey=${ENC_KEY}&LAWD_CD=${code}&DEAL_YMD=${MONTH}`;
       const res = await axios.get(RTMS_URL + queryParams);
 
       if (res?.data?.response?.body?.totalCount > 0) {

@@ -14,10 +14,26 @@ export const dataInitialize = createAsyncThunk(
   }
 );
 
+export const getRealEstate = createAsyncThunk(
+  "data/getRealEstate",
+  async () => {
+    const jsonContext = await import.meta.glob("../data/*.json");
+    const result = await Promise.all(
+      Object.entries(jsonContext).map(async ([path, resolver]) => {
+        const json = await resolver();
+        return { path, content: json.default };
+      })
+    );
+
+    return result;
+  }
+);
+
 const initialState = {
   data: [],
   list: [],
   category: {},
+  realEstateData: [],
 };
 
 export const dataSlice = createSlice({
@@ -52,37 +68,42 @@ export const dataSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(dataInitialize.fulfilled, (state, action) => {
-      const rawData = action.payload;
+    builder
+      .addCase(dataInitialize.fulfilled, (state, action) => {
+        const rawData = action.payload;
 
-      const contents = Object.entries(rawData).map((file) => {
-        return file[1];
+        const contents = Object.entries(rawData).map((file) => {
+          return file[1];
+        });
+
+        const frontMatterRegex = /^---\n([\s\S]*?)\n---/;
+        const list = {};
+        contents.forEach((item) => {
+          const match = item.match(frontMatterRegex);
+          const header = load(match[1]);
+          const { category, title } = header;
+          const pageId = title.replaceAll(" ", "-")?.toLowerCase();
+          const content = {
+            categoryId: category?.replaceAll(" ", "-")?.toLowerCase(),
+            pageId: pageId,
+            header: { ...header, id: pageId },
+            content: item.split(match[0])[1],
+          };
+
+          if (list?.[category]?.length > 0) {
+            list[category] = [...list[category], content];
+          } else {
+            list[category] = [content];
+          }
+        });
+
+        state.data = contents;
+        state.category = list;
+      })
+      .addCase(getRealEstate.fulfilled, (state, action) => {
+        const data = action.payload;
+        state.realEstateData = data;
       });
-
-      const frontMatterRegex = /^---\n([\s\S]*?)\n---/;
-      const list = {};
-      contents.forEach((item) => {
-        const match = item.match(frontMatterRegex);
-        const header = load(match[1]);
-        const { category, title } = header;
-        const pageId = title.replaceAll(" ", "-")?.toLowerCase();
-        const content = {
-          categoryId: category?.replaceAll(" ", "-")?.toLowerCase(),
-          pageId: pageId,
-          header: { ...header, id: pageId },
-          content: item.split(match[0])[1],
-        };
-
-        if (list?.[category]?.length > 0) {
-          list[category] = [...list[category], content];
-        } else {
-          list[category] = [content];
-        }
-      });
-
-      state.data = contents;
-      state.category = list;
-    });
   },
 });
 
