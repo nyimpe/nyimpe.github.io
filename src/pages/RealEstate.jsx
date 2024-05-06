@@ -18,6 +18,12 @@ const RealEstate = () => {
   const handleChipSelect = (e) => {
     const columnData = extractColumn(e.content);
     const rowData = e.content.map((item) => ({ ...item, id: nanoid() }));
+    rowData.sort((a, b) => {
+      const indexA = parseInt(a["거래금액"]);
+      const indexB = parseInt(b["거래금액"]);
+      return indexA - indexB;
+    });
+
     setRows(rowData);
     setColumns(columnData);
     setSelectedChip(e.path);
