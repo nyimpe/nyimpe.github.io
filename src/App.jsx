@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import ListPage from "./pages/ListPage";
 import DetailPage from "./pages/DetailPage";
+import RealEstate from "./pages/RealEstate";
 
 const router = createBrowserRouter([
   {
@@ -10,7 +11,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <ListPage />,
+        element: <RealEstate />,
       },
       {
         path: ":category",
