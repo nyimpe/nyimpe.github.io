@@ -1,8 +1,25 @@
 import _ from "lodash";
 import { LAWD_CD } from "./code";
+import { nanoid } from "@reduxjs/toolkit";
+import dayjs from "dayjs";
 
 export const isEmptyValue = (value) => {
   return _.isEmpty(value);
+};
+
+export const getRowData = (data) => {
+  return data.map((item) => ({
+    ...item,
+    id: nanoid(),
+    날짜: dayjs(item["년"] + "/" + item["월"] + "/" + item["일"]).format(
+      "YYYY-MM-DD"
+    ),
+    지역: LAWD_CD.find(({ code }) => code.startsWith(item[["지역코드"]])).name,
+    거래금액: (
+      parseInt(item["거래금액"].replace(/,/g, ""), 10) * 10000
+    ).toLocaleString(),
+    cost: parseInt(item["거래금액"].replace(/,/g, ""), 10) * 10000,
+  }));
 };
 
 export const extractColumn = (data) => {

@@ -21,7 +21,7 @@ app.get("/getRtms", async (req, res) => {
   try {
     const MONTH = dayjs().format("YYYYMM");
     console.log(`getRtms Start -> ${MONTH}`);
-    const dataDir = path.join(cwd, "data");
+    const dataDir = path.join(cwd, "src/data");
     const filePath = path.join(dataDir, `${MONTH}.json`);
     let data = [];
 

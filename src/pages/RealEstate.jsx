@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Chip, Stack, Box } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
-import { nanoid } from "@reduxjs/toolkit";
 import dayjs from "dayjs";
 
 import { getRealEstate } from "../features/dataSlice";
-import { extractColumn } from "../common/utils";
+import { extractColumn, getRowData } from "../common/utils";
+import TableList from "../components/TableList";
 
 const RealEstate = () => {
   const dispatch = useDispatch();
@@ -17,11 +16,9 @@ const RealEstate = () => {
 
   const handleChipSelect = (e) => {
     const columnData = extractColumn(e.content);
-    const rowData = e.content.map((item) => ({ ...item, id: nanoid() }));
+    const rowData = getRowData(e.content);
     rowData.sort((a, b) => {
-      const indexA = parseInt(a["거래금액"]);
-      const indexB = parseInt(b["거래금액"]);
-      return indexA - indexB;
+      return a.cost - b.cost;
     });
 
     setRows(rowData);
@@ -59,7 +56,7 @@ const RealEstate = () => {
           })}
         </Stack>
       </Box>
-      <DataGrid columns={columns} rows={rows} autoHeight />
+      <TableList columns={columns} rows={rows} />
     </Box>
   );
 };
