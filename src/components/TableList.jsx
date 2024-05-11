@@ -1,12 +1,34 @@
+import { useEffect, useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { useEffect, useState } from "react";
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+import { styled } from "@mui/material";
+
 import { isEmptyValue } from "../common/utils";
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  "&:nth-of-type(odd)": {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  "&:last-child td, &:last-child th": {
+    border: 0,
+  },
+}));
 
 const TableList = ({ columns, rows }) => {
   const [column, setColumn] = useState([]);
@@ -34,18 +56,18 @@ const TableList = ({ columns, rows }) => {
         <TableBody>
           {column.length > 0 &&
             rows?.map((row, idx) => (
-              <TableRow key={row.id}>
+              <StyledTableRow key={row.id}>
                 <>
-                  <TableCell key={row.id + "_" + idx} align="center">
+                  <StyledTableCell key={row.id + "_" + idx} align="center">
                     {idx + 1}
-                  </TableCell>
+                  </StyledTableCell>
                   {column.map((col) => (
-                    <TableCell key={row.id + "_" + col} align="center">
+                    <StyledTableCell key={row.id + "_" + col} align="center">
                       {row[col]}
-                    </TableCell>
+                    </StyledTableCell>
                   ))}
                 </>
-              </TableRow>
+              </StyledTableRow>
             ))}
         </TableBody>
       </Table>
