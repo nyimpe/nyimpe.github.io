@@ -50,7 +50,7 @@ app.get("/getRtms", async (req, res) => {
     });
 
     console.timeEnd("start");
-    console.table(data);
+    // console.table(data);
 
     res.status(200).json(data);
   } catch (error) {
