@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import { getRealEstate } from "../features/dataSlice";
 import { extractColumn, getRowData } from "../common/utils";
 import TableList from "../components/TableList";
+import Grid from "../components/Grid";
 
 const RealEstate = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const RealEstate = () => {
       return a.cost - b.cost;
     });
 
+    console.log("columnData", columnData);
     setRows(rowData);
     setColumns(columnData);
     setSelectedChip(e.path);
@@ -56,7 +58,8 @@ const RealEstate = () => {
           })}
         </Stack>
       </Box>
-      <TableList columns={columns} rows={rows} />
+
+      <Grid columns={columns} rows={rows} />
     </Box>
   );
 };

@@ -83,21 +83,7 @@ export const extractColumn = (data) => {
       if (indexB === -1) return -1;
       return indexA - indexB;
     })
-    .map((e) => {
-      if (e === "거래금액") {
-        return {
-          field: e,
-          headerName: e,
-          flex: 1,
-          valueGetter: (param, row) => {
-            const data =
-              parseInt(row["거래금액"].replace(/,/g, ""), 10) * 10000;
-            return data.toLocaleString();
-          },
-        };
-      }
-      return { field: e, headerName: e, flex: 1 };
-    });
+    .map((e) => ({ field: e, headerName: e, flex: 1 }));
 
   return [...CUSTOM_COLUMN, ...columns];
 };
