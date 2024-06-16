@@ -5,7 +5,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Box, Container, CssBaseline, Toolbar } from "@mui/material";
 
 import SideBar from "../components/SideBar";
-import Breadcrum from "../components/Breadcrum";
+import Breadcrumb from "../components/Breadcrumb";
 import Header from "../components/Header";
 import { dataInitialize } from "../features/dataSlice";
 import "../assets/css/global.css";
@@ -60,7 +60,7 @@ const Layout = () => {
               display: { lg: "none", md: "none", sm: "block", xs: "block" },
             }}
           />
-          <Breadcrum />
+          <Breadcrumb />
           <Outlet />
         </Container>
       </Box>

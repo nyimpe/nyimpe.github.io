@@ -26,7 +26,7 @@ const StyledBreadcrumb = styled(Chip)(({ theme }) => {
   };
 });
 
-const Breadcrum = () => {
+const Breadcrumb = () => {
   const { pathname } = useLocation();
   const [crumbs, setCrumbs] = useState([]);
 
@@ -51,4 +51,4 @@ const Breadcrum = () => {
   );
 };
 
-export default Breadcrum;
+export default Breadcrumb;
