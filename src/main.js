@@ -28,8 +28,6 @@ const config = {
   },
 };
 
-// new Phaser.Game(config);
-
 const StartGame = (parent) => {
   return new Phaser.Game({ ...config, parent });
 };

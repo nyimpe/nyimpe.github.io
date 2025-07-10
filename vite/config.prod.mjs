@@ -5,13 +5,12 @@ const phasermsg = () => {
   return {
     name: "phasermsg",
     buildStart() {
-      process.stdout.write(`build start...\n`);
+      process.stdout.write(`start...\n`);
     },
     buildEnd() {
       const line = "---------------------------------------------------------";
-      const msg = `build end`;
+      const msg = `...end`;
       process.stdout.write(`${line}\n${msg}\n${line}\n`);
-
       process.stdout.write(`✨ Done ✨\n`);
     },
   };
