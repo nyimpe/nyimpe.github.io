@@ -1,17 +1,16 @@
-import { useRef, useState } from "react";
+import { useLayoutEffect } from "react";
+import StartGame from "./main";
 
-import Phaser from "phaser";
-import { PhaserGame } from "./PhaserGame";
-
-function App() {
-  //  References to the PhaserGame component (game and scene are exposed)
-  const phaserRef = useRef();
+const App = () => {
+  useLayoutEffect(() => {
+    StartGame("game-container");
+  }, []);
 
   return (
     <div id="app">
-      <PhaserGame ref={phaserRef} />
+      <div id="game-container"></div>
     </div>
   );
-}
+};
 
 export default App;
