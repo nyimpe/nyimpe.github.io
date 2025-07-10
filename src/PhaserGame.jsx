@@ -1,11 +1,5 @@
-import { forwardRef, useEffect, useLayoutEffect, useRef } from "react";
+import { forwardRef, useLayoutEffect, useRef } from "react";
 import StartGame from "./main";
-// import { EventBus } from "./game/EventBus";
-
-import Phaser from "phaser";
-
-// // Used to emit events between components, HTML and Phaser scenes
-// export const EventBus = new Phaser.Events.EventEmitter();
 
 export const PhaserGame = forwardRef(function PhaserGame(
   { currentActiveScene },
@@ -30,22 +24,6 @@ export const PhaserGame = forwardRef(function PhaserGame(
       }
     };
   }, [ref]);
-
-  useEffect(() => {
-    new Phaser.Events.EventEmitter().on(
-      "current-scene-ready",
-      (currentScene) => {
-        if (currentActiveScene instanceof Function) {
-          currentActiveScene(currentScene);
-        }
-        ref.current.scene = currentScene;
-      }
-    );
-
-    return () => {
-      new Phaser.Events.EventEmitter().removeListener("current-scene-ready");
-    };
-  }, [currentActiveScene, ref]);
 
   return <div id="game-container"></div>;
 });
