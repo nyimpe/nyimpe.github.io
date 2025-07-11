@@ -1,3 +1,5 @@
+import Phaser from "phaser";
+
 // 게임 오버 씬 클래스 - 게임 종료 화면 담당
 export class GameOver extends Phaser.Scene {
   constructor() {

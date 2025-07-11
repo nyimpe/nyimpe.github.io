@@ -1,3 +1,5 @@
+import Phaser from "phaser";
+
 /*
  * Asset from: https://kenney.nl/assets/pixel-platformer
  *

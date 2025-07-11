@@ -1,3 +1,4 @@
+import Phaser from "phaser";
 import ASSETS from "../assets.js";
 
 export default class EnemyFlying extends Phaser.Physics.Arcade.Sprite {

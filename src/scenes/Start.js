@@ -1,3 +1,5 @@
+import Phaser from "phaser";
+
 // 시작 씬 클래스 - 게임 시작 화면 담당
 export class Start extends Phaser.Scene {
   constructor() {

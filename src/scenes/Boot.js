@@ -1,3 +1,4 @@
+import Phaser from "phaser";
 // 부트 씬 클래스 - 게임 시작 전 초기 로딩 담당
 export class Boot extends Phaser.Scene {
   constructor() {

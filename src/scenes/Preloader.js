@@ -1,3 +1,4 @@
+import Phaser from "phaser";
 import ASSETS from "../assets.js";
 
 // 프리로더 씬 클래스 - 게임 에셋 로딩 및 진행률 표시
