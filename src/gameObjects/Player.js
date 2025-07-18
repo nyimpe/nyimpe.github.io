@@ -1,71 +1,124 @@
 import Phaser from "phaser";
-import ASSETS from "../assets.js";
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
-  velocityIncrement = 50;
-  velocityMax = 500;
-  drag = 1000;
-  fireRate = 10;
-  fireCounter = 0;
-  health = 1;
+  baseMoveSpeed = 200;
+  moveSpeed = 200;
+  moveDirection = 1;
+  gravity = 1200;
+  isGrounded = false;
+  pressStartTime = null;
 
   constructor(scene, x, y, shipId) {
-    super(scene, x, y, ASSETS.spritesheet.ships.key, shipId);
-
+    super(scene, x, y, "", shipId);
     scene.add.existing(this);
     scene.physics.add.existing(this);
 
-    this.setCollideWorldBounds(true); // prevent ship from leaving the screen
-    this.setDepth(100); // make ship appear on top of other game objects
     this.scene = scene;
-    this.setMaxVelocity(this.velocityMax); // limit maximum speed of ship
-    this.setDrag(this.drag);
+    this.body.setGravityY(this.gravity);
+    this.setCollideWorldBounds(true);
+    this.setDepth(100);
+
+    this.moveDirection = Math.random() < 0.5 ? -1 : 1;
+
+    this.jumpPowerText = this.scene.add
+      .text(this.x, this.y - 50, "0", {
+        fontSize: "24px",
+        color: "#ffcc00",
+        stroke: "#000",
+        strokeThickness: 3,
+      })
+      .setOrigin(0.5)
+      .setDepth(200)
+      .setVisible(false);
+
+    this.registerInput();
+  }
+
+  registerInput() {
+    const input = this.scene.input;
+    input.keyboard.on("keydown-SPACE", this.onPressStart, this);
+    input.keyboard.on("keyup-SPACE", this.onPressRelease, this);
+    input.on("pointerdown", this.onPressStart, this);
+    input.on("pointerup", this.onPressRelease, this);
+  }
+
+  onPressStart() {
+    if (!this.isGrounded) return;
+    this.pressStartTime = this.scene.time.now;
+    this.jumpPowerText.setVisible(true);
+  }
+
+  onPressRelease() {
+    if (!this.isGrounded || this.pressStartTime === null) return;
+
+    const duration = this.scene.time.now - this.pressStartTime;
+    const power = this.calculateJumpPower(duration);
+    const jumpVelocity = -300 - (power - 1) * 100;
+
+    this.jump(jumpVelocity);
+    this.play(`jump${power}`, true);
+
+    this.jumpPowerText.setVisible(false);
+    this.pressStartTime = null;
+
+    // 속도 복구는 preUpdate에서 자동 처리됨
+  }
+
+  calculateJumpPower(duration) {
+    if (duration < 100) return 1;
+    else if (duration < 200) return 2;
+    else if (duration < 300) return 3;
+    else if (duration < 400) return 4;
+    else return 5;
+  }
+
+  jump(jumpVelocity) {
+    this.body.velocity.y = jumpVelocity;
   }
 
   preUpdate(time, delta) {
     super.preUpdate(time, delta);
-
-    if (this.fireCounter > 0) this.fireCounter--;
-
-    this.checkInput();
+    this.updateMovement();
+    this.updateJumpPowerText();
   }
 
-  checkInput() {
-    const cursors = this.scene.cursors; // get cursors object from Game scene
-    const leftKey = cursors.left.isDown;
-    const rightKey = cursors.right.isDown;
-    const upKey = cursors.up.isDown;
-    const downKey = cursors.down.isDown;
-    const spaceKey = cursors.space.isDown;
+  updateMovement() {
+    // 지면 체크
+    this.isGrounded = this.body.blocked.down || this.body.touching.down;
 
-    const moveDirection = { x: 0, y: 0 }; // default move direction
+    // 속도 감소 적용
+    if (this.pressStartTime !== null && this.isGrounded) {
+      const duration = this.scene.time.now - this.pressStartTime;
+      const power = this.calculateJumpPower(duration);
+      const factor = 1 - power * 0.1; // 0~5 → 0~0.5 감소
+      this.moveSpeed = this.baseMoveSpeed * factor;
+    } else {
+      this.moveSpeed = this.baseMoveSpeed;
+    }
 
-    if (leftKey) moveDirection.x--;
-    if (rightKey) moveDirection.x++;
-    if (upKey) moveDirection.y--;
-    if (downKey) moveDirection.y++;
-    if (spaceKey) this.fire();
+    // 이동 처리
+    this.body.setVelocityX(this.moveSpeed * this.moveDirection);
 
-    this.body.velocity.x += moveDirection.x * this.velocityIncrement; // increase horizontal velocity
-    this.body.velocity.y += moveDirection.y * this.velocityIncrement; // increase vertical velocity
+    // 벽 충돌 시 방향 반전
+    if (this.x <= this.width / 2) {
+      this.moveDirection = 1;
+    } else if (this.x >= this.scene.scale.width - this.width / 2) {
+      this.moveDirection = -1;
+    }
   }
 
-  fire() {
-    if (this.fireCounter > 0) return;
+  updateJumpPowerText() {
+    if (this.pressStartTime !== null) {
+      if (!this.isGrounded) {
+        this.pressStartTime = null;
+        this.jumpPowerText.setVisible(false);
+        return;
+      }
 
-    this.fireCounter = this.fireRate;
-
-    this.scene.fireBullet(this.x, this.y);
-  }
-
-  hit(damage) {
-    this.health -= damage;
-
-    if (this.health <= 0) this.die();
-  }
-
-  die() {
-    this.scene.addExplosion(this.x, this.y);
-    this.destroy(); // destroy sprite so it is no longer updated
+      const duration = this.scene.time.now - this.pressStartTime;
+      const power = this.calculateJumpPower(duration);
+      this.jumpPowerText.setText(power.toString());
+      this.jumpPowerText.setPosition(this.x, this.y - 50);
+    }
   }
 }

@@ -4,13 +4,10 @@ import Phaser from "phaser";
  * Asset from: https://kenney.nl/assets/pixel-platformer
  *
  */
+
 import ASSETS from "../assets.js";
-import ANIMATION from "../animation.js";
 import Player from "../gameObjects/Player.js";
-import PlayerBullet from "../gameObjects/PlayerBullet.js";
-import EnemyFlying from "../gameObjects/EnemyFlying.js";
-import EnemyBullet from "../gameObjects/EnemyBullet.js";
-import Explosion from "../gameObjects/Explosion.js";
+import Platform from "../gameObjects/Platform.js";
 
 // 메인 게임 씬 클래스 - 실제 게임플레이 담당
 export class Game extends Phaser.Scene {
@@ -22,25 +19,19 @@ export class Game extends Phaser.Scene {
     // 게임 초기화 순서
     this.initVariables(); // 변수 초기화
     this.initGameUi(); // UI 초기화
-    this.initAnimations(); // 애니메이션 초기화
+    this.initMap(); // 맵 초기화
     this.initPlayer(); // 플레이어 초기화
+    this.initPlatforms(); // 플랫폼 초기화
     this.initInput(); // 입력 초기화
     this.initPhysics(); // 물리 초기화
-    this.initMap(); // 맵 초기화
   }
 
   update() {
     // 배경 맵 업데이트
-    this.updateMap();
-
+    // this.updateMap();
     // 게임이 시작되지 않았으면 리턴
-    if (!this.gameStarted) return;
-
-    // 플레이어 업데이트
-    this.player.update();
-    // 적 스폰 카운터 관리
-    if (this.spawnEnemyCounter > 0) this.spawnEnemyCounter--;
-    else this.addFlyingGroup();
+    // if (!this.gameStarted) return;
+    // this.player.update();
   }
 
   initVariables() {
@@ -64,7 +55,7 @@ export class Game extends Phaser.Scene {
     this.mapWidth = Math.ceil(this.scale.width / this.tileSize); // 타일 맵 너비 (타일 단위)
     this.scrollSpeed = 1; // 배경 스크롤 속도 (픽셀 단위)
     this.scrollMovement = 0; // 현재 스크롤 양
-    this.spawnEnemyCounter = 0; // 다음 적 그룹 생성 전 타이머
+    // this.spawnEnemyCounter = 0; // 다음 적 그룹 생성 전 타이머
 
     this.map; // 타일 맵 참조
     this.groundLayer; // 타일 맵의 지면 레이어 참조
@@ -73,9 +64,9 @@ export class Game extends Phaser.Scene {
   initGameUi() {
     // 튜토리얼 텍스트 생성
     this.tutorialText = this.add
-      .text(this.centreX, this.centreY, "Tap to shoot!", {
+      .text(this.centreX, this.centreY, "Touch or Space to Jump!", {
         fontFamily: "Arial Black",
-        fontSize: 42,
+        fontSize: 32,
         color: "#ffffff",
         stroke: "#000000",
         strokeThickness: 8,
@@ -110,60 +101,135 @@ export class Game extends Phaser.Scene {
       .setVisible(false);
   }
 
-  initAnimations() {
-    // 폭발 애니메이션 생성
-    this.anims.create({
-      key: ANIMATION.explosion.key,
-      frames: this.anims.generateFrameNumbers(
-        ANIMATION.explosion.texture,
-        ANIMATION.explosion.config
-      ),
-      frameRate: ANIMATION.explosion.frameRate,
-      repeat: ANIMATION.explosion.repeat,
-    });
-  }
-
   initPhysics() {
-    // 게임 오브젝트 그룹 생성
-    this.enemyGroup = this.add.group();
-    this.enemyBulletGroup = this.add.group();
-    this.playerBulletGroup = this.add.group();
+    // 플레이어와 맵 충돌 설정
+    this.physics.add.collider(this.player, this.groundLayer);
 
-    // 충돌 감지 설정
-    // 플레이어와 적 총알 충돌
-    this.physics.add.overlap(
-      this.player,
-      this.enemyBulletGroup,
-      this.hitPlayer,
-      null,
-      this
-    );
-    // 플레이어 총알과 적 충돌
-    this.physics.add.overlap(
-      this.playerBulletGroup,
-      this.enemyGroup,
-      this.hitEnemy,
-      null,
-      this
-    );
-    // 플레이어와 적 충돌
-    this.physics.add.overlap(
-      this.player,
-      this.enemyGroup,
-      this.hitPlayer,
-      null,
-      this
-    );
+    // 플레이어와 플랫폼 충돌 설정
+    this.physics.add.collider(this.player, this.platformGroup);
   }
 
   initPlayer() {
-    // 플레이어 객체 생성
-    this.player = new Player(this, this.centreX, this.scale.height - 100, 8);
+    // 플레이어 객체 생성 (화면 최하단에서 시작)
+    this.player = new Player(this, this.centreX, this.scale.height - 1, 8);
+  }
+
+  /**
+   * 플랫폼 시스템 초기화
+   * - 플랫폼 그룹 생성 및 랜덤 플랫폼 배치 수행
+   */
+  initPlatforms() {
+    // 플랫폼 그룹 생성 (물리 충돌 처리를 위한 그룹)
+    this.platformGroup = this.add.group();
+
+    // 랜덤 플랫폼 생성 시스템 실행
+    this.generateRandomPlatforms();
+  }
+
+  generateRandomPlatforms() {
+    const screenHeight = this.scale.height;
+    const screenWidth = this.scale.width;
+
+    // === 플랫폼 생성 설정 ===
+    // 생성할 라인(층) 개수
+    const lineCount = 10;
+
+    // 한 라인당 플랫폼 개수 (1-3개 사이에서 설정 가능)
+    // const platformsPerLine = Phaser.Math.Between(1, 4);
+    const platformsPerLine = 2;
+
+    // === 플랫폼 간격 설정 ===
+    // 고정 수직 간격 (일정한 점프 리듬 제공)
+    const verticalGap = 80;
+
+    // 플랫폼 간 최소 수평 간격
+    const minHorizontalGap = 50;
+
+    // 플랫폼 높이 (Platform 클래스와 일치해야 함)
+    const platformHeight = 16;
+
+    // 플랫폼 너비 (고정값)
+    const platformWidth = 100;
+
+    // === 플랫폼 배치 영역 설정 ===
+    const startY = 50; // 시작 높이
+    const endY = screenHeight - 10; // 끝 높이
+    const availableHeight = endY - startY;
+
+    // 생성된 플랫폼 정보를 저장할 배열
+    const platforms = [];
+
+    // === 라인별 플랫폼 생성 ===
+    for (let lineIndex = 0; lineIndex < lineCount; lineIndex++) {
+      // 각 라인의 Y 좌표 계산 (균등 분배)
+      const y = startY + (availableHeight / (lineCount + 1)) * (lineIndex + 1);
+
+      // 현재 라인에 생성된 플랫폼들의 X 좌표를 저장
+      const currentLinePlatforms = [];
+
+      // 한 라인에 여러 플랫폼 생성
+      for (
+        let platformIndex = 0;
+        platformIndex < platformsPerLine;
+        platformIndex++
+      ) {
+        let attempts = 0;
+        let validPosition = false;
+        let x;
+
+        // 수평 위치 찾기 (같은 라인 내에서 겹치지 않게)
+        while (!validPosition && attempts < 100) {
+          // x 좌표: 플랫폼이 화면을 벗어나지 않도록 랜덤 설정
+          x = Phaser.Math.Between(0, screenWidth - platformWidth);
+
+          validPosition = true;
+
+          // 같은 라인의 다른 플랫폼과 겹침 검사
+          for (let existingX of currentLinePlatforms) {
+            const horizontalOverlap =
+              x < existingX + platformWidth + minHorizontalGap &&
+              x + platformWidth + minHorizontalGap > existingX;
+
+            if (horizontalOverlap) {
+              validPosition = false;
+              break;
+            }
+          }
+
+          attempts++;
+        }
+
+        // === 플랫폼 생성 ===
+        if (validPosition) {
+          // Platform 클래스를 사용하여 플랫폼 생성
+          const platform = new Platform(this, x, y, platformWidth);
+
+          // 플랫폼 그룹에 추가
+          this.platformGroup.add(platform);
+
+          // 현재 라인과 전체 플랫폼 정보에 저장
+          currentLinePlatforms.push(x);
+          platforms.push({
+            x: x,
+            y: y,
+            width: platformWidth,
+            height: platformHeight,
+          });
+        }
+      }
+    }
   }
 
   initInput() {
     // 키보드 입력 설정
     this.cursors = this.input.keyboard.createCursorKeys();
+
+    // 터치 입력 설정
+    this.input.on("pointerdown", () => {
+      if (!this.gameStarted) {
+        this.startGame();
+      }
+    });
 
     // 스페이스바 한 번만 눌림 감지
     this.cursors.space.once("down", (key, event) => {
@@ -196,6 +262,9 @@ export class Game extends Phaser.Scene {
     });
     const tileset = this.map.addTilesetImage(ASSETS.spritesheet.tiles.key);
     this.groundLayer = this.map.createLayer(0, tileset, 0, this.mapTop);
+
+    // 모든 타일에 충돌 설정
+    this.groundLayer.setCollisionByExclusion([]);
   }
 
   // 타일 맵 스크롤 처리
@@ -235,87 +304,13 @@ export class Game extends Phaser.Scene {
     // 게임 시작 처리
     this.gameStarted = true;
     this.tutorialText.setVisible(false);
-    this.addFlyingGroup();
   }
 
-  fireBullet(x, y) {
-    // 플레이어 총알 발사
-    const bullet = new PlayerBullet(this, x, y);
-    this.playerBulletGroup.add(bullet);
-  }
-
-  removeBullet(bullet) {
-    // 플레이어 총알 제거
-    this.playerBulletGroup.remove(bullet, true, true);
-  }
-
-  fireEnemyBullet(x, y, power) {
-    // 적 총알 발사
-    const bullet = new EnemyBullet(this, x, y, power);
-    this.enemyBulletGroup.add(bullet);
-  }
-
-  removeEnemyBullet(bullet) {
-    // 적 총알 제거
-    this.playerBulletGroup.remove(bullet, true, true);
-  }
-
-  // 비행 적 그룹 추가
-  addFlyingGroup() {
-    this.spawnEnemyCounter = Phaser.Math.RND.between(5, 8) * 60; // x초 후 다음 그룹 생성
-    const randomId = Phaser.Math.RND.between(0, 11); // tiles.png에서 이미지 선택할 ID
-    const randomCount = Phaser.Math.RND.between(5, 15); // 생성할 적의 수
-    const randomInterval = Phaser.Math.RND.between(8, 12) * 100; // 각 적 생성 간 지연 시간
-    const randomPath = Phaser.Math.RND.between(0, 3); // 경로 선택 (그룹은 같은 경로 사용)
-    const randomPower = Phaser.Math.RND.between(1, 4); // 적의 강도 (데미지 및 총알 이미지 결정)
-    const randomSpeed = Phaser.Math.RND.realInRange(0.0001, 0.001); // 적의 pathSpeed 증가량
-
-    this.timedEvent = this.time.addEvent({
-      delay: randomInterval,
-      callback: this.addEnemy,
-      args: [randomId, randomPath, randomSpeed, randomPower], // addEnemy()에 전달할 매개변수
-      callbackScope: this,
-      repeat: randomCount,
-    });
-  }
-
-  addEnemy(shipId, pathId, speed, power) {
-    // 적 추가
-    const enemy = new EnemyFlying(this, shipId, pathId, speed, power);
-    this.enemyGroup.add(enemy);
-  }
-
-  removeEnemy(enemy) {
-    // 적 제거
-    this.enemyGroup.remove(enemy, true, true);
-  }
-
-  addExplosion(x, y) {
-    // 폭발 효과 추가
-    new Explosion(this, x, y);
-  }
-
-  hitPlayer(player, obstacle) {
-    // 플레이어 피격 처리
-    this.addExplosion(player.x, player.y);
-    player.hit(obstacle.getPower());
-    obstacle.die();
-
-    this.GameOver();
-  }
-
-  hitEnemy(bullet, enemy) {
-    // 적 피격 처리
-    this.updateScore(10);
-    bullet.remove();
-    enemy.hit(bullet.getPower());
-  }
-
-  updateScore(points) {
-    // 점수 업데이트
-    this.score += points;
-    this.scoreText.setText(`Score: ${this.score}`);
-  }
+  // updateScore(points) {
+  //   // 점수 업데이트
+  //   this.score += points;
+  //   this.scoreText.setText(`Score: ${this.score}`);
+  // }
 
   GameOver() {
     // 게임 오버 처리
