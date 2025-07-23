@@ -11,9 +11,12 @@ export default class Platform extends Phaser.Physics.Arcade.Sprite {
 
     this.setOrigin(0, 0);
 
+    // 타일 크기가 32x32이므로 적절히 스케일링
     this.setScale(width / 32, height / 32);
 
+    // 물리 바디 크기를 정확히 설정
     this.body.setSize(width, height);
+    this.body.setOffset(0, 0);
 
     this.setDepth(50);
 

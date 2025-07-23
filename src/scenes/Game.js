@@ -20,8 +20,8 @@ export class Game extends Phaser.Scene {
     this.initVariables(); // 변수 초기화
     this.initGameUi(); // UI 초기화
     this.initMap(); // 맵 초기화
-    this.initPlayer(); // 플레이어 초기화
-    this.initPlatforms(); // 플랫폼 초기화
+    this.initPlatforms(); // 플랫폼 초기화 (바닥 플랫폼 생성)
+    this.initPlayer(); // 플레이어 초기화 (바닥 플랫폼 위에 배치)
     this.initInput(); // 입력 초기화
     this.initPhysics(); // 물리 초기화
   }
@@ -30,7 +30,19 @@ export class Game extends Phaser.Scene {
     // 배경 맵 업데이트
     // this.updateMap();
     // 게임이 시작되지 않았으면 리턴
-    // if (!this.gameStarted) return;
+    if (!this.gameStarted) return;
+
+    // 플레이어가 화면 하단 밖으로 떨어졌는지 확인
+    this.checkPlayerFallOut();
+
+    // 플레이어 위치 추적 및 새 플랫폼 생성
+    this.checkPlatformGeneration();
+    
+    // 카메라 업데이트
+    this.updateCamera();
+    
+    // 배경 맵 동적 확장
+    this.updateBackgroundExpansion();
     // this.player.update();
   }
 
@@ -48,21 +60,37 @@ export class Game extends Phaser.Scene {
     ];
     this.tileSize = 32; // 타일 크기 (픽셀 단위)
 
-    this.mapOffset = 10; // 맵을 화면 위로 이동할 오프셋 (타일 단위)
+    this.mapOffset = 100; // 맵을 화면 위로 이동할 오프셋을 더 크게 설정
     this.mapTop = -this.mapOffset * this.tileSize; // 맵을 화면 위로 이동할 오프셋 (픽셀 단위)
-    this.mapHeight =
-      Math.ceil(this.scale.height / this.tileSize) + this.mapOffset + 1; // 타일 맵 높이 (타일 단위)
+    this.mapHeight = 200; // 타일 맵 높이를 더 크게 설정 (충분한 배경 제공)
     this.mapWidth = Math.ceil(this.scale.width / this.tileSize); // 타일 맵 너비 (타일 단위)
     this.scrollSpeed = 1; // 배경 스크롤 속도 (픽셀 단위)
     this.scrollMovement = 0; // 현재 스크롤 양
-    // this.spawnEnemyCounter = 0; // 다음 적 그룹 생성 전 타이머
 
     this.map; // 타일 맵 참조
     this.groundLayer; // 타일 맵의 지면 레이어 참조
+
+    // 플랫폼 생성 관련 변수
+    this.highestY = this.scale.height; // 플레이어가 도달한 최고 높이
+    this.lastPlatformY = 50; // 마지막으로 생성된 플랫폼의 Y 좌표
+    this.platformGenerationThreshold = 200; // 새 플랫폼 생성 임계값
+    
+    // 카메라 관련 변수
+    this.initialCameraY = 0; // 초기 카메라 Y 위치
+    this.cameraFollowThreshold = this.scale.height * 0.3; // 카메라가 따라가기 시작하는 임계값
+    
+    // 배경 확장 관련 변수
+    this.lastExpansionY = this.mapTop; // 마지막 확장된 Y 위치
+    this.expansionCooldown = false; // 확장 쿨다운 플래그
+    
+    // 게임 리셋 관련 변수
+    this.initialPlayerX = this.centreX; // 초기 플레이어 X 위치
+    this.initialPlayerY = null; // 초기 플레이어 Y 위치 (initPlayer에서 설정)
+    this.fallOutThreshold = 200; // 화면 하단에서 얼마나 더 떨어져야 게임오버인지
   }
 
   initGameUi() {
-    // 튜토리얼 텍스트 생성
+    // 튜토리얼 텍스트 생성 (카메라에 고정)
     this.tutorialText = this.add
       .text(this.centreX, this.centreY, "Touch or Space to Jump!", {
         fontFamily: "Arial Black",
@@ -73,9 +101,10 @@ export class Game extends Phaser.Scene {
         align: "center",
       })
       .setOrigin(0.5)
-      .setDepth(100);
+      .setDepth(100)
+      .setScrollFactor(0); // 카메라 스크롤에 영향받지 않음
 
-    // 점수 텍스트 생성
+    // 점수 텍스트 생성 (카메라에 고정)
     this.scoreText = this.add
       .text(20, 20, "Score: 0", {
         fontFamily: "Arial Black",
@@ -84,9 +113,10 @@ export class Game extends Phaser.Scene {
         stroke: "#000000",
         strokeThickness: 8,
       })
-      .setDepth(100);
+      .setDepth(100)
+      .setScrollFactor(0); // 카메라 스크롤에 영향받지 않음
 
-    // 게임 오버 텍스트 생성
+    // 게임 오버 텍스트 생성 (카메라에 고정)
     this.gameOverText = this.add
       .text(this.scale.width * 0.5, this.scale.height * 0.5, "Game Over", {
         fontFamily: "Arial Black",
@@ -98,20 +128,37 @@ export class Game extends Phaser.Scene {
       })
       .setOrigin(0.5)
       .setDepth(100)
-      .setVisible(false);
+      .setVisible(false)
+      .setScrollFactor(0); // 카메라 스크롤에 영향받지 않음
   }
 
   initPhysics() {
     // 플레이어와 맵 충돌 설정
     this.physics.add.collider(this.player, this.groundLayer);
 
-    // 플레이어와 플랫폼 충돌 설정
-    this.physics.add.collider(this.player, this.platformGroup);
+    // 플레이어와 바닥 플랫폼 충돌 설정
+    this.physics.add.collider(this.player, this.floorPlatform);
+
+    // 플레이어와 플랫폼 커스텀 충돌 설정 (밑에서 위로 통과 가능)
+    this.physics.add.overlap(
+      this.player,
+      this.platformGroup,
+      this.handlePlatformCollision,
+      null,
+      this
+    );
   }
 
   initPlayer() {
-    // 플레이어 객체 생성 (화면 최하단에서 시작)
-    this.player = new Player(this, this.centreX, this.scale.height - 1, 8);
+    // 플레이어 객체 생성 (바닥 플랫폼 위에서 시작)
+    const playerY = this.floorY - 32; // 바닥 플랫폼 위에 플레이어 배치 (플레이어 높이 고려)
+    this.player = new Player(this, this.centreX, playerY, 8);
+    
+    // 초기 위치 저장 (리셋용)
+    this.initialPlayerY = playerY;
+    
+    // 초기 카메라 위치 저장
+    this.initialCameraY = this.cameras.main.scrollY;
   }
 
   /**
@@ -122,8 +169,37 @@ export class Game extends Phaser.Scene {
     // 플랫폼 그룹 생성 (물리 충돌 처리를 위한 그룹)
     this.platformGroup = this.add.group();
 
+    // 바닥 플랫폼 생성
+    this.createFloorPlatform();
+
     // 랜덤 플랫폼 생성 시스템 실행
     this.generateRandomPlatforms();
+  }
+
+  createFloorPlatform() {
+    // 화면 전체 너비의 바닥 플랫폼 생성
+    const floorY = this.scale.height - 30; // 화면 하단에서 30픽셀 위
+    const floorWidth = this.scale.width;
+    const floorHeight = 30; // 바닥 플랫폼 높이
+    
+    // Rectangle 그래픽으로 바닥 플랫폼 생성 (확실하게 화면 전체 채우기)
+    const floorGraphics = this.add.graphics();
+    floorGraphics.fillStyle(0x4a4a4a); // 회색 색상
+    floorGraphics.fillRect(0, floorY, floorWidth, floorHeight);
+    floorGraphics.setDepth(1);
+    
+    // 물리 바디를 위한 static 그룹 생성
+    const floorPlatform = this.physics.add.staticGroup();
+    const floorBody = this.add.rectangle(floorWidth / 2, floorY + floorHeight / 2, floorWidth, floorHeight);
+    floorBody.setVisible(false); // 투명하게 설정 (그래픽만 보이도록)
+    this.physics.add.existing(floorBody, true); // static body로 추가
+    floorPlatform.add(floorBody);
+    
+    // 플랫폼 그룹에 추가
+    this.floorPlatform = floorPlatform;
+    
+    // 바닥 플랫폼 Y 좌표 저장 (플레이어 위치 계산용)
+    this.floorY = floorY;
   }
 
   generateRandomPlatforms() {
@@ -312,9 +388,242 @@ export class Game extends Phaser.Scene {
   //   this.scoreText.setText(`Score: ${this.score}`);
   // }
 
+  handlePlatformCollision(player, platform) {
+    // 플레이어가 발판 위에서 떨어지고 있고, 발판 상단 위에 있을 때만 충돌 처리
+    const playerBottom = player.body.bottom;
+    const platformTop = platform.body.top;
+    const playerVelocityY = player.body.velocity.y;
+
+    // 플레이어가 하강 중이고, 플레이어 하단이 발판 상단과 겹칠 때만 충돌
+    if (
+      playerVelocityY >= 0 &&
+      playerBottom > platformTop - 5 &&
+      playerBottom < platformTop + 10
+    ) {
+      // 플레이어를 발판 위에 위치시키고 수직 속도 초기화
+      player.body.y = platformTop - player.body.height;
+      player.body.velocity.y = 0;
+      player.body.blocked.down = true;
+      player.body.touching.down = true;
+      return true;
+    }
+    return false;
+  }
+
+  updateCamera() {
+    // 플레이어가 화면 상단 임계값에 도달했을 때만 카메라 이동
+    const playerScreenY = this.player.y - this.cameras.main.scrollY;
+    
+    if (playerScreenY < this.cameraFollowThreshold) {
+      // 플레이어가 화면 상단에 가까워지면 카메라가 부드럽게 따라감
+      const targetY = this.player.y - this.cameraFollowThreshold;
+      const currentY = this.cameras.main.scrollY;
+      const lerpFactor = 0.05; // 부드러운 이동을 위한 lerp 팩터
+      
+      this.cameras.main.scrollY = Phaser.Math.Linear(currentY, targetY, lerpFactor);
+    }
+  }
+
+  updateBackgroundExpansion() {
+    // 플레이어가 배경 맵의 상단 근처에 도달하면 배경을 위로 확장
+    const mapTopWorldY = this.mapTop;
+    const expansionThreshold = 1000; // 확장 임계값
+    
+    // 쿨다운 중이 아니고, 플레이어가 임계값에 도달했을 때만 확장
+    if (!this.expansionCooldown && this.player.y < mapTopWorldY + expansionThreshold) {
+      this.expandBackgroundUp();
+    }
+  }
+
+  expandBackgroundUp() {
+    // 확장 쿨다운 설정
+    this.expansionCooldown = true;
+    
+    // 배경 맵을 위로 확장
+    const extensionHeight = 50; // 확장할 타일 행 수
+    
+    // 새로운 맵 데이터 생성
+    const newMapData = [];
+    
+    // 위쪽에 새로운 행들 추가
+    for (let y = 0; y < extensionHeight; y++) {
+      const row = [];
+      for (let x = 0; x < this.mapWidth; x++) {
+        const tileIndex = Phaser.Math.RND.weightedPick(this.tiles);
+        row.push(tileIndex);
+      }
+      newMapData.push(row);
+    }
+    
+    // 기존 맵 데이터 가져오기
+    const existingData = [];
+    for (let y = 0; y < this.mapHeight; y++) {
+      const row = [];
+      for (let x = 0; x < this.mapWidth; x++) {
+        const tile = this.map.getTileAt(x, y);
+        row.push(tile ? tile.index : 0);
+      }
+      existingData.push(row);
+    }
+    
+    // 새 데이터와 기존 데이터 결합
+    const combinedData = [...newMapData, ...existingData];
+    
+    // 맵 재생성
+    this.map.destroy();
+    this.groundLayer.destroy();
+    
+    // 새로운 맵 상단 위치 계산
+    this.mapTop -= extensionHeight * this.tileSize;
+    this.mapHeight += extensionHeight;
+    
+    // 새 맵 생성
+    this.map = this.make.tilemap({
+      data: combinedData,
+      tileWidth: this.tileSize,
+      tileHeight: this.tileSize,
+    });
+    
+    const tileset = this.map.addTilesetImage(ASSETS.spritesheet.tiles.key);
+    this.groundLayer = this.map.createLayer(0, tileset, 0, this.mapTop);
+    this.groundLayer.setCollisionByExclusion([]);
+    
+    // 물리 시스템 재설정
+    this.physics.world.colliders.destroy();
+    this.physics.add.collider(this.player, this.groundLayer);
+    this.physics.add.collider(this.player, this.floorPlatform);
+    this.physics.add.overlap(
+      this.player,
+      this.platformGroup,
+      this.handlePlatformCollision,
+      null,
+      this
+    );
+    
+    // 확장 완료 후 쿨다운 해제 (1초 후)
+    this.time.delayedCall(1000, () => {
+      this.expansionCooldown = false;
+    });
+  }
+
+  checkPlatformGeneration() {
+    // 플레이어가 도달한 최고 높이 업데이트
+    if (this.player.y < this.highestY) {
+      this.highestY = this.player.y;
+    }
+
+    // 플레이어가 화면 상단 근처에 도달하면 새 플랫폼 생성
+    if (this.player.y < this.lastPlatformY + this.platformGenerationThreshold) {
+      this.generateTopPlatforms();
+    }
+  }
+
+  generateTopPlatforms() {
+    const screenWidth = this.scale.width;
+    const platformWidth = 100;
+    const platformsPerLine = 2;
+    const verticalGap = 80;
+    const minHorizontalGap = 50;
+
+    // 새로운 플랫폼을 현재 최고 플랫폼보다 위에 생성
+    const newY = this.lastPlatformY - verticalGap;
+
+    // 생성된 플랫폼 정보를 저장할 배열
+    const currentLinePlatforms = [];
+
+    // 한 라인에 여러 플랫폼 생성
+    for (
+      let platformIndex = 0;
+      platformIndex < platformsPerLine;
+      platformIndex++
+    ) {
+      let attempts = 0;
+      let validPosition = false;
+      let x;
+
+      // 수평 위치 찾기 (같은 라인 내에서 겹치지 않게)
+      while (!validPosition && attempts < 100) {
+        // x 좌표: 플랫폼이 화면을 벗어나지 않도록 랜덤 설정
+        x = Phaser.Math.Between(0, screenWidth - platformWidth);
+
+        validPosition = true;
+
+        // 같은 라인의 다른 플랫폼과 겹침 검사
+        for (let existingX of currentLinePlatforms) {
+          const horizontalOverlap =
+            x < existingX + platformWidth + minHorizontalGap &&
+            x + platformWidth + minHorizontalGap > existingX;
+
+          if (horizontalOverlap) {
+            validPosition = false;
+            break;
+          }
+        }
+
+        attempts++;
+      }
+
+      // 플랫폼 생성
+      if (validPosition) {
+        // Platform 클래스를 사용하여 플랫폼 생성
+        const platform = new Platform(this, x, newY, platformWidth);
+
+        // 플랫폼 그룹에 추가
+        this.platformGroup.add(platform);
+
+        // 현재 라인 플랫폼 정보에 저장
+        currentLinePlatforms.push(x);
+      }
+    }
+
+    // 마지막 플랫폼 Y 좌표 업데이트
+    this.lastPlatformY = newY;
+  }
+
+  checkPlayerFallOut() {
+    // 플레이어가 화면 하단 밖으로 떨어졌는지 확인
+    const screenBottom = this.cameras.main.scrollY + this.scale.height;
+    const playerY = this.player.y;
+    
+    // 플레이어가 화면 하단에서 fallOutThreshold만큼 더 떨어지면 게임 오버
+    if (playerY > screenBottom + this.fallOutThreshold) {
+      this.GameOver();
+    }
+  }
+
   GameOver() {
     // 게임 오버 처리
     this.gameStarted = false;
     this.gameOverText.setVisible(true);
+    
+    // 2초 후 게임 리셋
+    this.time.delayedCall(2000, () => {
+      this.resetGame();
+    });
+  }
+  
+  resetGame() {
+    // 게임 오버 텍스트 숨기기
+    this.gameOverText.setVisible(false);
+    
+    // 플레이어를 초기 위치로 이동
+    this.player.x = this.initialPlayerX;
+    this.player.y = this.initialPlayerY;
+    this.player.body.velocity.x = 0; // 속도 초기화
+    this.player.body.velocity.y = 0;
+    
+    // 카메라를 초기 위치로 리셋
+    this.cameras.main.scrollY = this.initialCameraY;
+    
+    // 게임 상태 초기화
+    this.score = 0;
+    this.scoreText.setText("Score: 0");
+    this.highestY = this.scale.height;
+    
+    // 튜토리얼 텍스트 다시 표시
+    this.tutorialText.setVisible(true);
+    
+    // 플레이어 충전 상태 초기화
+    this.player.resetCharge();
   }
 }
