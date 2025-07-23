@@ -1,7 +1,7 @@
 import Phaser from "phaser";
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
-  baseMoveSpeed = 150;
+  baseMoveSpeed = 100;
   moveSpeed = 150;
   moveDirection = 1;
   gravity = 1200;

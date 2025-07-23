@@ -43,6 +43,9 @@ export class Game extends Phaser.Scene {
     
     // 배경 맵 동적 확장
     this.updateBackgroundExpansion();
+    
+    // 점수 업데이트
+    this.updateScore();
     // this.player.update();
   }
 
@@ -382,30 +385,53 @@ export class Game extends Phaser.Scene {
     this.tutorialText.setVisible(false);
   }
 
-  // updateScore(points) {
-  //   // 점수 업데이트
-  //   this.score += points;
-  //   this.scoreText.setText(`Score: ${this.score}`);
-  // }
+  updateScore() {
+    // 플레이어 위치보다 아래에 있는 플랫폼 개수 계산
+    const playerY = this.player.y;
+    let platformsBelowCount = 0;
+    
+    this.platformGroup.children.entries.forEach(platform => {
+      if (platform.y > playerY) {
+        platformsBelowCount++;
+      }
+    });
+    
+    this.score = platformsBelowCount;
+    this.scoreText.setText(`Score: ${this.score}`);
+  }
 
   handlePlatformCollision(player, platform) {
-    // 플레이어가 발판 위에서 떨어지고 있고, 발판 상단 위에 있을 때만 충돌 처리
     const playerBottom = player.body.bottom;
     const platformTop = platform.body.top;
     const playerVelocityY = player.body.velocity.y;
-
-    // 플레이어가 하강 중이고, 플레이어 하단이 발판 상단과 겹칠 때만 충돌
-    if (
-      playerVelocityY >= 0 &&
-      playerBottom > platformTop - 5 &&
-      playerBottom < platformTop + 10
-    ) {
-      // 플레이어를 발판 위에 위치시키고 수직 속도 초기화
-      player.body.y = platformTop - player.body.height;
-      player.body.velocity.y = 0;
-      player.body.blocked.down = true;
-      player.body.touching.down = true;
-      return true;
+    
+    // 이전 프레임에서의 플레이어 위치 계산 (속도 기반)
+    const prevPlayerBottom = playerBottom - playerVelocityY * (1/60); // 60fps 기준
+    
+    // 플레이어가 하강 중일 때만 처리
+    if (playerVelocityY >= 0) {
+      // 이전 프레임에서는 발판 위에 있었고, 현재 프레임에서는 발판을 지나쳤는지 확인
+      const wasAbovePlatform = prevPlayerBottom <= platformTop + 5;
+      const isNowBelowOrOnPlatform = playerBottom >= platformTop - 5;
+      
+      // 플레이어가 발판의 수평 범위 내에 있는지 확인
+      const playerLeft = player.body.left;
+      const playerRight = player.body.right;
+      const platformLeft = platform.body.left;
+      const platformRight = platform.body.right;
+      
+      const horizontalOverlap = playerRight > platformLeft && playerLeft < platformRight;
+      
+      // 발판을 통과했거나 발판 위에 정확히 위치한 경우 충돌 처리
+      if (wasAbovePlatform && isNowBelowOrOnPlatform && horizontalOverlap) {
+        // 플레이어를 발판 위에 정확히 위치시키고 수직 속도 초기화
+        player.body.y = platformTop - player.body.height;
+        player.body.velocity.y = 0;
+        player.body.blocked.down = true;
+        player.body.touching.down = true;
+        
+        return true;
+      }
     }
     return false;
   }
@@ -619,6 +645,7 @@ export class Game extends Phaser.Scene {
     this.score = 0;
     this.scoreText.setText("Score: 0");
     this.highestY = this.scale.height;
+    
     
     // 튜토리얼 텍스트 다시 표시
     this.tutorialText.setVisible(true);
