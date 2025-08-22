@@ -2,7 +2,6 @@
 import Phaser from "phaser";
 import { Preloader } from "./scenes/Preloader.js";
 import { Game } from "./scenes/Game.js";
-import { GameOver } from "./scenes/GameOver.js";
 
 // 게임 설정 객체
 const config = {
@@ -21,7 +20,7 @@ const config = {
       gravity: { y: 300 }, // 중력 설정 (y축 중력 없음)
     },
   },
-  scene: [Preloader, Game, GameOver], // 씬 배열 순서
+  scene: [Preloader, Game], // 씬 배열 순서
   scale: {
     mode: Phaser.Scale.FIT, // 화면에 맞춤 모드
     autoCenter: Phaser.Scale.CENTER_BOTH, // 자동 중앙 정렬

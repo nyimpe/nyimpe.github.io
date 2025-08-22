@@ -37,13 +37,13 @@ export class Game extends Phaser.Scene {
 
     // 플레이어 위치 추적 및 새 플랫폼 생성
     this.checkPlatformGeneration();
-    
+
     // 카메라 업데이트
     this.updateCamera();
-    
+
     // 배경 맵 동적 확장
     this.updateBackgroundExpansion();
-    
+
     // 점수 업데이트
     this.updateScore();
     // this.player.update();
@@ -77,19 +77,19 @@ export class Game extends Phaser.Scene {
     this.highestY = this.scale.height; // 플레이어가 도달한 최고 높이
     this.lastPlatformY = 50; // 마지막으로 생성된 플랫폼의 Y 좌표
     this.platformGenerationThreshold = 200; // 새 플랫폼 생성 임계값
-    
+
     // 카메라 관련 변수
     this.initialCameraY = 0; // 초기 카메라 Y 위치
     this.cameraFollowThreshold = this.scale.height * 0.3; // 카메라가 따라가기 시작하는 임계값
-    
+
     // 배경 확장 관련 변수
     this.lastExpansionY = this.mapTop; // 마지막 확장된 Y 위치
     this.expansionCooldown = false; // 확장 쿨다운 플래그
-    
+
     // 게임 리셋 관련 변수
     this.initialPlayerX = this.centreX; // 초기 플레이어 X 위치
     this.initialPlayerY = null; // 초기 플레이어 Y 위치 (initPlayer에서 설정)
-    this.fallOutThreshold = 200; // 화면 하단에서 얼마나 더 떨어져야 게임오버인지
+    this.fallOutThreshold = 50; // 화면 하단에서 얼마나 더 떨어져야 게임오버인지
   }
 
   initGameUi() {
@@ -97,7 +97,7 @@ export class Game extends Phaser.Scene {
     this.tutorialText = this.add
       .text(this.centreX, this.centreY, "Touch or Space to Jump!", {
         fontFamily: "Arial Black",
-        fontSize: 32,
+        fontSize: 28,
         color: "#ffffff",
         stroke: "#000000",
         strokeThickness: 8,
@@ -123,7 +123,7 @@ export class Game extends Phaser.Scene {
     this.gameOverText = this.add
       .text(this.scale.width * 0.5, this.scale.height * 0.5, "Game Over", {
         fontFamily: "Arial Black",
-        fontSize: 64,
+        fontSize: 54,
         color: "#ffffff",
         stroke: "#000000",
         strokeThickness: 8,
@@ -156,10 +156,10 @@ export class Game extends Phaser.Scene {
     // 플레이어 객체 생성 (바닥 플랫폼 위에서 시작)
     const playerY = this.floorY - 32; // 바닥 플랫폼 위에 플레이어 배치 (플레이어 높이 고려)
     this.player = new Player(this, this.centreX, playerY, 8);
-    
+
     // 초기 위치 저장 (리셋용)
     this.initialPlayerY = playerY;
-    
+
     // 초기 카메라 위치 저장
     this.initialCameraY = this.cameras.main.scrollY;
   }
@@ -184,23 +184,28 @@ export class Game extends Phaser.Scene {
     const floorY = this.scale.height - 30; // 화면 하단에서 30픽셀 위
     const floorWidth = this.scale.width;
     const floorHeight = 30; // 바닥 플랫폼 높이
-    
+
     // Rectangle 그래픽으로 바닥 플랫폼 생성 (확실하게 화면 전체 채우기)
     const floorGraphics = this.add.graphics();
     floorGraphics.fillStyle(0x4a4a4a); // 회색 색상
     floorGraphics.fillRect(0, floorY, floorWidth, floorHeight);
     floorGraphics.setDepth(1);
-    
+
     // 물리 바디를 위한 static 그룹 생성
     const floorPlatform = this.physics.add.staticGroup();
-    const floorBody = this.add.rectangle(floorWidth / 2, floorY + floorHeight / 2, floorWidth, floorHeight);
+    const floorBody = this.add.rectangle(
+      floorWidth / 2,
+      floorY + floorHeight / 2,
+      floorWidth,
+      floorHeight
+    );
     floorBody.setVisible(false); // 투명하게 설정 (그래픽만 보이도록)
     this.physics.add.existing(floorBody, true); // static body로 추가
     floorPlatform.add(floorBody);
-    
+
     // 플랫폼 그룹에 추가
     this.floorPlatform = floorPlatform;
-    
+
     // 바닥 플랫폼 Y 좌표 저장 (플레이어 위치 계산용)
     this.floorY = floorY;
   }
@@ -389,13 +394,13 @@ export class Game extends Phaser.Scene {
     // 플레이어 위치보다 아래에 있는 플랫폼 개수 계산
     const playerY = this.player.y;
     let platformsBelowCount = 0;
-    
-    this.platformGroup.children.entries.forEach(platform => {
+
+    this.platformGroup.children.entries.forEach((platform) => {
       if (platform.y > playerY) {
         platformsBelowCount++;
       }
     });
-    
+
     this.score = platformsBelowCount;
     this.scoreText.setText(`Score: ${this.score}`);
   }
@@ -404,24 +409,25 @@ export class Game extends Phaser.Scene {
     const playerBottom = player.body.bottom;
     const platformTop = platform.body.top;
     const playerVelocityY = player.body.velocity.y;
-    
+
     // 이전 프레임에서의 플레이어 위치 계산 (속도 기반)
-    const prevPlayerBottom = playerBottom - playerVelocityY * (1/60); // 60fps 기준
-    
+    const prevPlayerBottom = playerBottom - playerVelocityY * (1 / 60); // 60fps 기준
+
     // 플레이어가 하강 중일 때만 처리
     if (playerVelocityY >= 0) {
       // 이전 프레임에서는 발판 위에 있었고, 현재 프레임에서는 발판을 지나쳤는지 확인
       const wasAbovePlatform = prevPlayerBottom <= platformTop + 5;
       const isNowBelowOrOnPlatform = playerBottom >= platformTop - 5;
-      
+
       // 플레이어가 발판의 수평 범위 내에 있는지 확인
       const playerLeft = player.body.left;
       const playerRight = player.body.right;
       const platformLeft = platform.body.left;
       const platformRight = platform.body.right;
-      
-      const horizontalOverlap = playerRight > platformLeft && playerLeft < platformRight;
-      
+
+      const horizontalOverlap =
+        playerRight > platformLeft && playerLeft < platformRight;
+
       // 발판을 통과했거나 발판 위에 정확히 위치한 경우 충돌 처리
       if (wasAbovePlatform && isNowBelowOrOnPlatform && horizontalOverlap) {
         // 플레이어를 발판 위에 정확히 위치시키고 수직 속도 초기화
@@ -429,7 +435,7 @@ export class Game extends Phaser.Scene {
         player.body.velocity.y = 0;
         player.body.blocked.down = true;
         player.body.touching.down = true;
-        
+
         return true;
       }
     }
@@ -439,14 +445,18 @@ export class Game extends Phaser.Scene {
   updateCamera() {
     // 플레이어가 화면 상단 임계값에 도달했을 때만 카메라 이동
     const playerScreenY = this.player.y - this.cameras.main.scrollY;
-    
+
     if (playerScreenY < this.cameraFollowThreshold) {
       // 플레이어가 화면 상단에 가까워지면 카메라가 부드럽게 따라감
       const targetY = this.player.y - this.cameraFollowThreshold;
       const currentY = this.cameras.main.scrollY;
       const lerpFactor = 0.05; // 부드러운 이동을 위한 lerp 팩터
-      
-      this.cameras.main.scrollY = Phaser.Math.Linear(currentY, targetY, lerpFactor);
+
+      this.cameras.main.scrollY = Phaser.Math.Linear(
+        currentY,
+        targetY,
+        lerpFactor
+      );
     }
   }
 
@@ -454,9 +464,12 @@ export class Game extends Phaser.Scene {
     // 플레이어가 배경 맵의 상단 근처에 도달하면 배경을 위로 확장
     const mapTopWorldY = this.mapTop;
     const expansionThreshold = 1000; // 확장 임계값
-    
+
     // 쿨다운 중이 아니고, 플레이어가 임계값에 도달했을 때만 확장
-    if (!this.expansionCooldown && this.player.y < mapTopWorldY + expansionThreshold) {
+    if (
+      !this.expansionCooldown &&
+      this.player.y < mapTopWorldY + expansionThreshold
+    ) {
       this.expandBackgroundUp();
     }
   }
@@ -464,13 +477,13 @@ export class Game extends Phaser.Scene {
   expandBackgroundUp() {
     // 확장 쿨다운 설정
     this.expansionCooldown = true;
-    
+
     // 배경 맵을 위로 확장
     const extensionHeight = 50; // 확장할 타일 행 수
-    
+
     // 새로운 맵 데이터 생성
     const newMapData = [];
-    
+
     // 위쪽에 새로운 행들 추가
     for (let y = 0; y < extensionHeight; y++) {
       const row = [];
@@ -480,7 +493,7 @@ export class Game extends Phaser.Scene {
       }
       newMapData.push(row);
     }
-    
+
     // 기존 맵 데이터 가져오기
     const existingData = [];
     for (let y = 0; y < this.mapHeight; y++) {
@@ -491,29 +504,29 @@ export class Game extends Phaser.Scene {
       }
       existingData.push(row);
     }
-    
+
     // 새 데이터와 기존 데이터 결합
     const combinedData = [...newMapData, ...existingData];
-    
+
     // 맵 재생성
     this.map.destroy();
     this.groundLayer.destroy();
-    
+
     // 새로운 맵 상단 위치 계산
     this.mapTop -= extensionHeight * this.tileSize;
     this.mapHeight += extensionHeight;
-    
+
     // 새 맵 생성
     this.map = this.make.tilemap({
       data: combinedData,
       tileWidth: this.tileSize,
       tileHeight: this.tileSize,
     });
-    
+
     const tileset = this.map.addTilesetImage(ASSETS.spritesheet.tiles.key);
     this.groundLayer = this.map.createLayer(0, tileset, 0, this.mapTop);
     this.groundLayer.setCollisionByExclusion([]);
-    
+
     // 물리 시스템 재설정
     this.physics.world.colliders.destroy();
     this.physics.add.collider(this.player, this.groundLayer);
@@ -525,7 +538,7 @@ export class Game extends Phaser.Scene {
       null,
       this
     );
-    
+
     // 확장 완료 후 쿨다운 해제 (1초 후)
     this.time.delayedCall(1000, () => {
       this.expansionCooldown = false;
@@ -610,7 +623,7 @@ export class Game extends Phaser.Scene {
     // 플레이어가 화면 하단 밖으로 떨어졌는지 확인
     const screenBottom = this.cameras.main.scrollY + this.scale.height;
     const playerY = this.player.y;
-    
+
     // 플레이어가 화면 하단에서 fallOutThreshold만큼 더 떨어지면 게임 오버
     if (playerY > screenBottom + this.fallOutThreshold) {
       this.GameOver();
@@ -621,35 +634,34 @@ export class Game extends Phaser.Scene {
     // 게임 오버 처리
     this.gameStarted = false;
     this.gameOverText.setVisible(true);
-    
+
     // 2초 후 게임 리셋
-    this.time.delayedCall(2000, () => {
+    this.time.delayedCall(3000, () => {
       this.resetGame();
     });
   }
-  
+
   resetGame() {
     // 게임 오버 텍스트 숨기기
     this.gameOverText.setVisible(false);
-    
+
     // 플레이어를 초기 위치로 이동
     this.player.x = this.initialPlayerX;
     this.player.y = this.initialPlayerY;
     this.player.body.velocity.x = 0; // 속도 초기화
     this.player.body.velocity.y = 0;
-    
+
     // 카메라를 초기 위치로 리셋
     this.cameras.main.scrollY = this.initialCameraY;
-    
+
     // 게임 상태 초기화
     this.score = 0;
     this.scoreText.setText("Score: 0");
     this.highestY = this.scale.height;
-    
-    
+
     // 튜토리얼 텍스트 다시 표시
     this.tutorialText.setVisible(true);
-    
+
     // 플레이어 충전 상태 초기화
     this.player.resetCharge();
   }
