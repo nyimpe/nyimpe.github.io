@@ -154,8 +154,8 @@ export class Game extends Phaser.Scene {
 
   initPlayer() {
     // 플레이어 객체 생성 (바닥 플랫폼 위에서 시작)
-    const playerY = this.floorY - 32; // 바닥 플랫폼 위에 플레이어 배치 (플레이어 높이 고려)
-    this.player = new Player(this, this.centreX, playerY, 8);
+    const playerY = this.floorY - 132; // 바닥 플랫폼 위에 플레이어 배치 (플레이어 높이 고려)
+    this.player = new Player(this, this.centreX, playerY);
 
     // 초기 위치 저장 (리셋용)
     this.initialPlayerY = playerY;

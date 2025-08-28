@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import ASSETS from "../assets.js";
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
   baseMoveSpeed = 100;
@@ -12,8 +13,8 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   pressStartTime = null; // 누르기 시작한 시간
   lastChargeTime = null; // 마지막 충전 시간
 
-  constructor(scene, x, y, shipId) {
-    super(scene, x, y, "", shipId);
+  constructor(scene, x, y) {
+    super(scene, x, y, ASSETS.spritesheet.player.key);
     scene.add.existing(this);
     scene.physics.add.existing(this);
 
@@ -21,6 +22,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.body.setGravityY(this.gravity);
     this.setCollideWorldBounds(false); // 세계 경계 충돌 비활성화로 위로 계속 올라갈 수 있게 함
     this.setDepth(100);
+    this.setScale(0.5);
     this.moveDirection = Math.random() < 0.5 ? -1 : 1;
 
     this.jumpPowerText = this.scene.add
@@ -35,6 +37,27 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       .setVisible(false);
 
     this.registerInput();
+    this.createAnimations();
+  }
+
+  createAnimations() {
+    this.anims.create({
+      key: "walk",
+      frames: this.anims.generateFrameNumbers(ASSETS.spritesheet.player.key, {
+        frames: [9, 10],
+      }),
+      frameRate: 10,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: "jump",
+      frames: this.anims.generateFrameNumbers(ASSETS.spritesheet.player.key, {
+        frames: [0, 1, 2, 3],
+      }),
+      frameRate: 5,
+      repeat: 1,
+    });
   }
 
   registerInput() {
@@ -82,6 +105,19 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.updateCharging(time);
     this.updateMovement();
     this.updateJumpPowerText();
+    this.updateAnimation();
+  }
+
+  updateAnimation() {
+    if (this.isGrounded) {
+      if (this.anims.currentAnim?.key !== "walk") {
+        this.play("walk");
+      }
+    } else {
+      if (this.anims.currentAnim?.key === "walk") {
+        this.play("jump");
+      }
+    }
   }
 
   updateGrounded() {
@@ -113,6 +149,12 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     this.body.setVelocityX(this.moveSpeed * this.moveDirection);
+
+    if (this.moveDirection < 0) {
+      this.flipX = true;
+    } else {
+      this.flipX = false;
+    }
 
     if (this.x <= this.width / 2) this.moveDirection = 1;
     else if (this.x >= this.scene.scale.width - this.width / 2)

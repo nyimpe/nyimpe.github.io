@@ -1,5 +1,6 @@
-import ships from './assets/ships.png';
-import tiles from './assets/tiles.png';
+import ships from "./assets/ships.png";
+import tiles from "./assets/tiles.png";
+import player from "./assets/player.png";
 
 export default {
   // 'audio': {
@@ -15,6 +16,16 @@ export default {
   //     },
   // },
   spritesheet: {
+    player: {
+      key: "player",
+      args: [
+        player,
+        {
+          frameWidth: 80,
+          frameHeight: 110,
+        },
+      ],
+    },
     ships: {
       key: "ships",
       args: [
