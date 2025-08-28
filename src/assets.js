@@ -1,6 +1,6 @@
-import ships from "./assets/ships.png";
 import tiles from "./assets/tiles.png";
 import player from "./assets/player.png";
+import platform from "./assets/platform.png";
 
 export default {
   // 'audio': {
@@ -26,13 +26,13 @@ export default {
         },
       ],
     },
-    ships: {
-      key: "ships",
+    platforms: {
+      key: "platforms",
       args: [
-        ships,
+        platform,
         {
-          frameWidth: 64,
-          frameHeight: 64,
+          frameWidth: 375,
+          frameHeight: 96,
         },
       ],
     },

@@ -12,11 +12,11 @@ const config = {
   width: 430,
   height: 932,
   backgroundColor: "#000000",
-  pixelArt: false, // 픽셀 아트 스타일 설정
+  pixelArt: true, // 픽셀 아트 스타일 설정
   physics: {
     default: "arcade", // 아케이드 물리 엔진 사용
     arcade: {
-      debug: true, // 디버그 모드 비활성화
+      debug: false,
       gravity: { y: 300 }, // 중력 설정 (y축 중력 없음)
     },
   },
