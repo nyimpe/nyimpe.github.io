@@ -12,17 +12,21 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   chargeInterval = 100; // 💡 충전 간격(ms)
   pressStartTime = null; // 누르기 시작한 시간
   lastChargeTime = null; // 마지막 충전 시간
+  blinkingTween = null;
 
   constructor(scene, x, y) {
-    super(scene, x, y, ASSETS.spritesheet.player.key);
+    super(scene, x, y, ASSETS.spritesheet.run.key);
     scene.add.existing(this);
     scene.physics.add.existing(this);
+
+    this.body.setSize(24, 24);
+    this.body.setOffset(23, 23);
 
     this.scene = scene;
     this.body.setGravityY(this.gravity);
     this.setCollideWorldBounds(false); // 세계 경계 충돌 비활성화로 위로 계속 올라갈 수 있게 함
     this.setDepth(100);
-    this.setScale(0.5);
+    this.setScale(2);
     this.moveDirection = Math.random() < 0.5 ? -1 : 1;
 
     this.jumpPowerText = this.scene.add
@@ -42,9 +46,9 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
   createAnimations() {
     this.anims.create({
-      key: "walk",
-      frames: this.anims.generateFrameNumbers(ASSETS.spritesheet.player.key, {
-        frames: [9, 10],
+      key: "run",
+      frames: this.anims.generateFrameNumbers(ASSETS.spritesheet.run.key, {
+        frames: [0, 1, 2, 3, 4, 5, 6, 7],
       }),
       frameRate: 10,
       repeat: -1,
@@ -52,10 +56,10 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
     this.anims.create({
       key: "jump",
-      frames: this.anims.generateFrameNumbers(ASSETS.spritesheet.player.key, {
-        frames: [0, 1, 2, 3],
+      frames: this.anims.generateFrameNumbers(ASSETS.spritesheet.jump.key, {
+        frames: [0, 1, 2],
       }),
-      frameRate: 5,
+      frameRate: 3,
       repeat: 1,
     });
   }
@@ -101,6 +105,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
   preUpdate(time, delta) {
     super.preUpdate(time, delta);
+    this.updateBlinkingEffect();
     this.updateGrounded();
     this.updateCharging(time);
     this.updateMovement();
@@ -108,13 +113,33 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.updateAnimation();
   }
 
+  updateBlinkingEffect() {
+    if (this.chargePower > 0 && this.isGrounded && !this.blinkingTween) {
+      this.blinkingTween = this.scene.tweens.add({
+        targets: this,
+        alpha: 0.5,
+        ease: "Power2",
+        duration: 100,
+        yoyo: true,
+        repeat: -1,
+      });
+    } else if (
+      (this.chargePower === 0 || !this.isGrounded) &&
+      this.blinkingTween
+    ) {
+      this.blinkingTween.stop();
+      this.blinkingTween = null;
+      this.setAlpha(1);
+    }
+  }
+
   updateAnimation() {
     if (this.isGrounded) {
-      if (this.anims.currentAnim?.key !== "walk") {
-        this.play("walk");
+      if (this.anims.currentAnim?.key !== "run") {
+        this.play("run");
       }
     } else {
-      if (this.anims.currentAnim?.key === "walk") {
+      if (this.anims.currentAnim?.key === "run") {
         this.play("jump");
       }
     }
@@ -151,9 +176,9 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.body.setVelocityX(this.moveSpeed * this.moveDirection);
 
     if (this.moveDirection < 0) {
-      this.flipX = true;
-    } else {
       this.flipX = false;
+    } else {
+      this.flipX = true;
     }
 
     if (this.x <= this.width / 2) this.moveDirection = 1;

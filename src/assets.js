@@ -1,6 +1,8 @@
 import tiles from "./assets/tiles.png";
-import player from "./assets/player.png";
 import platform from "./assets/platform.png";
+import run from "./assets/run.png";
+import jump2 from "./assets/jump2.png";
+import jump from "./assets/jump.png";
 
 export default {
   // 'audio': {
@@ -16,13 +18,23 @@ export default {
   //     },
   // },
   spritesheet: {
-    player: {
-      key: "player",
+    run: {
+      key: "run",
       args: [
-        player,
+        run,
         {
           frameWidth: 80,
-          frameHeight: 110,
+          frameHeight: 64,
+        },
+      ],
+    },
+    jump: {
+      key: "jump",
+      args: [
+        jump,
+        {
+          frameWidth: 80,
+          frameHeight: 64,
         },
       ],
     },
