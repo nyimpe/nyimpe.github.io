@@ -8,7 +8,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   gravity = 1200;
   isGrounded = false;
 
-  chargePower = 0; // 현재 충전된 단계 (0~5)
+  chargePower = 0; // 현재 충전된 단계 (0~6)
   chargeInterval = 100; // 💡 충전 간격(ms)
   pressStartTime = null; // 누르기 시작한 시간
   lastChargeTime = null; // 마지막 충전 시간
@@ -29,16 +29,11 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.setScale(2);
     this.moveDirection = Math.random() < 0.5 ? -1 : 1;
 
-    this.jumpPowerText = this.scene.add
-      .text(this.x, this.y - 50, "0", {
-        fontSize: "24px",
-        color: "#ffcc00",
-        stroke: "#000",
-        strokeThickness: 3,
-      })
-      .setOrigin(0.5)
+    this.powerSprite = this.scene.add
+      .sprite(this.x, this.y - 10, "power1")
       .setDepth(200)
-      .setVisible(false);
+      .setVisible(false)
+      .setScale(0.08);
 
     this.registerInput();
     this.createAnimations();
@@ -62,6 +57,21 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       frameRate: 3,
       repeat: 1,
     });
+
+    this.powerChargeAnim = this.anims.create({
+      key: "power-charge",
+      frames: [
+        { key: "power1" },
+        { key: "power2" },
+        { key: "power3" },
+        { key: "power4" },
+        { key: "power5" },
+        { key: "power6" },
+        { key: "power7" },
+      ],
+      frameRate: 10,
+      repeat: 0,
+    });
   }
 
   registerInput() {
@@ -78,16 +88,18 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.pressStartTime = this.scene.time.now;
     this.lastChargeTime = this.pressStartTime;
     this.chargePower = 0;
-    this.jumpPowerText.setVisible(true);
+    this.powerSprite.setVisible(true);
+    const frame = this.powerChargeAnim.frames[0];
+    this.powerSprite.setTexture(frame.textureKey);
   }
 
   onPressRelease() {
     if (!this.isGrounded || this.pressStartTime === null) return;
 
-    const jumpVelocity = -500 - (this.chargePower - 1) * 100;
+    const jumpVelocity = -500 - this.chargePower * 80;
     this.jump(jumpVelocity);
 
-    this.play(`jump${this.chargePower}`, true);
+    this.play("jump", true);
 
     this.resetCharge();
   }
@@ -96,7 +108,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.pressStartTime = null;
     this.lastChargeTime = null;
     this.chargePower = 0;
-    this.jumpPowerText.setVisible(false);
+    this.powerSprite.setVisible(false);
   }
 
   jump(jumpVelocity) {
@@ -109,7 +121,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     this.updateGrounded();
     this.updateCharging(time);
     this.updateMovement();
-    this.updateJumpPowerText();
+    this.updatePowerSprite();
     this.updateAnimation();
   }
 
@@ -156,10 +168,12 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     if (this.pressStartTime !== null && this.isGrounded) {
       if (
         currentTime - this.lastChargeTime >= this.chargeInterval &&
-        this.chargePower < 5
+        this.chargePower < 6
       ) {
         this.chargePower++;
         this.lastChargeTime = currentTime;
+        const frame = this.powerChargeAnim.frames[this.chargePower];
+        this.powerSprite.setTexture(frame.textureKey);
       }
     }
   }
@@ -186,10 +200,9 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       this.moveDirection = -1;
   }
 
-  updateJumpPowerText() {
+  updatePowerSprite() {
     if (this.pressStartTime !== null) {
-      this.jumpPowerText.setText(this.chargePower.toString());
-      this.jumpPowerText.setPosition(this.x, this.y - 50);
+      this.powerSprite.setPosition(this.x, this.y - 25);
     }
   }
 }
