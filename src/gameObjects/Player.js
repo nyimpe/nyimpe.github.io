@@ -8,10 +8,10 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   gravity = 1200;
   isGrounded = false;
 
-  chargePower = 0; // 현재 충전된 단계 (0~6)
-  chargeInterval = 100; // 💡 충전 간격(ms)
-  pressStartTime = null; // 누르기 시작한 시간
-  lastChargeTime = null; // 마지막 충전 시간
+  chargePower = 0;
+  chargeInterval = 100;
+  pressStartTime = null;
+  lastChargeTime = null;
   blinkingTween = null;
 
   constructor(scene, x, y) {
@@ -24,7 +24,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
     this.scene = scene;
     this.body.setGravityY(this.gravity);
-    this.setCollideWorldBounds(false); // 세계 경계 충돌 비활성화로 위로 계속 올라갈 수 있게 함
+    this.setCollideWorldBounds(false);
     this.setDepth(100);
     this.setScale(2);
     this.moveDirection = Math.random() < 0.5 ? -1 : 1;
@@ -160,7 +160,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   updateGrounded() {
     this.isGrounded = this.body.blocked.down || this.body.touching.down;
     if (!this.isGrounded && this.pressStartTime !== null) {
-      this.resetCharge(); // 공중에서 강제 초기화
+      this.resetCharge();
     }
   }
 
@@ -179,7 +179,6 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   }
 
   updateMovement() {
-    // 충전 중이면 속도 감소
     if (this.pressStartTime !== null && this.isGrounded) {
       const factor = 1 - this.chargePower * 0.1;
       this.moveSpeed = this.baseMoveSpeed * factor;
