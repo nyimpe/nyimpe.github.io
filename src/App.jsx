@@ -7,6 +7,12 @@ const GAMES = [
     title: "🍣 Sushi Neko (Jump)",
     description: "Touch or Space to jump and climb the platforms!",
     loader: () => import("./games/sushi-neko/main.js")
+  },
+  {
+    id: "tetris",
+    title: "🧱 Tetris Classic",
+    description: "Classic block-stacking puzzle game with smooth touch controls!",
+    loader: () => import("./games/tetris/main.js")
   }
 ];
 
