@@ -1,69 +1,88 @@
-# Jumping Cat 🐱
+# 🕹️ Arcade Center
 
 [![Deploy to GitHub Pages](https://github.com/nyimpe/nyimpe.github.io/actions/workflows/deploy.yml/badge.svg)](https://nyimpe.github.io/)
 
+React와 Phaser 3를 활용한 아케이드 웹 게임 플랫폼입니다. 모바일에 최적화된 여러 2D 레트로 게임을 편리하게 관리하고 즐길 수 있습니다.
+
 **👉 라이브 데모: [https://nyimpe.github.io/](https://nyimpe.github.io/)**
 
-## 🎮 프로젝트 소개
+---
 
-`Jumping Cat`은 Phaser 3 게임 엔진과 React를 사용하여 만든 간단한 아케이드 웹 게임입니다. 플레이어는 고양이 캐릭터를 조종하여 계속해서 나타나는 플랫폼을 밟고 최대한 높이 올라가는 것을 목표로 합니다.
+## 🎮 현재 제공하는 게임
+1. **🍣 Sushi Neko (Jump):** 발판을 밟고 올라가며 높은 점수를 기록하는 타이밍 점프 게임.
 
-## ✨ 주요 기술 스택
+---
 
--   **게임 엔진**: [Phaser 3](https://phaser.io/phaser3)
--   **프레임워크**: [React 19](https://react.dev/)
--   **빌드 도구**: [Vite](https://vitejs.dev/)
--   **언어**: JavaScript (ESM)
--   **배포**: GitHub Pages
+## ⚙️ 주요 기술 스택
+- **프레임워크:** [React 19](https://react.dev/)
+- **게임 엔진:** [Phaser 3 (v3.90.0)](https://phaser.io/)
+- **빌드 도구:** [Vite](https://vitejs.dev/)
+- **배포:** GitHub Pages (GitHub Actions 자동 빌드 및 배포)
 
-## 📂 프로젝트 구조
+---
 
--   `index.html`: 애플리케이션의 기본 HTML 진입점
--   `src/main.jsx`: React 애플리케이션을 DOM에 렌더링하는 진입점
--   `src/App.jsx`: Phaser 게임 컨테이너를 렌더링하는 메인 React 컴포넌트
--   `src/main.js`: Phaser 게임 인스턴스를 설정하고 시작하는 파일
--   `src/scenes/`: `Preloader`, `Game` 등 Phaser 게임 씬
--   `src/gameObjects/`: `Player`, `Platform` 등 재사용 가능한 게임 객체 클래스
--   `public/`: `style.css` 등 정적 에셋 포함
+## 📂 프로젝트 폴더 구조
+```text
+nyimpe.github.io/
+├── public/                # style.css 및 공통 정적 자산
+├── src/
+│   ├── games/            # 개별 게임 소스 폴더 (캡슐화 및 모듈화)
+│   │   └── sushi-neko/   # 스시네코 게임 패키지
+│   │       ├── assets/
+│   │       ├── gameObjects/
+│   │       ├── scenes/
+│   │       ├── assets.js
+│   │       └── main.js   # Phaser 초기화 진입점
+│   ├── App.jsx           # 아케이드 메인 셸 (사이드바 메뉴 및 게임 선택기)
+│   └── main.jsx          # React 앱 진입점
+├── vite/                 # Vite 개발/배포용 설정 파일
+└── package.json
+```
 
-## 🚀 로컬에서 실행하기
+---
 
-### 사전 준비
+## ➕ 새로운 게임 추가하기
+새로운 Phaser 또는 React 기반 게임을 추가하는 프로세스는 매우 간편합니다.
 
--   [Node.js](https://nodejs.org/)와 npm이 설치되어 있어야 합니다.
+1. **게임 소스 폴더 생성:**
+   `src/games/` 아래에 새로운 게임 아이디로 폴더를 생성합니다 (예: `src/games/my-new-game/`).
+2. **진입점 작성:**
+   새 게임 폴더 내에 Phaser 인스턴스를 초기화하고 반환하는 `main.js` 파일을 만들고 default export로 등록합니다.
+   ```javascript
+   // src/games/my-new-game/main.js
+   import Phaser from "phaser";
+   const config = { ... };
+   const StartGame = (parent) => new Phaser.Game({ ...config, parent });
+   export default StartGame;
+   ```
+3. **게임 등록:**
+   `src/App.jsx` 상단의 `GAMES` 레지스트리 배열에 새 게임 정보를 추가합니다.
+   ```javascript
+   const GAMES = [
+     {
+       id: "sushi-neko",
+       title: "🍣 Sushi Neko (Jump)",
+       description: "...",
+       loader: () => import("./games/sushi-neko/main.js")
+     },
+     {
+       id: "my-new-game",
+       title: "👾 Space Invader",
+       description: "Defend the earth from invaders!",
+       loader: () => import("./games/my-new-game/main.js")
+     }
+   ];
+   ```
 
-### 설치 및 실행
+---
 
-1.  **저장소 복제:**
-    ```bash
-    git clone https://github.com/nyimpe/nyimpe.github.io.git
-    ```
+## 🚀 로컬 실행 및 배포
 
-2.  **프로젝트 디렉토리로 이동:**
-    ```bash
-    cd nyimpe.github.io
-    ```
+### 1. 개발 서버 실행
+```bash
+npm install
+npm run dev
+```
 
-3.  **의존성 설치:**
-    ```bash
-    npm install
-    ```
-
-4.  **개발 서버 실행:**
-    ```bash
-    npm run dev
-    ```
-    이제 브라우저에서 `http://localhost:5173` (또는 Vite가 지정한 다른 포트)으로 접속할 수 있습니다.
-
-## 📦 빌드 및 배포
-
--   **프로덕션 빌드:**
-    ```bash
-    npm run build
-    ```
-    빌드 결과물은 `dist` 디렉토리에 생성됩니다.
-
--   **배포:**
-    `main` 브랜치에 푸시하면 GitHub Actions 워크플로우(`.github/workflows/deploy.yml`)가 자동으로 `dist` 디렉토리의 내용을 `gh-pages` 브랜치에 배포합니다.
-
-<!-- test -->
+### 2. 빌드 및 배포
+`main` 브랜치에 코드를 `git push`하면, GitHub Actions 워크플로우(`.github/workflows/deploy.yml`)가 자동으로 트리거되어 빌드 결과물(`dist`)을 `gh-pages` 브랜치에 배포합니다.

@@ -1,16 +1,224 @@
+/* Custom Reset & Base */
 body {
   margin: 0;
   padding: 0;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: orange;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #f3f4f6;
+  background-color: #0d0e12;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
 }
 
 #app {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+}
+
+/* App Container Layout */
+.app-layout {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background-color: #15161e;
+  border-right: 1px solid #252630;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  flex-shrink: 0;
+}
+
+.sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid #252630;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ff9f43;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-close-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #a0aec0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.game-list {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.game-item {
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #1e1f29;
+  border: 1px solid transparent;
+}
+
+.game-item:hover {
+  background-color: #2a2b38;
+  border-color: #ff9f4355;
+}
+
+.game-item.active {
+  background: linear-gradient(135deg, #ff9f43 0%, #ff6b6b 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.25);
+}
+
+.game-item-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 0 4px 0;
+}
+
+.game-item-desc {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.game-item.active .game-item-desc {
+  color: #ffebcc;
+}
+
+/* Main Content Area */
+.main-content {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0d0e12;
+  position: relative;
+  padding: 10px;
+}
+
+/* Mobile Menu Toggle Button */
+.menu-toggle-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 900;
+  background: linear-gradient(135deg, #ff9f43 0%, #ff6b6b 100%);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.menu-toggle-btn:active {
+  transform: scale(0.9);
+}
+
+/* Game Container Wrapper */
+.game-wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 430px;
+  max-height: 932px;
+  aspect-ratio: 430/932;
+  background-color: #000000;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+  border: 4px solid #1e1f29;
+  overflow: hidden;
+  position: relative;
+}
+
+#game-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Overlay for Mobile Sidebar */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 950;
+}
+
+/* Empty State / Select Game Screen */
+.empty-state {
+  text-align: center;
+  color: #a0aec0;
+}
+
+.empty-state h2 {
+  color: #ff9f43;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-close-btn {
+    display: block;
+  }
+
+  .sidebar-overlay.open {
+    display: block;
+  }
+
+  /* On small screens, let the game take full size of available space up to constraints */
+  .game-wrapper {
+    max-width: 100%;
+    max-height: calc(100vh - 20px);
+    border-radius: 8px;
+    border: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle-btn {
+    display: none;
+  }
 }

@@ -1,14 +1,120 @@
-import { useLayoutEffect } from "react";
-import StartGame from "./main";
+import { useState, useEffect, useRef } from "react";
+
+// Games list registry
+const GAMES = [
+  {
+    id: "sushi-neko",
+    title: "🍣 Sushi Neko (Jump)",
+    description: "Touch or Space to jump and climb the platforms!",
+    loader: () => import("./games/sushi-neko/main.js")
+  }
+];
 
 const App = () => {
-  useLayoutEffect(() => {
-    StartGame("game-container");
-  }, []);
+  const [selectedGameId, setSelectedGameId] = useState("sushi-neko");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const gameInstanceRef = useRef(null);
+
+  useEffect(() => {
+    // If there is an existing game instance, destroy it first
+    if (gameInstanceRef.current) {
+      gameInstanceRef.current.destroy(true);
+      gameInstanceRef.current = null;
+    }
+
+    const selectedGame = GAMES.find((g) => g.id === selectedGameId);
+    if (!selectedGame) return;
+
+    let active = true;
+
+    selectedGame
+      .loader()
+      .then((module) => {
+        if (!active) return;
+        const StartGame = module.default;
+        const container = document.getElementById("game-container");
+        if (container) {
+          container.innerHTML = ""; // Clear existing DOM contents
+          gameInstanceRef.current = StartGame("game-container");
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to load game:", err);
+      });
+
+    return () => {
+      active = false;
+      if (gameInstanceRef.current) {
+        gameInstanceRef.current.destroy(true);
+        gameInstanceRef.current = null;
+      }
+    };
+  }, [selectedGameId]);
+
+  const handleGameSelect = (id) => {
+    setSelectedGameId(id);
+    setIsSidebarOpen(false); // Close mobile sidebar after selection
+  };
 
   return (
-    <div id="app">
-      <div id="game-container"></div>
+    <div className="app-layout">
+      {/* Mobile Toggle Button */}
+      <button
+        className="menu-toggle-btn"
+        onClick={() => setIsSidebarOpen(true)}
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
+      {/* Sidebar Overlay (Mobile only) */}
+      <div
+        className={`sidebar-overlay ${isSidebarOpen ? "open" : ""}`}
+        onClick={() => setIsSidebarOpen(false)}
+      ></div>
+
+      {/* Sidebar */}
+      <aside className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+        <div className="sidebar-header">
+          <h1 className="sidebar-title">🕹️ Arcade Center</h1>
+          <button
+            className="sidebar-close-btn"
+            onClick={() => setIsSidebarOpen(false)}
+            aria-label="Close menu"
+          >
+            ✕
+          </button>
+        </div>
+
+        <ul className="game-list">
+          {GAMES.map((game) => (
+            <li
+              key={game.id}
+              className={`game-item ${
+                selectedGameId === game.id ? "active" : ""
+              }`}
+              onClick={() => handleGameSelect(game.id)}
+            >
+              <h3 className="game-item-title">{game.title}</h3>
+              <p className="game-item-desc">{game.description}</p>
+            </li>
+          ))}
+        </ul>
+      </aside>
+
+      {/* Main Content Area */}
+      <main className="main-content">
+        {selectedGameId ? (
+          <div className="game-wrapper">
+            <div id="game-container"></div>
+          </div>
+        ) : (
+          <div className="empty-state">
+            <h2>Select a Game</h2>
+            <p>Choose a game from the sidebar to start playing!</p>
+          </div>
+        )}
+      </main>
     </div>
   );
 };
