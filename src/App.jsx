@@ -23,7 +23,7 @@ const GAMES = [
 ];
 
 const App = () => {
-  const [selectedGameId, setSelectedGameId] = useState("sushi-neko");
+  const [selectedGameId, setSelectedGameId] = useState("sand-crush");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const gameInstanceRef = useRef(null);
 
