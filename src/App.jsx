@@ -3,16 +3,22 @@ import { useState, useEffect, useRef } from "react";
 // Games list registry
 const GAMES = [
   {
-    id: "sushi-neko",
-    title: "🍣 Sushi Neko (Jump)",
+    id: "jumping-cat",
+    title: "🐈 Jumping Cat (Jump)",
     description: "Touch or Space to jump and climb the platforms!",
-    loader: () => import("./games/sushi-neko/main.js")
+    loader: () => import("./games/jumping-cat/main.js")
   },
   {
     id: "tetris",
     title: "🧱 Tetris Classic",
     description: "Classic block-stacking puzzle game with smooth touch controls!",
     loader: () => import("./games/tetris/main.js")
+  },
+  {
+    id: "sand-crush",
+    title: "🏖️ Sand Crush (Physics)",
+    description: "Physics-based puzzle game with falling and crushing blocks!",
+    loader: () => import("./games/sand-crush/main.js")
   }
 ];
 
