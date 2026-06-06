@@ -19,7 +19,7 @@ export class Game extends Phaser.Scene {
       const y = Phaser.Math.Between(50, height / 2);
       const radius = 20;
       const block = this.matter.add.circle(x, y, radius, { restitution: 0.5, friction: 0.8, density: 0.01 });
-      block.setTint(Phaser.Display.Color.RandomRGB().color);
+
       this.blocks.push(block);
     }
 
@@ -29,7 +29,7 @@ export class Game extends Phaser.Scene {
         const y = pointer.y;
         const radius = Phaser.Math.Between(15, 30);
         const block = this.matter.add.circle(x, y, radius, { restitution: 0.5, friction: 0.8, density: 0.01 });
-        block.setTint(Phaser.Display.Color.RandomRGB().color);
+  
         this.blocks.push(block);
     });
   }
