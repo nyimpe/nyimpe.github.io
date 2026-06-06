@@ -14,16 +14,11 @@ const GAMES = [
     description: "Classic block-stacking puzzle game with smooth touch controls!",
     loader: () => import("./games/tetris/main.js")
   },
-  {
-    id: "sand-crush",
-    title: "🏖️ Sand Crush (Physics)",
-    description: "Physics-based puzzle game with falling and crushing blocks!",
-    loader: () => import("./games/sand-crush/main.js")
-  }
+
 ];
 
 const App = () => {
-  const [selectedGameId, setSelectedGameId] = useState("sand-crush");
+  const [selectedGameId, setSelectedGameId] = useState("jumping-cat");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const gameInstanceRef = useRef(null);
 
