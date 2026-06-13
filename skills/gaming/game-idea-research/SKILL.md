@@ -1,60 +1,220 @@
 ---
 name: game-idea-research
 category: gaming
-description: Research and propose game ideas suitable for 2D pixel art games using Phaser JS, based on games from the 2000s onwards or popular modern titles, and fitting the nyimpe.github.io project structure.
+description: >
+  Research and propose 2D pixel art game ideas. Using popular games from 2000s onwards
+  or currently trending indie titles as references, generate 3 distinct genre ideas
+  optimized for Phaser JS and save them structured for the nyimpe.github.io project.
 ---
 
-### Goal
-To generate 3 distinct game ideas (each from a different genre) for 2D pixel art games using Phaser JS, based on games from the 2000s onwards or popular modern titles, with modernized concepts and structured to fit the nyimpe.github.io project.
+## Goal
 
-### Workflow
+Derive **3 distinctly different genre** ideas for 2D pixel art + Phaser JS games based on market trends.
+Each idea must inherit the essence of a reference game while innovating with an original twist and modern mechanics.
 
-1.  **Initial Search (Fallback from `web_search`):**
-    *   If `web_search` is unavailable or yields poor results, use `browser_navigate` to go to a search engine (e.g., Google).
-    *   Use `browser_type` to input a comprehensive query (e.g., "popular game genres 2D pixel art", "trending indie games reddit", "itch.io popular 2D games", "market research 2D pixel art games", "phaser js game trends").
-    *   **Prioritize direct navigation** to curated lists on platforms like Itch.io (e.g., `itch.io/games/tag-pixel-art`) or reputable gaming journalism sites (e.g., `pcgamer.com/best-indie-games`).
-    *   Use `browser_press` with "Enter" to submit the search if a search engine is used.
+---
 
-2.  **Browse Search Results:**
-    *   Use `browser_snapshot` to review the search results.
-    *   Identify promising links from various sources (e.g., game review sites, indie game showcases, Reddit communities like r/gamedev or r/indiegames, Itch.io's popular/new & popular sections, Phaser community examples, market analysis blogs).
-    *   **Prioritize direct navigation to curated lists:** If a general search yields many asset packs or irrelevant results, switch strategy and directly navigate to known good sources for game ideas (e.g., Itch.io's "Games with Pixel Art" category, PC Gamer's "Best Indie Games").
-    *   Use `browser_navigate` to visit relevant links, prioritizing those that offer insights into market preferences and trends and feature actual games rather than asset packs or tutorials.
+## Workflow
 
-3.  **Information Gathering:**
-    *   On visited pages, use `browser_snapshot(full=True)` or `browser_scroll(direction='down')` followed by `browser_snapshot()` to gather comprehensive information about potential reference games.
-    *   Look for current trends, popular genres, and community preferences on platforms like Reddit and Itch.io. Identify specific games (from the 2000s onwards, or recent popular indie titles) that exemplify these trends and have simple 2D mechanics adaptable to pixel art and Phaser JS.
-    *   Identify core gameplay loops, popular elements, and potential areas for modernization, prioritizing market appeal and keeping in mind the need for asset/library simplification and reusability.
+### Step 1 — Market Research (in priority order)
 
-    4.  **Idea Generation & Structuring:**
-        *   Based on the gathered market research and genre trends, propose 3 distinct game ideas. Prioritize genres and concepts that show current market preference and align with the technical constraints (2D pixel art, Phaser JS). Each idea should ideally stem from a different popular genre (e.g., Roguelike, Metroidvania, Immersive Sim Lite, Puzzle-Platformer, Auto-Battler Lite, Card Battler Lite).
-        *   **모든 게임 아이디어는 마크다운 형식으로 한국어로 작성해야 합니다.**
-    *   For each idea, include the following fields, adhering to the nyimpe.github.io project's game list structure (id, title, description, loader):
-        *   **id:** A unique, hyphen-separated identifier (e.g., "pixel-dungeon-crawler").
-        *   **title:** A catchy, descriptive title (e.g., "✨ Pixel Dungeon: Legacy").
-        *   **description:** A concise summary of the game (e.g., "Explore procedurally generated dungeons!").
-        *   **loader:** A placeholder for the game's main script path (e.g., "() => import('./games/pixel-dungeon/main.js')").
-        *   **Modernized Concept:** How the reference game concept is updated with new mechanics, features, or twists.
-        *   **Pixel Art Style Notes:** Specific visual themes, color palettes, or animation considerations for a pixel art aesthetic.
-        *   **Phaser JS Implementation Considerations:** Brief notes on how core mechanics might be implemented using Phaser's features (e.g., physics, scenes, sprites, input handling), and how common modules could be reused.
+Explore the sources below in order. Move to the next step once you have good results.
 
-5.  **Output and Saving:**
-    *   Format the game ideas in markdown.
-    *   Save the complete output to a file named `game_idea_<YYYYMMDD>.md` in the `idea/` directory within the project root.
+**A. Use `web_search` first:**
+```
+"best pixel art indie games 2025 trending"
+"itch.io top pixel art games 2025"
+"phaser js game ideas popular genres"
+"reddit r/indiegaming most upvoted 2024 2025"
+```
 
-6.  **Git Workflow:**
-    *   생성된 `game_idea_<YYYYMMDD>.md` 파일을 Git에 추가합니다. (예: `git add idea/game_idea_<YYYYMMDD>.md`)
-    *   "feat: YYYYMMDD 게임 아이디어 추가"와 같은 설명적인 메시지로 변경 사항을 커밋합니다. (예: `git commit -m "feat: 20240730 게임 아이디어 추가"`)
-    *   커밋된 변경 사항을 원격 저장소에 푸시합니다. (예: `git push origin main`)
+**B. If `web_search` fails, navigate directly:**
+- `https://itch.io/games/tag-pixel-art` (sorted by popular)
+- `https://itch.io/games/made-with-phaser`
+- `https://store.steampowered.com/tags/en/Pixel+Art/`
+- `https://www.reddit.com/r/indiegaming/top/?t=year`
 
-### Pitfalls and Considerations
+> ⚠️ **Strategy switch trigger:** If search results are dominated by asset packs or tutorials, immediately pivot to direct itch.io navigation.
 
-*   **Ineffective Search Results:** If initial general web searches yield too many irrelevant results (e.g., asset packs, tutorials instead of actual games), immediately pivot to direct navigation of curated lists on platforms like Itch.io or gaming review sites.
-*   **`web_search` Unavailability:** Be prepared to use browser tools for web research if `web_search` is not available. This requires more steps but achieves the same goal.
-*   **Information Overload:** Wikipedia lists or general gaming articles can be extensive. Focus on identifying core mechanics and visual styles relevant to 2D pixel art and Phaser JS.
-*   **Market Research Depth:** Ensure market research is thorough enough to identify genuine trends and not just temporary hype. Prioritize genres and mechanics that have sustained popularity or show strong emerging interest on platforms like Reddit and Itch.io.
-*   **Reference vs. Innovation:** Ensure the idea builds upon the reference game with significant innovation and a clear modernization path, rather than just copying. Focus on simplified assets and libraries to maintain a lightweight project.
-*   **Asset/Library Simplification:** Prioritize game ideas that can be implemented with minimal custom assets and external libraries (e.g., using tilemaps, simple sprites, built-in Phaser features, basic sound effects).
-*   **Dynamic Filename Verification:** When generating files with dynamic names (e.g., based on timestamps), always verify the actual filename with `ls` or `search_files(target='files')` before attempting `git add` or other file operations to avoid mismatches.
-*   Dynamic Filename Verification: When generating files with dynamic names (e.g., based on timestamps), always verify the actual filename with `ls` or `search_files(target='files')` before attempting `git add` or other file operations to avoid mismatches.
-*   **Dynamic Filename Verification:** When generating files with dynamic names (e.g., based on timestamps), always verify the actual filename with `ls` or `search_files(target='files')` before attempting `git add` or other file operations to avoid mismatches.
+---
+
+### Step 2 — Trend Analysis
+
+Extract the following from research results:
+
+| Analysis Item | What to Look For |
+|---------------|-----------------|
+| **Popular Genres** | Top-ranking genres on Steam/itch.io right now |
+| **Core Game Loop** | The core repeated action players take |
+| **Differentiators** | Common innovation points among hit titles |
+| **Phaser Suitability** | Mechanics implementable in browser 2D |
+| **Asset Lightness** | Whether it's achievable with minimal custom assets |
+
+**Genre pool to pick from (choose 3, no overlaps):**
+- Roguelite / Roguelike
+- Metroidvania
+- Deckbuilder / Card Battler
+- Auto-battler Lite
+- Puzzle-Platformer
+- Top-down Shooter (Bullet Hell)
+- Tower Defense
+- Farming / Life Sim Lite
+- Turn-based Tactics
+
+**Genre selection criteria (in priority order):**
+1. Currently trending on Steam/itch.io
+2. Complexity implementable in Phaser JS
+3. All 3 must have distinctly different play patterns
+
+---
+
+### Step 3 — Idea Generation (the critical step)
+
+Each idea must pass the following **idea quality checklist** before proceeding:
+
+```
+✅ Does a clear reference game exist? (post-2000s)
+✅ Is there a clear innovation twist beyond simple copying?
+✅ Can the core game loop be explained in one sentence?
+✅ Is it playable in a browser with just mouse/keyboard?
+✅ Can it be expressed with 16x16~32x32 pixel art sprites?
+✅ Is it implementable with Phaser's built-in features alone (no external libraries)?
+✅ Does a single session complete within 5–15 minutes?
+```
+
+**How to generate the innovation twist:**
+
+Combine the reference game's core mechanic with one of the following:
+- **Genre Crossover**: Fuse core mechanics from Genre A + Genre B
+- **Perspective/Control Inversion**: Enemy POV, reverse progression, environment manipulation
+- **Resource Dilemma**: Restructure the existing resource system as zero-sum / trade-off
+- **Time Mechanic**: Time limit, rewind, prediction-based play
+- **Information Asymmetry**: Fog of war, memory-based, partially revealed map
+
+---
+
+### Step 4 — Idea Documentation
+
+**All game idea content must be written in Korean markdown.**
+(Skill instructions remain in English; only the output game ideas are in Korean.)
+
+Required fields for each idea:
+
+```markdown
+## Idea N: [Title]
+
+### Basic Info
+- **id**: "kebab-case-id"
+- **title**: "Emoji + Catchy Title"
+- **description**: "One-line summary (under 50 characters)"
+- **loader**: "() => import('./games/[id]/main.js')"
+
+### Reference Game
+- **Original**: Game title (release year, developer)
+- **Genre**: Genre name
+- **Why it worked**: 1–2 sentences on why the original succeeded
+
+### Innovation Twist
+> Clearly describe what is different from the original
+- **Twist type**: (Genre Crossover / Perspective Inversion / Resource Dilemma / Time Mechanic / Information Asymmetry)
+- **Key change**: Specific mechanical difference explained
+- **Player experience**: What feelings/decisions will the player experience?
+
+### Core Game Loop
+```
+[Action] → [Outcome] → [Choice] → [Repeat]
+e.g. Explore dungeon → Gain resources → Choose upgrade → Next floor
+```
+
+### Pixel Art Visual Guide
+- **Resolution**: 16x16 / 32x32 sprites
+- **Palette**: Color count limit (e.g. 4–8 colors), key tone keywords
+- **Animation**: Frame count needed, list of key animations
+- **Background style**: How the tilemap is structured
+
+### Phaser JS Implementation Notes
+- **Physics**: Why arcade or matter.js was chosen
+- **Scene structure**: List of required scenes (Boot → Preload → Menu → Game → UI)
+- **Core systems**: Main classes/modules to implement
+- **Reusable modules**: Components shareable across other games
+- **Difficulty**: ⭐~⭐⭐⭐⭐⭐ (implementation complexity)
+
+### Market Viability
+- **Target audience**: Primary player demographic
+- **Session length**: Expected single-play duration
+- **Replayability**: Low / Medium / High (with reason)
+- **Comparable hits**: Successful indie games with similar concept
+```
+
+---
+
+### Step 5 — Save File
+
+1. Confirm today's date:
+   ```bash
+   date +%Y%m%d
+   ```
+
+2. Create the `idea/` directory if it doesn't exist:
+   ```bash
+   mkdir -p idea
+   ```
+
+3. Save the file:
+   ```bash
+   # Filename: idea/game_idea_YYYYMMDD.md
+   ```
+
+4. **Always verify the actual filename with `ls` before proceeding:**
+   ```bash
+   ls idea/game_idea_*.md
+   ```
+
+---
+
+### Step 6 — Git Commit & Push
+
+```bash
+# 1. Confirm actual filename (required)
+FILENAME=$(ls idea/game_idea_*.md | tail -1)
+echo "File to commit: $FILENAME"
+
+# 2. Git add
+git add "$FILENAME"
+
+# 3. Commit with date-based message
+DATE=$(date +%Y%m%d)
+git commit -m "feat: ${DATE} 게임 아이디어 추가"
+
+# 4. Push
+git push origin main
+```
+
+---
+
+## Quality Standards
+
+### ✅ What makes a good idea
+- The core loop can be explained in 5 seconds
+- Can answer "why this game, why now?"
+- The pixel art style connects organically to the gameplay
+- Implementable with Phaser basics only (Arcade Physics, Tilemap, Tween, Group)
+
+### ❌ Ideas to avoid
+- Simple clones of existing games (no mechanical innovation)
+- Games requiring 3D, complex physics, or large-scale AI
+- Games needing 10+ minute tutorials before the first session
+- Games that don't function without a large volume of custom assets
+
+---
+
+## Pitfalls & Countermeasures
+
+| Situation | Response |
+|-----------|----------|
+| Search results dominated by asset packs / tutorials | Immediately pivot to direct itch.io navigation |
+| All 3 ideas converging on similar genres | Revisit genre selection criteria, verify play pattern diversity |
+| Filename mismatch on git add | **Always confirm actual filename with `ls` before git add** |
+| Innovation twist is vague | Explicitly pick one of the 5 twist types |
+| Phaser implementation is overly complex | Reduce scope to built-in features only, no external libraries |
+| All 3 ideas have identical difficulty | Spread implementation difficulty across ⭐~⭐⭐⭐⭐⭐ |
