@@ -15,6 +15,13 @@ const GAMES = [
     loader: () => import("./games/tetris/main.js")
   },
 
+  {
+    id: "shikaku",
+    title: "◧ Shikaku (四角に切れ)",
+    description: "Divide the grid into rectangles — each block must contain exactly one number matching its area!",
+    loader: () => import("./games/shikaku/main.js")
+  },
+
 ];
 
 const App = () => {
