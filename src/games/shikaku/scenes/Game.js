@@ -123,8 +123,8 @@ export class Game extends Phaser.Scene {
   }
 
   init(data) {
-    this.gridSize = data.size || 5;
-    this.cellSize = Math.floor(380 / this.gridSize); // fit in 380px
+    this.gridSize = (data && data.size) || 7;
+    this.cellSize = Math.floor(380 / this.gridSize);
     this.gridPx = this.gridSize * this.cellSize;
   }
 
@@ -224,21 +224,19 @@ export class Game extends Phaser.Scene {
     const btnH = 44;
 
     const gfx = this.add.graphics();
-    gfx.fillStyle(0x333355, 0.8);
+    gfx.fillStyle(0x7c4dff, 0.8);
     gfx.fillRoundedRect(cx - btnW / 2, y, btnW, btnH, 12);
-    gfx.lineStyle(2, 0x7c4dff, 0.4);
-    gfx.strokeRoundedRect(cx - btnW / 2, y, btnW, btnH, 12);
 
-    this.add.text(cx, y + btnH / 2, "◀ MENU", {
+    this.add.text(cx, y + btnH / 2, "🔄 NEW GAME", {
       fontFamily: "Arial Black",
       fontSize: "16px",
-      color: "#b39ddb",
+      color: "#ffffff",
     }).setOrigin(0.5);
 
     const zone = this.add.rectangle(cx, y + btnH / 2, btnW, btnH)
       .setInteractive({ useHandCursor: true });
     zone.on("pointerdown", () => {
-      this.scene.start("SceneMenu");
+      this.scene.restart({ size: this.gridSize });
     });
   }
 

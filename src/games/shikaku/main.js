@@ -1,5 +1,4 @@
 import Phaser from "phaser";
-import { SceneMenu } from "./scenes/SceneMenu.js";
 import { Game } from "./scenes/Game.js";
 
 const config = {
@@ -9,7 +8,7 @@ const config = {
   width: 430,
   height: 932,
   backgroundColor: "#1a1a2e",
-  scene: [SceneMenu, Game],
+  scene: [Game],
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
