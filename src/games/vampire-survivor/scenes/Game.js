@@ -103,6 +103,30 @@ export class Game extends Phaser.Scene {
       right: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D),
     };
 
+    // ── Touch / mouse movement ──
+    this.moveTarget = null; // {x, y} — destination to walk toward
+    this.moveTargetGfx = this.add.graphics().setDepth(50).setAlpha(0);
+    this.input.on("pointerdown", (pointer) => {
+      self.moveTarget = { x: pointer.x, y: pointer.y };
+      self.moveTargetGfx.setAlpha(0.7);
+      self.moveTargetGfx.clear();
+      self.moveTargetGfx.lineStyle(2, 0xffffff, 0.8);
+      self.moveTargetGfx.strokeCircle(pointer.x, pointer.y, 12);
+      self.sfx.init(); // unlock audio
+    });
+    this.input.on("pointermove", (pointer) => {
+      if (pointer.isDown) {
+        self.moveTarget = { x: pointer.x, y: pointer.y };
+        self.moveTargetGfx.clear();
+        self.moveTargetGfx.lineStyle(2, 0xffffff, 0.8);
+        self.moveTargetGfx.strokeCircle(pointer.x, pointer.y, 12);
+      }
+    });
+    this.input.on("pointerup", () => {
+      self.moveTarget = null;
+      self.moveTargetGfx.setAlpha(0);
+    });
+
     // ── UI ──
     this.uiKills = this.add.text(16, 16, "Kills: 0", {
       fontFamily: "monospace",
@@ -129,11 +153,6 @@ export class Game extends Phaser.Scene {
     for (let i = 0; i < 6; i++) {
       this.spawnEnemy();
     }
-
-    // Initial audio resume on first interaction
-    this.input.once("pointerdown", () => {
-      self.sfx.init();
-    });
   }
 
   // ──────────────────────────────────────
@@ -357,6 +376,20 @@ export class Game extends Phaser.Scene {
     if (this.cursors.right.isDown || this.wasd.right.isDown) vx = 1;
     if (this.cursors.up.isDown || this.wasd.up.isDown) vy = -1;
     if (this.cursors.down.isDown || this.wasd.down.isDown) vy = 1;
+
+    // Touch/mouse movement (only if no keyboard input)
+    if (vx === 0 && vy === 0 && this.moveTarget) {
+      const dx = this.moveTarget.x - this.player.x;
+      const dy = this.moveTarget.y - this.player.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist > 5) {
+        vx = dx / dist;
+        vy = dy / dist;
+      } else {
+        this.moveTarget = null;
+        this.moveTargetGfx.setAlpha(0);
+      }
+    }
 
     // Normalize diagonal
     if (vx !== 0 && vy !== 0) {
