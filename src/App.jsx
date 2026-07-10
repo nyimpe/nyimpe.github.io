@@ -21,6 +21,12 @@ const GAMES = [
     description: "Divide the grid into rectangles — each block must contain exactly one number matching its area!",
     loader: () => import("./games/shikaku/main.js")
   },
+  {
+    id: "vampire-survivor",
+    title: "🧛 Vampire Survivor Lite",
+    description: "Survive the endless horde! Auto-attack, collect XP, level up!",
+    loader: () => import("./games/vampire-survivor/main.js")
+  },
 
 ];
 
