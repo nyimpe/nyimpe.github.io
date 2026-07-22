@@ -27,6 +27,12 @@ const GAMES = [
     description: "Survive the endless horde! Auto-attack, collect XP, level up!",
     loader: () => import("./games/vampire-survivor/main.js")
   },
+  {
+    id: "hole-io",
+    title: "🕳️ Hole.io",
+    description: "Swallow everything! Grow your black hole by consuming the city!",
+    loader: () => import("./games/hole-io/main.js")
+  },
 
 ];
 
