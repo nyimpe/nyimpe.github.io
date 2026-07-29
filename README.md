@@ -87,3 +87,4 @@ npm run dev
 
 ### 2. 빌드 및 배포
 `main` 브랜치에 코드를 `git push`하면, GitHub Actions 워크플로우(`.github/workflows/deploy.yml`)가 자동으로 트리거되어 빌드 결과물(`dist`)을 `gh-pages` 브랜치에 배포합니다.
+# Test commit - Wed Jul 29 03:16:06 UTC 2026
