@@ -2,7 +2,6 @@
 
 [![Deploy to GitHub Pages](https://github.com/nyimpe/nyimpe.github.io/actions/workflows/deploy.yml/badge.svg)](https://nyimpe.github.io/)
 
-React와 Phaser 3를 활용한 아케이드 웹 게임 플랫폼입니다. 모바일에 최적화된 여러 2D 레트로 게임을 편리하게 관리하고 즐길 수 있습니다.
 
 **👉 라이브 데모: [https://nyimpe.github.io/](https://nyimpe.github.io/)**
 
