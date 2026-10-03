@@ -11,11 +11,12 @@
 - **배포:** `main`에 push하면 GitHub Actions가 `dist/`를 GitHub Pages에 배포합니다.
 
 ```text
-index.html                  홈: 배지, 기록 목록
+index.html                  홈: 기술 스택 엠블렘, 기록 목록
 about/index.html            영어 소개
 posts/<slug>/index.html     게임 또는 일반 기록 페이지
 public/style.css            공통 스타일
-public/cat.svg              고양이 그림 및 아이콘
+public/cat.png              첨부 이미지에서 배경을 제거한 고양이
+public/favicon.ico          동일 고양이 얼굴을 사용한 다중 크기 아이콘
 src/game-page.js            게임 페이지의 시작·로딩·포커스 처리
 src/main.js                 공통 테마 초기화·전환·선호도 저장
 src/games/                  기존 Phaser 게임 소스와 자산
@@ -60,3 +61,11 @@ npm run preview
 키보드 입력은 게임 컨테이너에 연결됩니다. 게임을 시작하면 컨테이너에 포커스를 주고, 게임 화면을 클릭하거나 Tab으로 다시 선택할 수 있습니다. 화면 밖에서는 페이지 스크롤과 링크 탐색이 가능합니다. 다시 시작 버튼은 페이지를 새로고침해 게임과 오디오 상태를 초기화합니다.
 
 기존 게임의 날짜는 게임 폴더에 영향을 준 마지막 Git 커밋 날짜를 사용했습니다. 게임 규칙·자산은 유지했고, 진입점에 공통 입력 설정을 전달하는 옵션을 추가했습니다. Jumping Cat의 물리 디버그 표시는 껐으며, 발판은 이미지에 실제로 존재하는 프레임만 무작위 선택하도록 수정했습니다. Tetris는 숨겨진 입력 영역 때문에 화면 버튼이 동작하지 않던 문제를 수정했습니다. 입력 영역은 투명하게 그리되 Phaser 입력 시스템에서는 활성 상태로 유지합니다.
+
+## 고양이 이미지
+
+사용자가 제공한 `IMG_4173.png`를 built-in imagegen으로 배경 제거했습니다. PNG의 투명도를 유지하며 헤더용 크기로 저장하고, 같은 누끼 이미지의 얼굴에서 16·32·48·64·128·256px ICO를 만들었습니다.
+
+사용 프롬프트:
+
+> Use case: background-extraction. Edit target: the attached pixel-art orange-and-white sitting cat. Asset type: website mascot cutout. Remove ONLY the entire background (wall, floor, rug, flowers, cast shadow). Preserve the exact original cat, full body, ears, whiskers, feet, tail, orange and white patches, black pixel outlines, proportions, pose and pixel-art edges. Do not redesign or redraw. Isolate the cat alone on actual transparent alpha, with modest transparent padding. No added objects, no text, no ground shadow.
