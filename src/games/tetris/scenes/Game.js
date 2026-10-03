@@ -283,7 +283,8 @@ export class Game extends Phaser.Scene {
         hitZone = self.add.rectangle(x, y, w, h).setInteractive();
       }
       hitZone.setDepth(25).setScrollFactor(0);
-      hitZone.setVisible(false);
+      // Keep the zone visible to Phaser's input system, with a transparent fill.
+      hitZone.setFillStyle(0x000000, 0);
 
       return { hitZone, redraw, label };
     };

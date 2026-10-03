@@ -3,7 +3,8 @@ import ASSETS from "../assets.js";
 
 export default class Platform extends Phaser.Physics.Arcade.Sprite {
   constructor(scene, x, y, width = 100) {
-    const frame = Phaser.Math.Between(0, 11);
+    const frames = scene.textures.get(ASSETS.spritesheet.platforms.key).getFrameNames();
+    const frame = Phaser.Utils.Array.GetRandom(frames);
     super(scene, x, y, ASSETS.spritesheet.platforms.key, frame);
 
     scene.add.existing(this);

@@ -14,7 +14,7 @@ const config = {
   physics: {
     default: "arcade",
     arcade: {
-      debug: true,
+      debug: false,
       gravity: { y: 300 },
     },
   },
@@ -25,8 +25,8 @@ const config = {
   },
 };
 
-const StartGame = (parent) => {
-  return new Phaser.Game({ ...config, parent });
+const StartGame = (parent, options = {}) => {
+  return new Phaser.Game({ ...config, ...options, parent });
 };
 
 export default StartGame;

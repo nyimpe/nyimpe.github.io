@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="몰려오는 적을 피하며 오래 살아남는 게임입니다. 공격은 자동으로 이루어집니다. 적을 처치하고 경험치를 모으면 레벨이 올라갑니다.">
+    <title>Vampire Survivor Lite — 작은 생존 게임 · nyimpe</title>
+    <link rel="icon" type="image/svg+xml" href="/cat.svg">
+    <link rel="stylesheet" href="/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 건너뛰기</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav class="site-nav" aria-label="주 메뉴">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="https://github.com/nyimpe">GitHub</a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.svg" width="140" height="112" alt="연습장 위에 앉은 고양이">
+    </header>
+    <main id="content">
+      <article>
+        <header class="post-header">
+          <h1>Vampire Survivor Lite — 작은 생존 게임</h1>
+          <time datetime="2026-07-10">2026.07.10</time>
+        </header>
+        <p>몰려오는 적을 피하며 오래 살아남는 게임입니다. 공격은 자동으로 이루어집니다. 적을 처치하고 경험치를 모으면 레벨이 올라갑니다.</p>
+        <p class="game-instructions"><kbd>방향키</kbd> 또는 <kbd>W A S D</kbd>로 이동합니다. 터치나 마우스는 원하는 방향을 누른 채 움직이세요.</p>
+        <div class="game-stage landscape" data-game="vampire-survivor" data-state="idle">
+          <div id="game-container" class="game-container" tabindex="0" role="region" aria-label="Vampire Survivor Lite — 작은 생존 게임 게임 화면" aria-describedby="keyboard-help"></div>
+          <div class="game-placeholder">
+            <span class="game-symbol" aria-hidden="true">🧛</span>
+            <p class="game-status" role="status">준비되면 시작해 보세요.</p>
+            <button id="start-game" class="plain-button" type="button">게임 시작</button>
+          </div>
+        </div>
+        <p class="game-instructions" id="keyboard-help">키보드로 조작할 때는 게임 화면을 클릭하거나 Tab으로 선택해 주세요.</p>
+        <div class="game-actions">
+          <button id="restart-game" class="plain-button" type="button" hidden>다시 시작</button>
+          <a href="/">← 모든 기록 보기</a>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">작게 만들고, 자주 고칩니다. <a href="https://github.com/nyimpe/nyimpe.github.io">소스 코드</a></footer>
+    <script type="module" src="/src/game-page.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="블록을 쌓아 가로줄을 채우는 테트리스입니다. 줄을 지워 점수를 모으고, 점점 빨라지는 낙하 속도에 도전해 보세요.">
+    <title>Tetris Classic — 블록 쌓기 · nyimpe</title>
+    <link rel="icon" type="image/svg+xml" href="/cat.svg">
+    <link rel="stylesheet" href="/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 건너뛰기</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav class="site-nav" aria-label="주 메뉴">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="https://github.com/nyimpe">GitHub</a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.svg" width="140" height="112" alt="연습장 위에 앉은 고양이">
+    </header>
+    <main id="content">
+      <article>
+        <header class="post-header">
+          <h1>Tetris Classic — 블록 쌓기</h1>
+          <time datetime="2026-06-01">2026.06.01</time>
+        </header>
+        <p>블록을 쌓아 가로줄을 채우는 테트리스입니다. 줄을 지워 점수를 모으고, 점점 빨라지는 낙하 속도에 도전해 보세요.</p>
+        <p class="game-instructions">터치나 <kbd>Space</kbd>로 시작합니다. <kbd>←</kbd> <kbd>→</kbd>는 이동, <kbd>↑</kbd>는 회전, <kbd>↓</kbd>는 빠르게 내리기, <kbd>Space</kbd>는 즉시 떨어뜨리기입니다. 화면 아래의 터치 버튼도 사용할 수 있습니다.</p>
+        <div class="game-stage " data-game="tetris" data-state="idle">
+          <div id="game-container" class="game-container" tabindex="0" role="region" aria-label="Tetris Classic — 블록 쌓기 게임 화면" aria-describedby="keyboard-help"></div>
+          <div class="game-placeholder">
+            <span class="game-symbol" aria-hidden="true">▥</span>
+            <p class="game-status" role="status">준비되면 시작해 보세요.</p>
+            <button id="start-game" class="plain-button" type="button">게임 시작</button>
+          </div>
+        </div>
+        <p class="game-instructions" id="keyboard-help">키보드로 조작할 때는 게임 화면을 클릭하거나 Tab으로 선택해 주세요.</p>
+        <div class="game-actions">
+          <button id="restart-game" class="plain-button" type="button" hidden>다시 시작</button>
+          <a href="/">← 모든 기록 보기</a>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">작게 만들고, 자주 고칩니다. <a href="https://github.com/nyimpe/nyimpe.github.io">소스 코드</a></footer>
+    <script type="module" src="/src/game-page.js"></script>
+  </body>
+</html>

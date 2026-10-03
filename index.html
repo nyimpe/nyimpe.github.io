@@ -1,15 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/icon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
-    <title>sushi neko</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="게임과 작은 실험을 만들고 기록하는 nyimpe의 개인 연습장.">
+    <title>Home · nyimpe</title>
+    <link rel="icon" type="image/svg+xml" href="/cat.svg">
+    <link rel="stylesheet" href="/style.css">
+    <script type="module" src="/src/main.js"></script>
   </head>
-
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <a class="skip-link" href="#content">본문으로 건너뛰기</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav class="site-nav" aria-label="주 메뉴">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="https://github.com/nyimpe">GitHub</a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.svg" width="140" height="112" alt="연습장 위에 앉은 고양이">
+    </header>
+    <main id="content">
+      <div class="badges" aria-label="이 연습장의 작은 배지들">
+        <a class="badge badge-home" href="/" aria-label="nyimpe의 홈페이지"><span aria-hidden="true">⌂</span> NYIMPE<br>HOME</a>
+        <span class="badge badge-paper"><span aria-hidden="true">✎</span> SMALL<br>WEB</span>
+        <a class="badge badge-play" href="#posts"><span aria-hidden="true">▶</span> MADE TO<br>PLAY</a>
+        <span class="badge badge-web"><span aria-hidden="true">&lt;&gt;</span> HTML<br>+ CSS</span>
+        <span class="badge badge-cat"><span aria-hidden="true">:3</span> MEOW<br>MEOW</span>
+        <a class="badge badge-code" href="https://github.com/nyimpe/nyimpe.github.io"><span aria-hidden="true">⌘</span> VIEW<br>SOURCE</a>
+      </div>
+      <section id="posts" aria-labelledby="posts-title">
+        <h2 id="posts-title">최근 기록</h2>
+        <ul class="post-list">
+        <li><a href="/posts/hole-io/">Hole.io — 도시를 삼키는 구멍</a><time datetime="2026-07-23">[2026.07.23]</time></li>
+        <li><a href="/posts/vampire-survivor/">Vampire Survivor Lite — 작은 생존 게임</a><time datetime="2026-07-10">[2026.07.10]</time></li>
+        <li><a href="/posts/shikaku/">Shikaku — 7×7 사각형 퍼즐</a><time datetime="2026-07-03">[2026.07.03]</time></li>
+        <li><a href="/posts/jumping-cat/">Jumping Cat — 고양이 점프 게임</a><time datetime="2026-06-06">[2026.06.06]</time></li>
+        <li><a href="/posts/tetris/">Tetris Classic — 블록 쌓기</a><time datetime="2026-06-01">[2026.06.01]</time></li>
+        </ul>
+      </section>
+    </main>
+    <footer class="site-footer">작게 만들고, 자주 고칩니다. <a href="https://github.com/nyimpe/nyimpe.github.io">소스 코드</a></footer>
   </body>
 </html>
