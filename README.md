@@ -14,7 +14,7 @@
 index.html                  홈: 기술 스택 엠블렘, 기록 목록
 about/index.html            영어 소개
 posts/<slug>/index.html     게임 또는 일반 기록 페이지
-public/style.css            공통 스타일
+src/style.css            공통 스타일
 public/cat.png              첨부 이미지에서 배경을 제거한 고양이
 public/favicon.ico          동일 고양이 얼굴을 사용한 다중 크기 아이콘
 src/game-page.js            게임 페이지의 시작·로딩·포커스 처리
