@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="블록을 쌓아 가로줄을 채우는 테트리스입니다. 줄을 지워 점수를 모으고, 점점 빨라지는 낙하 속도에 도전해 보세요.">
-    <title>Tetris Classic — 블록 쌓기 · nyimpe</title>
+    <meta name="description" content="Stack blocks to complete horizontal lines. Clear lines to earn points and keep up as the blocks fall faster.">
+    <title>Tetris Classic · nyimpe</title>
     <link rel="icon" type="image/svg+xml" href="/cat.svg">
     <link rel="stylesheet" href="/style.css">
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
-    <a class="skip-link" href="#content">본문으로 건너뛰기</a>
+    <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
       <div class="header-content">
-        <nav class="site-nav" aria-label="주 메뉴">
+        <nav class="site-nav" aria-label="Main navigation">
           <a href="/">Home</a>
           <a href="/about/">About</a>
           <a href="https://github.com/nyimpe">GitHub</a>
@@ -21,32 +21,32 @@
         </nav>
         <hr>
       </div>
-      <img class="site-cat" src="/cat.svg" width="140" height="112" alt="연습장 위에 앉은 고양이">
+      <img class="site-cat" src="/cat.svg" width="140" height="112" alt="A cat sitting on a notebook">
     </header>
     <main id="content">
       <article>
         <header class="post-header">
-          <h1>Tetris Classic — 블록 쌓기</h1>
+          <h1>Tetris Classic</h1>
           <time datetime="2026-06-01">2026.06.01</time>
         </header>
-        <p>블록을 쌓아 가로줄을 채우는 테트리스입니다. 줄을 지워 점수를 모으고, 점점 빨라지는 낙하 속도에 도전해 보세요.</p>
-        <p class="game-instructions">터치나 <kbd>Space</kbd>로 시작합니다. <kbd>←</kbd> <kbd>→</kbd>는 이동, <kbd>↑</kbd>는 회전, <kbd>↓</kbd>는 빠르게 내리기, <kbd>Space</kbd>는 즉시 떨어뜨리기입니다. 화면 아래의 터치 버튼도 사용할 수 있습니다.</p>
+        <p>Stack blocks to complete horizontal lines. Clear lines to earn points and keep up as the blocks fall faster.</p>
+        <p class="game-instructions">Tap or press <kbd>Space</kbd> to begin. Use <kbd>←</kbd> <kbd>→</kbd> to move, <kbd>↑</kbd> to rotate, <kbd>↓</kbd> to soft drop, and <kbd>Space</kbd> to hard drop. Touch controls are also available below the game.</p>
         <div class="game-stage " data-game="tetris" data-state="idle">
-          <div id="game-container" class="game-container" tabindex="0" role="region" aria-label="Tetris Classic — 블록 쌓기 게임 화면" aria-describedby="keyboard-help"></div>
+          <div id="game-container" class="game-container" tabindex="0" role="region" aria-label="Tetris Classic game screen" aria-describedby="keyboard-help"></div>
           <div class="game-placeholder">
             <span class="game-symbol" aria-hidden="true">▥</span>
-            <p class="game-status" role="status">준비되면 시작해 보세요.</p>
-            <button id="start-game" class="plain-button" type="button">게임 시작</button>
+            <p class="game-status" role="status">Start when you’re ready.</p>
+            <button id="start-game" class="plain-button" type="button">Start game</button>
           </div>
         </div>
-        <p class="game-instructions" id="keyboard-help">키보드로 조작할 때는 게임 화면을 클릭하거나 Tab으로 선택해 주세요.</p>
+        <p class="game-instructions" id="keyboard-help">Click the game screen or select it with Tab to use keyboard controls.</p>
         <div class="game-actions">
-          <button id="restart-game" class="plain-button" type="button" hidden>다시 시작</button>
-          <a href="/">← 모든 기록 보기</a>
+          <button id="restart-game" class="plain-button" type="button" hidden>Restart</button>
+          <a href="/">← All posts</a>
         </div>
       </article>
     </main>
-    <footer class="site-footer">작게 만들고, 자주 고칩니다. <a href="https://github.com/nyimpe/nyimpe.github.io">소스 코드</a></footer>
+    <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
     <script type="module" src="/src/game-page.js"></script>
   </body>
 </html>

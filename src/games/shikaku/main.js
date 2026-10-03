@@ -138,7 +138,7 @@ class ShikakuScene extends Phaser.Scene {
         fontFamily: "Arial Black", fontSize: "40px", color: "#ffd700",
         stroke: "#7c4dff", strokeThickness: 8,
       }).setOrigin(0.5).setDepth(51);
-      const p = self.add.text(215, 380, "탭하여 새 게임", {
+      const p = self.add.text(215, 380, "Tap for a new game", {
         fontFamily: "Arial", fontSize: "18px", color: "#b39ddb",
       }).setOrigin(0.5).setDepth(51);
       self.tweens.add({ targets: p, alpha: 0.3, duration: 800, yoyo: true, repeat: -1 });

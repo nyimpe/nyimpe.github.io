@@ -24,7 +24,7 @@ start.addEventListener("click", async () => {
   }
   start.disabled = true;
   stage.dataset.state = "loading";
-  status.textContent = "게임을 불러오는 중…";
+  status.textContent = "Loading game…";
   try {
     const module = await games[stage.dataset.game]();
     module.default("game-container", {
@@ -37,8 +37,8 @@ start.addEventListener("click", async () => {
     stage.scrollIntoView({ block: "center" });
   } catch (error) {
     console.error("Failed to load game:", error);
-    status.textContent = "게임을 불러오지 못했습니다. 새로고침해 주세요.";
-    start.textContent = "새로고침";
+    status.textContent = "Could not load the game. Please reload.";
+    start.textContent = "Reload";
     start.disabled = false;
     stage.dataset.state = "error";
   }
