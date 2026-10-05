@@ -6,7 +6,7 @@
   "catalog": "https://www.postype.com/@oldstory/post/1477014",
   "catalogEntries": 312,
   "existingCards": 24,
-  "addedCards": 287,
+  "addedCards": 300,
   "sheets": [
     {
       "file": "public/images/korean-folklore/creatures-cr63-cr74-cd08265934.png",
@@ -536,6 +536,173 @@
         "cr349"
       ],
       "prompt": "Use case: illustration-story.\nCreate a production pixel-art folklore atlas sheet, 2048 pixels wide by 1536 pixels high, EXACTLY FOUR equal columns and THREE equal rows, 12 square cells (each512x512). Straight thin dark dividers exactly at quarter widths and third heights; NO outer margin; no gutters; each whole scene stays entirely inside its own square cell. The sheet is a single asset whose cells will be cropped by CSS. Match an old Korean illustrated bestiary: crisp large square pixels, muted parchment beige, dark ink brown, moss green, dull red and antique gold, textured old paper, Korean historical landscapes, restrained mysterious mood. Attractive detailed SNES-style pixel art with readable silhouettes at small sizes; not smooth painting, not vector. Each cell shows a different described subject, centered fully visible with restrained scenery. NO labels, NO numbers, NO lettering, no watermarks. These are openly fictional artistic interpretations, not documentary reconstructions. Do not add horns, wings, weapons or human features unless specified. No explicit nudity, no gore.\nCell order left-to-right then top-to-bottom:\n1. A golden-yellow Korean dragon coils through lightning-lit clouds above a grand wooden Buddhist temple. Its scales gleam warmly, with long whiskers, antlerlike horns and a protective bearing.\n2. An indistinct fluttering fabriclike creature covered in fine blue-green hair retreats backward along a night road. A beautiful human face briefly appears within its folds as orange heat shimmers around it.\n3. An ape-like water spirit with an indistinct rounded head and luminous eyes rises from a deep pool beneath a waterfall. Dark spray and a small storm surround an old pine, while sunlight makes it avert its face.\n4. A hollow dried gourd-shaped apparition hangs in a rain-dark doorway, splitting into many black-and-white magpielike birds. Mist obscures its true body; no injured birds or victims.\n5. A solemn owl with a subtly catlike face perches on an old palace roof at dusk. Deep shadows and distant storm clouds suggest ominous interpretation without making the real bird malicious.\n6. A broad nearly featureless black haze moves through a Joseon city street at night. Distant lanterns and a bronze gong catch faint light while swirling dust suggests the rumble of unseen carts.\n7. A glossy black Korean dragon rises from an ancient stone well into dense charcoal clouds. Long whiskers and sinuous scales glisten with water; the scene is mysterious rather than inherently evil.\n8. A thick hornless black river serpent curves over pale sand, with six subtle raised segments along its back. Small pearl-like glows suggest the separate jewel tale without exposed bones or dissection.\n9. Peaceful mythical giants in thick fur cloaks cross a frozen northern sea, their curly hair visible above the collars. Large luminous pearls glint near the ice; portray imagined people respectfully with no ethnic caricature.\n10. A massive black tiger with torch-bright eyes emerges slowly from a shadowy mountain cave. Low swirling dust and strange rocks frame its cautious alert posture, without weapons or combat.\n11. A venerable Buddhist monk represented as a dark aged wooden portrait statue sits serenely in Haeinsa temple. A small clean circular opening in the chest of the sculpture is visible, with no wound or gore.\n12. A white fox with one ordinary tail sits upright at an official's low writing desk inside a Baekje palace. An old closed book rests nearby; intelligent amber eyes and alert ears convey uncanny humanlike composure."
+    },
+    {
+      "file": "public/images/korean-folklore/creatures-cr350-cr361-f94620682f.png",
+      "width": 1448,
+      "height": 1086,
+      "columns": 4,
+      "rows": 3,
+      "ids": [
+        "cr350",
+        "cr351",
+        "cr352",
+        "cr353",
+        "cr354",
+        "cr355",
+        "cr356",
+        "cr357",
+        "cr358",
+        "cr359",
+        "cr360",
+        "cr361"
+      ],
+      "prompt": "Use case: illustration-story.\nCreate a production pixel-art folklore atlas sheet, 2048 pixels wide by 1536 pixels high, EXACTLY FOUR equal columns and THREE equal rows, 12 square cells (each512x512). Straight thin dark dividers exactly at quarter widths and third heights; NO outer margin; no gutters; each whole scene stays entirely inside its own square cell. The sheet is a single asset whose cells will be cropped by CSS. Match an old Korean illustrated bestiary: crisp large square pixels, muted parchment beige, dark ink brown, moss green, dull red and antique gold, textured old paper, Korean historical landscapes, restrained mysterious mood. Attractive detailed SNES-style pixel art with readable silhouettes at small sizes; not smooth painting, not vector. Each cell shows a different described subject, centered fully visible with restrained scenery. NO labels, NO numbers, NO lettering, no watermarks. These are openly fictional artistic interpretations, not documentary reconstructions. Do not add horns, wings, weapons or human features unless specified. No explicit nudity, no gore.\nCell order left-to-right then top-to-bottom:\n1. An enormous domed crab shell, large enough to shelter five people, rests above simple wooden supports on a Korean beach. A few small human silhouettes beneath it show its legendary scale; no text or labels.\n2. Close view of a weathered granite beast face with wide eyes and a blunt nose carved into a round drum-shaped support under a rectangular Joseon royal tomb stone table. Keep it a stone relief, with no invented snail body, writing or labels.\n3. A squid with exceptionally long tentacles lurks just beneath the sea surface, releasing a dark cloud of ink while a crow approaches above the water. Tentacles curl upward in anticipation, but the bird is unharmed and no capture, wound or gore is shown; no text.\n4. Two human performers in a court dance wear vivid blue masks with bulging eyes and long tusklike canine teeth, plus ornate blue armorlike silk costumes. Show them clearly as masked dancers on a wooden performance platform, not living monsters; omit hand-held instruments and all text.\n5. A colossal black tiger-shaped beast in an empty mountain forest, its heavy body covered with broad black and white scales from the later tale. No horns, wings, injured people, text or labels.\n6. A large smooth, limbless eel-like fish rises near a small fishing boat at sunrise, exhaling a slender column of blue mist. Keep natural swamp-eel anatomy, without speculative dinosaur limbs, horns, or a dragon beard; no text.\n7. A formidable shrimp-like crustacean with two long hornlike feelers on a Korean seashore, its unusual shell catching moonlight. Treat the creature as a folklore reconstruction, with no dragon body, writing or labels.\n8. A mysterious snake beside a Korean river holds a small white ring at its mouth, following one recorded description. Keep the rest of its anatomy a restrained symbolic serpent; do not combine the separate one-horned ornamental dragon or extremely short thick island variant, no text.\n9. A tiny blue swallow-shaped stone, about the size of a chestnut, lifts gently from a riverbank as rain clouds gather. Render a magical stone bird with mineral texture; use this one recorded variant without adding clam shells or healing effects, no text.\n10. An iron bow and sword beside a Baekje princess, with distant spectral soldier silhouettes suggested behind them and a magpie overhead. Depict ritual weapons from the later legend, no robots, writing or labels.\n11. Two beautiful small crucian carp swim in a clear pool beneath a buried boulder deep underground. A cutaway of earth and roots reveals the hidden pool, softly lit and mysterious; no insect hybrid, text or labels.\n12. An indistinct spiderlike sea creature rests beside dark coastal water, spinning strong shimmering silk. In the background the legendary net opens like a fine canopy over a distant mountain; keep the creature scale ambiguous and avoid an invented tiger-sized crab form, no text.",
+      "revisionPrompt": "Edit this existing 4-column by 3-row pixel-art atlas. Change ONLY the flying bird inside cell THREE (first row, third column), above the squid and ink cloud. It must be an ordinary CROW with uniformly BLACK feathers on head, body, belly, wings and tail. Remove ALL white patches from this bird. Give it a normal black crow silhouette and black beak, not a magpie or eagle. Preserve the squid, ink, sea and everything else in that cell, and preserve all other ELEVEN cells exactly including the magpie in cell TEN. Preserve exact overall dimensions and grid boundaries, pixel-art style, palette, and all subjects. No text or labels."
+    },
+    {
+      "file": "public/images/korean-folklore/creature-cr362-11ac7fe063.png",
+      "width": 1254,
+      "height": 1254,
+      "columns": 1,
+      "rows": 1,
+      "ids": [
+        "cr362"
+      ],
+      "prompt": "Use case: illustration-story. Create one square pixel-art illustration for an old Korean folklore bestiary. Match crisp large square pixels, muted parchment beige, dark ink brown, moss green, dull red and antique gold, textured old paper, Korean historical scenery, restrained mysterious mood, detailed SNES-style pixel art with a readable silhouette. The creature is a symbolic old account of Hunal (후놜): a leopardlike animal with thick spotted hide and EXACTLY TWO HIND LEGS, NO FORELEGS, NO ARMS. Its head and torso are plainly feline, not human. It stands upright on those two sturdy hind legs with a long balancing tail in a quiet northern Korean forest beside weathered stones. Show the whole creature clearly centered, with no other animals. Treat this as an openly fictional interpretation of one recorded description, not a documentary reconstruction or a humanlike race. No added horns or wings, no clothes or weapons, no text, no labels, no numbers, no lettering, no watermark, no gore. Aspect ratio 1:1, no frame or margins."
     }
-  ]
+  ],
+  "seriesAudit": {
+    "checkedOn": "2026-10-05",
+    "url": "https://www.postype.com/@oldstory/series/56139",
+    "totalEpisodes": 331,
+    "coveredIndividualPosts": 325,
+    "totalCards": 324,
+    "addedCards": 13,
+    "note": "강철의 두 개별 회차는 기존 한 카드에 묶여 있다. 안내, 목록, 그림 설명과 이미 반영한 증보 묶음은 별도 카드로 추가하지 않았다.",
+    "addedEpisodes": [
+      {
+        "id": "cr350",
+        "postId": "23046093",
+        "name": "거해",
+        "url": "https://www.postype.com/@oldstory/post/23046093"
+      },
+      {
+        "id": "cr351",
+        "postId": "22831101",
+        "name": "나어두",
+        "url": "https://www.postype.com/@oldstory/post/22831101"
+      },
+      {
+        "id": "cr352",
+        "postId": "1477051",
+        "name": "남어·남오적어",
+        "url": "https://www.postype.com/@oldstory/post/1477051"
+      },
+      {
+        "id": "cr353",
+        "postId": "22674787",
+        "name": "납소리",
+        "url": "https://www.postype.com/@oldstory/post/22674787"
+      },
+      {
+        "id": "cr354",
+        "postId": "22762165",
+        "name": "독호",
+        "url": "https://www.postype.com/@oldstory/post/22762165"
+      },
+      {
+        "id": "cr355",
+        "postId": "22715361",
+        "name": "용서",
+        "url": "https://www.postype.com/@oldstory/post/22715361"
+      },
+      {
+        "id": "cr356",
+        "postId": "23075648",
+        "name": "용하",
+        "url": "https://www.postype.com/@oldstory/post/23075648"
+      },
+      {
+        "id": "cr357",
+        "postId": "22615191",
+        "name": "이사",
+        "url": "https://www.postype.com/@oldstory/post/22615191"
+      },
+      {
+        "id": "cr358",
+        "postId": "22668388",
+        "name": "자약석",
+        "url": "https://www.postype.com/@oldstory/post/22668388"
+      },
+      {
+        "id": "cr359",
+        "postId": "23029566",
+        "name": "자용병기",
+        "url": "https://www.postype.com/@oldstory/post/23029566"
+      },
+      {
+        "id": "cr360",
+        "postId": "23036445",
+        "name": "토어",
+        "url": "https://www.postype.com/@oldstory/post/23036445"
+      },
+      {
+        "id": "cr361",
+        "postId": "22608459",
+        "name": "해주",
+        "url": "https://www.postype.com/@oldstory/post/22608459"
+      },
+      {
+        "id": "cr362",
+        "postId": "22720707",
+        "name": "후놜",
+        "url": "https://www.postype.com/@oldstory/post/22720707"
+      }
+    ],
+    "excludedEpisodes": [
+      {
+        "postId": 14228648,
+        "title": "괴물 백과 사전의 괴물 그림들",
+        "url": "https://www.postype.com/@oldstory/post/14228648",
+        "classification": "illustration_notice",
+        "reason": "AI 삽화 제작과 기존 글 삽화 갱신에 대한 안내이며 독립 괴물 항목 없음."
+      },
+      {
+        "postId": 1477014,
+        "title": "괴물 백과 사전 가나다 순 전체목록",
+        "url": "https://www.postype.com/@oldstory/post/1477014",
+        "classification": "index",
+        "reason": "가나다순 전체 링크 목록. 현재 글 상단 출처 링크에 포함되어 있으며 독립 괴물 항목 아님."
+      },
+      {
+        "postId": 590945,
+        "title": "괴물 백과 사전 증보편 31~40",
+        "url": "https://www.postype.com/@oldstory/post/590945",
+        "classification": "duplicate_compilation",
+        "reason": "번호가 붙은 10항목 모두 기존 카드와 같은 대상. 비번호 부연은 embeddedMentions에서 별도 기록."
+      },
+      {
+        "postId": 560694,
+        "title": "괴물 백과 사전 증보편 21~30",
+        "url": "https://www.postype.com/@oldstory/post/560694",
+        "classification": "duplicate_compilation",
+        "reason": "번호가 붙은 10항목 모두 기존 카드와 같은 대상. 비번호 부연은 embeddedMentions에서 별도 기록."
+      },
+      {
+        "postId": 559265,
+        "title": "괴물 백과 사전 증보편 11~20",
+        "url": "https://www.postype.com/@oldstory/post/559265",
+        "classification": "duplicate_compilation",
+        "reason": "번호가 붙은 10항목 모두 기존 카드와 같은 대상. 비번호 부연은 embeddedMentions에서 별도 기록."
+      },
+      {
+        "postId": 558741,
+        "title": "괴물 백과 사전에 대한 안내",
+        "url": "https://www.postype.com/@oldstory/post/558741",
+        "classification": "guide",
+        "reason": "백과 편집 원칙·활용 안내·과거 목록 링크 안내이며 독립 괴물 항목 없음."
+      }
+    ]
+  }
 }

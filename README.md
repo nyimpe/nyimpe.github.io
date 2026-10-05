@@ -4,7 +4,7 @@
 - **페이지:** HTML + CSS + 일반 JavaScript를 Vite로 빌드합니다. React나 다른 UI 프레임워크를 사용하지 않습니다.
 - **테마:** 모든 페이지의 상단 버튼으로 라이트·다크 모드를 전환합니다. 기본값은 시스템 설정이고, 직접 선택한 값은 브라우저에 저장됩니다.
 - **게임:** 기존 Phaser 3 게임 5개를 각각 독립 페이지로 연결했습니다. 시작 버튼을 누를 때 해당 게임을 불러옵니다.
-- **괴물·귀신:** `/posts/korean-folklore-research/`에 311항목의 이미지·설명·출처를 정리했습니다.
+- **괴물·귀신:** `/posts/korean-folklore-research/`에 324항목의 이미지·설명·출처를 정리했습니다.
 - **빌드:** Vite가 HTML 페이지와 게임 모듈을 빌드합니다. 
 - **배포:** `main`에 push하면 GitHub Actions가 `dist/`를 GitHub Pages에 배포합니다.
 
