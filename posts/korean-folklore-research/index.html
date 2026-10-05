@@ -15,6 +15,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/src/style.css">
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/folklore-filter.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#content">본문으로 이동</a>
@@ -37,6 +38,27 @@
           <time datetime="2026-10-05">2026.10.05</time>
           <p class="image-credit">AI 창작 이미지 · 설명 출처: <a href="https://www.postype.com/@oldstory/post/1477014">곽재식 괴물 백과</a> · <a href="https://www.postype.com/@oldstory/series/56139">시리즈 전체 목록</a></p>
         </header>
+        <div class="creature-filter" hidden>
+          <div class="creature-filter-buttons" role="group" aria-label="이름 초성으로 필터">
+            <button type="button" data-initial="" aria-pressed="true">전체</button>
+            <button type="button" data-initial="ㄱ" aria-pressed="false">ㄱ</button>
+            <button type="button" data-initial="ㄴ" aria-pressed="false">ㄴ</button>
+            <button type="button" data-initial="ㄷ" aria-pressed="false">ㄷ</button>
+            <button type="button" data-initial="ㄹ" aria-pressed="false">ㄹ</button>
+            <button type="button" data-initial="ㅁ" aria-pressed="false">ㅁ</button>
+            <button type="button" data-initial="ㅂ" aria-pressed="false">ㅂ</button>
+            <button type="button" data-initial="ㅅ" aria-pressed="false">ㅅ</button>
+            <button type="button" data-initial="ㅇ" aria-pressed="false">ㅇ</button>
+            <button type="button" data-initial="ㅈ" aria-pressed="false">ㅈ</button>
+            <button type="button" data-initial="ㅊ" aria-pressed="false">ㅊ</button>
+            <button type="button" data-initial="ㅋ" aria-pressed="false">ㅋ</button>
+            <button type="button" data-initial="ㅌ" aria-pressed="false">ㅌ</button>
+            <button type="button" data-initial="ㅍ" aria-pressed="false">ㅍ</button>
+            <button type="button" data-initial="ㅎ" aria-pressed="false">ㅎ</button>
+          </div>
+          <p class="creature-filter-status" role="status" aria-atomic="true"></p>
+          <p class="creature-filter-hint">쌍자음은 기본 초성에 포함합니다.</p>
+        </div>
         <div class="creature-list">
           <section id="cr41" class="creature-entry" aria-labelledby="cr41-title">
             <a class="creature-image" href="/images/korean-folklore/creatures-g-bdd694b716.png" target="_blank" rel="noopener noreferrer" style="--column: 2; --row: 0" aria-label="가사어 이미지 원본 보기">

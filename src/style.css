@@ -99,6 +99,13 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .research-post .post-header { margin-bottom: 2em; }
 .research-post .post-header h1 { line-height: 1.4; }
 .research-post .image-credit { font-size: .8125em; color: var(--muted); margin: .5em 0 0; }
+.research-post .creature-filter { margin-bottom: 1.5em; }
+.research-post .creature-filter-buttons { display: flex; flex-wrap: wrap; gap: .5em; }
+.research-post .creature-filter-buttons button { min-width: 44px; min-height: 44px; padding: .35em .65em; border: 1px solid var(--border); border-radius: 3px; color: var(--text); background: var(--control); }
+.research-post .creature-filter-buttons button:hover { background: var(--hover); }
+.research-post .creature-filter-buttons button[aria-pressed="true"] { border-color: var(--link); color: var(--background); background: var(--link); font-weight: bold; }
+.research-post .creature-filter-status { margin: .75em 0 0; font-size: .875em; }
+.research-post .creature-filter-hint { margin: .25em 0 0; font-size: .75em; color: var(--muted); }
 .research-post .creature-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5em 1.5em; }
 .research-post .creature-entry { min-width: 0; scroll-margin-top: 1em; }
 .research-post .creature-image { display: block; position: relative; aspect-ratio: 1; overflow: hidden; }
