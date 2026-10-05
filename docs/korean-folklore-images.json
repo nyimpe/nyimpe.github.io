@@ -6,7 +6,7 @@
   "catalog": "https://www.postype.com/@oldstory/post/1477014",
   "catalogEntries": 312,
   "existingCards": 24,
-  "addedCards": 300,
+  "addedCards": 302,
   "sheets": [
     {
       "file": "public/images/korean-folklore/creatures-cr63-cr74-cd08265934.png",
@@ -570,6 +570,28 @@
         "cr362"
       ],
       "prompt": "Use case: illustration-story. Create one square pixel-art illustration for an old Korean folklore bestiary. Match crisp large square pixels, muted parchment beige, dark ink brown, moss green, dull red and antique gold, textured old paper, Korean historical scenery, restrained mysterious mood, detailed SNES-style pixel art with a readable silhouette. The creature is a symbolic old account of Hunal (후놜): a leopardlike animal with thick spotted hide and EXACTLY TWO HIND LEGS, NO FORELEGS, NO ARMS. Its head and torso are plainly feline, not human. It stands upright on those two sturdy hind legs with a long balancing tail in a quiet northern Korean forest beside weathered stones. Show the whole creature clearly centered, with no other animals. Treat this as an openly fictional interpretation of one recorded description, not a documentary reconstruction or a humanlike race. No added horns or wings, no clothes or weapons, no text, no labels, no numbers, no lettering, no watermark, no gore. Aspect ratio 1:1, no frame or margins."
+    },
+    {
+      "file": "public/images/korean-folklore/creature-cr363-54902ca54e.png",
+      "width": 1254,
+      "height": 1254,
+      "columns": 1,
+      "rows": 1,
+      "ids": [
+        "cr363"
+      ],
+      "prompt": "Use case: illustration-story. Create one SQUARE pixel-art illustration for an old Korean folklore bestiary. Crisp visible square pixels, muted parchment beige, dark ink brown, moss green, dull red and antique gold, textured old paper, Korean historical scenery, restrained mysterious mood, detailed SNES-style pixel art with a readable silhouette. Fill the square without margin or frame. This is an openly fictional artistic interpretation, not a documentary reconstruction. No text, lettering, labels, numbers, watermarks, horns, wings, gore, or nudity. Show ONE adult humanlike visitor with ONE normal human head bearing EXACTLY SEVEN separate black hair topknots. Give a slightly elevated three-quarter front view so ALL SEVEN distinct tied hair buns are visible on the SAME head: FOUR buns in a back row and THREE buns in a front row. They are bundles of hair, not horns, crowns, eyes, separate heads or faces. The person wears a plain gray Korean robe and sits beside a low wooden table with several large bowls of cooked rice, conveying a legendary enormous appetite. A quiet Joseon village and low drifting cloud behind the figure allude to its arrival from the sky. Prioritize the single face, the seven clearly countable topknots, and the rice bowls. One person only. Aspect ratio 1:1."
+    },
+    {
+      "file": "public/images/korean-folklore/creature-cr364-929019b35c.png",
+      "width": 1254,
+      "height": 1254,
+      "columns": 1,
+      "rows": 1,
+      "ids": [
+        "cr364"
+      ],
+      "prompt": "Use case: illustration-story. Create one SQUARE pixel-art illustration for an old Korean folklore bestiary. Crisp visible square pixels, muted parchment beige, dark ink brown, moss green, dull red and antique gold, textured old paper, Korean historical scenery, restrained mysterious mood, detailed SNES-style pixel art with a readable silhouette. Fill the square without margin or frame. This is an openly fictional artistic interpretation, not a documentary reconstruction. No text, lettering, labels, numbers, watermarks, horns, wings, gore, or nudity. Show the wind deity Yeongdeung in ONE recorded form: a dignified elderly Korean woman with gray hair in one bun, wearing plain flowing pale gray-blue hanbok. She walks along a Jeju volcanic-rock coast amid bending grasses and sea wind, with distant rain clouds and a small fishing boat. A simple small table offering grain and water stands nearby. Her face is calm and human, her clothing is moved by the wind; evoke a spirit through mist and atmosphere alone. This depicts the grandmother variant only; do not combine a child with the grandmother or invent a hybrid face. No magic staff, no crown, no halo, no extra people. Aspect ratio 1:1."
     }
   ],
   "seriesAudit": {
@@ -577,9 +599,9 @@
     "url": "https://www.postype.com/@oldstory/series/56139",
     "totalEpisodes": 331,
     "coveredIndividualPosts": 325,
-    "totalCards": 324,
-    "addedCards": 13,
-    "note": "강철의 두 개별 회차는 기존 한 카드에 묶여 있다. 안내, 목록, 그림 설명과 이미 반영한 증보 묶음은 별도 카드로 추가하지 않았다.",
+    "totalCards": 326,
+    "addedCards": 15,
+    "note": "강철의 두 개별 회차는 기존 한 카드에 묶여 있다. 증보편 부연에만 소개된 일두칠계와 영등·영동도 별도 카드로 반영했다.",
     "addedEpisodes": [
       {
         "id": "cr350",
@@ -676,25 +698,11 @@
         "reason": "가나다순 전체 링크 목록. 현재 글 상단 출처 링크에 포함되어 있으며 독립 괴물 항목 아님."
       },
       {
-        "postId": 590945,
-        "title": "괴물 백과 사전 증보편 31~40",
-        "url": "https://www.postype.com/@oldstory/post/590945",
-        "classification": "duplicate_compilation",
-        "reason": "번호가 붙은 10항목 모두 기존 카드와 같은 대상. 비번호 부연은 embeddedMentions에서 별도 기록."
-      },
-      {
         "postId": 560694,
         "title": "괴물 백과 사전 증보편 21~30",
         "url": "https://www.postype.com/@oldstory/post/560694",
         "classification": "duplicate_compilation",
-        "reason": "번호가 붙은 10항목 모두 기존 카드와 같은 대상. 비번호 부연은 embeddedMentions에서 별도 기록."
-      },
-      {
-        "postId": 559265,
-        "title": "괴물 백과 사전 증보편 11~20",
-        "url": "https://www.postype.com/@oldstory/post/559265",
-        "classification": "duplicate_compilation",
-        "reason": "번호가 붙은 10항목 모두 기존 카드와 같은 대상. 비번호 부연은 embeddedMentions에서 별도 기록."
+        "reason": "번호가 붙은 10항목 모두 기존 카드에 반영되어 있으며 추가할 별도 괴물 항목 없음."
       },
       {
         "postId": 558741,
@@ -702,6 +710,22 @@
         "url": "https://www.postype.com/@oldstory/post/558741",
         "classification": "guide",
         "reason": "백과 편집 원칙·활용 안내·과거 목록 링크 안내이며 독립 괴물 항목 없음."
+      }
+    ],
+    "coveredCompilationPosts": 2,
+    "coveredSourcePosts": 327,
+    "embeddedAdditions": [
+      {
+        "id": "cr363",
+        "postId": "559265",
+        "name": "일두칠계",
+        "url": "https://www.postype.com/@oldstory/post/559265"
+      },
+      {
+        "id": "cr364",
+        "postId": "590945",
+        "name": "영등·영동",
+        "url": "https://www.postype.com/@oldstory/post/590945"
       }
     ]
   }
