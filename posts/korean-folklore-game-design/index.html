@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="한국 괴물·귀신 326항목을 바탕으로 한 2D 픽셀아트 게임 기획. 장르 시장 조사와 다섯 가지 컨셉 플레이 화면.">
+    <title>한국 괴물·귀신 게임 기획 · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/korean-folklore-game-design/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="한국 괴물·귀신 게임 기획">
+    <meta property="og:description" content="한국 괴물·귀신 326항목을 바탕으로 한 2D 픽셀아트 게임 기획. 장르 시장 조사와 다섯 가지 컨셉 플레이 화면.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/korean-folklore-game-design/">
+    <meta property="og:image" content="https://nyimpe.github.io/images/folklore-game/concept-1-deckbuilder.png">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="https://github.com/nyimpe">GitHub</a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post design-post">
+        <header class="post-header">
+          <h1>한국 괴물·귀신 게임 기획</h1>
+          <time datetime="2026-10-06">2026.10.06</time>
+          <p class="image-credit">바탕 자료: <a href="/posts/korean-folklore-research/">한국 괴물·귀신</a> 326항목 · 컨셉 이미지: 320×180 캔버스에 코드로 찍은 픽셀아트를 4배 확대 · 시장 수치는 2026년 9월 기준 공개 자료</p>
+        </header>
+
+        <nav class="post-toc" aria-label="목차">
+          <ol>
+            <li><a href="#source">자료에서 읽은 것</a></li>
+            <li><a href="#core">공통 기획: 괴이록</a></li>
+            <li><a href="#market">장르 시장 조사</a></li>
+            <li><a href="#concepts">컨셉 다섯 가지</a></li>
+            <li><a href="#next">우선순위</a></li>
+            <li><a href="#refs">출처</a></li>
+          </ol>
+        </nav>
+
+        <section id="source" aria-labelledby="source-title">
+          <h2 id="source-title">1. 자료에서 읽은 것</h2>
+          <p>지난 글의 326항목은 대부분 조선·삼국 문헌의 짧은 기록입니다. 게임 재료로 보면 네 가지가 눈에 띕니다.</p>
+          <ul>
+            <li><strong>약점과 조건이 함께 전한다.</strong> <a href="/posts/korean-folklore-research/#cr76">고관대면</a>은 똑바로 바라보자 사라졌고, <a href="/posts/korean-folklore-research/#cr70">거악</a>은 쇠붙이를 두려워하며, <a href="/posts/korean-folklore-research/#cr164">불가살이</a>는 쇠를 먹을수록 커집니다. <a href="/posts/korean-folklore-research/#cr214">야광</a>은 체의 구멍을 세다 날이 밝아 달아납니다. 기록이 곧 공략법입니다.</li>
+            <li><strong>막는 도구가 체계적이다.</strong> 새해 문에 붙인 처용·<a href="/posts/korean-folklore-research/#cr64">각귀</a>·닭·호랑이 그림, <a href="/posts/korean-folklore-research/#cr88">금갑장군</a>, 지니면 악한 것을 막는 <a href="/posts/korean-folklore-research/#cr155">벽사수</a>처럼 플레이어 쪽 무기와 카드로 옮기기 좋은 항목이 많습니다.</li>
+            <li><strong>장소가 뚜렷하다.</strong> 순천 바다, 단양 동굴 아래의 <a href="/posts/korean-folklore-research/#cr96">남굴북벽</a>, 제주의 각씨당, 버려진 원(院) 건물처럼 지역이 맵이 됩니다.</li>
+            <li><strong>외형 기록이 비어 있는 항목이 많다.</strong> <a href="/posts/korean-folklore-research/#cr58">압마</a>처럼 모습이 불분명한 존재는 해석의 여지를 남기지만, 원전에 없는 설정을 사실처럼 덧붙이지 않는 원칙이 필요합니다.</li>
+          </ul>
+        </section>
+
+        <section id="core" aria-labelledby="core-title">
+          <h2 id="core-title">2. 공통 기획: 괴이록(가제)</h2>
+          <p>다섯 컨셉이 공유하는 세계관입니다. <strong>조선의 문헌 속 괴물을 기록하고, 기록된 방법으로 상대하는 사람들의 이야기</strong>입니다. 어느 장르로 만들든 괴물 데이터와 아트, 도감을 재사용합니다.</p>
+          <ol>
+            <li><strong>기록이 곧 힘</strong> — 도감 칸을 채우는 것이 진행이고, 장르마다 도감이 해금 축이 됩니다.</li>
+            <li><strong>전하는 약점이 곧 공략</strong> — 원전에 적힌 조건과 약점을 메카닉으로 옮깁니다.</li>
+            <li><strong>출처를 지킨다</strong> — 괴물마다 원전과 해설 링크를 달고, 외형이 전하지 않으면 상징으로만 그립니다.</li>
+          </ol>
+          <div class="table-scroll">
+            <table>
+              <caption>괴물 분류를 게임 속성으로</caption>
+              <thead>
+                <tr><th scope="col">속성</th><th scope="col">예시</th><th scope="col">게임에서</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">鬼 귀신</th><td>두억시니, 물귀신, 무사귀, 착착귀신</td><td>제사·부적에 약하고 저주를 건다</td></tr>
+                <tr><th scope="row">妖 요괴</th><td>도깨비, 망량, 흰 여우, 독각</td><td>속임수·변신, 조건을 맞추면 길을 연다</td></tr>
+                <tr><th scope="row">獸 짐승</th><td>불가살이, 강철, 귀구, 천록</td><td>체력과 힘, 쇠·불과 상성</td></tr>
+                <tr><th scope="row">水 물</th><td>거악, 해추, 대망, 인어</td><td>바다·강 지역, 쇠붙이를 꺼린다</td></tr>
+                <tr><th scope="row">龍 용·뱀</th><td>계룡, 백룡, 흑룡, 이사</td><td>날씨를 바꾸는 보스</td></tr>
+                <tr><th scope="row">蟲 벌레</th><td>대오공, 노채충, 식인충</td><td>떼로 나오거나 몸 안에 숨는다</td></tr>
+                <tr><th scope="row">神 신령</th><td>영등, 성모, 산방덕, 금갑장군</td><td>시험을 내는 지역 수호자</td></tr>
+                <tr><th scope="row">徵 징조</th><td>천구성, 천화, 명주단원</td><td>판 전체 규칙을 바꾸는 이벤트</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>아트 규격.</strong> 기본 해상도 320×180(16:9)으로 그려 1280×720(4배), 1920×1080(6배)에 정수배로 맞춥니다. 캐릭터는 16~24px, 보스는 48px 이상. 팔레트는 지난 글 이미지와 같은 한지 베이지·먹 갈색·이끼 초록·탁한 주홍·고금에 밤 장면용 남색·청록을 더합니다. 이 사이트의 다른 게임처럼 Phaser 3로 웹 프로토타입을 만들 수 있는 범위를 기준으로 삼았습니다.</p>
+        </section>
+
+        <section id="market" aria-labelledby="market-title">
+          <h2 id="market-title">3. 장르 시장 조사</h2>
+          <p>Steam 픽셀 게임 4,987개를 분석한 자료에 따르면 중간 가격은 $4.99, 리뷰 500개 이상인 게임은 $7.99입니다. 로그라이트 장르 매출은 2025년 약 4억 달러(전년 대비 +80%), 2026년 상반기에만 약 5억 달러로 추정됩니다. 아래는 2D 픽셀아트와 잘 맞는 여덟 장르의 Steam 지표입니다.</p>
+          <div class="table-scroll">
+            <table>
+              <caption>장르별 Steam 지표 (리뷰 1,000개 ≈ 총매출 15만 달러, Steam 평균 도달률 4.2%)</caption>
+              <thead>
+                <tr><th scope="col">장르</th><th scope="col">2026 출시 증가</th><th scope="col">리뷰 1,000개 도달률</th><th scope="col">성과 좋은 가격대</th><th scope="col">대표 사례</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">샵키퍼·경영</th><td>+634%</td><td>13.2% (3.1배)</td><td>$10~14.99</td><td>Dave the Diver 1,000만 장(한국 민트로켓), Spirittea 매출 100만 달러</td></tr>
+                <tr><th scope="row">불릿 헤븐</th><td>+406%</td><td>13.1% (3.1배)</td><td>$5~9.99</td><td>Vampire Survivors, Megabonk 2주 100만 장</td></tr>
+                <tr><th scope="row">코지</th><td>+143%</td><td>11.0% (2.6배)</td><td>—</td><td>Stardew Valley 3,000만 장 이상</td></tr>
+                <tr><th scope="row">로그라이크 덱빌더</th><td>+93%</td><td>7.8% (1.9배)</td><td>$15~19.99</td><td>Slay the Spire 2 650만 장(추정), Balatro 500만 장</td></tr>
+                <tr><th scope="row">메트로배니아</th><td>+9%</td><td>6.2% (1.5배)</td><td>$20 이상</td><td>Hollow Knight: Silksong 700만 장, Skul 200만 장(한국)</td></tr>
+                <tr><th scope="row">크리처 컬렉터</th><td>+34%</td><td>5.9% (1.4배)</td><td>$20 이상</td><td>Cassette Beasts</td></tr>
+                <tr><th scope="row">서바이벌 호러</th><td>+17%</td><td>5.1% (1.2배)</td><td>$20 이상</td><td>Look Outside 50만 장(1인 개발)</td></tr>
+                <tr><th scope="row">정밀 플랫포머</th><td>—</td><td>1.4% (0.3배)</td><td>—</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">출시 증가는 2026년 1월 1일~9월 27일과 전년 같은 기간 비교(같은 기간 Steam 전체 +45%). 도달률은 2024년 1월~2025년 6월 출시작 기준. 판매량은 발표 또는 추정치입니다.</p>
+
+          <h3>선정 기준</h3>
+          <p>시장 성과(도달률), 경쟁 여유(출시 증가율과 포화), 민담 적합성(326항목을 얼마나 콘텐츠로 쓸 수 있는가), 소규모 제작 가능성(픽셀아트 + 웹 프로토타입) 네 가지로 평가했습니다. 평가는 위 지표를 바탕으로 한 정성 판단입니다.</p>
+          <div class="table-scroll">
+            <table>
+              <caption>평가 결과</caption>
+              <thead>
+                <tr><th scope="col">장르</th><th scope="col">시장</th><th scope="col">경쟁 여유</th><th scope="col">민담 적합</th><th scope="col">제작 부담</th><th scope="col">결과</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">로그라이크 덱빌더</th><td>상</td><td>중</td><td>상</td><td>낮음</td><td>선정</td></tr>
+                <tr><th scope="row">샵키퍼·경영(코지)</th><td>상</td><td>하</td><td>상</td><td>중간</td><td>선정</td></tr>
+                <tr><th scope="row">불릿 헤븐</th><td>상</td><td>하</td><td>중</td><td>낮음</td><td>선정</td></tr>
+                <tr><th scope="row">크리처 컬렉터</th><td>중</td><td>상</td><td>상</td><td>높음</td><td>선정</td></tr>
+                <tr><th scope="row">메트로배니아</th><td>중</td><td>하</td><td>상</td><td>매우 높음</td><td>선정</td></tr>
+                <tr><th scope="row">서바이벌 호러</th><td>하</td><td>중</td><td>상</td><td>중간</td><td>제외 — 호러 톤은 다른 컨셉에 흡수</td></tr>
+                <tr><th scope="row">정밀 플랫포머</th><td>하</td><td>하</td><td>하</td><td>중간</td><td>제외</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>코지는 샵키퍼와 묶었습니다. 불릿 헤븐은 2026년 출시 수가 네 배 넘게 늘어 품질 기준이 빠르게 오르고 있어, 단독 출시작보다 이 사이트의 Vampire Survivor Lite를 고쳐 아트 파이프라인을 시험하는 용도로 둡니다.</p>
+        </section>
+
+        <section id="concepts" aria-labelledby="concepts-title">
+          <h2 id="concepts-title">4. 컨셉 다섯 가지</h2>
+
+          <article class="concept" aria-labelledby="c1-title">
+            <h3 id="c1-title"><span class="concept-genre">로그라이크 덱빌더</span> 벽사록</h3>
+            <figure class="concept-shot">
+              <a href="/images/folklore-game/concept-1-deckbuilder.png" target="_blank" rel="noopener noreferrer">
+                <img src="/images/folklore-game/concept-1-deckbuilder.png" width="1280" height="720" loading="lazy" decoding="async" alt="산사 앞마당의 밤 전투. 갓을 쓴 서생이 부적을 들고 서 있고, 오른쪽에 붉은 눈의 두억시니와 푸른 도깨비불 둘이 공격 의도를 띄운다. 아래에는 처용 부적, 닭 울음, 팥 뿌리기, 금갑장군, 응시 카드 다섯 장이 있다.">
+              </a>
+              <figcaption>2막 산사의 밤. 처용 부적 설명창에 원전을 함께 표시합니다.</figcaption>
+            </figure>
+            <p class="concept-pitch">문에 붙이던 벽사 그림과 부적으로 덱을 짜서 고을 → 산사 → 바다 → 저승의 밤을 넘습니다.</p>
+            <ul>
+              <li><strong>루프</strong>: 갈림길 지도 선택 → 적의 의도가 보이는 턴제 전투 → 부적 획득·강화 → 막 보스 → 판이 끝나면 만난 괴물이 도감에 남음</li>
+              <li><strong>처용 부적</strong>: 역신을 막는 문 그림 → 방어 + 질병형 적 봉인. 전염병 귀신인 <a href="/posts/korean-folklore-research/#cr123">두억시니</a>의 카운터</li>
+              <li><strong>어둑서니</strong>: 두려워할수록 커진다는 기록 → 내 덱의 ‘두려움’ 카드 수만큼 적이 강해짐</li>
+              <li><strong>응시</strong>: 바라보자 사라진 <a href="/posts/korean-folklore-research/#cr76">고관대면</a>, 노려보자 달아난 <a href="/posts/korean-folklore-research/#cr120">독각</a> → 특정 적에게만 통하는 0코스트 카드</li>
+              <li><strong>쇠 카드 상성</strong>: 거악에게는 공포, 불가살이에게는 먹이 → 같은 카드의 가치가 적에 따라 뒤집힘</li>
+            </ul>
+            <p class="concept-meta">참고: Slay the Spire 2, Balatro · 규모: 부적 120장, 적 60종, 보스 6 · 가격대 $15~19.99</p>
+          </article>
+
+          <article class="concept" aria-labelledby="c2-title">
+            <h3 id="c2-title"><span class="concept-genre">불릿 헤븐</span> 야행: 첫닭이 울 때까지</h3>
+            <figure class="concept-shot">
+              <a href="/images/folklore-game/concept-2-bullet-heaven.png" target="_blank" rel="noopener noreferrer">
+                <img src="/images/folklore-game/concept-2-bullet-heaven.png" width="1280" height="720" loading="lazy" decoding="async" alt="밤의 초가 마을 네거리를 위에서 본 화면. 청사초롱을 든 순라군 주위로 부적이 돌고 팥알과 복숭아 가지가 날아가며, 수십 개의 도깨비불과 흰옷 귀신이 몰려온다. 오른쪽 위에는 쇠 비늘의 불가살이 보스가 있고, 아래에 무기 슬롯과 동지팥죽 진화 알림이 있다.">
+              </a>
+              <figcaption>첫닭까지 4분 12초. 팥과 가마솥을 모으면 동지팥죽으로 진화합니다.</figcaption>
+            </figure>
+            <p class="concept-pitch">순라군이 되어 도깨비불과 귀신이 쏟아지는 조선의 밤길에서 첫닭이 울 때까지 버팁니다.</p>
+            <ul>
+              <li><strong>루프</strong>: 20분 생존 → 엽전으로 레벨업 → 무기 3택 → 진화 조합 → 새벽 보스</li>
+              <li><strong>무기</strong>: 팥, 복숭아 가지, 소금, 방울, 엄나무, 부적. 진화 예: 팥 + 가마솥 → 동지팥죽</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr117">도깨비불</a></strong>: 횃불처럼 줄지어 움직인다는 기록 → 일렬 행렬로 돌진하는 적 패턴</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr164">불가살이</a></strong>: 쇠를 먹을수록 커짐 → 쇠 무기를 많이 고른 빌드일수록 보스가 강해짐</li>
+              <li><strong>장승</strong>: 네거리의 고정 안전지대. 체를 걸면 <a href="/posts/korean-folklore-research/#cr214">야광</a>이 구멍을 세느라 멈춤</li>
+            </ul>
+            <p class="concept-meta">참고: Vampire Survivors, Megabonk · 이 사이트의 Vampire Survivor Lite 코드 재사용 · 가격대 $5~9.99</p>
+          </article>
+
+          <article class="concept" aria-labelledby="c3-title">
+            <h3 id="c3-title"><span class="concept-genre">경영·코지</span> 귀객주막</h3>
+            <figure class="concept-shot">
+              <a href="/images/folklore-game/concept-3-ghost-inn.png" target="_blank" rel="noopener noreferrer">
+                <img src="/images/folklore-game/concept-3-ghost-inn.png" width="1280" height="720" loading="lazy" decoding="async" alt="밤의 주막 안. 소반 앞에 뿔 하나 달린 도깨비, 흰 여우, 반투명한 귀신이 앉아 메밀묵과 막걸리와 제삿밥을 기다린다. 오른쪽 아궁이의 가마솥 앞에서 주인이 국자를 들고 있고, 창밖에는 보름달과 성불하는 귀신이 보인다.">
+              </a>
+              <figcaption>사흘째 밤, 삼경. 제삿밥을 받은 귀신이 창밖으로 성불합니다.</figcaption>
+            </figure>
+            <p class="concept-pitch">이승과 저승 갈림길의 주막을 물려받아, 낮에는 재료를 모으고 밤에는 한 맺힌 손님을 대접합니다.</p>
+            <ul>
+              <li><strong>루프</strong>: 낮 채집(산·바다·장터) → 밤 영업(주문·조리·자리 배치) → 한을 풀면 성불 → 영험으로 주막 증축 → 손님 사연이 도감에 기록</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr73">무사귀</a></strong>: 제사를 받지 못한 귀신 → 제삿밥을 차려 달래는 핵심 손님. 늦으면 한 게이지가 차서 재난을 일으킴</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr349">흰 여우</a></strong>: 사람의 자리까지 들어와 앉는 여우 → 좋은 자리를 노리는 자리 배치 퍼즐</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr286">지귀</a></strong>: 마음의 불길이 몸으로 번진 불귀신 → 뜨거운 음식을 내면 주막에 불이 남</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr116">도깨비</a></strong>: 메밀묵을 좋아한다는 민간 속설 → 단골 손님, 대접하면 장터 재료를 가져다줌</li>
+            </ul>
+            <p class="concept-meta">참고: Dave the Diver, Spirittea · 가격대 $10~14.99 · 경쟁이 가장 빠르게 늘어나는 장르</p>
+          </article>
+
+          <article class="concept" aria-labelledby="c4-title">
+            <h3 id="c4-title"><span class="concept-genre">크리처 컬렉터</span> 괴물백과: 화첩</h3>
+            <figure class="concept-shot">
+              <a href="/images/folklore-game/concept-4-creature-collector.png" target="_blank" rel="noopener noreferrer">
+                <img src="/images/folklore-game/concept-4-creature-collector.png" width="1280" height="720" loading="lazy" decoding="async" alt="한지 위 수묵 산수 배경의 턴제 조우 화면. 오른쪽 위 나무 곁에 높은 관을 쓴 큰 얼굴의 고관대면이 서 있고, 왼쪽 아래에 붉은 소용돌이 무늬의 검은 개 귀구가 등을 보이고 있다. 상단 정보창에 기록 조건 ‘끝까지 눈을 피하지 말 것, 응시 2/3’이 표시된다.">
+              </a>
+              <figcaption>고관대면과 조우. 쓰러뜨리는 대신 기록 조건을 채워 화첩에 담습니다.</figcaption>
+            </figure>
+            <p class="concept-pitch">화원이 되어 팔도의 괴물을 만나고, 원전에 적힌 기록 조건을 채워 화첩에 그려 넣습니다.</p>
+            <ul>
+              <li><strong>루프</strong>: 지역 탐험 → 조우 → 기록 조건 충족(전투만으로는 잡히지 않음) → 화첩 등록 → 동료 편성 → 지역 신령의 시험</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr76">고관대면</a></strong>: 똑바로 바라보자 사라짐 → ‘응시’를 세 번 연속 성공해야 기록</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr65">각씨</a></strong>: 제물을 가져가 먹는 노란 짐승 → 제물을 두고 숨어 기다리는 잠입 조우</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr42">귀구</a></strong>: 붉고 검은 무늬의 개 한 쌍 → 두 마리를 함께 편성하면 집 지키기 협동기</li>
+              <li><strong>규모 관리</strong>: 326항목이 콘텐츠 상한. 첫 출시는 120종, 외형 기록이 없는 항목은 상징형 디자인</li>
+            </ul>
+            <p class="concept-meta">참고: Cassette Beasts · 가격대 $20 이상 · 국내 대형사(펄어비스 DokeV, 카카오게임즈 도깨비 IP)와 소재가 겹침</p>
+          </article>
+
+          <article class="concept" aria-labelledby="c5-title">
+            <h3 id="c5-title"><span class="concept-genre">메트로배니아</span> 저승길: 남굴북벽</h3>
+            <figure class="concept-shot">
+              <a href="/images/folklore-game/concept-5-metroidvania.png" target="_blank" rel="noopener noreferrer">
+                <img src="/images/folklore-game/concept-5-metroidvania.png" width="1280" height="720" loading="lazy" decoding="async" alt="청록빛 동굴 속 보스방. 갓을 쓴 검은 옷의 차사 견습생이 잔상을 남기며 공중에서 두 번째 점프를 한다. 뒤에는 땅에 반쯤 묻힌 기와집이 있고, 오른쪽에서 거대한 붉은 지네 대오공이 몸을 세운다. 위쪽 두루마리에 ‘능력 획득 · 독각의 외발 도약’이 떠 있다.">
+              </a>
+              <figcaption>버려진 원의 주인 대오공. 직전 구역에서 독각의 외발 도약을 얻었습니다.</figcaption>
+            </figure>
+            <p class="concept-pitch">저승 차사 견습생이 잃어버린 명부를 찾아 단양 동굴 아래 지하세계로 내려갑니다. 쓰러뜨린 괴물의 성질이 새 이동 능력이 됩니다.</p>
+            <ul>
+              <li><strong><a href="/posts/korean-folklore-research/#cr120">독각</a></strong>: 외다리로 뛰어다님 → 2단 점프</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr130">망량</a></strong>: 그림자 가장자리에 숨고 그림자보다 앞서 움직임 → 그림자 대시</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr268">장비인</a></strong>: 팔이 사람 키의 몇 배 → 갈고리 팔</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr58">압마</a></strong>: 주몽이 물 위에서 타고 이동 → 수면 달리기</li>
+              <li><strong><a href="/posts/korean-folklore-research/#cr229">대오공</a></strong>: 버려진 원의 거대한 지네, 두꺼비가 흰 기운으로 맞섰다는 기록 → <a href="/posts/korean-folklore-research/#cr43">금두꺼비</a>를 데려오면 보스 패턴이 바뀜</li>
+            </ul>
+            <p class="concept-meta">참고: Hollow Knight: Silksong, Skul · 가격대 $20 이상 · 레벨 디자인과 애니메이션 부담이 가장 큼</p>
+          </article>
+        </section>
+
+        <section id="next" aria-labelledby="next-title">
+          <h2 id="next-title">5. 우선순위</h2>
+          <ol>
+            <li><strong>야행</strong> — 기존 Vampire Survivor Lite를 고쳐 픽셀 규격·팔레트·괴물 데이터 구조를 먼저 시험합니다.</li>
+            <li><strong>벽사록</strong> — 시장 성과, 민담 적합성, 제작 부담의 균형이 가장 좋아 본 프로젝트 1순위입니다. 첫 목표는 부적 20장, 적 8종, 1막짜리 웹 데모입니다.</li>
+            <li><strong>귀객주막</strong> — 도달률은 가장 높지만 경쟁이 빠르게 늘어 출시 시점이 중요합니다. 벽사록의 괴물 아트를 손님으로 재사용합니다.</li>
+            <li><strong>괴물백과</strong>와 <strong>저승길</strong> — 도감 데이터와 아트가 쌓인 뒤의 장기 목표입니다.</li>
+          </ol>
+          <p>모든 컨셉이 지난 글의 326항목을 같은 데이터로 씁니다. 다음 작업은 항목별 속성·약점·출처를 JSON으로 정리하는 일입니다.</p>
+        </section>
+
+        <section id="refs" aria-labelledby="refs-title">
+          <h2 id="refs-title">6. 출처</h2>
+          <ul class="ref-list">
+            <li>괴물 설명: <a href="/posts/korean-folklore-research/">한국 괴물·귀신</a> · <a href="https://www.postype.com/@oldstory/post/1477014">곽재식 괴물 백과</a></li>
+            <li>장르 지표: Steam Page Analyzer — <a href="https://www.steampageanalyzer.com/blog/steam-niches-2026-filling-fastest">2026 니치 성장</a>, <a href="https://www.steampageanalyzer.com/niches/shop-keeper">Shop Keeper</a>, <a href="https://www.steampageanalyzer.com/niches/roguelike-deckbuilder">Roguelike Deckbuilder</a>, <a href="https://www.steampageanalyzer.com/niches/bullet-heaven">Bullet Heaven</a>, <a href="https://www.steampageanalyzer.com/niches/metroidvania">Metroidvania</a>, <a href="https://www.steampageanalyzer.com/niches/creature-collector">Creature Collector</a>, <a href="https://www.steampageanalyzer.com/niches/survival-horror">Survival Horror</a>, <a href="https://www.steampageanalyzer.com/niches/cozy">Cozy</a></li>
+            <li>픽셀 게임 시장: <a href="https://10kgame.studio/pixel-report">The 2026 Pixel Game Market</a> · <a href="https://soulbound.game/blog/best-pixel-art-games/">Stardew Valley 판매량</a></li>
+            <li>로그라이트 매출: <a href="https://recognizingpatterns.substack.com/p/the-roguelite-cull-hasnt-happened">The roguelite cull hasn't happened</a></li>
+            <li>불릿 헤븐 동향: <a href="https://howtomarketagame.com/2026/05/19/2026-state-of-bullet-heavens-how-vital-shell-succeeded/">2026 State of Bullet Heavens</a></li>
+            <li>판매량: <a href="https://80.lv/articles/dave-the-diver-sells-over-10-million-copies">Dave the Diver</a> · <a href="https://techraptor.net/gaming/news/spirittea-boast-successful-launch-with-1-million-in-sales-and-promises-updates-and-free">Spirittea</a> · <a href="https://www.notebookcheck.net/Vampire-Survivors-esque-indie-Reverse-Bullet-Hell-Game-Megabonk-Sells-1-Million-Copies-in-Just-Two-Weeks.1132354.0.html">Megabonk</a> · <a href="https://statista.com/statistics/1546856/balatro-global-unit-sales">Balatro</a> · <a href="https://respawn.outlookindia.com/gaming/gaming-news/silksong-sales-hit-7-million-as-team-cherry-announces-free-dlc">Silksong</a> · <a href="https://gamedeveloper.com/business/skul-the-hero-slayer-hits-2-million-sold-copies">Skul</a> · <a href="https://techora.ru/news/tirazh-khorror-rpg-look-outside-prevysil-2026-08-09">Look Outside</a></li>
+            <li>국내 민담 소재 게임: <a href="https://allthings.how/world-of-dokkaebi-release-date/">World of Dokkaebi</a> · <a href="https://thegameswiki.com/dokev/wiki/overview">DokeV</a></li>
+          </ul>
+        </section>
+
+        <p class="post-back"><a href="/">← 전체 글 목록</a></p>
+      </article>
+    </main>
+    <footer lang="en" class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>

@@ -125,3 +125,28 @@ hr { border: 0; border-top: 1px solid var(--border); }
   .stack-badges { margin: 2em auto; }
   .research-post .creature-list { grid-template-columns: minmax(0, 1fr); }
 }
+
+.research-post h3 { font-size: 1.2em; line-height: 1.4; margin-top: 1.75em; }
+.research-post .post-next { margin-top: 3em; }
+.research-post .post-next + .post-back { margin-top: .5em; }
+.research-post .table-scroll { overflow-x: auto; margin: 1em 0; }
+.research-post table { width: 100%; border-collapse: collapse; font-size: .875em; line-height: 1.5; word-break: keep-all; }
+.research-post caption { text-align: left; font-weight: bold; padding-bottom: .5em; }
+.research-post th, .research-post td { padding: .45em .6em; border-bottom: 1px solid var(--soft-border); text-align: left; vertical-align: top; }
+.research-post thead th { border-bottom-color: var(--border); white-space: nowrap; }
+.research-post tbody th { white-space: nowrap; }
+.research-post .table-note { font-size: .75em; color: var(--muted); }
+.design-post .post-toc { padding: .75em 1em; border: 1px solid var(--soft-border); background: var(--surface); }
+.design-post .post-toc ol { margin: 0; padding-left: 1.5em; }
+.design-post section { scroll-margin-top: 1em; }
+.design-post .concept { margin: 2.5em 0 3.5em; }
+.design-post .concept h3 { font-size: 1.375em; margin: 0 0 .6em; }
+.design-post .concept-genre { display: inline-block; margin-right: .4em; padding: .1em .5em; border: 1px solid var(--border); border-radius: 3px; color: var(--muted); font-size: .6em; font-weight: normal; vertical-align: middle; }
+.design-post .concept-shot { margin: 0 0 1em; }
+.design-post .concept-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--soft-border); image-rendering: pixelated; }
+.design-post .concept-shot figcaption { margin-top: .4em; font-size: .8125em; color: var(--muted); }
+.design-post .concept-pitch { font-weight: bold; }
+.design-post .concept ul { padding-left: 1.25em; }
+.design-post .concept li { margin: .3em 0; }
+.design-post .concept-meta { font-size: .8125em; color: var(--muted); }
+.design-post .ref-list { font-size: .875em; }
