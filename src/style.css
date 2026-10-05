@@ -102,7 +102,7 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .research-post .creature-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5em 1.5em; }
 .research-post .creature-entry { min-width: 0; scroll-margin-top: 1em; }
 .research-post .creature-image { display: block; position: relative; aspect-ratio: 1; overflow: hidden; }
-.research-post .creature-image img { position: absolute; max-width: none; width: 300%; height: 200%; left: calc(var(--column) * -100%); top: calc(var(--row) * -100%); image-rendering: pixelated; }
+.research-post .creature-image img { position: absolute; max-width: none; width: calc(var(--sheet-columns, 3) * 100%); height: calc(var(--sheet-rows, 2) * 100%); left: calc(var(--column) * -100%); top: calc(var(--row) * -100%); image-rendering: pixelated; }
 .research-post .creature-entry h2 { font-size: 1.125em; margin: .8em 0 .4em; }
 .research-post .creature-entry p { margin: .5em 0; }
 .research-post .creature-source { font-size: .75em; color: var(--muted); }
