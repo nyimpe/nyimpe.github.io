@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="온라인 논리 퍼즐 41종의 실제 게임 화면, 간단한 규칙, 플레이 링크.">
+    <title>온라인 논리 퍼즐 41종 · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/logic-puzzles/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="온라인 논리 퍼즐 41종">
+    <meta property="og:description" content="게임 화면으로 살펴보는 41가지 논리 퍼즐과 짧은 규칙 설명.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/logic-puzzles/">
+    <meta property="og:image" content="https://nyimpe.github.io/images/logic-puzzles/lollipops.jpg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="https://github.com/nyimpe">GitHub</a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post puzzle-post">
+        <header class="post-header">
+          <h1>온라인 논리 퍼즐 41종</h1>
+          <time datetime="2026-10-06">2026.10.06</time>
+          <p>숫자를 채우고, 칸을 칠하고, 선을 잇는 41가지 퍼즐. 각 게임의 시작 화면과 핵심 규칙을 함께 정리했습니다.</p>
+          <p class="image-credit">목록 출처: <a href="https://ko.puzzle-lollipops.com/" target="_blank" rel="noopener noreferrer">롤리팝스</a>의 다른 논리 퍼즐들 · 화면과 규칙: 각 게임의 공식 사이트 · 2026.10.06 확인</p>
+        </header>
+        <details class="puzzle-index">
+          <summary>게임 목록 · 41종</summary>
+          <nav aria-label="게임별 바로가기">
+            <ol>
+              <li><a href="#lollipops">롤리팝스</a></li>
+              <li><a href="#kurodoko">쿠로도코</a></li>
+              <li><a href="#binairo-plus">비나이로+</a></li>
+              <li><a href="#yin-yang">음양</a></li>
+              <li><a href="#chess">체스 퍼즐</a></li>
+              <li><a href="#thermometers">온도계</a></li>
+              <li><a href="#norinori">노리노리</a></li>
+              <li><a href="#mosaic">모자이크</a></li>
+              <li><a href="#minesweeper">지뢰찾기</a></li>
+              <li><a href="#slant">슬랜트</a></li>
+              <li><a href="#lits">LITS</a></li>
+              <li><a href="#galaxies">갤럭시</a></li>
+              <li><a href="#tents">텐트</a></li>
+              <li><a href="#battleships">배틀쉽</a></li>
+              <li><a href="#pipes">파이프</a></li>
+              <li><a href="#hitori">히토리</a></li>
+              <li><a href="#heyawake">헤야와케</a></li>
+              <li><a href="#shingoki">신고키</a></li>
+              <li><a href="#masyu">마슈</a></li>
+              <li><a href="#stitches">스티치 · 바느질</a></li>
+              <li><a href="#aquarium">아쿠아리움</a></li>
+              <li><a href="#tapa">타파</a></li>
+              <li><a href="#star-battle">스타 배틀</a></li>
+              <li><a href="#kakurasu">카쿠라스</a></li>
+              <li><a href="#skyscrapers">스카이스크래퍼</a></li>
+              <li><a href="#futoshiki">후토시키</a></li>
+              <li><a href="#renzoku">렌조쿠</a></li>
+              <li><a href="#words">단어 찾기 · 보글</a></li>
+              <li><a href="#shakashaka">샤카샤카</a></li>
+              <li><a href="#kakuro">카쿠로</a></li>
+              <li><a href="#jigsaw-sudoku">직소 스도쿠</a></li>
+              <li><a href="#killer-sudoku">킬러 스도쿠</a></li>
+              <li><a href="#binairo">비나이로</a></li>
+              <li><a href="#nonograms">노노그램</a></li>
+              <li><a href="#slitherlink">슬리더 링크</a></li>
+              <li><a href="#sudoku">스도쿠</a></li>
+              <li><a href="#light-up">라이트업</a></li>
+              <li><a href="#bridges">브릿지</a></li>
+              <li><a href="#shikaku">시카쿠</a></li>
+              <li><a href="#nurikabe">누리카베</a></li>
+              <li><a href="#dominosa">도미노사</a></li>
+            </ol>
+          </nav>
+        </details>
+        <ol class="puzzle-list" role="list">
+          <li id="lollipops" class="puzzle-entry" aria-labelledby="lollipops-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/lollipops.jpg" target="_blank" rel="noopener noreferrer" aria-label="롤리팝스 화면 크게 보기">
+                <img src="/images/logic-puzzles/lollipops.jpg" width="343" height="343" loading="eager" decoding="async" alt="롤리팝스의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 보통</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">도형 배치하기</p>
+              <h2 id="lollipops-title"><span class="puzzle-number" aria-hidden="true">01.</span> 롤리팝스</h2>
+              <p>원 하나와 이웃한 막대 하나를 짝지어 사탕을 만들고, 서로 다른 사탕끼리는 변으로 닿지 않게 합니다. 같은 행·열에서 같은 종류의 조각(원·가로 막대·세로 막대) 사이에는 다른 종류의 조각이 있어야 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-lollipops.com/" target="_blank" rel="noopener noreferrer" aria-label="롤리팝스 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="kurodoko" class="puzzle-entry" aria-labelledby="kurodoko-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/kurodoko.jpg" target="_blank" rel="noopener noreferrer" aria-label="쿠로도코 화면 크게 보기">
+                <img src="/images/logic-puzzles/kurodoko.jpg" width="343" height="343" loading="lazy" decoding="async" alt="쿠로도코의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="kurodoko-title"><span class="puzzle-number" aria-hidden="true">02.</span> 쿠로도코</h2>
+              <p>숫자는 자기 칸을 포함해 상하좌우로 검은 칸이나 테두리까지 보이는 흰 칸의 총수입니다. 숫자 칸은 흰색으로 유지하고, 흰 칸 전체는 연결되게, 검은 칸끼리는 변으로 닿지 않게 칠합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-kurodoko.com/" target="_blank" rel="noopener noreferrer" aria-label="쿠로도코 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="binairo-plus" class="puzzle-entry" aria-labelledby="binairo-plus-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/binairo-plus.jpg" target="_blank" rel="noopener noreferrer" aria-label="비나이로+ 화면 크게 보기">
+                <img src="/images/logic-puzzles/binairo-plus.jpg" width="343" height="343" loading="lazy" decoding="async" alt="비나이로+의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="binairo-plus-title"><span class="puzzle-number" aria-hidden="true">03.</span> 비나이로+</h2>
+              <p>행과 열마다 검은색·흰색 개수를 같게 하고, 같은 색이 세 칸 연속되지 않게 채웁니다. = 기호 양쪽은 같은 색, x 기호 양쪽은 다른 색이어야 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-binairo.com/binairo-plus-6x6-easy/" target="_blank" rel="noopener noreferrer" aria-label="비나이로+ 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="yin-yang" class="puzzle-entry" aria-labelledby="yin-yang-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/yin-yang.jpg" target="_blank" rel="noopener noreferrer" aria-label="음양 화면 크게 보기">
+                <img src="/images/logic-puzzles/yin-yang.jpg" width="343" height="343" loading="lazy" decoding="async" alt="음양의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="yin-yang-title"><span class="puzzle-number" aria-hidden="true">04.</span> 음양</h2>
+              <p>모든 칸을 흰색이나 검은색으로 채워, 각 색의 칸들이 상하좌우로 하나로 이어지게 합니다. 같은 색의 2×2 정사각형을 만들면 안 됩니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-yin-yang.com/" target="_blank" rel="noopener noreferrer" aria-label="음양 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="chess" class="puzzle-entry" aria-labelledby="chess-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/chess.jpg" target="_blank" rel="noopener noreferrer" aria-label="체스 퍼즐 화면 크게 보기">
+                <img src="/images/logic-puzzles/chess.jpg" width="344" height="344" loading="lazy" decoding="async" alt="체스 퍼즐의 실제 게임 시작 화면">
+              </a>
+              <figcaption>체스 레인저 · 기물 4개</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">단어·체스</p>
+              <h2 id="chess-title"><span class="puzzle-number" aria-hidden="true">05.</span> 체스 퍼즐</h2>
+              <p>체스 레인저에서는 체스 기물의 이동법을 따라 매번 다른 기물을 잡아, 마지막에 기물 하나만 남깁니다. 왕도 잡을 수 있습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-chess.com/chess-ranger-4/" target="_blank" rel="noopener noreferrer" aria-label="체스 퍼즐 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="thermometers" class="puzzle-entry" aria-labelledby="thermometers-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/thermometers.jpg" target="_blank" rel="noopener noreferrer" aria-label="온도계 화면 크게 보기">
+                <img src="/images/logic-puzzles/thermometers.jpg" width="344" height="344" loading="lazy" decoding="async" alt="온도계의 실제 게임 시작 화면">
+              </a>
+              <figcaption>4×4</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="thermometers-title"><span class="puzzle-number" aria-hidden="true">06.</span> 온도계</h2>
+              <p>온도계를 둥근 시작점에서부터 빈틈없이 채우고, 바깥 숫자에 맞춰 각 행과 열의 채운 칸 수를 맞춥니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-thermometers.com/" target="_blank" rel="noopener noreferrer" aria-label="온도계 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="norinori" class="puzzle-entry" aria-labelledby="norinori-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/norinori.jpg" target="_blank" rel="noopener noreferrer" aria-label="노리노리 화면 크게 보기">
+                <img src="/images/logic-puzzles/norinori.jpg" width="343" height="343" loading="lazy" decoding="async" alt="노리노리의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 보통</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">도형 배치하기</p>
+              <h2 id="norinori-title"><span class="puzzle-number" aria-hidden="true">07.</span> 노리노리</h2>
+              <p>각 구역에서 정확히 두 칸을 칠하고, 모든 칠한 칸을 1×2 또는 2×1 도미노로 만듭니다. 도미노는 구역 경계를 넘어도 되며, 서로 다른 도미노는 변으로 닿을 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-norinori.com/" target="_blank" rel="noopener noreferrer" aria-label="노리노리 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="mosaic" class="puzzle-entry" aria-labelledby="mosaic-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/mosaic.jpg" target="_blank" rel="noopener noreferrer" aria-label="모자이크 화면 크게 보기">
+                <img src="/images/logic-puzzles/mosaic.jpg" width="278" height="278" loading="lazy" decoding="async" alt="모자이크의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="mosaic-title"><span class="puzzle-number" aria-hidden="true">08.</span> 모자이크</h2>
+              <p>숫자가 있는 칸을 중심으로 한 3×3 영역에서, 검게 칠한 칸 수가 그 숫자와 같도록 채웁니다. 숫자 칸 자신도 개수에 포함합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-minesweeper.com/mosaic-5x5-easy/" target="_blank" rel="noopener noreferrer" aria-label="모자이크 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="minesweeper" class="puzzle-entry" aria-labelledby="minesweeper-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/minesweeper.jpg" target="_blank" rel="noopener noreferrer" aria-label="지뢰찾기 화면 크게 보기">
+                <img src="/images/logic-puzzles/minesweeper.jpg" width="278" height="278" loading="lazy" decoding="async" alt="지뢰찾기의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="minesweeper-title"><span class="puzzle-number" aria-hidden="true">09.</span> 지뢰찾기</h2>
+              <p>숫자를 단서로 가로·세로·대각선 이웃 칸의 지뢰 위치를 찾습니다. 숫자는 자기 칸을 제외한 주변 최대 여덟 칸의 지뢰 수를 나타냅니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-minesweeper.com/minesweeper-5x5-easy/" target="_blank" rel="noopener noreferrer" aria-label="지뢰찾기 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="slant" class="puzzle-entry" aria-labelledby="slant-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/slant.jpg" target="_blank" rel="noopener noreferrer" aria-label="슬랜트 화면 크게 보기">
+                <img src="/images/logic-puzzles/slant.jpg" width="344" height="344" loading="lazy" decoding="async" alt="슬랜트의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">선 연결하기</p>
+              <h2 id="slant-title"><span class="puzzle-number" aria-hidden="true">10.</span> 슬랜트</h2>
+              <p>모든 칸에 두 방향 중 하나의 대각선을 놓고, 숫자가 있는 꼭짓점에 닿는 선 수를 맞춥니다. 선들이 어떤 형태의 고리도 만들면 안 됩니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-slant.com/" target="_blank" rel="noopener noreferrer" aria-label="슬랜트 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="lits" class="puzzle-entry" aria-labelledby="lits-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/lits.jpg" target="_blank" rel="noopener noreferrer" aria-label="LITS 화면 크게 보기">
+                <img src="/images/logic-puzzles/lits.jpg" width="343" height="343" loading="lazy" decoding="async" alt="LITS의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 보통</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">도형 배치하기</p>
+              <h2 id="lits-title"><span class="puzzle-number" aria-hidden="true">11.</span> LITS</h2>
+              <p>각 구역에 L·I·T·S 모양의 네 칸 도형 하나를 칠해, 칠한 칸 전체가 상하좌우로 이어지게 합니다. 회전·반전을 포함해 같은 모양끼리는 변으로 닿을 수 없고, 칠한 2×2 정사각형도 만들 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-lits.com/" target="_blank" rel="noopener noreferrer" aria-label="LITS 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="galaxies" class="puzzle-entry" aria-labelledby="galaxies-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/galaxies.jpg" target="_blank" rel="noopener noreferrer" aria-label="갤럭시 화면 크게 보기">
+                <img src="/images/logic-puzzles/galaxies.jpg" width="343" height="343" loading="lazy" decoding="async" alt="갤럭시의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5 보통</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">도형 배치하기</p>
+              <h2 id="galaxies-title"><span class="puzzle-number" aria-hidden="true">12.</span> 갤럭시</h2>
+              <p>격자 전체를 원이 하나씩 들어가는 영역으로 나눕니다. 각 영역은 그 원을 중심으로 180° 돌려도 같은 모양이어야 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-galaxies.com/" target="_blank" rel="noopener noreferrer" aria-label="갤럭시 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="tents" class="puzzle-entry" aria-labelledby="tents-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/tents.jpg" target="_blank" rel="noopener noreferrer" aria-label="텐트 화면 크게 보기">
+                <img src="/images/logic-puzzles/tents.jpg" width="344" height="344" loading="lazy" decoding="async" alt="텐트의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">도형 배치하기</p>
+              <h2 id="tents-title"><span class="puzzle-number" aria-hidden="true">13.</span> 텐트</h2>
+              <p>나무마다 상하좌우의 텐트를 하나씩 짝짓고, 행·열의 텐트 수를 바깥 숫자에 맞춥니다. 텐트끼리는 대각선까지 서로 닿으면 안 됩니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-tents.com/" target="_blank" rel="noopener noreferrer" aria-label="텐트 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="battleships" class="puzzle-entry" aria-labelledby="battleships-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/battleships.jpg" target="_blank" rel="noopener noreferrer" aria-label="배틀쉽 화면 크게 보기">
+                <img src="/images/logic-puzzles/battleships.jpg" width="344" height="462" loading="lazy" decoding="async" alt="배틀쉽의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">도형 배치하기</p>
+              <h2 id="battleships-title"><span class="puzzle-number" aria-hidden="true">14.</span> 배틀쉽</h2>
+              <p>주어진 크기와 수량의 직선 전함을 배치해 행·열에서 배가 차지하는 칸 수를 맞춥니다. 서로 다른 배는 대각선까지 닿으면 안 됩니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-battleships.com/" target="_blank" rel="noopener noreferrer" aria-label="배틀쉽 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="pipes" class="puzzle-entry" aria-labelledby="pipes-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/pipes.jpg" target="_blank" rel="noopener noreferrer" aria-label="파이프 화면 크게 보기">
+                <img src="/images/logic-puzzles/pipes.jpg" width="343" height="343" loading="lazy" decoding="async" alt="파이프의 실제 게임 시작 화면">
+              </a>
+              <figcaption>4×4</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">선 연결하기</p>
+              <h2 id="pipes-title"><span class="puzzle-number" aria-hidden="true">15.</span> 파이프</h2>
+              <p>타일을 회전시켜 모든 파이프를 하나로 연결합니다. 순환하는 고리는 만들면 안 됩니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-pipes.com/" target="_blank" rel="noopener noreferrer" aria-label="파이프 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="hitori" class="puzzle-entry" aria-labelledby="hitori-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/hitori.jpg" target="_blank" rel="noopener noreferrer" aria-label="히토리 화면 크게 보기">
+                <img src="/images/logic-puzzles/hitori.jpg" width="344" height="344" loading="lazy" decoding="async" alt="히토리의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="hitori-title"><span class="puzzle-number" aria-hidden="true">16.</span> 히토리</h2>
+              <p>일부 숫자 칸을 검게 칠해 각 행·열의 숫자 중복을 없앱니다. 검은 칸끼리는 변으로 닿을 수 없고, 남은 흰 칸은 모두 연결되어야 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-hitori.com/" target="_blank" rel="noopener noreferrer" aria-label="히토리 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="heyawake" class="puzzle-entry" aria-labelledby="heyawake-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/heyawake.jpg" target="_blank" rel="noopener noreferrer" aria-label="헤야와케 화면 크게 보기">
+                <img src="/images/logic-puzzles/heyawake.jpg" width="343" height="343" loading="lazy" decoding="async" alt="헤야와케의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="heyawake-title"><span class="puzzle-number" aria-hidden="true">17.</span> 헤야와케</h2>
+              <p>방의 숫자만큼 칸을 검게 칠하고, 검은 칸끼리 변으로 닿지 않으며 흰 칸 전체가 연결되게 합니다. 가로·세로로 연속된 흰 칸 줄은 세 개 이상의 방에 걸칠 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-heyawake.com/" target="_blank" rel="noopener noreferrer" aria-label="헤야와케 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="shingoki" class="puzzle-entry" aria-labelledby="shingoki-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/shingoki.jpg" target="_blank" rel="noopener noreferrer" aria-label="신고키 화면 크게 보기">
+                <img src="/images/logic-puzzles/shingoki.jpg" width="343" height="343" loading="lazy" decoding="async" alt="신고키의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">선 연결하기</p>
+              <h2 id="shingoki-title"><span class="puzzle-number" aria-hidden="true">18.</span> 신고키</h2>
+              <p>모든 원을 지나는 하나의 고리를 그리고, 흰 원에서 직진하며 검은 원에서 꺾습니다. 원의 숫자는 원 양쪽으로 뻗는 직선 구간 길이의 합입니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-shingoki.com/" target="_blank" rel="noopener noreferrer" aria-label="신고키 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="masyu" class="puzzle-entry" aria-labelledby="masyu-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/masyu.jpg" target="_blank" rel="noopener noreferrer" aria-label="마슈 화면 크게 보기">
+                <img src="/images/logic-puzzles/masyu.jpg" width="343" height="343" loading="lazy" decoding="async" alt="마슈의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">선 연결하기</p>
+              <h2 id="masyu-title"><span class="puzzle-number" aria-hidden="true">19.</span> 마슈</h2>
+              <p>모든 원을 지나는 하나의 고리를 그립니다. 흰 원에서는 직진하되 적어도 한쪽 다음 칸에서 꺾고, 검은 원에서는 꺾되 양쪽 다음 칸에서는 직진해야 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-masyu.com/" target="_blank" rel="noopener noreferrer" aria-label="마슈 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="stitches" class="puzzle-entry" aria-labelledby="stitches-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/stitches.jpg" target="_blank" rel="noopener noreferrer" aria-label="스티치 · 바느질 화면 크게 보기">
+                <img src="/images/logic-puzzles/stitches.jpg" width="343" height="343" loading="lazy" decoding="async" alt="스티치 · 바느질의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5/1÷ 보통</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">선 연결하기</p>
+              <h2 id="stitches-title"><span class="puzzle-number" aria-hidden="true">20.</span> 스티치 · 바느질</h2>
+              <p>인접 구역 쌍마다 1÷는 한 번, 2÷는 두 번, 3÷는 세 번 바느질을 놓고 행·열의 구멍 수를 맞춥니다. 바느질은 서로 다른 구역의 상하좌우 이웃한 두 칸을 잇고, 구멍은 공유할 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-stitches.com/" target="_blank" rel="noopener noreferrer" aria-label="스티치 · 바느질 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="aquarium" class="puzzle-entry" aria-labelledby="aquarium-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/aquarium.jpg" target="_blank" rel="noopener noreferrer" aria-label="아쿠아리움 화면 크게 보기">
+                <img src="/images/logic-puzzles/aquarium.jpg" width="344" height="344" loading="lazy" decoding="async" alt="아쿠아리움의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="aquarium-title"><span class="puzzle-number" aria-hidden="true">21.</span> 아쿠아리움</h2>
+              <p>수족관마다 일정 수위까지 물을 채우거나 비워 두어 행·열의 물 칸 수를 맞춥니다. 한 수족관 안에서는 전체 너비에 걸쳐 수위가 같아야 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-aquarium.com/" target="_blank" rel="noopener noreferrer" aria-label="아쿠아리움 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="tapa" class="puzzle-entry" aria-labelledby="tapa-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/tapa.jpg" target="_blank" rel="noopener noreferrer" aria-label="타파 화면 크게 보기">
+                <img src="/images/logic-puzzles/tapa.jpg" width="343" height="343" loading="lazy" decoding="async" alt="타파의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 보통</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="tapa-title"><span class="puzzle-number" aria-hidden="true">22.</span> 타파</h2>
+              <p>검은 칸들을 상하좌우로 연결된 한 덩어리로 만들되, 2×2 검은 영역은 만들지 않습니다. 단서는 주변의 연속된 검은 구간들의 길이이며, 서로 다른 구간 사이에는 흰 칸이 있어야 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-tapa.com/" target="_blank" rel="noopener noreferrer" aria-label="타파 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="star-battle" class="puzzle-entry" aria-labelledby="star-battle-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/star-battle.jpg" target="_blank" rel="noopener noreferrer" aria-label="스타 배틀 화면 크게 보기">
+                <img src="/images/logic-puzzles/star-battle.jpg" width="344" height="344" loading="lazy" decoding="async" alt="스타 배틀의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5/1★ 보통</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">도형 배치하기</p>
+              <h2 id="star-battle-title"><span class="puzzle-number" aria-hidden="true">23.</span> 스타 배틀</h2>
+              <p>각 행·열·구역에 지정된 개수의 별을 배치합니다. 별끼리는 가로·세로·대각선으로 서로 닿을 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-star-battle.com/" target="_blank" rel="noopener noreferrer" aria-label="스타 배틀 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="kakurasu" class="puzzle-entry" aria-labelledby="kakurasu-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/kakurasu.jpg" target="_blank" rel="noopener noreferrer" aria-label="카쿠라스 화면 크게 보기">
+                <img src="/images/logic-puzzles/kakurasu.jpg" width="343" height="343" loading="lazy" decoding="async" alt="카쿠라스의 실제 게임 시작 화면">
+              </a>
+              <figcaption>4×4 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="kakurasu-title"><span class="puzzle-number" aria-hidden="true">24.</span> 카쿠라스</h2>
+              <p>검은 칸의 위치 값을 더해 각 행과 열의 바깥 숫자를 맞춥니다. 행에서는 열 번호, 열에서는 행 번호가 칸의 값이며 첫 번째 칸부터 1, 2, 3으로 셉니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-kakurasu.com/" target="_blank" rel="noopener noreferrer" aria-label="카쿠라스 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="skyscrapers" class="puzzle-entry" aria-labelledby="skyscrapers-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/skyscrapers.jpg" target="_blank" rel="noopener noreferrer" aria-label="스카이스크래퍼 화면 크게 보기">
+                <img src="/images/logic-puzzles/skyscrapers.jpg" width="396" height="344" loading="lazy" decoding="async" alt="스카이스크래퍼의 실제 게임 시작 화면">
+              </a>
+              <figcaption>4×4 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">숫자 채우기</p>
+              <h2 id="skyscrapers-title"><span class="puzzle-number" aria-hidden="true">25.</span> 스카이스크래퍼</h2>
+              <p>N×N 격자에 높이 1~N의 건물을 넣고, 각 행과 열에서 같은 높이가 겹치지 않게 합니다. 바깥 숫자는 그 방향에서 보이는 건물의 수입니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-skyscrapers.com/" target="_blank" rel="noopener noreferrer" aria-label="스카이스크래퍼 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="futoshiki" class="puzzle-entry" aria-labelledby="futoshiki-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/futoshiki.jpg" target="_blank" rel="noopener noreferrer" aria-label="후토시키 화면 크게 보기">
+                <img src="/images/logic-puzzles/futoshiki.jpg" width="424" height="344" loading="lazy" decoding="async" alt="후토시키의 실제 게임 시작 화면">
+              </a>
+              <figcaption>4×4 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">숫자 채우기</p>
+              <h2 id="futoshiki-title"><span class="puzzle-number" aria-hidden="true">26.</span> 후토시키</h2>
+              <p>N×N 격자를 1~N으로 채우고 각 행과 열에서 숫자가 겹치지 않게 합니다. 칸 사이에 주어진 부등호를 모두 만족해야 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-futoshiki.com/futoshiki-4x4-easy/" target="_blank" rel="noopener noreferrer" aria-label="후토시키 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="renzoku" class="puzzle-entry" aria-labelledby="renzoku-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/renzoku.jpg" target="_blank" rel="noopener noreferrer" aria-label="렌조쿠 화면 크게 보기">
+                <img src="/images/logic-puzzles/renzoku.jpg" width="424" height="344" loading="lazy" decoding="async" alt="렌조쿠의 실제 게임 시작 화면">
+              </a>
+              <figcaption>4×4 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">숫자 채우기</p>
+              <h2 id="renzoku-title"><span class="puzzle-number" aria-hidden="true">27.</span> 렌조쿠</h2>
+              <p>각 행과 열에 1~N을 한 번씩 넣습니다. 점으로 연결된 두 칸은 연속된 숫자여야 하고, 점이 없는 인접 칸은 연속된 숫자이면 안 됩니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-futoshiki.com/renzoku-4x4-easy/" target="_blank" rel="noopener noreferrer" aria-label="렌조쿠 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="words" class="puzzle-entry" aria-labelledby="words-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/words.jpg" target="_blank" rel="noopener noreferrer" aria-label="단어 찾기 · 보글 화면 크게 보기">
+                <img src="/images/logic-puzzles/words.jpg" width="394" height="341" loading="lazy" decoding="async" alt="단어 찾기 · 보글의 실제 게임 시작 화면">
+              </a>
+              <figcaption>4×4 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">단어·체스</p>
+              <h2 id="words-title"><span class="puzzle-number" aria-hidden="true">28.</span> 단어 찾기 · 보글</h2>
+              <p>가로·세로·대각선으로 인접한 글자를 연결해 단어를 찾으며, 한 단어에서 같은 칸을 다시 사용할 수 없습니다. 긴 단어일수록 점수가 높고, 난이도별 목표 점수를 달성하면 완료됩니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-words.com/boggle-4x4/" target="_blank" rel="noopener noreferrer" aria-label="단어 찾기 · 보글 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="shakashaka" class="puzzle-entry" aria-labelledby="shakashaka-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/shakashaka.jpg" target="_blank" rel="noopener noreferrer" aria-label="샤카샤카 화면 크게 보기">
+                <img src="/images/logic-puzzles/shakashaka.jpg" width="323" height="323" loading="lazy" decoding="async" alt="샤카샤카의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">도형 배치하기</p>
+              <h2 id="shakashaka-title"><span class="puzzle-number" aria-hidden="true">29.</span> 샤카샤카</h2>
+              <p>흰 칸 일부에 칸의 절반을 차지하는 검은 직각삼각형을 넣어, 남은 흰 영역을 모두 직사각형이나 정사각형으로 만듭니다. 검은 칸의 숫자는 상하좌우에 인접한 삼각형 수이며, 흰 직사각형은 45° 기울어져도 됩니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-shakashaka.com/" target="_blank" rel="noopener noreferrer" aria-label="샤카샤카 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="kakuro" class="puzzle-entry" aria-labelledby="kakuro-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/kakuro.jpg" target="_blank" rel="noopener noreferrer" aria-label="카쿠로 화면 크게 보기">
+                <img src="/images/logic-puzzles/kakuro.jpg" width="363" height="363" loading="lazy" decoding="async" alt="카쿠로의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">숫자 채우기</p>
+              <h2 id="kakuro-title"><span class="puzzle-number" aria-hidden="true">30.</span> 카쿠로</h2>
+              <p>흰 칸에 1~9를 넣어 검은 칸이 지정한 오른쪽·아래쪽 연속 구간의 합을 맞춥니다. 하나의 합계 구간 안에서는 같은 숫자를 반복할 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-kakuro.com/" target="_blank" rel="noopener noreferrer" aria-label="카쿠로 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="jigsaw-sudoku" class="puzzle-entry" aria-labelledby="jigsaw-sudoku-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/jigsaw-sudoku.jpg" target="_blank" rel="noopener noreferrer" aria-label="직소 스도쿠 화면 크게 보기">
+                <img src="/images/logic-puzzles/jigsaw-sudoku.jpg" width="430" height="360" loading="lazy" decoding="async" alt="직소 스도쿠의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">숫자 채우기</p>
+              <h2 id="jigsaw-sudoku-title"><span class="puzzle-number" aria-hidden="true">31.</span> 직소 스도쿠</h2>
+              <p>각 행·열·구역에 같은 숫자가 겹치지 않도록 숫자를 채웁니다. 일반 스도쿠의 직사각형 구역 대신 불규칙한 모양의 구역을 사용합니다.</p>
+              <p class="puzzle-links"><a href="https://www.puzzle-jigsaw-sudoku.com/" target="_blank" rel="noopener noreferrer" aria-label="직소 스도쿠 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="killer-sudoku" class="puzzle-entry" aria-labelledby="killer-sudoku-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/killer-sudoku.jpg" target="_blank" rel="noopener noreferrer" aria-label="킬러 스도쿠 화면 크게 보기">
+                <img src="/images/logic-puzzles/killer-sudoku.jpg" width="371" height="301" loading="lazy" decoding="async" alt="킬러 스도쿠의 실제 게임 시작 화면">
+              </a>
+              <figcaption>4×4 쉬움 · 2×2 구역</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">숫자 채우기</p>
+              <h2 id="killer-sudoku-title"><span class="puzzle-number" aria-hidden="true">32.</span> 킬러 스도쿠</h2>
+              <p>행·열·구역에 숫자를 중복 없이 넣고, 점선으로 묶인 칸들의 합을 작은 숫자에 맞춥니다. 같은 점선 묶음 안에서도 숫자를 반복할 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://www.puzzle-killer-sudoku.com/" target="_blank" rel="noopener noreferrer" aria-label="킬러 스도쿠 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="binairo" class="puzzle-entry" aria-labelledby="binairo-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/binairo.jpg" target="_blank" rel="noopener noreferrer" aria-label="비나이로 화면 크게 보기">
+                <img src="/images/logic-puzzles/binairo.jpg" width="343" height="343" loading="lazy" decoding="async" alt="비나이로의 실제 게임 시작 화면">
+              </a>
+              <figcaption>6×6 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="binairo-title"><span class="puzzle-number" aria-hidden="true">33.</span> 비나이로</h2>
+              <p>행·열마다 흑백 개수를 같게 채우고, 같은 색이 세 칸 연속되지 않게 합니다. 행끼리 또는 열끼리 같은 흑백 패턴이 반복되면 안 됩니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-binairo.com/binairo-6x6-easy/" target="_blank" rel="noopener noreferrer" aria-label="비나이로 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="nonograms" class="puzzle-entry" aria-labelledby="nonograms-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/nonograms.jpg" target="_blank" rel="noopener noreferrer" aria-label="노노그램 화면 크게 보기">
+                <img src="/images/logic-puzzles/nonograms.jpg" width="343" height="337" loading="lazy" decoding="async" alt="노노그램의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="nonograms-title"><span class="puzzle-number" aria-hidden="true">34.</span> 노노그램</h2>
+              <p>행·열의 숫자는 순서대로 이어지는 검은 칸 구간의 길이입니다. 각 구간 사이를 한 칸 이상 비우며 칸을 칠합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-nonograms.com/" target="_blank" rel="noopener noreferrer" aria-label="노노그램 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="slitherlink" class="puzzle-entry" aria-labelledby="slitherlink-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/slitherlink.jpg" target="_blank" rel="noopener noreferrer" aria-label="슬리더 링크 화면 크게 보기">
+                <img src="/images/logic-puzzles/slitherlink.jpg" width="344" height="344" loading="lazy" decoding="async" alt="슬리더 링크의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5 입문</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">선 연결하기</p>
+              <h2 id="slitherlink-title"><span class="puzzle-number" aria-hidden="true">35.</span> 슬리더 링크</h2>
+              <p>칸의 숫자만큼 주변 변에 선을 그려 하나의 닫힌 고리를 만듭니다. 선이 교차하거나 갈라지면 안 됩니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-loop.com/" target="_blank" rel="noopener noreferrer" aria-label="슬리더 링크 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="sudoku" class="puzzle-entry" aria-labelledby="sudoku-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/sudoku.jpg" target="_blank" rel="noopener noreferrer" aria-label="스도쿠 화면 크게 보기">
+                <img src="/images/logic-puzzles/sudoku.jpg" width="381" height="344" loading="lazy" decoding="async" alt="스도쿠의 실제 게임 시작 화면">
+              </a>
+              <figcaption>9×9 기초 · 3×3 구역</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">숫자 채우기</p>
+              <h2 id="sudoku-title"><span class="puzzle-number" aria-hidden="true">36.</span> 스도쿠</h2>
+              <p>9×9 격자에 1~9를 채워 각 행·열·3×3 구역에서 모든 숫자가 한 번씩 나오게 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-sudoku.com/" target="_blank" rel="noopener noreferrer" aria-label="스도쿠 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="light-up" class="puzzle-entry" aria-labelledby="light-up-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/light-up.jpg" target="_blank" rel="noopener noreferrer" aria-label="라이트업 화면 크게 보기">
+                <img src="/images/logic-puzzles/light-up.jpg" width="343" height="343" loading="lazy" decoding="async" alt="라이트업의 실제 게임 시작 화면">
+              </a>
+              <figcaption>7×7 난이도 하</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">도형 배치하기</p>
+              <h2 id="light-up-title"><span class="puzzle-number" aria-hidden="true">37.</span> 라이트업</h2>
+              <p>전구를 놓아 모든 흰 칸을 밝히되 전구끼리 서로 비추지 않게 합니다. 검은 칸의 숫자는 상하좌우에 붙은 전구 수입니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-light-up.com/" target="_blank" rel="noopener noreferrer" aria-label="라이트업 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="bridges" class="puzzle-entry" aria-labelledby="bridges-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/bridges.jpg" target="_blank" rel="noopener noreferrer" aria-label="브릿지 화면 크게 보기">
+                <img src="/images/logic-puzzles/bridges.jpg" width="344" height="344" loading="lazy" decoding="async" alt="브릿지의 실제 게임 시작 화면">
+              </a>
+              <figcaption>7×7 난이도 하</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">선 연결하기</p>
+              <h2 id="bridges-title"><span class="puzzle-number" aria-hidden="true">38.</span> 브릿지</h2>
+              <p>섬의 숫자만큼 가로·세로 다리를 놓아 모든 섬을 하나로 연결합니다. 다리끼리 교차할 수 없고, 한 쌍의 섬 사이에는 최대 두 개를 놓습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-bridges.com/" target="_blank" rel="noopener noreferrer" aria-label="브릿지 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="shikaku" class="puzzle-entry" aria-labelledby="shikaku-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/shikaku.jpg" target="_blank" rel="noopener noreferrer" aria-label="시카쿠 화면 크게 보기">
+                <img src="/images/logic-puzzles/shikaku.jpg" width="343" height="343" loading="lazy" decoding="async" alt="시카쿠의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">도형 배치하기</p>
+              <h2 id="shikaku-title"><span class="puzzle-number" aria-hidden="true">39.</span> 시카쿠</h2>
+              <p>격자 전체를 직사각형으로 나눕니다. 각 직사각형에는 숫자가 정확히 하나 있고, 넓이는 그 숫자와 같아야 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-shikaku.com/" target="_blank" rel="noopener noreferrer" aria-label="시카쿠 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="nurikabe" class="puzzle-entry" aria-labelledby="nurikabe-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/nurikabe.jpg" target="_blank" rel="noopener noreferrer" aria-label="누리카베 화면 크게 보기">
+                <img src="/images/logic-puzzles/nurikabe.jpg" width="343" height="343" loading="lazy" decoding="async" alt="누리카베의 실제 게임 시작 화면">
+              </a>
+              <figcaption>5×5 쉬움</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">칸 칠하기</p>
+              <h2 id="nurikabe-title"><span class="puzzle-number" aria-hidden="true">40.</span> 누리카베</h2>
+              <p>숫자 하나마다 그 숫자 크기의 흰 섬을 만들고, 나머지 검은 칸을 하나로 연결합니다. 서로 다른 섬은 변으로 닿을 수 없고, 검은 2×2도 만들 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-nurikabe.com/" target="_blank" rel="noopener noreferrer" aria-label="누리카베 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+          <li id="dominosa" class="puzzle-entry" aria-labelledby="dominosa-title">
+            <figure class="puzzle-shot">
+              <a href="/images/logic-puzzles/dominosa.jpg" target="_blank" rel="noopener noreferrer" aria-label="도미노사 화면 크게 보기">
+                <img src="/images/logic-puzzles/dominosa.jpg" width="336" height="280" loading="lazy" decoding="async" alt="도미노사의 실제 게임 시작 화면">
+              </a>
+              <figcaption>시작 화면</figcaption>
+            </figure>
+            <div class="puzzle-description">
+              <p class="puzzle-category">도형 배치하기</p>
+              <h2 id="dominosa-title"><span class="puzzle-number" aria-hidden="true">41.</span> 도미노사</h2>
+              <p>모든 칸을 가로나 세로로 붙은 두 칸짜리 도미노로 나눕니다. 같은 숫자 조합의 도미노를 중복해서 만들 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-dominosa.com/" target="_blank" rel="noopener noreferrer" aria-label="도미노사 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+            </div>
+          </li>
+        </ol>
+        <p class="post-back"><a href="/">← Home</a></p>
+      </article>
+    </main>
+    <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>
