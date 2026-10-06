@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-06",
+  "replacement_count": 43,
+  "all_replaced_against_baseline": true,
+  "unique_sha256_count": 43,
+  "all_dimensions": [1672, 941],
+  "png_decode": "43/43 passed",
+  "generated_source_byte_match": "43/43 passed",
+  "production_asset_byte_match": "43/43 passed",
+  "http_image_urls": "43/43 returned 200 image/png",
+  "original_links": "43/43 match displayed asset paths and content hashes",
+  "design_text_preserved": true,
+  "build": "npm run build passed",
+  "diff_check": "git diff --check passed",
+  "browser": {
+    "post_image_count": 43,
+    "all_dimensions_correct": true,
+    "all_versioned": true,
+    "all_described": true,
+    "representative_image": "concept-1-deckbuilder.png displayed at 800px; source 1672x941",
+    "original_link_click": "Opened full-size PNG in new tab with content hash",
+    "screenshot": "page-preview.jpg"
+  },
+  "deployment": "This file records pre-deployment checks. Live deployment is verified separately after push."
+}

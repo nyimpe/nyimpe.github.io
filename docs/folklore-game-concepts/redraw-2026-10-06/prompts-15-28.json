@@ -1,0 +1,193 @@
+{
+  "created": "2026-10-06",
+  "mode": "built-in image_gen",
+  "sourceFile": "posts/korean-folklore-game-design/index.html",
+  "researchFile": "posts/korean-folklore-research/index.html",
+  "concepts": [
+    {
+      "number": 15,
+      "file": "concept-15-io-dokkaebibul.png",
+      "title": "도깨비불.io",
+      "refs": [
+        "cr117"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: top-down nighttime multiplayer snake arena along Korean village roads on winter solstice. The playfield fills nearly the entire screen. Chains are composed of discrete bright flame sprites rather than snakes. A long electric-blue procession curls into a near closed circle enclosing a shorter warm orange flame procession at center, clearly depicting a trapping maneuver. Green and white flame chains wind through other roads, broken orange embers scatter at upper left as pickups, dark pine trees and low Korean stone walls limit vision beyond each flame's soft pixel glow. Head direction and body collision must be instantly clear. Upper right compact ranked list with flame color icons and short names; top timer 02:18; bottom left length counter 184 and small minimap, bottom center a thin boost fuel meter. Exact text: '도깨비불.io', '동지', '푸른등', '횃불이', '둘러싸기 +1', '길이 184', '가속'. Blue chain central player is the focus, beautiful mysterious indigo/teal night contrasted with amber rivals. No humanoid central hero."
+    },
+    {
+      "number": 16,
+      "file": "concept-16-io-geumjul.png",
+      "title": "금줄.io",
+      "refs": [
+        "cr302",
+        "cr123"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: near orthographic top-down multiplayer territory capture arena in a Korean rural village in early spring, muted earth-colored grid with fields, small thatched roofs at boundaries. Four large irregular territories have restrained red, gold, teal and light green translucent tile fills. Each territory has a tiny black iron HORSE figurine at its heart within a protective ring. Golden player is dragging a visible twisted straw rope decorated with red peppers, charcoal and pine twigs out from gold territory; the long live rope makes an almost closed rectangular loop enclosing unclaimed tiles, but one short gap still remains back to home. A teal rival approaches the EXPOSED rope segment to cut it, creating immediate tension. Upper left a wispy violet plague spirit passes across red outer territory and dissolves affected tiles back to bare soil; iron-horse circle stays intact. Compact HUD: top center 01:42, upper right area leaderboard, lower right small minimap, lower left rope motif unlock icons. Exact UI: '금줄.io', '입춘', '새끼줄', '청사초롱', '넓이 28%', '줄을 닫으세요'. Clear mechanical overhead field, no giant decorative foreground characters."
+    },
+    {
+      "number": 17,
+      "file": "concept-17-io-dungap.png",
+      "title": "둔갑.io",
+      "refs": [
+        "cr102",
+        "cr130",
+        "cr349",
+        "cr100"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: colorful elevated 3/4 top-down Korean Dano market prop-hunt match in daylight. A dense but readable arena of wooden stalls with fabric awnings, jangdok clay jars, straw bundles, A-frame wooden carrying racks, low stone walls and seated Korean marketgoers. At left a yellow Korean dog barks toward a row of jars, a hunter in Korean rustic clothing with gat stands behind it. At right the active hunter holds a round polished bronze mirror which casts a distinct triangular warm beam onto a straw bundle; within the beam straw transforms into a white fox surrounded by small square smoke particles, clearly revealing its disguise. A tiny white tail peeks out from behind one seated marketgoer near bottom edge as a second clue. Characters small relative to map; target outline on fox, pointer beside mirror target. Top team HUD '여우 4 : 6 포수', timer 01:36. Bottom three ability icons for dog, mirror, Korean matchlock; mirror cooldown partly filled. Exact short labels: '둔갑.io', '단오', '멍!', '둔갑 해제', '거울'. Celebratory teal, terracotta and cream palette; suspense through layout rather than horror."
+    },
+    {
+      "number": 18,
+      "file": "concept-18-io-yagwang.png",
+      "title": "야광.io",
+      "refs": [
+        "cr214"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: lively top-down asymmetric capture-the-flag match on a Korean lunar-new-year night. Connected thatched village courtyards in lower two-thirds lead via winding stone mountain path to a BLUE flag and glowing shoe-hoard den in upper right. Small luminous blue Yagwang ghosts run UPHILL carrying clearly recognizable straw sandals, wooden shoes and flower shoes on their heads. Korean village children with paper lanterns and circular woven sieves chase them. At left a ghost is frozen beside a hanging woven sieve, looking intensely at its holes with a small counting bubble '하나, 둘…'; an allied ghost approaches with a rescue ring. Paths and capture routes readable, several shoes remain on wooden house porches. Cool night blues, warm lantern pools, white snow patches, strong action silhouettes. Top central scoreboard '야광 14 : 9 마을', timer '첫닭까지 2:10'. Den label '야광 소굴'. Bottom two large ability icons for sprint and shadow hiding plus team minimap. No weapons or violence, mischievous shoe-stealing action."
+    },
+    {
+      "number": 19,
+      "file": "concept-19-indie-tomb.png",
+      "title": "고분 탐사",
+      "refs": [
+        "cr115",
+        "cr182",
+        "cr98",
+        "cr134"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: side-on cutaway platformer of a crumbling Goguryeo stone tomb, multiple connected chambers and vertical shafts, pixel platform collision surfaces clear. A small Korean mural painter in light travel robes and black gat descends a hanging rope near center holding a torch and brush, ink scroll case on back. On the large central chamber wall are authentically ancient weathered mural motifs: a bird with TWO heads and a deerlike creature with SEVEN horns; the red two-headed bird has just emerged from its wall painting and is flying into the actual room, leaving a pale silhouette behind. Exactly THREE large bee enemies emerge from a freshly broken stone wall at bottom left, chasing the painter. At right a safe alcove contains a TALKING SKULL merchant on a low wooden counter with rope, potion and scroll icons for sale, coin prices 20 and 35. Moss, hanging roots, fragments, warm torch halos and dark teal stone. HUD top: '고분 탐사', '2-3', three hearts, rope count 4, coins 120. Small bottom notification '벽화 기록 +1'. No giant characters; rich navigable platforms and rooms dominate screen."
+    },
+    {
+      "number": 20,
+      "file": "concept-20-indie-memory.png",
+      "title": "지귀의 기억",
+      "refs": [
+        "cr286",
+        "cr50"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: contemplative top-down story adventure, Silla Buddhist temple courtyard seen as a fading sepia memory. Soft faded edges done in pixel dithering, muted sage stone and ivory with tiny warm ember colors. Stone pagoda at center-left; a young man in blue Korean robes sleeps at its base, a small GOLD BRACELET placed on his chest glows as the interactable clue. Two underworld messengers wearing black Korean gat and dark robes stand quietly at left, looking toward him, one with a small selection ring. At upper right the queen's palanquin procession is leaving through a tiled temple gate, diminishing into hazy memory. No combat, no enemy health bars, no swords. Lower quarter is a beautifully integrated dialogue panel with a small messenger portrait, exact short line '왜 타오르는지 물어보자.' Top left chapter text '셋째 기억'. Right compact clue notebook shows three pictogram slots, bracelet selected and label '팔찌'. A subtle prompt '기억 속으로' next to the bracelet. Emotion conveyed through distance and abandoned bracelet; clear explorable RPG pixel map and investigative UI."
+    },
+    {
+      "number": 21,
+      "file": "concept-21-indie-lineage.png",
+      "title": "용손 가문",
+      "refs": [
+        "cr241",
+        "cr243",
+        "cr222",
+        "cr50",
+        "cr268",
+        "cr162",
+        "cr325"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: polished playable roguelite HEIR SELECTION interface inside an underwater Korean dragon palace, full 16:9 screen. Aquamarine water, slowly drifting bubbles, fish silhouettes, dancheong-painted pillars, Korean tiled roofs visible through windows, ancestral shrine and coral. Upper quarter compact family tree with three previous generation framed pixel portraits now grey and tombstone markers, connected by thin gold lines, numbers 1,2,3. Main lower two-thirds shows THREE large selectable heir cards with full-body pixel sprites, short trait icon rows and highlighted middle card. First heir: human Korean adventurer with small visible teal SCALES on neck/arms and feather tufts growing from underarms, agile. Middle heir: strong human wearing red headband, forehead clearly has a THIRD EYE, holding a large traditional weapon. Third heir: human in Korean robes with a SMALL EXTRA FACE atop the head, making two faces visible; simple expressive pixel design, no body horror. Each card two short trait labels and clear stat bars. Exact text only: '용손 가문', '넷째 대', '비늘 · 깃털', '괴력 · 세 눈', '두 얼굴', '후손 선택', '엽전 240'. A real functional selection menu, not collectible character poster or illustration sheet."
+    },
+    {
+      "number": 22,
+      "file": "concept-22-indie-runner.png",
+      "title": "목객 달리기",
+      "refs": [
+        "cr46",
+        "cr79",
+        "cr110",
+        "cr182",
+        "cr120"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: fast side-scrolling Korean mountain endless runner. Small childlike Mokgaek wearing a leafy green pointed cap and simple forest clothes is mid-jump from left to right above a water-filled trench; glowing root-shaped wild ginseng pickups form a clear jump arc. Exactly three fist-size bee enemies hover ahead beyond the gap; a one-legged companion in straw raincoat and broad straw hat hops below collecting a ginseng root. In far left background a HUGE LIVING MOUNTAIN with expressive eyes and mouth creeps behind the runner, pine-covered crags forming its body, halted as protagonist glances backward; no separate stone golem humanoid. Korean pine silhouettes, misty mountain layers, vivid mossy platform edges, ancient stone path, warm sunrise. Sense of speed through controlled pixel streaks. HUD top: decreasing green energy bar labeled '기운', distance '3,420m'; upper-left small eye icon active and text '공주산 정지'. Bottom spaced controls '뛰기', '숙이기', and small '돌아보기' eye button. Legible actual platformer screenshot; tiny playable sprites against broad traversable mountain route."
+    },
+    {
+      "number": 23,
+      "file": "concept-23-indie-blocks.png",
+      "title": "퇴마 일행",
+      "refs": [
+        "cr222",
+        "cr149",
+        "cr165",
+        "cr151"
+      ],
+      "prompt": "Create a single 16:9 widescreen 2D PIXEL ART gameplay screenshot for a Korean folklore block-combo RPG named 퇴마 일행. A playable game battle, not poster. Upper 70 percent: side-on Korean pine mountain road at purple dusk. Left party of three SMALL pixel heroes: a powerful Korean warrior in red headband, a white-haired sage with deer antlers in white robes, and a mysterious feather-robed figure fading into pixels. The warrior throws a HUGE GOLD BUDDHIST TEMPLE BELL in a visible arc toward the enemies at right. Enemies are ragged bearded dark ghost sprites in WHITE bamboo hats with chin straps, led by a purple-robed FEMALE ghost with boss health bar. Non-graphic whimsical fantasy battle. Bottom 30 percent: professional command HUD with three hero portraits and HP bars, then a horizontal row of red blue teal square skill blocks. THREE ADJACENT RED blocks bearing gold BELL icons are selected together with one bright gold frame and exact label '3연결'. Include a rice-table block for pacifying hungry ghosts. Other short Korean text: '퇴마 일행', '셋째 고개', '큰 종 던지기!', '사장'. Crisp pixel clusters, deep detailed pixel environment, authentic Korean clothes, readable block game UI. No logo, no watermark, no smooth vector graphics."
+    },
+    {
+      "number": 24,
+      "file": "concept-24-indie-beat.png",
+      "title": "장단 던전",
+      "refs": [
+        "cr290",
+        "cr120",
+        "cr341",
+        "cr117"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: perfectly clear top-down tile-based Korean rhythm roguelike dungeon mid-beat. Stone square tiles pulse in five traditional obang colors (blue red yellow white black), colored lit squares form a playable grid bounded by old Korean stone temple walls and dancheong doorway. At center a small dancer in Korean ritual hanbok wields fan and bell, selection tile beneath her. Around her: wispy white charging ghost with TWO highlighted forward danger tiles; a SINGLE-LEGGED ghost wearing straw raincoat and straw hat with hopping arc spanning two squares; a hollow gourd-shaped spirit cracking open into several magpies; a curved chain of blue ghost flames tightening in a ring. Upper-left shop alcove has a Korean traditional singer with fan beside items and coin prices. Bottom full-width rhythm lane contains distinct janggu drum-beat tokens converging from both sides toward a RED center drum target, one golden perfect-hit flash. Top compact hearts, coin multiplier x4, floor 2. Exact short labels '장단 던전', '자진모리', '착착', '좋다!', '연속 24'. Highly polished crisp pixel game screenshot; rhythm grid and beat lane must be the focus."
+    },
+    {
+      "number": 25,
+      "file": "concept-25-indie-well.png",
+      "title": "우물 아래로",
+      "refs": [
+        "cr275",
+        "cr360",
+        "cr40",
+        "cr294",
+        "cr344",
+        "cr140"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: widescreen capture of a VERTICAL falling action game; central narrow stone well shaft occupies middle 55% of image, side margins show minimalist HUD and cavern framing. Use ONLY black, off-white and vivid red: strict three-color chunky pixel art, no gradients and no additional colors. A tiny Korean child in simple hanbok falls feet-first down the central shaft, wooden NAMAKSIN shoes shoot a visible spread of RED BEAN projectiles DOWNWARDS beneath both feet. White huge fish bursts from right masonry mid-level into shaft; grasping RED hands emerge from left wall. At upper right a recessed safe cave storefront is a rock with white grains of rice flowing into a bowl, small '쌀' icon sign, separated from main fall path. At very bottom black dragon form merges into darkness with two wide red eyes and hints of curved whiskers; recognizable Korean serpentine dragon, no Western wings. Crisp platforms jut from walls where player can land and refill ammo. HUD left top '우물 아래로', depth '42장', 3 white hearts; right vertical ammo dots and short '팥 3/8'. Bottom tiny text '땅을 밟으면 충전'. Intense arcade composition with readable falling direction."
+    },
+    {
+      "number": 26,
+      "file": "concept-26-indie-flight.png",
+      "title": "우부마",
+      "refs": [
+        "cr243",
+        "cr222",
+        "cr247"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: spectacular side-scrolling 2D aerial adventure over Korean cloud mountains and floating islands. UbumA is a HUMAN Goguryeo youth in short teal traditional tunic, arms spread wide; bird feathers grow from his UNDERARMS forming wings attached beneath arms, not a bird-headed creature and not wings growing from back. He is flying near center-left CARRYING a rustic brown-clothed Korean hunter suspended below him by hands; hunter aims a recognizable Korean matchlock musket rightwards with one small golden muzzle flash. A gigantic noble raptor Yukdeokwi guards sky at upper right, spreading broad brown wings among clouds, boss health bar subtle. Right floating island has Korean tiled gate and dancheong columns; smaller islands with pine trees form traversable routes, distant waterfalls vanish in clouds. Rich sky azure, coral highlights, luminous cream clouds with crisp pixel volume. Bottom companion switch panel: three small portraits labeled '포수', '여용사', '무당', hunter highlighted, weapon icons; top left hearts and feather stamina meter, top small region title '졸본 하늘길'. No modern aircraft, no European castles; authentic polished aerial gameplay."
+    },
+    {
+      "number": 27,
+      "file": "concept-27-indie-oneday.png",
+      "title": "근화초 하룻날",
+      "refs": [
+        "cr87",
+        "cr79",
+        "cr294"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: minimalist charming top-down 60-second adventure on a small Korean island. Strict black ink and warm white pixel outlines with ONLY one accent color: pale PINK on the tiny flower spirit's five-petal hibiscus bud and current flower-stage icon. Huge negative space, chunky crisp low-resolution pixels, no painterly shading. Player is tiny white flower spirit with pink bud on head at center, looking RIGHT at a rounded mountain with simple eyes and mouth; the mountain is immobile while watched, clear eye-line indicator and a little eye icon. Narrow pass curves beside mountain, river crossing at bottom with bird waiting near a rice bowl. Left has modest thatched home, small grandmother Korean sprite, a rock spilling rice from a hole. Light sparse foliage and coastline establish island. Top prominent countdown '0:34', day '일곱째 날', four simple growth icons labeled '싹', '잎', '꽃', '씨' with flower highlighted. Bottom small two-slot persistent inventory contains seed and rice. A small speech bubble above grandmother reads '씨앗은 남지'. Short label '공주산'. Quiet playful puzzle gameplay, not a decorative map illustration."
+    },
+    {
+      "number": 28,
+      "file": "concept-28-indie-shipwreck.png",
+      "title": "조운선 표류기",
+      "refs": [
+        "cr318",
+        "cr352",
+        "cr162",
+        "cr327",
+        "cr61"
+      ],
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: a dramatic FROZEN MOMENT aboard a Korean Joseon grain transport wooden sailing ship, seen in elevated first-person investigative perspective across deck. STRICT 1-BIT pixel art using ONLY black and warm ivory, intricate ordered dithering, no grey or any other colors. Curved wooden railings, square woven sail, Korean crew garments and grain sacks unmistakable. At left beyond rail a huge whale-like fish has jaws open swallowing one small sailor silhouette, non-graphic; right a VERY LONG squid tentacle reaches over railing, crow perched near ink splash clue. High on mast a BALD survivor hangs safely gripping rigging, clearly visible bald head. Deck foreground has a boatman in traditional headcloth and a stranger with a SMALL EXTRA FACE atop his head, two distinct stacked faces, no gore. Player has opened a compact fate ledger across bottom quarter: four rows with portrait icons and name/fate/cause columns, one selected row and three check boxes to confirm; concise exact labels '열둘째 기억', '명부 7/20', '이름', '운명', '원인', '탄주어', '생존', '미상'. A tiny magnifier/crosshair on bald survivor. Detailed forensic observation game screen, not horror poster."
+    }
+  ],
+  "failedAttempts": [
+    {
+      "number": 23,
+      "count": 3,
+      "error": "image generation failed: network error: error sending request",
+      "prompt": "Use case: stylized-concept. Asset type: a published Korean folklore game design article's actual gameplay concept screenshot. Create one NEW polished 2D pixel-art game screen, widescreen 16:9, 1600x900 preferred. Deliberate crisp hand-placed pixel clusters, strong silhouettes, nuanced limited palette, beautiful layered pixel environments and professional integrated HUD. This must read as a playable indie game in progress, NOT an illustration/poster/title screen, NOT a collage. Culturally Korean clothing and architecture. Use only the specified short Korean UI labels, clean and legible. No logos, watermarks, generic European/Japanese fantasy, unnecessary prose, smooth vector art or photorealism. Scene: side-on tactical block-combo RPG battle on a Korean wooded mountain pass at dusk. Left team consists of THREE distinct heroes: strong dark-complexioned warrior with red headband and traditional simple clothing, tall white-haired deer-antlered sage Baekun in cream robes, feather-robed Bimocheok partly dissolving into pale pixels. Warrior has just hurled an enormous gold Buddhist temple bell toward enemies; bell is visibly airborne with arcing impact trail at center. Right enemies: several ragged BLACK-FACED bearded ghosts wearing WHITE bamboo hats with chinstraps, led by a purple-clothed FEMALE leader; enemy group HP bar. Bottom quarter is a rich gameplay command panel with a single horizontal queue of square red, blue and teal SKILL BLOCKS; exactly THREE adjacent red bell-icon blocks glow inside one golden selection frame, label '3연결'. Three small hero portraits and distinct HP bars above queue; one rice-table icon block offers nonviolent option. Exact text: '퇴마 일행', '셋째 고개', '큰 종 던지기!', '사장', '3연결'. Crisp expressive sprites, dark pine and purple dusk backdrop, exciting readable mechanic."
+    }
+  ],
+  "edits": [
+    {
+      "number": 25,
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-51c34449-83c5-4d43-98b1-d83f64e665a2.png",
+      "editPrompt": "Edit this existing Korean pixel-art vertical well game screenshot. Preserve the entire composition, all characters, falling child, red bean shots from wooden shoes, giant fish, grasping hands, rice cave, black dragon, and existing Korean HUD exactly. Change ONLY the palette treatment: use only solid black, solid ivory-white, and solid vermilion-red pixel clusters throughout. Remove gray and brown tones by turning them into black/ivory ordered pixel dithering. This is a strict THREE COLOR retro arcade game; no gray shades, gradients, blur, antialiasing, or other colors. Retain the screenshot's pixel detail and 16:9 dimensions.",
+      "editInput": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-2fbdbe27-5097-464e-9be0-2e2ffc31e688.png"
+    },
+    {
+      "number": 28,
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-bdb68c94-0bab-4c0d-8465-f9f7ce6b7006.png",
+      "editPrompt": "Edit this existing 1-bit Korean shipwreck investigation game concept screenshot. Preserve ship, whale-like creature, squid tentacle, all people, bald survivor, two-faced guest, grain sacks, Korean maritime atmosphere, black/ivory dithered pixel art and framing exactly. Correct ONLY the bottom ledger so it is logically consistent: four clean columns labeled '이름', '운명', '원인', '확정'. First selected row with bald portrait must have name '박돌이', fate '생존', cause '탄주어', empty square confirmation box. Remaining three rows use names '김덕수', '두 얼굴의 사내', '선원'; all their fate and cause cells say '미상'. Keep the existing header '열둘째 기억' and '명부 7/20'. Do not put monster name 탄주어 under the Name column. No new text outside ledger, no new characters, no colors except black and ivory.",
+      "editInput": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-2969c335-d05a-4066-8e95-5fe526ceaa9c.png"
+    }
+  ]
+}

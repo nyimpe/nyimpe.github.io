@@ -1,0 +1,4 @@
+{
+  "id": 13,
+  "prompt": "Use case: precise-object-edit. Edit only the illustrations INSIDE THE FIRST TWO CARDS across the TOP of this pixel-art Korean yut gameplay screen. Keep absolutely all other pixels, the scene layout, board, four sticks, HUD text, palette and image dimensions unchanged. First glowing card labelled 적오 currently wrongly depicts TWO crow heads. Correct it to EXACTLY ONE SINGLE red-crow HEAD with one beak, ONE neck splitting into TWO distinct crow BODIES underneath, each with its own wing and legs. This mythical creature is explicitly one head and two bodies, not two heads. The second card labelled 일두칠계: keep the man's ONE human face, replace the tiny face-like knobs by exactly SEVEN plain dark hair topknots/buns (hair, never additional human faces). Preserve existing text labels, borders and all neighboring cards. Match existing detailed crisp pixel-art texture."
+}

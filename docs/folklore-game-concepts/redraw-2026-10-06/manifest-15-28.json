@@ -1,0 +1,291 @@
+{
+  "created": "2026-10-06",
+  "mode": "built-in image_gen",
+  "sourceFiles": [
+    "posts/korean-folklore-game-design/index.html",
+    "posts/korean-folklore-research/index.html"
+  ],
+  "assets": [
+    {
+      "number": 15,
+      "title": "도깨비불.io",
+      "path": "public/images/folklore-game/concept-15-io-dokkaebibul.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-cabe81b3-4a9b-4171-be3d-971f1a0d4569.png",
+      "generationAttempts": 1,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr117"
+      ],
+      "visualReview": "푸른 불꽃 행렬이 붉은 행렬을 포위하는 동지 밤 장면, 주변 불씨와 순위표·가속·길이 HUD가 선명함. 생성 UI 도깨비불 제목 첫 글자가 도깨비불 대신 도깨비불과 유사하게 표시되나 핵심 메커니즘 정확.",
+      "suggestedAlt": "동지 밤 마을의 푸른 도깨비불 행렬이 붉은 행렬을 둥글게 가두고, 주변에는 다른 색 행렬과 흩어진 불씨가 있다. 순위표·길이·가속 막대와 미니맵이 표시된 화면.",
+      "suggestedCaption": "동지의 밤길. 행렬을 늘려 다른 도깨비불을 둥글게 가둡니다.",
+      "bytes": 2665067,
+      "sha256": "5c8b24852cb6390aa4279aba6130a1675a541d086344f395e8bbf0ebff54cae5"
+    },
+    {
+      "number": 16,
+      "title": "금줄.io",
+      "path": "public/images/folklore-game/concept-16-io-geumjul.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-33a46692-2977-4a5a-ad6c-464ec38463e3.png",
+      "generationAttempts": 1,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr302",
+        "cr123"
+      ],
+      "visualReview": "격자 영역·고추/숯/솔가지 금줄·철마 안전지대·영역을 지우는 귀신이 한 화면에 분명함. 철마는 본문 매장 설정을 상징하는 지상 표식으로 표현됨.",
+      "suggestedAlt": "봄 마을의 네 색 격자 영역과 철마 표식 사이에서 금빛 플레이어가 고추·숯·솔가지를 단 금줄로 땅을 둘러싼다. 청록 상대가 줄로 접근하고 보랏빛 귀신이 붉은 영역을 지운다.",
+      "suggestedCaption": "입춘의 마을. 금줄로 고리를 닫고 철마 둘레의 땅을 지킵니다.",
+      "bytes": 2847084,
+      "sha256": "c22da552a6b689c1fe994a33c4c3917902dfa8ca69d750cb25110631d0c075cc"
+    },
+    {
+      "number": 17,
+      "title": "둔갑.io",
+      "path": "public/images/folklore-game/concept-17-io-dungap.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-0dd1fceb-71e1-468e-8b29-0ec6c1789429.png",
+      "generationAttempts": 1,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr102",
+        "cr130",
+        "cr349",
+        "cr100"
+      ],
+      "visualReview": "단오 장터의 장독·짚단과 거울 광선에 드러난 흰 여우, 짖는 누렁개·사람 둔갑 꼬리·기술 HUD까지 확인.",
+      "suggestedAlt": "단오 장터에서 포수의 거울 빛에 짚단 속 흰 여우가 드러난다. 왼쪽 누렁개가 장독 곁에서 짖고, 아래 앉은 사람 뒤에는 흰 꼬리가 보인다.",
+      "suggestedCaption": "단오의 장터. 거울 빛이 짚단 속 흰 여우의 둔갑을 풀었습니다.",
+      "bytes": 3154320,
+      "sha256": "1b6425eddb53c469075765393282b85d0411ec47ccaa91f22084ab4056aca97a"
+    },
+    {
+      "number": 18,
+      "title": "야광.io",
+      "path": "public/images/folklore-game/concept-18-io-yagwang.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-1d6c9ba9-51f5-4651-8e86-c3af1f0138a1.png",
+      "generationAttempts": 1,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr214"
+      ],
+      "visualReview": "신발을 머리에 이고 소굴로 달리는 야광과 체 앞에서 세는 야광·추격하는 아이들·14:9 점수와 첫닭 타이머 확인. 카메라는 깊이 있는 사선 시점.",
+      "suggestedAlt": "설날 밤 눈 덮인 초가 마을에서 푸른 야광들이 신발을 머리에 이고 산 위 소굴로 달아난다. 아이들은 체와 등불을 들고 쫓고, 왼쪽 야광은 걸린 체의 구멍을 센다.",
+      "suggestedCaption": "설날 밤. 신발을 운반하는 야광과 체로 길을 막는 아이들의 추격전입니다.",
+      "bytes": 2945143,
+      "sha256": "f5525045bd8688bb094bffc6e5d50d0d2483eacc7d2c99f9ec064c0e364de288"
+    },
+    {
+      "number": 19,
+      "title": "고분 탐사",
+      "path": "public/images/folklore-game/concept-19-indie-tomb.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-fd78d93f-d992-4e13-9e49-2b0217394db8.png",
+      "generationAttempts": 1,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr115",
+        "cr182",
+        "cr98",
+        "cr134"
+      ],
+      "visualReview": "화공 밧줄 하강·두 머리 청양/다각 영양 벽화·정확히 벌 세 마리·머리뼈 가게·뾰족 함정·로프/동전 HUD 확인. 청양과 벽화의 시각적 분리는 약하지만 창백한 원래 실루엣과 겹친 실제 청양으로 표현됨.",
+      "suggestedAlt": "밧줄에 매달린 화공이 두 머리 새와 여러 뿔 짐승의 벽화가 있는 고분을 탐사한다. 무너진 왼쪽 벽에서는 벌 세 마리가 나오고 오른쪽 머리뼈 상인은 물건을 판다.",
+      "suggestedCaption": "고분 2-3. 화공이 벽화를 기록하며 무너진 벽에서 나온 삼대봉을 피합니다.",
+      "bytes": 2622346,
+      "sha256": "59dd054fb7aaa4c75457ce634369b9f43a3860ea38c41df0a16a878114cf4506"
+    },
+    {
+      "number": 20,
+      "title": "지귀의 기억",
+      "path": "public/images/folklore-game/concept-20-indie-memory.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-3ee30152-2322-4d38-a25e-dadd2dfcbf70.png",
+      "generationAttempts": 1,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr286",
+        "cr50"
+      ],
+      "visualReview": "쇠빛/빛바랜 기억의 절, 석탑 아래 지귀와 빛나는 팔찌, 떠나는 가마, 두 차사, 대화창과 팔찌 단서 UI가 선명. 낮은 사선 카메라로 서사 장면 강조.",
+      "suggestedAlt": "빛바랜 절 마당에서 두 차사가 석탑 아래 잠든 지귀와 빛나는 팔찌를 바라본다. 가마 행렬이 문을 나서고, 팔찌 단서와 기억으로 들어가는 선택, 대화창이 보인다.",
+      "suggestedCaption": "셋째 기억. 차사 둘이 지귀의 팔찌를 단서로 더 오래된 기억을 엽니다.",
+      "bytes": 2275493,
+      "sha256": "5afd52520568abbfc8167b1c2163d0521257ca5e2d11feb30e23ed7607136fe9"
+    },
+    {
+      "number": 21,
+      "title": "용손 가문",
+      "path": "public/images/folklore-game/concept-21-indie-lineage.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-762c4095-d32e-4cba-8cf2-c958466fb6d3.png",
+      "generationAttempts": 1,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr241",
+        "cr243",
+        "cr222",
+        "cr50",
+        "cr268",
+        "cr162",
+        "cr325"
+      ],
+      "visualReview": "수중 한국 궁궐·앞선 세 대의 가계도·세 후손 선택·비늘 깃털/괴력 세 눈/두 얼굴 형질 카드와 능력치 표시 확인. 두 얼굴은 머리 위에 작은 얼굴로 정확하게 표현.",
+      "suggestedAlt": "바닷속 궁궐에서 넷째 대 후손을 고르는 화면. 앞선 세 대 가계도 아래 비늘과 깃털, 괴력과 세 눈, 두 얼굴을 지닌 후손 세 명과 능력치가 나란히 표시된다.",
+      "suggestedCaption": "넷째 대 후손 선택. 물려받은 몸의 형질에 따라 탐험 방식이 달라집니다.",
+      "bytes": 2336091,
+      "sha256": "fe766878c0c3d2b4f06d91a9054d6dbea74025bd7bb556b276b9ae8957541148"
+    },
+    {
+      "number": 22,
+      "title": "목객 달리기",
+      "path": "public/images/folklore-game/concept-22-indie-runner.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-ff0a75f2-6381-449a-bad8-3ed68006b9ba.png",
+      "generationAttempts": 1,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr46",
+        "cr79",
+        "cr110",
+        "cr182",
+        "cr120"
+      ],
+      "visualReview": "목객 점프·산삼 궤적·세 벌·외다리 독각·얼굴 달린 산·기운과 3420m·돌아보기 UI 모두 확인. 플레이어는 진행 방향을 보고 있고 산 정지 HUD가 켜진 순간으로 표현.",
+      "suggestedAlt": "목객이 물이 찬 도랑 위로 뛰며 공중의 산삼을 모은다. 외다리 독각이 뒤따르고 벌 세 마리가 앞을 막는다. 뒤쪽 얼굴 달린 공주산과 기운·거리·돌아보기 조작이 보인다.",
+      "suggestedCaption": "3,420m. 목객이 산삼을 모으며 도랑과 삼대봉을 넘습니다.",
+      "bytes": 2546251,
+      "sha256": "c109e59edbd837e1778f6cb1d6cfef17f0bf159b5b7efaf72346e59f5d305ed1"
+    },
+    {
+      "number": 23,
+      "title": "퇴마 일행",
+      "path": "public/images/folklore-game/concept-23-indie-blocks.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-7b67321d-fde3-4446-86a0-67f5a65dadab.png",
+      "generationAttempts": 4,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr222",
+        "cr149",
+        "cr165",
+        "cr151"
+      ],
+      "visualReview": "큰 금빛 종 던지기·붉은 블록 정확히 3연결·사슴뿔 현자/깃털 인물·백죽모 무리와 여성 사장·밥상 블록 확인. 핵심 플레이 명료하며 추가 생성 텍스트가 다소 많음.",
+      "suggestedAlt": "붉은 머리띠 장사가 금빛 범종을 귀신 무리에게 던진다. 사슴뿔 현자와 깃털 인물이 뒤따르고 흰 대나무 모자의 귀신들을 여성 사장이 이끈다. 아래에서는 붉은 종 블록 세 개가 3연결로 선택되어 있다.",
+      "suggestedCaption": "셋째 고개. 붉은 종 블록 셋을 이어 거대한 범종을 던집니다.",
+      "bytes": 2834934,
+      "sha256": "c69f8d942f1e3deed4d17d82e64f651e6fe15e572ff029b1ab1857572ea5c984"
+    },
+    {
+      "number": 24,
+      "title": "장단 던전",
+      "path": "public/images/folklore-game/concept-24-indie-beat.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-28f7e899-6bae-495c-a8ff-67c914e8d49c.png",
+      "generationAttempts": 1,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr290",
+        "cr120",
+        "cr341",
+        "cr117"
+      ],
+      "visualReview": "오방색 격자·부채/방울 무희·두칸 돌진·독각 점프·뒤웅박 까치·도깨비불 원형·소리꾼 상점·박자 막대가 명료. 리듬 게임 메커니즘 매우 잘 전달.",
+      "suggestedAlt": "오방색 격자 던전에서 부채와 방울을 든 무희가 귀신들의 이동 박자를 맞춘다. 착착귀신의 돌진 칸, 독각의 점프, 뒤웅박에서 나온 까치와 도깨비불 원이 보이고 아래 박자 막대가 흐른다.",
+      "suggestedCaption": "자진모리장단. 박자에 맞춰 움직이고 귀신마다 다른 이동 간격을 읽습니다.",
+      "bytes": 2484006,
+      "sha256": "6e0f9fc3ebcdc599460ff549dcfac8c2cbaec292264c45a903b906796819c2b3"
+    },
+    {
+      "number": 25,
+      "title": "우물 아래로",
+      "path": "public/images/folklore-game/concept-25-indie-well.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-51c34449-83c5-4d43-98b1-d83f64e665a2.png",
+      "generationAttempts": 2,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr275",
+        "cr360",
+        "cr40",
+        "cr294",
+        "cr344",
+        "cr140"
+      ],
+      "visualReview": "낙하·나막신 팥 발사·물고기·붉은 손·쌀 바위·흑룡·탄약/깊이 HUD 확인. 팔레트 보정 imagegen으로 회색 암벽을 검정/미색 디더링으로 바꿔 3색 설계에 맞는 시각적 제한색 완성.",
+      "suggestedAlt": "검정·흰색·붉은색 중심의 세로 우물에서 아이가 나막신으로 팥알을 아래로 쏘며 떨어진다. 벽에서는 물고기와 붉은 손이 나오고, 쌀 쉼터와 맨 아래 흑룡의 붉은 눈이 보인다.",
+      "suggestedCaption": "깊이 42장. 나막신으로 팥알을 쏘고 발판에 닿아 다시 채웁니다.",
+      "bytes": 2043343,
+      "sha256": "07206885d9837403bf1d8e18ea20e13217cbdac34ceb40e67166760c213ac6ea",
+      "initialGeneratedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-2fbdbe27-5097-464e-9be0-2e2ffc31e688.png",
+      "paletteCorrected": true,
+      "ledgerCorrected": false
+    },
+    {
+      "number": 26,
+      "title": "우부마",
+      "path": "public/images/folklore-game/concept-26-indie-flight.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-6494d6f1-0b9d-4ed7-8086-a312f180f0d4.png",
+      "generationAttempts": 1,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr243",
+        "cr222",
+        "cr247"
+      ],
+      "visualReview": "팔 아래 깃털 우부마·매달린 조총 포수·수호 맹금 육덕위·구름 하늘섬 기와 성문·동료 변경 HUD 확인. 명확한 비행/동료 공격 장면.",
+      "suggestedAlt": "팔 아래 깃털을 펼친 우부마가 포수를 매달고 하늘섬 사이를 난다. 포수는 거대한 맹금 육덕위를 향해 조총을 쏘며 아래에는 포수·여용사·무당 동료 변경 UI가 있다.",
+      "suggestedCaption": "졸본 하늘길. 우부마가 포수를 매달고 육덕위와 맞섭니다.",
+      "bytes": 2866955,
+      "sha256": "d6effa1529373a8b24bec1f7f3a7bb0d8105736079ca1e6f9ccab0d6a3d210bf"
+    },
+    {
+      "number": 27,
+      "title": "근화초 하룻날",
+      "path": "public/images/folklore-game/concept-27-indie-oneday.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-ab79520e-ea75-402a-aae8-bd0196e5cb70.png",
+      "generationAttempts": 1,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr87",
+        "cr79",
+        "cr294"
+      ],
+      "visualReview": "분홍 꽃 정령·눈길 선·공주산·쌀 바위·할머니·씨앗/쌀 인벤토리·34초/성장단계 모두 명료. 흑백 기반 화면에 미색/회색 명암과 분홍 강조.",
+      "suggestedAlt": "머리에 분홍 꽃을 단 정령이 섬의 얼굴 달린 공주산을 바라본다. 초가집의 할머니와 쌀이 나오는 바위, 강 건너 새가 보이며 34초 타이머와 싹·잎·꽃·씨 단계가 표시된다.",
+      "suggestedCaption": "일곱째 날, 남은 34초. 공주산을 바라보며 지나갈 길을 찾습니다.",
+      "bytes": 2320954,
+      "sha256": "ead5bb760d7a19bde1b7a770fa3a1dfb15c470ed26e599ca6915eb50e001d15e"
+    },
+    {
+      "number": 28,
+      "title": "조운선 표류기",
+      "path": "public/images/folklore-game/concept-28-indie-shipwreck.png",
+      "generatedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-bdb68c94-0bab-4c0d-8465-f9f7ce6b7006.png",
+      "generationAttempts": 2,
+      "width": 1672,
+      "height": 941,
+      "sourceRefs": [
+        "cr318",
+        "cr352",
+        "cr162",
+        "cr327",
+        "cr61"
+      ],
+      "visualReview": "갑판의 탄주어·긴 오징어 다리·까마귀·대머리 생존자·두 얼굴 손님·명부 7/20 확인. 후속 imagegen 편집으로 명부 이름 박돌이/운명 생존/원인 탄주어/확정 빈칸을 올바르게 정리.",
+      "suggestedAlt": "검정과 미색의 조운선 기억 화면. 배 왼쪽 고래 같은 물고기가 선원을 삼키려 하고 오른쪽 긴 다리가 솟는다. 돛대의 대머리 생존자와 두 얼굴의 사람을 살피며 아래 명부에 이름·운명·원인을 기록한다.",
+      "suggestedCaption": "열둘째 기억. 갑판의 단서를 살펴 명부에 이름과 운명, 원인을 채웁니다.",
+      "bytes": 2957433,
+      "sha256": "209abd7a73f9457d66e223d89c55f00c0ca25510a5656378bce38f038651443e",
+      "initialGeneratedSourcePath": "/Users/sushi/.codex/generated_images/01a1102a-f8ff-7d53-a7a6-7d48baf307be/exec-2969c335-d05a-4066-8e95-5fe526ceaa9c.png",
+      "paletteCorrected": false,
+      "ledgerCorrected": true
+    }
+  ]
+}

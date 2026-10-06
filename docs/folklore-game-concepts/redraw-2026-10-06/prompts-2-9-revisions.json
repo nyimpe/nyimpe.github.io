@@ -1,0 +1,17 @@
+{
+  "tool": "built-in image_gen",
+  "revisions": [
+    {
+      "id": 4,
+      "prompt": "Use case: precise-object-edit. Edit the supplied Korean pixel-art island survival gameplay screenshot. Change ONLY the distant giant's face in the upper-right mist: this folklore creature Daein is a CYCLOPS and must have exactly ONE large glowing red eye centered on the forehead/face. Remove both existing red eyes and replace them with a single centered red eye. Keep the giant silhouette, mist, and every other pixel-art scene element, crab-shell shelter, castaway, shipwreck, crafting interface, Korean text, lighting, camera framing, and 1672x941 dimensions unchanged. Preserve crisp pixel-art style. The result must unmistakably show one-eyed Daein.",
+      "reason": "Generated Daein had two eyes instead of the required single eye; targeted correction.",
+      "prompt": "Use case: precise-object-edit. Edit the supplied Korean pixel-art island survival gameplay screenshot. Change ONLY the distant giant's face in the upper-right mist: this folklore creature Daein is a CYCLOPS and must have exactly ONE large glowing red eye centered on the forehead/face. Remove both existing red eyes and replace them with a single centered red eye. Keep the giant silhouette, mist, and every other pixel-art scene element, crab-shell shelter, castaway, shipwreck, crafting interface, Korean text, lighting, camera framing, and 1672x941 dimensions unchanged. Preserve crisp pixel-art style. The result must unmistakably show one-eyed Daein.",
+      "reference": "/Users/sushi/.codex/generated_images/01a1102b-52e5-7a60-8ec4-d2d1497bec68/exec-8bb3d293-5ac8-4421-b8b9-76dede54428f.png"
+    },
+    {
+      "id": 6,
+      "reason": "Three network errors from original prompt; compact retry retains essential scene and mechanics.",
+      "prompt": "Create a single widescreen 16:9 crisp 2D pixel-art gameplay concept screenshot of a retro first-person shooter set at night in Korea's Joseon palace. View along a palace courtyard toward a red, brass-studded gate with dancheong decoration and grand Korean tiled hall roofs. Pixel sprites and pixel-textured surfaces, atmospheric blue moonlight. At bottom center a period Korean matchlock musket held in first person emits a small muzzle flash. A headless white-robed ghost (no blood) stands in the courtyard, and a fast black dog-like supernatural beast lunges from the right. A carved stone Korean guardian beast and blue ghost-flames stand near the gate. Clear central aiming reticle. Full-width retro game HUD below scene: '화약 18', '체력 86', a pixel portrait of a Joseon guard, '부적 3', and small period weapon icons. Show playable perspective geometry and actual action, no poster, no modern gun, no typography outside HUD, no watermark."
+    }
+  ]
+}

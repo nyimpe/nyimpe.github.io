@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "assets": [
+    {
+      "id": 1,
+      "source": "/Users/sushi/.codex/generated_images/01a1102a-4256-7802-a6bb-0451ca50a8db/exec-c05c2d25-a5de-4be3-a4eb-fa80d102e3b2.png",
+      "alt": "달빛이 비치는 산사에서 갓을 쓴 서생이 두억시니의 그림자와 도깨비불 둘을 상대하는 덱빌더 화면. 적의 공격 의도, 부적 카드 다섯 장, 처용 부적의 봉인 효과와 원전 설명, 기력과 턴 종료 버튼이 보인다.",
+      "review": "직접 이미지 확인: 기획의 주요 장면, 조작 선택지와 화면 시점이 일치함.",
+      "generator": "built-in image_gen"
+    },
+    {
+      "id": 10,
+      "source": "/Users/sushi/.codex/generated_images/01a1102a-4256-7802-a6bb-0451ca50a8db/exec-967446ed-e8aa-4ec0-b855-ba1774bb4e0c.png",
+      "alt": "성문 검문소의 책상 위에서 호패·통행첩·검문 수칙을 대조하는 화면. 창구의 여인은 사람 모습이지만 청동거울에는 흰 여우가 비치며, 통과·불허·포박 선택지가 있다.",
+      "review": "직접 이미지 확인: 기획의 주요 장면, 조작 선택지와 화면 시점이 일치함.",
+      "generator": "built-in image_gen"
+    },
+    {
+      "id": 11,
+      "source": "/Users/sushi/.codex/generated_images/01a1102a-4256-7802-a6bb-0451ca50a8db/exec-43a83e8a-ea4f-45d7-a3f7-2bd84c5cc210.png",
+      "alt": "한옥 격자 방에서 서생이 글자 패를 밀어 규칙을 바꾸는 퍼즐 화면. 문 은 문장에서 막힘 패가 빠져 문이 열렸고, 불길과 멈춘 귀신 너머에 목표 부적이 있다.",
+      "review": "직접 이미지 확인: 기획의 주요 장면, 조작 선택지와 화면 시점이 일치함.",
+      "generator": "built-in image_gen"
+    },
+    {
+      "id": 12,
+      "source": "/Users/sushi/.codex/generated_images/01a1102a-4256-7802-a6bb-0451ca50a8db/exec-f6c0feb1-91e1-46d9-8977-92aaec879670.png",
+      "alt": "망자가 도는 고리 모양 저승길 옆에 대숲 카드를 배치하는 화면. 무덤·우물·연못·철마·장승 등의 지형, 하단 카드 여덟 장, 셋째 이레와 공덕 표시가 보인다.",
+      "review": "직접 이미지 확인: 기획의 주요 장면, 조작 선택지와 화면 시점이 일치함.",
+      "generator": "built-in image_gen"
+    },
+    {
+      "id": 13,
+      "source": "/Users/sushi/.codex/generated_images/01a1102a-4256-7802-a6bb-0451ca50a8db/exec-5a8fa0f9-3653-4196-8ad3-965b2a072179.png",
+      "alt": "윷판과 네 개의 윷가락을 중심으로 목표 점수와 배수를 계산하는 화면. 머리 하나에 몸 둘인 적오 패가 걸을 두 번 계산하며, 괴물 패 다섯 장과 던지기·다시 버튼이 있다.",
+      "review": "직접 이미지 확인: 기획의 주요 장면, 조작 선택지와 화면 시점이 일치함.",
+      "generator": "built-in image_gen"
+    },
+    {
+      "id": 14,
+      "source": "/Users/sushi/.codex/generated_images/01a1102a-4256-7802-a6bb-0451ca50a8db/exec-f7797d20-f07b-4a5e-978d-875cee37c4dc.png",
+      "alt": "가을 장터에서 크기가 다른 불가살이들이 쇠붙이를 먹는 온라인 대전 화면. 청록 테두리의 플레이어가 범종을 삼키고, 순위표·미니맵·성장 단계와 도감 추가 알림이 보인다.",
+      "review": "직접 이미지 확인: 기획의 주요 장면, 조작 선택지와 화면 시점이 일치함.",
+      "generator": "built-in image_gen"
+    },
+    {
+      "id": 41,
+      "source": "/Users/sushi/.codex/generated_images/01a1102a-4256-7802-a6bb-0451ca50a8db/exec-3eeda25c-e360-401d-873a-7c984d764717.png",
+      "alt": "눈 내리는 궁궐에서 방상씨가 흑기의 공격을 방패로 막는 턴제 전투 화면. 막기 타이밍을 나타내는 금빛·흰빛 고리, 동료 초라니와 고수, 적 병사, 행동 순서와 기운 표시가 보인다.",
+      "review": "직접 이미지 확인: 기획의 주요 장면, 조작 선택지와 화면 시점이 일치함.",
+      "generator": "built-in image_gen"
+    },
+    {
+      "id": 42,
+      "source": "/Users/sushi/.codex/generated_images/01a1102a-4256-7802-a6bb-0451ca50a8db/exec-b8d60f99-d375-4506-bfcd-b220c946772c.png",
+      "alt": "숲속 바위굴에서 나온 노루 머리의 긴 뱀 사두여장과 나그네 넷의 턴제 전투 화면. 방패 3, 칼·불 약점, 부스트와 행동 메뉴를 통해 방패를 깎고 몰아치는 규칙을 보여 준다.",
+      "review": "사두여장 이름과 파티 네 이름 교정. 녹족부인을 사슴 발을 가진 두 다리 사람으로 수정. 약점 2/6, 방패 3과 부스트 x3, 네 명 파티 확인.",
+      "generator": "built-in image_gen"
+    },
+    {
+      "id": 43,
+      "source": "/Users/sushi/.codex/generated_images/01a1102a-4256-7802-a6bb-0451ca50a8db/exec-3af6ba36-be85-46e4-a4a7-fdb5eb6effdd.png",
+      "alt": "관아 디오라마의 점과 선을 따라 암행어사가 이동하는 잠입 퍼즐 화면. 귀구 두 마리의 시야와 다음 방향, 거울·망량·고관대면, 동헌의 수령과 세 가지 별 목표가 보인다.",
+      "review": "직접 이미지 확인: 기획의 주요 장면, 조작 선택지와 화면 시점이 일치함.",
+      "generator": "built-in image_gen"
+    }
+  ]
+}
