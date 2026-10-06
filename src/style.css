@@ -150,3 +150,4 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .design-post .concept li { margin: .3em 0; }
 .design-post .concept-meta { font-size: .8125em; color: var(--muted); }
 .design-post .ref-list { font-size: .875em; }
+.design-post .concept-group { margin: 2.5em 0 -1em; padding-top: .5em; border-top: 1px solid var(--border); color: var(--muted); font-size: .875em; font-weight: bold; }

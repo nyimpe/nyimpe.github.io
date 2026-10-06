@@ -193,5 +193,5 @@ cv.rect(40, 168, 240, 10, "ink0")
 cv.text(160, 163, "대오공 · 버려진 원(院)의 주인", "orange2", 11, anchor="ma")
 bar(cv, 44, 174, 232, 2, 0.78, "red2", hi="orange")
 
-cv.export("concept-5-metroidvania.png")
+cv.export("concept-3-metroidvania.png")
 print("saved")
