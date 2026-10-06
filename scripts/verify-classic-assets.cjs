@@ -23,16 +23,19 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     for (let attempt = 0; attempt < 5; attempt += 1) {
       if (resumeAt > Date.now()) await sleep(resumeAt - Date.now());
       const response = await fetch(base + url, { signal: AbortSignal.timeout(30000), cache: 'no-store' });
-      if (response.status === 429) {
+      if ([429, 502, 503, 504].includes(response.status)) {
         await response.arrayBuffer();
-        resumeAt = Math.max(resumeAt, Date.now() + Math.max(30000, Number(response.headers.get('retry-after') || 0) * 1000));
-        console.log(`Rate limited; waiting before retry ${attempt + 1}/5`);
+        const backoff = response.status === 429 ? 30000 * 2 ** attempt : 1000 * (attempt + 1);
+        const retryAfter = response.headers.get('retry-after') || '0';
+        const retryMs = /^\d+$/.test(retryAfter) ? Number(retryAfter) * 1000 : Math.max(0, Date.parse(retryAfter) - Date.now());
+        resumeAt = Math.max(resumeAt, Date.now() + Math.max(backoff, retryMs || 0));
+        console.log(`HTTP ${response.status}; waiting before retry ${attempt + 1}/5`);
         continue;
       }
       assert.equal(response.status, 200, url);
       return Buffer.from(await response.arrayBuffer());
     }
-    throw new Error(`Server still rate limiting: ${url}`);
+    throw new Error(`Server still unavailable after retries: ${url}`);
   }
   async function worker() {
     while (next < urls.length) {

@@ -21,7 +21,7 @@ const path = require('node:path');
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
-  page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
+  page.on('console', (message) => { if (message.type() === 'error') errors.push(`${message.text()} ${message.location().url}`.trim()); });
   await page.goto(`${base}/posts/${slug}/`, { waitUntil: 'networkidle' });
   const visible = () => page.locator('.classic-game:visible');
   const status = () => page.locator('#game-count').textContent();
