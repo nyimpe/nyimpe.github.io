@@ -7,6 +7,7 @@
 - **괴물·귀신:** `/posts/korean-folklore-research/`에 326항목의 이미지·설명·출처를 정리했습니다.
 - **게임 기획:** `/posts/korean-folklore-game-design/`에 괴물·귀신 자료를 바탕으로 한 2D 픽셀아트 게임 기획, 장르 시장 조사, 컨셉 이미지 5장을 정리했습니다. 이미지 생성 스크립트는 `docs/folklore-game-concepts/`에 있습니다.
 - **빌드:** Vite가 HTML 페이지와 게임 모듈을 빌드합니다. 
+- **외부 링크:** 다른 사이트로 가는 링크는 빌드할 때 `target="_blank" rel="noopener noreferrer"`가 자동으로 붙어 새 탭에서 열립니다. HTML에 직접 쓸 필요가 없습니다(`vite.config.js`).
 - **배포:** `main`에 push하면 GitHub Actions가 `dist/`를 GitHub Pages에 배포합니다.
 
 ```text
@@ -19,7 +20,7 @@ public/favicon.ico          동일 고양이 얼굴을 사용한 다중 크기 �
 src/game-page.js            게임 페이지의 시작·로딩·포커스 처리
 src/main.js                 공통 테마 초기화·전환·선호도 저장
 src/games/                  기존 Phaser 게임 소스와 자산
-vite.config.js              여러 HTML 진입점을 자동 수집하는 빌드 설정
+vite.config.js              여러 HTML 진입점 수집, 외부 링크 새 탭 처리
 ```
 
 ## 실행
