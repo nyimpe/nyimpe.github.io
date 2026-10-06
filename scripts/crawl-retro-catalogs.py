@@ -489,7 +489,7 @@ def render(site, config, payload, report):
     # Shared page chrome and filter layout are kept in a small checked-in template.
     template = (ROOT / 'scripts/retro-catalog-template.html').read_text()
     substitutions = {
-        'TITLE': esc(config['name'] + ' 고전게임 도감'), 'SLUG': site, 'DATE': DATE, 'DISPLAY_DATE': DATE.replace('-', '.'),
+        'TITLE': esc(config['name']), 'SLUG': site, 'DATE': DATE, 'DISPLAY_DATE': DATE.replace('-', '.'),
         'SOURCE': esc(config['url']), 'SOURCE_NAME': esc(config['name']), 'SCOPE': esc(config['scope']),
         'TOTAL': str(len(games)), 'PLATFORM_COUNT': str(len(platforms)), 'IMAGE_COUNT': str(report['images']),
         'BUTTONS': buttons, 'OPTIONS': options, 'CARDS': '\n'.join(cards),

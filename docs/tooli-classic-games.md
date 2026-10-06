@@ -1,4 +1,4 @@
-# Tooli 고전게임 도감
+# tooli의 고전게임 정리
 
 수집일: 2026-10-06 (Asia/Seoul). 출처: https://www.tooli.co.kr/ 고전게임 메뉴.
 페이지: https://nyimpe.github.io/posts/classic-games/

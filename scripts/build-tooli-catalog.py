@@ -154,7 +154,7 @@ def build():
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Tooli의 고전게임 {len(games)}개를 게임 화면과 함께 살펴보세요. PC, 오락실, 게임보이, 슈퍼패미콤, 메가드라이브, MSX, 플래시의 플랫폼·장르 필터와 검색.">
-<title>고전게임 도감 · nyimpe</title>
+<title>tooli의 고전게임 정리 · nyimpe</title>
 <link rel="canonical" href="https://nyimpe.github.io/posts/classic-games/">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="stylesheet" href="/src/style.css">
@@ -172,7 +172,7 @@ def build():
 <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
 </header>
 <main id="content"><article class="classic-post">
-<header class="post-header"><h1>고전게임 도감</h1><time datetime="{collected_at}">{collected_at.replace("-", ".")}</time>
+<header class="post-header"><h1>tooli의 고전게임 정리</h1><time datetime="{collected_at}">{collected_at.replace("-", ".")}</time>
 <p>추억 속 게임을 플랫폼과 장르로 찾아보세요.</p></header>
 <p class="classic-intro">출처: <a href="https://www.tooli.co.kr/pc">Tooli의 고전게임</a> · 7개 플랫폼 · {len(games)}개 게임 · {report['screenshots']}개 화면. 플랫폼은 Tooli 게시판 기준이며 게임보이는 GBA를 포함합니다. 공지·실행기·기기 소개는 제외했습니다.</p>
 <p class="classic-intro">장르는 원문 분류와 편집 분류를 함께 사용했습니다. ‘기본 진행’은 장르별 안내이며, 확인 가능한 원문 조작법은 따로 표시했습니다. 이미지는 원문 스크린샷 또는 실제 플래시 화면 캡처입니다.</p>
