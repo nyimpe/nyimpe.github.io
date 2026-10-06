@@ -12,7 +12,9 @@
 
 플랫폼은 원문 목록·상세 페이지 기준이다. PlayRetro.io는 브라우저 게임을 제공하므로 ‘웹 브라우저’로 분류한다. 게임의 원작 기종을 추측해 표시하지 않는다. 장르는 기존 Tooli 도감의 한국어 공통 장르를 사용하며, 원문 장르·진행 분류 통합과 일부 시리즈의 편집 분류를 구분한다. ‘RPG elements’, ‘Puzzle elements’ 같은 보조 요소만으로 장르를 바꾸지 않는다. 확인되지 않은 게임은 ‘기타/미분류’에 남긴다. 원문 장르와 분류 근거도 JSON에 보존한다.
 
-각 게임은 제목, 원문 썸네일, 짧은 소개, 장르별 기본 진행, 원문 링크를 갖는다. 원문 소개는 게임별 최대 20단어를 발췌한다. 소개가 비어 있거나 상세 페이지에 접근할 수 없으면 목록 안내를 사용한다. ‘기본 진행’은 장르별 설명이며 실제 키 배치·실행 검증을 의미하지 않는다. 원문 썸네일에는 표지와 게임 화면이 포함되어 있다. 이미지는 비율을 유지하고 최대 480×360 WebP로 저장한다. 이미지 접근 실패 시 게임을 제외하지 않고 사유와 원문 링크를 표시한다.
+각 게임은 제목, 원문 썸네일, 짧은 한글 소개, 장르별 기본 진행, 원문 링크를 갖는다. 원문 소개를 바탕으로 핵심 내용을 한글로 번역·정리한다. 초벌에서는 도입부의 완결 문장과 최대 70단어를 참고하고, 일부 항목은 원문 전체와 대조해 직접 정리했다. 광고성 수식어는 일부 덜어낸다. 페이지와 배포 JSON에는 영문 소개를 함께 넣지 않는다. 원문 소개가 없는 게임에는 한글 목록 안내를 사용한다. ‘기본 진행’은 장르별 설명이며 실제 키 배치·실행 검증을 의미하지 않는다. 원문 썸네일에는 표지와 게임 화면이 포함되어 있다. 이미지는 비율을 유지하고 최대 480×360 WebP로 저장한다. 이미지 접근 실패 시 게임을 제외하지 않고 사유와 원문 링크를 표시한다.
+
+한글 설명은 `scripts/retro-descriptions-ko.json`에 원문 설명의 SHA-256과 함께 저장한다. 생성기는 이 파일을 사용하며 원문이 변경됐거나 한글 설명이 없으면 영문을 대신 출력하지 않고 해당 게임 ID와 함께 중단한다. 새 원문을 수집했을 때는 그 항목의 한글 설명과 원문 해시를 갱신해야 한다.
 
 이번 수집은 모든 게임의 상세 페이지를 확인했다. Play Retro Games의 원문 이미지 7개는 HTTP 404로 남아 있다. 원문 플랫폼 링크가 잘못된 Red Robin은 목록·상세의 MAME 표기를 사용한다. 원문 소개의 이중 인코딩을 복원할 수 있으면 복원하고 HTML에서 허용하지 않는 제어 문자를 제거한다.
 
@@ -24,11 +26,13 @@
 
 - `scripts/crawl-retro-catalogs.py`: 목록·상세·이미지 수집과 정적 페이지 생성.
 - `scripts/retro-catalog-template.html`: 기존 도감 양식의 HTML 틀.
+- `scripts/retro-descriptions-ko.json`: 게임별 한글 설명과 원문 해시.
 - `public/data/{playretrogames,playretro-io,retrogames-onl-snes}-games.json`: 배포하는 메타데이터와 출처.
 - `public/images/retro-catalogs/<site>/*.webp`: 배포하는 썸네일.
 - `docs/<site>-crawl-report.json`: 목록 범위·중복·분류 수·상세/이미지 실패·robots 원문.
 - `scripts/verify-retro-catalogs.cjs`: 실제 Chrome을 통한 필터·검색·표시 검증.
 - `scripts/verify-retro-assets.py`: 전체 카드와 이미지 무결성, 배포한 JSON·이미지 바이트 대조.
+- `scripts/verify-retro-korean-descriptions.py`: 전체 설명의 한글 여부·HTML 일치와 변경 전 데이터 보존 대조.
 
 Python 3.9 이상과 `scripts/tooli-requirements.txt`의 의존성을 사용한다. 브라우저 검증에는 Node 22, Playwright, Chrome이 필요하다.
 
@@ -37,6 +41,7 @@ python3 -m venv /tmp/retro-crawl-venv
 /tmp/retro-crawl-venv/bin/pip install -r scripts/tooli-requirements.txt
 /tmp/retro-crawl-venv/bin/python scripts/crawl-retro-catalogs.py all
 npm run build
+/tmp/retro-crawl-venv/bin/python scripts/verify-retro-korean-descriptions.py
 /tmp/retro-crawl-venv/bin/python scripts/verify-retro-assets.py
 npm run preview
 NODE_PATH=/path/to/node_modules node scripts/verify-retro-catalogs.cjs http://127.0.0.1:8080
@@ -53,3 +58,5 @@ NODE_PATH=/path/to/node_modules node scripts/verify-retro-catalogs.cjs https://n
 배포 브라우저 검증은 플랫폼 양 끝과 서로 다른 대표 장르를 조합하고 검색·스크롤·화면·이미지를 확인한다. 전체 조합과 JavaScript/IntersectionObserver 없는 대체 동작은 로컬에서 검사해 큰 HTML의 반복 다운로드와 공개 CDN의 요청 폭주를 피한다. 배포 파일 검증은 브라우저 검사 후 순차 실행하며 HTML·JSON·해시된 JS/CSS를 로컬 빌드와 SHA-256으로 대조한다. 옵션 없는 파일 검증은 이미지 전체도 대조하며 `--core`는 이미지 다운로드를 생략한다. 파일 요청은 동시 2개·응답 후 250ms 간격이며, 429·502·503·504는 서버 상태에 맞춰 간격을 늘려 최대 5번 재시도한다.
 
 이번 배포의 Play Retro Games 이미지 1,000개는 저장본과 SHA-256이 일치했다. 이미지 전체 원격 대조는 CDN 요청 제한을 고려해 표본에서 중단했다. 전체 이미지 9,309개의 디코딩·크기·카드 연결 검증은 로컬에서 완료했다.
+
+2026-10-07 한글 소개 수정에서는 9,316개 설명의 한글 여부와 HTML·JSON 일치, 변경 전 게임명·순서·플랫폼·장르·이미지·출처 보존을 대조했다. 로컬 브라우저에서 세 페이지의 한글 검색 결과 수와 ID, 초기화, 이미지, 375px 가로 넘침, 밝은/어두운 테마와 콘솔 오류를 확인했다. 한글 소개 누락 또는 원문 해시 불일치 시 생성기가 중단되고 배포 JSON을 변경하지 않는 것도 확인했다.

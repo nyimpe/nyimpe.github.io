@@ -414,6 +414,7 @@ def excerpt(text):
 
 
 def build(sites=None):
+    translations = read_json(ROOT / 'scripts/retro-descriptions-ko.json')
     for site in sites or SITES:
         config = SITES[site]
         rows = read_json(CACHE / f'{site}-details.json')
@@ -430,8 +431,18 @@ def build(sites=None):
             if row.get('aliases'):
                 game['aliases'] = list(dict.fromkeys(row['aliases']))
             desc = excerpt(row['sourceDescription'])
-            game.update({'genre': genre, 'genreBasis': basis, 'description': desc or f'{PLATFORMS[row["platform"]]} 목록에 소개된 {row["title"]}입니다. 자세한 소개는 원문에서 확인해 주세요.',
-                         'descriptionBasis': '원문 소개 짧은 발췌' if desc else '목록 안내', 'basicMethod': BASICS[genre]})
+            if desc:
+                translated = translations['games'].get(site + ':' + row['id'])
+                source_hash = hashlib.sha256(row['sourceDescription'].encode('utf-8')).hexdigest()
+                if not translated or translated['sourceHash'] != source_hash:
+                    raise ValueError('Korean description needs translation: ' + site + ':' + row['id'])
+                description = translated['description']
+                if not re.search(r'[가-힣]', description):
+                    raise ValueError('Korean description missing: ' + site + ':' + row['id'])
+            else:
+                description = '원문 목록에 소개된 게임입니다. 자세한 소개는 원문에서 확인해 주세요.'
+            game.update({'genre': genre, 'genreBasis': basis, 'description': description,
+                         'descriptionLanguage': 'ko', 'descriptionBasis': '원문 소개 한글 번역' if desc else '목록 안내', 'basicMethod': BASICS[genre]})
             game.update(images[row['id']])
             if not game['image']:
                 game['imageSource'] = row.get('imageSource')
