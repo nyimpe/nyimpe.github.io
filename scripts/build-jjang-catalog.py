@@ -42,7 +42,17 @@ SERIES = [
 
 def build():
     raw = json.loads((CACHE / 'raw.json').read_text())
-    images = json.loads((CACHE / 'images.json').read_text())
+    gameplay_path = ROOT / 'docs/jjang-gameplay-images.json'
+    gameplay = json.loads(gameplay_path.read_text()) if gameplay_path.exists() else None
+    if gameplay:
+        images = {}
+        for row in raw:
+            replacement = gameplay['entries'].get(row['id'])
+            images[row['id']] = {'image': replacement['image'] if replacement else None,
+                                 'reason': '' if replacement else gameplay['unresolved'][row['id']]['reason'],
+                                 'failures': []}
+    else:
+        images = json.loads((CACHE / 'images.json').read_text())
     inventory = json.loads((CACHE / 'inventory.json').read_text())
     collected = inventory['collectedAt'][:10]
     games = []
@@ -77,6 +87,8 @@ def build():
         'classification': '플랫폼은 짱게임의 2D 게임·고전 오락실게임 카테고리 기준입니다. 장르는 각 상세 페이지의 원문 분류이며, 비어 있는 항목은 미분류로 보존합니다.',
         'descriptionBasis': '시리즈별 편집 요약 또는 원문 카테고리·장르 안내. 기본 진행은 장르별 안내이며 개별 게임의 조작키 설명이 아닙니다.'}
     payload = {'collectedAt': collected, 'platforms': PLATFORMS, 'games': games}
+    if gameplay:
+        report['gameplayImages'] = {'collectedAt': gameplay['collectedAt'], **gameplay['summary']}
     (ROOT / 'public/data').mkdir(parents=True, exist_ok=True)
     (ROOT / 'public/data/jjang-games.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n')
     (ROOT / 'docs/jjang-crawl-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
@@ -95,6 +107,7 @@ def build():
 <p>{esc(game['description'])}</p>
 <p class="game-method"><strong>기본 진행</strong> {esc(game['basicMethod'])}</p>
 <p class="game-source"><a href="{esc(game['source'])}">짱게임 원문</a> · {esc(game['genreBasis'])}</p>
+{'<p class="game-source"><a href="' + esc(image['sourcePage']) + '">플레이 화면 출처</a> · ' + esc(image.get('displayNote') or ('영문명 일치' if image['matchType'] == 'exact' else '동일 게임의 대표 화면 · 지역·개정판 차이 가능')) + '</p>' if image and image.get('sourcePage') else ''}
 </section>''')
     page = f'''<!doctype html>
 <html lang="ko"><head>
@@ -120,8 +133,8 @@ def build():
 <header class="post-header"><h1>짱게임 2D·오락실 게임 도감</h1><time datetime="{collected}">{collected.replace('-', '.')}</time>
 <p>2D와 오락실의 추억을 게임 화면으로 찾아보세요.</p></header>
 <p class="classic-intro">출처: <a href="https://www.jjanggame.co.kr/list.php?gtype=2d">짱게임 2D 게임</a> · <a href="https://www.jjanggame.co.kr/list.php?gtype=old">고전 오락실게임</a> · {len(games):,}개 게임 · {report['screenshots']:,}개 화면. 플랫폼은 짱게임의 카테고리 기준이며 같은 게임의 지역판·버전도 원문 항목별로 보존했습니다.</p>
-<p class="classic-intro">장르는 상세 페이지의 원문 분류이며, 원문 장르가 비어 있는 {genres['미분류']}개는 ‘미분류’로 표시했습니다. 설명은 시리즈 요약 또는 카테고리·장르 안내이며, ‘기본 진행’은 장르별 안내입니다. 화면은 원문 스크린샷·썸네일을 사용했습니다. 기존 <a href="/posts/classic-games/">고전게임 도감</a>도 함께 살펴보세요.</p>
-<p class="classic-intro">원문 이미지가 준비중이거나 삭제되어 화면을 확인할 수 없는 {len(report['missingScreenshots']):,}개도 목록에 포함하고 사유를 표시했습니다.</p>
+<p class="classic-intro">장르는 상세 페이지의 원문 분류이며, 원문 장르가 비어 있는 {genres['미분류']}개는 ‘미분류’로 표시했습니다. 설명은 시리즈 요약 또는 카테고리·장르 안내이며, ‘기본 진행’은 장르별 안내입니다. 화면은 외부 게임 자료의 실제 플레이 스크린샷입니다. 표지·타이틀 화면·짱게임 캡처는 사용하지 않습니다. 각 카드에 화면 출처를 표시했으며, 대표 화면은 지역·개정판이 원문과 다를 수 있습니다. 기존 <a href="/posts/classic-games/">고전게임 도감</a>도 함께 살펴보세요.</p>
+<p class="classic-intro">게임·개조판을 정확히 대응할 수 없거나 외부 플레이 화면을 확인하지 못한 {len(report['missingScreenshots']):,}개도 목록에 포함하고 사유를 표시했습니다.</p>
 <form class="classic-filter" aria-label="게임 필터" hidden>
 <fieldset class="game-platforms"><legend>플랫폼 / 카테고리</legend><div class="game-platform-buttons">
 <button type="button" data-platform="" data-label="전체" aria-pressed="true">전체 <span>{len(games)}</span></button>{buttons}

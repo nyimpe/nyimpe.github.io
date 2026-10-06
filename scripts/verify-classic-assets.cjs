@@ -41,7 +41,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     while (next < urls.length) {
       const url = urls[next++];
       const remote = await readRemote(url);
-      const local = await fs.readFile(path.join(root, 'dist', url));
+      const local = await fs.readFile(path.join(root, 'dist', new URL(url, base).pathname));
       assert.equal(hash(remote), hash(local), `deployed content mismatch: ${url}`);
       verified += 1;
       if (verified % 200 === 0) console.log(`Verified ${verified}/${urls.length} deployed files`);
