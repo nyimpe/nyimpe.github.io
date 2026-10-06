@@ -151,3 +151,6 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .design-post .concept-meta { font-size: .8125em; color: var(--muted); }
 .design-post .ref-list { font-size: .875em; }
 .design-post .concept-group { margin: 2.5em 0 -1em; padding-top: .5em; border-top: 1px solid var(--border); color: var(--muted); font-size: .875em; font-weight: bold; }
+.design-post .io-common { margin: 2.5em 0 0; padding: .25em 1em .5em; border: 1px solid var(--soft-border); background: var(--surface); }
+.design-post .io-common h3 { margin-top: .75em; }
+.design-post .io-common li { margin: .35em 0; }
