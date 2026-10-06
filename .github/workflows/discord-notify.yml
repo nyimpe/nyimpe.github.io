@@ -20,6 +20,7 @@ jobs:
           import json
           import os
           import sys
+          import time
           import urllib.request
 
           webhook = os.environ.get("DISCORD_WEBHOOK_URL")
@@ -34,36 +35,23 @@ jobs:
               print("No new commits to announce.")
               sys.exit(0)
 
-          entries = []
-          for commit in commits:
-              title, _, body = commit["message"].strip().partition("\n")
-              entry = f"[`{commit['id'][:7]}`]({commit['url']}) **{title}** — {commit['author']['name']}"
-              quoted = [f"> {line}" for line in body.strip().splitlines() if line.strip()]
-              entries.append("\n".join([entry, *quoted]))
-          description = "\n\n".join(entries)
-          if len(description) > 4000:  # Discord embed description limit is 4096
-              description = description[:3990].rstrip() + "\n…"
-
-          repo = event["repository"]["full_name"]
-          branch = event["ref"].removeprefix("refs/heads/")
-          title = f"[{repo}:{branch}] 새 커밋 {len(commits)}개"
-          if event.get("forced"):
-              title += " (강제 푸시)"
-          sender = event["sender"]
-          payload = {
-              "embeds": [{
-                  "title": title,
-                  "url": event.get("compare"),
-                  "description": description,
-                  "color": 0x5865F2,
-                  "author": {"name": sender["login"], "url": sender["html_url"], "icon_url": sender["avatar_url"]},
-                  "timestamp": event["head_commit"]["timestamp"],
-              }],
-          }
-          request = urllib.request.Request(
-              webhook,
-              data=json.dumps(payload).encode("utf-8"),
-              headers={"Content-Type": "application/json", "User-Agent": "nyimpe.github.io push notifier"},
-          )
-          with urllib.request.urlopen(request) as response:
-              print(f"Discord responded {response.status} for {len(commits)} commit(s).")
+          # One Discord message per commit, containing only the commit message.
+          for index, commit in enumerate(commits):
+              if index:
+                  time.sleep(1)  # stay under Discord's webhook rate limit
+              message = commit["message"].strip()
+              if len(message) > 2000:  # Discord message length limit
+                  message = message[:1999] + "…"
+              payload = {
+                  "username": "git",
+                  "content": message,
+                  "allowed_mentions": {"parse": []},  # never ping @everyone or users from a commit message
+                  "flags": 4,  # suppress link previews
+              }
+              request = urllib.request.Request(
+                  webhook,
+                  data=json.dumps(payload).encode("utf-8"),
+                  headers={"Content-Type": "application/json", "User-Agent": "nyimpe.github.io push notifier"},
+              )
+              with urllib.request.urlopen(request) as response:
+                  print(f"Discord responded {response.status} for {commit['id'][:7]}.")

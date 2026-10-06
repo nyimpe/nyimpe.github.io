@@ -9,7 +9,7 @@
 - **빌드:** Vite가 HTML 페이지와 게임 모듈을 빌드합니다. 
 - **외부 링크:** 다른 사이트로 가는 링크는 빌드할 때 `target="_blank" rel="noopener noreferrer"`가 자동으로 붙어 새 탭에서 열립니다. HTML에 직접 쓸 필요가 없습니다(`vite.config.js`).
 - **배포:** `main`에 push하면 GitHub Actions가 `dist/`를 GitHub Pages에 배포합니다.
-- **알림:** 어느 브랜치든 push하면 GitHub Actions가 새 커밋 메시지를 디스코드로 보냅니다. 웹훅 주소는 저장소 시크릿 `DISCORD_WEBHOOK_URL`에 있습니다(`.github/workflows/discord-notify.yml`).
+- **알림:** 어느 브랜치든 push하면 GitHub Actions가 새 커밋마다 커밋 메시지만 `git`이라는 이름으로 디스코드에 보냅니다. 웹훅 주소는 저장소 시크릿 `DISCORD_WEBHOOK_URL`에 있습니다(`.github/workflows/discord-notify.yml`).
 
 ```text
 index.html                  홈: 기술 스택 엠블렘, 기록 목록
