@@ -6,6 +6,7 @@ const path = require('node:path');
 (async () => {
   const base = process.argv[2] || 'http://127.0.0.1:8080';
   const jjang = process.argv[3] === 'jjang';
+  const live = base.startsWith('https://');
   const slug = jjang ? 'jjang-games' : 'classic-games';
   const dataset = jjang ? 'jjang-games' : 'tooli-games';
   const postTitle = jjang ? '짱게임 2D·오락실 게임 도감' : '고전게임 도감';
@@ -33,6 +34,7 @@ const path = require('node:path');
   for (const platform of ['', ...Object.keys(data.platforms)]) {
     await page.locator(`[data-platform="${platform}"][type="button"]`).click();
     for (const genre of ['', ...genres]) {
+      if (live) await page.waitForTimeout(150);
       await page.locator('#game-genre').selectOption(genre);
       const expected = data.games.filter((game) => (!platform || game.platform === platform) && (!genre || game.genre === genre)).length;
       assert.match(await status(), new RegExp(`· ${expected}개 게임$`));
@@ -50,6 +52,8 @@ const path = require('node:path');
   assert.deepEqual(loadedIds, data.games.slice(0, loadedIds.length).map((game) => game.id));
   // Keep scrolling through the complete catalog: no duplicate or missing games.
   while (await visible().count() < data.games.length) {
+    // Avoid turning a catalog UI check into a burst of thousands of CDN requests.
+    if (live) await page.waitForTimeout(1300);
     const count = await visible().count();
     await page.locator('#game-load-trigger').scrollIntoViewIfNeeded();
     await page.waitForFunction((count) => document.querySelectorAll('.classic-game').length > count, count);
