@@ -5,7 +5,7 @@
 - **테마:** 모든 페이지의 상단 버튼으로 라이트·다크 모드를 전환합니다. 기본값은 시스템 설정이고, 직접 선택한 값은 브라우저에 저장됩니다.
 - **게임:** 기존 Phaser 3 게임 5개를 각각 독립 페이지로 연결했습니다. 시작 버튼을 누를 때 해당 게임을 불러옵니다.
 - **괴물·귀신:** `/posts/korean-folklore-research/`에 326항목의 이미지·설명·출처를 정리했습니다.
-- **게임 기획:** `/posts/korean-folklore-game-design/`에 괴물·귀신 자료를 바탕으로 한 2D 픽셀아트 게임 기획, 장르 시장 조사, 컨셉 이미지 8장을 정리했습니다. 이미지 생성 스크립트는 `docs/folklore-game-concepts/`에 있습니다.
+- **게임 기획:** `/posts/korean-folklore-game-design/`에 괴물·귀신 자료를 바탕으로 한 2D 픽셀아트 게임 기획, 장르 시장 조사, 컨셉 이미지 13장을 정리했습니다. 이미지 생성 스크립트는 `docs/folklore-game-concepts/`에 있습니다.
 - **빌드:** Vite가 HTML 페이지와 게임 모듈을 빌드합니다. 
 - **외부 링크:** 다른 사이트로 가는 링크는 빌드할 때 `target="_blank" rel="noopener noreferrer"`가 자동으로 붙어 새 탭에서 열립니다. HTML에 직접 쓸 필요가 없습니다(`vite.config.js`).
 - **배포:** `main`에 push하면 GitHub Actions가 `dist/`를 GitHub Pages에 배포합니다.
