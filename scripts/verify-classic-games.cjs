@@ -15,7 +15,9 @@ const path = require('node:path');
   await page.goto(`${base}/posts/classic-games/`, { waitUntil: 'networkidle' });
   const visible = () => page.locator('.classic-game:visible');
   const status = () => page.locator('#game-count').textContent();
-  assert.equal(await page.locator('.classic-game').count(), data.games.length);
+  assert.equal(await page.locator('.classic-game').count(), 24);
+  assert.equal(await page.locator('#game-pagination, #game-previous, #game-next').count(), 0);
+  assert.ok(await page.locator('.classic-game img').evaluateAll((imgs) => imgs.every((img) => img.loading === 'lazy')));
   assert.equal(await visible().count(), 24);
   assert.match(await status(), new RegExp(`${data.games.length}개 게임`));
   const genres = [...new Set(data.games.map((game) => game.genre))];
@@ -32,12 +34,32 @@ const path = require('node:path');
   }
   await page.locator('.game-reset').click();
   const firstIds = await visible().evaluateAll((cards) => cards.map((card) => card.id));
-  await page.locator('#game-next').click();
+  await page.locator('#game-load-trigger').scrollIntoViewIfNeeded();
+  await page.waitForFunction(() => document.querySelectorAll('.classic-game').length >= 48);
+  const loadedIds = await visible().evaluateAll((cards) => cards.map((card) => card.id));
+  assert.deepEqual(loadedIds.slice(0, 24), firstIds);
+  assert.deepEqual(loadedIds, data.games.slice(0, loadedIds.length).map((game) => game.id));
+  // Keep scrolling through the complete catalog: no duplicate or missing games.
+  while (await visible().count() < data.games.length) {
+    const count = await visible().count();
+    await page.locator('#game-load-trigger').scrollIntoViewIfNeeded();
+    await page.waitForFunction((count) => document.querySelectorAll('.classic-game').length > count, count);
+  }
+  assert.deepEqual(await visible().evaluateAll((cards) => cards.map((card) => card.id)), data.games.map((game) => game.id));
+  assert.ok(await page.locator('#game-load-trigger').isHidden());
+  // Filtering after loading another batch removes stale games and resets the list.
+  await page.locator('[data-platform="lounge"][type="button"]').click();
   assert.equal(await visible().count(), 24);
-  assert.match(await page.locator('#game-page-status').textContent(), /^2 \/ /);
-  assert.equal(await visible().first().getAttribute('id'), data.games[24].id);
-  await page.locator('#game-previous').click();
-  assert.deepEqual(await visible().evaluateAll((cards) => cards.map((card) => card.id)), firstIds);
+  assert.ok((await visible().evaluateAll((cards) => cards.map((card) => card.dataset.platform))).every((platform) => platform === 'lounge'));
+  await page.locator('[data-platform="md"][type="button"]').click();
+  await page.locator('#game-load-trigger').scrollIntoViewIfNeeded();
+  await page.waitForFunction(() => document.querySelectorAll('.classic-game').length === 40);
+  assert.ok(await page.locator('#game-load-trigger').isHidden());
+  assert.match(await page.locator('#game-load-status').textContent(), /40개 게임을 모두/);
+  const allMdIds = await visible().evaluateAll((cards) => cards.map((card) => card.id));
+  assert.deepEqual(allMdIds, data.games.filter((game) => game.platform === 'md').map((game) => game.id));
+  await page.locator('.game-reset').click();
+  assert.equal(await visible().count(), 24);
   for (const query of ['마리오', 'Sonic', '역전재판', '스테판 울프']) {
     await page.locator('#game-search').fill(query);
     assert.ok(await visible().count() > 0, query);
@@ -49,6 +71,7 @@ const path = require('node:path');
   assert.match(await status(), new RegExp(`${data.games.length}개 게임`));
   await page.goto(`${base}/posts/classic-games/?platform=md&genre=${encodeURIComponent('액션/아케이드')}&q=Sonic&page=999`);
   assert.equal(await page.locator('#game-search').inputValue(), 'Sonic');
+  assert.ok(!(new URL(page.url())).searchParams.has('page'));
   assert.ok(await visible().count() > 0);
   await page.goto(`${base}/posts/classic-games/?platform=invalid&genre=invalid&page=-1`);
   assert.equal(await visible().count(), 24);
@@ -65,6 +88,10 @@ const path = require('node:path');
   assert.match(await external.getAttribute('rel'), /noopener/);
   for (const width of [1280, 375, 320]) {
     await page.setViewportSize({ width, height: 900 });
+    await page.locator('[data-platform="md"][type="button"]').click();
+    await page.locator('#game-load-trigger').scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => document.querySelectorAll('.classic-game').length === 40);
+    await page.locator('.game-reset').click();
     for (const theme of ['light', 'dark']) {
       if (await page.locator('html').getAttribute('data-theme') !== theme) await page.locator('#theme-toggle').click();
       assert.equal(await page.locator('html').getAttribute('data-theme'), theme);
@@ -80,8 +107,17 @@ const path = require('node:path');
   await fallback.goto(`${base}/posts/classic-games/`);
   assert.equal(await fallback.locator('.classic-game:visible').count(), data.games.length);
   await nojs.close();
+  const noObserver = await browser.newContext();
+  await noObserver.addInitScript(() => { delete window.IntersectionObserver; });
+  const unsupported = await noObserver.newPage();
+  await unsupported.goto(`${base}/posts/classic-games/`);
+  await unsupported.waitForFunction(() => !document.querySelector('.classic-filter').hidden);
+  assert.equal(await unsupported.locator('.classic-game').count(), data.games.length);
+  await unsupported.locator('[data-platform="md"][type="button"]').click();
+  assert.equal(await unsupported.locator('.classic-game').count(), 40);
+  await noObserver.close();
   await page.goto(base);
   assert.ok(await page.getByRole('link', { name: '고전게임 도감', exact: true }).isVisible());
-  console.log(JSON.stringify({ url: base, games: data.games.length, combinations: 8 * (genres.length + 1), widths: [1280, 375, 320], themes: ['light', 'dark'], pagination: true, search: true, keyboard: true, noJavaScript: true, consoleErrors: errors }, null, 2));
+  console.log(JSON.stringify({ url: base, games: data.games.length, combinations: 8 * (genres.length + 1), widths: [1280, 375, 320], themes: ['light', 'dark'], infiniteScroll: true, filterResetsLoadedGames: true, noIntersectionObserver: true, search: true, keyboard: true, noJavaScript: true, consoleErrors: errors }, null, 2));
   await browser.close();
 })().catch((error) => { console.error(error); process.exit(1); });

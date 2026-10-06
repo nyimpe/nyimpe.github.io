@@ -1,12 +1,12 @@
 .classic-post .post-header h1 { line-height: 1.4; }
 .classic-intro { color: var(--muted); font-size: .875em; }
 .classic-filter { border: 1px solid var(--soft-border); border-radius: 4px; background: var(--surface); padding: 1em; margin: 1.5em 0 1em; }
-.classic-filter[hidden], .classic-game[hidden], .game-pagination[hidden], .game-empty[hidden] { display: none; }
+.classic-filter[hidden], .classic-game[hidden], .game-load-status[hidden], .game-load-trigger[hidden], .game-empty[hidden] { display: none; }
 .game-platforms { border: 0; margin: 0 0 1em; padding: 0; }
 .game-platforms legend { margin-bottom: .5em; font-weight: bold; }
 .game-platform-buttons { display: flex; flex-wrap: wrap; gap: .5em; }
-.game-platform-buttons button, .game-pagination button, .game-reset { min-height: 44px; padding: .4em .7em; border: 1px solid var(--border); border-radius: 3px; background: var(--control); color: var(--text); }
-.game-platform-buttons button:hover, .game-pagination button:hover, .game-reset:hover { background: var(--hover); }
+.game-platform-buttons button, .game-reset { min-height: 44px; padding: .4em .7em; border: 1px solid var(--border); border-radius: 3px; background: var(--control); color: var(--text); }
+.game-platform-buttons button:hover, .game-reset:hover { background: var(--hover); }
 .game-platform-buttons button[aria-pressed="true"] { background: var(--link); color: var(--background); border-color: var(--link); }
 .game-platform-buttons span { font-size: .75em; margin-left: .25em; }
 .game-filter-fields { display: grid; grid-template-columns: 1fr 1.4fr auto; align-items: end; gap: .75em; }
@@ -24,9 +24,8 @@
 .classic-game .game-tags { color: var(--link); font-size: .75em; }
 .classic-game .game-method { color: var(--muted); }
 .classic-game .game-source { font-size: .75em; }
-.game-pagination { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: .75em; margin: 2em 0; }
-.game-pagination button:disabled { cursor: default; opacity: .4; }
-.game-pagination span { font-size: .875em; }
+.game-load-status { text-align: center; color: var(--muted); font-size: .875em; margin: 2em 0; }
+.game-load-trigger { height: 1px; }
 .classic-post .post-back { margin-top: 2em; }
 @media (max-width: 540px) {
   .classic-games { grid-template-columns: minmax(0, 1fr); }

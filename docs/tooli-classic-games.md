@@ -21,6 +21,8 @@
 
 `robots.txt`를 확인해 공개 목록·상세 페이지·이미지만 수집했다. 비공개 본문에 접근하지 않았다. 게임 파일과 SWF, 런타임은 배포하지 않는다. 이미지와 설명의 출처는 각 게임의 Tooli 원문 링크이며, JSON에는 이미지 출처도 기록했다.
 
+목록은 처음 24개를 표시하고 끝에 가까워지면 다음 24개를 자동으로 추가한다. 이미지는 브라우저의 지연 로딩을 유지한다. 필터·검색 변경 시 해당 결과의 처음부터 다시 표시하며, JavaScript 또는 IntersectionObserver를 사용할 수 없으면 전체 목록을 제공한다.
+
 ## 파일
 
 - `public/data/tooli-games.json`: 배포하는 게임 정보와 출처.
@@ -30,7 +32,7 @@
 - `scripts/crawl-tooli.py`: 목록·본문·이미지 수집. 3개 동시 요청, 응답 후 간격과 재시도, `/tmp/nyimpe-tooli-cache` 캐시.
 - `scripts/capture-tooli-flash.cjs`: 임시 Ruffle 환경에서 화면 캡처. 바깥 네트워크와 ActionScript의 스크립트 접근을 차단하며, 런타임은 사이트에 포함하지 않는다. 게임 시작 화면을 기다리기 위해 캡처용 프레임 속도를 조정한다.
 - `scripts/build-tooli-catalog.py`: 저장 데이터와 HTML 생성.
-- `src/classic-games.js`, `src/classic-games.css`: 필터·검색·페이지 이동·화면.
+- `src/classic-games.js`, `src/classic-games.css`: 필터·검색·스크롤 지연 표시·화면.
 - `scripts/verify-classic-games.cjs`: 실제 브라우저로 필터와 표시 검증.
 
 ## 재수집
@@ -59,4 +61,4 @@ NODE_PATH=/tmp/tooli-capture-deps/node_modules node scripts/verify-classic-games
 node scripts/verify-classic-assets.cjs https://nyimpe.github.io
 ```
 
-플랫폼·장르 조합 96개, 한국어·영어 검색, 결과 없음, 초기화, 페이지 이동, 저장 URL, 키보드 입력, 1280·375·320px 폭, 밝은·어두운 테마, 콘솔, JavaScript 없는 전체 목록, 홈페이지 진입 링크를 확인한다. 브라우저 키보드 입력은 Playwright 자동화이며 물리 입력 테스트는 아니다. 배포 후에는 새 HTML과 해시 자산이 실제로 제공되는지 확인하고, JSON 및 모든 이미지의 배포 응답도 대조한다.
+플랫폼·장르 조합 96개, 한국어·영어 검색, 결과 없음, 초기화, 스크롤 추가 표시와 마지막 결과, 저장 URL, 키보드 입력, 1280·375·320px 폭, 밝은·어두운 테마, 콘솔, JavaScript 없는 전체 목록, 홈페이지 진입 링크를 확인한다. 브라우저 키보드 입력은 Playwright 자동화이며 물리 입력 테스트는 아니다. 배포 후에는 새 HTML과 해시 자산이 실제로 제공되는지 확인하고, JSON 및 모든 이미지의 배포 응답도 대조한다.

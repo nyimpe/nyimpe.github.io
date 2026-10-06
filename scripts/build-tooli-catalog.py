@@ -188,9 +188,8 @@ def build():
 <p class="game-empty" id="game-empty" hidden>일치하는 게임이 없습니다. 검색어를 바꾸거나 필터를 초기화해 주세요.</p>
 <noscript><p>JavaScript를 켜면 플랫폼·장르 필터와 검색을 사용할 수 있습니다. 아래에서 전체 게임을 볼 수 있습니다.</p></noscript>
 <div class="classic-games">{''.join(cards)}</div>
-<nav class="game-pagination" id="game-pagination" aria-label="게임 목록 페이지" hidden>
-<button type="button" id="game-previous">이전</button><span id="game-page-status"></span><button type="button" id="game-next">다음</button>
-</nav>
+<p class="game-load-status" id="game-load-status" role="status" aria-atomic="true" hidden></p>
+<div class="game-load-trigger" id="game-load-trigger" aria-hidden="true" hidden></div>
 <p class="classic-intro"><a href="/data/tooli-games.json">수집한 게임 정보 JSON</a> · 게임별 자세한 정보는 원문 링크에서 확인할 수 있습니다.</p>
 <p class="post-back"><a href="/">← Home</a></p>
 </article></main>
