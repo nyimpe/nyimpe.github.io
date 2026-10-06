@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="온라인 논리 퍼즐 41종의 실제 게임 화면, 간단한 규칙, 플레이 링크.">
+    <meta name="description" content="온라인 논리 퍼즐 41종의 실제 게임 화면과 목표, 상세 규칙, 풀이 예시, 조작법, 공식 플레이 링크.">
     <title>온라인 논리 퍼즐 41종 · nyimpe</title>
     <link rel="canonical" href="https://nyimpe.github.io/posts/logic-puzzles/">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="ko_KR">
     <meta property="og:title" content="온라인 논리 퍼즐 41종">
-    <meta property="og:description" content="게임 화면으로 살펴보는 41가지 논리 퍼즐과 짧은 규칙 설명.">
+    <meta property="og:description" content="게임 화면과 함께 정리한 41가지 논리 퍼즐의 목표, 상세 규칙과 풀이 예시.">
     <meta property="og:url" content="https://nyimpe.github.io/posts/logic-puzzles/">
     <meta property="og:image" content="https://nyimpe.github.io/images/logic-puzzles/lollipops.jpg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -35,9 +35,10 @@
         <header class="post-header">
           <h1>온라인 논리 퍼즐 41종</h1>
           <time datetime="2026-10-06">2026.10.06</time>
-          <p>숫자를 채우고, 칸을 칠하고, 선을 잇는 41가지 퍼즐. 각 게임의 시작 화면과 핵심 규칙을 함께 정리했습니다.</p>
-          <p class="image-credit">목록 출처: <a href="https://ko.puzzle-lollipops.com/" target="_blank" rel="noopener noreferrer">롤리팝스</a>의 다른 논리 퍼즐들 · 화면과 규칙: 각 게임의 공식 사이트 · 2026.10.06 확인</p>
+          <p>숫자를 채우고, 칸을 칠하고, 선을 잇는 41가지 퍼즐. 각 게임의 시작 화면, 목표, 세부 규칙과 풀이 예시를 함께 정리했습니다. 조작 안내는 공식 사이트에 명시된 기본 마우스 조작을 기준으로 합니다.</p>
+          <p class="image-credit">목록 출처: <a href="https://ko.puzzle-lollipops.com/" target="_blank" rel="noopener noreferrer">롤리팝스</a>의 다른 논리 퍼즐들 · 화면과 규칙: 각 게임의 공식 사이트 · 모호한 조건은 영문 원문과 보충 출처로 대조 · 2026.10.06 확인</p>
         </header>
+        <p>아래에서 ‘연결’은 별도 설명이 없으면 칸이 상하좌우로 변을 공유한다는 뜻입니다. 대각선으로만 닿는 것은 연결로 세지 않습니다. 예시는 규칙을 이해하기 위한 것으로, 옆의 시작 화면에 대한 정답은 아닙니다.</p>
         <details class="puzzle-index">
           <summary>게임 목록 · 41종</summary>
           <nav aria-label="게임별 바로가기">
@@ -97,8 +98,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">도형 배치하기</p>
               <h2 id="lollipops-title"><span class="puzzle-number" aria-hidden="true">01.</span> 롤리팝스</h2>
-              <p>원 하나와 이웃한 막대 하나를 짝지어 사탕을 만들고, 서로 다른 사탕끼리는 변으로 닿지 않게 합니다. 같은 행·열에서 같은 종류의 조각(원·가로 막대·세로 막대) 사이에는 다른 종류의 조각이 있어야 합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-lollipops.com/" target="_blank" rel="noopener noreferrer" aria-label="롤리팝스 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 처음 주어진 원과 막대를 완성하고 필요한 조각을 더 놓아, 모든 조각이 두 칸짜리 롤리팝에 속하게 만듭니다.</p>
+              <ul class="puzzle-rules">
+                <li>롤리팝 하나는 원 한 칸과 상하좌우로 이웃한 막대 한 칸입니다. 막대는 원을 향해야 하며, 가로 또는 세로로 놓습니다.</li>
+                <li>원 하나에 막대 하나만 짝지을 수 있습니다. 원이나 막대가 짝 없이 남아서는 안 됩니다. 조각을 놓지 않는 빈칸은 허용됩니다.</li>
+                <li>서로 다른 롤리팝의 어느 부분도 변을 공유할 수 없습니다. 대각선으로 닿는 것은 가능합니다.</li>
+                <li>같은 행·열에서 같은 종류의 조각 두 개 사이에는 다른 종류의 조각이 있어야 합니다. 원·가로 막대·세로 막대를 서로 다른 종류로 셉니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 같은 행에 원 두 개가 있으면 그 사이에 막대가 하나 이상 있어야 합니다. 빈칸만 사이에 있는 것으로는 조건을 만족하지 않습니다.</p>
+              <p><strong>조작:</strong> 칸을 클릭하면 원을 놓고, 클릭한 채 끌면 그 방향의 막대를 그립니다. 우클릭은 빈칸으로 남길 위치에 점을 표시합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-lollipops.com/" target="_blank" rel="noopener noreferrer" aria-label="롤리팝스 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a> · <a href="https://www.puzzle-lollipops.com/" target="_blank" rel="noopener noreferrer">영문 규칙 ↗</a></p>
             </div>
           </li>
           <li id="kurodoko" class="puzzle-entry" aria-labelledby="kurodoko-title">
@@ -111,8 +120,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="kurodoko-title"><span class="puzzle-number" aria-hidden="true">02.</span> 쿠로도코</h2>
-              <p>숫자는 자기 칸을 포함해 상하좌우로 검은 칸이나 테두리까지 보이는 흰 칸의 총수입니다. 숫자 칸은 흰색으로 유지하고, 흰 칸 전체는 연결되게, 검은 칸끼리는 변으로 닿지 않게 칠합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-kurodoko.com/" target="_blank" rel="noopener noreferrer" aria-label="쿠로도코 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 숫자를 시야의 단서로 삼아 검은 칸과 흰 칸을 결정합니다. 숫자가 적힌 칸은 항상 흰색입니다.</p>
+              <ul class="puzzle-rules">
+                <li>각 숫자는 자기 칸 한 개와 상하좌우 네 방향으로 보이는 흰 칸의 합입니다. 대각선은 세지 않습니다.</li>
+                <li>한 방향의 시야는 처음 만나는 검은 칸이나 격자 가장자리에서 멈춥니다. 그 뒤의 흰 칸은 보이지 않으며, 다른 숫자 칸은 시야를 막지 않습니다.</li>
+                <li>검은 칸끼리는 가로·세로로 붙을 수 없습니다. 대각선 접촉은 허용됩니다.</li>
+                <li>남은 흰 칸 전체는 상하좌우로 이동해서 서로 도달할 수 있는 한 덩어리여야 합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 숫자 5에서 위로 1칸, 아래로 2칸, 왼쪽으로 1칸, 오른쪽으로 0칸이 보이면 자기 칸을 더해 1+1+2+1+0=5입니다.</p>
+              <p><strong>조작:</strong> 좌클릭은 검은 칸, 우클릭은 흰 칸을 뜻하는 점 표시입니다. 누른 채 끌어 여러 칸을 표시할 수 있습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-kurodoko.com/" target="_blank" rel="noopener noreferrer" aria-label="쿠로도코 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="binairo-plus" class="puzzle-entry" aria-labelledby="binairo-plus-title">
@@ -125,8 +142,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="binairo-plus-title"><span class="puzzle-number" aria-hidden="true">03.</span> 비나이로+</h2>
-              <p>행과 열마다 검은색·흰색 개수를 같게 하고, 같은 색이 세 칸 연속되지 않게 채웁니다. = 기호 양쪽은 같은 색, x 기호 양쪽은 다른 색이어야 합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-binairo.com/binairo-plus-6x6-easy/" target="_blank" rel="noopener noreferrer" aria-label="비나이로+ 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 주어진 흑백 원과 칸 사이 기호를 유지하면서, 모든 빈칸을 검은 원이나 흰 원으로 채웁니다.</p>
+              <ul class="puzzle-rules">
+                <li>각 행과 각 열에서 검은 원과 흰 원의 수가 같아야 합니다. 6×6에서는 매 행·열에 각각 3개씩입니다.</li>
+                <li>가로·세로로 같은 색이 3칸 이상 연속하면 안 됩니다. 두 칸 연속은 허용되며 대각선에는 이 조건이 없습니다.</li>
+                <li>= 양옆의 두 칸은 같은 색, x 양옆의 두 칸은 서로 다른 색이어야 합니다.</li>
+                <li>이 사이트의 비나이로+에는 일반 비나이로의 ‘행끼리·열끼리 동일한 패턴 금지’ 규칙이 없습니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 검정·빈칸·검정이 일렬로 놓이면 가운데는 흰색입니다. =로 연결된 칸 하나가 검정이면 다른 칸도 검정으로 정해집니다.</p>
+              <p><strong>조작:</strong> 빈칸을 클릭하면 검은 원, 한 번 더 클릭하면 흰 원을 놓습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-binairo.com/binairo-plus-6x6-easy/" target="_blank" rel="noopener noreferrer" aria-label="비나이로+ 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="yin-yang" class="puzzle-entry" aria-labelledby="yin-yang-title">
@@ -139,8 +164,14 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="yin-yang-title"><span class="puzzle-number" aria-hidden="true">04.</span> 음양</h2>
-              <p>모든 칸을 흰색이나 검은색으로 채워, 각 색의 칸들이 상하좌우로 하나로 이어지게 합니다. 같은 색의 2×2 정사각형을 만들면 안 됩니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-yin-yang.com/" target="_blank" rel="noopener noreferrer" aria-label="음양 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 처음 주어진 색을 유지하면서 모든 칸에 흰 원 또는 검은 원을 넣어, 흑백 두 영역을 만듭니다.</p>
+              <ul class="puzzle-rules">
+                <li>모든 검은 칸은 상하좌우로 연결된 한 덩어리여야 합니다. 흰 칸도 따로 한 덩어리를 이루어야 합니다.</li>
+                <li>대각선으로만 닿는 칸은 연결된 것으로 세지 않습니다. 같은 색 영역이 여러 조각으로 고립되면 안 됩니다.</li>
+                <li>격자 어디에도 네 칸이 모두 검정인 2×2 또는 모두 흰색인 2×2가 생기면 안 됩니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 2×2 안의 세 칸이 이미 검정이면 마지막 칸은 흰색입니다. 그 흰 칸이 다른 흰 칸들과 이어질 길도 남겨야 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-yin-yang.com/" target="_blank" rel="noopener noreferrer" aria-label="음양 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="chess" class="puzzle-entry" aria-labelledby="chess-title">
@@ -153,8 +184,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">단어·체스</p>
               <h2 id="chess-title"><span class="puzzle-number" aria-hidden="true">05.</span> 체스 퍼즐</h2>
-              <p>체스 레인저에서는 체스 기물의 이동법을 따라 매번 다른 기물을 잡아, 마지막에 기물 하나만 남깁니다. 왕도 잡을 수 있습니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-chess.com/chess-ranger-4/" target="_blank" rel="noopener noreferrer" aria-label="체스 퍼즐 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 링크의 ‘체스 레인저’에서는 기물을 차례로 잡아 보드에 정확히 하나만 남깁니다.</p>
+              <ul class="puzzle-rules">
+                <li>한 번 움직일 때마다 다른 기물 하나를 반드시 잡아야 합니다. 빈칸으로 이동하며 자리를 바꾸는 수는 허용되지 않습니다.</li>
+                <li>룩은 가로·세로, 비숍은 대각선, 퀸은 두 방향 모두로 움직입니다. 이 세 기물은 중간에 놓인 기물을 뛰어넘을 수 없습니다.</li>
+                <li>나이트는 한 방향으로 두 칸, 수직 방향으로 한 칸인 L자 이동을 하며 중간 기물을 넘을 수 있습니다. 왕은 모든 방향으로 한 칸, 폰은 앞쪽 대각선 한 칸의 기물을 잡습니다.</li>
+                <li>이 퍼즐에서는 왕도 잡을 수 있습니다. 한 수 뒤에는 잡은 기물이 사라지고, 움직인 기물이 그 자리에 남습니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 기물 4개로 시작하면 3번의 포획으로 하나를 남겨야 합니다. 첫 포획 뒤에 다음 포획이 가능한지도 함께 따져 순서를 정합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-chess.com/chess-ranger-4/" target="_blank" rel="noopener noreferrer" aria-label="체스 퍼즐 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a> · <a href="https://handbook.fide.com/chapter/E012023" target="_blank" rel="noopener noreferrer">기물 이동법 · FIDE 제3조 ↗</a></p>
             </div>
           </li>
           <li id="thermometers" class="puzzle-entry" aria-labelledby="thermometers-title">
@@ -167,8 +205,14 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="thermometers-title"><span class="puzzle-number" aria-hidden="true">06.</span> 온도계</h2>
-              <p>온도계를 둥근 시작점에서부터 빈틈없이 채우고, 바깥 숫자에 맞춰 각 행과 열의 채운 칸 수를 맞춥니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-thermometers.com/" target="_blank" rel="noopener noreferrer" aria-label="온도계 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 온도계마다 채울 길이를 정해, 행·열 바깥 숫자만큼의 칸에 수은을 채웁니다.</p>
+              <ul class="puzzle-rules">
+                <li>채우기는 반드시 둥근 구근에서 시작해 온도계 몸통을 따라 이어져야 합니다. 중간 칸을 건너뛰거나 끝부분만 따로 채울 수 없습니다.</li>
+                <li>온도계는 완전히 비우거나, 일부만 채우거나, 끝까지 채울 수 있습니다.</li>
+                <li>바깥 숫자는 해당 행·열 전체에서 채운 칸의 수입니다. 온도계 개수나 수은의 총길이가 아닙니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 길이 4칸 온도계의 세 번째 칸을 채우면 구근과 두 번째 칸도 채워야 합니다. 바깥 숫자가 0인 줄은 전부 비워 둡니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-thermometers.com/" target="_blank" rel="noopener noreferrer" aria-label="온도계 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="norinori" class="puzzle-entry" aria-labelledby="norinori-title">
@@ -181,8 +225,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">도형 배치하기</p>
               <h2 id="norinori-title"><span class="puzzle-number" aria-hidden="true">07.</span> 노리노리</h2>
-              <p>각 구역에서 정확히 두 칸을 칠하고, 모든 칠한 칸을 1×2 또는 2×1 도미노로 만듭니다. 도미노는 구역 경계를 넘어도 되며, 서로 다른 도미노는 변으로 닿을 수 없습니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-norinori.com/" target="_blank" rel="noopener noreferrer" aria-label="노리노리 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 굵은 선으로 나뉜 각 구역에서 두 칸씩 칠하되, 칠한 칸들이 모두 두 칸짜리 도미노가 되게 합니다.</p>
+              <ul class="puzzle-rules">
+                <li>각 구역의 검은 칸 수는 정확히 2개입니다. 구역 전체를 검게 채우는 퍼즐은 아닙니다.</li>
+                <li>검은 칸 하나는 상하좌우 이웃 중 정확히 하나의 검은 칸과 짝을 이루어 1×2 또는 2×1 도미노가 됩니다.</li>
+                <li>도미노는 구역 안에 들어가도 되고, 구역 경계를 걸쳐 놓여도 됩니다. 같은 구역의 두 검은 칸이 서로 다른 도미노에 속할 수도 있습니다.</li>
+                <li>서로 다른 도미노는 변으로 닿을 수 없지만 대각선으로 닿을 수 있습니다. 세 칸 이상 이어진 검은 덩어리는 허용되지 않습니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 두 칸짜리 구역은 두 칸 모두 검정으로 확정됩니다. 그 도미노 바깥에서 변으로 붙는 칸들은 흰색이어야 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-norinori.com/" target="_blank" rel="noopener noreferrer" aria-label="노리노리 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="mosaic" class="puzzle-entry" aria-labelledby="mosaic-title">
@@ -195,8 +246,14 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="mosaic-title"><span class="puzzle-number" aria-hidden="true">08.</span> 모자이크</h2>
-              <p>숫자가 있는 칸을 중심으로 한 3×3 영역에서, 검게 칠한 칸 수가 그 숫자와 같도록 채웁니다. 숫자 칸 자신도 개수에 포함합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-minesweeper.com/mosaic-5x5-easy/" target="_blank" rel="noopener noreferrer" aria-label="모자이크 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 숫자를 단서로 각 칸을 검정 또는 흰색으로 결정합니다. 지뢰찾기와 달리 숫자 칸 자체도 칠할 수 있습니다.</p>
+              <ul class="puzzle-rules">
+                <li>숫자가 있는 칸을 중심으로, 자기 칸과 가로·세로·대각선 이웃을 합친 최대 3×3 영역을 봅니다.</li>
+                <li>그 영역의 검은 칸 수가 숫자와 정확히 같아야 합니다. 자기 칸도 수에 포함합니다.</li>
+                <li>가장자리에서는 격자 안의 칸만 셉니다. 모서리 단서는 최대 4칸, 변의 단서는 최대 6칸을 대상으로 합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 내부 단서 9는 주변 3×3의 모든 칸을 검정으로 만듭니다. 단서 0은 자기 칸을 포함한 주변 칸을 모두 흰색으로 만듭니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-minesweeper.com/mosaic-5x5-easy/" target="_blank" rel="noopener noreferrer" aria-label="모자이크 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="minesweeper" class="puzzle-entry" aria-labelledby="minesweeper-title">
@@ -209,8 +266,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="minesweeper-title"><span class="puzzle-number" aria-hidden="true">09.</span> 지뢰찾기</h2>
-              <p>숫자를 단서로 가로·세로·대각선 이웃 칸의 지뢰 위치를 찾습니다. 숫자는 자기 칸을 제외한 주변 최대 여덟 칸의 지뢰 수를 나타냅니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-minesweeper.com/minesweeper-5x5-easy/" target="_blank" rel="noopener noreferrer" aria-label="지뢰찾기 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 숫자로 지뢰 위치를 추론하고, 지뢰가 없는 칸을 안전하게 엽니다. 지뢰가 있다고 판단한 칸에는 깃발을 표시합니다.</p>
+              <ul class="puzzle-rules">
+                <li>열린 칸의 숫자는 가로·세로·대각선으로 이웃한 최대 8칸에 있는 지뢰 수입니다. 숫자 칸 자신은 포함하지 않습니다.</li>
+                <li>가장자리와 모서리에서는 실제로 존재하는 이웃 칸만 셉니다. 모자이크처럼 숫자 칸을 검정으로 칠하는 방식과 구별합니다.</li>
+                <li>지뢰가 있는 칸을 열면 실패합니다. 안전한 칸과 지뢰 칸을 구분하며 진행합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 숫자 2 주변에서 지뢰 두 개가 확정됐다면 나머지 이웃 칸은 안전합니다. 반대로 남은 미확인 칸 수가 필요한 지뢰 수와 같으면 전부 지뢰입니다.</p>
+              <p><strong>조작:</strong> 좌클릭으로 칸을 열고, 우클릭으로 지뢰를 뜻하는 깃발을 꽂습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-minesweeper.com/minesweeper-5x5-easy/" target="_blank" rel="noopener noreferrer" aria-label="지뢰찾기 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="slant" class="puzzle-entry" aria-labelledby="slant-title">
@@ -223,8 +287,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">선 연결하기</p>
               <h2 id="slant-title"><span class="puzzle-number" aria-hidden="true">10.</span> 슬랜트</h2>
-              <p>모든 칸에 두 방향 중 하나의 대각선을 놓고, 숫자가 있는 꼭짓점에 닿는 선 수를 맞춥니다. 선들이 어떤 형태의 고리도 만들면 안 됩니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-slant.com/" target="_blank" rel="noopener noreferrer" aria-label="슬랜트 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 모든 사각 칸에 / 또는 ＼ 방향의 대각선 하나씩을 넣어, 꼭짓점의 숫자 조건을 맞춥니다.</p>
+              <ul class="puzzle-rules">
+                <li>숫자는 칸 안이 아니라 격자 꼭짓점에 있습니다. 그 지점에 끝이 닿는 대각선의 개수가 숫자와 같아야 합니다.</li>
+                <li>한 칸에는 두 대각선을 함께 그릴 수 없고, 빈칸을 남길 수도 없습니다.</li>
+                <li>대각선들이 이어져 닫힌 고리를 만들면 안 됩니다. 숫자가 없는 지점을 이용한 고리도 금지입니다.</li>
+                <li>모든 선을 하나의 덩어리로 연결할 필요는 없습니다. 여러 갈래가 한 꼭짓점에서 만나는 것은 가능합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 내부 꼭짓점의 4는 주변 네 칸의 대각선이 모두 그 점을 향하게 합니다. 0은 주변 모든 선이 그 점을 피해 가게 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-slant.com/" target="_blank" rel="noopener noreferrer" aria-label="슬랜트 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="lits" class="puzzle-entry" aria-labelledby="lits-title">
@@ -237,8 +308,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">도형 배치하기</p>
               <h2 id="lits-title"><span class="puzzle-number" aria-hidden="true">11.</span> LITS</h2>
-              <p>각 구역에 L·I·T·S 모양의 네 칸 도형 하나를 칠해, 칠한 칸 전체가 상하좌우로 이어지게 합니다. 회전·반전을 포함해 같은 모양끼리는 변으로 닿을 수 없고, 칠한 2×2 정사각형도 만들 수 없습니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-lits.com/" target="_blank" rel="noopener noreferrer" aria-label="LITS 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 각 구역 안에 네 칸짜리 도형 하나를 칠하고, 전체 검은 칸이 하나로 이어지게 만듭니다.</p>
+              <ul class="puzzle-rules">
+                <li>각 구역에서 정확히 4칸을 상하좌우로 이어 L·I·T·S 중 하나를 만듭니다. 하나의 도형은 구역 경계를 넘을 수 없습니다.</li>
+                <li>도형은 회전하거나 뒤집을 수 있습니다. 회전·반전해 겹치는 도형은 같은 종류로 취급합니다.</li>
+                <li>서로 다른 구역의 같은 종류 도형은 변으로 닿을 수 없습니다. 다른 종류는 닿을 수 있고, 전체 도형은 그런 접촉을 통해 연결되어야 합니다.</li>
+                <li>어느 위치에도 검은 2×2 정사각형이 생기면 안 됩니다. 한 도형 내부뿐 아니라 여러 도형의 경계에서도 확인합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 한 구역의 I 도형이 이웃 구역에 닿는다면 그 이웃은 I가 될 수 없습니다. O 모양은 2×2라 사용할 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-lits.com/" target="_blank" rel="noopener noreferrer" aria-label="LITS 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="galaxies" class="puzzle-entry" aria-labelledby="galaxies-title">
@@ -251,8 +329,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">도형 배치하기</p>
               <h2 id="galaxies-title"><span class="puzzle-number" aria-hidden="true">12.</span> 갤럭시</h2>
-              <p>격자 전체를 원이 하나씩 들어가는 영역으로 나눕니다. 각 영역은 그 원을 중심으로 180° 돌려도 같은 모양이어야 합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-galaxies.com/" target="_blank" rel="noopener noreferrer" aria-label="갤럭시 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 칸 사이에 경계선을 그어 격자 전체를 여러 은하로 나눕니다. 모든 칸은 정확히 한 은하에 속해야 합니다.</p>
+              <ul class="puzzle-rules">
+                <li>각 은하는 흰 원을 정확히 하나 포함하고, 상하좌우로 연결된 영역이어야 합니다.</li>
+                <li>원을 중심으로 영역을 180° 회전했을 때 모양과 위치가 완전히 겹쳐야 합니다. 좌우 대칭만 맞추는 것으로는 부족합니다.</li>
+                <li>원은 칸 중앙뿐 아니라 두 칸 사이 또는 네 칸이 만나는 꼭짓점에 놓일 수 있습니다. 그 원의 실제 위치를 회전 중심으로 씁니다.</li>
+                <li>경계선의 양쪽은 서로 다른 은하여야 합니다. 같은 은하 내부에 선을 그었다가 다른 쪽에서 다시 이어지게 만들 수 없습니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 원에서 오른쪽으로 한 칸 떨어진 칸을 포함했다면, 왼쪽으로 같은 거리의 칸도 같은 은하에 포함해야 합니다.</p>
+              <p><strong>조작:</strong> 격자 점 사이를 좌클릭해 경계를 그리고 우클릭해 X를 표시합니다. Shift+클릭으로 칸에 색을 표시할 수 있습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-galaxies.com/" target="_blank" rel="noopener noreferrer" aria-label="갤럭시 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a> · <a href="https://www.puzzle-galaxies.com/" target="_blank" rel="noopener noreferrer">영문 규칙 ↗</a></p>
             </div>
           </li>
           <li id="tents" class="puzzle-entry" aria-labelledby="tents-title">
@@ -265,8 +351,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">도형 배치하기</p>
               <h2 id="tents-title"><span class="puzzle-number" aria-hidden="true">13.</span> 텐트</h2>
-              <p>나무마다 상하좌우의 텐트를 하나씩 짝짓고, 행·열의 텐트 수를 바깥 숫자에 맞춥니다. 텐트끼리는 대각선까지 서로 닿으면 안 됩니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-tents.com/" target="_blank" rel="noopener noreferrer" aria-label="텐트 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 나무와 텐트를 하나씩 짝짓고, 각 행·열의 텐트 수를 바깥 숫자와 맞춥니다.</p>
+              <ul class="puzzle-rules">
+                <li>텐트는 나무의 상하좌우 이웃 칸에 놓습니다. 대각선 위치의 나무와는 짝지을 수 없습니다.</li>
+                <li>모든 나무에 텐트 하나, 모든 텐트에 나무 하나를 배정할 수 있어야 합니다. 한 텐트를 두 나무의 짝으로 동시에 쓸 수 없습니다.</li>
+                <li>텐트가 다른 나무에도 우연히 인접하는 것은 허용됩니다. 중요한 것은 나무와 텐트를 1:1로 짝지을 수 있는지입니다.</li>
+                <li>텐트끼리는 가로·세로뿐 아니라 대각선으로도 닿을 수 없습니다. 바깥 숫자는 나무를 제외한 텐트 개수만 셉니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 숫자가 0인 줄에는 텐트를 놓을 수 없습니다. 텐트를 하나 놓으면 주변 여덟 칸에도 다른 텐트를 놓을 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-tents.com/" target="_blank" rel="noopener noreferrer" aria-label="텐트 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="battleships" class="puzzle-entry" aria-labelledby="battleships-title">
@@ -279,8 +372,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">도형 배치하기</p>
               <h2 id="battleships-title"><span class="puzzle-number" aria-hidden="true">14.</span> 배틀쉽</h2>
-              <p>주어진 크기와 수량의 직선 전함을 배치해 행·열에서 배가 차지하는 칸 수를 맞춥니다. 서로 다른 배는 대각선까지 닿으면 안 됩니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-battleships.com/" target="_blank" rel="noopener noreferrer" aria-label="배틀쉽 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 격자 밖 함대 목록에 적힌 크기와 수량의 배를 모두 찾아 배치합니다. 처음 공개된 배 조각은 그대로 유지합니다.</p>
+              <ul class="puzzle-rules">
+                <li>배 하나는 가로 또는 세로로 연속된 검은 칸입니다. 대각선 배나 꺾인 배는 없고, 한 칸짜리 배도 있습니다.</li>
+                <li>함대 목록이 길이 3짜리 배를 2척 요구하면, 그 길이의 배가 정확히 2척 있어야 합니다.</li>
+                <li>서로 다른 배는 가로·세로·대각선 어디로도 닿을 수 없습니다. 같은 배를 이루는 칸들만 변을 공유합니다.</li>
+                <li>행·열의 바깥 숫자는 배가 차지한 칸 수입니다. 그 줄을 지나는 배의 척수가 아닙니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 가로로 놓인 길이 3의 배는 그 행의 수에 3을 더합니다. 다른 배가 닿지 않도록 배 주변 칸은 바다로 남겨 둡니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-battleships.com/" target="_blank" rel="noopener noreferrer" aria-label="배틀쉽 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="pipes" class="puzzle-entry" aria-labelledby="pipes-title">
@@ -293,8 +393,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">선 연결하기</p>
               <h2 id="pipes-title"><span class="puzzle-number" aria-hidden="true">15.</span> 파이프</h2>
-              <p>타일을 회전시켜 모든 파이프를 하나로 연결합니다. 순환하는 고리는 만들면 안 됩니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-pipes.com/" target="_blank" rel="noopener noreferrer" aria-label="파이프 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 각 타일의 방향을 회전시켜 모든 파이프를 하나의 연결망으로 만듭니다. 타일의 위치나 파이프 모양은 바꾸지 않습니다.</p>
+              <ul class="puzzle-rules">
+                <li>이웃 타일의 파이프 입구가 서로 마주 봐야 연결됩니다. 모든 입구는 이어져야 하며 막힌 빈 공간을 향하면 안 됩니다.</li>
+                <li>어떤 파이프에서 시작해도 연결을 따라 다른 모든 파이프에 도달할 수 있어야 합니다. 별개의 연결망을 남길 수 없습니다.</li>
+                <li>선을 따라 돌아 출발점으로 되돌아오는 순환 고리는 금지입니다. 갈림길은 가능하지만 고리가 없는 연결망이어야 합니다.</li>
+                <li>링크의 기본 모드에서는 격자 밖으로 연결하지 않습니다. 별도 ‘랩’ 모드는 양쪽 가장자리를 이어지는 것으로 취급합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 기본 모드의 모서리 타일은 입구가 바깥을 향하지 않도록 돌립니다. 방향이 확정되면 고정해 두고 이웃 타일을 맞춰 갑니다.</p>
+              <p><strong>조작:</strong> 클릭은 회전, Ctrl+클릭은 반대 방향 회전, 우클릭은 타일 고정입니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-pipes.com/" target="_blank" rel="noopener noreferrer" aria-label="파이프 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="hitori" class="puzzle-entry" aria-labelledby="hitori-title">
@@ -307,8 +415,14 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="hitori-title"><span class="puzzle-number" aria-hidden="true">16.</span> 히토리</h2>
-              <p>일부 숫자 칸을 검게 칠해 각 행·열의 숫자 중복을 없앱니다. 검은 칸끼리는 변으로 닿을 수 없고, 남은 흰 칸은 모두 연결되어야 합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-hitori.com/" target="_blank" rel="noopener noreferrer" aria-label="히토리 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 일부 숫자 칸을 검게 지워, 남아 있는 흰 칸의 숫자들이 각 행·열에서 중복되지 않게 합니다. 숫자 값을 새로 입력하거나 바꾸지는 않습니다.</p>
+              <ul class="puzzle-rules">
+                <li>같은 행에서 같은 숫자가 둘 이상 흰색으로 남으면 안 됩니다. 같은 열에서도 이 조건을 따로 확인합니다.</li>
+                <li>검은 칸끼리는 상하좌우로 붙을 수 없지만 대각선으로 닿을 수 있습니다.</li>
+                <li>모든 흰 칸은 상하좌우로 연결된 한 덩어리여야 합니다. 중복을 없애는 과정에서 흰 칸을 고립시키면 안 됩니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 한 행에 3이 두 번 있으면 둘 중 적어도 하나를 검게 지워야 합니다. 어느 쪽을 지울지는 열의 중복과 흰 칸의 연결 상태를 함께 보고 결정합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-hitori.com/" target="_blank" rel="noopener noreferrer" aria-label="히토리 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="heyawake" class="puzzle-entry" aria-labelledby="heyawake-title">
@@ -321,8 +435,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="heyawake-title"><span class="puzzle-number" aria-hidden="true">17.</span> 헤야와케</h2>
-              <p>방의 숫자만큼 칸을 검게 칠하고, 검은 칸끼리 변으로 닿지 않으며 흰 칸 전체가 연결되게 합니다. 가로·세로로 연속된 흰 칸 줄은 세 개 이상의 방에 걸칠 수 없습니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-heyawake.com/" target="_blank" rel="noopener noreferrer" aria-label="헤야와케 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 직사각형 방으로 나뉜 격자의 일부 칸을 검게 칠해, 방별 숫자와 흰 칸의 연결 조건을 만족시킵니다.</p>
+              <ul class="puzzle-rules">
+                <li>숫자가 있는 방은 그 숫자만큼 검은 칸을 가져야 합니다. 숫자는 방 전체의 단서이며, 숫자가 적힌 위치 자체도 칠할 수 있습니다.</li>
+                <li>숫자가 없는 방에도 검은 칸을 놓을 수 있습니다. 그 방에는 검은 칸 수만 지정되지 않은 것입니다.</li>
+                <li>검은 칸끼리는 변으로 닿을 수 없고, 흰 칸 전체는 상하좌우로 하나로 연결되어야 합니다. 방 경계가 연결을 막지는 않습니다.</li>
+                <li>가로·세로로 끊기지 않은 흰 칸 줄은 방 경계를 두 번 넘어 세 방에 걸칠 수 없습니다. 흰 길이 꺾이는 경우와는 구별합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 0인 방은 모두 흰색입니다. 그 방을 관통하는 흰 직선이 양쪽 이웃 방까지 계속된다면, 이웃 방 쪽에서 검은 칸으로 끊어야 합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-heyawake.com/" target="_blank" rel="noopener noreferrer" aria-label="헤야와케 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="shingoki" class="puzzle-entry" aria-labelledby="shingoki-title">
@@ -335,8 +456,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">선 연결하기</p>
               <h2 id="shingoki-title"><span class="puzzle-number" aria-hidden="true">18.</span> 신고키</h2>
-              <p>모든 원을 지나는 하나의 고리를 그리고, 흰 원에서 직진하며 검은 원에서 꺾습니다. 원의 숫자는 원 양쪽으로 뻗는 직선 구간 길이의 합입니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-shingoki.com/" target="_blank" rel="noopener noreferrer" aria-label="신고키 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 모든 흑백 원을 지나가는 하나의 닫힌 고리를 점과 점 사이의 가로·세로 선으로 그립니다.</p>
+              <ul class="puzzle-rules">
+                <li>선은 교차하거나 갈라질 수 없습니다. 사용한 점에서는 선이 정확히 두 방향으로 이어집니다. 원이 없는 모든 점을 지날 필요는 없습니다.</li>
+                <li>흰 원에서는 꺾지 않고 직진하며, 검은 원에서는 반드시 90°로 꺾습니다.</li>
+                <li>원의 숫자는 원에서 양쪽으로 뻗는 두 직선 구간의 길이를 더한 값입니다. 각 방향에서 처음 꺾이는 지점까지의 한 칸짜리 선분을 셉니다.</li>
+                <li>숫자만 맞춘 작은 고리 여러 개가 아니라, 모든 원을 함께 지나는 고리 하나여야 합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 숫자 5의 흰 원에서 왼쪽 첫 굽힘까지 2칸, 오른쪽 첫 굽힘까지 3칸이라면 2+3=5입니다.</p>
+              <p><strong>조작:</strong> 두 점 사이를 클릭해 선을 놓고, 우클릭해 선을 놓지 않을 곳에 X를 표시합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-shingoki.com/" target="_blank" rel="noopener noreferrer" aria-label="신고키 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="masyu" class="puzzle-entry" aria-labelledby="masyu-title">
@@ -349,8 +478,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">선 연결하기</p>
               <h2 id="masyu-title"><span class="puzzle-number" aria-hidden="true">19.</span> 마슈</h2>
-              <p>모든 원을 지나는 하나의 고리를 그립니다. 흰 원에서는 직진하되 적어도 한쪽 다음 칸에서 꺾고, 검은 원에서는 꺾되 양쪽 다음 칸에서는 직진해야 합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-masyu.com/" target="_blank" rel="noopener noreferrer" aria-label="마슈 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 모든 흰 원과 검은 원을 통과하는 하나의 닫힌 고리를 가로·세로 선으로 만듭니다.</p>
+              <ul class="puzzle-rules">
+                <li>선이 교차하거나 갈라지면 안 됩니다. 원이 없는 칸은 필요에 따라 지나가거나 비워 둘 수 있습니다.</li>
+                <li>흰 원에서는 반드시 직진합니다. 원 바로 앞·뒤의 이웃 칸 중 적어도 한쪽에서는 꺾어야 합니다. 양쪽 모두 꺾어도 됩니다.</li>
+                <li>검은 원에서는 반드시 90°로 꺾습니다. 원 바로 앞·뒤의 이웃 칸에서는 모두 직진해야 하므로 두 방향으로 각각 최소 두 칸 길이의 선이 필요합니다.</li>
+                <li>모든 원의 주변 조건을 맞추면서 전체 선이 고리 하나로 이어져야 합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 검은 원에서 위쪽과 오른쪽으로 꺾었다면, 바로 위 칸에서도 위로, 바로 오른쪽 칸에서도 오른쪽으로 더 뻗어야 합니다.</p>
+              <p><strong>조작:</strong> 점 사이를 클릭해 선을 잇고, 우클릭해 사용하지 않을 연결에 X를 표시합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-masyu.com/" target="_blank" rel="noopener noreferrer" aria-label="마슈 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="stitches" class="puzzle-entry" aria-labelledby="stitches-title">
@@ -363,8 +500,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">선 연결하기</p>
               <h2 id="stitches-title"><span class="puzzle-number" aria-hidden="true">20.</span> 스티치 · 바느질</h2>
-              <p>인접 구역 쌍마다 1÷는 한 번, 2÷는 두 번, 3÷는 세 번 바느질을 놓고 행·열의 구멍 수를 맞춥니다. 바느질은 서로 다른 구역의 상하좌우 이웃한 두 칸을 잇고, 구멍은 공유할 수 없습니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-stitches.com/" target="_blank" rel="noopener noreferrer" aria-label="스티치 · 바느질 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 변을 공유하는 구역 쌍마다 바느질을 놓고, 각 행·열의 구멍 수를 바깥 숫자와 맞춥니다.</p>
+              <ul class="puzzle-rules">
+                <li>바느질 하나는 서로 다른 구역에 속한 상하좌우 이웃 두 칸을 연결합니다. 양 끝 칸에는 구멍이 하나씩 생깁니다.</li>
+                <li>1÷에서는 인접한 모든 구역 쌍을 각각 한 번 연결합니다. 2÷는 각 쌍마다 두 번, 3÷는 각 쌍마다 세 번 연결합니다. 한 구역당 총 한 번이라는 뜻이 아닙니다.</li>
+                <li>하나의 칸에 뚫린 구멍을 두 바느질이 공유할 수 없습니다. 대각선으로만 닿는 구역은 연결 대상이 아닙니다.</li>
+                <li>바깥 숫자는 바느질의 개수가 아니라 그 행·열에 속한 끝점, 즉 구멍의 수입니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 가로 바느질 하나는 같은 행에 구멍 2개를 만듭니다. 세로 바느질 하나는 같은 열에 구멍 2개를 만듭니다.</p>
+              <p><strong>조작:</strong> 두 칸의 경계를 좌클릭해 바느질을 놓습니다. 칸 내부 좌클릭은 구멍만 표시하며, 우클릭은 경계에 빨간 표시 또는 칸에 X를 남깁니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-stitches.com/" target="_blank" rel="noopener noreferrer" aria-label="스티치 · 바느질 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a> · <a href="https://www.puzzle-stitches.com/" target="_blank" rel="noopener noreferrer">영문 규칙 ↗</a></p>
             </div>
           </li>
           <li id="aquarium" class="puzzle-entry" aria-labelledby="aquarium-title">
@@ -377,8 +522,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="aquarium-title"><span class="puzzle-number" aria-hidden="true">21.</span> 아쿠아리움</h2>
-              <p>수족관마다 일정 수위까지 물을 채우거나 비워 두어 행·열의 물 칸 수를 맞춥니다. 한 수족관 안에서는 전체 너비에 걸쳐 수위가 같아야 합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-aquarium.com/" target="_blank" rel="noopener noreferrer" aria-label="아쿠아리움 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 굵은 경계로 나뉜 수족관마다 물의 높이를 정해, 행·열에서 물로 채워진 칸 수를 맞춥니다.</p>
+              <ul class="puzzle-rules">
+                <li>한 수족관의 물은 아래에서부터 채웁니다. 위에 물이 있는데 그보다 낮은 칸이 비어 있으면 안 됩니다.</li>
+                <li>같은 수족관의 같은 높이에 있는 칸은 모두 물이거나 모두 빈칸이어야 합니다. 중간이 다른 수족관에 막혀 있어도 수위는 같습니다.</li>
+                <li>서로 다른 수족관은 각자 다른 수위를 가질 수 있고, 완전히 비워 두거나 끝까지 채울 수도 있습니다.</li>
+                <li>바깥 숫자는 해당 행·열 전체에서 물이 차지하는 칸 수입니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 한 수족관의 어떤 높이에 물을 채우면 그 높이의 다른 칸과 그 아래 칸도 전부 물입니다. 구불구불한 수족관에서도 높이 기준은 같습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-aquarium.com/" target="_blank" rel="noopener noreferrer" aria-label="아쿠아리움 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="tapa" class="puzzle-entry" aria-labelledby="tapa-title">
@@ -391,8 +543,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="tapa-title"><span class="puzzle-number" aria-hidden="true">22.</span> 타파</h2>
-              <p>검은 칸들을 상하좌우로 연결된 한 덩어리로 만들되, 2×2 검은 영역은 만들지 않습니다. 단서는 주변의 연속된 검은 구간들의 길이이며, 서로 다른 구간 사이에는 흰 칸이 있어야 합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-tapa.com/" target="_blank" rel="noopener noreferrer" aria-label="타파 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 숫자 칸을 흰색으로 남기고, 다른 칸 일부를 검게 칠해 하나의 연결된 벽을 만듭니다.</p>
+              <ul class="puzzle-rules">
+                <li>검은 칸 전체는 상하좌우로 이어져야 합니다. 어느 위치에도 검은 2×2 정사각형이 생기면 안 됩니다.</li>
+                <li>단서 칸 주변의 최대 여덟 칸을 고리 순서로 살펴봅니다. 숫자는 그 순서에서 연속해서 검게 칠해진 구간의 길이를 뜻합니다. 단서 칸 자신은 포함하지 않습니다.</li>
+                <li>숫자가 여러 개라면 그 길이의 검은 구간들이 각각 있어야 합니다. 구간 사이에는 흰 칸이 하나 이상 있어야 하며, 숫자의 나열 순서는 고정되지 않습니다.</li>
+                <li>숫자 칸은 칠할 수 없습니다. 격자 밖은 검은 칸으로 세지 않으며, 가장자리에서는 테두리가 구간을 끊습니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 단서 ‘1 2’는 검은 칸 총 3개를 아무렇게나 놓으라는 뜻이 아닙니다. 주변에서 한 칸짜리 구간과 두 칸짜리 구간이 흰 칸으로 떨어져 있어야 합니다.</p>
+              <p><strong>조작:</strong> 좌클릭은 검정, 우클릭은 흰 칸을 뜻하는 점입니다. 드래그로 여러 칸을 표시할 수 있습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-tapa.com/" target="_blank" rel="noopener noreferrer" aria-label="타파 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a> · <a href="https://www.gmpuzzles.com/blog/tapa-rules-and-info/" target="_blank" rel="noopener noreferrer">보충 규칙 · GM Puzzles ↗</a></p>
             </div>
           </li>
           <li id="star-battle" class="puzzle-entry" aria-labelledby="star-battle-title">
@@ -405,8 +565,14 @@
             <div class="puzzle-description">
               <p class="puzzle-category">도형 배치하기</p>
               <h2 id="star-battle-title"><span class="puzzle-number" aria-hidden="true">23.</span> 스타 배틀</h2>
-              <p>각 행·열·구역에 지정된 개수의 별을 배치합니다. 별끼리는 가로·세로·대각선으로 서로 닿을 수 없습니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-star-battle.com/" target="_blank" rel="noopener noreferrer" aria-label="스타 배틀 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 굵은 선으로 나뉜 구역에 별을 놓아, 모든 행·열·구역의 별 개수를 동시에 맞춥니다.</p>
+              <ul class="puzzle-rules">
+                <li>1★ 퍼즐에서는 각 행, 각 열, 각 구역에 정확히 별 1개를 놓습니다. 2★는 각각 2개, 3★는 각각 3개입니다.</li>
+                <li>별끼리는 가로·세로·대각선 어디로도 인접할 수 없습니다. 구역 경계가 사이에 있어도 이 금지 조건은 같습니다.</li>
+                <li>별 하나는 자신이 속한 행·열·구역의 개수에 모두 포함됩니다. 남은 칸은 별이 없는 칸으로 둡니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 1★에서 한 구역에 별을 놓았다면 그 구역의 다른 칸, 같은 행·열의 다른 칸, 별의 대각선 이웃에는 별을 놓을 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-star-battle.com/" target="_blank" rel="noopener noreferrer" aria-label="스타 배틀 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="kakurasu" class="puzzle-entry" aria-labelledby="kakurasu-title">
@@ -419,8 +585,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="kakurasu-title"><span class="puzzle-number" aria-hidden="true">24.</span> 카쿠라스</h2>
-              <p>검은 칸의 위치 값을 더해 각 행과 열의 바깥 숫자를 맞춥니다. 행에서는 열 번호, 열에서는 행 번호가 칸의 값이며 첫 번째 칸부터 1, 2, 3으로 셉니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-kakurasu.com/" target="_blank" rel="noopener noreferrer" aria-label="카쿠라스 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 일부 칸을 검게 칠해, 각 행 오른쪽과 각 열 아래쪽의 목표 합계를 맞춥니다.</p>
+              <ul class="puzzle-rules">
+                <li>행의 합을 계산할 때는 검은 칸이 왼쪽에서 몇 번째 열에 있는지 셉니다. 열 위치에 따라 값이 1, 2, 3, …이 됩니다.</li>
+                <li>열의 합을 계산할 때는 같은 검은 칸이 위에서 몇 번째 행에 있는지 셉니다. 행 위치에 따라 값이 1, 2, 3, …이 됩니다.</li>
+                <li>흰 칸은 합에 기여하지 않습니다. 한 검은 칸은 행 합과 열 합에 서로 다른 위치 값으로 반영될 수 있습니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 한 행에서 2번째와 4번째 칸을 칠하면 행 합은 2+4=6입니다. 그 칸들이 3번째 행에 있다면 각 열의 합에는 각각 3을 더합니다.</p>
+              <p><strong>조작:</strong> 좌클릭으로 검은 칸을, 우클릭으로 칠하지 않을 칸의 X를 표시합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-kakurasu.com/" target="_blank" rel="noopener noreferrer" aria-label="카쿠라스 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="skyscrapers" class="puzzle-entry" aria-labelledby="skyscrapers-title">
@@ -433,8 +606,14 @@
             <div class="puzzle-description">
               <p class="puzzle-category">숫자 채우기</p>
               <h2 id="skyscrapers-title"><span class="puzzle-number" aria-hidden="true">25.</span> 스카이스크래퍼</h2>
-              <p>N×N 격자에 높이 1~N의 건물을 넣고, 각 행과 열에서 같은 높이가 겹치지 않게 합니다. 바깥 숫자는 그 방향에서 보이는 건물의 수입니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-skyscrapers.com/" target="_blank" rel="noopener noreferrer" aria-label="스카이스크래퍼 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 모든 칸에 건물 높이를 넣어, 행·열의 중복 금지와 바깥에서 보이는 건물 수를 맞춥니다.</p>
+              <ul class="puzzle-rules">
+                <li>N×N에서는 높이 1부터 N까지를 씁니다. 각 행·열에는 각 높이가 정확히 한 번씩 나와야 합니다.</li>
+                <li>바깥 숫자는 그 숫자 쪽에서 해당 줄을 바라봤을 때 보이는 건물 개수입니다. 높이의 합이 아닙니다.</li>
+                <li>앞의 높은 건물이 뒤의 낮은 건물을 가립니다. 관찰 방향에서 지금까지 본 모든 건물보다 높은 건물만 새로 보입니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 높이가 왼쪽부터 2·1·4·3이면 왼쪽에서는 2와 4만 보여 2개, 오른쪽에서는 3과 4가 보여 2개입니다. 단서 1이면 가장 가까운 칸이 최고 높이입니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-skyscrapers.com/" target="_blank" rel="noopener noreferrer" aria-label="스카이스크래퍼 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="futoshiki" class="puzzle-entry" aria-labelledby="futoshiki-title">
@@ -447,8 +626,14 @@
             <div class="puzzle-description">
               <p class="puzzle-category">숫자 채우기</p>
               <h2 id="futoshiki-title"><span class="puzzle-number" aria-hidden="true">26.</span> 후토시키</h2>
-              <p>N×N 격자를 1~N으로 채우고 각 행과 열에서 숫자가 겹치지 않게 합니다. 칸 사이에 주어진 부등호를 모두 만족해야 합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-futoshiki.com/futoshiki-4x4-easy/" target="_blank" rel="noopener noreferrer" aria-label="후토시키 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 주어진 숫자를 유지하고 빈칸에 숫자를 넣어, 행·열과 부등호 조건을 동시에 만족시킵니다.</p>
+              <ul class="puzzle-rules">
+                <li>N×N 격자에서는 1부터 N까지를 사용합니다. 각 행·열에는 모든 숫자가 한 번씩 들어가며, 같은 숫자가 중복될 수 없습니다.</li>
+                <li>두 칸 사이의 부등호는 그 두 숫자의 크기를 비교합니다. 기호의 뾰족한 쪽이 작은 수, 벌어진 쪽이 큰 수를 향합니다.</li>
+                <li>일반 스도쿠처럼 별도의 3×3 구역 중복 금지 규칙은 없습니다. 10 이상을 쓰는 큰 격자에서는 9 다음 수를 A, B, C 등으로 표시합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 4×4에서 A칸 &lt; B칸 &lt; C칸처럼 이어지면 A칸은 3이나 4가 될 수 없습니다. 뒤에 그보다 큰 서로 다른 두 수가 필요하기 때문입니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-futoshiki.com/futoshiki-4x4-easy/" target="_blank" rel="noopener noreferrer" aria-label="후토시키 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="renzoku" class="puzzle-entry" aria-labelledby="renzoku-title">
@@ -461,8 +646,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">숫자 채우기</p>
               <h2 id="renzoku-title"><span class="puzzle-number" aria-hidden="true">27.</span> 렌조쿠</h2>
-              <p>각 행과 열에 1~N을 한 번씩 넣습니다. 점으로 연결된 두 칸은 연속된 숫자여야 하고, 점이 없는 인접 칸은 연속된 숫자이면 안 됩니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-futoshiki.com/renzoku-4x4-easy/" target="_blank" rel="noopener noreferrer" aria-label="렌조쿠 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 행·열에 숫자를 중복 없이 넣고, 칸 사이의 점 유무에 맞게 이웃 숫자의 차이를 정합니다.</p>
+              <ul class="puzzle-rules">
+                <li>N×N 격자에서는 1부터 N까지를 각 행·열에 정확히 한 번씩 넣습니다. 큰 격자는 9 다음을 A, B, C 등으로 표시합니다.</li>
+                <li>점으로 연결된 두 칸의 숫자는 차이가 정확히 1이어야 합니다. 어느 쪽이 큰지는 점으로 정해지지 않습니다.</li>
+                <li>점이 없는 상하좌우 이웃은 차이가 1이면 안 됩니다. 표시가 없는 곳도 반드시 확인해야 하는 조건입니다.</li>
+                <li>대각선 숫자에는 점 조건이 적용되지 않습니다. 최댓값과 1을 순환해서 연속수로 보지도 않습니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 4×4에서 점 옆 칸이 2라면 다른 칸은 1 또는 3입니다. 2 옆에 점이 없다면 그 칸에는 1이나 3을 놓을 수 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-futoshiki.com/renzoku-4x4-easy/" target="_blank" rel="noopener noreferrer" aria-label="렌조쿠 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="words" class="puzzle-entry" aria-labelledby="words-title">
@@ -475,8 +667,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">단어·체스</p>
               <h2 id="words-title"><span class="puzzle-number" aria-hidden="true">28.</span> 단어 찾기 · 보글</h2>
-              <p>가로·세로·대각선으로 인접한 글자를 연결해 단어를 찾으며, 한 단어에서 같은 칸을 다시 사용할 수 없습니다. 긴 단어일수록 점수가 높고, 난이도별 목표 점수를 달성하면 완료됩니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-words.com/boggle-4x4/" target="_blank" rel="noopener noreferrer" aria-label="단어 찾기 · 보글 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 링크의 ‘보글’에서는 격자의 글자를 이어 영어 단어를 찾고, 난이도별 목표 점수를 달성합니다.</p>
+              <ul class="puzzle-rules">
+                <li>한 글자에서 상하좌우 또는 대각선으로 바로 이웃한 글자로 이동합니다. 경로는 중간에 여러 번 꺾어도 됩니다.</li>
+                <li>한 단어를 만드는 동안 같은 칸을 두 번 사용할 수 없습니다. 같은 글자가 다른 칸에 있다면 그 칸을 따로 사용하는 것은 가능합니다.</li>
+                <li>완성한 단어마다 점수를 얻으며, 글자 수가 긴 단어일수록 점수가 높습니다.</li>
+                <li>이 사이트는 총 가능한 점수 중 쉬움 30%, 어려움 60%, 익스트림 90%를 얻으면 완료됩니다. 모든 단어를 찾아야 하는 것은 아닙니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 이웃한 C→A→T를 이어 CAT을 만들 수 있습니다. C와 T가 A의 서로 다른 이웃이면 경로가 꺾여도 되지만, 멀리 떨어진 글자로 건너뛸 수는 없습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-words.com/boggle-4x4/" target="_blank" rel="noopener noreferrer" aria-label="단어 찾기 · 보글 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="shakashaka" class="puzzle-entry" aria-labelledby="shakashaka-title">
@@ -489,8 +688,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">도형 배치하기</p>
               <h2 id="shakashaka-title"><span class="puzzle-number" aria-hidden="true">29.</span> 샤카샤카</h2>
-              <p>흰 칸 일부에 칸의 절반을 차지하는 검은 직각삼각형을 넣어, 남은 흰 영역을 모두 직사각형이나 정사각형으로 만듭니다. 검은 칸의 숫자는 상하좌우에 인접한 삼각형 수이며, 흰 직사각형은 45° 기울어져도 됩니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-shakashaka.com/" target="_blank" rel="noopener noreferrer" aria-label="샤카샤카 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 흰 칸 일부에 검은 삼각형을 놓아, 남은 흰 영역이 모두 직사각형 또는 정사각형이 되게 합니다.</p>
+              <ul class="puzzle-rules">
+                <li>삼각형은 칸을 대각선으로 반으로 나눈 직각삼각형입니다. 네 모서리 방향 중 하나를 고르며, 한 칸에 하나만 놓습니다.</li>
+                <li>처음 주어진 검은 칸에는 삼각형을 놓지 못합니다. 흰 칸은 삼각형을 넣거나 그대로 흰색으로 남길 수 있습니다.</li>
+                <li>검은 칸의 숫자는 상하좌우 이웃 칸에 놓인 삼각형의 개수입니다. 대각선 이웃이나 기존 검은 칸은 세지 않습니다.</li>
+                <li>남은 흰 영역은 구멍이나 꺾인 모양 없이 직사각형이 되어야 합니다. 격자와 나란한 모양뿐 아니라 45° 기울어진 모양도 허용됩니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 숫자 0의 상하좌우 칸에는 삼각형을 놓지 못합니다. 숫자 4의 네 이웃에는 각각 삼각형 하나가 필요하고, 방향은 흰 영역의 모양을 보며 결정합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-shakashaka.com/" target="_blank" rel="noopener noreferrer" aria-label="샤카샤카 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a> · <a href="https://www.nikoli.co.jp/en/puzzles/shakashaka/" target="_blank" rel="noopener noreferrer">보충 규칙 · Nikoli ↗</a></p>
             </div>
           </li>
           <li id="kakuro" class="puzzle-entry" aria-labelledby="kakuro-title">
@@ -503,8 +709,14 @@
             <div class="puzzle-description">
               <p class="puzzle-category">숫자 채우기</p>
               <h2 id="kakuro-title"><span class="puzzle-number" aria-hidden="true">30.</span> 카쿠로</h2>
-              <p>흰 칸에 1~9를 넣어 검은 칸이 지정한 오른쪽·아래쪽 연속 구간의 합을 맞춥니다. 하나의 합계 구간 안에서는 같은 숫자를 반복할 수 없습니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-kakuro.com/" target="_blank" rel="noopener noreferrer" aria-label="카쿠로 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 흰 칸에 1~9를 넣어, 검은 단서 칸이 지정한 가로·세로 구간의 합계를 맞춥니다.</p>
+              <ul class="puzzle-rules">
+                <li>검은 칸의 오른쪽 위 숫자는 오른쪽 흰 칸 구간, 왼쪽 아래 숫자는 아래쪽 흰 칸 구간의 합입니다.</li>
+                <li>합계 구간은 다음 검은 칸이나 격자 끝까지 이어집니다. 같은 구간 안에서는 같은 숫자를 반복할 수 없습니다.</li>
+                <li>흰 칸 하나가 가로 합계와 세로 합계에 모두 속하면 두 조건을 동시에 만족해야 합니다. 검은 칸으로 분리된 다른 구간에서는 같은 숫자를 써도 됩니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 두 칸 합이 4라면 1과 3을 써야 합니다. 2+2는 중복이라 금지이며, 1과 3의 순서는 교차하는 세로 단서로 판단합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-kakuro.com/" target="_blank" rel="noopener noreferrer" aria-label="카쿠로 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="jigsaw-sudoku" class="puzzle-entry" aria-labelledby="jigsaw-sudoku-title">
@@ -517,8 +729,14 @@
             <div class="puzzle-description">
               <p class="puzzle-category">숫자 채우기</p>
               <h2 id="jigsaw-sudoku-title"><span class="puzzle-number" aria-hidden="true">31.</span> 직소 스도쿠</h2>
-              <p>각 행·열·구역에 같은 숫자가 겹치지 않도록 숫자를 채웁니다. 일반 스도쿠의 직사각형 구역 대신 불규칙한 모양의 구역을 사용합니다.</p>
-              <p class="puzzle-links"><a href="https://www.puzzle-jigsaw-sudoku.com/" target="_blank" rel="noopener noreferrer" aria-label="직소 스도쿠 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 굵은 선으로 나뉜 불규칙한 구역을 사용해 스도쿠를 풉니다. 빈칸을 채우되 처음 주어진 숫자는 유지합니다.</p>
+              <ul class="puzzle-rules">
+                <li>N×N에서는 1부터 N까지를 사용합니다. 화면의 5×5 문제는 1~5, 9×9 문제는 1~9를 넣습니다.</li>
+                <li>각 행, 각 열, 굵은 선으로 둘러싸인 각 구역에 모든 숫자가 정확히 한 번씩 나와야 합니다.</li>
+                <li>구역은 일반 스도쿠의 3×3 정사각형 대신 불규칙한 모양입니다. 익숙한 사각형 위치가 아니라 실제로 그어진 경계선을 따라 검사합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 5칸짜리 구역에 1·2·4·5가 이미 있다면 남은 칸은 3입니다. 같은 행이나 열에도 3이 없는지 함께 확인합니다.</p>
+              <p class="puzzle-links"><a href="https://www.puzzle-jigsaw-sudoku.com/" target="_blank" rel="noopener noreferrer" aria-label="직소 스도쿠 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="killer-sudoku" class="puzzle-entry" aria-labelledby="killer-sudoku-title">
@@ -531,8 +749,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">숫자 채우기</p>
               <h2 id="killer-sudoku-title"><span class="puzzle-number" aria-hidden="true">32.</span> 킬러 스도쿠</h2>
-              <p>행·열·구역에 숫자를 중복 없이 넣고, 점선으로 묶인 칸들의 합을 작은 숫자에 맞춥니다. 같은 점선 묶음 안에서도 숫자를 반복할 수 없습니다.</p>
-              <p class="puzzle-links"><a href="https://www.puzzle-killer-sudoku.com/" target="_blank" rel="noopener noreferrer" aria-label="킬러 스도쿠 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 스도쿠의 행·열·구역 규칙에 더해, 점선으로 묶인 ‘케이지’의 합계까지 맞춥니다.</p>
+              <ul class="puzzle-rules">
+                <li>N×N에서는 1~N을 사용하며 각 행·열·굵은 선 구역에 한 번씩 넣습니다. 화면의 4×4는 1~4와 2×2 구역을 사용합니다.</li>
+                <li>케이지 모서리의 작은 숫자는 그 점선 안 모든 칸의 합입니다. 작은 숫자가 놓인 한 칸의 값이라는 뜻이 아닙니다.</li>
+                <li>같은 케이지 안에서는 같은 숫자를 반복할 수 없습니다. 서로 다른 행·열·기본 구역에 걸쳐 있어도 이 조건은 유지됩니다.</li>
+                <li>굵은 선 구역과 점선 케이지는 서로 다른 제약입니다. 칸 하나가 속한 행·열·구역·케이지를 모두 확인합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 4×4에서 두 칸 케이지의 합이 3이면 1과 2가 들어갑니다. 한 행의 총합은 1+2+3+4=10이므로 알려진 케이지 합을 빼서 남은 값도 추론할 수 있습니다.</p>
+              <p class="puzzle-links"><a href="https://www.puzzle-killer-sudoku.com/" target="_blank" rel="noopener noreferrer" aria-label="킬러 스도쿠 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="binairo" class="puzzle-entry" aria-labelledby="binairo-title">
@@ -545,8 +770,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="binairo-title"><span class="puzzle-number" aria-hidden="true">33.</span> 비나이로</h2>
-              <p>행·열마다 흑백 개수를 같게 채우고, 같은 색이 세 칸 연속되지 않게 합니다. 행끼리 또는 열끼리 같은 흑백 패턴이 반복되면 안 됩니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-binairo.com/binairo-6x6-easy/" target="_blank" rel="noopener noreferrer" aria-label="비나이로 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 주어진 원을 유지하고 빈칸에 흑백 원을 넣어, 모든 행·열의 균형과 패턴 조건을 맞춥니다.</p>
+              <ul class="puzzle-rules">
+                <li>각 행과 각 열에는 검은 원과 흰 원이 같은 수로 들어갑니다. 6×6은 각각 3개씩입니다.</li>
+                <li>가로·세로로 같은 색이 3칸 이상 연속하면 안 됩니다. 두 칸 연속은 가능하며 대각선은 검사하지 않습니다.</li>
+                <li>서로 다른 두 행의 전체 흑백 순서가 완전히 같으면 안 됩니다. 서로 다른 두 열끼리도 같은 패턴을 가질 수 없습니다.</li>
+                <li>행 패턴과 열 패턴을 서로 비교하는 조건은 없습니다. 비나이로+의 =·x 기호 대신 행끼리·열끼리의 패턴 중복을 검사합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 6칸 행에서 검은 원 3개가 이미 정해지면 나머지는 모두 흰색입니다. 마지막 칸을 정할 때 다른 완성된 행과 같은 패턴이 되는지도 봅니다.</p>
+              <p><strong>조작:</strong> 빈칸 클릭은 검은 원, 다시 클릭하면 흰 원입니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-binairo.com/binairo-6x6-easy/" target="_blank" rel="noopener noreferrer" aria-label="비나이로 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="nonograms" class="puzzle-entry" aria-labelledby="nonograms-title">
@@ -559,8 +792,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="nonograms-title"><span class="puzzle-number" aria-hidden="true">34.</span> 노노그램</h2>
-              <p>행·열의 숫자는 순서대로 이어지는 검은 칸 구간의 길이입니다. 각 구간 사이를 한 칸 이상 비우며 칸을 칠합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-nonograms.com/" target="_blank" rel="noopener noreferrer" aria-label="노노그램 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 행 왼쪽과 열 위쪽의 숫자를 보고 검은 칸을 채워 숨은 그림을 완성합니다. 나머지는 흰 칸으로 남깁니다.</p>
+              <ul class="puzzle-rules">
+                <li>숫자 하나는 연속된 검은 칸 한 구간의 길이입니다. 행은 왼쪽에서 오른쪽, 열은 위에서 아래로 숫자 순서를 지킵니다.</li>
+                <li>서로 다른 검은 구간 사이에는 흰 칸이 최소 한 칸 있어야 합니다. 구간 앞뒤의 빈칸 수는 정해져 있지 않습니다.</li>
+                <li>한 칸은 행 단서와 열 단서를 동시에 만족해야 합니다. 검정이 아닌 것으로 확정한 칸은 X로 표시해 구간 후보를 줄입니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 5칸 줄의 단서가 ‘2 2’면 검정·검정·흰색·검정·검정으로 확정됩니다. ‘3’은 검정 3칸이 한 덩어리여야 하므로 2칸과 1칸으로 나눌 수 없습니다.</p>
+              <p><strong>조작:</strong> 좌클릭은 검정, 우클릭은 X이며 누른 채 끌어 여러 칸을 표시할 수 있습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-nonograms.com/" target="_blank" rel="noopener noreferrer" aria-label="노노그램 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="slitherlink" class="puzzle-entry" aria-labelledby="slitherlink-title">
@@ -573,8 +813,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">선 연결하기</p>
               <h2 id="slitherlink-title"><span class="puzzle-number" aria-hidden="true">35.</span> 슬리더 링크</h2>
-              <p>칸의 숫자만큼 주변 변에 선을 그려 하나의 닫힌 고리를 만듭니다. 선이 교차하거나 갈라지면 안 됩니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-loop.com/" target="_blank" rel="noopener noreferrer" aria-label="슬리더 링크 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 격자 점 사이에 가로·세로 선을 그어, 숫자 조건을 만족하는 닫힌 고리 하나를 만듭니다.</p>
+              <ul class="puzzle-rules">
+                <li>칸 안 숫자는 그 칸의 위·아래·왼쪽·오른쪽 네 변 중 선이 놓이는 변의 수입니다. 0은 선 없음, 3은 네 변 중 세 변입니다.</li>
+                <li>숫자가 없는 칸의 주변에도 선을 그을 수 있습니다. 모든 칸이나 모든 점을 지날 필요는 없습니다.</li>
+                <li>선은 교차·분기·막다른 끝 없이 이어져야 합니다. 사용한 점에는 선 두 개가 만나고, 사용하지 않는 점에는 선이 없습니다.</li>
+                <li>작은 고리가 여러 개 생기면 안 됩니다. 그린 모든 선이 하나의 고리에 속해야 합니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 0칸의 네 변은 모두 사용하지 않습니다. 3칸에서 한 변이 사용 불가로 정해지면 나머지 세 변은 모두 선이 됩니다.</p>
+              <p><strong>조작:</strong> 두 점 사이를 좌클릭해 선을 놓고 우클릭해 사용하지 않을 변에 X를 표시합니다. X는 풀이를 돕는 표시입니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-loop.com/" target="_blank" rel="noopener noreferrer" aria-label="슬리더 링크 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="sudoku" class="puzzle-entry" aria-labelledby="sudoku-title">
@@ -587,8 +835,14 @@
             <div class="puzzle-description">
               <p class="puzzle-category">숫자 채우기</p>
               <h2 id="sudoku-title"><span class="puzzle-number" aria-hidden="true">36.</span> 스도쿠</h2>
-              <p>9×9 격자에 1~9를 채워 각 행·열·3×3 구역에서 모든 숫자가 한 번씩 나오게 합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-sudoku.com/" target="_blank" rel="noopener noreferrer" aria-label="스도쿠 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 처음 주어진 숫자를 유지하면서 9×9의 모든 빈칸에 1~9를 채웁니다.</p>
+              <ul class="puzzle-rules">
+                <li>가로 한 행마다 1~9가 각각 한 번씩 나와야 합니다. 세로 한 열에서도 같은 조건을 만족해야 합니다.</li>
+                <li>굵은 선으로 둘러싸인 3×3 구역 아홉 개에도 1~9가 각각 한 번씩 나와야 합니다.</li>
+                <li>한 칸의 값은 행·열·구역 세 조건을 동시에 만족해야 합니다. 일반 스도쿠에서 대각선의 숫자 중복은 별도 금지 조건이 아닙니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 빈칸이 속한 행·열·구역에서 이미 나온 숫자를 후보에서 지웁니다. 1~9 중 7만 남으면 그 칸은 7로 확정됩니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-sudoku.com/" target="_blank" rel="noopener noreferrer" aria-label="스도쿠 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="light-up" class="puzzle-entry" aria-labelledby="light-up-title">
@@ -601,8 +855,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">도형 배치하기</p>
               <h2 id="light-up-title"><span class="puzzle-number" aria-hidden="true">37.</span> 라이트업</h2>
-              <p>전구를 놓아 모든 흰 칸을 밝히되 전구끼리 서로 비추지 않게 합니다. 검은 칸의 숫자는 상하좌우에 붙은 전구 수입니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-light-up.com/" target="_blank" rel="noopener noreferrer" aria-label="라이트업 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 흰 칸에 전구를 배치해 모든 흰 칸을 밝힙니다. 검은 칸은 벽이며 전구를 놓지 않습니다.</p>
+              <ul class="puzzle-rules">
+                <li>전구는 자기 칸과 상하좌우 직선의 흰 칸을 비춥니다. 빛은 검은 칸 또는 격자 끝에서 멈추며 대각선으로 퍼지지 않습니다.</li>
+                <li>전구 둘이 가로·세로로 서로를 비추면 안 됩니다. 중간에 검은 벽이 있다면 같은 행·열에 전구 둘을 놓을 수 있습니다.</li>
+                <li>검은 칸의 숫자는 바로 상하좌우에 붙어 있는 전구 개수입니다. 멀리 있는 전구나 대각선 전구는 세지 않습니다.</li>
+                <li>숫자가 없는 검은 칸은 이웃 전구 수를 제한하지 않습니다. 전구 없는 흰 칸도 다른 전구의 빛으로 밝히면 됩니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 숫자 0의 이웃에는 전구를 놓지 못합니다. 숫자 4에는 네 방향 모두 전구가 필요합니다. 한 흰 칸을 여러 전구가 비추는 것은 가능합니다.</p>
+              <p><strong>조작:</strong> 좌클릭은 전구 배치, 우클릭은 전구를 놓지 않을 칸의 X 표시입니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-light-up.com/" target="_blank" rel="noopener noreferrer" aria-label="라이트업 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="bridges" class="puzzle-entry" aria-labelledby="bridges-title">
@@ -615,8 +877,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">선 연결하기</p>
               <h2 id="bridges-title"><span class="puzzle-number" aria-hidden="true">38.</span> 브릿지</h2>
-              <p>섬의 숫자만큼 가로·세로 다리를 놓아 모든 섬을 하나로 연결합니다. 다리끼리 교차할 수 없고, 한 쌍의 섬 사이에는 최대 두 개를 놓습니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-bridges.com/" target="_blank" rel="noopener noreferrer" aria-label="브릿지 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 숫자가 적힌 섬 사이에 다리를 놓아 모든 섬이 하나의 연결망에 속하게 만듭니다.</p>
+              <ul class="puzzle-rules">
+                <li>다리는 같은 행이나 열의 두 섬을 직선으로 연결합니다. 대각선으로 놓거나 중간에 꺾을 수 없습니다.</li>
+                <li>다리는 다른 섬을 통과하거나 다른 다리와 교차할 수 없습니다. 연결 방향에서 먼저 만나는 섬까지만 이을 수 있습니다.</li>
+                <li>한 쌍의 섬 사이에는 최대 두 개의 다리를 놓습니다. 이중 다리는 각 섬의 다리 수에 2개로 셉니다.</li>
+                <li>각 섬에 붙은 다리의 총개수는 그 섬의 숫자와 같아야 합니다. 숫자를 다 맞춰도 연결망이 여러 덩어리로 나뉘면 미완성입니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 숫자 3의 섬은 한쪽으로 이중 다리, 다른 쪽으로 단일 다리를 놓아 합 3을 맞출 수 있습니다. 숫자 1인 섬 둘만 따로 잇고 고립시키면 안 됩니다.</p>
+              <p><strong>조작:</strong> 한 섬을 클릭한 채 다른 섬으로 끌어, 두 섬이 모두 강조되면 놓습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-bridges.com/" target="_blank" rel="noopener noreferrer" aria-label="브릿지 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="shikaku" class="puzzle-entry" aria-labelledby="shikaku-title">
@@ -629,8 +899,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">도형 배치하기</p>
               <h2 id="shikaku-title"><span class="puzzle-number" aria-hidden="true">39.</span> 시카쿠</h2>
-              <p>격자 전체를 직사각형으로 나눕니다. 각 직사각형에는 숫자가 정확히 하나 있고, 넓이는 그 숫자와 같아야 합니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-shikaku.com/" target="_blank" rel="noopener noreferrer" aria-label="시카쿠 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 격자 전체를 빈틈이나 겹침 없이 직사각형들로 나눕니다. 정사각형도 직사각형의 한 종류로 사용할 수 있습니다.</p>
+              <ul class="puzzle-rules">
+                <li>각 직사각형은 숫자가 적힌 칸을 정확히 하나 포함해야 합니다. 숫자가 없거나 두 개 이상인 영역은 안 됩니다.</li>
+                <li>직사각형의 넓이, 즉 가로 칸 수×세로 칸 수가 그 숫자와 같아야 합니다. 숫자 칸도 넓이에 포함합니다.</li>
+                <li>경계는 격자선을 따릅니다. 모든 칸이 하나의 직사각형에 속해야 하며, L자나 기울어진 영역은 허용되지 않습니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 숫자 6의 후보 크기는 1×6·2×3·3×2·6×1입니다. 다른 숫자를 포함하거나 테두리를 넘는 후보를 제외하면서 영역을 정합니다.</p>
+              <p><strong>조작:</strong> 드래그로 직사각형을 그립니다. 우클릭 드래그 또는 Ctrl·Shift를 누른 드래그로 선을 지울 수 있습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-shikaku.com/" target="_blank" rel="noopener noreferrer" aria-label="시카쿠 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="nurikabe" class="puzzle-entry" aria-labelledby="nurikabe-title">
@@ -643,8 +920,16 @@
             <div class="puzzle-description">
               <p class="puzzle-category">칸 칠하기</p>
               <h2 id="nurikabe-title"><span class="puzzle-number" aria-hidden="true">40.</span> 누리카베</h2>
-              <p>숫자 하나마다 그 숫자 크기의 흰 섬을 만들고, 나머지 검은 칸을 하나로 연결합니다. 서로 다른 섬은 변으로 닿을 수 없고, 검은 2×2도 만들 수 없습니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-nurikabe.com/" target="_blank" rel="noopener noreferrer" aria-label="누리카베 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 숫자를 포함하는 흰 섬들을 만들고, 나머지 검은 칸을 하나의 바다로 연결합니다.</p>
+              <ul class="puzzle-rules">
+                <li>각 흰 섬은 상하좌우로 이어진 칸들로 이루어지며, 숫자를 정확히 하나 포함해야 합니다. 숫자 칸은 검게 칠할 수 없습니다.</li>
+                <li>섬의 칸 수는 그 숫자와 정확히 같아야 합니다. 숫자 칸 자신도 크기에 포함하며 숫자가 없는 별도의 흰 섬을 남길 수 없습니다.</li>
+                <li>서로 다른 섬은 변으로 닿을 수 없습니다. 대각선 접촉은 가능합니다.</li>
+                <li>모든 검은 칸은 상하좌우로 하나로 연결되어야 하고, 검은 2×2 정사각형은 어느 곳에도 생길 수 없습니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 숫자 1은 그 칸 하나로 완성된 섬이므로 상하좌우 이웃을 검게 만듭니다. 숫자 3의 섬은 숫자 칸 외에 흰 칸 2개가 더 필요합니다.</p>
+              <p><strong>조작:</strong> 좌클릭으로 검은 칸을, 우클릭으로 흰 칸의 점을 표시하며 드래그로 여러 칸을 칠할 수 있습니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-nurikabe.com/" target="_blank" rel="noopener noreferrer" aria-label="누리카베 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
           <li id="dominosa" class="puzzle-entry" aria-labelledby="dominosa-title">
@@ -657,8 +942,15 @@
             <div class="puzzle-description">
               <p class="puzzle-category">도형 배치하기</p>
               <h2 id="dominosa-title"><span class="puzzle-number" aria-hidden="true">41.</span> 도미노사</h2>
-              <p>모든 칸을 가로나 세로로 붙은 두 칸짜리 도미노로 나눕니다. 같은 숫자 조합의 도미노를 중복해서 만들 수 없습니다.</p>
-              <p class="puzzle-links"><a href="https://ko.puzzle-dominosa.com/" target="_blank" rel="noopener noreferrer" aria-label="도미노사 플레이와 전체 규칙, 새 탭에서 열기">플레이 · 전체 규칙 ↗</a></p>
+              <p><strong>목표:</strong> 이미 쓰인 숫자를 바꾸지 않고 모든 칸을 두 칸짜리 도미노로 짝짓습니다.</p>
+              <ul class="puzzle-rules">
+                <li>도미노는 가로나 세로로 바로 붙어 있는 두 칸입니다. 대각선으로 짝지을 수 없습니다.</li>
+                <li>모든 칸은 도미노 하나에만 속해야 합니다. 짝 없는 칸을 남기거나 한 칸을 두 도미노가 공유하면 안 됩니다.</li>
+                <li>도미노의 두 숫자 조합은 전체에서 중복될 수 없습니다. 순서는 무시하므로 1–2와 2–1은 같은 조합입니다. 2–2처럼 같은 숫자끼리의 조합도 있습니다.</li>
+              </ul>
+              <p><strong>예시:</strong> 1과 2를 연결한 도미노를 만들었다면 다른 위치에서 2와 1을 다시 짝지을 수 없습니다. 가능한 위치가 하나뿐인 숫자 조합부터 찾으면 도움이 됩니다.</p>
+              <p><strong>조작:</strong> 숫자 두 칸 사이를 좌클릭해 도미노를 만들고, 우클릭해 연결하지 않을 경계를 표시합니다.</p>
+              <p class="puzzle-links"><a href="https://ko.puzzle-dominosa.com/" target="_blank" rel="noopener noreferrer" aria-label="도미노사 플레이와 전체 규칙, 새 탭에서 열기">출처 · 플레이 · 전체 규칙 ↗</a></p>
             </div>
           </li>
         </ol>
