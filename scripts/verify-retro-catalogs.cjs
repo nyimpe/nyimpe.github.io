@@ -8,6 +8,7 @@ const sites = ['playretrogames', 'playretro-io', 'retrogames-onl-snes'];
 (async () => {
   const base = process.argv[2] || 'http://127.0.0.1:8080';
   const tag = base.includes('127.0.0.1') ? 'local' : 'live';
+  const live = tag === 'live';
   const browser = await chromium.launch({ channel: 'chrome', headless: true });
   const context = await browser.newContext({ viewport: { width: 1280, height: 1000 } });
   const page = await context.newPage();
@@ -29,10 +30,15 @@ const sites = ['playretrogames', 'playretro-io', 'retrogames-onl-snes'];
     assert.equal(await cards.count(), Math.min(24, games.length));
     assert.match(await status.textContent(), new RegExp(`· ${games.length}개 게임$`));
     const genres = [...new Set(games.map((g) => g.genre))];
-    for (const platform of ['', ...Object.keys(data.platforms)]) {
+    // Exhaustive combinations run locally. On Pages, sample both platform ends
+    // and contrasting genres so UI verification does not flood its CDN.
+    const platforms = live ? [...new Set(['', Object.keys(data.platforms)[0], Object.keys(data.platforms).at(-1)])] : ['', ...Object.keys(data.platforms)];
+    const checkedGenres = live ? ['', ...[...new Set([genres[0], 'RPG', '퍼즐/보드'])].filter((g) => genres.includes(g))] : ['', ...genres];
+    for (const platform of platforms) {
       await page.locator(`button[data-platform="${platform}"]`).click();
       assert.equal(await page.locator(`button[data-platform="${platform}"]`).getAttribute('aria-pressed'), 'true');
-      for (const genre of ['', ...genres]) {
+      for (const genre of checkedGenres) {
+        if (live) await page.waitForTimeout(300);
         await page.locator('#game-genre').selectOption(genre);
         const expected = games.filter((g) => (!platform || g.platform === platform) && (!genre || g.genre === genre));
         assert.match(await status.textContent(), new RegExp(`· ${expected.length}개 게임$`));
@@ -115,8 +121,9 @@ const sites = ['playretrogames', 'playretro-io', 'retrogames-onl-snes'];
     const remote = await context.request.get(`${base}/data/${site}-games.json`);
     assert.equal(remote.status(), 200);
     assert.deepEqual(await remote.json(), data);
-    results.push({ site, games: games.length, combinations: (Object.keys(data.platforms).length + 1) * (genres.length + 1), widths: [1280, 375, 320], themes: ['light', 'dark'], scroll: true, keyboard: true, images: true, noJavaScript: true, noIntersectionObserver: true });
+    results.push({ site, games: games.length, combinations: platforms.length * checkedGenres.length, exhaustive: !live, widths: [1280, 375, 320], themes: ['light', 'dark'], scroll: true, keyboard: true, images: true, noJavaScript: true, noIntersectionObserver: true });
     console.log(JSON.stringify(results.at(-1)));
+    if (live) await page.waitForTimeout(2000);
   }
   await page.goto(base);
   for (const site of sites) assert.ok(await page.locator(`.post-list a[href="/posts/${site}/"]`).isVisible());
