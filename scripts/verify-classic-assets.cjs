@@ -5,11 +5,14 @@ const crypto = require('node:crypto');
 const assert = require('node:assert/strict');
 const root = path.resolve(__dirname, '..');
 const base = process.argv[2] || 'https://nyimpe.github.io';
+const jjang = process.argv[3] === 'jjang';
+const slug = jjang ? 'jjang-games' : 'classic-games';
+const dataset = jjang ? 'jjang-games' : 'tooli-games';
 const hash = (bytes) => crypto.createHash('sha256').update(bytes).digest('hex');
 (async () => {
-  const metadata = JSON.parse(await fs.readFile(path.join(root, 'public/data/tooli-games.json'), 'utf8'));
-  const html = await fs.readFile(path.join(root, 'dist/posts/classic-games/index.html'), 'utf8');
-  const urls = [...new Set(['/posts/classic-games/index.html', '/data/tooli-games.json',
+  const metadata = JSON.parse(await fs.readFile(path.join(root, `public/data/${dataset}.json`), 'utf8'));
+  const html = await fs.readFile(path.join(root, `dist/posts/${slug}/index.html`), 'utf8');
+  const urls = [...new Set([`/posts/${slug}/index.html`, `/data/${dataset}.json`,
     ...[...html.matchAll(/(?:src|href)="(\/assets\/[^"\s]+)"/g)].map((m) => m[1]),
     ...metadata.games.filter((game) => game.image).map((game) => game.image.src)])];
   let next = 0;
