@@ -1,0 +1,700 @@
+{
+  "collectedAt": "2026-10-06",
+  "source": "https://www.retrogames.onl/p/play-snes-games-online.html",
+  "scope": "요청한 슈퍼패미콤(SNES) A–Z 목록",
+  "inventory": {
+    "pages": 1,
+    "listedLinks": 492,
+    "duplicateAliases": [
+      {
+        "title": "Aim for the Ace! / Ace wo Nerae!",
+        "source": "https://www.retrogames.onl/2022/12/aim-for-ace-snes.html"
+      },
+      {
+        "title": "Desert Fighter / A.S.P.: Air Strike Patrol",
+        "source": "https://www.retrogames.onl/2022/09/play-air-strike-patrol-snes-online.html"
+      },
+      {
+        "title": "Battle Dodgeball II",
+        "source": "https://www.retrogames.onl/2022/12/play-battle-dodgeball-ii-snes-online.html"
+      },
+      {
+        "title": "Final Fantasy IV",
+        "source": "https://www.retrogames.onl/2020/09/final-fantasy-ii-snes.html"
+      },
+      {
+        "title": "Final Fantasy VI",
+        "source": "https://www.retrogames.onl/2017/03/final-fantasy-iii-snes.html"
+      },
+      {
+        "title": "Ghost Chaser Densei / Denjinmakai",
+        "source": "https://www.retrogames.onl/2022/09/play-ghost-chaser-densei-snes-online.html"
+      },
+      {
+        "title": "Goemon 4: The Twinkling Journey The Reason I Became a Dancer",
+        "source": "https://www.retrogames.onl/2022/09/play-ganbare-goemon-4-snes-online.html"
+      },
+      {
+        "title": "Gokujou Parodius / Fantastic Journey",
+        "source": "https://www.retrogames.onl/2022/12/play-fantastic-journey-snes-online.html"
+      },
+      {
+        "title": "Legend of the Mystical Ninja / Ganbare Goemon: Yukihime Kyuushutsu Emaki",
+        "source": "https://www.retrogames.onl/2022/11/the-legend-of-mystical-ninja-snes.html"
+      },
+      {
+        "title": "Majuu Ou / King of Demons",
+        "source": "https://www.retrogames.onl/2022/11/king-of-demons-snes.html"
+      },
+      {
+        "title": "Mystic Quest Legend",
+        "source": "https://www.retrogames.onl/2022/09/final-fantasy-mystic-quest-snes.html"
+      },
+      {
+        "title": "Out of This World / Another World",
+        "source": "https://www.retrogames.onl/2017/03/out-of-this-world-snes.html"
+      },
+      {
+        "title": "Radical Rex / Baby T-Rex",
+        "source": "https://www.retrogames.onl/2022/09/play-baby-t-rex-snes-online.html"
+      },
+      {
+        "title": "Soccer Kid / Adventures of Kid Kleets",
+        "source": "https://www.retrogames.onl/2022/11/the-adventures-of-kid-kleets-snes.html"
+      },
+      {
+        "title": "Soldiers of Fortune / Chaos Engine",
+        "source": "https://www.retrogames.onl/2022/09/play-soldiers-of-fortune-snes-online.html"
+      },
+      {
+        "title": "SOS / Septentrion",
+        "source": "https://www.retrogames.onl/2022/12/play-sos-snes-online.html"
+      },
+      {
+        "title": "Super Baseball 2020",
+        "source": "https://www.retrogames.onl/2022/11/2020-super-baseball-snes.html"
+      },
+      {
+        "title": "Super Robot Wars III / Dai-3-ji Super Robot Taisen",
+        "source": "https://www.retrogames.onl/2022/12/dai-3-ji-super-robot-taisen-snes-online.html"
+      },
+      {
+        "title": "Super Robot Wars IV / Dai-4-ji Super Robot Taisen",
+        "source": "https://www.retrogames.onl/2022/12/dai-4-ji-super-robot-taisen-snes.html"
+      }
+    ]
+  },
+  "games": 473,
+  "platformCounts": {
+    "super-nintendo": 473
+  },
+  "genreCounts": {
+    "레이싱/스포츠": 35,
+    "액션/아케이드": 188,
+    "RPG": 87,
+    "슈팅": 77,
+    "창작/교육": 3,
+    "전략/시뮬레이션": 21,
+    "대전/격투": 40,
+    "퍼즐/보드": 15,
+    "어드벤처": 4,
+    "미니게임/모음": 2,
+    "기타/미분류": 1
+  },
+  "images": 473,
+  "detailFailures": [],
+  "missingImages": [],
+  "renamedFromDetail": [
+    {
+      "listedTitle": "7th Saga",
+      "detailTitle": "The 7th Saga",
+      "source": "https://www.retrogames.onl/2022/11/the-7th-saga-snes.html"
+    },
+    {
+      "listedTitle": "A.S.P.: Air Strike Patrol / Desert Fighter",
+      "detailTitle": "A.S.P.: Air Strike Patrol",
+      "source": "https://www.retrogames.onl/2022/09/play-air-strike-patrol-snes-online.html"
+    },
+    {
+      "listedTitle": "Ace wo Nerae! / Aim for the Ace!",
+      "detailTitle": "Aim for the Ace!",
+      "source": "https://www.retrogames.onl/2022/12/aim-for-ace-snes.html"
+    },
+    {
+      "listedTitle": "Addams Family",
+      "detailTitle": "The Addams Family",
+      "source": "https://www.retrogames.onl/2022/09/play-addams-family-snes-online.html"
+    },
+    {
+      "listedTitle": "Addams Family: Pugsley's Scavenger Hunt",
+      "detailTitle": "The Addams Family: Pugsley's Scavenger Hunt",
+      "source": "https://www.retrogames.onl/2022/09/addams-family-pugsley-scavenger-hunt.html"
+    },
+    {
+      "listedTitle": "Adventures of Batman and Robin",
+      "detailTitle": "The Adventures of Batman & Robin",
+      "source": "https://www.retrogames.onl/2017/03/the-adventures-of-batman-robin-snes.html"
+    },
+    {
+      "listedTitle": "Adventures of Dr. Franken",
+      "detailTitle": "The Adventures of Dr. Franken",
+      "source": "https://www.retrogames.onl/2022/11/adventures-of-dr-franken-snes.html"
+    },
+    {
+      "listedTitle": "Adventures of Kid Kleets / Soccer Kid",
+      "detailTitle": "The Adventures of Kid Kleets",
+      "source": "https://www.retrogames.onl/2022/11/the-adventures-of-kid-kleets-snes.html"
+    },
+    {
+      "listedTitle": "Adventures of Rocky and Bullwinkle and Friends",
+      "detailTitle": "The Adventures of Rocky and Bullwinkle and Friends",
+      "source": "https://www.retrogames.onl/2022/09/adventures-of-rocky-and-bullwinkle-and.html"
+    },
+    {
+      "listedTitle": "Adventures of Tintin: Prisoners of the Sun",
+      "detailTitle": "Tintin: Prisoners of the Sun",
+      "source": "https://www.retrogames.onl/2021/10/tintin-prisoners-of-sun-snes.html"
+    },
+    {
+      "listedTitle": "Aero Fighters",
+      "detailTitle": "Aero the Acro-Bat",
+      "source": "https://www.retrogames.onl/2022/09/play-aero-acro-bat-snes-online.html"
+    },
+    {
+      "listedTitle": "Aero the Acro-Bat",
+      "detailTitle": "Aero Fighters",
+      "source": "https://www.retrogames.onl/2022/09/play-aero-fighters-snes-online.html"
+    },
+    {
+      "listedTitle": "Another World / Out of This World",
+      "detailTitle": "Out of This World",
+      "source": "https://www.retrogames.onl/2017/03/out-of-this-world-snes.html"
+    },
+    {
+      "listedTitle": "Asterix and Obelix",
+      "detailTitle": "Asterix & Obelix",
+      "source": "https://www.retrogames.onl/2017/03/asterix-obelix-snes.html"
+    },
+    {
+      "listedTitle": "Baby T-Rex / Radical Rex",
+      "detailTitle": "Baby T-Rex",
+      "source": "https://www.retrogames.onl/2022/09/play-baby-t-rex-snes-online.html"
+    },
+    {
+      "listedTitle": "Ball Bullet Gun: Survival Game Simulation",
+      "detailTitle": "Ball Bullet Gun",
+      "source": "https://www.retrogames.onl/2022/12/play-ball-bullet-gun-snes-online.html"
+    },
+    {
+      "listedTitle": "Ballz 3D: Fighting at its Ballziest",
+      "detailTitle": "Ballz 3D",
+      "source": "https://www.retrogames.onl/2022/12/ballz-3d-snes.html"
+    },
+    {
+      "listedTitle": "Battletoads and Double Dragon: The Ultimate Team",
+      "detailTitle": "Battletoads / Double Dragon",
+      "source": "https://www.retrogames.onl/2017/03/battletoads-double-dragon-snes.html"
+    },
+    {
+      "listedTitle": "Brawl Brothers: Rival Turf! 2",
+      "detailTitle": "Brawl Brothers",
+      "source": "https://www.retrogames.onl/2022/09/play-brawl-brothers-snes-online.html"
+    },
+    {
+      "listedTitle": "Captain Tsubasa III: The Kaiser's Challenge",
+      "detailTitle": "Captain Tsubasa III",
+      "source": "https://www.retrogames.onl/2022/12/play-captain-tsubasa-iii-snes-online.html"
+    },
+    {
+      "listedTitle": "Captain Tsubasa IV: Pro no Rival Tachi",
+      "detailTitle": "Captain Tsubasa IV",
+      "source": "https://www.retrogames.onl/2022/12/play-captain-tsubasa-iv-snes-online.html"
+    },
+    {
+      "listedTitle": "Chaos Engine / Soldiers of Fortune",
+      "detailTitle": "Soldiers of Fortune",
+      "source": "https://www.retrogames.onl/2022/09/play-soldiers-of-fortune-snes-online.html"
+    },
+    {
+      "listedTitle": "Chessmaster",
+      "detailTitle": "The Chessmaster",
+      "source": "https://www.retrogames.onl/2022/12/play-chessmaster-snes-online.html"
+    },
+    {
+      "listedTitle": "Clay Fighter 2: Judgement Clay",
+      "detailTitle": "Clay Fighter 2",
+      "source": "https://www.retrogames.onl/2022/12/play-clay-fighter-2-snes-online.html"
+    },
+    {
+      "listedTitle": "Combatribes",
+      "detailTitle": "The Combatribes",
+      "source": "https://www.retrogames.onl/2022/11/the-combatribes-snes.html"
+    },
+    {
+      "listedTitle": "Cosmo Police Galivan II: Arrow of Justice",
+      "detailTitle": "Cosmo Police Galivan II",
+      "source": "https://www.retrogames.onl/2022/12/cosmo-police-galivan-ii-snes.html"
+    },
+    {
+      "listedTitle": "Cyber Knight II: Chikyuu Teikoku no Yabou",
+      "detailTitle": "Cyber Knight II",
+      "source": "https://www.retrogames.onl/2022/12/play-cyber-knight-ii-snes-online.html"
+    },
+    {
+      "listedTitle": "Dai-3-ji Super Robot Taisen / Super Robot Wars III",
+      "detailTitle": "Dai-3-ji Super Robot Taisen",
+      "source": "https://www.retrogames.onl/2022/12/dai-3-ji-super-robot-taisen-snes-online.html"
+    },
+    {
+      "listedTitle": "Dai-4-ji Super Robot Taisen / Super Robot Wars IV",
+      "detailTitle": "Dai-4-ji Super Robot Taisen",
+      "source": "https://www.retrogames.onl/2022/12/dai-4-ji-super-robot-taisen-snes.html"
+    },
+    {
+      "listedTitle": "Death and Return of Superman",
+      "detailTitle": "The Death and Return of Superman",
+      "source": "https://www.retrogames.onl/2022/09/play-death-and-return-of-superman-snes.html"
+    },
+    {
+      "listedTitle": "Demons Crest",
+      "detailTitle": "Demon's Crest",
+      "source": "https://www.retrogames.onl/2017/03/demons-crest-snes.html"
+    },
+    {
+      "listedTitle": "Denjinmakai / Ghost Chaser Densei",
+      "detailTitle": "Ghost Chaser Densei",
+      "source": "https://www.retrogames.onl/2022/09/play-ghost-chaser-densei-snes-online.html"
+    },
+    {
+      "listedTitle": "Desert Strike: Return to the Gulf",
+      "detailTitle": "Desert Strike",
+      "source": "https://www.retrogames.onl/2017/03/desert-strike-snes.html"
+    },
+    {
+      "listedTitle": "Donkey Kong Country 2: Diddy's Kong Quest",
+      "detailTitle": "Donkey Kong Country 2",
+      "source": "https://www.retrogames.onl/2017/03/donkey-kong-country-2-snes.html"
+    },
+    {
+      "listedTitle": "Donkey Kong Country 3: Dixie Kong's Double Trouble!",
+      "detailTitle": "Donkey Kong Country 3",
+      "source": "https://www.retrogames.onl/2017/03/donkey-kong-country-3-snes.html"
+    },
+    {
+      "listedTitle": "Doom Troopers: Mutant Chronicles",
+      "detailTitle": "Doom Troopers",
+      "source": "https://www.retrogames.onl/2022/09/play-doom-troopers-snes-online.html"
+    },
+    {
+      "listedTitle": "Double Dragon V: The Shadow Falls",
+      "detailTitle": "Double Dragon V",
+      "source": "https://www.retrogames.onl/2022/12/play-double-dragon-v-snes-online.html"
+    },
+    {
+      "listedTitle": "Dragon Quest III / Dragon Warrior III",
+      "detailTitle": "Dragon Warrior III",
+      "source": "https://www.retrogames.onl/2017/05/dragon-warrior-iii-snes.html"
+    },
+    {
+      "listedTitle": "Dragon Quest V: Tenkuu no Hanayome",
+      "detailTitle": "Dragon Quest V",
+      "source": "https://www.retrogames.onl/2022/01/dragon-quest-v-snes-play-online.html"
+    },
+    {
+      "listedTitle": "Dragon Quest VI: Maboroshi no Daichi",
+      "detailTitle": "Dragon Quest VI",
+      "source": "https://www.retrogames.onl/2022/02/dragon-quest-vi-snes-play-online.html"
+    },
+    {
+      "listedTitle": "Fantastic Journey / Gokujou Parodius",
+      "detailTitle": "Fantastic Journey",
+      "source": "https://www.retrogames.onl/2022/12/play-fantastic-journey-snes-online.html"
+    },
+    {
+      "listedTitle": "Fire Emblem 3: Mystery of the Emblem",
+      "detailTitle": "Fire Emblem 3",
+      "source": "https://www.retrogames.onl/2022/01/fire-emblem-3-snes-play-online.html"
+    },
+    {
+      "listedTitle": "Fire Emblem 4: Seisen no Keifu",
+      "detailTitle": "Fire Emblem 4",
+      "source": "https://www.retrogames.onl/2022/01/fire-emblem-4-snes.html"
+    },
+    {
+      "listedTitle": "Fire Emblem 5: Thracia 776",
+      "detailTitle": "Fire Emblem 5",
+      "source": "https://www.retrogames.onl/2022/01/fire-emblem-5-snes-play-online.html"
+    },
+    {
+      "listedTitle": "Flashback: The Quest for Identity",
+      "detailTitle": "Flashback",
+      "source": "https://www.retrogames.onl/2015/09/flashback-snes.html"
+    },
+    {
+      "listedTitle": "Flintstones",
+      "detailTitle": "The Flintstones",
+      "source": "https://www.retrogames.onl/2022/09/play-flintstones-snes-online.html"
+    },
+    {
+      "listedTitle": "Ganbare Goemon: Yukihime Kyuushutsu Emaki / Legend of the Mystical Ninja",
+      "detailTitle": "The Legend of the Mystical Ninja",
+      "source": "https://www.retrogames.onl/2022/11/the-legend-of-mystical-ninja-snes.html"
+    },
+    {
+      "listedTitle": "Ganbare Goemon 2: Kiteretsu Shogun Magginesu",
+      "detailTitle": "Ganbare Goemon 2",
+      "source": "https://www.retrogames.onl/2022/11/ganbare-goemon-2-snes.html"
+    },
+    {
+      "listedTitle": "Ganbare Goemon 3: Shishi Juuroku Hyoue no Karakuri Manjigatame",
+      "detailTitle": "Ganbare Goemon 3",
+      "source": "https://www.retrogames.onl/2022/11/ganbare-goemon-3-snes.html"
+    },
+    {
+      "listedTitle": "Ganbare Goemon 4: Kirakira Douchuu - Boku ga Dancer ni Natta Riyuu",
+      "detailTitle": "Ganbare Goemon 4",
+      "source": "https://www.retrogames.onl/2022/09/play-ganbare-goemon-4-snes-online.html"
+    },
+    {
+      "listedTitle": "Great Battle IV",
+      "detailTitle": "The Great Battle IV",
+      "source": "https://www.retrogames.onl/2022/09/play-great-battle-iv-snes-online.html"
+    },
+    {
+      "listedTitle": "Great Battle V",
+      "detailTitle": "The Great Battle V",
+      "source": "https://www.retrogames.onl/2022/11/the-great-battle-v-snes.html"
+    },
+    {
+      "listedTitle": "Great Circus Mystery starring Mickey & Minnie",
+      "detailTitle": "The Great Circus Mystery",
+      "source": "https://www.retrogames.onl/2022/09/play-great-circus-mystery-snes-online.html"
+    },
+    {
+      "listedTitle": "GunForce: Battle Fire Engulfed Terror Island",
+      "detailTitle": "GunForce",
+      "source": "https://www.retrogames.onl/2022/11/gunforce-snes.html"
+    },
+    {
+      "listedTitle": "Hagane: The Final Conflict",
+      "detailTitle": "Hagane",
+      "source": "https://www.retrogames.onl/2021/07/hagane-snes.html"
+    },
+    {
+      "listedTitle": "Humans",
+      "detailTitle": "The Humans",
+      "source": "https://www.retrogames.onl/2020/06/the-humans-snes.html"
+    },
+    {
+      "listedTitle": "Hunt for Red October",
+      "detailTitle": "The Hunt for Red October",
+      "source": "https://www.retrogames.onl/2019/05/the-hunt-for-red-october-snes.html"
+    },
+    {
+      "listedTitle": "Ignition Factor",
+      "detailTitle": "The Ignition Factor",
+      "source": "https://www.retrogames.onl/2022/12/play-ignition-factor-snes-online.html"
+    },
+    {
+      "listedTitle": "Incredible Hulk",
+      "detailTitle": "The Incredible Hulk",
+      "source": "https://www.retrogames.onl/2022/12/play-incredible-hulk-snes-online.html"
+    },
+    {
+      "listedTitle": "Indiana Jones Greatest Adventures",
+      "detailTitle": "Indiana Jones' Greatest Adventures",
+      "source": "https://www.retrogames.onl/2017/03/indiana-jones-greatest-adventures-snes.html"
+    },
+    {
+      "listedTitle": "Iron Commando: Koutetsu no Senshi",
+      "detailTitle": "Iron Commando",
+      "source": "https://www.retrogames.onl/2022/09/play-iron-commando-snes-online.html"
+    },
+    {
+      "listedTitle": "Jikkyou Oshaberi Parodius: Forever with Me",
+      "detailTitle": "Jikkyou Oshaberi Parodius",
+      "source": "https://www.retrogames.onl/2022/12/jikkyou-oshaberi-parodius-snes.html"
+    },
+    {
+      "listedTitle": "Jim Lee's WildC.A.T.S: Covert Action Teams",
+      "detailTitle": "Jim Lee's WildC.A.T.S",
+      "source": "https://www.retrogames.onl/2022/09/play-jim-lee-wildc-snes-online.html"
+    },
+    {
+      "listedTitle": "Joe & Mac: Caveman Ninja",
+      "detailTitle": "Joe & Mac",
+      "source": "https://www.retrogames.onl/2022/11/joe-mac-snes.html"
+    },
+    {
+      "listedTitle": "Joe & Mac 2: Lost in the Tropics",
+      "detailTitle": "Joe & Mac 2",
+      "source": "https://www.retrogames.onl/2022/11/joe-mac-2-snes.html"
+    },
+    {
+      "listedTitle": "Jungle Book",
+      "detailTitle": "The Jungle Book",
+      "source": "https://www.retrogames.onl/2017/05/the-jungle-book-snes.html"
+    },
+    {
+      "listedTitle": "Jurassic Park Part 2: The Chaos Continues",
+      "detailTitle": "Jurassic Park II",
+      "source": "https://www.retrogames.onl/2017/04/jurassic-park-part-2-snes.html"
+    },
+    {
+      "listedTitle": "Kaizou Choujin Schbibinman Zero",
+      "detailTitle": "Kaizou Choujin Shubibinman",
+      "source": "https://www.retrogames.onl/2018/09/kaizou-choujin-schbibinman-zero-snes.html"
+    },
+    {
+      "listedTitle": "King of Demons / Majuu Ou",
+      "detailTitle": "King of Demons",
+      "source": "https://www.retrogames.onl/2022/11/king-of-demons-snes.html"
+    },
+    {
+      "listedTitle": "King of Dragons",
+      "detailTitle": "The King of Dragons",
+      "source": "https://www.retrogames.onl/2022/09/play-king-of-dragons-snes-online.html"
+    },
+    {
+      "listedTitle": "Legend of Zelda: A Link to the Past",
+      "detailTitle": "The Legend of Zelda: A Link to the Past",
+      "source": "https://www.retrogames.onl/2017/03/zelda-link-to-past-snes.html"
+    },
+    {
+      "listedTitle": "Legend of Zelda: Ancient Stone Tablets",
+      "detailTitle": "The Legend of Zelda: Ancient Stone Tablets",
+      "source": "https://www.retrogames.onl/2018/09/bs-legend-of-zelda-ancient-stone.html"
+    },
+    {
+      "listedTitle": "Legend of Zelda: Third Quest",
+      "detailTitle": "The Legend of Zelda: Third Quest",
+      "source": "https://www.retrogames.onl/2018/09/bs-legend-of-zelda-third-quest-snes.html"
+    },
+    {
+      "listedTitle": "Lion King",
+      "detailTitle": "The Lion King",
+      "source": "https://www.retrogames.onl/2017/03/the-lion-king-snes.html"
+    },
+    {
+      "listedTitle": "Lost Vikings",
+      "detailTitle": "The Lost Vikings",
+      "source": "https://www.retrogames.onl/2018/09/the-lost-vikings-snes.html"
+    },
+    {
+      "listedTitle": "Lost Vikings II",
+      "detailTitle": "The Lost Vikings II",
+      "source": "https://www.retrogames.onl/2017/05/the-lost-vikings-ii-snes.html"
+    },
+    {
+      "listedTitle": "Madou Monogatari: Big Kindergarten Kids",
+      "detailTitle": "Madou Monogatari",
+      "source": "https://www.retrogames.onl/2021/07/madou-monogatari-snes.html"
+    },
+    {
+      "listedTitle": "Magical Quest Starring Mickey Mouse",
+      "detailTitle": "The Magical Quest Starring Mickey Mouse",
+      "source": "https://www.retrogames.onl/2022/09/magical-quest-starring-mickey-mouse-snes.html"
+    },
+    {
+      "listedTitle": "Mask",
+      "detailTitle": "The Mask",
+      "source": "https://www.retrogames.onl/2017/03/the-mask-snes.html"
+    },
+    {
+      "listedTitle": "Mega Man & Bass",
+      "detailTitle": "Mega Man & Bass (GBA)",
+      "source": "https://www.retrogames.onl/2022/03/mega-man-bass-gba-play-online.html"
+    },
+    {
+      "listedTitle": "Michael Jordan: Chaos in the Windy City",
+      "detailTitle": "Michael Jordan",
+      "source": "https://www.retrogames.onl/2017/04/michael-jordan-snes.html"
+    },
+    {
+      "listedTitle": "Micro Machines 2: Turbo Tournament",
+      "detailTitle": "Micro Machines 2",
+      "source": "https://www.retrogames.onl/2022/12/micro-machines-2-snes.html"
+    },
+    {
+      "listedTitle": "Mobile Suit Gundam Wing: Endless Duel",
+      "detailTitle": "Mobile Suit Gundam Wing",
+      "source": "https://www.retrogames.onl/2022/09/play-mobile-suit-gundam-wing-snes-online.html"
+    },
+    {
+      "listedTitle": "Mortal Kombat 2",
+      "detailTitle": "Mortal Kombat II",
+      "source": "https://www.retrogames.onl/2017/04/mortal-kombat-ii-snes.html"
+    },
+    {
+      "listedTitle": "Mystery Dungeon: Shiren the Wanderer",
+      "detailTitle": "Mystery Dungeon 2",
+      "source": "https://www.retrogames.onl/2022/11/mystery-dungeon-2-snes.html"
+    },
+    {
+      "listedTitle": "Ninja Warriors",
+      "detailTitle": "The Ninja Warriors",
+      "source": "https://www.retrogames.onl/2017/05/the-ninja-warriors-snes.html"
+    },
+    {
+      "listedTitle": "Ogre Battle: The March of the Black Queen",
+      "detailTitle": "Ogre Battle",
+      "source": "https://www.retrogames.onl/2022/04/ogre-battle-snes.html"
+    },
+    {
+      "listedTitle": "P.T.O.: Pacific Theater of Operations II",
+      "detailTitle": "P.T.O. II",
+      "source": "https://www.retrogames.onl/2019/05/pto-ii-snes.html"
+    },
+    {
+      "listedTitle": "Pagemaster",
+      "detailTitle": "The Pagemaster",
+      "source": "https://www.retrogames.onl/2022/12/play-pagemaster-snes-online.html"
+    },
+    {
+      "listedTitle": "Peace Keepers",
+      "detailTitle": "The Peace Keepers",
+      "source": "https://www.retrogames.onl/2021/07/the-peace-keepers-snes.html"
+    },
+    {
+      "listedTitle": "Pirates of Dark Water",
+      "detailTitle": "The Pirates of Dark Water",
+      "source": "https://www.retrogames.onl/2022/09/play-pirates-of-dark-water-snes-online.html"
+    },
+    {
+      "listedTitle": "Pitfall: The Mayan Adventure",
+      "detailTitle": "Pitfall",
+      "source": "https://www.retrogames.onl/2017/03/pitfall-snes.html"
+    },
+    {
+      "listedTitle": "Popful Mail",
+      "detailTitle": "Popful Mail (SEGA-CD)",
+      "source": "https://www.retrogames.onl/2017/11/popful-mail-sega-cd.html"
+    },
+    {
+      "listedTitle": "Prince of Persia 2: The Shadow & The Flame",
+      "detailTitle": "Prince of Persia 2",
+      "source": "https://www.retrogames.onl/2022/09/play-prince-of-persia-2-snes-online.html"
+    },
+    {
+      "listedTitle": "R-Type III: The Third Lightning",
+      "detailTitle": "R-Type III",
+      "source": "https://www.retrogames.onl/2021/09/r-type-iii-snes.html"
+    },
+    {
+      "listedTitle": "REM (Demo version)",
+      "detailTitle": "REM",
+      "source": "https://www.retrogames.onl/2022/09/play-rem-snes-online.html"
+    },
+    {
+      "listedTitle": "Ren & Stimpy Show: Buckeroo$!",
+      "detailTitle": "The Ren & Stimpy Show: Buckeroo$!",
+      "source": "https://www.retrogames.onl/2022/09/ren-stimpy-show-buckeroos-snes.html"
+    },
+    {
+      "listedTitle": "Ren & Stimpy Show: Time Warp",
+      "detailTitle": "The Ren & Stimpy Show: Time Warp",
+      "source": "https://www.retrogames.onl/2022/12/the-ren-stimpy-show-time-warp-snes.html"
+    },
+    {
+      "listedTitle": "Rocketeer",
+      "detailTitle": "The Rocketeer",
+      "source": "https://www.retrogames.onl/2018/09/the-rocketeer-snes.html"
+    },
+    {
+      "listedTitle": "Rocko's Modern Life: Spunky's Dangerous Day",
+      "detailTitle": "Rocko's Modern Life",
+      "source": "https://www.retrogames.onl/2018/09/rocko-modern-life-snes.html"
+    },
+    {
+      "listedTitle": "Septentrion / SOS",
+      "detailTitle": "SOS",
+      "source": "https://www.retrogames.onl/2022/12/play-sos-snes-online.html"
+    },
+    {
+      "listedTitle": "Shadow",
+      "detailTitle": "The Shadow",
+      "source": "https://www.retrogames.onl/2022/11/the-shadow-snes.html"
+    },
+    {
+      "listedTitle": "Simpsons: Bart's Nightmare",
+      "detailTitle": "The Simpsons: Bart's Nightmare",
+      "source": "https://www.retrogames.onl/2021/10/the-simpsons-barts-nightmare-snes.html"
+    },
+    {
+      "listedTitle": "Smurfs",
+      "detailTitle": "The Smurfs",
+      "source": "https://www.retrogames.onl/2022/11/the-smurfs-snes.html"
+    },
+    {
+      "listedTitle": "Smurfs Travel the World / Smurfs 2",
+      "detailTitle": "The Smurfs 2",
+      "source": "https://www.retrogames.onl/2022/11/the-smurfs-2-snes.html"
+    },
+    {
+      "listedTitle": "Space Megaforce / Super Aleste",
+      "detailTitle": "Space Megaforce",
+      "source": "https://www.retrogames.onl/2020/06/space-megaforce-snes.html"
+    },
+    {
+      "listedTitle": "Street Fighter II: The World Warrior",
+      "detailTitle": "Street Fighter II",
+      "source": "https://www.retrogames.onl/2022/09/play-street-fighter-ii-snes-online.html"
+    },
+    {
+      "listedTitle": "Super Ghouls and Ghosts",
+      "detailTitle": "Super Ghouls 'N Ghosts",
+      "source": "https://www.retrogames.onl/2017/05/super-ghouls-ghosts-snes.html"
+    },
+    {
+      "listedTitle": "Super Mario RPG: Legend of the Seven Stars",
+      "detailTitle": "Super Mario RPG",
+      "source": "https://www.retrogames.onl/2017/03/super-mario-rpg-snes.html"
+    },
+    {
+      "listedTitle": "Super Mario World 2: Yoshi's Island",
+      "detailTitle": "Super Mario World 2",
+      "source": "https://www.retrogames.onl/2017/03/super-mario-world-2-snes.html"
+    },
+    {
+      "listedTitle": "Super Street Fighter II: The New Challengers",
+      "detailTitle": "Super Street Fighter II",
+      "source": "https://www.retrogames.onl/2017/05/super-street-fighter-ii-snes.html"
+    },
+    {
+      "listedTitle": "Tactics Ogre: Let Us Cling Together",
+      "detailTitle": "Tactics Ogre",
+      "source": "https://www.retrogames.onl/2022/01/tactics-ogre-snes.html"
+    },
+    {
+      "listedTitle": "Teenage Mutant Ninja Turtles IV: Turtles in Time",
+      "detailTitle": "TMNT IV: Turtles in Time",
+      "source": "https://www.retrogames.onl/2017/03/tmnt-iv-turtles-in-time-snes.html"
+    },
+    {
+      "listedTitle": "Terminator",
+      "detailTitle": "The Terminator",
+      "source": "https://www.retrogames.onl/2022/09/play-terminator-snes-online.html"
+    },
+    {
+      "listedTitle": "Terminator 2: Judgment Day",
+      "detailTitle": "Terminator 2",
+      "source": "https://www.retrogames.onl/2022/09/play-terminator-2-snes-online.html"
+    },
+    {
+      "listedTitle": "Twisted Tales of Spike McFang",
+      "detailTitle": "The Twisted Tales of Spike McFang",
+      "source": "https://www.retrogames.onl/2022/12/the-twisted-tales-of-spike-mcfang-snes.html"
+    },
+    {
+      "listedTitle": "U.N. Squadron / Area 88",
+      "detailTitle": "U.N. Squadron",
+      "source": "https://www.retrogames.onl/2022/01/un-squadron-snes.html"
+    },
+    {
+      "listedTitle": "Unholy Night: The Darkness Hunter",
+      "detailTitle": "Unholy Night",
+      "source": "https://www.retrogames.onl/2018/11/unholy-night-snes.html"
+    }
+  ],
+  "robots": "User-agent: Mediapartners-Google\nDisallow: \n\nUser-agent: *\nAllow: /\n\nSitemap: https://www.retrogames.onl/sitemap.xml"
+}
