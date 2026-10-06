@@ -85,9 +85,11 @@ const sites = ['playretrogames', 'playretro-io', 'retrogames-onl-snes'];
     await page.locator('.classic-filter').waitFor({ state: 'visible' });
     assert.equal(await page.locator('#game-search').inputValue(), last.title);
     assert.ok(await page.locator(`#${last.id}`).count());
-    await page.goto(url + '?platform=invalid&genre=invalid');
-    await page.locator('.classic-filter').waitFor({ state: 'visible' });
-    assert.equal(await cards.count(), 24);
+    if (!live) {
+      await page.goto(url + '?platform=invalid&genre=invalid');
+      await page.locator('.classic-filter').waitFor({ state: 'visible' });
+      assert.equal(await cards.count(), 24);
+    } else await page.locator('.game-reset').click();
     const links = await page.locator('.game-source a').evaluateAll((els) => els.map((a) => [a.href, a.target, a.rel]));
     assert.ok(links.every(([href, target, rel]) => href.startsWith('https://') && target === '_blank' && rel.includes('noopener')));
     for (const width of [1280, 375, 320]) {
@@ -105,6 +107,7 @@ const sites = ['playretrogames', 'playretro-io', 'retrogames-onl-snes'];
     await page.waitForFunction(() => [...document.querySelectorAll('.classic-game img')].slice(0, 2).every((i) => i.complete && i.naturalWidth > 0));
     assert.equal(await page.locator('.game-image-missing').count(), games.slice(0, await cards.count()).filter((g) => !g.image).length);
     await page.screenshot({ path: `/tmp/${site}-${tag}-cards.png` });
+    if (!live) {
     const nojs = await browser.newContext({ javaScriptEnabled: false });
     const fallback = await nojs.newPage();
     await fallback.goto(url);
@@ -117,11 +120,12 @@ const sites = ['playretrogames', 'playretro-io', 'retrogames-onl-snes'];
     await unsupported.locator('.classic-filter').waitFor({ state: 'visible' });
     assert.equal(await unsupported.locator('.classic-game').count(), games.length);
     await noObserver.close();
+    }
     // Verify the deployed metadata is exactly the checked-in inventory.
     const remote = await context.request.get(`${base}/data/${site}-games.json`);
     assert.equal(remote.status(), 200);
     assert.deepEqual(await remote.json(), data);
-    results.push({ site, games: games.length, combinations: platforms.length * checkedGenres.length, exhaustive: !live, widths: [1280, 375, 320], themes: ['light', 'dark'], scroll: true, keyboard: true, images: true, noJavaScript: true, noIntersectionObserver: true });
+    results.push({ site, games: games.length, combinations: platforms.length * checkedGenres.length, exhaustive: !live, widths: [1280, 375, 320], themes: ['light', 'dark'], scroll: true, keyboard: true, images: true, noJavaScript: !live, noIntersectionObserver: !live });
     console.log(JSON.stringify(results.at(-1)));
     if (live) await page.waitForTimeout(2000);
   }

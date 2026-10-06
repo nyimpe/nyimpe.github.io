@@ -42,10 +42,14 @@ npm run preview
 NODE_PATH=/path/to/node_modules node scripts/verify-retro-catalogs.cjs http://127.0.0.1:8080
 NODE_PATH=/path/to/node_modules node scripts/verify-retro-catalogs.cjs https://nyimpe.github.io
 /tmp/retro-crawl-venv/bin/python scripts/verify-retro-assets.py https://nyimpe.github.io
+# 배포 HTML·JSON·JS/CSS만 대조할 때
+/tmp/retro-crawl-venv/bin/python scripts/verify-retro-assets.py https://nyimpe.github.io --core
 ```
 
 수집은 `lists`, `details`, `images`, `build` 단계별로 다시 실행할 수 있다. `/tmp/nyimpe-retro-cache`를 유지하면 기존 응답을 재사용한다. 원문의 새 상태를 수집하려면 해당 임시 캐시와 다시 수집할 썸네일을 별도로 정리한다. 재수집 결과와 수는 원문의 변경에 따라 달라질 수 있다.
 
 로컬 빌드와 카드 9,316개·이미지 9,309개 무결성 검증을 통과했다. 브라우저에서는 플랫폼·장르 364개 조합 전체, 결과 수와 실제 ID, 검색·결과 없음·초기화, 첫 추가 스크롤과 작은 분류의 마지막 항목, URL 복원, 브라우저 키보드 입력, 1280/375/320px에서 밝은/어두운 테마와 가로 넘침, 표시 이미지, JavaScript/IntersectionObserver 없는 전체 목록, 콘솔 오류, 홈페이지 진입 링크를 확인했다. 브라우저 입력은 자동화 검증이며 물리 키보드·마우스 입력 테스트는 아니다.
 
-배포 브라우저 검증은 플랫폼 양 끝과 서로 다른 대표 장르를 조합하고 검색·스크롤·화면·이미지·대체 동작을 확인한다. 전체 조합은 로컬에서 검사해 공개 CDN의 요청 폭주를 피한다. 배포 파일 검증은 브라우저 검사 후 순차 실행하며 HTML·JSON·해시된 JS/CSS와 모든 이미지를 로컬 빌드와 SHA-256으로 대조한다. 파일 요청은 동시 2개·응답 후 250ms 간격이며, 429·502·503·504는 서버 상태에 맞춰 간격을 늘려 최대 5번 재시도한다.
+배포 브라우저 검증은 플랫폼 양 끝과 서로 다른 대표 장르를 조합하고 검색·스크롤·화면·이미지를 확인한다. 전체 조합과 JavaScript/IntersectionObserver 없는 대체 동작은 로컬에서 검사해 큰 HTML의 반복 다운로드와 공개 CDN의 요청 폭주를 피한다. 배포 파일 검증은 브라우저 검사 후 순차 실행하며 HTML·JSON·해시된 JS/CSS를 로컬 빌드와 SHA-256으로 대조한다. 옵션 없는 파일 검증은 이미지 전체도 대조하며 `--core`는 이미지 다운로드를 생략한다. 파일 요청은 동시 2개·응답 후 250ms 간격이며, 429·502·503·504는 서버 상태에 맞춰 간격을 늘려 최대 5번 재시도한다.
+
+이번 배포의 Play Retro Games 이미지 1,000개는 저장본과 SHA-256이 일치했다. 이미지 전체 원격 대조는 CDN 요청 제한을 고려해 표본에서 중단했다. 전체 이미지 9,309개의 디코딩·크기·카드 연결 검증은 로컬에서 완료했다.

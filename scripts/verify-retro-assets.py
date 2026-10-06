@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Check every image and generated card, optionally compare all deployed bytes.
-Usage: python scripts/verify-retro-assets.py [https://nyimpe.github.io]
+Usage: python scripts/verify-retro-assets.py [https://nyimpe.github.io] [--core]
 """
 import hashlib
 import json
@@ -48,6 +48,8 @@ def verify():
 
     if len(sys.argv) > 1:
         base = sys.argv[1]
+        if '--core' in sys.argv:
+            assets = [asset for asset in assets if asset[0].startswith('/data/')]
         for site in SITES:
             file = ROOT / f'dist/posts/{site}/index.html'
             page = BeautifulSoup(file.read_text(), 'html.parser')
