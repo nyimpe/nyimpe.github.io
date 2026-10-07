@@ -1,0 +1,136 @@
+{
+  "created": "2026-10-07",
+  "generator": "built-in image_gen",
+  "webExport": {
+    "maxDimensions": [
+      960,
+      540
+    ],
+    "format": "WebP",
+    "quality": 78,
+    "semanticEdits": false
+  },
+  "generationRetries": [
+    {
+      "id": 4,
+      "reason": "Initial generation returned HTTP 503; retried with the same built-in tool and prompt.",
+      "result": "success"
+    }
+  ],
+  "images": [
+    {
+      "id": 1,
+      "title": "유언 집행 길드",
+      "source": "generated_images/01a1142e-3beb-7830-89df-717d2927b02c/exec-abf8c145-7473-4620-96c1-b32f8af052e3.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2205116,
+      "sourceSha256": "4f5929e52333545dbbab368605aad03ce64a7187cc0dd2679594d8df13237e6c",
+      "output": "public/images/party-deckbuilding-rpg/concept-01.webp",
+      "dimensions": [
+        959,
+        540
+      ],
+      "bytes": 73818,
+      "sha256": "1ff8ea534b3961fc20de4b4d8c23e8a325b6951e9ab0741b829547bf583bc9b8",
+      "url": "/images/party-deckbuilding-rpg/concept-01.webp?v=1ff8ea534b39"
+    },
+    {
+      "id": 2,
+      "title": "서약도시",
+      "source": "generated_images/01a1142e-3beb-7830-89df-717d2927b02c/exec-e1e88ffc-afe8-4daa-8677-42b16bb5f593.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2249301,
+      "sourceSha256": "3d822f53ea812391f8e4337370f13d8c80fbf2cc0d29f5c6d46cad7a102489a6",
+      "output": "public/images/party-deckbuilding-rpg/concept-02.webp",
+      "dimensions": [
+        959,
+        540
+      ],
+      "bytes": 85530,
+      "sha256": "3d1b205cf74f347a71217f38c96e899030acf93e32122ad11badc628d26e4a44",
+      "url": "/images/party-deckbuilding-rpg/concept-02.webp?v=3d1b205cf74f"
+    },
+    {
+      "id": 3,
+      "title": "마지막 불을 옮기는 사람들",
+      "source": "generated_images/01a1142e-3beb-7830-89df-717d2927b02c/exec-dfc07f07-4467-439d-bb61-d360c96b39df.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2344538,
+      "sourceSha256": "fd422bb1bfacc233f32a47c957aead152b6cc60c2b3f7c3a31e917783a060014",
+      "output": "public/images/party-deckbuilding-rpg/concept-03.webp",
+      "dimensions": [
+        959,
+        540
+      ],
+      "bytes": 82914,
+      "sha256": "c40c94b2d63ee7e761ec6efd3491026e369252fe4e6bfdee3578191cc942d800",
+      "url": "/images/party-deckbuilding-rpg/concept-03.webp?v=c40c94b2d63e"
+    },
+    {
+      "id": 4,
+      "title": "여덟 초 원정대",
+      "source": "generated_images/01a1142e-3beb-7830-89df-717d2927b02c/exec-4c60aabe-845d-477d-b9f9-91b67e1a6e90.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2035881,
+      "sourceSha256": "0ce4e97283f7b006c65462aed7f6d3296d2f9d3eb635e1b2b4bac2ef83fd198d",
+      "output": "public/images/party-deckbuilding-rpg/concept-04.webp",
+      "dimensions": [
+        959,
+        540
+      ],
+      "bytes": 69158,
+      "sha256": "1923394c416ef6b89ac939ff0d52d785d7d61c43e074ea83d5a4f7ac8679989f",
+      "url": "/images/party-deckbuilding-rpg/concept-04.webp?v=1923394c416e"
+    },
+    {
+      "id": 5,
+      "title": "귀환자의 지도",
+      "source": "generated_images/01a1142e-3beb-7830-89df-717d2927b02c/exec-f97b7fa0-abc6-4f72-ae8e-829206ed9894.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2226147,
+      "sourceSha256": "a11359cc710e490faa1076699b49997d2432a54b301b51536c9cf354d8772e6e",
+      "output": "public/images/party-deckbuilding-rpg/concept-05.webp",
+      "dimensions": [
+        959,
+        540
+      ],
+      "bytes": 74438,
+      "sha256": "7013db8a6d7daaae65dc7f661d744465d6d6d0621f735f52cac72989d4d20597",
+      "url": "/images/party-deckbuilding-rpg/concept-05.webp?v=7013db8a6d7d"
+    },
+    {
+      "id": 6,
+      "title": "괴이 사냥꾼",
+      "source": "generated_images/01a1142e-3beb-7830-89df-717d2927b02c/exec-1764e0db-72dc-4f85-8201-929aeb6a08cc.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2269923,
+      "sourceSha256": "0cc204265987635f48d44bfbf5970810c52dd9bf468baf9b1e811eabe6219ffb",
+      "output": "public/images/party-deckbuilding-rpg/concept-06.webp",
+      "dimensions": [
+        959,
+        540
+      ],
+      "bytes": 72786,
+      "sha256": "d6e2b08a5dd016a29e9c451cfcf8cd726e26568d17cf5d48221076c1d08230cc",
+      "url": "/images/party-deckbuilding-rpg/concept-06.webp?v=d6e2b08a5dd0"
+    }
+  ]
+}
