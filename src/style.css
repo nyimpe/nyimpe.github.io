@@ -144,6 +144,9 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .design-post .concept-genre { display: inline-block; margin-right: .4em; padding: .1em .5em; border: 1px solid var(--border); border-radius: 3px; color: var(--muted); font-size: .6em; font-weight: normal; vertical-align: middle; }
 .design-post .concept-shot { margin: 0 0 1em; }
 .design-post .concept-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--soft-border); image-rendering: pixelated; }
+.board-game-post .concept-shot img { image-rendering: auto; }
+.board-game-post table { min-width: 640px; }
+.board-game-post tbody th { min-width: 9em; white-space: normal; }
 .design-post .concept-shot figcaption { margin-top: .4em; font-size: .8125em; color: var(--muted); }
 .design-post .concept-pitch { font-weight: bold; }
 .design-post .concept ul { padding-left: 1.25em; }

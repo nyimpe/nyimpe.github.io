@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="아줄, 스플렌더, 캐스캐디아, 도미니언 등 보드게임 12종의 선택 구조에서 발전시킨 창작 게임 기획 9개. 플레이 컨셉아트, 구체적인 규칙과 턴 예시, 최소 시제품 범위를 정리했습니다.">
+    <title>인기 보드게임에서 출발한 게임 기획 9선 · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/board-game-concepts/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="인기 보드게임에서 출발한 게임 기획 9선">
+    <meta property="og:description" content="야시장 운영, 정원 배치, 우편 배송, 상단 경영, 심해 인양부터 축제·복구·경매·무전 협력까지. 플레이 컨셉아트와 함께 읽는 아홉 가지 게임 기획.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/board-game-concepts/">
+    <meta property="og:image" content="https://nyimpe.github.io/images/board-game-concepts/concept-01.webp?v=245463b9a243">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="https://github.com/nyimpe">GitHub</a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post design-post board-game-post">
+        <header class="post-header">
+          <h1>인기 보드게임에서 출발한 게임 기획 9선</h1>
+          <time datetime="2026-10-07">2026.10.07</time>
+          <p>인기 보드게임의 공식 소개와 규칙을 조사해, <strong>플레이어가 매 턴 무엇을 고르고 무엇을 포기하는지</strong>를 중심으로 아홉 가지 게임을 기획했습니다. 재료 관리, 공간 배치, 배송, 덱 구축, 위험 관리, 협상, 협력, 추리처럼 서로 다른 재미를 다룹니다.</p>
+          <p>브라우저에서 짧게 즐기는 게임을 기준으로 합니다. 1인 중심 기획 다섯 개와 경쟁·협동 중심 기획 네 개를 나눠 비교하되, 인원·플레이 시간·턴 수·점수·콘텐츠 수량은 모두 <strong>아직 플레이테스트하지 않은 설계 가정</strong>입니다. 원작의 규칙과 아래에서 새로 제안한 규칙을 구분해 읽습니다.</p>
+          <p class="image-credit">이미지: 각 기획의 플레이 상황을 바탕으로 AI로 제작한 게임 플레이 컨셉아트. 실제 실행 화면이나 완성된 게임 에셋은 아닙니다. 그림의 UI는 구상을 보여주는 시안이며, 정확한 조건은 본문을 기준으로 읽습니다.</p>
+        </header>
+        <nav class="post-toc" aria-label="목차">
+          <ol>
+            <li><a href="#reference">보드게임 12종에서 참고할 구조</a></li>
+            <li><a href="#comparison">아홉 기획 비교</a></li>
+            <li><a href="#c1">야시장 마감 장부</a></li>
+            <li><a href="#c2">옥상 정원의 사계절</a></li>
+            <li><a href="#c3">달빛 우편국</a></li>
+            <li><a href="#c4">유랑 상단</a></li>
+            <li><a href="#c5">심해 인양</a></li>
+            <li><a href="#c6">골목 축제</a></li>
+            <li><a href="#c7">정전 도시</a></li>
+            <li><a href="#c8">가면 경매장</a></li>
+            <li><a href="#c9">무전 탐사대</a></li>
+            <li><a href="#next">제작 우선순위</a></li>
+            <li><a href="#refs">출처</a></li>
+          </ol>
+        </nav>
+
+        <section id="reference" aria-labelledby="reference-title">
+          <h2 id="reference-title">보드게임 12종에서 참고할 구조</h2>
+          <p>판매 실적, 수상·추천 이력과 공식 규칙을 바탕으로 대표작을 골랐습니다. 다음 표는 현재 인기 순위가 아닙니다. Spiel des Jahres와 Kennerspiel des Jahres는 서로 다른 상이며, 후보·추천 기록은 수상과 구분했습니다.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="가로로 스크롤할 수 있는 비교표">
+            <table>
+              <caption>공식 자료로 확인한 원작의 구조와 새 기획에 적용할 설계 원리</caption>
+              <thead><tr><th scope="col">참고작</th><th scope="col">원작에서 하는 선택</th><th scope="col">기획에 가져올 원리</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><a href="#ref-azul">Azul · 아줄</a></th><td>한 곳의 같은 색 타일을 전부 가져오고, 배치하지 못한 수량은 감점합니다.</td><td>좋은 물건과 부담을 한 번에 떠안는 묶음 선택.</td></tr>
+                <tr><th scope="row"><a href="#ref-splendor">Splendor · 스플렌더</a></th><td>보석을 모으거나 카드를 예약·구매합니다. 카드의 영구 할인이 다음 구매를 돕습니다.</td><td>당장의 점수와 이후 행동의 효율 사이에서 고르는 성장.</td></tr>
+                <tr><th scope="row"><a href="#ref-cascadia">Cascadia · 캐스캐디아</a></th><td>지형과 동물을 묶음으로 가져와, 연결된 지형과 동물 배치를 함께 맞춥니다.</td><td>같은 공간에 서로 다른 두 조건을 겹치는 퍼즐.</td></tr>
+                <tr><th scope="row"><a href="#ref-wingspan">Wingspan · 윙스팬</a></th><td>서식지에 새를 모으고, 행동에 연결된 능력을 작동시켜 자원을 얻습니다.</td><td>배치한 구성 요소가 이후 행동과 자원 흐름을 바꾸는 구조.</td></tr>
+                <tr><th scope="row"><a href="#ref-ticket">Ticket to Ride · 티켓 투 라이드</a></th><td>색이 같은 카드로 노선을 확보하고 목적지 사이를 연결합니다.</td><td>준비를 더 할 이익과 필요한 연결을 먼저 확보할 필요의 충돌.</td></tr>
+                <tr><th scope="row"><a href="#ref-dominion">Dominion · 도미니언</a></th><td>구매한 카드가 덱에 들어갑니다. 승점 카드도 손패를 차지하므로 성장과 점수 획득의 시점이 중요합니다.</td><td>보상이 다음 행동의 질을 떨어뜨릴 수도 있는 덱 구성.</td></tr>
+                <tr><th scope="row"><a href="#ref-quacks">The Quacks of Quedlinburg · 크베들린부르크의 돌팔이 약장수</a></th><td>주머니에서 재료를 더 뽑을지 멈출지 결정합니다. 위험한 흰 칩의 합이 7을 넘으면 폭발합니다.</td><td>즉시 보상과 실패 위험을 함께 높이는 선택, 다음 시도를 위한 주머니 개선.</td></tr>
+                <tr><th scope="row"><a href="#ref-wonders">7 Wonders · 세븐 원더스</a></th><td>카드를 동시에 한 장씩 고르고 남은 손패를 넘기며 문명을 만듭니다.</td><td>기다림을 줄이는 동시 선택과, 넘긴 카드가 다른 사람의 선택지가 되는 긴장.</td></tr>
+                <tr><th scope="row"><a href="#ref-catan">CATAN · 카탄</a></th><td>자원을 얻고 교환하며 도로와 정착지를 확장합니다.</td><td>나와 상대에게 모두 이득인 거래, 공유 공간에서의 위치 경쟁.</td></tr>
+                <tr><th scope="row"><a href="#ref-pandemic">Pandemic · 팬데믹</a></th><td>서로 다른 역할 능력과 제한된 행동으로 확산을 막고 공동 목표를 해결합니다.</td><td>당장 위험한 곳을 막는 행동과 승리에 필요한 준비의 우선순위.</td></tr>
+                <tr><th scope="row"><a href="#ref-loveletter">Love Letter · 러브레터</a></th><td>한 장을 뽑아 두 장 중 하나를 쓰고, 공개된 카드와 효과로 상대의 패를 추리합니다.</td><td>적은 정보와 짧은 행동만으로 상대 의도를 읽는 상호작용.</td></tr>
+                <tr><th scope="row"><a href="#ref-codenames">Codenames · 코드네임</a></th><td>아는 정보가 다른 팀원이 제한된 단서를 주고받아 목표 단어를 찾습니다.</td><td>전부 설명할 수 없어서 생기는 해석과 협력.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>아래 기획에서는 가져올 원리를 하나씩 정하고, 식재료의 유통기한·계절 변화·항로 시간표·덱 안의 화물처럼 새로운 제약을 더했습니다. 화면에는 비용과 선택 결과를 미리 보여주고, 자동 계산이 판단 자체를 대신하지 않도록 합니다.</p>
+        </section>
+
+        <section id="comparison" aria-labelledby="comparison-title">
+          <h2 id="comparison-title">아홉 기획 비교</h2>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="가로로 스크롤할 수 있는 비교표">
+            <table>
+              <caption>예상 인원·시간과 가장 중요한 판단 — 모두 시제품 설계 목표</caption>
+              <thead><tr><th scope="col">기획</th><th scope="col">인원 · 시간</th><th scope="col">가장 고민하는 것</th><th scope="col">참고작</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><a href="#c1">야시장 마감 장부</a></th><td>1인 · 10~15분</td><td>재료가 상하기 전에 어떤 주문부터 처리할까?</td><td>Azul, Splendor</td></tr>
+                <tr><th scope="row"><a href="#c2">옥상 정원의 사계절</a></th><td>1인 · 10~15분</td><td>다음 계절에도 잘 자라도록 어디에 놓을까?</td><td>Cascadia, Wingspan</td></tr>
+                <tr><th scope="row"><a href="#c3">달빛 우편국</a></th><td>1~2인 · 15분</td><td>어떤 항로와 시간을 확보해야 배송을 묶을 수 있을까?</td><td>Ticket to Ride</td></tr>
+                <tr><th scope="row"><a href="#c4">유랑 상단</a></th><td>1인 · 15~20분</td><td>얼마나 많은 주문을 실어야 덱과 배송이 함께 굴러갈까?</td><td>Dominion</td></tr>
+                <tr><th scope="row"><a href="#c5">심해 인양</a></th><td>1인 · 8~12분</td><td>한 번 더 내려갈까, 지금 화물을 지키고 돌아갈까?</td><td>The Quacks of Quedlinburg</td></tr>
+                <tr><th scope="row"><a href="#c6">골목 축제</a></th><td>2~4인 · 15~20분</td><td>좋은 가게 자리와 이득이 되는 거래를 어떻게 잡을까?</td><td>7 Wonders, CATAN</td></tr>
+                <tr><th scope="row"><a href="#c7">정전 도시</a></th><td>1~3인 협력 · 15~20분</td><td>현재의 고장과 다음 정전에 어떻게 대비할까?</td><td>Pandemic</td></tr>
+                <tr><th scope="row"><a href="#c8">가면 경매장</a></th><td>3~5인 · 10~15분</td><td>상대의 수집 목표를 읽고 얼마를 써야 할까?</td><td>Love Letter</td></tr>
+                <tr><th scope="row"><a href="#c9">무전 탐사대</a></th><td>2인 협력 · 8~12분</td><td>제한된 신호로 무엇부터 전달해야 할까?</td><td>Codenames</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="concepts" aria-labelledby="concepts-title">
+          <h2 id="concepts-title">게임 기획 아홉 가지</h2>
+          <article id="c1" class="concept" aria-labelledby="c1-title">
+            <h3 id="c1-title"><span class="concept-genre">재료 관리 · 성장 전략</span> 01. 야시장 마감 장부</h3>
+            <figure class="concept-shot">
+              <a href="/images/board-game-concepts/concept-01.webp?v=245463b9a243" target="_blank" rel="noopener noreferrer"><img src="/images/board-game-concepts/concept-01.webp?v=245463b9a243" width="960" height="540" loading="lazy" decoding="async" alt="야시장 조리대에서 식재료 상자, 남은 보관 공간, 유통기한과 주문표를 비교하는 운영 게임 플레이 구상. AI 컨셉아트."></a>
+              <figcaption>버섯전을 만들 재료 상자에는 지금 필요 없는 고추도 들어 있습니다. 상자를 통째로 가져오기 전에 냉장고와 유통기한을 함께 살핍니다. · AI 플레이 컨셉아트</figcaption>
+            </figure>
+            <p class="concept-pitch">필요한 재료만 골라 담을 수 없는 야시장에서, 마감 전까지 주문을 완성하는 게임.</p>
+            <p class="concept-meta">1인 · 예상 10~15분 · 참고: Azul의 묶음 선택, Splendor의 성장 투자</p>
+            <p><strong>목표:</strong> 12턴 동안 주문을 처리해 수익을 올립니다. 종료 점수는 주문 수익에서 설비 구매 비용을 뺀 순수익에 단골 보너스를 더하고, 버린 재료의 폐기 비용을 뺀 값입니다.</p>
+            <ul>
+              <li><strong>한 턴:</strong> 공개 상자 4개 중 하나를 통째로 가져오기, 주문 1개 조리하기, 설비 1개 설치하기 중 한 행동을 선택합니다. 선택한 상자는 다음 턴에 새 상자로 교체됩니다.</li>
+              <li><strong>보관:</strong> 냉장고 용량은 8개로 시작합니다. 상자 안의 재료는 나눠 가져올 수 없으며, 초과한 재료는 직접 골라 폐기합니다. 각 재료의 남은 유통기한을 표시하고 턴 종료 시 줄입니다.</li>
+              <li><strong>주문과 설비:</strong> 조리에 쓴 재료는 사라지고 수익을 얻습니다. 수익 일부로 설치한 설비는 보관 기간 연장이나 남은 채소의 육수 전환처럼 이후 손실을 줄입니다. 설치에도 한 턴이 들어가므로 투자 시점이 중요합니다.</li>
+              <li><strong>마감:</strong> 남은 턴 수와 공개 주문의 마감을 항상 표시합니다. 이미 늦어진 주문은 새 주문으로 바뀌지만, 들고 있던 식재료는 자동으로 정리되지 않습니다.</li>
+            </ul>
+            <p><strong>턴 예시:</strong> 냉장고에 빈칸이 4개인데 버섯 3개와 고추 2개가 든 상자가 나왔습니다. 상자를 가져오면 하나를 버려야 하지만 다음 턴에 버섯전을 팔 수 있습니다. 냉장고부터 확장하면 폐기는 막을 수 있어도, 기존 두부의 유통기한과 버섯전 주문의 마감이 한 턴씩 가까워집니다.</p>
+            <p><strong>차별점:</strong> 많이 모으는 행동이 항상 좋은 선택은 아닙니다. 묶음 구매가 만드는 부담을 조리 순서와 설비 투자로 풀어갑니다. 선택 전에 초과 수량과 폐기 비용을 보여줍니다.</p>
+            <p><strong>첫 시제품:</strong> 재료 4종, 주문 12종, 설비 6종, 상자 4칸, 12턴. 동일한 상자 순서로 점수를 비교하는 일일 도전부터 만듭니다.</p>
+            <p class="concept-meta"><strong>먼저 검증할 것:</strong> 설비를 사는 전략과 조리부터 하는 전략이 모두 성립하는가? 재료를 처리할 수 없어 손해만 반복되는 구간이 있는가? · 비용·기한·점수의 균형은 미검증입니다.</p>
+          </article>
+
+          <article id="c2" class="concept" aria-labelledby="c2-title">
+            <h3 id="c2-title"><span class="concept-genre">공간 배치 · 계절 퍼즐</span> 02. 옥상 정원의 사계절</h3>
+            <figure class="concept-shot">
+              <a href="/images/board-game-concepts/concept-02.webp?v=e7c231881270" target="_blank" rel="noopener noreferrer"><img src="/images/board-game-concepts/concept-02.webp?v=e7c231881270" width="959" height="540" loading="lazy" decoding="async" alt="5×5 옥상 정원에서 화분, 수로, 큰 나무의 그림자와 다음 계절 햇빛 방향을 비교하는 배치 퍼즐 구상. AI 컨셉아트."></a>
+              <figcaption>지금의 햇빛만 보면 나무가 방해되지만, 다음 계절에는 그 그늘이 다른 식물을 지켜줍니다. 시설과 식물을 함께 고려해 배치합니다. · AI 플레이 컨셉아트</figcaption>
+            </figure>
+            <p class="concept-pitch">오늘 예쁜 정원보다 다음 계절에도 살아남는 정원을 만드는 게임.</p>
+            <p class="concept-meta">1인 · 예상 10~15분 · 참고: Cascadia의 이중 배치 조건, Wingspan의 서식지와 능력 연결</p>
+            <p><strong>목표:</strong> 5×5 옥상에 정원을 조성합니다. 네 계절 동안 식물이 받는 빛과 물을 맞춰 개화 점수를 얻고, 종료 시 이어진 녹지의 보너스를 받습니다.</p>
+            <ul>
+              <li><strong>한 턴:</strong> 공개된 ‘시설 타일 + 씨앗’ 묶음 하나를 고릅니다. 시설은 빈칸에 놓고, 씨앗은 새 타일 또는 기존의 빈 화단에 심습니다. 둘은 같은 칸에 놓지 않아도 됩니다.</li>
+              <li><strong>환경:</strong> 수도와 이어진 수로는 인접 화단에 물을 공급합니다. 큰 나무는 햇빛의 반대 방향으로 그늘을 만들고, 식물마다 양지·그늘·물의 요구 조건이 다릅니다.</li>
+              <li><strong>계절:</strong> 4턴마다 계절을 정산해 총 16턴을 진행합니다. 다음 계절의 빛 방향과 강수 조건은 미리 공개합니다. 정산 때 조건을 충족한 식물만 개화 점수를 얻고, 충족하지 못한 식물은 그 계절 점수를 얻지 못합니다.</li>
+              <li><strong>복구:</strong> 씨앗을 심는 대신 기존 식물 하나를 빈 화단으로 옮길 수 있습니다. 이동 기회를 쓰면 그 턴의 새 씨앗은 포기합니다. 배치 결과와 다음 계절의 예상 상태는 확정 전에 확인합니다.</li>
+            </ul>
+            <p><strong>턴 예시:</strong> 봄에는 남쪽 화단의 해바라기가 햇빛을 잘 받습니다. 그 앞에 나무를 놓으면 이번 개화 점수는 줄지만, 여름에 빛 방향이 바뀌면서 양치식물 세 칸을 덮는 그늘을 만들 수 있습니다. 당장 점수를 받을지, 다음 계절의 여러 식물을 준비할지 결정합니다.</p>
+            <p><strong>차별점:</strong> 지형과 생물의 좋은 조합이 시간에 따라 바뀝니다. 빛과 물을 별도로 표시해, 예쁜 배치와 실제로 작동하는 정원을 함께 읽을 수 있게 합니다.</p>
+            <p><strong>첫 시제품:</strong> 5×5 보드, 시설 5종, 식물 4종, 계절 효과 4개, 16턴. 날씨의 무작위 변화는 빼고 공개된 계절 순서부터 검증합니다.</p>
+            <p class="concept-meta"><strong>먼저 검증할 것:</strong> 예보만으로 다음 계절의 개화를 예상할 수 있는가? 작은 배치 실수를 이식으로 복구할 수 있는가? · 그림자 길이와 점수 배분은 미검증입니다.</p>
+          </article>
+
+          <article id="c3" class="concept" aria-labelledby="c3-title">
+            <h3 id="c3-title"><span class="concept-genre">경로 계획 · 시간표 퍼즐</span> 03. 달빛 우편국</h3>
+            <figure class="concept-shot">
+              <a href="/images/board-game-concepts/concept-03.webp?v=be6c35014960" target="_blank" rel="noopener noreferrer"><img src="/images/board-game-concepts/concept-03.webp?v=be6c35014960" width="959" height="540" loading="lazy" decoding="async" alt="밤의 섬 지도 위에서 우편선 두 척, 항로의 예약 시간과 편지의 배송 마감을 맞추는 운송 전략 구상. AI 컨셉아트."></a>
+              <figcaption>같은 항로라도 출발 시간이 다르면 전혀 다른 배송 계획이 됩니다. 두 척의 배가 제때 환승할 수 있도록 시간대를 예약합니다. · AI 플레이 컨셉아트</figcaption>
+            </figure>
+            <p class="concept-pitch">밤에만 열리는 섬 사이 항로에서 길과 시간을 함께 예약하는 우편 게임.</p>
+            <p class="concept-meta">1~2인 · 예상 15분 · 참고: Ticket to Ride의 연결 목표와 선점 판단</p>
+            <p><strong>목표:</strong> 우편선 두 척으로 새벽 전에 편지를 배달합니다. 기한 내 배송료와 묶음 배송 보너스를 얻고, 받아 놓고 끝내지 못한 계약에는 벌점이 붙습니다.</p>
+            <ul>
+              <li><strong>시간 진행:</strong> 밤을 6개 시간대로 나눕니다. 한 시간대마다 계약 받기, 배 한 척의 항로 한 구간 예약하기, 같은 섬에 있는 배 사이 화물 옮기기 중 두 행동을 합니다. 이후 예약된 운항을 함께 처리합니다.</li>
+              <li><strong>예약:</strong> 각 항로는 한 시간대에 배 한 척만 이용할 수 있습니다. 배는 한 시간대에 한 구간만 이동하며, 항로표에는 미리 예약된 정기 여객선도 표시됩니다. 시작 위치에서 도달할 수 있는 출발편만 예약할 수 있습니다.</li>
+              <li><strong>화물:</strong> 출발 섬에 배가 있으면 계약을 받고 편지를 실을 수 있습니다. 각 배는 편지 2개까지 싣습니다. 도착한 섬에서 기한을 충족하는 편지는 자동으로 배달됩니다.</li>
+              <li><strong>계획 수정:</strong> 예약 행동으로 아직 출발하지 않은 자기 예약 하나를 취소하고 다른 구간을 예약할 수 있습니다. 연결이 끊기는 후속 예약은 경고하고 정리합니다. 운항하지 않는 배는 현재 섬에서 기다립니다.</li>
+            </ul>
+            <p><strong>턴 예시:</strong> A섬에서 B섬으로 가는 2시 항로는 여객선이 사용합니다. 3시 출발을 기다리면 다른 편지와 묶어 실을 수 있지만 긴급 편지의 3시 도착 마감을 넘깁니다. A→C→B의 두 구간을 예약해 긴급 편지를 보내면 다른 배의 C섬 환승 일정에 쓸 행동이 줄어듭니다.</p>
+            <p><strong>차별점:</strong> 연결된 길이 있어도 원하는 시간에 움직이지 못할 수 있습니다. 노선의 영구 소유 대신 시간대별 수용량을 두고, 작은 지도에서 이동 순서를 고민하게 합니다.</p>
+            <p><strong>첫 시제품:</strong> 섬 7개, 항로 10개, 우편선 2척, 시간대 6개, 계약 15장. 항로별 이동 시간은 모두 한 시간대로 통일합니다. 1인 퍼즐부터 검증하고, 2인에서는 각자 두 척을 맡아 같은 시간표의 출발편을 경쟁하는 방식으로 확장합니다.</p>
+            <p class="concept-meta"><strong>먼저 검증할 것:</strong> 예약 실수 뒤에도 다른 배송을 할 수 있는가? 지도와 시간표를 오가며 계획을 놓치지 않는가? · 계약 마감과 여객선 배치는 미검증입니다.</p>
+          </article>
+
+          <article id="c4" class="concept" aria-labelledby="c4-title">
+            <h3 id="c4-title"><span class="concept-genre">덱 구축 · 운송 경영</span> 04. 유랑 상단</h3>
+            <figure class="concept-shot">
+              <a href="/images/board-game-concepts/concept-04.webp?v=db1eaac6c3fd" target="_blank" rel="noopener noreferrer"><img src="/images/board-game-concepts/concept-04.webp?v=db1eaac6c3fd" width="959" height="540" loading="lazy" decoding="async" alt="마을 사이를 이동하는 상단 지도와 손패에 들어온 화물 카드, 납품 목적지를 함께 보여주는 덱 구축 게임 구상. AI 컨셉아트."></a>
+              <figcaption>주문을 많이 받으면 납품 수익이 커지지만 손패에 화물이 쌓입니다. 가까운 마을에서 먼저 짐을 내려 덱을 가볍게 만들 수 있습니다. · AI 플레이 컨셉아트</figcaption>
+            </figure>
+            <p class="concept-pitch">배달할 물건이 덱을 무겁게 만드는 상단 경영 게임.</p>
+            <p class="concept-meta">1인 · 예상 15~20분 · 참고: Dominion의 덱 순환과 승점 카드의 부담</p>
+            <p><strong>목표:</strong> 8일 동안 여섯 마을을 오가며 계약을 납품합니다. 최종 자금과 완료 계약의 평판을 더하고, 미납 계약의 비용을 뺀 값으로 상단의 성과를 평가합니다.</p>
+            <ul>
+              <li><strong>하루:</strong> 손패 5장을 뽑고 이동·정비·교역 카드를 사용합니다. 현재 마을에서 계약 하나를 받거나 새 카드 하나를 구매할 수 있습니다. 하루가 끝나면 사용한 카드와 남은 손패를 버리고, 덱이 부족하면 버린 카드를 섞습니다.</li>
+              <li><strong>화물:</strong> 주문을 받으면 화물 카드가 버린 카드 더미에 들어갑니다. 화물은 일반 행동 효과가 없어 뽑았을 때 행동 카드를 밀어냅니다. 무거운 주문일수록 여러 장을 추가합니다.</li>
+              <li><strong>납품:</strong> 지정 마을에 도착하면 화물 카드가 손패·덱·버린 더미 어디에 있든 찾아 제거하고 보상을 받습니다. 손에 화물이 나올 때까지 기다릴 필요는 없습니다.</li>
+              <li><strong>이동 보장:</strong> 하루 한 번은 카드 없이 인접 마을로 이동할 수 있습니다. 이동 카드는 추가 이동이나 운송 효율을 제공합니다. 주문으로 덱이 가득 차도 상단이 완전히 멈추지는 않습니다.</li>
+            </ul>
+            <p><strong>턴 예시:</strong> 도자기 주문 두 개를 받아 화물 카드가 네 장 늘었습니다. 다음 날 손패 다섯 장 중 세 장이 화물이어서 먼 마을까지 달릴 수 없습니다. 기본 이동으로 가까운 납품처부터 들르면 수익 일부를 먼저 받고 화물 두 장을 덱에서 지워, 이후 이동 카드를 더 자주 뽑을 수 있습니다.</p>
+            <p><strong>차별점:</strong> 좋은 덱을 만든 뒤 점수를 사는 흐름에 실제 배송 목적지를 연결합니다. 덱을 비우는 행동이 지도 이동과 계약 완료로 일어나며, 가벼운 덱과 많은 주문 사이에서 조절합니다.</p>
+            <p><strong>첫 시제품:</strong> 마을 6개, 구매 카드 12종, 주문 10종, 8일. 마을 간 거리는 고정하고 거래 가격 변동은 제외합니다.</p>
+            <p class="concept-meta"><strong>먼저 검증할 것:</strong> 가까운 주문 여러 개와 먼 고액 주문이 모두 유효한가? 화물 때문에 행동이 줄어드는 결과를 계약 전에 이해할 수 있는가? · 카드 조합과 배송 보상은 미검증입니다.</p>
+          </article>
+
+          <article id="c5" class="concept" aria-labelledby="c5-title">
+            <h3 id="c5-title"><span class="concept-genre">위험 관리 · 주머니 성장</span> 05. 심해 인양</h3>
+            <figure class="concept-shot">
+              <a href="/images/board-game-concepts/concept-05.webp?v=b253f6b17d77" target="_blank" rel="noopener noreferrer"><img src="/images/board-game-concepts/concept-05.webp?v=b253f6b17d77" width="959" height="540" loading="lazy" decoding="async" alt="심해 잠수자의 깊이, 남은 산소, 화물 적재칸과 다음 장비 칩 뽑기를 보여주는 인양 게임 구상. AI 컨셉아트."></a>
+              <figcaption>더 깊이 들어가기 전에 현재 깊이에서 돌아올 산소부터 남겨야 합니다. 귀중한 화물을 봉인하는 선택도 산소를 소비합니다. · AI 플레이 컨셉아트</figcaption>
+            </figure>
+            <p class="concept-pitch">깊이 내려갈수록 좋은 유물을 만나지만, 돌아올 산소도 직접 남겨야 하는 게임.</p>
+            <p class="concept-meta">1인 · 예상 8~12분 · 참고: The Quacks of Quedlinburg의 추가 뽑기와 주머니 개선</p>
+            <p><strong>목표:</strong> 다섯 번의 잠수에서 화물을 인양합니다. 회수한 화물의 판매액에서 장비 구매 비용을 뺀 순수익을 점수로 평가합니다. 잠수 사이에 일부 수익으로 장비를 보강합니다.</p>
+            <ul>
+              <li><strong>탐사 선택:</strong> 장비 주머니에서 칩을 한 개 뽑아 탐사하기, 현재 화물 하나를 봉인하기, 귀환하기 중 하나를 고릅니다. 탐사 칩은 하강·인양·산소 보충·고장 효과를 가집니다.</li>
+              <li><strong>산소와 깊이:</strong> 탐사하거나 봉인할 때 산소를 1 소비합니다. 깊이는 1~6이며 귀환에는 현재 깊이만큼의 산소가 필요합니다. 다음 칩을 뽑기 전에 남은 칩의 종류별 수량과 귀환에 필요한 산소를 보여줍니다.</li>
+              <li><strong>적재:</strong> 화물은 한정된 적재칸을 차지합니다. 깊은 곳의 큰 유물은 가치와 크기가 모두 크며, 자리가 없으면 기존 화물을 버리고 바꿔 실어야 합니다.</li>
+              <li><strong>봉인과 실패:</strong> 잠수마다 화물 하나를 봉인해 비상 부표에 연결할 수 있습니다. 산소가 부족해 귀환하지 못하면 봉인하지 않은 화물은 잃지만, 봉인한 화물은 회수합니다. 실패한 잠수도 다섯 번 중 한 번으로 셉니다.</li>
+              <li><strong>다음 잠수:</strong> 회수한 수익으로 장비 칩을 추가하거나 고장 칩을 줄입니다. 장비에 쓴 돈은 최종 자금에서 빠지므로, 마지막 잠수에 가까워질수록 투자 이익을 따져야 합니다.</li>
+            </ul>
+            <p><strong>턴 예시:</strong> 깊이 4에서 산소가 5 남았고, 적재칸에는 작은 유물 세 개가 있습니다. 바로 돌아가면 셋을 확보합니다. 한 번 더 탐사하면 산소가 줄고 하강 칩이 나올 수도 있습니다. 큰 유물을 만날 기대와, 지금 하나를 봉인하고 귀환할 여유를 남기는 선택을 비교합니다.</p>
+            <p><strong>차별점:</strong> 위험한 칩의 누적뿐 아니라 현재 깊이·귀환 비용·적재 공간을 함께 봅니다. 얻은 물건을 지키기 위한 행동도 자원을 소비하므로 멈출 시점에 여러 이유가 생깁니다.</p>
+            <p><strong>첫 시제품:</strong> 잠수 5회, 깊이 6단계, 장비 칩 6종, 화물 12종, 적재칸 5개. 처음에는 효과를 한 줄로 설명할 수 있는 칩만 사용합니다.</p>
+            <p class="concept-meta"><strong>먼저 검증할 것:</strong> 늘 같은 깊이에서 멈추는 것이 정답이 되지 않는가? 실패 확률과 귀환 비용을 보고 납득할 수 있는가? · 산소량·칩 비율·화물 가치는 미검증입니다.</p>
+          </article>
+
+          <article id="c6" class="concept" aria-labelledby="c6-title">
+            <h3 id="c6-title"><span class="concept-genre">동시 선택 · 공유 공간 경쟁</span> 06. 골목 축제</h3>
+            <figure class="concept-shot">
+              <a href="/images/board-game-concepts/concept-06.webp?v=53b2ae16cbe9" target="_blank" rel="noopener noreferrer"><img src="/images/board-game-concepts/concept-06.webp?v=53b2ae16cbe9" width="959" height="540" loading="lazy" decoding="async" alt="5×5 공유 골목에서 길 카드를 선택하고 내 떡집과 상대 찻집으로 이어지는 손님 동선을 미리 보는 축제 운영 구상. AI 컨셉아트."></a>
+              <figcaption>길 하나를 놓으면 내 떡집과 상대 찻집에 손님이 함께 찾아옵니다. 경로 미리보기의 파란색 +3과 산호색 +2로 양쪽의 예상 이익을 비교합니다. · AI 플레이 컨셉아트</figcaption>
+            </figure>
+            <p class="concept-pitch">같은 골목에 축제를 만들면서 자기 가게의 매출을 경쟁하는 게임.</p>
+            <p class="concept-meta">2~4인 · 예상 15~20분 · 참고: 7 Wonders의 동시 드래프트, CATAN의 교환과 공간 경쟁</p>
+            <p><strong>목표:</strong> 9라운드 동안 공용 5×5 골목에 가게와 공연장, 길을 배치합니다. 축제일마다 들어오는 손님의 방문으로 매출을 얻고, 종료 시 가장 많은 매출을 낸 사람이 이깁니다.</p>
+            <ul>
+              <li><strong>카드 선택:</strong> 각자 손패에서 한 장을 비공개로 고른 뒤 동시에 공개합니다. 남은 손패는 옆 사람에게 넘깁니다. 세 라운드를 한 묶음으로 진행하고, 묶음마다 새로운 손패를 나눠 총 세 번 반복합니다.</li>
+              <li><strong>건설:</strong> 카드는 가게를 짓거나, 공용 길을 놓거나, 자원으로 바꿀 수 있습니다. 실제 배치만 매 라운드 돌아가는 우선권 순서로 확정해 같은 칸을 동시에 차지하는 충돌을 해결합니다.</li>
+              <li><strong>제한 교환:</strong> 건설 전 각자 한 번, 필요한 자원과 내줄 자원을 공개 제안할 수 있습니다. 상대 한 명이 수락하면 즉시 교환하고, 수락이 없으면 거래하지 않습니다.</li>
+              <li><strong>손님 동선:</strong> 3·6·9라운드에 손님이 입구에서 공개된 목적지로 이동합니다. 연결된 길 중 가장 짧은 길을 따르고, 동률일 때는 미리 표시한 화살표를 따릅니다. 길 옆의 가게가 손님 유형과 맞으면 매출을 얻습니다.</li>
+            </ul>
+            <p><strong>턴 예시:</strong> 먹거리 손님이 공연장으로 오는 날이 다가옵니다. 내 음식점을 짓기에는 재료가 하나 부족합니다. 이웃에게 교환을 제안하면 상대도 새 가게를 열 수 있지만, 둘의 가게 앞을 지나는 길을 함께 완성할 수 있습니다. 카드를 자원으로 바꿔 혼자 준비하면 이번 방문 매출은 놓칠 수 있습니다.</p>
+            <p><strong>차별점:</strong> 각자의 판을 키우는 대신 손님이 움직이는 공유 골목을 만듭니다. 상대 시설이 내 매출을 돕기도 하며, 카드 선택은 동시에 하고 공간 충돌만 짧게 순서대로 처리합니다.</p>
+            <p><strong>첫 시제품:</strong> 5×5 공용 지도, 건설 카드 18종, 자원 3종, 손님 3종, 9라운드. 건설은 클릭으로, 교환은 정해진 제안 버튼으로 처리합니다.</p>
+            <p class="concept-meta"><strong>먼저 검증할 것:</strong> 거래가 끝없이 길어지지 않는가? 첫 배치자가 항상 좋은 길목을 차지하지 않는가? 손님의 이동 결과를 사전에 읽을 수 있는가? · 인원별 공간과 카드 수는 미검증입니다.</p>
+          </article>
+
+          <article id="c7" class="concept" aria-labelledby="c7-title">
+            <h3 id="c7-title"><span class="concept-genre">역할 협력 · 자원 배분</span> 07. 정전 도시</h3>
+            <figure class="concept-shot">
+              <a href="/images/board-game-concepts/concept-07.webp?v=a3ad33c504b1" target="_blank" rel="noopener noreferrer"><img src="/images/board-game-concepts/concept-07.webp?v=a3ad33c504b1" width="959" height="540" loading="lazy" decoding="async" alt="정전된 도시의 병원과 정수장에 전력을 배분하고 수리팀과 배터리 운반팀을 보내는 협력 게임 구상. AI 컨셉아트."></a>
+              <figcaption>발전소 전력 6과 비상 배터리 1을 배분하는 계획입니다. 병원과 정수장의 부족분, 끊어진 배선, 배터리 운반팀의 경로를 함께 살핍니다. · AI 플레이 컨셉아트</figcaption>
+            </figure>
+            <p class="concept-pitch">모든 곳을 한 번에 고칠 수 없는 도시에서 필수 시설을 함께 지키는 게임.</p>
+            <p class="concept-meta">1~3인 협력 · 예상 15~20분 · 참고: Pandemic의 역할 분담과 공동 위기 대응</p>
+            <p><strong>목표:</strong> 8라운드가 끝날 때까지 병원·정수장·대피소를 유지하고, 마지막 두 라운드에는 세 시설을 모두 안정 가동하면 공동 승리합니다.</p>
+            <ul>
+              <li><strong>세 역할:</strong> 발전 담당은 생산량과 배전 대상을 정하고, 수리 담당은 고장난 시설·배선을 복구하며, 운반 담당은 배터리를 시설로 옮깁니다. 1인은 세 역할을 모두 맡고, 2인은 한 사람이 두 역할을 맡습니다.</li>
+              <li><strong>한 라운드:</strong> 다음 고장과 수요 예보를 확인한 뒤 각 역할이 두 행동을 고르고 확정합니다. 운반·수리를 처리한 다음 전력을 배분하고, 마지막에 시설의 가동 상태를 판정합니다.</li>
+              <li><strong>전력과 배터리:</strong> 발전소 전력은 연결된 배선을 따라 보내고 같은 라운드에 사용합니다. 배터리는 도착한 시설에서 한 번 사용할 수 있으며, 쓰지 않은 발전 전력은 저장 설비가 없으면 남지 않습니다.</li>
+              <li><strong>위기:</strong> 필수 시설이 전력을 받지 못하면 도시 불안이 올라갑니다. 불안이 한계에 닿으면 패배합니다. 다음 라운드의 고장 위치와 추가 수요를 공개해 대응할 여지를 줍니다.</li>
+              <li><strong>협력 방식:</strong> 계획을 함께 논의하되 역할별 행동은 담당자가 확정합니다. 각자 대안을 표시할 수 있고, 모두 확정하기 전에는 선택을 수정할 수 있습니다.</li>
+            </ul>
+            <p><strong>턴 예시:</strong> 병원 배선이 끊겼고 다음 라운드에는 정수장 수요가 늘어납니다. 수리팀이 병원으로 가면 당장 병원을 회복하지만 정수장 증설을 놓칩니다. 운반팀이 병원에 배터리를 보내 한 라운드를 버티게 하고, 수리팀과 발전 담당이 다음 수요를 준비하는 계획을 세울 수 있습니다.</p>
+            <p><strong>차별점:</strong> 문제를 제거하는 수리 외에, 일시적으로 버티게 하는 운반과 장기 생산을 늘리는 발전을 나눕니다. 한 역할의 선택이 다른 역할의 행동 기회를 만들도록 설계합니다.</p>
+            <p><strong>첫 시제품:</strong> 역할 3개, 시설 8개, 지도 1개, 고장·수요 사건 8종, 8라운드. 모든 역할을 직접 조작하는 1인 모드로 자원 흐름부터 검증합니다.</p>
+            <p class="concept-meta"><strong>먼저 검증할 것:</strong> 특정 역할이 매번 같은 행동만 하지 않는가? 한 사람이 모든 결정을 지시하는 일이 반복되는가? 예고를 봐도 해결 불가능한 상황이 생기는가? · 생산량과 패배 한계는 미검증입니다.</p>
+          </article>
+
+          <article id="c8" class="concept" aria-labelledby="c8-title">
+            <h3 id="c8-title"><span class="concept-genre">비밀 목표 · 동시 경매</span> 08. 가면 경매장</h3>
+            <figure class="concept-shot">
+              <a href="/images/board-game-concepts/concept-08.webp?v=0e929613d84c" target="_blank" rel="noopener noreferrer"><img src="/images/board-game-concepts/concept-08.webp?v=0e929613d84c" width="959" height="540" loading="lazy" decoding="async" alt="가면 쓴 수집가들의 경매장에서 공개 유물 두 개와 비공개 입찰, 상대의 구매 기록을 비교하는 추리 게임 구상. AI 컨셉아트."></a>
+              <figcaption>유물 자체의 가격보다 누가 왜 그 물건에 돈을 썼는지가 단서가 됩니다. 공개된 지출 기록으로 상대의 비밀 수집 목표를 추리합니다. · AI 플레이 컨셉아트</figcaption>
+            </figure>
+            <p class="concept-pitch">무엇을 모으는지 숨기며 입찰하고, 상대의 소비로 목표를 읽는 게임.</p>
+            <p class="concept-meta">3~5인 · 예상 10~15분 · 참고: Love Letter의 적은 정보와 짧은 추리 행동</p>
+            <p><strong>목표:</strong> 여섯 번의 경매에서 비밀 수집 목표에 맞는 유물을 확보합니다. 유물 가치·목표 보너스·남은 자금·추리 보너스를 합산해 승자를 정합니다. 중간 탈락은 없습니다.</p>
+            <ul>
+              <li><strong>공개:</strong> 매 라운드 유물 두 개를 공개합니다. 유물의 기본 점수와 시대·재질 같은 속성은 모두에게 보이지만, 어떤 조합으로 보너스를 받는지는 자기 목표 카드에만 표시됩니다.</li>
+              <li><strong>정보 행동:</strong> 각자 행동 카드 2장 중 1장을 선택합니다. 행동은 다음 라운드 유물 미리 보기, 상대 목표의 속성 한 가지 확인, 이번 라운드 목표 정보 보호의 세 종류입니다. 동시에 공개한 뒤 보호를 먼저 적용하며, 보호된 상대를 조사하면 정보는 얻지 못합니다. 사용한 카드는 버리고 한 장을 보충합니다.</li>
+              <li><strong>동시 입찰:</strong> 시작 자금 12로 시작하며, 두 유물 중 하나와 보유 자금 이하의 입찰액을 비공개로 정한 뒤 함께 공개합니다. 0을 내면 이번 경매를 건너뜁니다. 유물마다 가장 높은 입찰자가 획득하고 그 금액을 냅니다. 낙찰되지 않은 사람은 돈을 내지 않습니다. 동점은 라운드마다 이동하는 우선권으로 정합니다.</li>
+              <li><strong>기록과 추리:</strong> 낙찰 유물과 실제 지출은 모두 공개됩니다. 종료 직전에 상대 한 명의 목표를 비공개로 지목하고, 맞으면 정해진 보너스를 받습니다. 추리는 1회만 하며 정답 공개 전까지 수정할 수 없습니다.</li>
+            </ul>
+            <p><strong>턴 예시:</strong> 한 수집가가 청동 거울과 청동 잔에 연달아 큰돈을 썼습니다. 청동 수집 목표라고 생각했지만 두 물건은 같은 시대의 유물이기도 합니다. 정보 행동으로 목표 속성 하나를 알아보면 이번 청동 조각상 입찰에서 어디까지 경쟁할지, 마지막에 어떤 목표를 지목할지 판단할 수 있습니다.</p>
+            <p><strong>차별점:</strong> 카드 정체 대신 구매 이유를 추리합니다. 아무 유물도 얻지 못한 라운드에도 상대의 목표와 자금 정보를 얻고, 남은 자금도 점수가 되어 무리한 입찰을 조절합니다.</p>
+            <p><strong>첫 시제품:</strong> 유물 12개, 비밀 목표 5종, 정보 행동 3종, 6라운드. 유물은 두 속성만 가지며, 입찰액과 자금은 작은 정수로 제한합니다.</p>
+            <p class="concept-meta"><strong>먼저 검증할 것:</strong> 첫 구매 한 번에 목표가 드러나지 않는가? 돈을 전혀 쓰지 않는 전략이 너무 강하지 않은가? 연속 낙찰 실패에도 추리할 이유가 남는가? · 목표·현금·추리 점수의 비중은 미검증입니다.</p>
+          </article>
+
+          <article id="c9" class="concept" aria-labelledby="c9-title">
+            <h3 id="c9-title"><span class="concept-genre">정보 비대칭 · 제한 소통</span> 09. 무전 탐사대</h3>
+            <figure class="concept-shot">
+              <a href="/images/board-game-concepts/concept-09.webp?v=3b58e87aeebf" target="_blank" rel="noopener noreferrer"><img src="/images/board-game-concepts/concept-09.webp?v=3b58e87aeebf" width="959" height="540" loading="lazy" decoding="async" alt="탐사자 화면에서 산소 3, 두 임무, 관제사의 우회 신호와 이동 경로를 확인하는 협력 게임 구상. AI 컨셉아트."></a>
+              <figcaption>관제사는 위험을 보지만 탐사자의 목표와 남은 산소는 모릅니다. 탐사자는 짧은 신호로 필요한 정보를 전달하고 이동을 결정합니다. · AI 플레이 컨셉아트</figcaption>
+            </figure>
+            <p class="concept-pitch">서로 다른 지도를 보는 두 사람이 짧은 신호만으로 임무를 끝내고 돌아오는 게임.</p>
+            <p class="concept-meta">2인 협력 · 예상 8~12분 · 참고: Codenames의 정보 차이와 제한된 단서 전달</p>
+            <p><strong>목표:</strong> 탐사자가 임무 두 개를 완수하고 산소가 바닥나기 전에 출발점으로 귀환하면 두 사람이 함께 이깁니다.</p>
+            <ul>
+              <li><strong>서로 다른 정보:</strong> 두 사람은 같은 지형과 탐사자의 현재 위치를 봅니다. 관제사만 위험 칸과 환경 변화를 보고, 탐사자만 자기 목표 위치와 남은 산소를 봅니다.</li>
+              <li><strong>한 턴:</strong> 각자 지도 한 칸과 ‘주의·이동·목표·복귀’ 중 신호 하나를 선택해 보냅니다. 두 신호를 확인한 뒤 탐사자가 인접 칸으로 이동하거나 현재 칸을 조사하거나 기다립니다. 어느 행동이든 산소를 1 소비하고 환경 변화가 적용됩니다.</li>
+              <li><strong>소통 제한:</strong> 자유 입력과 음성 설명은 사용하지 않는 규칙입니다. 한 턴에 각자 하나의 신호만 보낼 수 있어 여러 위험과 목표를 동시에 설명할 수 없습니다. 신호의 대상 칸과 보낸 턴은 기록에 남습니다.</li>
+              <li><strong>위험과 임무:</strong> 위험 칸 진입은 추가 산소를 소비하며, 목표 칸에서는 조사 행동으로 임무를 완료합니다. 위험은 즉시 탈락시키지 않고 우회·대기·귀환의 필요를 만듭니다.</li>
+              <li><strong>결과 확인:</strong> 종료 후 양쪽 지도를 함께 공개해 어떤 신호가 어떻게 해석됐는지 돌아봅니다. 다음 판에는 역할을 바꿔 같은 규칙의 다른 지도를 풉니다.</li>
+            </ul>
+            <p><strong>턴 예시:</strong> 탐사자는 동쪽 목표를 조사하면 마지막 임무를 끝내지만 산소가 얼마 남지 않았습니다. 관제사는 동쪽 길의 누출을 알고 ‘주의’를 보내고, 탐사자는 출발점에 ‘복귀’를 보냅니다. 관제사는 다음 턴에 안전한 우회 칸을 지정할지, 목표 근처의 덜 위험한 길을 안내할지 판단합니다.</p>
+            <p><strong>차별점:</strong> 정답 위치를 맞히는 협력을 실제 이동과 귀환 계획으로 확장합니다. 관제사도 상대의 급한 사정을 추측해야 하며, 탐사자가 최종 행동을 정해 두 사람 모두 판단을 맡습니다.</p>
+            <p><strong>첫 시제품:</strong> 지도 6개, 신호 4종, 한 판의 임무 2개, 위험 2종. 각자의 정보가 분리된 두 화면과 턴별 신호 기록을 먼저 만듭니다.</p>
+            <p class="concept-meta"><strong>먼저 검증할 것:</strong> 같은 신호만 반복해도 모든 정보를 전달할 수 있지 않은가? 뜻이 모호해 실패했을 때 납득하고 다시 시도할 수 있는가? · 산소 소모와 지도 난도는 미검증입니다.</p>
+          </article>
+        </section>
+
+        <section id="next" aria-labelledby="next-title">
+          <h2 id="next-title">제작 우선순위</h2>
+          <ol>
+            <li><strong>야시장 마감 장부:</strong> 상자·냉장고·주문만으로 핵심 선택을 확인할 수 있습니다. 12턴에서 재료가 들어오고 조리·폐기로 나가는 흐름이 흥미로운지 먼저 봅니다.</li>
+            <li><strong>옥상 정원의 사계절:</strong> 작은 격자와 공개된 계절 순서로 배치 결과를 검증할 수 있습니다. 빛·물의 예상 표시가 이해되는지 확인한 뒤 식물 종류를 늘립니다.</li>
+            <li><strong>유랑 상단 또는 심해 인양:</strong> 덱·주머니 구성을 바꾸는 장기 선택을 검증합니다. 유랑 상단은 배송으로 덱이 가벼워지는 감각을, 심해 인양은 다시 잠수하고 싶게 만드는 위험과 보상의 균형을 우선합니다.</li>
+          </ol>
+          <p><strong>달빛 우편국</strong>은 지도와 시간표를 한 화면에서 읽기 쉬운지 먼저 확인합니다. <strong>골목 축제·정전 도시·가면 경매장·무전 탐사대</strong>는 실제 사람끼리 짧게 플레이해 협상·역할 분담·추리·소통이 성립하는지 확인한 뒤 온라인 대전을 붙이는 편이 좋습니다.</p>
+          <p>이 순서는 본문에 적은 규칙과 최소 제작 범위를 바탕으로 한 기획 판단입니다. 첫 검증은 그림의 완성도보다 <strong>선택할 만한 대안이 둘 이상 있는지, 결과를 이해할 수 있는지, 한 판 뒤 다른 선택을 해보고 싶은지</strong>에 맞춥니다.</p>
+        </section>
+
+        <section id="refs" aria-labelledby="refs-title">
+          <h2 id="refs-title">출처</h2>
+          <ul class="ref-list">
+            <li id="ref-azul"><strong>Azul:</strong> <a href="https://www.nextmove-games.com/en/azul/azul-game/">Next Move Games 공식 소개</a>, <a href="https://cdn.svc.asmodee.net/production-nextmove/uploads/sites/4/2024/06/EN-Azul-Rules-Next-Move-web.pdf">영문 룰북</a>. 같은 색 타일의 전량 획득과 초과 수량 감점. 공식 소개에 2018 Spiel des Jahres 수상 기록이 있습니다.</li>
+            <li id="ref-splendor"><strong>Splendor:</strong> <a href="https://www.spacecowboys-games.com/game/splendor/">Space Cowboys 공식 소개</a>, <a href="https://cdn.svc.asmodee.net/production-spacecowboys/uploads/2025/10/SCSPL01EN_SPLENDOR_RULES_LIGHT.pdf">영문 룰북</a>. 보석 획득·예약·구매와 영구 할인. <a href="https://www.spacecowboys.fr/splendor/details">공식 프랑스 소개</a>는 수백만 부 판매를 명시하지만 정확한 누적 수치와 기준일은 밝히지 않습니다.</li>
+            <li id="ref-cascadia"><strong>Cascadia:</strong> <a href="https://www.alderac.live/cascadia/">AEG 공식 소개</a>, <a href="https://www.alderac.com/wp-content/uploads/2025/04/Cascadia_BaseGame_Rulebook_Optimized.pdf">영문 룰북</a>. 지형·동물 묶음과 서로 다른 배치 점수. <a href="https://www.spiel-des-jahres.de/en/award-winners-2022/">2022 Spiel des Jahres 수상 발표</a>.</li>
+            <li id="ref-wingspan"><strong>Wingspan:</strong> <a href="https://store.stonemaiergames.com/products/wingspan">Stonemaier Games 공식 소개</a>. 서식지의 새 능력으로 행동 효과를 쌓는 구조와 2019 Kennerspiel des Jahres 수상 기록.</li>
+            <li id="ref-ticket"><strong>Ticket to Ride:</strong> <a href="https://www.daysofwonder.com/game/ticket-to-ride/">Days of Wonder 공식 소개와 규칙 자료</a>. 색 카드 수집·노선 확보·목적지 연결. <a href="https://cdn.svc.asmodee.net/production-daysofwonder/uploads/2025/09/DoW_news018.pdf">2004 Spiel des Jahres 공식 수상 발표</a>.</li>
+            <li id="ref-dominion"><strong>Dominion:</strong> <a href="https://www.riograndegames.com/games/dominion/">Rio Grande Games 공식 소개</a>, <a href="https://www.riograndegames.com/wp-content/uploads/2016/09/Dominion2nd.pdf">2판 영문 룰북</a>. 구매한 카드의 덱 편입과 행동·재화·승점 카드의 구성. 공식 소개에 2009 Spiel des Jahres 수상이 기록되어 있습니다.</li>
+            <li id="ref-quacks"><strong>The Quacks of Quedlinburg:</strong> <a href="https://www.schmidtspiele.de/files/Retail/72dpi_PNG/88220_Quack_rules_english_2024.pdf">Schmidt Spiele 영문 룰북</a>. 재료 칩 추가 뽑기·중단·구매. 흰 칩 합이 7을 초과해 폭발하면 해당 라운드에 점수 획득과 구매 중 하나만 선택합니다. <a href="https://www.schmidtspiele.de/details-93/ein-weiterer-meilenstein-fuer-die-erfolgreichen-spiele-rund-um-die-quacksalber-von-quedlinburg.html">2025년 공식 소식</a>은 시리즈의 판매 성과와 2018 Kennerspiel des Jahres 수상을 다룹니다.</li>
+            <li id="ref-wonders"><strong>7 Wonders:</strong> <a href="https://www.rprod.com/en/games/7-wonders">Repos Production 공식 소개와 규칙 자료</a>. 카드 동시 선택과 손패 전달. 공식 소개에서 판매·수상 실적도 확인할 수 있습니다.</li>
+            <li id="ref-catan"><strong>CATAN:</strong> <a href="https://www.catan.com/catan">CATAN 공식 게임 소개</a>, <a href="https://www.catan.com/understand-catan/game-rules">공식 룰북 모음</a>. 자원 획득·교환·도로와 정착지 건설. <a href="https://www.catan.com/about-us">공식 소개</a>에서 제품군의 판매 실적을 확인할 수 있습니다.</li>
+            <li id="ref-pandemic"><strong>Pandemic:</strong> <a href="https://www.zmangames.com/game/pandemic/">Z-MAN Games 공식 소개</a>, <a href="https://cdn.svc.asmodee.net/production-zman/uploads/2024/09/Pandemic_Rulebook.pdf">영문 룰북</a>. 역할별 능력, 제한된 행동, 확산하는 위협과 공동 승리 조건. <a href="https://www.spiel-des-jahres.de/erjahr/2009/">Spiel des Jahres 2009 후보 기록</a>도 확인했습니다.</li>
+            <li id="ref-loveletter"><strong>Love Letter:</strong> <a href="https://www.zmangames.com/game/love-letter/">Z-MAN Games 공식 소개</a>, <a href="https://images.zmangames.com/filer_public/5b/6c/5b6c17d7-7e0e-4b70-a311-9a6c32066010/ll-rulebook.pdf">영문 룰북</a>. 두 장 중 한 장을 쓰는 행동과 공개 카드에 근거한 추리. 현행판은 2~6인용이며, <a href="https://www.spiel-des-jahres.de/spiele/love-letter/">구판의 공식 소개</a>에는 2014년 추천작 기록이 있습니다.</li>
+            <li id="ref-codenames"><strong>Codenames:</strong> <a href="https://www.czechgames.com/games/codenames">Czech Games Edition 공식 소개</a>. 정보가 다른 팀원 사이의 제한된 단서 전달. <a href="https://www.spiel-des-jahres.de/erjahr/2016/">2016 Spiel des Jahres 기록</a>에서 수상을 확인할 수 있습니다.</li>
+          </ul>
+          <p class="table-note">자료 확인: 2026.10.07. 원작의 소개·규칙·수상 기록을 참고했으며, 아홉 기획의 세계관·유통기한·계절·배송 시간표·화물 카드·산소·축제 동선·전력·경매·무전 규칙은 새로 제안한 창작 설정입니다. 시제품과 플레이테스트는 아직 진행하지 않았습니다.</p>
+        </section>
+        <p class="post-back"><a href="/">← Home</a></p>
+      </article>
+    </main>
+    <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>

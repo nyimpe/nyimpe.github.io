@@ -1,0 +1,41 @@
+{
+  "method": "built-in image_gen",
+  "created": "2026-10-07",
+  "assets": [
+    {
+      "id": "07",
+      "title": "정전 도시",
+      "prompt": "Use case: ui-mockup. Create one polished 16:9 landscape 2D indie strategy game PLAY SCREEN, not a poster, not a collage, for an original cooperative game BLACKOUT CITY. Hand-painted board-game clarity with crisp simple icons, warm amber electrical light against navy night streets. The large main board is a top-down compact city map with a power station, hospital, water pump, shelter, repair workshop and substations connected by cables. Lit cables have clear amber directional arrows; one damaged cable has a visible break and warning icon. Three small distinct worker tokens are on the map: engineer, courier carrying a battery, dispatcher. Show the meaningful decision: limited supply 6, hospital needs 4, water pump needs 3, a portable battery can bridge the shortage. Right side is a concise power allocation panel with three large facility cards and visible power slots, bottom is three large action buttons REPAIR, DELIVER, ROUTE. Header text exactly BLACKOUT CITY, ROUND 4 / 8, POWER 6. Small role cards show ENGINEER, COURIER, DISPATCH. Subtle selection outline on a cable repair near the pump and a dashed preview path for the courier. Main map at least 65 percent of the screen. Readable original game HUD, distinct actionable controls, plausible mid-game state. Only these short English labels and small numerals, no paragraphs, no copied commercial game boards or logos, no real-world device frame, no cinematic characters covering the map. Full-bleed game screenshot concept art, attractive restrained texture, sharp and legible.",
+      "original_path": "/Users/sushi/.codex/generated_images/01a1156a-2d32-76d3-a9d8-74fd55dfcc54/exec-c34a30ef-bbda-4249-b8e7-e9c628856b8a.png",
+      "inspection": "Visual check: map, three roles, damaged cable, courier preview, facility allocation HUD. Final caption interprets POWER 6 as generator supply plus one portable battery for seven planned allocation units (3 + 2 + 2).",
+      "edit_attempts": [
+        {
+          "request": "Remove only the lightning and glow from the right SHELTER power slot, preserving all other content.",
+          "attempts": 2,
+          "result": "Both built-in edits failed with network error; no edited image produced. Original retained, with generator supply and battery support clarified in the caption."
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "title": "가면 경매장",
+      "prompt": "Use case: ui-mockup. Create one polished 16:9 landscape 2D indie deduction auction game PLAY SCREEN for an original game MASKED AUCTION. Elegant illustrated antiquities and crisp flat UI, midnight burgundy, aged ivory and brass. This is a single playable screen from ONE player's perspective, not a montage or a poster. Center table shows exactly TWO auction lots: an ornate bronze mirror and a red ceramic vase, each on an illustrated card with clearly visible small public score icons. Across the top are four masked bidder portraits in distinctive colors, each with public remaining coin count. Right side has a clear compact public bid history in three rows of player colors, coins and object thumbnails. Bottom left only the local player's secret collection objective card is turned face-up, illustrating ceramic objects; other players' secret goals are concealed. Bottom center exactly TWO information action cards, PREVIEW and PEEK. Bottom right a bid chooser with a selected lot thumbnail, minus/plus controls around the number 3, and large BID and PASS buttons. Header exactly MASKED AUCTION and ROUND 3 / 6. Show a yellow outline around the bronze mirror while the private goal card favors ceramics, illustrating bluff versus value. Use icons and minimal correct English text only, no gibberish dense rules. Clear hierarchy with large objects and controls, warm tabletop atmosphere, hand-painted object art, refined simple UI. No copied commercial game art or logos, no physical device mockup, no three-dimensional camera rendering of a board.",
+      "original_path": "/Users/sushi/.codex/generated_images/01a1156a-2d32-76d3-a9d8-74fd55dfcc54/exec-cabf6472-da1c-4c2a-9678-a511a9e6c8db.png",
+      "inspection": "Generated screen visually inspected: gameplay board, selection context and HUD visible. Concept art, not an implemented game screenshot."
+    },
+    {
+      "id": "09",
+      "title": "무전 탐사대",
+      "prompt": "Use case: ui-mockup. Create one polished 16:9 landscape 2D cooperative exploration game PLAY SCREEN for an original game RADIO EXPEDITION. Single explorer player's view, not split screen, not poster, not concept collage. Atmospheric but readable top-down abandoned research complex in teal, charcoal and safety orange, illustrated with precise textured tiles. Main map fills two thirds of the screen, with connected rooms and corridors, an explorer carrying a small oxygen tank, an exit airlock, two salvage objectives, and fogged unknown rooms. The explorer does NOT see the controller's hidden hazard map. A glowing route preview leads toward an objective, while a visible incoming radio icon says DETOUR, creating a choice to use more oxygen on the longer path. Right HUD shows OXYGEN 6, two mission object icons, a clearly separated RADIO box with the received DETOUR signal, and four outgoing icon buttons labeled URGENT, CONFIRM, WAIT, RETURN. Bottom HUD shows large MOVE and WAIT buttons plus a compact short turn timeline. Header text exactly RADIO EXPEDITION and TURN 5. Use only short correct English labels and numbers, no dialogue paragraphs or invented small text. Make the two information roles understandable through the radio interface without revealing any controller-only hazards. Cohesive modern 2D indie game artwork, soft light pools, crisp paths and selectable room outlines, practical readable UI. No commercial branding, no real-world monitor border, no full-screen character illustration.",
+      "original_path": "/Users/sushi/.codex/generated_images/01a1156a-2d32-76d3-a9d8-74fd55dfcc54/exec-3e8bdc26-a4cc-4d3f-8c08-a1b8043ec5f5.png",
+      "inspection": "Visual check: OXYGEN 3 matches three illuminated tanks; route, radio DETOUR, mission and action HUD preserved.",
+      "edit_history": [
+        {
+          "input_path": "/Users/sushi/.codex/generated_images/01a1156a-2d32-76d3-a9d8-74fd55dfcc54/exec-90c70b8a-3223-459c-93fd-825f495c3aa9.png",
+          "prompt": "Edit this RADIO EXPEDITION gameplay concept image. Make only one tiny localized UI text correction: in the upper-right OXYGEN panel, change the large numeral 6 to 3, to match the three illuminated oxygen tank icons. Keep the six total tank icons and their current three-lit, three-dark appearance. Preserve absolutely every other visual element, text, map, color, character, panel, layout, typography, route, mission, buttons, dimensions, and composition unchanged. The exact final text is OXYGEN 3.",
+          "output_path": "/Users/sushi/.codex/generated_images/01a1156a-2d32-76d3-a9d8-74fd55dfcc54/exec-3e8bdc26-a4cc-4d3f-8c08-a1b8043ec5f5.png"
+        }
+      ]
+    }
+  ]
+}
