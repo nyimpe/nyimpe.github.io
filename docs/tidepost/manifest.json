@@ -1,0 +1,142 @@
+{
+  "created": "2026-10-07",
+  "generator": "built-in image_gen",
+  "webExport": {
+    "format": "WebP",
+    "quality": 90,
+    "resize": false,
+    "crop": false,
+    "semanticEdits": false
+  },
+  "images": [
+    {
+      "id": 1,
+      "title": "봄 아침, 옥상 우체국",
+      "source": "generated_images/01a11599-ab67-7b52-8b9d-5d9571783559/exec-fe044bab-038a-45f0-b63c-5b3e1f7e6ed0.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2755911,
+      "sourceSha256": "88368e3685db7d36019ad8ccb4ea18eb50654735e629a2c38cae87da8d7fd3ad",
+      "output": "public/images/tidepost/scene-01.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 466480,
+      "sha256": "720f08acd0bf4a8fc5c23d43b5c6dd8d13d6131e9088b36862d683ba12d80ba8",
+      "url": "/images/tidepost/scene-01.webp?v=720f08acd0bf",
+      "alt": "봄 아침 물결마을의 옥상 우체국. 청록색 목수건과 남색 가방을 맨 삼색 고양이가 작은 옥상 정원에 물을 주고 배달 계획판과 물때표가 함께 보이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": 2,
+      "title": "썰물길의 배달",
+      "source": "generated_images/01a11599-ab67-7b52-8b9d-5d9571783559/exec-0d504750-2cad-4c5f-b8d1-bf8ecee115c8.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 3032990,
+      "sourceSha256": "86f5b7a44e21389cbd6c79ee70c6d2ade3a40f09bbc3c9cc7053e269dc7a14bb",
+      "output": "public/images/tidepost/scene-02.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 523730,
+      "sha256": "c68aff7928a703a825eb2c88fdfe325e508f947ec2ba096e45763c726525491d",
+      "url": "/images/tidepost/scene-02.webp?v=c68aff7928a7",
+      "alt": "물이 빠진 돌길과 얕은 웅덩이가 드러난 섬 사이에서 삼색 고양이 배달부가 빨간 지붕 집과 파란 우편함이 있는 정원섬의 짧은 길과 우회로를 고르는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": 3,
+      "title": "작업장의 선택",
+      "source": "generated_images/01a1159c-0c10-77e1-82e4-f35c325db416/exec-95d65151-98e0-49a4-881d-d8aee6970978.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2350761,
+      "sourceSha256": "a47c42ab1bd48eb36a2a6c0597d41f721a6919a7f3f2c3f093bb21e7304fa5f7",
+      "output": "public/images/tidepost/scene-03.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 318484,
+      "sha256": "51a71242a8dc24eb7c2405092b5eb138def6a3cf242f8eb55c8e3fe8f4b5ff66",
+      "url": "/images/tidepost/scene-03.webp?v=51a71242a8dc",
+      "alt": "해안 작업장에서 크림색 늘어진 귀의 강아지 우편배달부와 수달 수리공이 공동 나루터 권양기를 수리하는 모습. 개인 가방 확장과 공동 시설 수리의 선택이 보이는 탑다운 2D 픽셀아트 AI 컨셉."
+    },
+    {
+      "id": 4,
+      "title": "여름의 밤시장",
+      "source": "generated_images/01a1159c-0c10-77e1-82e4-f35c325db416/exec-b495804f-593f-4633-b4f2-b2fe8a0d2a3f.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2644035,
+      "sourceSha256": "2b24b50ad0e57cedeb83159a23f8784a6633d141f0f93a0d08852f1a86114286",
+      "output": "public/images/tidepost/scene-04.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 409336,
+      "sha256": "f99456395cefa23bde66ac0136fc45f2d233974836fee8c139f6bc4e468659ff",
+      "url": "/images/tidepost/scene-04.webp?v=f99456395cef",
+      "alt": "등불이 켜진 여름 해안 밤시장에서 삼색 고양이 배달부가 수달 제빵사에게 소포를 전하고 여러 동물 이웃이 긴 공동 식탁에 모이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": 5,
+      "title": "가을비와 신호등대",
+      "source": "generated_images/01a1159c-844c-7742-b99e-c8f7ba49fdf7/exec-c841b4d3-d63f-4b44-bb3b-ddac856c0f83.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2574281,
+      "sourceSha256": "0bf9294c1b63751f763612425a86d26226be1608ff3b74fe32a2a8975f9ec9d5",
+      "output": "public/images/tidepost/scene-05.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 402984,
+      "sha256": "0d103f075188e7bea9fdd0e381c6426d0533eccfb37401a4ea558a5e1f4c630c",
+      "url": "/images/tidepost/scene-05.webp?v=0d103f075188",
+      "alt": "가을비 내리는 신호등대의 난간 있는 안전한 작업대에서 크림색 강아지 우편배달부가 왜가리 등대지기와 신호등을 점검하는 탑다운 2D 픽셀아트 AI 플레이 컨셉. 예보와 준비한 수리 도구가 표시된다."
+    },
+    {
+      "id": 6,
+      "title": "겨울 온실과 돌아온 길",
+      "source": "generated_images/01a1159c-844c-7742-b99e-c8f7ba49fdf7/exec-ce944b24-5d09-4fb6-ab9f-1be8f7c9dc1a.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 3181060,
+      "sourceSha256": "122ec0c25d6e502724bfc276e3d080ed15ff967af52800f72bdc6dd7fd05b586",
+      "output": "public/images/tidepost/scene-06.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 579118,
+      "sha256": "bf48f9fcf8cb8e5fd8e06bc803cbd956cd176abae241251c115460f5d7481213",
+      "url": "/images/tidepost/scene-06.webp?v=bf48f9fcf8cb",
+      "alt": "겨울의 같은 물결마을에서 삼색 고양이 배달부가 우체국 옥상 온실의 작물을 돌보고, 수리된 나루터와 연락선, 불 켜진 등대로 동물 주민들이 오가는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    }
+  ],
+  "generationRetries": [
+    {
+      "id": 5,
+      "failedAttempts": 2,
+      "reason": "network error; no output file",
+      "recovery": "Shortened prompt with the same built-in image generator",
+      "result": "success"
+    }
+  ]
+}
