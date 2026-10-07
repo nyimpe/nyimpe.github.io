@@ -1,0 +1,65 @@
+{
+  "verifiedOn": "2026-10-07",
+  "scope": "Planning article and AI gameplay concept assets. No executable game implemented or playtested.",
+  "local": {
+    "build": "npm run build passed; existing Phaser chunk-size warning remains",
+    "whitespace": "git diff --check passed",
+    "imageCount": 8,
+    "dimensions": [
+      1672,
+      941
+    ],
+    "totalImageBytes": 3053696,
+    "assetIntegrity": "8/8 source and output hashes, dimensions, byte sizes, version URLs, full-image links and alt text match manifest",
+    "imageHTTP": "8/8 HTTP 200 with response SHA-256 matching repository asset",
+    "anchors": {
+      "ids": 46,
+      "unique": 46,
+      "broken": []
+    },
+    "responsive": [
+      {
+        "viewport": 1440,
+        "scroll": 1440
+      },
+      {
+        "viewport": 390,
+        "scroll": 390
+      },
+      {
+        "viewport": 320,
+        "scroll": 320
+      }
+    ],
+    "keyboardTableScrollLeft": 24,
+    "keyboardTOC": true,
+    "keyboardThemeToggle": true,
+    "homeLink": true,
+    "hashedStylesheet": "/assets/main-D1nhvAOf.css",
+    "console": [],
+    "failedRequests": [],
+    "visualReview": "All 8 generated images inspected; desktop light scene01 and atlas scene06, mobile dark scene04 rendered screenshot inspected"
+  },
+  "designReview": {
+    "distinction": "Inland desert naturalist corgi, mobile home, ecology evidence, living seasonal atlas; distinct from coastal delivery and alpine spa operations",
+    "fullVision": "6 exploration areas plus camp;144 unique entries =32+32+24+16+24+16;6 recurring companions",
+    "prototype": "10 in-game days,2 exploration areas plus camp,24 entries=6+6+4+2+4+2,4 companions,3 basic home modules",
+    "fixedExample": {
+      "startCoins": 48,
+      "decorationCost": 24,
+      "coinsBeforeSleep": 24,
+      "royaltyOnDateChange": 12,
+      "coinsNextMorning": 36,
+      "energyBeforeSleep": 58,
+      "energyNextMorning": 60
+    },
+    "reviewFixes": "Matched beetle/moth/fossil descriptions to images; aligned reflected-light puzzle; defined60min relocation and30min return markers; passive royalties paid once per date change with atomic settlement ID"
+  },
+  "liveDeployment": "Checked after push; workflow and public-page verification are reported in task completion message.",
+  "unverified": [
+    "Game fun and balance",
+    "Executable movement/input/save/NPC behavior",
+    "Final tile-grid and sprite/UI consistency",
+    "Game performance"
+  ]
+}

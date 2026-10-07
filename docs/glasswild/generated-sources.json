@@ -1,0 +1,94 @@
+[
+  {
+    "scene": 1,
+    "source_path": "/Users/sushi/.codex/generated_images/01a115f1-f49b-73d1-95e4-fbe6ab73a8fa/exec-11818a59-eaaf-4cab-b794-f3b2ae5d08bc.png",
+    "generation_mode": "built-in image_gen",
+    "prompt_source": "docs/glasswild/prompts.json#scenes[n=1].prompt",
+    "review_status": "accepted",
+    "review_notes": [
+      "Generated scene visually inspected: upright-ear corgi, violet scarf, olive vest, orange backpack; readable target and HUD; scene action matches design. AI concept, not final grid-aligned tiles/UI."
+    ]
+  },
+  {
+    "scene": 2,
+    "source_path": "/Users/sushi/.codex/generated_images/01a115f1-f49b-73d1-95e4-fbe6ab73a8fa/exec-3c07066f-0b68-4a7c-b939-ffbf3b2bf81a.png",
+    "generation_mode": "built-in image_gen",
+    "prompt_source": "docs/glasswild/prompts.json#scenes[n=2].prompt",
+    "review_status": "accepted",
+    "review_notes": [
+      "Generated scene visually inspected: upright-ear corgi, violet scarf, olive vest, orange backpack; readable target and HUD; scene action matches design. AI concept, not final grid-aligned tiles/UI."
+    ]
+  },
+  {
+    "scene": 3,
+    "source_path": "/Users/sushi/.codex/generated_images/01a115f1-f49b-73d1-95e4-fbe6ab73a8fa/exec-1b8450f4-8835-440e-9fe0-7e8ddc4b21f4.png",
+    "generation_mode": "built-in image_gen",
+    "prompt_source": "docs/glasswild/prompts.json#scenes[n=3].prompt",
+    "review_status": "accepted",
+    "review_notes": [
+      "Generated scene visually inspected: upright-ear corgi, violet scarf, olive vest, orange backpack; readable target and HUD; scene action matches design. AI concept, not final grid-aligned tiles/UI."
+    ]
+  },
+  {
+    "scene": 4,
+    "source_path": "/Users/sushi/.codex/generated_images/01a115f1-f49b-73d1-95e4-fbe6ab73a8fa/exec-7e3e0232-124d-46ea-869f-6872748ee6b1.png",
+    "generation_mode": "built-in image_gen",
+    "prompt_source": "docs/glasswild/prompts.json#scenes[n=4].prompt",
+    "review_status": "accepted",
+    "review_notes": [
+      "Generated scene visually inspected: upright-ear corgi, violet scarf, olive vest, orange backpack; readable target and HUD; scene action matches design. AI concept, not final grid-aligned tiles/UI."
+    ]
+  },
+  {
+    "scene": 5,
+    "title": "차 안의 작은 서식 정원",
+    "source_path": "/Users/sushi/.codex/generated_images/01a115f6-cd4c-7b02-be6c-64ccdc91394a/exec-8d41450f-2a18-492c-9efd-8195706f54ad.png",
+    "generation_mode": "built-in image_gen",
+    "prompt_source": "docs/glasswild/prompts.json#scenes[n=5].prompt",
+    "review_status": "accepted",
+    "review_notes": [
+      "Russet corgi with upright ears, violet scarf, olive vest and orange backpack is visible at an active planter.",
+      "Three modular habitats, sun/soil/moisture controls, selected dew tray, fossil notebook and eight-slot hotbar are readable.",
+      "Cutaway interior uses a closer character scale than the prompt's nominal 5 percent height; accepted as interior zoom concept."
+    ]
+  },
+  {
+    "scene": 6,
+    "title": "증거를 이어 완성하는 도감",
+    "source_path": "/Users/sushi/.codex/generated_images/01a115f6-cd4c-7b02-be6c-64ccdc91394a/exec-a546a8bb-1e50-4320-b622-de5866499b74.png",
+    "generation_mode": "built-in image_gen",
+    "prompt_source": "docs/glasswild/prompts.json#scenes[n=6].prompt",
+    "review_status": "accepted",
+    "review_notes": [
+      "Corgi identity is readable in camp margin and the observation-card illustration; atlas is a clear in-game overlay.",
+      "Twelve atlas slots, seen/identified/understood states, three evidence icons and final-card cursor communicate the mechanic.",
+      "12 / 24 is generated prototype UI illustration, not the planned collection total; small background animal decoration is not another controllable player."
+    ]
+  },
+  {
+    "scene": 7,
+    "title": "야영지의 저녁 공동 기록",
+    "source_path": "/Users/sushi/.codex/generated_images/01a115f6-cd4c-7b02-be6c-64ccdc91394a/exec-703a0f1c-6c2f-4eab-8a94-36b898cacc36.png",
+    "generation_mode": "built-in image_gen",
+    "prompt_source": "docs/glasswild/prompts.json#scenes[n=7].prompt",
+    "review_status": "accepted",
+    "review_notes": [
+      "Upright-eared corgi with violet scarf, olive vest and orange backpack shares a map table with four friendly NPCs.",
+      "Sky-blue caravan roof, amber awning, map and specimen rack, open chair, and two dialogue choices are clearly visible.",
+      "Generated incidental dialogue and the name Nadi are concept-only text, not final narrative; social scene uses a closer sprite scale."
+    ]
+  },
+  {
+    "scene": 8,
+    "title": "묻힌 화석정원의 깊은 탐험",
+    "source_path": "/Users/sushi/.codex/generated_images/01a115f6-cd4c-7b02-be6c-64ccdc91394a/exec-d980150e-dabc-4ce3-9278-9952d60dfcec.png",
+    "generation_mode": "built-in image_gen",
+    "prompt_source": "docs/glasswild/prompts.json#scenes[n=8].prompt",
+    "review_status": "accepted",
+    "review_notes": [
+      "Upright-eared corgi in violet scarf, olive vest and orange backpack is visibly making a paper fossil rubbing.",
+      "Selected fossil, collected imprint, prism-lit side path, footprints and permanent return ladder are readable gameplay actions.",
+      "Stepped room uses a strong three-quarter view; dark lower crevices are scenery, with walkable routes shown around them."
+    ]
+  }
+]
