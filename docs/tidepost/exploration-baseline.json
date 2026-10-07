@@ -1,0 +1,73 @@
+{
+  "purpose": "Preserve original six scenes before adding exploration concepts",
+  "baselineCommit": "dab7749befa113ec8852efec5a96835f75c0ddf9",
+  "pageSha256": "baae57ff8eb26047da718defa1c4d54096bd2297231f5bb604accb8275557cb4",
+  "images": [
+    {
+      "id": 1,
+      "output": "public/images/tidepost/scene-01.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "720f08acd0bf4a8fc5c23d43b5c6dd8d13d6131e9088b36862d683ba12d80ba8",
+      "bytes": 466480,
+      "url": "/images/tidepost/scene-01.webp?v=720f08acd0bf"
+    },
+    {
+      "id": 2,
+      "output": "public/images/tidepost/scene-02.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "c68aff7928a703a825eb2c88fdfe325e508f947ec2ba096e45763c726525491d",
+      "bytes": 523730,
+      "url": "/images/tidepost/scene-02.webp?v=c68aff7928a7"
+    },
+    {
+      "id": 3,
+      "output": "public/images/tidepost/scene-03.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "51a71242a8dc24eb7c2405092b5eb138def6a3cf242f8eb55c8e3fe8f4b5ff66",
+      "bytes": 318484,
+      "url": "/images/tidepost/scene-03.webp?v=51a71242a8dc"
+    },
+    {
+      "id": 4,
+      "output": "public/images/tidepost/scene-04.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "f99456395cefa23bde66ac0136fc45f2d233974836fee8c139f6bc4e468659ff",
+      "bytes": 409336,
+      "url": "/images/tidepost/scene-04.webp?v=f99456395cef"
+    },
+    {
+      "id": 5,
+      "output": "public/images/tidepost/scene-05.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "0d103f075188e7bea9fdd0e381c6426d0533eccfb37401a4ea558a5e1f4c630c",
+      "bytes": 402984,
+      "url": "/images/tidepost/scene-05.webp?v=0d103f075188"
+    },
+    {
+      "id": 6,
+      "output": "public/images/tidepost/scene-06.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "bf48f9fcf8cb8e5fd8e06bc803cbd956cd176abae241251c115460f5d7481213",
+      "bytes": 579118,
+      "url": "/images/tidepost/scene-06.webp?v=bf48f9fcf8cb"
+    }
+  ]
+}

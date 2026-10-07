@@ -128,6 +128,66 @@
       "sha256": "bf48f9fcf8cb8e5fd8e06bc803cbd956cd176abae241251c115460f5d7481213",
       "url": "/images/tidepost/scene-06.webp?v=bf48f9fcf8cb",
       "alt": "겨울의 같은 물결마을에서 삼색 고양이 배달부가 우체국 옥상 온실의 작물을 돌보고, 수리된 나루터와 연락선, 불 켜진 등대로 동물 주민들이 오가는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": 7,
+      "title": "물비늘 동굴의 수문",
+      "source": "generated_images/01a11599-ab67-7b52-8b9d-5d9571783559/exec-5647c245-dfc8-4da2-afdc-a9bf7c3dd8db.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2351719,
+      "sourceSha256": "acd1825a72a5e434eb88752c73a00d1a12b1cafa97239c7673102378d8a276a0",
+      "output": "public/images/tidepost/scene-07.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 337486,
+      "sha256": "1238dfe7a86f3a854bba280fd8b6bbff56a2875f30100cfc13c63d07c73f90f1",
+      "url": "/images/tidepost/scene-07.webp?v=1238dfe7a86f",
+      "alt": "삼색 고양이가 탐사등을 들고 조개 문양과 물길을 비교하며 동굴의 수문을 돌리는 픽셀아트 플레이 시안. 새 씨앗, 미등록 옆방, 지상으로 연결할 사다리가 함께 보인다."
+    },
+    {
+      "id": 8,
+      "title": "덩굴 속 바람관측소",
+      "source": "generated_images/01a115b6-c3c2-72f1-b966-313185310ce5/exec-d7097945-410a-4ae4-bf69-a25383f4f2f7.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 3032431,
+      "sourceSha256": "3f5a1f9f072c88097ca1d0ab9c3f66f8068abb1ce74fd4dce6cab26cdccafa8f",
+      "output": "public/images/tidepost/scene-08.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 529622,
+      "sha256": "31a114904cdcfff9b6d78175dc56412070f5ae46ae693c2062b80158269b914a",
+      "url": "/images/tidepost/scene-08.webp?v=31a114904cdc",
+      "alt": "크림색 강아지가 덩굴에 덮인 옛 관측소에서 거울의 햇빛을 조개 모양 문에 연결하는 픽셀아트 탐험 시안. 권양기로 내린 발판과 문 너머 온실의 발견물이 보인다."
+    },
+    {
+      "id": 9,
+      "title": "안개여울의 새 항로",
+      "source": "generated_images/01a115b6-c3c2-72f1-b966-313185310ce5/exec-1ca4ff7d-2326-4c67-aff7-286707c01c49.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2470240,
+      "sourceSha256": "d171b663ce6b79a4d1aa5039caf57e97af7b679cb4a65be600dc5c61a40f331d",
+      "output": "public/images/tidepost/scene-09.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 383268,
+      "sha256": "54b89cbcdc5e216be8c28aa3056dfd6b019371a91e6a49a7463ccaef2051c360",
+      "url": "/images/tidepost/scene-09.webp?v=54b89cbcdc5e",
+      "alt": "삼색 고양이가 작은 배를 정박하고 낯선 섬의 선착장에 부표를 놓는 픽셀아트 탐험 시안. 쌍둥이 바위와 먼 종탑, 발견 중인 섬의 항로 지도가 보인다."
     }
   ],
   "generationRetries": [
@@ -138,5 +198,7 @@
       "recovery": "Shortened prompt with the same built-in image generator",
       "result": "success"
     }
-  ]
+  ],
+  "updated": "2026-10-07",
+  "updateNote": "Added exploration scenes 07-09; original scenes 01-06 preserved byte-for-byte."
 }
