@@ -3,7 +3,10 @@ const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 const fs = require('node:fs/promises');
 const path = require('node:path');
-const sites = ['playretrogames', 'playretro-io', 'retrogames-onl-snes'];
+const allSites = ['playretrogames', 'playretro-io', 'retrogames-onl-snes'];
+const sites = process.argv[3] ? [process.argv[3]] : allSites;
+assert.ok(sites.every((site) => allSites.includes(site)), 'Unknown catalog');
+const titles = { playretrogames: 'Play Retro Games', 'playretro-io': 'PlayRetro.io', 'retrogames-onl-snes': 'RetroGames.onl' };
 
 (async () => {
   const base = process.argv[2] || 'http://127.0.0.1:8080';
@@ -24,6 +27,8 @@ const sites = ['playretrogames', 'playretro-io', 'retrogames-onl-snes'];
     assert.equal(new Set(games.map((g) => g.source)).size, games.length);
     const response = await page.goto(url, { waitUntil: 'networkidle' });
     assert.equal(response.status(), 200);
+    assert.equal(await page.title(), titles[site] + ' · nyimpe');
+    assert.equal(await page.locator('h1').textContent(), titles[site]);
     await page.locator('.classic-filter').waitFor({ state: 'visible' });
     const cards = page.locator('.classic-game');
     const status = page.locator('#game-count');
@@ -130,7 +135,11 @@ const sites = ['playretrogames', 'playretro-io', 'retrogames-onl-snes'];
     if (live) await page.waitForTimeout(2000);
   }
   await page.goto(base);
-  for (const site of sites) assert.ok(await page.locator(`.post-list a[href="/posts/${site}/"]`).isVisible());
+  for (const site of sites) {
+    const link = page.locator(`.post-list a[href="/posts/${site}/"]`);
+    assert.ok(await link.isVisible());
+    assert.equal(await link.textContent(), titles[site]);
+  }
   assert.deepEqual(errors, []);
   console.log(JSON.stringify({ base, results, consoleErrors: errors }, null, 2));
   await browser.close();

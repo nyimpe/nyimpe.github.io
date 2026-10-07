@@ -29,7 +29,7 @@ DATE = datetime.now(ZoneInfo('Asia/Seoul')).date().isoformat()
 SITES = {
     'playretrogames': {'name': 'Play Retro Games', 'url': 'https://www.playretrogames.com/', 'scope': '전체 게임 목록의 모든 페이지'},
     'playretro-io': {'name': 'PlayRetro.io', 'url': 'https://www.playretro.io/', 'scope': '전체 게임 목록의 모든 페이지'},
-    'retrogames-onl-snes': {'name': 'RetroGames.onl SNES', 'url': 'https://www.retrogames.onl/p/play-snes-games-online.html', 'scope': '요청한 슈퍼패미콤(SNES) A–Z 목록'},
+    'retrogames-onl-snes': {'name': 'RetroGames.onl', 'url': 'https://www.retrogames.onl/', 'scope': '사이트에서 제공하는 모든 플랫폼의 A–Z 전체 목록'},
 }
 UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
 LOCAL = threading.local()
@@ -47,6 +47,9 @@ PLATFORMS = {
     'nintendo': '패미컴 / NES', 'nintendo-64': 'Nintendo 64', 'sega': '메가드라이브',
     'sega-32x': 'SEGA 32X', 'sega-cd': 'SEGA CD', 'sega-game-gear': '게임기어',
     'sega-master-system': '마스터 시스템', 'sega-saturn': '세가 새턴',
+    '3do': '3DO', 'atari-jaguar': 'Atari Jaguar', 'nds': 'Nintendo DS',
+    'amiga': 'Amiga', 'dos': 'MS-DOS / Windows 3.1', 'msx': 'MSX / MSX2',
+    'amstrad': 'Amstrad CPC / GX4000', 'nec-pc-fx': 'NEC PC-FX', 'sharp-x68000': 'Sharp X68000', 'openbor': 'OpenBOR',
     'sony-playstation': 'PlayStation', 'super-nintendo': '슈퍼패미콤 / SNES', 'browser': '웹 브라우저',
 }
 LIST_PLATFORMS = {
@@ -59,6 +62,29 @@ LIST_PLATFORMS = {
     'Sega Game Gear': 'sega-game-gear', 'Sega Master System': 'sega-master-system',
     'Sega Saturn': 'sega-saturn', 'Sony Playstation': 'sony-playstation', 'Sony PlayStation': 'sony-playstation', 'Nintendo Super NES': 'super-nintendo',
 }
+# The existing post/data route and SNES game IDs remain valid after expansion.
+ONL_SITE = 'retrogames-onl-snes'
+ONL_PLATFORMS = {
+    'ps1': 'sony-playstation', '3do': '3do', 'atari-2600': 'atari-2600',
+    'atari-7800': 'atari-7800', 'atari-jaguar': 'atari-jaguar',
+    'sega-genesis': 'sega', 'sega-cd': 'sega-cd', 'sega-master-system': 'sega-master-system',
+    'sega-game-gear': 'sega-game-gear', 'sega-saturn': 'sega-saturn', 'sega-32x': 'sega-32x',
+    'nes': 'nintendo', 'snes': 'super-nintendo', 'n64': 'nintendo-64', 'nds': 'nds',
+    'gbc': 'gbc', 'gba': 'gba', 'neo-geo': 'neo-geo', 'amiga': 'amiga',
+    'turbografx': 'nec-pc-engine', 'arcade-machines': 'coin-op-arcade', 'dos': 'dos',
+    'msx': 'msx', 'amstrad': 'amstrad', 'nec-pc-fx': 'nec-pc-fx',
+    'sharp-x68000': 'sharp-x68000', 'openbor': 'openbor',
+}
+# These source links occur in two indexes; the detail pages identify their actual versions.
+ONL_SOURCE_CORRECTIONS = {
+    'https://www.retrogames.onl/2022/07/play-fifa-international-soccer-sega.htmll': 'https://www.retrogames.onl/2022/07/play-fifa-international-soccer-sega.html',
+    'https://www.retrogames.onl/genesis/spirou-sega.html': 'https://www.retrogames.onl/2022/08/play-spirou-sega-online.html',
+}
+ONL_CROSS_LIST_PLATFORMS = {
+    'https://www.retrogames.onl/2017/11/popful-mail-sega-cd.html': 'sega-cd',
+    'https://www.retrogames.onl/2022/03/mega-man-bass-gba-play-online.html': 'gba',
+}
+
 # Reuse the existing catalog's Korean genre vocabulary and basic-play explanations.
 import importlib.util
 spec = importlib.util.spec_from_file_location('tooli_catalog', ROOT / 'scripts/build-tooli-catalog.py')
@@ -118,7 +144,7 @@ def fetch(url, binary=False):
         try:
             with PACE_LOCK:
                 wait = max(0, NEXT_REQUEST.get(host, 0) - time.monotonic())
-                interval = 1.25 if host == 'blogger.googleusercontent.com' else (0.4 if host == 'www.playretro.io' else 0.15)
+                interval = 0.5 if host == 'blogger.googleusercontent.com' else (0.4 if host == 'www.playretro.io' else 0.15)
                 NEXT_REQUEST[host] = time.monotonic() + wait + interval
             if wait:
                 time.sleep(wait)
@@ -173,8 +199,9 @@ def prg_metadata_soup(url):
     return BeautifulSoup(content, 'html.parser', parse_only=SoupStrainer(class_=lambda value: bool(value) and any(c in value.split() for c in ['breadcrumb', 'single-video-info-content'])))
 
 
-def check_robots():
-    for site in SITES.values():
+def check_robots(sites=None):
+    for name in sites or SITES:
+        site = SITES[name]
         base = urljoin(site['url'], '/')
         url = base + 'robots.txt'
         content = fetch(url)
@@ -210,60 +237,108 @@ def prg_cards(s):
     return rows
 
 
-def collect_lists():
-    # Inventory, detail and images are separate, resumable phases.
-    s = soup(SITES['playretrogames']['url'])
-    total = int(re.search(r'Retro Games:\s*(\d+)', s.get_text(' ', strip=True))[1])
-    last = next(a['href'] for a in s.select('a[href]') if a.get_text(strip=True) == 'Last')
-    pages = int(last.rstrip('/').rsplit('/', 1)[1])
-    rows = prg_cards(s)
-    for batch in parallel(list(range(2, pages + 1)), lambda p: prg_cards(soup(f'https://www.playretrogames.com/{p}')), 'PRG lists'):
-        rows.extend(batch)
-    unique = {r['id']: r for r in rows}
-    if len(unique) != total:
-        raise RuntimeError(f'PRG inventory incomplete: {len(unique)} unique, source advertises {total}')
-    save_json(CACHE / 'playretrogames-list.json', {'pages': pages, 'advertisedGames': total, 'listedLinks': len(rows), 'games': list(unique.values())})
+def collect_lists(sites=None):
+    selected = sites or SITES
+    if 'playretrogames' in selected:
+        s = soup(SITES['playretrogames']['url'])
+        total = int(re.search(r'Retro Games:\s*(\d+)', s.get_text(' ', strip=True))[1])
+        last = next(a['href'] for a in s.select('a[href]') if a.get_text(strip=True) == 'Last')
+        pages = int(last.rstrip('/').rsplit('/', 1)[1])
+        rows = prg_cards(s)
+        for batch in parallel(list(range(2, pages + 1)), lambda p: prg_cards(soup(f'https://www.playretrogames.com/{p}')), 'PRG lists'):
+            rows.extend(batch)
+        unique = {r['id']: r for r in rows}
+        if len(unique) != total:
+            raise RuntimeError(f'PRG inventory incomplete: {len(unique)} unique, source advertises {total}')
+        save_json(CACHE / 'playretrogames-list.json', {'pages': pages, 'advertisedGames': total, 'listedLinks': len(rows), 'games': list(unique.values())})
 
-    rows, page, seen = [], 1, set()
-    while True:
-        url = 'https://www.playretro.io/' + (f'?page={page}' if page > 1 else '')
-        s = soup(url)
-        current = []
-        for a in s.select('.games > a.game_thumb'):
-            image = a.select_one('img')
-            title = a.select_one('.game_name')
+    if 'playretro-io' in selected:
+        rows, page, seen = [], 1, set()
+        while True:
+            url = 'https://www.playretro.io/' + (f'?page={page}' if page > 1 else '')
+            s = soup(url)
+            current = []
+            for a in s.select('.games > a.game_thumb'):
+                image = a.select_one('img')
+                title = a.select_one('.game_name')
+                source = urljoin(url, a['href'])
+                current.append({'id': 'io-' + source.rsplit('/', 1)[1], 'title': title.get_text(' ', strip=True), 'source': source,
+                                'platform': 'browser', 'sourcePlatform': '웹 브라우저', 'imageSource': urljoin(url, image['src']) if image else None})
+            if not current or all(r['source'] in seen for r in current):
+                raise RuntimeError(f'IO empty or repeated inventory page {page}')
+            rows.extend(current)
+            seen.update(r['source'] for r in current)
+            next_link = next((a for a in s.select('a[href]') if a.get_text(strip=True) == '〉'), None)
+            if not next_link:
+                break
+            next_page = int(re.search(r'[?&]page=(\d+)', next_link['href'])[1])
+            if next_page != page + 1:
+                raise RuntimeError('Unexpected IO pagination')
+            page = next_page
+        save_json(CACHE / 'playretro-io-list.json', {'pages': page, 'listedLinks': len(rows), 'games': list({r['source']: r for r in rows}.values())})
+        print(f'IO lists: {page} pages, {len(seen)} games', flush=True)
+
+    if ONL_SITE in selected:
+        collect_onl_lists()
+
+
+def collect_onl_lists():
+    home = soup(SITES[ONL_SITE]['url'])
+    indexes = {}
+    for a in home.select('a[href]'):
+        match = re.fullmatch(r'/p/play-(.+)-games-online\.html', a['href'])
+        if match:
+            indexes[match[1]] = urljoin(SITES[ONL_SITE]['url'], a['href'])
+    if set(indexes) != set(ONL_PLATFORMS):
+        raise ValueError('ONL platform menu changed: ' + repr(set(indexes) ^ set(ONL_PLATFORMS)))
+    previous_path = CACHE / f'{ONL_SITE}-list.json'
+    previous = {r['source']: r for r in read_json(previous_path)['games']} if previous_path.exists() else {}
+    rows, repeated, reports, corrected_links = {}, [], [], []
+    for key, url in indexes.items():
+        platform = ONL_PLATFORMS[key]
+        page = soup(url)
+        links = page.select('#azlist a[href]')
+        if not links:
+            raise ValueError('Empty ONL platform index: ' + url)
+        source_label = page.title.get_text(' ', strip=True).split(':', 1)[-1].strip()
+        sources = set()
+        for a in links:
+            title = a.get_text(' ', strip=True)
             source = urljoin(url, a['href'])
-            current.append({'id': 'io-' + source.rsplit('/', 1)[1], 'title': title.get_text(' ', strip=True), 'source': source,
-                            'platform': 'browser', 'sourcePlatform': '웹 브라우저', 'imageSource': urljoin(url, image['src']) if image else None})
-        if not current or all(r['source'] in seen for r in current):
-            raise RuntimeError(f'IO empty or repeated inventory page {page}')
-        rows.extend(current)
-        seen.update(r['source'] for r in current)
-        next_link = next((a for a in s.select('a[href]') if a.get_text(strip=True) == '〉'), None)
-        if not next_link:
-            break
-        next_page = int(re.search(r'[?&]page=(\d+)', next_link['href'])[1])
-        if next_page != page + 1:
-            raise RuntimeError('Unexpected IO pagination')
-        page = next_page
-    save_json(CACHE / 'playretro-io-list.json', {'pages': page, 'listedLinks': len(rows), 'games': list({r['source']: r for r in rows}.values())})
-    print(f'IO lists: {page} pages, {len(seen)} games', flush=True)
-
-    s = soup(SITES['retrogames-onl-snes']['url'])
-    rows, repeated = {}, []
-    for a in s.select('#azlist a[href]'):
-        title = a.get_text(' ', strip=True)
-        source = urljoin(SITES['retrogames-onl-snes']['url'], a['href'])
-        if not title or not source.startswith('https://') or not source.endswith('.html'):
-            continue
-        if source in rows:
-            rows[source]['aliases'].append(title)
-            repeated.append({'title': title, 'source': source})
-            continue
-        rows[source] = {'id': 'snes-' + source.rsplit('/', 1)[1].removesuffix('.html'), 'title': title,
-                        'source': source, 'platform': 'super-nintendo', 'sourcePlatform': 'Super Nintendo (SNES)', 'aliases': [], 'imageSource': None}
-    save_json(CACHE / 'retrogames-onl-snes-list.json', {'pages': 1, 'listedLinks': len(s.select('#azlist a[href]')), 'duplicateAliases': repeated, 'games': list(rows.values())})
-    print(f'ONL lists: {len(rows)} unique games, {len(repeated)} duplicate aliases', flush=True)
+            if not title or urlparse(source).scheme != 'https':
+                raise ValueError('Invalid ONL game link: ' + str(a))
+            listed_source = source
+            if source in ONL_SOURCE_CORRECTIONS:
+                source = ONL_SOURCE_CORRECTIONS[source]
+                corrected_links.append({'listedSource': listed_source, 'source': source, 'index': url})
+            if not urlparse(source).path.endswith('.html'):
+                raise ValueError('Unexpected ONL game URL: ' + source)
+            sources.add(source)
+            if source in rows:
+                if title != rows[source]['title']:
+                    rows[source]['aliases'].append(title)
+                repeated.append({'title': title, 'source': source, 'index': url})
+                if rows[source]['platform'] != platform:
+                    actual = ONL_CROSS_LIST_PLATFORMS.get(source)
+                    if not actual or actual not in [rows[source]['platform'], platform]:
+                        raise ValueError('Unresolved cross-platform ONL link: ' + source)
+                    if actual == platform:
+                        rows[source].update(platform=platform, sourcePlatform=source_label)
+                continue
+            old = previous.get(source) or previous.get(listed_source)
+            identifier = old['id'] if old else ('snes-' if key == 'snes' else 'onl-' + key + '-') + urlparse(source).path.rsplit('/', 1)[1].removesuffix('.html')
+            rows[source] = {'id': identifier, 'title': title, 'source': source, 'platform': platform,
+                            'sourcePlatform': source_label, 'aliases': [], 'imageSource': None}
+        reports.append({'platform': platform, 'sourcePlatform': source_label, 'source': url,
+                        'listedLinks': len(links), 'uniqueSources': len(sources)})
+        print(f'ONL {key}: {len(links)} links, {len(sources)} unique', flush=True)
+    if len({r['id'] for r in rows.values()}) != len(rows):
+        raise ValueError('Duplicate ONL game IDs')
+    save_json(previous_path, {'pages': len(indexes), 'listedLinks': sum(p['listedLinks'] for p in reports),
+                             'platformIndexes': reports, 'duplicateAliases': repeated,
+                             'crossListedPlatforms': ONL_CROSS_LIST_PLATFORMS, 'correctedLinks': corrected_links,
+                             'games': list(rows.values())})
+    print(f'ONL lists: {len(rows)} unique games across {len(indexes)} platforms', flush=True)
 
 
 def detail(site, row):
@@ -316,6 +391,18 @@ def detail(site, row):
                     row['detailStatus'] = 'ok'
                     return row
                 raise ValueError('Missing game post body')
+            metadata = s.select_one('#descrgame')
+            if metadata and not body.select_one('#descrgame'):
+                # Three source posts close .post-body before their metadata/intro.
+                # Recover the intro siblings, stopping before walkthroughs/footer.
+                fragments = [str(metadata)]
+                for sibling in metadata.next_siblings:
+                    if getattr(sibling, 'name', None) in ['h2', 'h3']:
+                        break
+                    if getattr(sibling, 'attrs', None) and ('post-footer' in sibling.get('class', []) or 'clear: both' in sibling.get('style', '')):
+                        break
+                    fragments.append(str(sibling))
+                body = BeautifulSoup('<div>' + ''.join(fragments) + '</div>', 'html.parser').div
             label = body.find(['b', 'strong'], string=re.compile(r'^Genre:'))
             genre_text = label.parent.get_text(' ', strip=True).removeprefix('Genre:').strip() if label else ''
             row['sourceGenres'] = [v.strip().lower() for v in re.split(r'[,/]', genre_text) if v.strip()]
@@ -331,9 +418,13 @@ def detail(site, row):
             image = body.select_one('img[src]')
             if image:
                 row['imageSource'] = urljoin(row['source'], image['src'])
+            else:
+                preview = s.select_one('link[rel="image_src"][href]')
+                if preview:
+                    row['imageSource'] = urljoin(row['source'], preview['href'])
             heading = s.select_one('.post-title')
             if heading:
-                actual = re.sub(r'\s*\(SNES\)\s*$', '', heading.get_text(' ', strip=True)).strip()
+                actual = re.sub(r'\s*\((?:SNES|NES|PS1|PSX|3DO|SEGA|Genesis|Mega Drive|SEGA CD|SEGA 32X|32X|Saturn|Master System|Game Gear|N64|NDS|GBC|GBA|Neo-Geo|Amiga|DOS|MSX|MSX2|Amstrad|PC-FX|X68000|OpenBOR|Arcade|Atari [^)]+|TurboGrafx[^)]*)\)\s*$', '', heading.get_text(' ', strip=True), flags=re.I).strip()
                 row['detailTitle'] = actual
                 if actual and actual.casefold() != row['title'].casefold():
                     row['aliases'].append(row['title'])
@@ -346,8 +437,8 @@ def detail(site, row):
     return row
 
 
-def collect_details():
-    for site in ['playretro-io', 'retrogames-onl-snes', 'playretrogames']:
+def collect_details(sites=None):
+    for site in sites or ['playretro-io', 'retrogames-onl-snes', 'playretrogames']:
         rows = read_json(CACHE / f'{site}-list.json')['games']
         rows = parallel(rows, lambda row: detail(site, row), site + ' details', workers=6 if site == 'playretrogames' else 3)
         save_json(CACHE / f'{site}-details.json', rows)
@@ -371,8 +462,8 @@ def image_for(site, row):
         return row['id'], {'image': None, 'imageStatus': '원문 이미지 접근 불가', 'imageError': str(error)}
 
 
-def collect_images():
-    for site in ['playretro-io', 'retrogames-onl-snes', 'playretrogames']:
+def collect_images(sites=None):
+    for site in sites or ['playretro-io', 'retrogames-onl-snes', 'playretrogames']:
         rows = read_json(CACHE / f'{site}-details.json')
         images = parallel(rows, lambda row: image_for(site, row), site + ' images')
         save_json(CACHE / f'{site}-images.json', dict(images))
@@ -418,6 +509,9 @@ def build(sites=None):
     for site in sites or SITES:
         config = SITES[site]
         rows = read_json(CACHE / f'{site}-details.json')
+        inventory = read_json(CACHE / f'{site}-list.json')
+        if len(rows) != len(inventory['games']) or {r['source']: r['id'] for r in rows} != {r['source']: r['id'] for r in inventory['games']}:
+            raise ValueError('Game details do not cover the complete inventory: ' + site)
         images = read_json(CACHE / f'{site}-images.json')
         games = []
         for row in rows:
@@ -437,6 +531,8 @@ def build(sites=None):
                 if not translated or translated['sourceHash'] != source_hash:
                     raise ValueError('Korean description needs translation: ' + site + ':' + row['id'])
                 description = translated['description']
+                if translated.get('descriptionSource'):
+                    game['descriptionSource'] = translated['descriptionSource']
                 if not re.search(r'[가-힣]', description):
                     raise ValueError('Korean description missing: ' + site + ':' + row['id'])
             else:
@@ -480,11 +576,12 @@ def render(site, config, payload, report):
         labels = list(dict.fromkeys([g['listedTitle'], *g.get('aliases', [])]))
         other_labels = [label for label in labels if label != g['title']]
         aliases = f'<p class="game-method">원문 목록 표기: {esc(" · ".join(other_labels))}</p>' if other_labels else ''
+        description_source = f'<a href="{esc(g["descriptionSource"])}">한글 소개 원문</a> · ' if g.get('descriptionSource') else ''
         cards.append(f'''<section id="{esc(g['id'])}" class="classic-game" data-platform="{g['platform']}" data-genre="{esc(g['genre'])}" aria-labelledby="{esc(g['id'])}-title">
 {media}<p class="game-tags">{esc(platforms[g['platform']])} · {esc(g['genre'])}</p>
 <h2 id="{esc(g['id'])}-title">{esc(g['title'])}</h2>{aliases}<p>{esc(g['description'])}</p>
 <p class="game-method"><strong>기본 진행</strong> {esc(g['basicMethod'])}</p>
-<p class="game-source"><a href="{esc(g['source'])}">{esc(config['name'])} 원문</a> · {esc(g['genreBasis'])} · {esc(g['descriptionBasis'])}</p>
+<p class="game-source"><a href="{esc(g['source'])}">{esc(config['name'])} 원문</a> · {description_source}{esc(g['genreBasis'])} · {esc(g['descriptionBasis'])}</p>
 </section>''')
     # Shared page chrome and filter layout are kept in a small checked-in template.
     template = (ROOT / 'scripts/retro-catalog-template.html').read_text()
@@ -503,9 +600,15 @@ def render(site, config, payload, report):
 
 if __name__ == '__main__':
     CACHE.mkdir(parents=True, exist_ok=True)
-    command = sys.argv[1] if len(sys.argv) > 1 else 'all'
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('phase', nargs='?', default='all', choices=['all', 'lists', 'details', 'images', 'build'])
+    parser.add_argument('--site', choices=list(SITES))
+    args = parser.parse_args()
+    command = args.phase
+    selected = [args.site] if args.site else None
     if command != 'build':
-        check_robots()
+        check_robots(selected)
     for name, action in [('lists', collect_lists), ('details', collect_details), ('images', collect_images), ('build', build)]:
         if command in ['all', name]:
-            action()
+            action(selected)

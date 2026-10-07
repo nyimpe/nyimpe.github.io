@@ -34,7 +34,11 @@ for site in SITES:
         assert not re.search(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f]', description), game['id']
         assert card.select_one('h2 ~ p:not([class])').get_text() == description, game['id']
         if game['descriptionBasis'] == '원문 소개 한글 번역':
-            assert translations[site + ':' + game['id']]['description'] == description
+            translated = translations[site + ':' + game['id']]
+            assert translated['description'] == description
+            if game.get('descriptionSource'):
+                assert game['descriptionSource'] == translated['descriptionSource']
+                assert card.select_one('.game-source a:nth-of-type(2)')['href'] == game['descriptionSource']
         else:
             assert game['descriptionBasis'] == '목록 안내'
         if baseline:
