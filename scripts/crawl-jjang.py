@@ -192,11 +192,11 @@ def screenshot(row):
                 original.load()
                 assert original.width >= 60 and original.height >= 40, 'Image too small to be a game screen'
                 img = ImageOps.exif_transpose(original).convert('RGB')
-                img.thumbnail((720, 540), Image.Resampling.LANCZOS)
+                img.thumbnail((320, 240), Image.Resampling.LANCZOS)
                 src = '/images/jjang-games/' + row['id'] + '.webp'
                 output = ROOT / 'public' / src.lstrip('/')
                 output.parent.mkdir(parents=True, exist_ok=True)
-                img.save(output, 'WEBP', quality=82, method=6)
+                img.save(output, 'WEBP', quality=55, method=6)
                 result = {'image': {'src': src, 'width': img.width, 'height': img.height, 'source': url,
                     'kind': 'source-thumbnail' if url == row['thumbnail'] or url in row['screenThumbnails'] else 'source-screenshot'}, 'failures': failures}
                 save(manifest, result)

@@ -7,6 +7,7 @@
 - **괴물·귀신:** `/posts/korean-folklore-research/`에 326항목의 이미지·설명·출처를 정리했습니다.
 - **게임 기획:** `/posts/korean-folklore-game-design/`에 괴물·귀신 자료를 바탕으로 한 2D 픽셀아트 게임 기획, 장르 시장 조사, 컨셉 이미지 43장을 정리했습니다. 이미지 생성 스크립트는 `docs/folklore-game-concepts/`에 있습니다.
 - **빌드:** Vite가 HTML 페이지와 게임 모듈을 빌드합니다. 
+- **포스팅 이미지:** `npm run optimize:images`가 해상도·품질을 낮추고 WebP와 AVIF를 비교해 더 작은 파일을 선택합니다. 게시물·JSON·현재 이미지 기록의 경로, 크기, 캐시 해시를 함께 수정합니다. Pillow 11.3 이상(WebP·AVIF 지원)이 필요하며, 게시물을 다시 생성한 뒤 실행합니다. 설정과 결과는 `docs/post-image-optimization.json`에 기록하고, 이미 처리한 파일은 해시로 확인해 재압축을 건너뜁니다.
 - **외부 링크:** 다른 사이트로 가는 링크는 빌드할 때 `target="_blank" rel="noopener noreferrer"`가 자동으로 붙어 새 탭에서 열립니다. HTML에 직접 쓸 필요가 없습니다(`vite.config.js`).
 - **배포:** `main`에 push하면 GitHub Actions가 `dist/`를 GitHub Pages에 배포합니다.
 - **알림:** 어느 브랜치든 push하면 GitHub Actions가 새 커밋마다 커밋 메시지만 `git`이라는 이름으로 디스코드에 보냅니다. 웹훅 주소는 저장소 시크릿 `DISCORD_WEBHOOK_URL`에 있습니다(`.github/workflows/discord-notify.yml`).

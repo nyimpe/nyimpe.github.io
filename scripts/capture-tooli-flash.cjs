@@ -76,8 +76,8 @@ const ruffleDir = path.dirname(require.resolve('@ruffle-rs/ruffle'));
         }
         if (stats.entropy < .15) throw new Error('Blank movie frame');
         if (await page.getByText(/Ruffle has encountered|Something went wrong/i).count()) throw new Error('Ruffle render error');
-        await sharp(screenshot).webp({ quality: 85 }).toFile(filename);
-        output[row.id] = { src: `/images/classic-games/${row.id}.webp`, width: 700, height: 500, source: sourceUrl, kind: 'flash-capture' };
+        const savedImage = await sharp(screenshot).resize({ width: 320, height: 240, fit: 'inside', withoutEnlargement: true }).webp({ quality: 55, effort: 6 }).toFile(filename);
+        output[row.id] = { src: `/images/classic-games/${row.id}.webp`, width: savedImage.width, height: savedImage.height, source: sourceUrl, kind: 'flash-capture' };
         movies.delete(moviePath);
       } catch (error) {
         console.log(`${row.id}: ${error.message}`);

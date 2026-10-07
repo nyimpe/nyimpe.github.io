@@ -9,7 +9,7 @@ import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -36,7 +36,7 @@ def verify():
             assert card.select_one('.game-source a')['href'] == game['source']
             if game['image']:
                 assert card.select_one('img')['src'] == game['image']['src']
-                file = ROOT / 'public' / game['image']['src'].lstrip('/')
+                file = ROOT / 'public' / urlsplit(game['image']['src']).path.lstrip('/')
                 with Image.open(file) as image:
                     assert image.size == (game['image']['width'], game['image']['height'])
                     image.load()

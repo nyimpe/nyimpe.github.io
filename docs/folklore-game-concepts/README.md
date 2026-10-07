@@ -1,6 +1,6 @@
 # 괴물·귀신 게임 컨셉 이미지
 
-현재 게시물 이미지는 `redraw-2026-10-06/`에 기록한 내장 ImageGen 프롬프트로 새로 제작한 플레이 컨셉아트입니다. 최종 PNG는 `public/images/folklore-game/`의 기존 43개 경로에 저장합니다. 장르별 시점·핵심 조작·괴물 대응 규칙을 시각화한 시안이며, 실행 가능한 게임의 캡처가 아닙니다.
+현재 게시물 이미지는 `redraw-2026-10-06/`에 기록한 내장 ImageGen 프롬프트로 새로 제작한 플레이 컨셉아트입니다. 생성 원본은 PNG이며, 게시용 이미지는 `public/images/folklore-game/`의 같은 이름을 가진 WebP 또는 AVIF로 압축합니다. 현재 경로·크기·해시는 `redraw-2026-10-06/manifest.json`, 압축 전 정보는 각 항목의 `optimizedFrom`에 기록합니다. 장르별 시점·핵심 조작·괴물 대응 규칙을 시각화한 시안이며, 실행 가능한 게임의 캡처가 아닙니다.
 
 아래 Python 스크립트는 이전 임시 이미지의 제작 기록입니다. 실행 결과를 현재 게시물 이미지 위에 복사하면 새 컨셉아트가 덮어써지므로 별도 출력으로 보관합니다.
 
@@ -16,4 +16,4 @@ Python 3와 Pillow, macOS의 AppleGothic 글꼴이 필요합니다. 이 폴더�
 python3 scene_deck.py
 ```
 
-결과물은 `public/images/folklore-game/`에 복사해 사용합니다.
+위 스크립트의 결과는 과거 제작 기록으로만 보관합니다. 현재 ImageGen 컨셉아트의 게시용 압축에는 저장소 루트의 `npm run optimize:images`를 사용합니다.

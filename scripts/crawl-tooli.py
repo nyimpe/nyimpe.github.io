@@ -139,9 +139,9 @@ def image(entry):
                 if im.width < 80 or im.height < 60:
                     continue
                 im = im.convert('RGB')
-                im.thumbnail((720, 540), Image.Resampling.LANCZOS)
+                im.thumbnail((320, 240), Image.Resampling.LANCZOS)
                 output.parent.mkdir(parents=True, exist_ok=True)
-                im.save(output, 'WEBP', quality=85)
+                im.save(output, 'WEBP', quality=55, method=6)
                 return {'src': '/images/classic-games/' + output.name, 'width': im.width, 'height': im.height, 'source': url}
         except (requests.RequestException, OSError, ValueError):
             continue

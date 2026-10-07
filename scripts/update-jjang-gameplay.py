@@ -50,9 +50,9 @@ def update():
             source.load()
             assert source.width >= 100 and source.height >= 80
             image = source.convert('RGB')
-            image.thumbnail((640, 480), Image.Resampling.LANCZOS)
+            image.thumbnail((320, 240), Image.Resampling.LANCZOS)
             target = ROOT / 'public/images/jjang-games' / (uid + '.webp')
-            image.save(target, 'WEBP', quality=90, method=6)
+            image.save(target, 'WEBP', quality=55, method=6)
         entry['savedSha256'] = hashlib.sha256(target.read_bytes()).hexdigest()
         entry['image'] = {'src': '/images/jjang-games/' + uid + '.webp?v=' + entry['savedSha256'][:12],
                           'width': image.width, 'height': image.height,

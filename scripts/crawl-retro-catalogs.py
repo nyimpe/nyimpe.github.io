@@ -452,9 +452,9 @@ def image_for(site, row):
         if not target.exists():
             with Image.open(io.BytesIO(fetch(row['imageSource'], binary=True))) as original:
                 image = ImageOps.exif_transpose(original).convert('RGB')
-                image.thumbnail((480, 360), Image.Resampling.LANCZOS)
+                image.thumbnail((320, 240), Image.Resampling.LANCZOS)
                 target.parent.mkdir(parents=True, exist_ok=True)
-                image.save(target, 'WEBP', quality=78)
+                image.save(target, 'WEBP', quality=55, method=6)
         with Image.open(target) as image:
             width, height = image.size
         return row['id'], {'image': {'src': '/' + str(target.relative_to(ROOT / 'public')), 'width': width, 'height': height, 'source': row['imageSource'], 'kind': 'source-thumbnail'}}

@@ -67,10 +67,12 @@ def verify():
             else:
                 assert image['source'] in row['screenshots'] + row['screenThumbnails'] + [row['preview'], row['thumbnail']]
             assert Path(urlparse(image['source']).path).name not in {'snap_big.gif', 'snap_small.gif'}
-            assert urlparse(image['src']).path == '/images/jjang-games/' + game['id'] + '.webp'
+            image_path = Path(urlparse(image['src']).path)
+            assert image_path.parent.as_posix() == '/images/jjang-games'
+            assert image_path.stem == game['id'] and image_path.suffix in {'.webp', '.avif'}
             with Image.open(ROOT / 'public' / urlparse(image['src']).path.lstrip('/')) as saved:
                 saved.load()
-                assert saved.format == 'WEBP' and saved.size == (image['width'], image['height'])
+                assert saved.format in {'WEBP', 'AVIF'} and saved.size == (image['width'], image['height'])
             images += 1
         else:
             assert game['imageStatus']
@@ -84,7 +86,7 @@ def verify():
         for card, game in zip(cards, games):
             if game['image']:
                 assert any(link.get('href') == game['image']['sourcePage'] and link.get_text() == '플레이 화면 출처' for link in card.select('a'))
-    assert {path.stem for path in (ROOT / 'public/images/jjang-games').glob('*.webp')} == {game['id'] for game in games if game['image']}
+    assert {path.stem for path in (ROOT / 'public/images/jjang-games').iterdir() if path.suffix in {'.webp', '.avif'}} == {game['id'] for game in games if game['image']}
     assert len(games) == report['games']
     assert dict(Counter(game['genre'] for game in games)) == report['genreCounts']
     print(json.dumps({'games': len(games), 'imagesDecoded': images, 'sourceIdsPreserved': True,
