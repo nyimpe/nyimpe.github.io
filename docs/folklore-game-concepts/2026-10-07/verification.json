@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-07",
+  "url": "http://127.0.0.1:8081/posts/korean-folklore-game-design-50/",
+  "concepts": 50,
+  "images": 50,
+  "tocEntries": 50,
+  "sections": 6,
+  "allImagesDecoded": true,
+  "duplicateIds": false,
+  "missingInternalAnchors": [],
+  "layouts": [
+    {
+      "width": 1280,
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "width": 1280,
+      "theme": "dark",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "overflow": false
+    }
+  ],
+  "keyboard": "details, c50 anchor, theme Enter",
+  "homepageEntry": true,
+  "referenceSamples": [
+    {
+      "url": "http://127.0.0.1:8081/posts/playretrogames/?q=Neo%20Bomberman#prg-3534",
+      "id": "prg-3534"
+    },
+    {
+      "url": "http://127.0.0.1:8081/posts/retrogames-onl-snes/?q=Dr.%20Mario#onl-nes-dr-mario-nes",
+      "id": "onl-nes-dr-mario-nes"
+    },
+    {
+      "url": "http://127.0.0.1:8081/posts/playretrogames/?q=Bionic%20Commando%20%28Euro%29#prg-8230",
+      "id": "prg-8230"
+    },
+    {
+      "url": "http://127.0.0.1:8081/posts/playretrogames/?q=The%20Lost%20Vikings#prg-405",
+      "id": "prg-405"
+    }
+  ],
+  "noJavaScriptContent": true,
+  "browserErrors": [],
+  "scope": "Production build in local Chrome through automated browser input; not physical input or live deployment proof.",
+  "localLinksChecked": 179,
+  "allReferenceRecordsVerified": 50,
+  "referenceQueriesReachFirstBatch": true,
+  "assetHashesVerified": 50,
+  "imageBytes": 3097226,
+  "legacyFilesUnchanged": [
+    "posts/korean-folklore-game-design/index.html",
+    "posts/korean-folklore-research/index.html",
+    "src/style.css"
+  ],
+  "contentFields": 250,
+  "finalImageRechecks": [
+    {
+      "id": 28,
+      "src": "/images/folklore-game-50/concept-28.webp?v=038291dded83",
+      "decoded": true
+    },
+    {
+      "id": 32,
+      "src": "/images/folklore-game-50/concept-32.webp?v=b4aad0dee138",
+      "decoded": true
+    }
+  ],
+  "productionCSS": "/assets/main-GOC4pVl6.css",
+  "build": "npm run build passed after final image revisions"
+}
