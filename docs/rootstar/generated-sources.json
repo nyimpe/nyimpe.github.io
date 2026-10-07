@@ -1,0 +1,93 @@
+{
+  "generatedAt": "2026-10-07",
+  "generator": "built-in image_gen",
+  "sourceRetention": "Original PNG files remain at their generated_images paths. Project deliverables are WebP copies with no resizing, cropping or content editing.",
+  "images": [
+    {
+      "id": "scene-01",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-d484-77d3-a28d-134d87e0d739/exec-d263431a-1b06-413c-adc0-7201b37b9ae6.png",
+      "sourceSha256": "ed8af7414de87b1bf73dc307e1ff71054ace0573441ec5f1cb22b1cd54d93401",
+      "sourceBytes": 2421739,
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "id": "scene-02",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-d484-77d3-a28d-134d87e0d739/exec-f22bd32d-3d4c-4d6a-a600-8b8ce38863e3.png",
+      "sourceSha256": "67404a9cbb55799f60fc61576df9ebcd098107a4bd5f5679a4dc14227795ce02",
+      "sourceBytes": 2254319,
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "id": "scene-03",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-d484-77d3-a28d-134d87e0d739/exec-89c7efe9-299d-472c-80e9-73664f90ded7.png",
+      "sourceSha256": "a317706887688d230ecffe76b1164ff99dac43277996233ad4fcb627f3f7db9a",
+      "sourceBytes": 2352844,
+      "sourceDimensions": [
+        1672,
+        940
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "id": "scene-04",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-d484-77d3-a28d-134d87e0d739/exec-d74a065d-f8c7-4c3d-9b85-3b1ae72cbb0e.png",
+      "sourceSha256": "638e1439f8a880e44b161460cbf5ae175b1b7315c91adc8211236d064295444f",
+      "sourceBytes": 2279466,
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "id": "scene-05",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-d484-77d3-a28d-134d87e0d739/exec-d52fbb13-9729-4126-a550-5ce8180578ec.png",
+      "sourceSha256": "80afa997f23bc18eb0786d186666410c6effbc3498e89e0832c6fa0773a2a2ef",
+      "sourceBytes": 2267011,
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "visuallyInspected": true
+    },
+    {
+      "id": "scene-06",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-d484-77d3-a28d-134d87e0d739/exec-349d7f7c-9363-491b-8d90-d41797822609.png",
+      "sourceSha256": "b823fca32c50c69f0e5bb17e03f709fb1c2886379c005e58eb96e59754e43142",
+      "sourceBytes": 2463762,
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "visuallyInspected": true
+    }
+  ],
+  "retries": [
+    {
+      "id": "scene-06",
+      "attempt": 1,
+      "status": "network error: error sending request",
+      "action": "retry only scene-06 with same saved prompt"
+    },
+    {
+      "id": "scene-06",
+      "attempt": 2,
+      "status": "network error: error sending request",
+      "action": "retry only scene-06 with same saved prompt"
+    },
+    {
+      "id": "scene-06",
+      "attempt": 3,
+      "status": "success",
+      "action": "accepted after visual inspection"
+    }
+  ]
+}

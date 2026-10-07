@@ -1,0 +1,133 @@
+{
+  "created": "2026-10-07",
+  "generator": "built-in image_gen",
+  "webExport": {
+    "format": "WebP",
+    "quality": 90,
+    "resize": false,
+    "crop": false,
+    "semanticEdits": false
+  },
+  "images": [
+    {
+      "id": "scene-01",
+      "title": "극장의 아침 작업실",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-5751-7f80-9268-736722f224b5/exec-280866b1-a567-4161-b9a7-1e18abbfd233.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2441413,
+      "sourceSha256": "51477a2e2d5074682998c7a75009cdbb32a8b3cd520bf0a9b96038c96c0cc85e",
+      "output": "public/images/alleymoon/scene-01.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 364566,
+      "sha256": "ce58bb93a0dab753c9ca46ebfda1bd87ba101598ea7482cb816150cdf247f9a3",
+      "url": "/images/alleymoon/scene-01.webp?v=ce58bb93a0da",
+      "alt": "붉은 벽돌 극장의 단면형 작업실과 작은 거주 공간. 주황 반다나와 자주색 조끼를 입은 은회색 줄무늬 고양이가 장난감 작업대 옆에서 오늘의 탐험 또는 연습을 고르며 날짜·시각·도구바가 보이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": "scene-02",
+      "title": "빨랫줄 지붕의 우회로",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-5751-7f80-9268-736722f224b5/exec-5e13f614-7fe8-4997-8ae9-6e412f9aaf84.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2648368,
+      "sourceSha256": "3d2fd4df0672f50151bf8462330dfd44dc158f1721f80b8a9490e3625bd26f92",
+      "output": "public/images/alleymoon/scene-02.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 421542,
+      "sha256": "9ebfb0236f11432f979af989b615ee90af1343d908798b73e9300c3bbcdd750e",
+      "url": "/images/alleymoon/scene-02.webp?v=9ebfb0236f11",
+      "alt": "은회색 고양이가 붉은 벽돌집의 청록색 지붕 사이 회전 발판을 조작하며 풍경 소리 장치를 찾는 모습. 연결할 경로의 점선과 화살표, 풍경 목표 표식과 작은 지도가 보이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": "scene-03",
+      "title": "종시계 다락의 회전 배우",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-5751-7f80-9268-736722f224b5/exec-29b6f112-128e-4903-936a-d1c2911f2b94.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2322597,
+      "sourceSha256": "1da8c3e7f02721b17b5c5ce5bb710fbe67fafb3ea6a45196ce0b1e1305741e92",
+      "output": "public/images/alleymoon/scene-03.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 320588,
+      "sha256": "0d58b49518369cada5758e8cd0abe7f243c3a41dbb92997c1180bf2eba5b01d5",
+      "url": "/images/alleymoon/scene-03.webp?v=0d58b4951836",
+      "alt": "시계탑 다락에서 고양이가 멈춘 기어의 순서를 확인하고 손잡이를 돌리는 모습. 1·2·3 표식과 기어 연결선, 열린 서랍의 태엽 새 배우, 회전·초기화 안내가 보이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": "scene-04",
+      "title": "장면을 조립하는 무대 편집",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-5751-7f80-9268-736722f224b5/exec-7be6ac57-fa0e-4b03-805c-629f9f219948.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2351182,
+      "sourceSha256": "c40d467332294cb6c81cc1eb742f29fc36dc86494eceafd268f497f0b1788b49",
+      "output": "public/images/alleymoon/scene-04.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 330482,
+      "sha256": "c68cca87b064c13591e9dca79021b2f883ae3b344dbb2c0759490edeb718d092",
+      "url": "/images/alleymoon/scene-04.webp?v=c68cca87b064",
+      "alt": "고양이의 장난감극장 무대 편집 화면. 달 배경과 태엽 새, 구름 장치가 놓인 격자 무대와 하단의 시작·소리·배우 동작·조명 카드, 연결선·미리보기·되돌리기 버튼이 보이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": "scene-05",
+      "title": "수집품이 동작이 되는 보관실",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-5751-7f80-9268-736722f224b5/exec-66077941-96c6-442d-b79f-30c69b143374.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2309903,
+      "sourceSha256": "019b919084f0cdc12839e17817aa186229f7e13d0b0319f8ae876fd8286e7c24",
+      "output": "public/images/alleymoon/scene-05.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 341630,
+      "sha256": "3804f264f2b3b73ac73f5ea665455ce8e39b3d2cdab3a9551b4693bee40926a4",
+      "url": "/images/alleymoon/scene-05.webp?v=3804f264f2b3",
+      "alt": "고양이의 극장 보관실에서 태엽 배우·음향 도구·천 배경이 진열된 선반을 살피는 모습. 선택한 태엽 새의 날개 동작과 무대 적용 버튼, 분류 탭과 발견 수가 보이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": "scene-06",
+      "title": "가을 저녁의 작은 공연",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-5751-7f80-9268-736722f224b5/exec-777b3202-9914-4b08-9c08-9f3d9656604f.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2466735,
+      "sourceSha256": "6ebcbf6acdb059b4a82efad996cb780c71e168ffa7cca5f082b496139c496e74",
+      "output": "public/images/alleymoon/scene-06.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 378490,
+      "sha256": "d8a13c7fbd6709984daabd2345e848964e176d88feeebbf7b392f29e389a926b",
+      "url": "/images/alleymoon/scene-06.webp?v=d8a13c7fbd67",
+      "alt": "가을 밤의 벽돌 극장에서 고양이가 옆 조작석을 지키고 태엽 새와 달·구름 장치가 짧은 공연을 하는 모습. 동물 이웃들이 관람하며 자막과 일시정지·건너뛰기 버튼이 보이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    }
+  ]
+}

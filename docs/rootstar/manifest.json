@@ -1,0 +1,110 @@
+{
+  "title": "뿌리별 균사정원",
+  "date": "2026-10-07",
+  "generator": "built-in image_gen",
+  "encoding": "WebP quality 90 method 6; original dimensions; no resize/crop/content edits",
+  "images": [
+    {
+      "id": "scene-01",
+      "title": "뿌리 속 집의 아침",
+      "output": "public/images/rootstar/scene-01.webp",
+      "bytes": 328136,
+      "sha256": "60acd3a9d1772407394673635f150fca9d78708366834bb71480e9d380ec7e96",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "width": 1672,
+      "height": 941,
+      "url": "/images/rootstar/scene-01.webp?v=60acd3a9d177",
+      "alt": "거대한 지하 뿌리 속 집과 작은 정원. 초콜릿색 늘어진 귀의 크림색 강아지가 청록 멜빵바지와 빨간 헤드램프를 착용하고 선택한 식물에 물을 주며, 왼쪽 어두운 나방 잠자리·오른쪽 미개방 길·하루 계획 UI가 보이는 2D 픽셀아트 AI 플레이 컨셉.",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-d484-77d3-a28d-134d87e0d739/exec-d263431a-1b06-413c-adc0-7201b37b9ae6.png",
+      "sourceSha256": "ed8af7414de87b1bf73dc307e1ff71054ace0573441ec5f1cb22b1cd54d93401"
+    },
+    {
+      "id": "scene-02",
+      "title": "두 칸 틈에 기르는 첫 다리",
+      "output": "public/images/rootstar/scene-02.webp",
+      "bytes": 311522,
+      "sha256": "26c74e1b6dd2f72fecbfc40b98179ed7309d4fd39d20f4e0893fcb96e784b7f2",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "width": 1672,
+      "height": 941,
+      "url": "/images/rootstar/scene-02.webp?v=26c74e1b6dd2",
+      "alt": "크림색 강아지가 지하 뿌리 절벽에서 청록색 균사 다리의 마지막 반투명 갓을 미리 보는 모습. 맞은편 새 종묘와 점선 이동 화살표, 다리갓의 물 1·빛 1·성장 버튼이 표시된 2D 픽셀아트 AI 플레이 컨셉.",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-d484-77d3-a28d-134d87e0d739/exec-f22bd32d-3d4c-4d6a-a600-8b8ce38863e3.png",
+      "sourceSha256": "67404a9cbb55799f60fc61576df9ebcd098107a4bd5f5679a4dc14227795ce02"
+    },
+    {
+      "id": "scene-03",
+      "title": "높은 곳으로, 어둠을 남기며",
+      "output": "public/images/rootstar/scene-03.webp",
+      "bytes": 325748,
+      "sha256": "5e52c4827ee940d0f0763ee7cd7e6976a30e24f79b947b9588b289885eaf3eca",
+      "dimensions": [
+        1672,
+        940
+      ],
+      "width": 1672,
+      "height": 940,
+      "url": "/images/rootstar/scene-03.webp?v=5e52c4827ee9",
+      "alt": "세 층의 지하 뿌리 공간에서 크림색 강아지가 잎승강기 아래에 서 있는 모습. 왼쪽 접시균 계단과 물 웅덩이, 위층의 빛 범위와 새 종묘, 오른쪽 달 표식의 어두운 나방 피난처가 보이는 2D 픽셀아트 AI 플레이 컨셉.",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-d484-77d3-a28d-134d87e0d739/exec-89c7efe9-299d-472c-80e9-73664f90ded7.png",
+      "sourceSha256": "a317706887688d230ecffe76b1164ff99dac43277996233ad4fcb627f3f7db9a"
+    },
+    {
+      "id": "scene-04",
+      "title": "빛·물·뿌리를 겹쳐 보는 배치",
+      "output": "public/images/rootstar/scene-04.webp",
+      "bytes": 320536,
+      "sha256": "048aeb6cbc2dc28b80a90676e73eaefa6fe0b800ddea2a7ce56cc1159164379e",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "width": 1672,
+      "height": 941,
+      "url": "/images/rootstar/scene-04.webp?v=048aeb6cbc2d",
+      "alt": "균사정원 격자 편집 화면. 청록 멜빵바지의 강아지 앞에 선택된 등불균과 십자 빛 범위·청록 물 연결이 있고 오른쪽 위 네 칸에 달 표식과 금지 사선, 오른쪽 패널에 빛·물·뿌리 상태와 적용·되돌리기 버튼이 보이는 2D 픽셀아트 AI 플레이 컨셉.",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-d484-77d3-a28d-134d87e0d739/exec-d74a065d-f8c7-4c3d-9b85-3b1ae72cbb0e.png",
+      "sourceSha256": "638e1439f8a880e44b161460cbf5ae175b1b7315c91adc8211236d064295444f"
+    },
+    {
+      "id": "scene-05",
+      "title": "다음 길을 고르는 살아 있는 종묘실",
+      "output": "public/images/rootstar/scene-05.webp",
+      "bytes": 318748,
+      "sha256": "6d6c3aadaffcfb1ba8479394df83646335a178809302ae6e485fdbf320a5e21e",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "width": 1672,
+      "height": 941,
+      "url": "/images/rootstar/scene-05.webp?v=6d6c3aadaffc",
+      "alt": "뿌리집 종묘실에서 크림색 강아지가 살아 있는 버섯과 식물을 돌보는 모습. 오른쪽에 다양한 종묘 아이콘과 다리갓 카드, 짧고 건조한 형태와 길고 습한 형태의 경로 미리보기, 삽목 가져가기 버튼이 보이는 2D 픽셀아트 AI 플레이 컨셉.",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-d484-77d3-a28d-134d87e0d739/exec-d52fbb13-9729-4126-a550-5ce8180578ec.png",
+      "sourceSha256": "80afa997f23bc18eb0786d186666410c6effbc3498e89e0832c6fa0773a2a2ef"
+    },
+    {
+      "id": "scene-06",
+      "title": "암주기의 밤, 서로 다른 길",
+      "output": "public/images/rootstar/scene-06.webp",
+      "bytes": 363474,
+      "sha256": "aba1717228eb7802c43f867b7e1808af524d32d394c6b89836582b7bed270eac",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "width": 1672,
+      "height": 941,
+      "url": "/images/rootstar/scene-06.webp?v=aba1717228eb",
+      "alt": "암주기 저녁의 성숙한 지하 연결정원. 청록 멜빵바지와 빨간 헤드램프의 크림색 강아지가 두더지 이웃과 갈림길에서 이야기하고, 균사 다리·계단·잎승강기·그늘 피난처와 밝은 길 또는 조용한 길 대화 선택이 보이는 2D 픽셀아트 AI 플레이 컨셉.",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-d484-77d3-a28d-134d87e0d739/exec-349d7f7c-9363-491b-8d90-d41797822609.png",
+      "sourceSha256": "b823fca32c50c69f0e5bb17e03f709fb1c2886379c005e58eb96e59754e43142"
+    }
+  ]
+}

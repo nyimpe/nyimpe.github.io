@@ -1,0 +1,83 @@
+{
+  "createdAt": "2026-10-07",
+  "sources": [
+    {
+      "id": "scene-01",
+      "title": "극장의 아침 작업실",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-5751-7f80-9268-736722f224b5/exec-280866b1-a567-4161-b9a7-1e18abbfd233.png",
+      "generator": "built-in image_gen",
+      "promptFile": "docs/alleymoon/prompts.json",
+      "sourceBytes": 2441413,
+      "sourceSha256": "51477a2e2d5074682998c7a75009cdbb32a8b3cd520bf0a9b96038c96c0cc85e",
+      "sourceDimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "scene-02",
+      "title": "빨랫줄 지붕의 우회로",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-5751-7f80-9268-736722f224b5/exec-5e13f614-7fe8-4997-8ae9-6e412f9aaf84.png",
+      "generator": "built-in image_gen",
+      "promptFile": "docs/alleymoon/prompts.json",
+      "sourceBytes": 2648368,
+      "sourceSha256": "3d2fd4df0672f50151bf8462330dfd44dc158f1721f80b8a9490e3625bd26f92",
+      "sourceDimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "scene-03",
+      "title": "종시계 다락의 회전 배우",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-5751-7f80-9268-736722f224b5/exec-29b6f112-128e-4903-936a-d1c2911f2b94.png",
+      "generator": "built-in image_gen",
+      "promptFile": "docs/alleymoon/prompts.json",
+      "sourceBytes": 2322597,
+      "sourceSha256": "1da8c3e7f02721b17b5c5ce5bb710fbe67fafb3ea6a45196ce0b1e1305741e92",
+      "sourceDimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "scene-04",
+      "title": "장면을 조립하는 무대 편집",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-5751-7f80-9268-736722f224b5/exec-7be6ac57-fa0e-4b03-805c-629f9f219948.png",
+      "generator": "built-in image_gen",
+      "promptFile": "docs/alleymoon/prompts.json",
+      "sourceBytes": 2351182,
+      "sourceSha256": "c40d467332294cb6c81cc1eb742f29fc36dc86494eceafd268f497f0b1788b49",
+      "sourceDimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "scene-05",
+      "title": "수집품이 동작이 되는 보관실",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-5751-7f80-9268-736722f224b5/exec-66077941-96c6-442d-b79f-30c69b143374.png",
+      "generator": "built-in image_gen",
+      "promptFile": "docs/alleymoon/prompts.json",
+      "sourceBytes": 2309903,
+      "sourceSha256": "019b919084f0cdc12839e17817aa186229f7e13d0b0319f8ae876fd8286e7c24",
+      "sourceDimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "id": "scene-06",
+      "title": "가을 저녁의 작은 공연",
+      "source": "/Users/sushi/.codex/generated_images/01a1162d-5751-7f80-9268-736722f224b5/exec-777b3202-9914-4b08-9c08-9f3d9656604f.png",
+      "generator": "built-in image_gen",
+      "promptFile": "docs/alleymoon/prompts.json",
+      "sourceBytes": 2466735,
+      "sourceSha256": "6ebcbf6acdb059b4a82efad996cb780c71e168ffa7cca5f082b496139c496e74",
+      "sourceDimensions": [
+        1672,
+        941
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "verifiedOn": "2026-10-07",
+  "scope": "Planning article and AI gameplay concept assets; no executable game was implemented or playtested.",
+  "local": {
+    "build": "npm run build passed; existing Phaser chunk-size warning remains",
+    "whitespace": "git diff --check passed",
+    "imageCount": 6,
+    "dimensions": [
+      [
+        1672,
+        941
+      ],
+      [
+        1672,
+        941
+      ],
+      [
+        1672,
+        941
+      ],
+      [
+        1672,
+        941
+      ],
+      [
+        1672,
+        941
+      ],
+      [
+        1672,
+        941
+      ]
+    ],
+    "totalImageBytes": 2157298,
+    "assetIntegrity": "6/6 original and output SHA-256, bytes, dimensions, versioned URL, full-image link and alt text verified",
+    "imageHTTP": "6/6 HTTP 200; response SHA-256 equals repository asset",
+    "anchors": {
+      "ids": 42,
+      "unique": 42,
+      "broken": []
+    },
+    "responsive": [
+      {
+        "viewport": 1440,
+        "scroll": 1440,
+        "theme": "light"
+      },
+      {
+        "viewport": 1440,
+        "scroll": 1440,
+        "theme": "dark"
+      },
+      {
+        "viewport": 390,
+        "scroll": 390,
+        "theme": "light"
+      },
+      {
+        "viewport": 390,
+        "scroll": 390,
+        "theme": "dark"
+      },
+      {
+        "viewport": 320,
+        "scroll": 320,
+        "theme": "light"
+      },
+      {
+        "viewport": 320,
+        "scroll": 320,
+        "theme": "dark"
+      }
+    ],
+    "keyboardTableScrollLeft": 72,
+    "keyboardTOC": true,
+    "keyboardThemeToggle": true,
+    "homeLinks": true,
+    "hashedStylesheet": "/assets/main-D1nhvAOf.css",
+    "console": [],
+    "failedRequests": [],
+    "visualReview": "All six generated scenes inspected individually. Desktop light and mobile dark page screenshots inspected."
+  },
+  "designReview": {
+    "distinction": "Fixed brick-city theatre, silver tabby protagonist, urban route puzzles and collectible expression tools, causal cue editor, personal saved-work ending.",
+    "fullVision": "6 areas including home, 120 distinct unlocks = 24+18+24+18+18+18.",
+    "prototype": "2 areas, 12 unlocks = 2+2+3+2+1+2, 7 in-game days, 6x4 stage with 2 actors, 2 devices, 4 cues.",
+    "workedExample": "20+12=32 coins; 2+4+2-2=6 parts; 60-4-6+10=60 energy.",
+    "reviewFixes": [
+      "Clarified gear order causes and allowed actor-on-rail occupancy.",
+      "Specified 2 parts per gathering action and frozen game clock during the 19:00 performance.",
+      "Caption separates concept audience size from the four-invite game rule."
+    ]
+  },
+  "preservation": "26 existing files for Tidepost, Warmrest and Glasswild retained their baseline SHA-256. Shared CSS and JavaScript unchanged.",
+  "liveDeployment": "Verify after push; workflow and public-page results reported in task completion.",
+  "unverified": [
+    "Game enjoyment and balance",
+    "Executable movement, input, save, growth, theatre and NPC behavior",
+    "Final tile grid, sprites and UI consistency",
+    "Game performance"
+  ]
+}
