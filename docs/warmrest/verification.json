@@ -1,0 +1,25 @@
+{
+  "verifiedOn": "2026-10-07",
+  "scope": "Published design document and generated image assets; no playable game implemented or playtested",
+  "local": {
+    "build": "npm run build passed; pre-existing Phaser chunk size warning remains",
+    "whitespace": "git diff --check passed",
+    "imageCount": 6,
+    "imageDimensions": [1672, 941],
+    "totalImageBytes": 2036582,
+    "assetIntegrity": "6/6 source and output hashes, byte sizes, versioned image URLs, full-image links, dimensions and nonempty alt text match manifest.json",
+    "http": "6/6 local image URLs returned HTTP 200 with SHA-256 matching workspace files",
+    "anchors": "All internal anchors resolve and document IDs are unique",
+    "mobile": {"viewport": [390, 844], "documentScrollWidth": 390, "tableContainerWidth": 358, "comparisonTableScrollWidth": 458, "keyboardArrowRightScrollLeft": 40},
+    "desktop": {"viewport": [1440, 1000], "visualReview": "Light theme, layout scene and adjacent article text"},
+    "browser": "All six images loaded at natural 1672x941 through scene links; dark mobile and light desktop inspected; Enter activates TOC and theme toggle; theme aria-pressed agrees; no console warnings or errors",
+    "imageReview": "All six generated scenes inspected; captions and alt reflect watering, mixing, hammer exploration, furniture placement, tea conversation and winter harvest"
+  },
+  "designReview": {
+    "distinction": "Inland alpine bathhouse, recipe and spatial comfort choices; separate setting, occupation, progression and conclusion from Tidepost",
+    "dayExample": {"endingCoins": 68, "endingEnergy": 38, "remainingWood": 2, "remainingMineral": 1, "remainingMint": 2, "cashIncrease": 28},
+    "mvp": "7 in-game days, one cat, one bath, four garden plots, four residents, four cave rooms, two recipe families, two temperatures; full seasons and expansions separately labeled"
+  },
+  "liveDeployment": "Checked separately after push; workflow and public-page proof reported in the task completion message",
+  "unverified": ["Gameplay fun and balance", "Executable input, save system, navigation and NPC behavior", "Playable game performance", "Final game sprite and UI consistency"]
+}

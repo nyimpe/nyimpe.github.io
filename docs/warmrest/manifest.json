@@ -1,0 +1,133 @@
+{
+  "created": "2026-10-07",
+  "generator": "built-in image_gen",
+  "webExport": {
+    "format": "WebP",
+    "quality": 90,
+    "resize": false,
+    "crop": false,
+    "semanticEdits": false
+  },
+  "images": [
+    {
+      "id": 1,
+      "title": "봄 아침, 내 정원에서 오늘의 탕으로",
+      "source": "generated_images/01a115d3-1ebd-7e12-8690-823ffd628bdd/exec-36aba07d-e818-423f-87d2-81d438511169.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2915821,
+      "sourceSha256": "bf0dff4e2b95617f8167936f54122046fe56fe602c4ada2666f8662773a8f713",
+      "output": "public/images/warmrest/scene-01.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 462706,
+      "sha256": "cb6d1aca140aee729dfa561224230ced4f673c6a2e1308f63001853957aa21f5",
+      "url": "/images/warmrest/scene-01.webp?v=cb6d1aca140a",
+      "alt": "봄의 내륙 산마을 온천집. 겨자색 목수건과 벽돌색 앞치마를 두른 작은 검은 고양이가 선택된 허브 화분에 물을 주고, 현무암 돌담과 김이 오르는 노천탕, 날짜·체력·허브 수량 UI가 보이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": 2,
+      "title": "배합 작업대, 오늘은 어떤 온기를 만들까",
+      "source": "generated_images/01a115d3-1ebd-7e12-8690-823ffd628bdd/exec-a8b66e85-4b5f-452b-823c-0b81e8d5aca5.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2151128,
+      "sourceSha256": "8f08a8adaecc2f15345c9927b032719c48901f36dfada925472e81a6c8ae4e11",
+      "output": "public/images/warmrest/scene-02.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 254528,
+      "sha256": "c1e5f6c84145a2fc2edcae9a0c9468a48cf6ea5cdd4a988ba5a5b4898af2bf9b",
+      "url": "/images/warmrest/scene-02.webp?v=c1e5f6c84145",
+      "alt": "온천집 배합 작업대에서 검은 고양이가 허브와 광물을 고르는 모습. 오른쪽 패널에 민트 2개·광물 1개·38°C 배합과 준비 버튼이 있고 왼쪽에 작업대와 두 탕이 보이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": 3,
+      "title": "현무암 산길, 광맥과 새 식물의 갈림길",
+      "source": "generated_images/01a115d3-1ebd-7e12-8690-823ffd628bdd/exec-f0748856-d1c4-4e7f-a6ec-8ca2b1401a8e.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2494102,
+      "sourceSha256": "35e47f9d2889d6d71cc7e391b379c50c222112633e64d01e0329789c225a3fb8",
+      "output": "public/images/warmrest/scene-03.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 362660,
+      "sha256": "da321347492489efb344a8ddcf9cfe25c7fbe94b495627036dbe26494d1f8c3b",
+      "url": "/images/warmrest/scene-03.webp?v=da3213474924",
+      "alt": "작은 검은 고양이가 지질 망치를 들고 현무암 동굴의 갈림길을 살피는 모습. 왼쪽 광물과 나무 계단, 오른쪽 붉은 식물, 지도와 채취 체력 4 소모 UI가 보이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": 4,
+      "title": "탕 배치, 조용한 자리와 대화하는 자리",
+      "source": "generated_images/01a115d3-1ebd-7e12-8690-823ffd628bdd/exec-78c61b84-2ccb-416a-a40f-b9e800335beb.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2278202,
+      "sourceSha256": "a7f63bb02662cff421a28d2f59f2160aa05b954a30d60fad9d76983be1d2cdb3",
+      "output": "public/images/warmrest/scene-04.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 283890,
+      "sha256": "9f0a10262f2792e8698d4278948feff93c0b50a151b16919d17cf8b21e8ec944",
+      "url": "/images/warmrest/scene-04.webp?v=9f0a10262f27",
+      "alt": "온천집 실내 배치 편집 화면. 검은 고양이 주변으로 조용한 탕과 이야기 탕, 탈의실, 차를 마시는 공용실이 있으며 격자·가구 배치·손님 이동 경로가 표시된 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": 5,
+      "title": "저녁의 다실, 단골의 속도를 알아가는 밤",
+      "source": "generated_images/01a115d3-1ebd-7e12-8690-823ffd628bdd/exec-2c4bea39-369d-43a4-bee8-3179ef58e386.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 1983823,
+      "sourceSha256": "c91c26db614985cc49dc141a477561bd4cb91d081405007adaec2a5eb9400604",
+      "output": "public/images/warmrest/scene-05.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 238972,
+      "sha256": "27d0c115915f3533892d63b92a316bdc352e932c468d35cbf71262d3070d4e13",
+      "url": "/images/warmrest/scene-05.webp?v=27d0c115915f",
+      "alt": "저녁 온천집의 따뜻한 공용 찻방. 검은 고양이와 부엉이·너구리·토끼 이웃이 도자기 찻잔을 놓은 낮은 탁자 주변에서 쉬고, 함께 차 마시기와 혼자 쉬기의 대화 선택 UI가 보이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    },
+    {
+      "id": 6,
+      "title": "겨울의 온천집, 내가 고른 생활이 남은 공간",
+      "source": "generated_images/01a115d3-1ebd-7e12-8690-823ffd628bdd/exec-4acc9d2b-00de-4720-9e62-dbd9394fb178.png",
+      "sourceDimensions": [
+        1672,
+        941
+      ],
+      "sourceBytes": 2813382,
+      "sourceSha256": "3bf82c43a9a6df1b2247da3d1055921419e0711c9940c88903516c9147a2e6df",
+      "output": "public/images/warmrest/scene-06.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 433826,
+      "sha256": "751e6431f6ad2c0c411a9632695064714c303ff09e3ebe3ecce4e35d338331ad",
+      "url": "/images/warmrest/scene-06.webp?v=751e6431f6ad",
+      "alt": "눈 덮인 온기골에서 같은 검은 고양이가 확장된 온천집의 온실 앞에서 흰 꽃 허브를 수확하는 모습. 봄과 같은 산장 옆에 실내 허브 온실, 두 노천탕, 밝은 찻방과 동물 이웃들이 보이는 탑다운 2D 픽셀아트 AI 플레이 컨셉."
+    }
+  ]
+}
