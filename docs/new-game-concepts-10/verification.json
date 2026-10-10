@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-10",
+  "scope": "Local article and concept calculations only; games are not implemented or playtested; no deployment performed.",
+  "concepts": 10,
+  "uniqueIds": 33,
+  "brokenAnchors": 0,
+  "internalPostLinks": "all exist",
+  "imageChecks": [
+    {
+      "id": 1,
+      "http": 200,
+      "hashMatches": true,
+      "dimensions": [
+        1279,
+        720
+      ]
+    },
+    {
+      "id": 2,
+      "http": 200,
+      "hashMatches": true,
+      "dimensions": [
+        1279,
+        720
+      ]
+    },
+    {
+      "id": 3,
+      "http": 200,
+      "hashMatches": true,
+      "dimensions": [
+        1279,
+        720
+      ]
+    },
+    {
+      "id": 4,
+      "http": 200,
+      "hashMatches": true,
+      "dimensions": [
+        1279,
+        720
+      ]
+    },
+    {
+      "id": 5,
+      "http": 200,
+      "hashMatches": true,
+      "dimensions": [
+        1279,
+        720
+      ]
+    },
+    {
+      "id": 6,
+      "http": 200,
+      "hashMatches": true,
+      "dimensions": [
+        1279,
+        720
+      ]
+    },
+    {
+      "id": 7,
+      "http": 200,
+      "hashMatches": true,
+      "dimensions": [
+        1279,
+        720
+      ]
+    },
+    {
+      "id": 8,
+      "http": 200,
+      "hashMatches": true,
+      "dimensions": [
+        1279,
+        720
+      ]
+    },
+    {
+      "id": 9,
+      "http": 200,
+      "hashMatches": true,
+      "dimensions": [
+        1279,
+        720
+      ]
+    },
+    {
+      "id": 10,
+      "http": 200,
+      "hashMatches": true,
+      "dimensions": [
+        1279,
+        720
+      ]
+    }
+  ],
+  "browser": {
+    "desktop": [
+      829,
+      761
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "pageHorizontalOverflow": false,
+    "comparisonTableScrollsOnMobile": true,
+    "imagesLoaded": 10,
+    "themeToggle": "dark to light verified; restored dark",
+    "keyboardToc": "Enter to c1 verified",
+    "consoleWarnings": 0,
+    "consoleErrors": 0
+  },
+  "calculations": {
+    "paperfold": "B x=3 maps to A x=1; fold+unfold=2",
+    "weave": "positions2,5 change maximum same-state run3 to1",
+    "boat": "weight7; M -4 -> -1; center float adds capacity without changing M",
+    "language": "names independently anchored before order contrast",
+    "strata": "A<B<C<D and B<E; C/E and D/E not established",
+    "exposure": "fixed mask options none,A,A+B give (1,1,1),(1,2,2),(1,2,3); order independent",
+    "echo": "A/B distance5; candidates(5,1)/(5,9); C yields2/18sec; center8/8",
+    "newspaper": "draft7 cells; precise layouts5 cells; size independent from wording",
+    "carving": "27-3=24 connected voxels; front top center empty; side full; 23-voxel alternative also valid"
+  },
+  "screenshots": [
+    "page-mobile.jpg",
+    "page-desktop.jpg"
+  ],
+  "build": {
+    "command": "npm run build",
+    "status": "passed",
+    "note": "Existing Phaser chunk size warning"
+  },
+  "homepageLink": "verified navigation from first post link"
+}

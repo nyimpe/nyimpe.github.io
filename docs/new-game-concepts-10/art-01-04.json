@@ -1,0 +1,68 @@
+{
+  "assets": [
+    {
+      "id": 1,
+      "title": "접힘책방",
+      "prompt": "Use case: stylized-concept. Asset: original 16:9 landscape 2D PIXEL ART GAMEPLAY screenshot for the original game PAPERFOLD. Not poster, not collage. Clear crisp pixel-art game playfield dominated by a paper book world: four large paper room panels with crease hinges, right page visibly folded onto left so two formerly separate doorway apertures align. A small original cat librarian stands within one paper room, the folding topology is central and visually readable. Subtle ghost fold preview with directional arrow. Compact sidebar contains top-down diagram of unfolded four-panel book. Few accurate English UI labels only: \"PAPERFOLD\", \"FOLD\", \"UNFOLD\", \"UNDO\". Muted cream paper and indigo palette. Illustrative gameplay concept, not exact production UI. Avoid decorative book piles dominating, paragraphs, posters, marketing text, photorealism, 3D rendering, watermarks. Make folds and doorway alignment visibly understandable.",
+      "source": "/Users/sushi/.codex/generated_images/01a122f6-974d-7513-97fc-7d988edb6a8c/exec-fa196497-2dc9-4b2d-b492-9afe801fee37.png",
+      "review": "원본 시각 검사: 4개 종이 방, 접히는 오른쪽 페이지, 유령 접기 미리보기, 고양이 사서와 FOLD/UNFOLD/UNDO 표기를 확인했다. 문 겹침과 종이 구조를 보여 주는 설명용 콘셉트이며 실제 UI나 정확한 공간 판정 도식은 아니다.",
+      "path": "public/images/new-game-concepts-10/concept-01.webp",
+      "generation": "built-in image_gen",
+      "source_width": 1672,
+      "source_height": 941,
+      "width": 1279,
+      "height": 720,
+      "sha256": "402b99b8a6b3ae53dbd05f46728a2856f8ba73c04a4394a8da618c6fd8f867ab",
+      "bytes": 87928
+    },
+    {
+      "id": 2,
+      "title": "바람실 직조소",
+      "prompt": "Use case: stylized-concept. Asset: original 16:9 landscape 2D PIXEL ART GAMEPLAY screenshot for the original game WINDLOOM. Not poster, not collage. Clear crisp pixel-art game playfield dominated by large overhead loom, visibly interlaced 6-by-6 weave of warp and weft. Small original dog weaver beside loom. Selected horizontal row contains three consecutive exposed thread floats highlighted amber; a small alternate over-under toggle and preview visibly breaks them into shorter runs. Compact sidebar with a test swatch flex diagram. Few accurate English UI labels only: \"WINDLOOM\", \"PATTERN\", \"FLEX\", \"TEST\". Terracotta and teal palette, warm workshop. Central choice is switching thread interlacing to adjust bend behavior. Illustrative gameplay concept, not exact production UI. Avoid farm, garden, decorative machinery dominating, paragraphs, posters, marketing text, photorealism, 3D rendering, watermarks.",
+      "source": "/Users/sushi/.codex/generated_images/01a122f6-974d-7513-97fc-7d988edb6a8c/exec-f151efbc-c691-40f7-a2e5-395c11a40060.png",
+      "review": "원본 시각 검사: 강아지 직조공, 6x6 패턴 표, 실의 교차, 선택 행과 변경 미리보기, FLEX/TEST를 확인했다. 세 강조 지점은 연속 뜀실의 엄밀한 도식이 아니므로 연속 길이 판정은 본문 규칙으로 설명한다.",
+      "path": "public/images/new-game-concepts-10/concept-02.webp",
+      "generation": "built-in image_gen",
+      "source_width": 1672,
+      "source_height": 941,
+      "width": 1279,
+      "height": 720,
+      "sha256": "2c1df493a2470593efbafdffde174e6e9df00b4b0aa649b04277a417f4804c23",
+      "bytes": 171416
+    },
+    {
+      "id": 3,
+      "title": "잔향 수리점",
+      "prompt": "Use case: stylized-concept. Asset: original 16:9 landscape 2D PIXEL ART GAMEPLAY screenshot for original game QUIET REPAIR. Not poster, not collage. Clear crisp pixel-art playfield: cozy workbench dominated by open spring-powered music box mechanism, with drive shaft, removable belt coupling, brake, and output fan clearly mechanically connected. Small original cat technician beside it. Highlight removable belt coupling and hand-turn test cursor, diagnostic sidebar with EXACTLY THREE DISTINCT icon hypothesis cards depicting drive failure, jammed brake, seized bearing (icons only, no text descriptions). Clearly show observation/test choice, not a purchase screen. Few accurate English UI labels only: \"QUIET REPAIR\", \"TEST\", \"ISOLATE\", \"RESET\". Warm cream brass and muted blue workshop palette. Illustrative gameplay concept, not exact production UI. Avoid shopping, upgrade store, paragraphs, poster, marketing, photorealism, 3D rendering, watermarks.",
+      "source": "/Users/sushi/.codex/generated_images/01a122f6-974d-7513-97fc-7d988edb6a8c/exec-11600abf-62e5-4f28-9cc4-d746cb08e086.png",
+      "review": "원본 시각 검사: 고양이 수리공, 연결된 오르골·축·커플링·브레이크·팬, 강조된 분리 지점, 서로 다른 세 진단 아이콘, TEST/ISOLATE/RESET을 확인했다. 설명용 콘셉트이며 실제 기계 설계도가 아니다.",
+      "path": "public/images/new-game-concepts-10/concept-03.webp",
+      "generation": "built-in image_gen",
+      "source_width": 1672,
+      "source_height": 941,
+      "width": 1279,
+      "height": 720,
+      "sha256": "0bc7e0e27e3148cfeef9a156995ce4787fab486d6079c4a9717413b511001c8b",
+      "bytes": 148110
+    },
+    {
+      "id": 4,
+      "title": "뜬나무 조선소",
+      "prompt": "Use case: precise-object-edit. Edit target: attached FLOATWOOD pixel-art gameplay concept. Preserve overall composition, dog boatwright on dock, warm timber and mint water, scenery, title and TEST / MOVE / RESET buttons, cutaway boat, crisp 2D pixel-art style, aspect ratio. Change ONLY cargo state, boat trim and the movement annotation so the physics is coherent. Show a FINISHED STABLE TEST: exactly ONE solid cargo crate at the LEFT cargo position, clearly marked \"4\"; exactly ONE solid cargo crate at the RIGHT cargo position, clearly marked \"3\"; the CENTER cargo position is empty, outlined with a subtle dashed square. Remove the extra left crate entirely. Draw a subtle ghost curved arrow starting at the EMPTY CENTER slot and ending at the RIGHT crate, to show the weight 3 was moved from center to right. There must not be an arrow from left to right. The whole hull, deck and cabin are nearly LEVEL with the still horizontal waterline (at most the left end just perceptibly lower), NOT leaning lower on the right. The stability meter indicates within its green safe range. Keep central mass marker near center. Two crates total, one each end. No new UI panels, no extra characters, no unrelated changes.",
+      "source": "/Users/sushi/.codex/generated_images/01a122f6-974d-7513-97fc-7d988edb6a8c/exec-18b12443-1f36-4912-a042-12d7673ec5cc.png",
+      "review": "수정 원본 시각 검사: 왼쪽 4·오른쪽 3의 짐 두 개, 빈 중앙 칸, 중앙에서 오른쪽으로 향하는 이동 화살표, 거의 수평인 선체, 초록 안전 영역의 안정성 표시를 확인했다. 강아지 조선공과 원래 UI·배경을 유지했다. 실제 물리 시뮬레이션 결과가 아닌 설명용 콘셉트 이미지이다.",
+      "path": "public/images/new-game-concepts-10/concept-04.webp",
+      "generation": "built-in image_gen",
+      "source_width": 1672,
+      "source_height": 941,
+      "width": 1279,
+      "height": 720,
+      "sha256": "883deaed6b1675ba1371ef74479ec0ea0f6c49d142432031c6e5cb321f4d52d0",
+      "bytes": 146454,
+      "original_prompt": "Use case: stylized-concept. Asset: original 16:9 landscape 2D PIXEL ART GAMEPLAY screenshot for original game FLOATWOOD. Not poster, not collage. Clear crisp pixel-art playfield dominated by a wooden boat laboratory at dock: side cutaway boat floating in still mint water, THREE CLEAR cargo positions left center right. Two crate weights visibly BOTH at left end causing boat to tilt/list left, ghost arrow moving one crate from left to right. Small center-of-mass marker and compact horizontal stability meter. Small original dog boatwright on dock observes test. Few accurate English UI labels only: \"FLOATWOOD\", \"TEST\", \"MOVE\", \"RESET\". Warm timber and mint water palette. Central gameplay choice is relocating weight to balance buoyancy, visually readable. Illustrative gameplay concept, not exact production UI. Avoid navigation routes, delivery routes, paragraphs, poster, marketing, photorealism, 3D rendering, watermarks.",
+      "previous_source": "/Users/sushi/.codex/generated_images/01a122f6-974d-7513-97fc-7d988edb6a8c/exec-ab3fd28e-316b-4a1d-a4d0-0686695e26fb.png",
+      "previous_sha256": "1723ebe12f3f8926fb5a934b50d6b1f6f197a8ef648b5938b1dd9818eb9f8c71",
+      "edit": "Use case: precise-object-edit. Edit target: attached FLOATWOOD pixel-art gameplay concept. Preserve overall composition, dog boatwright on dock, warm timber and mint water, scenery, title and TEST / MOVE / RESET buttons, cutaway boat, crisp 2D pixel-art style, aspect ratio. Change ONLY cargo state, boat trim and the movement annotation so the physics is coherent. Show a FINISHED STABLE TEST: exactly ONE solid cargo crate at the LEFT cargo position, clearly marked \"4\"; exactly ONE solid cargo crate at the RIGHT cargo position, clearly marked \"3\"; the CENTER cargo position is empty, outlined with a subtle dashed square. Remove the extra left crate entirely. Draw a subtle ghost curved arrow starting at the EMPTY CENTER slot and ending at the RIGHT crate, to show the weight 3 was moved from center to right. There must not be an arrow from left to right. The whole hull, deck and cabin are nearly LEVEL with the still horizontal waterline (at most the left end just perceptibly lower), NOT leaning lower on the right. The stability meter indicates within its green safe range. Keep central mass marker near center. Two crates total, one each end. No new UI panels, no extra characters, no unrelated changes."
+    }
+  ]
+}

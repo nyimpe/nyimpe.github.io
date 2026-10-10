@@ -1,0 +1,57 @@
+{
+  "assets": [
+    {
+      "id": 5,
+      "title": "낯선 말 찻집",
+      "prompt": "Use case: stylized-concept. Asset type: 16:9 landscape game concept screenshot for Korean game design article. Primary request: ONE coherent actual-looking 2D pixel-art gameplay screen of STRANGE WORDS, a grammar-deciphering game in a tiny tea room. Scene: small original gray dog host and unusual original fantasy rabbit-like visitor greeting at a tiny tea table. Main gameplay panel dominates the center: three distinctly pictographic tokens of a cup, a rabbit, and a cat placed in ordered slots. Beneath it two interpretation strips use simple icons, the first cat giving a cup to rabbit (arrow right), the second rabbit giving a cup to cat (arrow left); highlight one editable hypothesis with a small pointer. Below, physical toy animal figurines and a cup demonstrate a counterexample. The mechanic is experimenting with word order and meaning. Compact bottom buttons read TRY, COMPARE, NOTE. Small top title STRANGE WORDS. Warm paper panel, teal and lilac cozy pixel-art environment. Clearly deliberate chunky pixels, clean legible shapes, game camera, richly authored but uncluttered. No poster, no collage, no combat, no timed orders, no realism, no text paragraphs. Illustrative UI, not numerical instructions. 16:9 wide canvas.",
+      "source": "/Users/sushi/.codex/generated_images/01a122f6-d873-7293-bd5b-81c293a8ad08/exec-e0d2eb18-4e17-4ba7-b008-0f3bb3060a5d.png",
+      "prior_source": "/Users/sushi/.codex/generated_images/01a122f6-d873-7293-bd5b-81c293a8ad08/exec-d6841687-eaa5-4820-9e1c-a4c9004bbb21.png",
+      "edit_prompt": "Use case: precise-object-edit. Edit the attached STRANGE WORDS game screenshot only to fix its central LOWER pink hypothesis strip. Keep all composition, character art, top token row, room, palette, table figurines, buttons and lettering exactly as they are. The upper green strip is already correct and MUST remain: BLACK CAT at left, CUP near center, RIGHT-POINTING ARROW, WHITE RABBIT at right. In the LOWER PINK STRIP, swap ONLY the two animal portraits so the BLACK CAT is now at LEFT and the WHITE RABBIT is at RIGHT. Preserve the lower strip's LEFT-POINTING ARROW pointing toward the cat on the left. The cup stays between the cat and arrow. The upper and lower strips must have IDENTICAL cat-left/rabbit-right portrait positions but OPPOSITE arrow directions: top CAT → RABBIT, lower CAT ← RABBIT. Very clear arrows, top cup travels cat to rabbit, lower cup travels rabbit to cat. Do not simultaneously reverse animal portrait order and arrow. Minimal correction, same pixel-art style, same 16:9 image. No extra labels or altered text.",
+      "output_hint": "Generated images are saved to /Users/sushi/.codex/generated_images/01a122f6-d873-7293-bd5b-81c293a8ad08 as /Users/sushi/.codex/generated_images/01a122f6-d873-7293-bd5b-81c293a8ad08/exec-d6841687-eaa5-4820-9e1c-a4c9004bbb21.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "review": "원본과 편집본을 view_image로 확인. 아래 가설 줄의 동물 위치를 편집하여 위아래 모두 고양이 왼쪽·토끼 오른쪽으로 고정되었고, 위는 오른쪽 화살표(고양이→토끼), 아래는 왼쪽 화살표(토끼→고양이)로 상반된 주고받기 의미를 명확히 표시함. 컵·세 토큰·선택 포인터·TRY/COMPARE/NOTE 및 주변 장면 유지 확인.",
+      "prior_review": "원본을 view_image로 확인. 컵·토끼·고양이 토큰, 선택된 가설, 비교 줄, 작은 모형, TRY/COMPARE/NOTE가 선명함. 두 비교 줄은 배열과 화살표가 함께 반전되어 모두 고양이에서 토끼로 주는 의미로 읽힘. 개념 분위기 이미지로 사용하고 반대 의미의 정확한 규칙 UI로 인용하지 말 것.",
+      "edit_output_hint": "Generated images are saved to /Users/sushi/.codex/generated_images/01a122f6-d873-7293-bd5b-81c293a8ad08 as /Users/sushi/.codex/generated_images/01a122f6-d873-7293-bd5b-81c293a8ad08/exec-e0d2eb18-4e17-4ba7-b008-0f3bb3060a5d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "generation_mode": "built-in image_gen",
+      "output": "public/images/new-game-concepts-10/concept-05.webp",
+      "source_width": 1672,
+      "source_height": 941,
+      "width": 1279,
+      "height": 720,
+      "sha256": "d84167e53373f6ed459b9571cfe0a068a7f63d1f1e5c36fcabfc04a3c9b4b4fb",
+      "bytes": 140118,
+      "prior_sha256": "d6cf2a63790140887d0017c95ac450ec22a3fba37f51a46dbcf226df8197e098"
+    },
+    {
+      "id": 6,
+      "title": "층층 발굴일지",
+      "prompt": "Use case: stylized-concept. Asset type: 16:9 landscape game concept screenshot for Korean game design article. Primary request: ONE coherent actual-looking 2D pixel-art gameplay screen of LAYERS, stratigraphy reasoning archaeology. Main view: clean rectangular archaeological trench shown SIDE CUTAWAY occupying most of the screen, with three DISTINCT horizontal soil strata (light ochre top, reddish clay middle, dark slate lower), an ancient brick wall mostly in the lower strata, and a diagonal filled ditch crossing and cutting visibly through the upper and middle strata; unmistakable cross-cutting boundaries and embedded artifact flecks. A small original cat archaeologist stands beside the trench at surface level. Three distinct sample pins A B C attach to relevant locations. On the right a compact chronology board displays three artifact cards and incomplete partial-order arrows for arranging which came before which, not a linear progress bar. Bottom buttons SAMPLE / ORDER / UNDO. Compact title LAYERS. Ochre and slate palette, quiet meticulous excavation, crisp readable layered pixel-art geometry. One gameplay view, no poster, no collage, no creature collecting, no combat, no realism, no long prose, no giant character. Illustrative concept UI. 16:9 wide canvas.",
+      "source": "/Users/sushi/.codex/generated_images/01a122f6-d873-7293-bd5b-81c293a8ad08/exec-7566290b-23ee-4ee4-b860-749deba8cf26.png",
+      "output_hint": "Generated images are saved to /Users/sushi/.codex/generated_images/01a122f6-d873-7293-bd5b-81c293a8ad08 as /Users/sushi/.codex/generated_images/01a122f6-d873-7293-bd5b-81c293a8ad08/exec-7566290b-23ee-4ee4-b860-749deba8cf26.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "review": "원본을 view_image로 확인. 세 지층, 비스듬히 관입한 채움 도랑, 하부 벽, A/B/C 채취점 및 유물 세 카드가 분명함. 영문 버튼 외 설명문은 생성된 한국어이며 최종 게임 UI 명세가 아님.",
+      "generation_mode": "built-in image_gen",
+      "output": "public/images/new-game-concepts-10/concept-06.webp",
+      "source_width": 1672,
+      "source_height": 941,
+      "width": 1279,
+      "height": 720,
+      "sha256": "e5943f66f105029146e1eabe058914f1eb516b4ce6236604678966914d958902",
+      "bytes": 177800
+    },
+    {
+      "id": 7,
+      "title": "겹빛 사진실",
+      "prompt": "Use case: stylized-concept. Asset type: 16:9 landscape game concept screenshot for Korean game design article. Primary request: ONE coherent actual-looking 2D pixel-art gameplay screen of LAYERLIGHT, a regional photographic exposure puzzle. A cozy violet and amber darkroom with small original dog photographer. Central interaction is a large top-down rectangular sheet of photographic paper on an exposure board, two visibly distinct soft shadow shapes of a window frame and a leaf overlapping across the sheet. A movable opaque mask blocks part of the paper. Show the selected mask boundary with a subtle bright selection outline and small handles so regional exposure is obvious. Beside the board a compact vertical sidebar contains exactly THREE PATCH test exposure swatches with short counts 1, 2, 3 and clearly different tones. Bottom buttons MASK / EXPOSE / RESET. Small title LAYERLIGHT. Emphasize additive regional exposure choices with the paper and mask taking most screen space; dog character and room secondary. Crisp crafted chunky pixels, comfortable quiet workshop. One coherent screenshot, no poster, no collage, no nature observation, no generic camera photography scene, no realism, no long text. Illustrative UI not literal numeric calibration. 16:9 wide canvas.",
+      "source": "/Users/sushi/.codex/generated_images/01a122f6-d873-7293-bd5b-81c293a8ad08/exec-8789c138-d7b2-4e56-aeb6-7f122e7eab29.png",
+      "output_hint": "Generated images are saved to /Users/sushi/.codex/generated_images/01a122f6-d873-7293-bd5b-81c293a8ad08 as /Users/sushi/.codex/generated_images/01a122f6-d873-7293-bd5b-81c293a8ad08/exec-8789c138-d7b2-4e56-aeb6-7f122e7eab29.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "review": "원본을 view_image로 확인. 창틀과 잎의 겹친 그림자, 선택된 불투명 마스크, 1/2/3 세 시험 노광, MASK/EXPOSE/RESET 버튼과 작은 개 사진사가 선명함. 노광 단계는 개념 표현이며 수치 검증 자료가 아님.",
+      "generation_mode": "built-in image_gen",
+      "output": "public/images/new-game-concepts-10/concept-07.webp",
+      "source_width": 1672,
+      "source_height": 941,
+      "width": 1279,
+      "height": 720,
+      "sha256": "99f67be1ea6c43647bb511bdbfbda7722a77afbcbd6e1b30b47d9cb5a7600710",
+      "bytes": 96532
+    }
+  ]
+}

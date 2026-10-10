@@ -1,0 +1,39 @@
+{
+  "generator": "built-in image_gen",
+  "created": "2026-10-10",
+  "assets": [
+    {
+      "id": 8,
+      "title": "메아리 측량실",
+      "prompt": "Use case: stylized-concept. Asset type: 16:9 wide gameplay concept art for original indie game ECHO SURVEY. Draw a coherent polished 2D PIXEL ART game screenshot, not a poster, not a collage, no promotional typography. A small original cat surveyor works at an underground lake station. The central large game area is an overhead rectangular indigo cavern survey map with a fine coordinate grid. Two clearly marked measuring stations A and B emit translucent cyan circular distance overlays, both radius 5 grid units, creating two clear candidate intersections highlighted with small amber question marks. The actual hidden beacon is not revealed. A third station C is shown as a possible next measurement, not already measured. Right sidebar shows small readable labels A 5, B 5, C ? and buttons PING, MARK, COMPARE. The current decision is locating an unseen source by comparing distances, with no ricocheting beam or aimed projectile. A small illustrated edge of the underground lake and cat workstation gives place and personality while the map dominates. Restrained indigo, cyan and warm amber accents, crisp pixel clusters, legible strong contrast. Straight game capture framing, wide 16:9, no watermark, no border poster, no other large words.",
+      "source": "/Users/sushi/.codex/generated_images/01a122f4-199c-74e3-824f-e51ea5f06fa3/exec-2e98f864-3ed7-4762-b861-80cbe973795c.png",
+      "review": "Original viewed: crisp pixel-art measurement map, two distance circles and two candidate intersections, third station and clear PING/MARK/COMPARE controls. Illustration communicates inference rather than ricochet. Drawn grid coordinates and circle radii are illustrative UI, not numeric evidence; article rules take precedence.",
+      "file": "public/images/new-game-concepts-10/concept-08.webp",
+      "width": 1279,
+      "height": 720,
+      "sha256": "93ec5d0b64c078ddaf0050736d190cf6870c7bc88b11f302dc47b35c8bd043d1"
+    },
+    {
+      "id": 9,
+      "title": "여백 신문사",
+      "prompt": "Use case: stylized-concept. Asset type: 16:9 wide gameplay concept art for original indie game MARGIN PRESS. Draw a coherent polished 2D PIXEL ART game screenshot, not a poster, not a collage. A small original dog editor at the lower edge of a cozy tabletop newspaper layout workspace. The central game area is a large cream newspaper grid with modular illustrated fact and context cards, blank or icon-only headlines, all facts already confirmed. The selected wide headline card occupies too much area, leaving too little adjacent room for its required matching context card; a blue chain-link icon visibly pairs those two cards. Beside it, a narrow translucent alternative headline outline reveals enough available grid space for both the headline and its context. Visible red blocked cells communicate the cramped current option; the alternative fits without overlap. On the right a modest tray contains spare newspaper templates and compact buttons PLACE, CHECK, PRINT. Gameplay is editorial context and page area tradeoffs, not detecting fraud or checking documents. Warm amber ink, cream paper, muted blue accents, crisp deliberate pixel clusters, restrained readable English UI only for buttons and FACT / CONTEXT. No unreadable paragraphs, no large title lettering, no watermark. Straight game screenshot, wide 16:9.",
+      "source": "/Users/sushi/.codex/generated_images/01a122f4-199c-74e3-824f-e51ea5f06fa3/exec-9d9915c3-601c-4e2d-a68f-6870ca4db7e2.png",
+      "review": "Original viewed: coherent pixel-art newspaper workspace, editor dog, fact/context links, blocked red area, smaller alternative and PLACE/CHECK/PRINT controls. Clearly shows area/context tradeoff; tiny article marks are placeholder decoration.",
+      "file": "public/images/new-game-concepts-10/concept-09.webp",
+      "width": 1279,
+      "height": 720,
+      "sha256": "de29bd904d67f4291ee7245745510a91dc01b494cf09771c3baa3be18f5c3adf"
+    },
+    {
+      "id": 10,
+      "title": "속빈 조각실",
+      "prompt": "Use case: stylized-concept. Asset type: 16:9 wide gameplay concept art for original indie game HOLLOWFORM. Draw a coherent polished 2D PIXEL ART game screenshot, not a poster or collage. A small original cat sculptor stands beside a pixel workshop bench, with the central gameplay area dominated by a small cubic voxel clay volume in three-quarter isometric view. An open U-shaped bridge sculpture is emerging as material is subtracted from a chunky clay block. A selected column of removable voxels appears translucent cyan, clearly a subtraction preview. Two compact panels labeled FRONT and SIDE show two different target silhouettes, and beside each target a simple live projection of the currently carved volume; the removal preview visibly aligns the front and side outlines. Small remaining material steps make the 3D shape readable. Bottom buttons CARVE, FRONT, SIDE, UNDO. Multi-view 3D subtractive sculpting is the central mechanic, not picross or a filled-in 2D number grid. Warm mauve and sandstone clay, muted plum workshop, tiny cyan selection accent, crisp pixel clusters, handcrafted coherent game HUD. No explanatory paragraphs, no huge logo, no watermark. Wide 16:9 game capture composition.",
+      "source": "/Users/sushi/.codex/generated_images/01a122f4-199c-74e3-824f-e51ea5f06fa3/exec-9ae71ef6-ed38-47e4-b404-25d2c1996b4d.png",
+      "review": "Original viewed: coherent pixel-art volumetric sculpture, selected translucent removal column, front/side target and live projections plus CARVE/FRONT/SIDE/UNDO. Central volume and projections express the mechanic; exact voxel coordinates are illustrative rather than a validated puzzle state.",
+      "file": "public/images/new-game-concepts-10/concept-10.webp",
+      "width": 1279,
+      "height": 720,
+      "sha256": "9220a7345e471063d8047feb2c9f8f5a0cac9bcd936f411311332e387637a7fa"
+    }
+  ]
+}
