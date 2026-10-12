@@ -18,7 +18,7 @@ OUTPUT = ROOT / "posts/korean-folklore-haedong/index.html"
 DOWNLOAD = ROOT / "public/downloads/folklore-haedong-bible.md"
 SITE_ORIGIN = "https://nyimpe.github.io"
 TITLE = "해동 — 부적과 마귀의 시대"
-DESCRIPTION = "인간 왕국과 말하는 신수, 장난치는 도깨비가 사는 대륙. 정기·주술·시선의 세 규칙과 마귀 봉인 부적을 찾는 여정을 정리한 한국 괴물·귀신 단순 판타지 설정집."
+DESCRIPTION = "사람과 신수, 도깨비가 함께 사는 땅. 무당 견습생과 동료들이 다섯 부적을 고치고, 마귀를 막을 방법을 찾아 떠나는 모험 이야기."
 HEADING = re.compile(r"^(#{1,3})\s+(.+?)(?:\s+\{#([a-z][a-z0-9-]*)\})?$")
 LIST = re.compile(r"^(?:(-)|([0-9]+)\.)\s+(.+)$")
 IMAGE = re.compile(r"^!\[([^\[\]]+)\]\(([^\s)]+)\)$")
@@ -232,10 +232,10 @@ def main():
       <article class="research-post design-post worldbuilding-post">
         <header class="post-header">
           <h1>{TITLE}</h1>
-          <time datetime="2026-10-11">2026.10.11</time>
+          <time datetime="2026-10-11">2026.10.11</time> · 다듬음 <time datetime="2026-10-12">2026.10.12</time>
           <p>{DESCRIPTION}</p>
           <p class="worldbuilding-download"><a href="/downloads/folklore-haedong-bible.md" download>원본 설정집 다운로드 (Markdown)</a></p>
-          <p class="image-credit">이 글의 세계·제도·초자연 규칙은 창작 설정입니다. 전승에서 가져온 소재와 새로 정한 해석은 본문에서 구분합니다.</p>
+          <p class="image-credit">이 글의 나라와 규칙, 줄거리는 새로 만든 설정입니다. 옛이야기에서 가져온 부분은 마지막 장에 따로 적었습니다.</p>
         </header>
         <nav class="post-toc" aria-label="설정집 목차">
           <details open>
