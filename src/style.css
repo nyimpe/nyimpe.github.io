@@ -164,6 +164,9 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .worldbuilding-post .post-toc li { margin: .3em 0; }
 .worldbuilding-post .worldbuilding-download { margin: 1.4em 0; }
 .worldbuilding-post .worldbuilding-download a { display: inline-block; padding: .55em .8em; border: 1px solid var(--border); border-radius: 3px; background: var(--surface); }
+.worldbuilding-post .worldbuilding-map { margin: 1.7em 0; }
+.worldbuilding-post .worldbuilding-map img { display: block; width: 100%; height: auto; border: 1px solid var(--soft-border); background: #f3ead7; }
+.worldbuilding-post .worldbuilding-map figcaption { margin-top: .5em; font-size: .8125em; color: var(--muted); }
 .worldbuilding-post .table-scroll { max-width: 100%; }
 .worldbuilding-post table { min-width: 640px; }
 .worldbuilding-post tbody th { white-space: normal; min-width: 7em; }

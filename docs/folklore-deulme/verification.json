@@ -1,0 +1,77 @@
+{
+  "checkedDate": "2026-10-12",
+  "scope": "local source, production build, and browser preview; not deployed",
+  "content": {
+    "chapters": 16,
+    "houseRules": 7,
+    "regions": 7,
+    "factions": 5,
+    "motifEntries": 4,
+    "storyContent": "Independent world bible; no fixed protagonist, plot sequence, or ending",
+    "sourceReview": "Four motif names and IDs checked against the local catalog; historical originals not re-researched",
+    "independentReview": "Distinct premise, calendar, travel arithmetic, weight totals, geography and source mapping reviewed; corrections applied"
+  },
+  "checks": {
+    "productionBuild": "passed; existing Phaser chunk-size warning remains",
+    "localLinksAndAnchors": {
+      "references": 31,
+      "duplicateIds": 0,
+      "status": "passed"
+    },
+    "downloadEquality": [
+      {
+        "file": "docs/folklore-deulme/world-bible.md",
+        "bytes": 47544,
+        "sha256": "7e9b634622c2ce5cf7ae25cf5ba87a7df049d2195046a5def27398681628cd9e"
+      },
+      {
+        "file": "public/downloads/folklore-deulme-bible.md",
+        "bytes": 47544,
+        "sha256": "7e9b634622c2ce5cf7ae25cf5ba87a7df049d2195046a5def27398681628cd9e"
+      },
+      {
+        "file": "dist/downloads/folklore-deulme-bible.md",
+        "bytes": 47544,
+        "sha256": "7e9b634622c2ce5cf7ae25cf5ba87a7df049d2195046a5def27398681628cd9e"
+      },
+      {
+        "file": "actual browser download",
+        "bytes": 47544,
+        "sha256": "7e9b634622c2ce5cf7ae25cf5ba87a7df049d2195046a5def27398681628cd9e"
+      }
+    ]
+  },
+  "browser": {
+    "viewports": [
+      {
+        "viewport": 1280,
+        "document": 1280
+      },
+      {
+        "viewport": 390,
+        "document": 390
+      },
+      {
+        "viewport": 320,
+        "document": 320
+      }
+    ],
+    "table": {
+      "width": 358,
+      "content": 640,
+      "scrollLeft": 40
+    },
+    "tableOfContents": "16 anchors resolve; collapse, keyboard expansion and rules navigation passed",
+    "homeToArticle": "passed",
+    "map": "1200x900 SVG decoded and rendered",
+    "theme": "mobile dark toggle passed",
+    "consoleWarningsAndErrors": [],
+    "actualDownload": "download completed and matched source"
+  },
+  "screenshots": [
+    "page-desktop.jpg",
+    "page-mobile.jpg",
+    "page-mobile-dark.jpg",
+    "map-desktop.png"
+  ]
+}

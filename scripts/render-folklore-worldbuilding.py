@@ -3,7 +3,8 @@
 
 Run from any directory with Python 3. No third-party packages are required.
 The source supports headings, paragraphs, flat lists, tables, quotes, fenced
-code, links, bold, and inline code. Unknown block syntax fails visibly.
+code, standalone map images, links, bold, and inline code.
+Unknown block syntax fails visibly.
 """
 
 from html import escape
@@ -16,10 +17,11 @@ SOURCE = ROOT / "docs/folklore-worldbuilding/world-bible.md"
 OUTPUT = ROOT / "posts/korean-folklore-worldbuilding/index.html"
 DOWNLOAD = ROOT / "public/downloads/folklore-world-bible.md"
 SITE_ORIGIN = "https://nyimpe.github.io"
-TITLE = "괴이록 — 한국 괴물·귀신 세계관 설정집"
-DESCRIPTION = "한국 괴물·귀신 항목에서 출발한 창작 세계관 설정집. 여울국의 공간, 괴이, 생활, 제도와 공통 법칙을 정리하고 여러 매체에서 확장할 수 있는 기준을 제공합니다."
+TITLE = "해명 — 산신과 왕국의 시대"
+DESCRIPTION = "산과 강의 신령들이 먼저 살던 땅, 무너진 금라 왕조의 유산을 다섯 정치권이 이어받은 세계. 창세 신화부터 대륙·민족·국가·역사·신앙까지 정리한 한국 괴이 판타지 설정집."
 HEADING = re.compile(r"^(#{1,3})\s+(.+?)(?:\s+\{#([a-z][a-z0-9-]*)\})?$")
 LIST = re.compile(r"^(?:(-)|([0-9]+)\.)\s+(.+)$")
+IMAGE = re.compile(r"^!\[([^\[\]]+)\]\(([^\s)]+)\)$")
 INLINE = re.compile(r"`([^`]+)`|\*\*(.+?)\*\*|\[([^\[\]]+)\]\(([^\s)]+)\)")
 
 
@@ -67,6 +69,20 @@ def render_markdown(source):
     while index < len(lines):
         line = lines[index]
         if not line.strip():
+            index += 1
+            continue
+        if image := IMAGE.fullmatch(line):
+            caption, url = image.groups()
+            if not re.match(r"^(?:https?://|/)", url):
+                raise ValueError(f"Unsupported image target: {url}")
+            if url.startswith(SITE_ORIGIN + "/"):
+                url = url[len(SITE_ORIGIN):]
+            content.append(
+                '<figure class="worldbuilding-map">'
+                f'<img src="{escape(url, quote=True)}" alt="{escape(caption, quote=True)}" '
+                'width="1200" height="900" loading="lazy" decoding="async">'
+                f'<figcaption>{escape(caption)}</figcaption></figure>'
+            )
             index += 1
             continue
         if line.startswith("```"):
@@ -153,15 +169,15 @@ def render_markdown(source):
                 index += 1
             content.append("<blockquote>" + "".join(f"<p>{inline(part)}</p>" for part in "\n".join(quote).split("\n\n") if part.strip()) + "</blockquote>")
             continue
-        if line.startswith(("#", "    ", "  -", "<")):
+        if line.startswith(("#", "    ", "  -", "<", "![")):
             raise ValueError(f"Unsupported block syntax at line {index + 1}: {line[:60]}")
         paragraph = [line]
         index += 1
         while index < len(lines) and lines[index].strip():
             next_line = lines[index]
-            if HEADING.fullmatch(next_line) or LIST.fullmatch(next_line) or next_line.startswith(("```", "|", ">")) or next_line == "---":
+            if HEADING.fullmatch(next_line) or LIST.fullmatch(next_line) or IMAGE.fullmatch(next_line) or next_line.startswith(("```", "|", ">")) or next_line == "---":
                 break
-            if next_line.startswith(("#", "    ", "  -", "<")):
+            if next_line.startswith(("#", "    ", "  -", "<", "![")):
                 raise ValueError(f"Unsupported block syntax at line {index + 1}: {next_line[:60]}")
             paragraph.append(next_line)
             index += 1
@@ -217,7 +233,7 @@ def main():
         <header class="post-header">
           <h1>{TITLE}</h1>
           <time datetime="2026-10-11">2026.10.11</time>
-          <p>여울국의 공간·괴이·생활·제도·공통 법칙을 정리한 공용 설정집입니다. 게임·소설·웹툰·TRPG에서 각자의 인물과 이야기를 구성할 수 있도록 세계의 기반과 확장 기준을 제공합니다.</p>
+          <p>{DESCRIPTION}</p>
           <p class="worldbuilding-download"><a href="/downloads/folklore-world-bible.md" download>원본 설정집 다운로드 (Markdown)</a></p>
           <p class="image-credit">이 글의 세계·제도·초자연 규칙은 창작 설정입니다. 전승에서 가져온 소재와 새로 정한 해석은 본문에서 구분합니다.</p>
         </header>
