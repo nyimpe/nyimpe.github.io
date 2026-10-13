@@ -8,15 +8,18 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/src/style.css">
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/post-filter.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
       <div class="header-content">
         <nav class="site-nav" aria-label="Main navigation">
-          <a href="/">Home</a>
-          <a href="/about/">About</a>
-          <a href="https://github.com/nyimpe">GitHub</a>
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=writing" aria-label="글쓰기" title="글쓰기"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
           <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
         </nav>
         <hr>
@@ -24,30 +27,23 @@
       <img class="site-cat" src="/cat.png" width="88" height="160" alt="Orange and white pixel-art cat">
     </header>
     <main id="content">
-      <ul class="stack-badges" aria-label="Site and game technology stack">
-        <li class="stack-badge stack-html"><span class="stack-mark" aria-hidden="true">5</span> HTML5</li>
-        <li class="stack-badge stack-css"><span class="stack-mark" aria-hidden="true">3</span> CSS3</li>
-        <li class="stack-badge stack-js"><span class="stack-mark" aria-hidden="true">JS</span> JavaScript</li>
-        <li class="stack-badge stack-vite"><span class="stack-mark" aria-hidden="true">V</span> Vite</li>
-        <li class="stack-badge stack-phaser"><span class="stack-mark" aria-hidden="true">P</span> Phaser</li>
-      </ul>
       <section id="posts" aria-labelledby="posts-title">
         <h2 id="posts-title">Recent Posts</h2>
         <ul class="post-list">
         <li><a href="/posts/korean-folklore-eodeuk/" lang="ko">어둑 — 두려움이 몸을 얻는 땅</a><time datetime="2026-10-12">[2026.10.12]</time></li>
-        <li><a href="/posts/retrogames-onl-snes/" lang="ko">RetroGames.onl</a><time datetime="2026-10-07">[2026.10.07]</time></li>
-        <li><a href="/posts/playretrogames/" lang="ko">Play Retro Games</a><time datetime="2026-10-06">[2026.10.06]</time></li>
-        <li><a href="/posts/playretro-io/" lang="ko">PlayRetro.io</a><time datetime="2026-10-06">[2026.10.06]</time></li>
-        <li><a href="/posts/jjang-games/" lang="ko">짱게임 2D·오락실 게임 도감</a><time datetime="2026-10-06">[2026.10.06]</time></li>
-        <li><a href="/posts/classic-games/" lang="ko">tooli의 고전게임 정리</a><time datetime="2026-10-06">[2026.10.06]</time></li>
-        <li><a href="/posts/logic-puzzles/" lang="ko">온라인 논리 퍼즐 41종</a><time datetime="2026-10-06">[2026.10.06]</time></li>
+        <li data-category="game"><a href="/posts/retrogames-onl-snes/" lang="ko">RetroGames.onl</a><time datetime="2026-10-07">[2026.10.07]</time></li>
+        <li data-category="game"><a href="/posts/playretrogames/" lang="ko">Play Retro Games</a><time datetime="2026-10-06">[2026.10.06]</time></li>
+        <li data-category="game"><a href="/posts/playretro-io/" lang="ko">PlayRetro.io</a><time datetime="2026-10-06">[2026.10.06]</time></li>
+        <li data-category="game"><a href="/posts/jjang-games/" lang="ko">짱게임 2D·오락실 게임 도감</a><time datetime="2026-10-06">[2026.10.06]</time></li>
+        <li data-category="game"><a href="/posts/classic-games/" lang="ko">tooli의 고전게임 정리</a><time datetime="2026-10-06">[2026.10.06]</time></li>
+        <li data-category="game"><a href="/posts/logic-puzzles/" lang="ko">온라인 논리 퍼즐 41종</a><time datetime="2026-10-06">[2026.10.06]</time></li>
         <li><a href="/posts/korean-folklore-game-design/" lang="ko">한국 괴물·귀신 게임 기획</a><time datetime="2026-10-06">[2026.10.06]</time></li>
         <li><a href="/posts/korean-folklore-research/" lang="ko">한국 괴물·귀신</a><time datetime="2026-10-05">[2026.10.05]</time></li>
-        <li><a href="/posts/hole-io/">Hole.io</a><time datetime="2026-07-23">[2026.07.23]</time></li>
-        <li><a href="/posts/vampire-survivor/">Vampire Survivor Lite</a><time datetime="2026-07-10">[2026.07.10]</time></li>
-        <li><a href="/posts/shikaku/">Shikaku</a><time datetime="2026-07-03">[2026.07.03]</time></li>
-        <li><a href="/posts/jumping-cat/">Jumping Cat</a><time datetime="2026-06-06">[2026.06.06]</time></li>
-        <li><a href="/posts/tetris/">Tetris Classic</a><time datetime="2026-06-01">[2026.06.01]</time></li>
+        <li data-category="game"><a href="/posts/hole-io/">Hole.io</a><time datetime="2026-07-23">[2026.07.23]</time></li>
+        <li data-category="game"><a href="/posts/vampire-survivor/">Vampire Survivor Lite</a><time datetime="2026-07-10">[2026.07.10]</time></li>
+        <li data-category="game"><a href="/posts/shikaku/">Shikaku</a><time datetime="2026-07-03">[2026.07.03]</time></li>
+        <li data-category="game"><a href="/posts/jumping-cat/">Jumping Cat</a><time datetime="2026-06-06">[2026.06.06]</time></li>
+        <li data-category="game"><a href="/posts/tetris/">Tetris Classic</a><time datetime="2026-06-01">[2026.06.01]</time></li>
         </ul>
       </section>
     </main>
