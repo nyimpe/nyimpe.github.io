@@ -1,0 +1,76 @@
+{
+  "post": "/posts/eoul-new-genres/",
+  "publishedDate": "2026-10-16",
+  "generator": "Built-in imagegen",
+  "purpose": "Illustrative 2D pixel-art gameplay concepts; not implemented-game screenshots.",
+  "assets": [
+    {
+      "id": "01-moon-market",
+      "title": "김서방의 보름가게",
+      "file": "public/images/eoul-new-genres/01-moon-market.webp",
+      "url": "/images/eoul-new-genres/01-moon-market.webp",
+      "width": 1536,
+      "height": 864,
+      "bytes": 394764,
+      "sha256": "9678cfbaed0e1af1c56277104c1ecc5ec309d3f60bb1c270981d5aa5b28160cb",
+      "provenance": "docs/eoul-new-genres/art-01-02.json"
+    },
+    {
+      "id": "02-wooden-post",
+      "title": "소류마 우편국",
+      "file": "public/images/eoul-new-genres/02-wooden-post.webp",
+      "url": "/images/eoul-new-genres/02-wooden-post.webp",
+      "width": 1536,
+      "height": 864,
+      "bytes": 625062,
+      "sha256": "a23b7d7478481062076f54bed977590bfba47709e6e0b87a136890db4eb4e2bf",
+      "provenance": "docs/eoul-new-genres/art-01-02.json"
+    },
+    {
+      "id": "03-wind-festival",
+      "title": "영등 바람제",
+      "file": "public/images/eoul-new-genres/03-wind-festival.webp",
+      "url": "/images/eoul-new-genres/03-wind-festival.webp",
+      "width": 1536,
+      "height": 864,
+      "bytes": 329534,
+      "sha256": "4b36e77e8fc790be13a8a38abccd132bc92bea7d22595de993c35f9e0d546f72",
+      "provenance": "docs/eoul-new-genres/art-03-04.json"
+    },
+    {
+      "id": "04-mountain-race",
+      "title": "큰산 탈것 경주",
+      "file": "public/images/eoul-new-genres/04-mountain-race.webp",
+      "url": "/images/eoul-new-genres/04-mountain-race.webp",
+      "width": 1536,
+      "height": 864,
+      "bytes": 541406,
+      "sha256": "df33e94412af598a7dfebc379ca5c4b4e543c3b36f0c07374d345e5591266eb5",
+      "provenance": "docs/eoul-new-genres/art-03-04.json"
+    },
+    {
+      "id": "05-rooftop-volley",
+      "title": "한울 지붕 공놀이",
+      "file": "public/images/eoul-new-genres/05-rooftop-volley.webp",
+      "url": "/images/eoul-new-genres/05-rooftop-volley.webp",
+      "width": 1536,
+      "height": 864,
+      "bytes": 353688,
+      "sha256": "22f5904c11005e134151e2b3c2af2880594e18c49b05e008c5952432523e515b",
+      "provenance": "docs/eoul-new-genres/art-05-06.json"
+    },
+    {
+      "id": "06-auspicious-hide",
+      "title": "상서 관측소의 하루",
+      "file": "public/images/eoul-new-genres/06-auspicious-hide.webp",
+      "url": "/images/eoul-new-genres/06-auspicious-hide.webp",
+      "width": 1536,
+      "height": 864,
+      "bytes": 570114,
+      "sha256": "6927a3d8271d6decbca4cb26a1b61bd8d00697e97da3aebd410c70fc19ee00d4",
+      "provenance": "docs/eoul-new-genres/art-05-06.json"
+    }
+  ],
+  "totalBytes": 2814568,
+  "localReferenceCount": 50
+}
