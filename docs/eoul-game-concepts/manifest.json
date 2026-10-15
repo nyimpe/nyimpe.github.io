@@ -1,0 +1,67 @@
+{
+  "post": "/posts/eoul-game-concepts/",
+  "publication_date": "2026-10-15",
+  "tool": "builtin image_gen",
+  "assets": [
+    {
+      "file": "public/images/eoul-game-concepts/01-promise-deck.webp",
+      "url": "/images/eoul-game-concepts/01-promise-deck.webp",
+      "dimensions": [
+        1536,
+        864
+      ],
+      "bytes": 343424,
+      "sha256": "e8aad2ca5fb0182abcfa995716831483115d34c562b59aea9da6952f0d2d9793"
+    },
+    {
+      "file": "public/images/eoul-game-concepts/02-night-shift.webp",
+      "url": "/images/eoul-game-concepts/02-night-shift.webp",
+      "dimensions": [
+        1536,
+        864
+      ],
+      "bytes": 382964,
+      "sha256": "d507d029f8da7dc7939166e82aa406e97805945cfab6f5ed9570e22011156866"
+    },
+    {
+      "file": "public/images/eoul-game-concepts/03-moving-mountain.webp",
+      "url": "/images/eoul-game-concepts/03-moving-mountain.webp",
+      "dimensions": [
+        1536,
+        864
+      ],
+      "bytes": 454232,
+      "sha256": "06f0e3bc9f81c6ed892e8730443ab0c4f15f9ffa952fe39a0f09abc268ca41f7"
+    },
+    {
+      "file": "public/images/eoul-game-concepts/04-iron-companion.webp",
+      "url": "/images/eoul-game-concepts/04-iron-companion.webp",
+      "dimensions": [
+        1536,
+        864
+      ],
+      "bytes": 540068,
+      "sha256": "956ee4eceb03ecf9fcea39b35c3c9af8f8ee1c8e0e8d4552b030d8259bd3c0ef"
+    },
+    {
+      "file": "public/images/eoul-game-concepts/05-drift-chart.webp",
+      "url": "/images/eoul-game-concepts/05-drift-chart.webp",
+      "dimensions": [
+        1536,
+        864
+      ],
+      "bytes": 510960,
+      "sha256": "0dc822ab6ff42ce0851b27b535eaf4cbd025ea18bdb8037046edcd7501bb846a"
+    },
+    {
+      "file": "public/images/eoul-game-concepts/06-underground-guests.webp",
+      "url": "/images/eoul-game-concepts/06-underground-guests.webp",
+      "dimensions": [
+        1536,
+        864
+      ],
+      "bytes": 451618,
+      "sha256": "bfa3c66c0fdffc1220b58f7daa25d5d772acc08ba63fdb1604515109d27980d1"
+    }
+  ]
+}

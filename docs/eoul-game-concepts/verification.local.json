@@ -1,0 +1,150 @@
+{
+  "base": "http://127.0.0.1:8080",
+  "verifiedAt": "2026-10-14T23:59:38.191Z",
+  "postStatus": 200,
+  "conceptCount": 6,
+  "images": [
+    {
+      "src": "/images/eoul-game-concepts/01-promise-deck.webp",
+      "width": 1536,
+      "height": 864,
+      "alt": "달빛 아래 도깨비와 내기하는 해결사, 하단의 카드 다섯 장과 오른쪽의 약속 두 칸을 보여 주는 픽셀아트 컨셉",
+      "status": 200,
+      "sha256": "e8aad2ca5fb0182abcfa995716831483115d34c562b59aea9da6952f0d2d9793"
+    },
+    {
+      "src": "/images/eoul-game-concepts/02-night-shift.webp",
+      "width": 1536,
+      "height": 864,
+      "alt": "한울 골목의 세 해결대원, 소문 요괴와 셈막이 도구, 상단 행동 순서 막대 및 멈춘 명령 선택창을 보여 주는 픽셀아트 컨셉",
+      "status": 200,
+      "sha256": "d507d029f8da7dc7939166e82aa406e97805945cfab6f5ed9570e22011156866"
+    },
+    {
+      "src": "/images/eoul-game-concepts/03-moving-mountain.webp",
+      "width": 1536,
+      "height": 864,
+      "alt": "격자 마을의 작은 걸어 다니는 산, 산을 멈추는 두 사람의 시선, 수레 이동 경로와 위험 발자국을 표시한 픽셀아트 전술 화면 컨셉",
+      "status": 200,
+      "sha256": "06f0e3bc9f81c6ed892e8730443ab0c4f15f9ffa952fe39a0f09abc268ca41f7"
+    },
+    {
+      "src": "/images/eoul-game-concepts/04-iron-companion.webp",
+      "width": 1536,
+      "height": 864,
+      "alt": "대장장이 아이와 쇠를 먹는 불가살이, 배부름 단계 UI, 좁은 대나무 길과 넓은 장애물 길이 보이는 픽셀아트 액션 화면 컨셉",
+      "status": 200,
+      "sha256": "956ee4eceb03ecf9fcea39b35c3c9af8f8ee1c8e0e8d4552b030d8259bd3c0ef"
+    },
+    {
+      "src": "/images/eoul-game-concepts/05-drift-chart.webp",
+      "width": 1536,
+      "height": 864,
+      "alt": "복숭아 섬과 게 껍질 지붕 마을을 지나는 돛배, 상충하는 해도 조각과 두 항로, 관측 표식 및 세 동료 초상으로 구성한 픽셀아트 항해 컨셉",
+      "status": 200,
+      "sha256": "0dc822ab6ff42ce0851b27b535eaf4cbd025ea18bdb8037046edcd7501bb846a"
+    },
+    {
+      "src": "/images/eoul-game-concepts/06-underground-guests.webp",
+      "width": 1536,
+      "height": 864,
+      "alt": "따뜻한 남굴 마을에서 희미한 지상인과 주민이 종이 바람개비를 사이에 두고 만나며 하단 수첩에 쌀·물건·발자국 증거가 놓인 픽셀아트 RPG 컨셉",
+      "status": 200,
+      "sha256": "bfa3c66c0fdffc1220b58f7daa25d5d772acc08ba63fdb1604515109d27980d1"
+    }
+  ],
+  "viewports": [
+    {
+      "viewport": 1440,
+      "doc": 1440,
+      "body": 928
+    },
+    {
+      "viewport": 768,
+      "doc": 768,
+      "body": 768
+    },
+    {
+      "viewport": 390,
+      "doc": 390,
+      "body": 390
+    },
+    {
+      "viewport": 320,
+      "doc": 320,
+      "body": 320
+    }
+  ],
+  "toc": [
+    {
+      "href": "#overview",
+      "exists": true
+    },
+    {
+      "href": "#world-rules",
+      "exists": true
+    },
+    {
+      "href": "#promise-deck",
+      "exists": true
+    },
+    {
+      "href": "#night-shift",
+      "exists": true
+    },
+    {
+      "href": "#moving-mountain",
+      "exists": true
+    },
+    {
+      "href": "#iron-companion",
+      "exists": true
+    },
+    {
+      "href": "#drift-chart",
+      "exists": true
+    },
+    {
+      "href": "#underground-guests",
+      "exists": true
+    },
+    {
+      "href": "#prototype",
+      "exists": true
+    },
+    {
+      "href": "#references",
+      "exists": true
+    }
+  ],
+  "theme": "dark",
+  "assets": [
+    {
+      "path": "/src/style.css",
+      "status": 200
+    },
+    {
+      "path": "/@vite/client",
+      "status": 200
+    },
+    {
+      "path": "/src/main.js",
+      "status": 200
+    }
+  ],
+  "home": [
+    {
+      "category": "",
+      "visible": true
+    },
+    {
+      "category": "?category=writing",
+      "visible": true
+    },
+    {
+      "category": "?category=game",
+      "visible": false
+    }
+  ],
+  "errors": []
+}

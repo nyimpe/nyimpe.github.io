@@ -1,0 +1,61 @@
+{
+  "tool": "builtin image_gen",
+  "generation_mode": "one built-in image_gen call per asset; no references or CLI fallback",
+  "generated_date_local": "2026-10-14",
+  "note": "AI-generated gameplay concept mockups, not implemented game screenshots.",
+  "assets": [
+    {
+      "id": "01-promise-deck",
+      "concept": "달빛 장터의 약속장",
+      "prompt": "Use case: stylized-concept\nAsset type: original actual gameplay screenshot concept art for a Korean folklore 2D pixel-art deckbuilding RPG article, one single widescreen 16:9 game screen.\nPrimary request: A charming playable combat screen for \"Moonlit Market Promises\". The important player decision is immediate card benefit versus a binding promise on the next turn. Make the mechanics visible in the screen.\nScene/backdrop: a moonlit traditional Korean hanok market with indigo tiled roofs, fabric awnings, warm ochre paper lanterns, and calm teal night sky. Friendly neighborhood contest, not grim horror.\nSubject and composition: Side-view duel. A small young human resolver in pale teal hanbok stands on the left looking toward a friendly mischievous dokkaebi shopkeeper in ochre clothes on the right. Both are clear coherent pixel sprites, occupying the central upper half with space between them. The shopkeeper has a small intent bubble showing a tied parcel and numeral 8, making their upcoming move visible.\nGameplay UI: Along the bottom, exactly FIVE large readable parchment cards with distinct icon illustrations (paper fan, lantern, rice cake, knotted cord, hand mirror), and a single cost numeral in each top-left corner. One card in the center is lifted tentatively with a subtle cyan selection outline, showing the choice before committing. Three glowing energy pips on the lower left. On the right side of the battlefield a neat vertical parchment UI strip has exactly TWO rectangular promise slots, the first occupied with a glowing knot token, the second an empty dotted outline. The occupied promise clearly shows a shield icon followed by a crossed sprint-boot icon, implying benefit now and a restriction next turn. Compact small health/status bars and tiny HUD numerals at top corners.\nStyle/medium: entirely crisp handcrafted 2D pixel art, clear square pixel clusters, game-native low-resolution sprite aesthetic, flat orthographic side view, no smooth painting and no 3D. Screen readable at article size.\nColor palette: limited deep indigo, jade teal, warm ochre, parchment cream, tiny coral accents.\nConstraints: opaque full background; exact 16:9 widescreen composition; one gameplay screen only, not collage. No title, no logo, no watermark, no dense text, no Korean lettering required. Only tiny numerals and small English HUD words if needed. Make the cards and two promise slots noticeably legible. No weapons, gore, attack violence, photorealism, blur or decorative poster composition.",
+      "source_path": "/Users/sushi/.codex/generated_images/01a13a84-953b-7d93-9fe7-1237ea6c346c/exec-9cd3fcd0-3b48-4625-94d9-0468da8011ea.png",
+      "workspace_source": "logs/eoul-game-concepts/01-promise-deck-source.png",
+      "path": "public/images/eoul-game-concepts/01-promise-deck.webp",
+      "visual_observations": [
+        "Single side-view market scene with a human resolver on the left and a dokkaebi shopkeeper on the right.",
+        "Five illustrated cards, three glowing energy pips, enemy intent bubble with parcel and 8, selected raised center card are visible.",
+        "Right parchment contains one occupied knot promise slot, shield to crossed-boot icons, and one empty outlined slot.",
+        "Pixel-art appearance is clear, although background shading and UI texture are richer than a strict low-resolution production tileset."
+      ],
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "delivered_dimensions": [
+        1536,
+        864
+      ],
+      "sha256": "e8aad2ca5fb0182abcfa995716831483115d34c562b59aea9da6952f0d2d9793",
+      "bytes": 343424,
+      "source_sha256": "22530bec2a8963e2d4c3f504cfc322ba0bc1c682571a8a50263af00fdc9be12d",
+      "conversion": "RGB opaque WebP, quality 92, method 6; nearest-neighbor resize to maximum width 1536; no redraw"
+    },
+    {
+      "id": "02-night-shift",
+      "concept": "도성 야간 해결대",
+      "prompt": "Use case: stylized-concept\nAsset type: original actual gameplay screenshot concept art for a Korean folklore 2D pixel-art party RPG article, one single widescreen 16:9 game screen.\nPrimary request: \"Night-shift Resolvers\", a top-down party RPG with real-time ATB timelines and pause when a party member is ready. The important player decision is interrupt timing and delaying an upcoming hostile action. Show a paused command decision in an actual game screen.\nScene/backdrop: a charming small Korean hanok courtyard at night, surrounded by indigo tiled roofs, wooden porches, warm paper lanterns, potted plants and stone paving. A glowing round bamboo sieve placed on the ground distracts a playful little rumor spirit counting its holes.\nSubject and composition: Clear orthographic TOP-DOWN gameplay camera at slight old-school RPG tilt, coherent square tiles. Exactly three visibly distinct party characters spread across the courtyard: a teal-hanbok human resolver selected by cyan ground ring, a masked performer in cream and coral hanbok with a small fan, and an ochre-clothed artisan with a toolkit. Across from them are three playful shadow/rumor spirits with friendly mischievous expressions, not horror monsters. The selected resolver aims a thin cyan targeting line toward one spirit beginning a purple windup with a circular interrupted-cast icon above it. Another spirit is bent over the glowing sieve.\nGameplay UI: At the very top a LARGE easily readable single horizontal ATB timeline running left-to-right across most of the screen. Portrait markers of the three party members and spirits are positioned along it; the upcoming spirit's portion is a conspicuous PURPLE WINDUP segment that can be interrupted. A small numeral 0 at left, 2 and 4 along the bar; tiny label \"WINDUP\" over the purple section is okay. Highlight the selected resolver's portrait marker with the same cyan outline as their ground ring. Toward the lower right a clearly visible parchment command panel with the short label \"PAUSED\", exactly three large command buttons shown as icons (small hand bell for interrupt, tied cord for delay, footprints for move). The bell button is selected with a cyan border. Lower left has exactly three compact party portraits with slim energy/health bars. UI occupies deliberate margins, playfield remains readable.\nStyle/medium: entirely crisp handcrafted 2D pixel art, visible square pixel clusters, game-native low-resolution sprite aesthetic, flat 2D tilemap, no smooth painting and no 3D. Coherent screen capture mockup, not key art.\nColor palette: limited deep indigo, jade teal, warm ochre, parchment cream; purple only as the upcoming windup warning.\nConstraints: opaque background; 16:9 widescreen. One gameplay screen only, not collage. NO CARDS and no deck UI. No large title, no logo, no watermark, no dense text, no Korean lettering required. Only tiny numerals and the short labels \"PAUSED\" and \"WINDUP\" if helpful. No gore, photorealism, blur, isometric diorama or poster composition. Clearly show timing, selected command and interrupt target.",
+      "source_path": "/Users/sushi/.codex/generated_images/01a13a84-953b-7d93-9fe7-1237ea6c346c/exec-33cf1b86-fdd6-4081-ada2-3c125c71189c.png",
+      "workspace_source": "logs/eoul-game-concepts/02-night-shift-source.png",
+      "path": "public/images/eoul-game-concepts/02-night-shift.webp",
+      "visual_observations": [
+        "Single elevated courtyard scene with three distinct party characters and three playful spirits.",
+        "Top timeline includes six portrait markers and a visible purple WINDUP segment.",
+        "Selected resolver has a cyan ring and targeting line to a winding-up spirit; another spirit bends over a glowing bamboo sieve.",
+        "PAUSED command panel shows bell, knot, and footprint icons, with the bell highlighted; no cards are present.",
+        "Camera is a diagonal elevated tile view rather than a strictly orthographic top-down production map."
+      ],
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "delivered_dimensions": [
+        1536,
+        864
+      ],
+      "sha256": "d507d029f8da7dc7939166e82aa406e97805945cfab6f5ed9570e22011156866",
+      "bytes": 382964,
+      "source_sha256": "00cf609e6710c4d5b6df92a3514f07e791a704cc6c53e1d41497cc57690811e7",
+      "conversion": "RGB opaque WebP, quality 92, method 6; nearest-neighbor resize to maximum width 1536; no redraw"
+    }
+  ]
+}
