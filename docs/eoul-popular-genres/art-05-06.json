@@ -1,0 +1,77 @@
+{
+  "generator": "built-in image_gen.imagegen",
+  "post": "eoul-popular-genres",
+  "generated_date_client": "2026-10-16",
+  "transparent_background": false,
+  "processing": "RGB conversion, nearest-neighbor resize to 1536x864, WebP quality 90 method 6. No programmatic visual retouch or compositing.",
+  "items": [
+    {
+      "id": "05-shell-movers",
+      "prompt": "Use case: stylized-concept\nAsset type: gameplay concept screenshot for an original Korean folklore 2D pixel game article.\nPrimary request: Create one wide 16:9 game screenshot, target composition 1536x864, of a cooperative physical carrying game in the fictional Eoul world.\nScene/backdrop: Top-down Korean hanok courtyard in warm daytime. A narrow L-shaped passage between low plaster walls leads toward a roof installation foundation marked with a dotted outline.\nSubject and gameplay: EXACTLY TWO movers wearing short practical hanbok. One human in blue and one friendly small dokkaebi in orange. They stand at opposite ends of ONE large intact fragile CRAB SHELL roof panel in the center. The shell is an empty curved roof material, not a living crab or crab monster. Each mover visibly grips one opposite handle connected to the same shell panel. Both hands and both connected handles must be readable. The panel is angled across the bend, showing that the two movers need to rotate and coordinate it through the narrow L-shaped passage. Small lift-force arrows at the two grips and matching blue/orange player focus marks explain their cooperation. The target is the dotted roof foundation beyond the bend.\nComposition/framing: Actual overhead 2D gameplay view with a broad playable courtyard, compact edge HUD, no title illustration. All objects fully inside frame, readable clearance between shell and walls. The shell and two movers are the main focus.\nStyle/medium: Authentic crisp 16-bit pixel-art tiles, square pixels, limited coherent palette, small sprite characters, readable top-down geometry. Warm ochre courtyard, gray-blue roof tiles, green plant accents. Opaque image edge to edge.\nText (verbatim): Compact P1 and P2 icons at top, \"GRIP\" near both handles, top-center integrity meter \"ROOF 72/100\", upper-right delivery progress \"1 / 3\".\nConstraints: Exactly two movers, exactly one carried shell panel, connected grips at opposite ends. Cooperative manual physical carrying, no vehicle, no driving, no ship design or center-of-mass ship-building UI, no automated rotation, no industrial machinery. No weapons, battle, cards, monsters, gore, watermark, large poster heading, Korean letters or prose text.",
+      "edit_prompt": "Use case: precise-object-edit\nAsset type: gameplay concept screenshot correction.\nInput image: the attached image is the edit target.\nPrimary request: Change ONLY the carried roof panel's visible material and silhouette. It must clearly be ONE large EMPTY CRAB CARAPACE, a natural amber-orange curved shell, with a gently scalloped rim and natural segmented shell texture. This shell is being reused as a roof panel in a Korean folklore world. It is NOT a roof built from gray ceramic tiles. Remove ALL gray tile patterns on this carried object. It is NOT a live crab: no legs, no pincers, no eyes, no face, no monster anatomy beyond the discarded domed carapace. Keep the object's scale, diagonal position and connected carrying handles exactly.\nPreserve invariants: EXACTLY TWO movers, human blue P1 and friendly orange dokkaebi P2, each gripping opposite handles connected to the ONE shell; hand positions and readable grip connections. Keep all courtyard walls, the L-shaped passage, the roof installation foundation, lighting, camera and 16-bit pixel style unchanged. Keep all HUD text unchanged: \"P1\", \"P2\", \"GRIP\", \"ROOF 72/100\", \"1 / 3\". Keep the intact shell object centered, and all UI inside frame.\nStyle: crisp 2D top-down pixel gameplay screenshot, warm daylight, opaque image. No unrelated changes.",
+      "mode": "generate then targeted imagegen edit",
+      "initial_source_path": "/Users/sushi/.codex/generated_images/01a141d8-e3aa-7391-adbc-d3dc634b7b06/exec-fe4f5518-5cae-4779-bad2-aa80ec008263.png",
+      "initial_source_copy": "logs/eoul-popular-genres/05-shell-movers-initial.png",
+      "source_path": "/Users/sushi/.codex/generated_images/01a141d8-e3aa-7391-adbc-d3dc634b7b06/exec-c0ff0020-86ac-4093-a81c-703736c43ac2.png",
+      "source_copy": "logs/eoul-popular-genres/05-shell-movers-source.png",
+      "final_path": "public/images/eoul-popular-genres/05-shell-movers.webp",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "final_dimensions": [
+        1536,
+        864
+      ],
+      "final_mode": "RGB",
+      "source_sha256": "75c0786aea35c97372ec2231bc5ca69d48c6051b3d48338105a654b0df0e3b5f",
+      "final_sha256": "250496c3d02b5393e9ff5c45a9c7e852f87df5c215c6b364b2fd5cffa0842bed",
+      "final_bytes": 334282,
+      "visual_qa": [
+        "Two world-space movers, blue human and orange dokkaebi, grasp opposite ends of one handled shell panel.",
+        "Targeted edit replaced the initially incorrect ceramic tile surface with an amber carapace; both handles, characters and courtyard composition were preserved.",
+        "P1/P2, GRIP, ROOF 72/100 and 1 / 3 are readable and inside frame.",
+        "Dotted roof foundation and narrow courtyard turn are visible. No vehicle or combat."
+      ],
+      "limitations": [
+        "The shell is stylized as a roof-sized flattened carapace rather than an anatomically exact crab shell.",
+        "The small delivery HUD icon remains a generic tiled roof icon.",
+        "Clearance, force arrows and damage values are illustrative, not a simulation proof."
+      ],
+      "final_visual_review": "Final WebP opened with view_image after encoding; scene composition, character or tower counts, HUD and opaque RGB preserved.",
+      "initial_source_sha256": "c6c496228995a27d1901a2ed119c2a8c19c1ba9c0b83c364278ceaab1d199123"
+    },
+    {
+      "id": "06-dawn-defense",
+      "prompt": "Use case: stylized-concept\nAsset type: gameplay concept screenshot for an original Korean folklore 2D pixel game article.\nPrimary request: Create one wide 16:9 game screenshot, target composition 1536x864, of a fixed-tower defense placement game in the fictional Eoul world.\nScene/backdrop: Top-down Korean folklore world at lantern-lit night. An unmistakable winding S-shaped road runs from a dark misty forest entrance on the left to the lit gate of Hanul city at upper right. Korean tiled gatehouse, low stone walls, pines, earth path, softly glowing lanterns.\nSubject and gameplay: No controllable hero. Small shadow rumors are represented as GHOSTED PREVIEW silhouettes spaced along the road and ghosted preview direction arrows for the next wave. Three fixed guardian structures stand OFF the road: an archer guardian painting for single-target attacks, a sieve wooden shrine for a slowing field, and a mirror shrine that reveals hidden phantoms. A selected mirror tower has a clear transparent circular range overlay. Its circle covers a road bend and visibly overlaps the archer tower's coverage. Within the selected mirror range, one small faint phantom preview becomes a clearly visible dark silhouette. This is idle defense planning BETWEEN waves: no shots firing, no attacks in progress. Tower placement, range, and type coverage are the central decision.\nComposition/framing: Actual top-down 2D tile-game screen. The S road and its entrance/exit are easy to follow; structures are clearly separated from the road. Playfield occupies most of image, all HUD inside frame, no giant title.\nStyle/medium: Crisp readable 16-bit pixel art, square-edged sprite tiles, restrained midnight indigo and teal with warm amber lanterns. Avoid blur, 3D rendering and painterly brushwork. Opaque full-bleed screenshot.\nText (verbatim): Top HUD \"WAVE 4 / 8\", gate integrity \"12 / 12\", coin count \"60\". Bottom three small build buttons with archer, sieve, mirror icons and prices \"30\", \"40\", \"50\"; separate \"NEXT WAVE\" button.\nConstraints: Exactly three main defense structures, each with a distinct function icon. No controllable player character, no action-roguelike hero, no bullet-heaven, no cards, no turn-based character command menu. No watermark, no Korean letters, no long text, no large poster heading. Clear preview-only enemies and arrows before next wave.",
+      "mode": "generate",
+      "source_path": "/Users/sushi/.codex/generated_images/01a141d8-e3aa-7391-adbc-d3dc634b7b06/exec-d8817de6-cfcf-4c27-b9e5-ba182608223f.png",
+      "source_copy": "logs/eoul-popular-genres/06-dawn-defense-source.png",
+      "final_path": "public/images/eoul-popular-genres/06-dawn-defense.webp",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "final_dimensions": [
+        1536,
+        864
+      ],
+      "final_mode": "RGB",
+      "source_sha256": "9a16f1968c4bf44c7839cfafb29f63c60f0501f7a25b8a4f6b8f4192e7a8d38b",
+      "final_sha256": "eff18e19e6d59617b1f7348f70776dca99d46127a3003eb20cb0f36090218c56",
+      "final_bytes": 429224,
+      "visual_qa": [
+        "Exactly three main off-road guardians: archer painting, sieve shrine and mirror shrine.",
+        "Selected mirror has a blue circular range overlay; ghosted path previews and a revealed dark phantom are visible.",
+        "No controllable hero or active attack projectiles; NEXT WAVE button communicates planning.",
+        "WAVE 4 / 8, gate 12 / 12, coin 60 and build prices 30/40/50 are readable inside frame."
+      ],
+      "limitations": [
+        "Road curvature and range geometry are visual concepts rather than exact gameplay distances.",
+        "The revealed silhouette is darker than other previews and may read as a live enemy without the planning caption.",
+        "Architecture is fictional pixel-art folklore scenery, not a historical architectural reconstruction."
+      ],
+      "final_visual_review": "Final WebP opened with view_image after encoding; scene composition, character or tower counts, HUD and opaque RGB preserved."
+    }
+  ]
+}

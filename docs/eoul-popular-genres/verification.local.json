@@ -1,0 +1,164 @@
+{
+  "base": "http://127.0.0.1:8080",
+  "verifiedAt": "2026-10-16T09:17:31.427Z",
+  "postStatus": 200,
+  "conceptCount": 6,
+  "images": [
+    {
+      "src": "/images/eoul-popular-genres/01-dawn-colony.webp",
+      "width": 1536,
+      "height": 864,
+      "alt": "눈 덮인 한옥 정착지의 주민 작업, 실내 온기, 식량과 잠자리, 개인 욕구 막대와 교대표를 보여 주는 픽셀아트 콜로니 화면",
+      "status": 200,
+      "sha256": "7444d53be8b39a00b47542df44c0b2720a96825724a1795885bc64cd54c0f920"
+    },
+    {
+      "src": "/images/eoul-popular-genres/02-jangseung-league.webp",
+      "width": 1536,
+      "height": 864,
+      "alt": "나무 수호 인형을 진형에 배치하고 후보석과 상점, 남은 돈·이자를 확인하는 픽셀아트 오토배틀러 준비 화면",
+      "status": 200,
+      "sha256": "cc0cfa7d4ebae302e27e34421cd08adf95faf30cb824636e5ee0d7f14c49b10e"
+    },
+    {
+      "src": "/images/eoul-popular-genres/03-masked-council.webp",
+      "width": 1536,
+      "height": 864,
+      "alt": "한울 탈잔치의 여섯 참가자와 번호별 투표판, 작업소 단서와 토론 시간을 표시한 픽셀아트 사회추리 화면",
+      "status": 200,
+      "sha256": "cbc0cb363308bb5262e57ef2c96bc14db2ad0ddf8b7a5f06a81355c244b05ece"
+    },
+    {
+      "src": "/images/eoul-popular-genres/04-gate-restoration.webp",
+      "width": 1536,
+      "height": 864,
+      "alt": "때 묻은 문그림을 부드러운 붓으로 닦아 금빛 수호 그림을 드러내는 모습과 세척률·도구 선택이 있는 픽셀아트 작업 화면",
+      "status": 200,
+      "sha256": "42252d861a34a93885004a29fbf4e00c71c4f88bf736dc41bc240a041a753973"
+    },
+    {
+      "src": "/images/eoul-popular-genres/05-shell-movers.webp",
+      "width": 1536,
+      "height": 864,
+      "alt": "사람과 도깨비 두 운반자가 거대한 게 껍질 지붕의 손잡이를 함께 잡고 좁은 골목을 통과하며 파손도와 잡기 상태를 확인하는 픽셀아트 협동 화면",
+      "status": 200,
+      "sha256": "250496c3d02b5393e9ff5c45a9c7e852f87df5c215c6b364b2fd5cffa0842bed"
+    },
+    {
+      "src": "/images/eoul-popular-genres/06-dawn-defense.webp",
+      "width": 1536,
+      "height": 864,
+      "alt": "성문으로 이어지는 굽은 길과 자동 수호 그림, 감속 체와 거울의 사거리, 웨이브 예고·건설 비용이 있는 픽셀아트 타워 디펜스 화면",
+      "status": 200,
+      "sha256": "eff18e19e6d59617b1f7348f70776dca99d46127a3003eb20cb0f36090218c56"
+    }
+  ],
+  "viewports": [
+    {
+      "viewport": 1440,
+      "doc": 1440,
+      "body": 928
+    },
+    {
+      "viewport": 768,
+      "doc": 768,
+      "body": 768
+    },
+    {
+      "viewport": 390,
+      "doc": 390,
+      "body": 390
+    },
+    {
+      "viewport": 320,
+      "doc": 320,
+      "body": 320
+    }
+  ],
+  "toc": [
+    {
+      "href": "#market",
+      "exists": true
+    },
+    {
+      "href": "#difference",
+      "exists": true
+    },
+    {
+      "href": "#dawn-colony",
+      "exists": true
+    },
+    {
+      "href": "#jangseung-league",
+      "exists": true
+    },
+    {
+      "href": "#masked-council",
+      "exists": true
+    },
+    {
+      "href": "#gate-restoration",
+      "exists": true
+    },
+    {
+      "href": "#shell-movers",
+      "exists": true
+    },
+    {
+      "href": "#dawn-defense",
+      "exists": true
+    },
+    {
+      "href": "#prototype",
+      "exists": true
+    },
+    {
+      "href": "#references",
+      "exists": true
+    }
+  ],
+  "theme": "dark",
+  "assets": [
+    {
+      "path": "/src/style.css",
+      "status": 200
+    },
+    {
+      "path": "/@vite/client",
+      "status": 200
+    },
+    {
+      "path": "/src/main.js",
+      "status": 200
+    }
+  ],
+  "home": [
+    {
+      "category": "",
+      "visible": true
+    },
+    {
+      "category": "?category=writing",
+      "visible": true
+    },
+    {
+      "category": "?category=game",
+      "visible": false
+    }
+  ],
+  "errors": [],
+  "localReferences": {
+    "checked": 38,
+    "broken": 0
+  },
+  "build": {
+    "command": "npm run build",
+    "result": "passed",
+    "warning": "Existing Phaser chunk exceeds 500 kB"
+  },
+  "visualReview": {
+    "artwork": "Six final WebPs inspected with view_image; core gameplay activity is visible for all six genres.",
+    "publication": "Desktop gameplay section and 390px top-of-article inspected; readable text and image layout.",
+    "scope": "Publication validation only. The games are concepts, not implemented or playtested."
+  }
+}
