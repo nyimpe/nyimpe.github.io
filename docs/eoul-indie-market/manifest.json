@@ -1,0 +1,76 @@
+{
+  "post": "/posts/eoul-indie-market/",
+  "date": "2026-10-17",
+  "generator": "Built-in imagegen",
+  "purpose": "Original illustrative gameplay concepts; exact rules are in the article.",
+  "conceptCount": 6,
+  "assets": [
+    {
+      "id": "01-goraebada-fishing",
+      "path": "public/images/eoul-indie-market/01-goraebada-fishing.webp",
+      "url": "/images/eoul-indie-market/01-goraebada-fishing.webp",
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "bytes": 361024,
+      "sha256": "e2e9880756ab1ae4c39c320d7af3220eb81c0e1116e49077c45a1c07114a6b92",
+      "provenance": "docs/eoul-indie-market/art-01-02.json"
+    },
+    {
+      "id": "02-ink-alley",
+      "path": "public/images/eoul-indie-market/02-ink-alley.webp",
+      "url": "/images/eoul-indie-market/02-ink-alley.webp",
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "bytes": 456362,
+      "sha256": "d1472e3d21f029b10650fec46ed2872a9adaffb4dbd9c49ab0c965619b3662cb",
+      "provenance": "docs/eoul-indie-market/art-01-02.json"
+    },
+    {
+      "id": "03-rumor-map",
+      "path": "public/images/eoul-indie-market/03-rumor-map.webp",
+      "url": "/images/eoul-indie-market/03-rumor-map.webp",
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "bytes": 366244,
+      "sha256": "6f350d39a2d7391f4156d461c28d468ecd3183505354553d08ac29e8ef479aec",
+      "provenance": "docs/eoul-indie-market/art-03-04.json"
+    },
+    {
+      "id": "04-guardian-adoption",
+      "path": "public/images/eoul-indie-market/04-guardian-adoption.webp",
+      "url": "/images/eoul-indie-market/04-guardian-adoption.webp",
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "bytes": 239184,
+      "sha256": "278f3cdb433842764b03d4c690f9fd93b22ce6f2796a1d6946a40e06eecc7da6",
+      "provenance": "docs/eoul-indie-market/art-03-04.json"
+    },
+    {
+      "id": "05-old-house-demolition",
+      "path": "public/images/eoul-indie-market/05-old-house-demolition.webp",
+      "url": "/images/eoul-indie-market/05-old-house-demolition.webp",
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "bytes": 314354,
+      "sha256": "131a89a5c370c56ea86d6e88ab04273edd2ee1ec40c4e0b73854a180ab13c264",
+      "provenance": "docs/eoul-indie-market/art-05-06.json"
+    },
+    {
+      "id": "06-dawn-counting",
+      "path": "public/images/eoul-indie-market/06-dawn-counting.webp",
+      "url": "/images/eoul-indie-market/06-dawn-counting.webp",
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "bytes": 211680,
+      "sha256": "0f3f7ac73f46f637c24cdfec10f4877223cba0bacaddf19a8ee62129da13fd2a",
+      "provenance": "docs/eoul-indie-market/art-05-06.json"
+    }
+  ],
+  "totalBytes": 1948848
+}

@@ -1,0 +1,50 @@
+{
+  "generator": "built-in image_gen.imagegen",
+  "mode": "generate",
+  "transparent_background": false,
+  "date_client": "2026-10-17",
+  "post": "eoul-indie-market",
+  "processing": "cwebp RGB resize to 1536x864, quality 90, method 6; no retouch or compositing.",
+  "items": [
+    {
+      "id": "03-rumor-map",
+      "prompt": "Use case: stylized-concept\nAsset type: one wide 16:9 2D pixel-art gameplay screenshot for an article about Eoul, a bright Korean folklore game world.\nPrimary request: Show the actual playable social-network simulation. The player selects the first listener, emotional tone and certainty of a rumor; colored paths preview how ten residents may distort it, and a night-spirit silhouette previews the aggregate result. This is about shaping propagation, not finding a liar.\nScene/backdrop: top-down Korean folklore town at dusk with connected market, guard post, well and houses.\nSubject: exactly ten small resident sprites around town, each with a distinct trait icon. One real white magpie near the well. A selected merchant is outlined. Dotted rumor routes branch from the merchant; branch symbols change from one magpie to three coin-magpies or a painted-feather icon.\nComposition/framing: central town map. Left compact message composer has icon rows for subject, emotion, certainty plus actions. Right panel shows a translucent noncombat night-spirit preview made of magpie and coin motifs. Top shows two time-slot tokens. Bottom timeline separates DAY propagation from NIGHT manifestation.\nStyle/medium: crisp readable 16-bit pixel art, small sprites, hanok town tiles, warm amber and indigo, clean node-route overlays, functional dark UI.\nLighting/mood: curious and slightly uncanny, not horror.\nText (verbatim): DAY 3, TELL, CORRECT, WAIT, NIGHT.\nConstraints: no hidden-role accusation, vote, evidence board, detective murder, combat, cards, logo, watermark, or poster. The network route and predicted transformation must be central. Opaque full-bleed landscape.",
+      "source_path": "/Users/sushi/.codex/generated_images/01a14812-9b5b-7b12-9171-756dfe5d002c/exec-fd7c7de9-23c1-4a40-ab5d-a396231523a2.png",
+      "source_copy": "logs/eoul-indie-market/03-rumor-map-source.png",
+      "final_path": "public/images/eoul-indie-market/03-rumor-map.webp",
+      "source_dimensions": [1672, 941],
+      "source_mode": "RGB",
+      "source_bytes": 2816292,
+      "source_sha256": "38ec538243a7189ec2b9c257a7a129c283e4e9911ac2442f1a774357db953079",
+      "final_dimensions": [1536, 864],
+      "final_mode": "RGB",
+      "final_bytes": 366244,
+      "final_sha256": "6f350d39a2d7391f4156d461c28d468ecd3183505354553d08ac29e8ef479aec",
+      "visual_qa": [
+        "열 주민의 성향 아이콘과 선택한 첫 청자에서 갈라지는 다색 전파 경로 확인",
+        "실제 흰 까치, 세 마리로 과장된 판본, 깃털 판본과 NIGHT 결과 미리보기 확인",
+        "투표·증거판·전투 없이 전달 경로와 판본 변화가 중심인 화면 확인"
+      ]
+    },
+    {
+      "id": "04-guardian-adoption",
+      "prompt": "Use case: stylized-concept\nAsset type: one wide 16:9 2D pixel-art gameplay screenshot for an article about Eoul, a bright Korean folklore game world.\nPrimary request: Show the actual playable behavior-training simulator. The player demonstrates a conditional household behavior, rewards a correct response, and uses a deliberate counterexample so a small house-spirit learns when to act before choosing a home together.\nScene/backdrop: cozy side-view hanok training room opening onto a courtyard.\nSubject: one trainer in simple hanbok, one small friendly fox-dog house spirit, one red floor mat, one brass warning bell, and one moving shadow dummy. The shadow crosses the red mat; the pet correctly touches the bell; the trainer offers a glowing praise token. Exactly one pet in the main room.\nComposition/framing: actual game view. Right panel shows a three-part icon rule: shadow over red mat -> pet -> bell. Two examples below: green check for shadow on red mat; gray pause for ordinary visitor with no red mat. Bottom buttons DEMO, REWARD, IGNORE. Top trust and focus meters, no feeding or size meters. Small mutual-adoption request shows a night house and bell icon.\nStyle/medium: crisp charming 16-bit pixel art, square pixels, warm wood, cream paper, red mat, jade accents, clean practical UI.\nLighting/mood: patient, cozy, observant.\nText (verbatim): DEMO, REWARD, IGNORE, CUE.\nConstraints: behavior learning and generalization are central. No capture, sale, creature combat, feeding loop, evolution, colony schedule, auto-battle, cards, logo, watermark, or poster. Opaque full-bleed landscape.",
+      "source_path": "/Users/sushi/.codex/generated_images/01a14812-9b5b-7b12-9171-756dfe5d002c/exec-2277293b-809e-4adb-ab88-78c429eab6c7.png",
+      "source_copy": "logs/eoul-indie-market/04-guardian-adoption-source.png",
+      "final_path": "public/images/eoul-indie-market/04-guardian-adoption.webp",
+      "source_dimensions": [1672, 941],
+      "source_mode": "RGB",
+      "source_bytes": 2127574,
+      "source_sha256": "3c72f37e66333d6e9c10d4f1e6c005c0927ebe2425ab4861fb2e7dee84db043b",
+      "final_dimensions": [1536, 864],
+      "final_mode": "RGB",
+      "final_bytes": 239184,
+      "final_sha256": "278f3cdb433842764b03d4c690f9fd93b22ce6f2796a1d6946a40e06eecc7da6",
+      "visual_qa": [
+        "그림자+붉은 깔개→집지킴이→종의 CUE 규칙과 성공·반례 두 행 확인",
+        "DEMO, REWARD, IGNORE 및 상호 입양 카드 확인",
+        "먹이·몸집·전투·작업표 없이 조건 행동 학습이 중심인 화면 확인"
+      ]
+    }
+  ]
+}

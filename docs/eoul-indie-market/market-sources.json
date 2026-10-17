@@ -1,0 +1,107 @@
+{
+  "checkedDate": "2026-10-17",
+  "scope": "Steam-centered indie market signals and official reference-game evidence; not a genre popularity ranking or sales forecast.",
+  "methodology": [
+    "Release counts and 1,000-review thresholds come from How To Market A Game analyses using VG Insights data and Steam tags. They are analyst classifications, not Valve sales reports.",
+    "Submitted reviews, concurrent players, wishlists and cumulative players are different metrics and are not added together or ranked against each other.",
+    "Review counts and concurrent-player positions are snapshots checked on 2026-10-17 and can change after publication.",
+    "Players must not be relabeled as copies sold. Free-game concurrent players do not directly measure paid demand or active attention.",
+    "GameplayBorrow is a design interpretation. The cited result does not prove that one mechanic caused a reference game's success."
+  ],
+  "sources": [
+    {
+      "id": "steam-releases-2025",
+      "publisher": "How To Market A Game, using VG Insights data",
+      "url": "https://howtomarketagame.com/2026/01/27/what-the-hell-happened-in-2025/",
+      "snapshotDate": "2026-01-04",
+      "values": {
+        "steamReleases": 20282,
+        "gamesOver1000Reviews": 608,
+        "narrativeHits": 51,
+        "simulationHits": 43,
+        "horrorHits": 39,
+        "idleHits": 27,
+        "idleReleases": 965,
+        "idleHitRatePercent": 2.79
+      },
+      "caveat": "A hit is defined by the article as at least 1,000 reviews by the snapshot. Tags can overlap and this is not confirmed revenue or copies sold."
+    },
+    {
+      "id": "steam-releases-2026-q1",
+      "publisher": "How To Market A Game, using VG Insights data",
+      "url": "https://howtomarketagame.com/2026/05/14/2026-q1-games/",
+      "values": {
+        "steamReleases": 5971,
+        "gamesOver1000Reviews": 96,
+        "hitRatePercent": 1.6
+      },
+      "caveat": "The rise of hands-on first-person job simulators is the author's interpretation of tagged releases, not an official industry statistic."
+    },
+    {
+      "id": "how-to-fish",
+      "referenceGame": "How to Fish",
+      "announcementUrl": "https://steamcommunity.com/app/4001890/announcements/",
+      "storeUrl": "https://store.steampowered.com/app/4001890/How_to_Fish/",
+      "values": {
+        "developerReportedPlayersWithinTwoMonths": 10000000,
+        "englishReviewCount": 28466,
+        "englishPositivePercent": 95
+      },
+      "caveat": "The developer announcement says players, not copies sold, and does not publish a detailed counting methodology. Review values are a checked-date snapshot."
+    },
+    {
+      "id": "webfishing",
+      "referenceGame": "WEBFISHING",
+      "url": "https://store.steampowered.com/app/3146520/WEBFISHING/",
+      "values": {
+        "englishReviewCount": 50081,
+        "englishPositivePercent": 97
+      },
+      "caveat": "Submitted English reviews are not official sales or total player counts."
+    },
+    {
+      "id": "tiny-glade",
+      "referenceGame": "Tiny Glade",
+      "wishlistAnnouncementUrl": "https://steamcommunity.com/games/2198150/announcements/detail/6209981461627839925",
+      "storeUrl": "https://store.steampowered.com/app/2198150/Tiny_Glade/",
+      "values": {
+        "prelaunchWishlists": 1000000,
+        "englishReviewCount": 13999,
+        "englishPositivePercent": 97
+      },
+      "caveat": "The official one-million figure is prelaunch wishlists, not copies sold. Reviews are a checked-date snapshot."
+    },
+    {
+      "id": "bongo-cat",
+      "referenceGame": "Bongo Cat",
+      "chartUrl": "https://store.steampowered.com/charts/mostplayed",
+      "storeUrl": "https://store.steampowered.com/app/3419430/Bongo_Cat/",
+      "values": {
+        "mostPlayedRank": 7,
+        "currentPlayers": 115277,
+        "peakToday": 193677
+      },
+      "caveat": "A single live snapshot of a free desktop idle game. It does not establish paid demand, sustained rank or active attention."
+    },
+    {
+      "id": "palworld",
+      "referenceGame": "Palworld",
+      "url": "https://www.pocketpair.jp/en/game-news/palworld-reaches-40-million-total-players-special-video-released-ahead-of-1-0-release-on-july-10/",
+      "announcementDate": "2026-07-08",
+      "values": {
+        "playersAcrossPlatforms": 40000000
+      },
+      "caveat": "Players across Steam, Xbox and PlayStation, including subscription access, are not copies sold. This is an outlier-scale reference, not a realistic small-team production comparison."
+    },
+    {
+      "id": "tiny-pasture",
+      "referenceGame": "Tiny Pasture",
+      "url": "https://store.steampowered.com/app/3167550/Tiny_Pasture/",
+      "values": {
+        "englishReviewCount": 1203,
+        "englishPositivePercent": 93
+      },
+      "caveat": "A niche review signal, not an official sales count. The separate 30,000 crowdfunding figure is not used because it was a Modian goal amount, not copies sold."
+    }
+  ]
+}
