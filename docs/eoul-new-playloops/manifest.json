@@ -1,0 +1,76 @@
+{
+  "post": "/posts/eoul-new-playloops/",
+  "date": "2026-10-18",
+  "generator": "Built-in imagegen",
+  "purpose": "Original illustrative gameplay concepts; exact rules are in the article.",
+  "conceptCount": 6,
+  "assets": [
+    {
+      "id": "01-cliff-holds",
+      "path": "public/images/eoul-new-playloops/01-cliff-holds.webp",
+      "url": "/images/eoul-new-playloops/01-cliff-holds.webp",
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "bytes": 414856,
+      "sha256": "19f047d2f7ce4d871def6c1f6e30353c6e2428ae2867b90c88ee97e5eaf756aa",
+      "provenance": "docs/eoul-new-playloops/art-01-02.json"
+    },
+    {
+      "id": "02-wind-gate-herd",
+      "path": "public/images/eoul-new-playloops/02-wind-gate-herd.webp",
+      "url": "/images/eoul-new-playloops/02-wind-gate-herd.webp",
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "bytes": 522774,
+      "sha256": "56ce54be28768918c7cf411fe88875ca4e6d29d69b011eb02195aca97ca92df1",
+      "provenance": "docs/eoul-new-playloops/art-01-02.json"
+    },
+    {
+      "id": "03-ember-forest",
+      "path": "public/images/eoul-new-playloops/03-ember-forest.webp",
+      "url": "/images/eoul-new-playloops/03-ember-forest.webp",
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "bytes": 579240,
+      "sha256": "e3545cc2c173d29acaf3e861129169237ab740d30e429462efd6398f16ee952f",
+      "provenance": "docs/eoul-new-playloops/art-03-04.json"
+    },
+    {
+      "id": "04-answer-song",
+      "path": "public/images/eoul-new-playloops/04-answer-song.webp",
+      "url": "/images/eoul-new-playloops/04-answer-song.webp",
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "bytes": 290164,
+      "sha256": "dbc07efdd3db1371addfa6d3b7f03989566dd710b611aa2f474bd5add9026fd5",
+      "provenance": "docs/eoul-new-playloops/art-03-04.json"
+    },
+    {
+      "id": "05-dokkaebi-kiln",
+      "path": "public/images/eoul-new-playloops/05-dokkaebi-kiln.webp",
+      "url": "/images/eoul-new-playloops/05-dokkaebi-kiln.webp",
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "bytes": 256388,
+      "sha256": "26fcc97137a97f017a4366b5202cc88ba60da3e8e8dccc98889d135877503163",
+      "provenance": "docs/eoul-new-playloops/art-05-06.json"
+    },
+    {
+      "id": "06-sky-order",
+      "path": "public/images/eoul-new-playloops/06-sky-order.webp",
+      "url": "/images/eoul-new-playloops/06-sky-order.webp",
+      "width": 1536,
+      "height": 864,
+      "mode": "RGB",
+      "bytes": 190302,
+      "sha256": "9b14b8da04f37dfe7394907d638403da758b3e30c93a77ad0f89106f60bb1a39",
+      "provenance": "docs/eoul-new-playloops/art-05-06.json"
+    }
+  ],
+  "totalBytes": 2253724
+}

@@ -1,0 +1,62 @@
+{
+  "generator": "built-in image_gen.imagegen",
+  "mode": "generate",
+  "transparent_background": false,
+  "date_client": "2026-10-18",
+  "post": "eoul-new-playloops",
+  "processing": "cwebp RGB resize to 1536x864, quality 90, method 6; no retouch or compositing.",
+  "items": [
+    {
+      "id": "03-ember-forest",
+      "prompt": "Use case: stylized-concept\nAsset type: one original wide 16:9 gameplay screenshot concept for a Korean folklore 2D pixel-art multi-season controlled-burn ecology strategy article.\n\nPrimary request: Show the actual decision to burn one small forest section now so a future wildfire fuel corridor is broken while two habitats remain connected. This is a calm planning screen, not a firefighting action scene.\n\nScene/backdrop: A compact woodland beside a small Korean mountain village, mixing pine forest, silver grass, flowering scrub and damp stream margins. Bright clear autumn daylight with one small controlled low flame.\n\nSubject and composition: Direct TOP-DOWN orthographic view. A strict 6 by 6 square forest board occupies roughly seventy percent of the screen. The village lies just outside the east edge. Each tile's vegetation density visually communicates fuel, while only the selected local area uses small log-stack and water-drop badges to avoid clutter.\n\nCritical decision visualization: One central high-fuel tile is selected with a cyan outline and contains a tidy low controlled flame. Its northern neighbor has a blue wet overlay from the player's first action. Its eastern neighbor is already pale low-fuel ground. Short translucent ember arrows preview spread from the burning tile, visibly stopping at the wet northern tile and the low-fuel eastern tile. A coral dotted fuel-corridor line toward the village is visibly broken by the selected burn. At the lower edge of the board, two distinct habitat types remain joined by an unbroken jade link.\n\nGameplay UI: Across the top are exactly three compact forecast tiles using only wind arrows, sun, cloud and droplet pictograms. A large current wind arrow points across the board. Left side has exactly three icon-only intervention buttons: wet line, thinning shears and controlled flame; the flame is selected. Beside them exactly two action pips are shown, one already spent. Right side contains a tiny habitat panel with two species icons joined by a green line and a village-safety shield icon. No production or money UI.\n\nStyle/medium: Authentic crisp 16-bit-style top-down pixel art with visible square pixels, clean 6x6 tile boundaries, limited color clusters and readable overlays. No painterly smoke and no 3D.\n\nColor palette: Common deep indigo, jade teal, warm ochre, parchment cream and restrained vermilion; this image's distinguishing accent is leaf green against small ember orange.\n\nText: No words, letters, coordinate labels or Korean writing. Arabic numerals only if needed for tiny fuel and moisture badges, limited to 0 through 4.\n\nConstraints: Opaque full-bleed 1536x864. One board, not a split before-and-after comparison. Keep fire small and controlled; show forecast, containment and habitat tradeoff. No firefighter character action, no catastrophic burning village, no tower defense, no wood-profit management, no combat, no cards, no title, no logo, no watermark, no poster.",
+      "source_path": "/Users/sushi/.codex/generated_images/01a14c68-1679-7200-b23d-afd5cbf301ec/exec-a256bcf1-fae7-42fc-a87b-e4a5ca486f25.png",
+      "source_copy": "logs/eoul-new-playloops/03-ember-forest-source.png",
+      "final_path": "public/images/eoul-new-playloops/03-ember-forest.webp",
+      "source_dimensions": [
+        1672,
+        940
+      ],
+      "source_mode": "RGB",
+      "source_bytes": 3644154,
+      "source_sha256": "87737eaca6601f64ac963838417adda3892353c805e43a4ec0d051344ae96cb3",
+      "final_dimensions": [
+        1536,
+        864
+      ],
+      "final_mode": "RGB",
+      "final_bytes": 579240,
+      "final_sha256": "e3545cc2c173d29acaf3e861129169237ab740d30e429462efd6398f16ee952f",
+      "visual_qa": [
+        "6×6 숲, 작은 선택 화재, 북쪽 습윤 칸, 동쪽 저연료 칸과 멈추는 확산 화살표를 확인",
+        "마을로 향하는 점선 연료 띠의 단절과 하단 두 서식지의 녹색 연결을 확인",
+        "실시간 소방·목재 수익·전투 없이 예보와 생태 절충이 중심인 화면을 확인"
+      ]
+    },
+    {
+      "id": "04-answer-song",
+      "prompt": "Use case: stylized-concept\nAsset type: one original wide 16:9 gameplay screenshot concept for a Korean folklore 2D pixel-art turn-based improvised music dialogue article.\n\nPrimary request: Show a paused conversational music turn. The player has heard a dense descending phrase from a friendly spirit and is choosing to answer with the same contour at half density followed by deliberate silence. Make musical relationship and emotional state readable without any rhythm-timing interface.\n\nScene/backdrop: An intimate moonlit Korean pavilion beside reeds and still water. Paper lanterns glow softly. One human musician in jade-and-cream hanbok sits on the left facing one friendly translucent folklore spirit on the right. Each holds a small bamboo wind instrument. Calm supernatural conversation, not a concert battle.\n\nCritical decision visualization: Above the spirit, a short violet sound ribbon contains exactly three closely spaced descending circular tone glyphs. From the player, a cyan preview reply ribbon contains the same three descending glyphs spaced much farther apart, followed by one clearly empty outlined beat circle. Four small feature badges near the ribbons use pictograms only: descending contour arrow, density dots, bamboo-flute silhouette and two-wave intensity icon. The visual relationship between heard phrase and reply is the focal point.\n\nGameplay UI: Bottom center has exactly four large icon-only response buttons: mirror for imitate, vertical reflection arrows for invert, extending path for continue, and empty circle for silence. The mirror button is selected with a cyan outline, and a small empty-circle modifier sits beside it. Left edge shows 6 of 8 breath pips. Right edge shows three compact icon gauges: trust knot with 3 of 5 jade pips, agitation flame dropping from 4 to 3 coral pips, and open-space icon rising to 3 pale pips. No written dialogue.\n\nStyle/medium: Crisp handcrafted 16-bit-style 2D pixel art, coherent side-view sprites, visible square pixels, sharp UI, restrained magical glow. No smooth digital painting and no 3D.\n\nColor palette: Common deep indigo, jade teal, warm ochre, parchment cream and vermilion; this image's distinguishing accent is moon silver and soft violet for the spirit's phrase.\n\nText: No words, letters, musical notation labels or Korean writing. Only small Arabic numerals 6/8, 3/5 and the pip changes if necessary.\n\nConstraints: Opaque full-bleed 1536x864. This is turn-based musical dialogue, not a rhythm game. Absolutely no falling notes, note highway, hit line, keyboard keys, combo counter, accuracy percentage, fixed sheet music, battle attacks, card deck, title, logo, watermark or promotional poster.",
+      "source_path": "/Users/sushi/.codex/generated_images/01a14c68-1679-7200-b23d-afd5cbf301ec/exec-c59e3f3a-7567-40d4-89e1-c7732e8b70dc.png",
+      "source_copy": "logs/eoul-new-playloops/04-answer-song-source.png",
+      "final_path": "public/images/eoul-new-playloops/04-answer-song.webp",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "source_mode": "RGB",
+      "source_bytes": 2415321,
+      "source_sha256": "d282d0d50b798afa6d4bfe6ec9abe3eb3c94228ee6d0314317d45cad423341a8",
+      "final_dimensions": [
+        1536,
+        864
+      ],
+      "final_mode": "RGB",
+      "final_bytes": 290164,
+      "final_sha256": "dbc07efdd3db1371addfa6d3b7f03989566dd710b611aa2f474bd5add9026fd5",
+      "visual_qa": [
+        "귀신의 촘촘한 보라 하행 악절과 플레이어의 느슨한 청록 하행 악절, 끝의 빈 박자를 확인",
+        "호흡 6/8, 신뢰 3/5, 격앙 4→3, 여백 2→3과 네 응답 아이콘을 확인",
+        "낙하 노트·히트 라인·콤보·전투 없이 턴제 음악 대화가 중심인 화면을 확인"
+      ]
+    }
+  ]
+}

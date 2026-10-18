@@ -1,0 +1,62 @@
+{
+  "generator": "built-in image_gen.imagegen",
+  "mode": "generate",
+  "transparent_background": false,
+  "date_client": "2026-10-18",
+  "post": "eoul-new-playloops",
+  "processing": "cwebp RGB resize to 1536x864, quality 90, method 6; no retouch or compositing.",
+  "items": [
+    {
+      "id": "01-cliff-holds",
+      "prompt": "Use case: stylized-concept\nAsset type: one original wide 16:9 gameplay screenshot concept for a Korean folklore 2D pixel-art turn-based climbing puzzle article.\n\nPrimary request: Show a paused turn in a deliberate four-limb climbing puzzle. The central decision must be readable immediately: which single hand or foot to move, and whether the remaining three contacts keep the climber's center of mass supported. This is not an action platformer.\n\nScene/backdrop: A tall weathered ochre-and-slate cliff above a misty Korean mountain valley at early morning. Sparse pines, small prayer ribbons and two traditional iron safety pegs belong naturally to the cliff. The playable rock face fills most of the screen.\n\nSubject and composition: Strict SIDE VIEW. One young climber in practical jade and cream hanbok climbing clothes occupies the center. Both hands and both feet visibly touch four separate holds. Each current contact has a small hand-or-foot pictogram marker. The climber is frozen before committing the next move.\n\nCritical decision visualization: The RIGHT FOOT is the selected limb. A short dotted cyan arc leads from that foot to a dry ledge on the right. The other three fixed contacts are joined by a subtle translucent jade support triangle, and a bright center-of-mass dot at the climber's waist sits safely inside it. A higher right-hand hold appears only as a faint coral ghost preview with its projected center-of-mass dot outside the safe support area, clearly showing why moving the hand first would be unsafe. Keep this geometry simple and legible.\n\nGameplay UI: A compact upper-left panel contains exactly four limb icons with small grip pip bars; the right-foot icon has a cyan selection border. Beside it, a breath icon with 3 of 5 pips lit. Upper-right shows exactly two safety-peg tokens, one placed and one available, plus a short sun/time track. Along the bottom are exactly four large icon-only action buttons for left hand, right hand, left foot and right foot; only right foot is selected. No inventory grid.\n\nStyle/medium: Authentic handcrafted 16-bit-style 2D pixel art with crisp visible square pixel clusters, hard sprite edges and readable game-native UI. No smooth painting, no 3D, no photorealism.\n\nColor palette: Common Eoul palette of deep indigo, jade teal, warm ochre, parchment cream and restrained vermilion; this image's distinguishing accent is cool cliff blue and bright cyan support geometry.\n\nText: No words, no letters and no Korean writing. Arabic numerals may appear only for the small 3/5 breath value.\n\nConstraints: Opaque full-bleed 1536x864 composition. One gameplay screen only. Keep the four contacts, selected foot path, support triangle and center-of-mass dot unmistakable. No jumping, no falling action, no grappling hook, no combat, no equipment loot, no card UI, no title, no logo, no watermark, no poster composition.",
+      "source_path": "/Users/sushi/.codex/generated_images/01a14c68-1679-7200-b23d-afd5cbf301ec/exec-a2e94852-5f00-442e-af91-8cfe44673737.png",
+      "source_copy": "logs/eoul-new-playloops/01-cliff-holds-source.png",
+      "final_path": "public/images/eoul-new-playloops/01-cliff-holds.webp",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "source_mode": "RGB",
+      "source_bytes": 3006115,
+      "source_sha256": "32644d0ea15c9393c054dea0c38bf81491d890a5c8e30892dadcf34632706a58",
+      "final_dimensions": [
+        1536,
+        864
+      ],
+      "final_mode": "RGB",
+      "final_bytes": 414856,
+      "final_sha256": "19f047d2f7ce4d871def6c1f6e30353c6e2428ae2867b90c88ee97e5eaf756aa",
+      "visual_qa": [
+        "네 손발 접점, 오른발 선택, 청록 지지 삼각형과 몸 중심점, 위험한 오른손 미리보기를 확인",
+        "호흡 3/5, 두 고정쇠와 햇빛 트랙, 아이콘형 사지 입력을 확인",
+        "점프·갈고리·전투 없이 접점 판단이 중심인 플레이 화면을 확인"
+      ]
+    },
+    {
+      "id": "02-wind-gate-herd",
+      "prompt": "Use case: stylized-concept\nAsset type: one original wide 16:9 gameplay screenshot concept for a Korean folklore 2D pixel-art indirect herding simulation article.\n\nPrimary request: Show an actual playable herding decision in which the player cannot command individual animals. The player chooses where to stand beside the herd and whether to apply a flag pressure or a calming low bell. Make group cohesion, fear and predicted flock movement readable.\n\nScene/backdrop: A broad Korean mountain pasture with low stone walls, silver grass and a shallow stream. Three cloth-and-stone wind gates stand at the far upper edge as the destination. Warm late-afternoon light, friendly pastoral mood.\n\nSubject and composition: Strict TOP-DOWN orthographic game view. Exactly twelve friendly blue-green folklore oxen form one main cluster with four animals beginning to peel toward the eastern cliff side. One human herder in practical cream-and-jade hanbok stands on the east flank, never in front of the herd and never holding reins. Animals are small distinct sprites, not a single painted mass.\n\nCritical decision visualization: A planted saffron flag beside the herder creates one translucent fan-shaped pressure field pushing westward. Curved cyan preview arrows show the separated animals bending back toward the main group and then toward the nearest wind gate. Two nervous animals have small amber three-pip fear halos, while calm animals have no health bars. A low-bell icon near the gate projects a faint circular calming preview but is not currently selected. The animals themselves have no direct command arrows or selection rings.\n\nGameplay UI: Top-left has a clustered-herd pictogram beside the numeral 60 for cohesion. Top-center shows a gate pictogram beside 10/12. Top-right has two small flag tokens and one circular bell cooldown indicator. A thin sun track shows remaining daylight. Bottom-right contains exactly two large icon-only controls: flag and low bell; the flag is selected with the common cyan border. Keep the open pasture dominant.\n\nStyle/medium: Crisp handcrafted 16-bit-style 2D pixel art, clear square pixels, clean tile edges, small readable animal sprites, practical game UI. No smooth illustration and no 3D.\n\nColor palette: Common deep indigo, jade teal, warm ochre, parchment cream and vermilion; this image's distinguishing accent is fresh pasture green with saffron pressure fields.\n\nText: No words, no letters and no Korean writing. Only the Arabic numerals 60, 10/12 and tiny cooldown numerals if needed.\n\nConstraints: Opaque full-bleed 1536x864. Exactly twelve oxen, one herder and three gates. Indirect pressure and self-moving herd behavior must be central. No creature capture, feeding, breeding, combat, health bars, unit command menu, individual selection circles, colony work schedule, cards, title, logo, watermark or poster composition.",
+      "source_path": "/Users/sushi/.codex/generated_images/01a14c68-1679-7200-b23d-afd5cbf301ec/exec-2e962330-3a94-45a3-b99d-826044baf6cd.png",
+      "source_copy": "logs/eoul-new-playloops/02-wind-gate-herd-source.png",
+      "final_path": "public/images/eoul-new-playloops/02-wind-gate-herd.webp",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "source_mode": "RGB",
+      "source_bytes": 3594649,
+      "source_sha256": "0abbf771274ecb8272031e94ee0dbf8e8b396643aa96c59bbe60039c482de9a4",
+      "final_dimensions": [
+        1536,
+        864
+      ],
+      "final_mode": "RGB",
+      "final_bytes": 522774,
+      "final_sha256": "56ce54be28768918c7cf411fe88875ca4e6d29d69b011eb02195aca97ca92df1",
+      "visual_qa": [
+        "청우 열두 마리, 동쪽 옆의 목동, 세 바람문, 응집도 60과 통과 목표 10/12를 확인",
+        "깃발의 부채꼴 압력과 무리의 청록 예상 이동, 방울의 원형 진정 범위를 확인",
+        "개체 선택·직접 명령·먹이·전투 없이 간접 군집 조절이 중심인 화면을 확인"
+      ]
+    }
+  ]
+}

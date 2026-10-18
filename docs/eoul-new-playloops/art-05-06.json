@@ -1,0 +1,62 @@
+{
+  "generator": "built-in image_gen.imagegen",
+  "mode": "generate",
+  "transparent_background": false,
+  "date_client": "2026-10-18",
+  "post": "eoul-new-playloops",
+  "processing": "cwebp RGB resize to 1536x864, quality 90, method 6; no retouch or compositing.",
+  "items": [
+    {
+      "id": "05-dokkaebi-kiln",
+      "prompt": "Use case: stylized-concept\nAsset type: one original wide 16:9 gameplay screenshot concept for a Korean folklore 2D pixel-art multi-zone kiln firing simulation article.\n\nPrimary request: Show an irreversible firing decision inside one kiln. The player selects the upper chimney opening because it cools the lower zone slightly, leaves the middle stable, warms the upper zone and raises oxygen. The three-zone heat tradeoff must be understandable at a glance.\n\nScene/backdrop: A Korean pottery courtyard at dusk with shelves of unfired vessels and one large traditional wood-fired kiln. Warm lanterns and subdued mountain silhouettes. One friendly compact dokkaebi kiln keeper operates the controls.\n\nSubject and composition: FRONT CUTAWAY view of one kiln occupying most of the screen. It has exactly three clearly separated thermal zones: lower, middle and upper. Each zone contains exactly two distinct ceramic vessels. Heat color rises naturally from dark ochre below to warm cream above without turning into smooth 3D rendering.\n\nCritical decision visualization: The upper chimney is visibly open and highlighted cyan. Beside the kiln, a compact three-row forecast strip aligned with the three zones shows -1, 0 and +4 using large clean numerals and temperature-arrow pictograms. An air icon has exactly two of three pips lit. The predicted next temperatures 73, 70 and 65 appear once, aligned to lower, middle and upper. The upper white-glaze vessel sits inside its glowing target band; the lower vessel remains just inside its safe band. Small crack-shaped stress pips belong to each vessel, none at three.\n\nGameplay UI: Bottom center contains exactly four large icon-only buttons: add wood, lower air door, upper chimney and hold/hourglass. Only the upper-chimney button is selected. A wood-stack icon beside the numeral 12 sits at lower left. Each zone has one slim pixel thermometer and each vessel has a tiny target-band marker, not a recipe card.\n\nStyle/medium: Authentic crisp 16-bit-style 2D pixel art with visible square clusters, sharp cutaway geometry, readable fire and glaze textures, game-native HUD. No photorealism, no painterly gradients, no 3D.\n\nColor palette: Common deep indigo, jade teal, warm ochre, parchment cream and restrained vermilion; this image's distinguishing accent is charcoal, furnace orange and white-hot glaze cream.\n\nText: No words, letters or Korean writing. Only the numerals -1, 0, +4, 73, 70, 65, 12 and tiny target ranges.\n\nConstraints: Opaque full-bleed 1536x864. Exactly one kiln and three zones. Selected airflow action, predicted zone changes, oxygen and vessel stress must dominate. No ingredient-mixing recipe screen, shop economy, hidden breakdown diagnosis, cleaning minigame, combat, cards, title, logo, watermark or poster composition.",
+      "source_path": "/Users/sushi/.codex/generated_images/01a14c68-1679-7200-b23d-afd5cbf301ec/exec-e1d7cad3-e71a-43dc-aa3b-29af365c0629.png",
+      "source_copy": "logs/eoul-new-playloops/05-dokkaebi-kiln-source.png",
+      "final_path": "public/images/eoul-new-playloops/05-dokkaebi-kiln.webp",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "source_mode": "RGB",
+      "source_bytes": 2108635,
+      "source_sha256": "d28ccaecdbe063348ba3d5ca49085caff6b479d91759fdb68646557d2a38eca0",
+      "final_dimensions": [
+        1536,
+        864
+      ],
+      "final_mode": "RGB",
+      "final_bytes": 256388,
+      "final_sha256": "26fcc97137a97f017a4366b5202cc88ba60da3e8e8dccc98889d135877503163",
+      "visual_qa": [
+        "한 가마의 상·중·하 세 구역과 각 두 그릇, 윗굴뚝 선택을 확인",
+        "상·중·하 예측값 +4/0/−1과 65/70/73, 산소 2/3, 장작 12를 확인",
+        "재료 배합·상점·숨은 고장 추리 없이 구역별 다음 열 상태가 중심인 화면을 확인"
+      ]
+    },
+    {
+      "id": "06-sky-order",
+      "prompt": "Use case: stylized-concept\nAsset type: one original wide 16:9 gameplay screenshot concept for a Korean folklore 2D pixel-art turn-based juggling schedule puzzle article.\n\nPrimary request: Show a paused juggling turn where the player chooses throw height and landing hand by inspecting which hand will be free three turns later. The future hand-occupancy calendar, not reflex timing, must be the main readable mechanic.\n\nScene/backdrop: A small open-front Korean festival stage at night with paper lanterns, bamboo poles and a seated audience kept visually subdued. Warm celebratory atmosphere.\n\nSubject and composition: SIDE VIEW gameplay. Exactly one acrobat in practical vermilion-and-cream hanbok stands center stage. The left hand currently holds one small brass bell. One ring and one safe theatrical torch are already airborne on clear pixel arcs. A dotted cyan preview arc sends the bell high across the body toward the opposite right hand after three turns. No other performers.\n\nCritical decision visualization: The bottom thirty-five percent is a clear future landing calendar with exactly two rows identified by mirrored left-hand and right-hand pictograms, and exactly three columns identified only by the numerals 1, 2 and 3. The left-hand row at turn 1 already contains a ring token. The right-hand row at turn 2 contains a torch token. The right-hand row at turn 3 contains a translucent bell preview. A small coral collision X appears over the already occupied left-hand turn-1 cell, showing why a low same-hand throw is unsafe.\n\nGameplay UI: To the left of the calendar, a current-hands panel shows bell in the left hand and an empty right hand. To the right are exactly three height buttons represented by one, two and three stacked upward chevrons, plus two landing buttons represented by same-hand and opposite-hand arrows. Height three and opposite hand are selected with cyan outlines. Three small audience-interest pips sit unobtrusively at the top; no timer.\n\nStyle/medium: Crisp handcrafted 16-bit-style 2D pixel art, visible square pixels, hard sprite and UI edges, clean arcs and object silhouettes. No smooth illustration, no 3D.\n\nColor palette: Common deep indigo, jade teal, warm ochre, parchment cream and restrained vermilion; this image's distinguishing accent is festival burgundy with lantern gold and cyan future previews.\n\nText: No words, letters or Korean writing. Only the Arabic numerals 1, 2 and 3 in the future calendar.\n\nConstraints: Opaque full-bleed 1536x864. The two-row three-turn calendar and selected high cross-hand throw must be unmistakable. No rhythm lanes, music notes, hit line, countdown, combo score, quick-time prompt, platforming, cards, title, logo, watermark or promotional poster composition.",
+      "source_path": "/Users/sushi/.codex/generated_images/01a14c68-1679-7200-b23d-afd5cbf301ec/exec-31c992fa-3b74-480f-97e7-8de2dcfa5470.png",
+      "source_copy": "logs/eoul-new-playloops/06-sky-order-source.png",
+      "final_path": "public/images/eoul-new-playloops/06-sky-order.webp",
+      "source_dimensions": [
+        1672,
+        941
+      ],
+      "source_mode": "RGB",
+      "source_bytes": 1847529,
+      "source_sha256": "6ed4568d3f1967c43d50f6436a78fc3b8518a5381c2906df4c595dfb236b9e26",
+      "final_dimensions": [
+        1536,
+        864
+      ],
+      "final_mode": "RGB",
+      "final_bytes": 190302,
+      "final_sha256": "9b14b8da04f37dfe7394907d638403da758b3e30c93a77ad0f89106f60bb1a39",
+      "visual_qa": [
+        "한 곡예사, 왼손의 방울, 공중 고리·횃불과 반대 손으로 가는 청록 미리보기 곡선을 확인",
+        "두 손×세 턴 달력의 1턴 고리 충돌, 2턴 횃불, 3턴 방울과 높이 3·반대 손 선택을 확인",
+        "리듬 레인·타이머·콤보 없이 미래 손 점유 일정이 중심인 화면을 확인"
+      ]
+    }
+  ]
+}
