@@ -1,0 +1,107 @@
+{
+  "verifiedAt": "2026-10-19T19:34:48+09:00",
+  "baseUrl": "http://127.0.0.1:8080",
+  "build": {
+    "command": "npm run build",
+    "result": "passed",
+    "note": "The existing Phaser chunk-size warning remains; the new article built successfully with the final Vite output ending in a successful build."
+  },
+  "structuredData": {
+    "decisionMatrixJson": "passed",
+    "allWeightedScoresRecalculated": true,
+    "weightedScores": [85, 84, 80, 76, 75, 68],
+    "fullProductionApprovalRuleRecorded": true
+  },
+  "article": {
+    "path": "/posts/2d-indie-game-development-choice-2026/",
+    "status": 200,
+    "contentType": "text/html",
+    "sectionCount": 10,
+    "tableCount": 7,
+    "tocLinkCount": 10,
+    "missingAnchors": 0,
+    "internalReferencesChecked": 24,
+    "brokenInternalReferences": 0,
+    "externalSourceLinksRecorded": 16
+  },
+  "image": {
+    "path": "/images/eoul-indie-market/01-goraebada-fishing.webp",
+    "status": 200,
+    "contentType": "image/webp",
+    "naturalWidth": 1536,
+    "naturalHeight": 864,
+    "sha256": "e2e9880756ab1ae4c39c320d7af3220eb81c0e1116e49077c45a1c07114a6b92",
+    "loadedInBrowser": true
+  },
+  "responsiveLayout": [
+    {
+      "viewportWidth": 1440,
+      "documentWidth": 1440,
+      "articleWidth": 800,
+      "horizontalDocumentOverflow": false
+    },
+    {
+      "viewportWidth": 768,
+      "documentWidth": 768,
+      "articleWidth": 736,
+      "horizontalDocumentOverflow": false
+    },
+    {
+      "viewportWidth": 390,
+      "documentWidth": 390,
+      "articleWidth": 358,
+      "horizontalDocumentOverflow": false,
+      "wideTablesScrollInsideTheirContainers": true
+    },
+    {
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "articleWidth": 288,
+      "horizontalDocumentOverflow": false,
+      "wideTablesScrollInsideTheirContainers": true
+    }
+  ],
+  "interactions": {
+    "allTocTargetsResolved": true,
+    "tocNavigationPassed": true,
+    "darkThemeApplied": true,
+    "lightThemeRestored": true,
+    "mobileTableKeyboardScrollPassed": true,
+    "homeTopLinkVisible": true,
+    "homeWritingFilterVisible": true,
+    "homeGameFilterHidden": true,
+    "externalLinksOpenInNewTabs": true
+  },
+  "visualReview": {
+    "desktop1440": "passed",
+    "tablet768": "passed",
+    "mobile390": "passed",
+    "mobile320": "passed",
+    "darkMode": "passed",
+    "decisionTables": "passed",
+    "sourcesAndBackLinks": "passed"
+  },
+  "console": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "analysisVerification": {
+    "salesPlayersReviewsKeptSeparate": true,
+    "genreSamplesNotPresentedAsSuccessProbabilities": true,
+    "marketAdjacencyNotPresentedAsMechanicCausation": true,
+    "publishedAndDeletedConceptCount": {
+      "published": 73,
+      "deletedHistory": 80,
+      "total": 153
+    },
+    "sixWeekPrototypeSeparatedFromVerticalSlice": true,
+    "fullProductionNotApproved": true,
+    "internalThresholdsLabeledUntested": true,
+    "fallbackRequiresSeparateValidation": true,
+    "breakEvenFormulaDefined": true
+  },
+  "gameplayPlaytest": {
+    "performed": false,
+    "reason": "This deliverable is a market-derived decision analysis and validation plan. No playable prototype exists yet, so all behavioral thresholds remain untested internal hypotheses."
+  }
+}
