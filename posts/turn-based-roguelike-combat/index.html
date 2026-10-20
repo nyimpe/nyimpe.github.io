@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="고양이 요괴 나비의 턴제 전투 규칙과 마을·강·산의 우두머리, 꼬리 아홉 큰 고양이.">
+    <title>턴제 로그라이크 기획 4 — 전투와 우두머리 · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/turn-based-roguelike-combat/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="턴제 로그라이크 기획 4 — 전투와 우두머리">
+    <meta property="og:description" content="고양이 요괴 나비의 턴제 전투 규칙과 마을·강·산의 우두머리, 꼬리 아홉 큰 고양이.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/turn-based-roguelike-combat/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=writing" aria-label="글쓰기" title="글쓰기"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post design-post">
+        <header class="post-header">
+          <h1>턴제 로그라이크 기획 4 — 전투와 우두머리</h1>
+          <time datetime="2026-10-20">2026.10.20</time>
+          <p class="image-credit"><a href="/posts/turn-based-roguelike-skeleton/">1편 큰 뼈대</a> · <a href="/posts/turn-based-roguelike-world/">2편 꼬리 수행 세계관</a> · <a href="/posts/turn-based-roguelike-growth/">3편 재주와 꼬리</a>에 이어지는 전투 설계 · 수치는 모두 초안이다</p>
+        </header>
+
+        <p><strong>한 턴에 기술 하나를 쓴다. 요괴가 다음에 무엇을 할지는 미리 보인다. 그걸 보고 칠지, 막을지, 기다릴지 고르는 것이 전투의 전부다.</strong></p>
+
+        <section id="rules" aria-labelledby="rules-title">
+          <h2 id="rules-title">전투 규칙</h2>
+          <ul>
+            <li><strong>나비 혼자 요괴 1~3마리와 겨룬다.</strong> 나비가 먼저 행동하고, 그다음 요괴들이 차례로 행동한다.</li>
+            <li><strong>체력:</strong> 나비는 30에서 시작한다. 전투가 끝나도 체력은 그대로 이어지고, 쉬는 칸에서 채운다.</li>
+            <li><strong>기술:</strong> 한 턴에 하나만 쓴다. 기술마다 쉬는 턴(쿨타임)이 있어서, 센 기술은 쓰고 나면 몇 턴 기다려야 한다.</li>
+            <li><strong>기술은 네 개까지 든다.</strong> 기본 기술 둘에, 배운 재주마다 하나씩 더한다. 산 끝에서 섞은 기술은 다섯 번째 칸에 든다.</li>
+            <li><strong>막기:</strong> 막기 수치만큼 피해를 덜 받는다. 막은 쪽의 다음 턴이 오면 사라진다.</li>
+            <li><strong>미리 보기:</strong> 요괴 머리 위에 다음 행동이 그림과 숫자로 뜬다. 공격, 막기, 장난, 힘 모으기 네 가지다.</li>
+            <li><strong>이기면:</strong> 요괴가 항복하고 친구가 되어 물러난다. 경험치와 엽전을 받는다.</li>
+            <li><strong>지면:</strong> 체력이 0이 되면 나비가 지쳐서 툇마루로 돌아가 낮잠을 잔다. 판이 끝난다.</li>
+          </ul>
+
+          <h3>기본 기술</h3>
+          <div class="table-scroll" role="region" aria-label="기본 기술" tabindex="0"><table>
+            <thead><tr><th scope="col">기술</th><th scope="col">효과</th><th scope="col">쉬는 턴</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">할퀴기</th><td>피해 6</td><td>없음</td></tr>
+              <tr><th scope="row">웅크리기</th><td>막기 6</td><td>없음</td></tr>
+            </tbody>
+          </table></div>
+          <p>재주를 배우면 그 재주의 첫 기술이 생긴다. 예를 들어 말 재주는 “돌진: 피해 14, 쉬는 턴 2”, 개 재주는 “되갚기: 막기 8, 막은 만큼 되돌려 준다, 쉬는 턴 1” 같은 식이다.</p>
+
+          <h3>상태 셋</h3>
+          <div class="table-scroll" role="region" aria-label="상태" tabindex="0"><table>
+            <thead><tr><th scope="col">상태</th><th scope="col">효과</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">헷갈림</th><td>이번 턴의 행동이 다른 행동으로 바뀐다. 요괴에게 걸면 미리 보이던 행동이 바뀐다</td></tr>
+              <tr><th scope="row">느림</th><td>기술의 쉬는 턴이 1씩 늘어난다</td></tr>
+              <tr><th scope="row">보호막</th><td>막기처럼 피해를 줄이지만, 턴이 지나도 사라지지 않는다</td></tr>
+            </tbody>
+          </table></div>
+
+          <h3>세 턴 예시</h3>
+          <ol>
+            <li>요괴 머리 위에 “공격 8”이 떴다. 나비는 웅크리기로 막기 6을 얻고, 피해 2만 받는다.</li>
+            <li>이번에는 “막기”가 떴다. 공격이 오지 않는 턴이니 돌진으로 크게 친다. 요괴는 그다음에 막기를 두른다.</li>
+            <li>“힘 모으기”가 떴다. 다음 턴에 큰 공격이 온다는 뜻이다. 돌진은 아직 쉬는 중이라 할퀴기로 깎고, 다음 턴에 웅크릴 준비를 한다.</li>
+          </ol>
+        </section>
+
+        <section id="bosses" aria-labelledby="bosses-title">
+          <h2 id="bosses-title">동네별 우두머리</h2>
+          <p>우두머리는 정해진 순서대로 행동을 되풀이한다. 순서를 읽으면 이길 수 있다. 지금은 동네마다 하나씩이고, 판마다 다른 우두머리가 나오도록 나중에 동네마다 둘씩 더 만든다.</p>
+          <div class="table-scroll" role="region" aria-label="동네별 우두머리" tabindex="0"><table class="wide-table">
+            <thead><tr><th scope="col">우두머리</th><th scope="col">어떤 요괴인가</th><th scope="col">행동 순서</th><th scope="col">이기는 요령</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">마을<br>도깨비 김서방<br>(<a href="/posts/korean-folklore-research/#cr116">도깨비</a>)</th><td>스스로를 김씨라 부르는 장난꾸러기 대장. 체력 40</td><td>① 방망이: 공격 8<br>② 장난: 나비에게 헷갈림<br>③ 숨기: 막기 10</td><td>장난과 숨기가 보이는 턴에는 공격이 오지 않으니 그때 친다. 장난에 걸린 다음 턴은 행동이 바뀔 수 있으니 센 기술을 아낀다</td></tr>
+              <tr><th scope="row">강<br>용이 되고 싶은 물고기<br>(<a href="/posts/korean-folklore-research/#cr225">연지신물</a>)</th><td>깊은 소에서 자라 용이 되려는 긴 물고기. 체력 55</td><td>① 물보라: 공격 5, 느림<br>② 꼬리치기: 공격 10<br>③ 비 부르기: 힘 모으기<br>④ 물살: 공격 18</td><td>비 부르기가 보이면 다음 턴의 물살을 막을 준비를 한다. 느림이 걸리면 쉬는 턴이 짧은 기술 위주로 싸운다</td></tr>
+              <tr><th scope="row">산<br>숨바꼭질 털북숭이<br>(<a href="/posts/korean-folklore-research/#cr314">취모</a>)</th><td>비취빛 긴 털과 큰 발자국만 남기는 커다란 짐승. 체력 70</td><td>① 발 구르기: 공격 7<br>② 숲에 숨기: 다음 내 턴에는 공격이 닿지 않음<br>③ 큰 발자국: 공격 15</td><td>숨기가 보이면 그 턴에 크게 친다. 숨어 있는 다음 턴에는 어차피 공격이 헛도니, 웅크려서 큰 발자국을 막는다</td></tr>
+            </tbody>
+          </table></div>
+
+          <h3>최종 · 꼬리 아홉 큰 고양이</h3>
+          <p>산꼭대기에 사는 꼬리 아홉 달린 큰 고양이다. 체력은 100이다. 나비가 지나온 세 우두머리의 기술을 섞어 쓴다.</p>
+          <ul>
+            <li><strong>꼬리를 셋씩 접는다.</strong> 체력이 3분의 1씩 줄 때마다 꼬리 셋을 접고 쓰는 기술이 바뀐다. 처음에는 마을 우두머리, 다음에는 강, 마지막에는 산 우두머리의 기술을 쓴다.</li>
+            <li><strong>마지막 꼬리 셋이 남으면 매 턴 힘을 모은다.</strong> 공격이 점점 세지므로 오래 끌면 진다.</li>
+            <li><strong>이기면</strong> 큰 고양이가 “이제 너도 꼬리 아홉이구나” 하며 아홉 번째 꼬리를 나눠 준다. 3편의 아홉 번째 꼬리다.</li>
+          </ul>
+        </section>
+
+        <section id="next" aria-labelledby="next-title">
+          <h2 id="next-title">다음 글</h2>
+          <p>재주별 기술의 수치를 다 붙이고, 우두머리 하나와 전투 한 판을 웹에서 해 볼 수 있는 작은 시제품으로 만들어 수치를 맞춰 본다.</p>
+          <p class="image-credit">우두머리 이름은 <a href="/posts/korean-folklore-research/">한국 괴물·귀신</a>의 해당 항목으로 연결된다. 우두머리의 성격과 행동은 이 기획을 위해 새로 붙였다.</p>
+        </section>
+        <p class="post-back"><a href="/">← 전체 글 목록</a></p>
+      </article>
+    </main>
+    <footer lang="en" class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>
