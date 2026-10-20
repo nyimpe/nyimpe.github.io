@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="최신 글을 위에 두면서 포스트 번호는 가장 오래된 글부터 이어 가도록 목록을 정리한 기록.">
+    <title>포스트 번호를 오래된 글부터 매기기 · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/post-numbering-oldest-first/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="포스트 번호를 오래된 글부터 매기기">
+    <meta property="og:description" content="최신 글을 위에 두면서 포스트 번호는 가장 오래된 글부터 이어 가도록 목록을 정리한 기록.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/post-numbering-oldest-first/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=writing" aria-label="글쓰기" title="글쓰기"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post">
+        <header class="post-header">
+          <h1>포스트 번호를 오래된 글부터 매기기</h1>
+          <time datetime="2026-10-20">2026.10.20</time>
+        </header>
+
+        <p><strong>홈의 글 목록에 번호를 붙였다.</strong> 화면에는 지금처럼 최신 글이 먼저 보이지만, 번호는 가장 오래된 글에서 시작한다. 첫 글인 「Tetris Classic」이 1번이고 새 글은 가장 큰 번호를 받는다.</p>
+
+        <h2>번호를 매긴 기준</h2>
+        <ul>
+          <li>공개 날짜가 이른 글부터 번호를 올린다.</li>
+          <li>날짜가 같으면 현재 목록에 기록된 게시 순서를 따른다.</li>
+          <li>Game이나 글쓰기만 골라 봐도 번호를 다시 세지 않고 전체 글 번호를 유지한다.</li>
+          <li>주소와 글 제목은 바꾸지 않는다.</li>
+        </ul>
+
+        <h2>목록 순서는 그대로</h2>
+        <p>번호를 오래된 글부터 매긴다고 해서 오래된 글을 화면 맨 위로 옮기지는 않았다. 찾기 편하도록 목록은 계속 최신순으로 보여 주고, 번호만 게시된 흐름을 거꾸로 따라갈 수 있게 했다.</p>
+
+        <p class="post-back"><a href="/">← 전체 글 목록</a></p>
+      </article>
+    </main>
+    <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>
