@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="고양이 요괴 나비의 유물 스물넷(흔함·드묾·귀함), 유물이 나오는 칸과 확률, 도깨비 장터의 진열과 값, 동네별 사건 아홉과 선택지, 쉬는 칸과 보물 칸.">
+    <title>턴제 로그라이크 기획 10 — 유물, 상점, 사건 · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/turn-based-roguelike-relics/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="턴제 로그라이크 기획 10 — 유물, 상점, 사건">
+    <meta property="og:description" content="고양이 요괴 나비의 유물 스물넷(흔함·드묾·귀함), 유물이 나오는 칸과 확률, 도깨비 장터의 진열과 값, 동네별 사건 아홉과 선택지, 쉬는 칸과 보물 칸.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/turn-based-roguelike-relics/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=writing" aria-label="글쓰기" title="글쓰기"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post design-post">
+        <header class="post-header">
+          <h1>턴제 로그라이크 기획 10 — 유물, 상점, 사건</h1>
+          <time datetime="2026-10-20">2026.10.20</time>
+          <p class="image-credit"><a href="/posts/turn-based-roguelike-skeleton/">1편</a>의 지도 칸 가운데 이름난 요괴, 보물, 상점, 사건, 쉬는 칸을 채운 글 · 수치는 모두 초안이다</p>
+        </header>
+
+        <p><strong>유물은 규칙을 하나씩 바꾸는 물건이고, 모두 자료 속 요괴 이야기에서 가져왔다. 어떤 유물은 특정 칸으로 길을 끌어당긴다.</strong> 엽전은 도깨비 장터에서 유물과 회복, 다시 뽑기로 바꾼다.</p>
+
+        <nav class="post-toc" aria-label="목차"><ol>
+          <li><a href="#rules">유물 규칙</a></li>
+          <li><a href="#relics">유물 스물넷</a></li>
+          <li><a href="#coins">엽전</a></li>
+          <li><a href="#shop">도깨비 장터</a></li>
+          <li><a href="#events">사건 아홉</a></li>
+          <li><a href="#rest">쉬는 칸과 보물 칸</a></li>
+        </ol></nav>
+
+        <section id="rules" aria-labelledby="rules-title">
+          <h2 id="rules-title">유물 규칙</h2>
+          <ul>
+            <li><strong>개수 제한은 없다.</strong> 같은 유물은 한 판에 하나만 나온다.</li>
+            <li><strong>늘 고른다.</strong> 이름난 요괴와 보물 칸은 유물 후보 셋을 보여 주고, 그중 하나를 고른다. 두꺼비 재주와 흰 까치 깃털은 후보를 하나씩 늘린다.</li>
+            <li><strong>등급 확률</strong>
+              <ul>
+                <li>이름난 요괴: 흔함 60%, 드묾 30%, 귀함 10%</li>
+                <li>보물 칸: 흔함 50%, 드묾 40%, 귀함 10%</li>
+                <li>도깨비 장터: 흔함 둘, 드묾 하나. 드묾 자리는 20% 확률로 귀함이 된다</li>
+              </ul>
+            </li>
+            <li><strong>귀함 보정:</strong> 귀함 없이 후보를 세 번 보면, 다음 후보 가운데 하나는 반드시 귀함이다.</li>
+            <li><strong>끌리는 칸:</strong> 표의 “끌리는 칸”은 그 유물을 가지면 더 자주 들르고 싶어지는 칸이다. 1편에서 말한 “얻은 능력이 길을 바꾼다”가 여기서 생긴다.</li>
+          </ul>
+        </section>
+
+        <section id="relics" aria-labelledby="relics-title">
+          <h2 id="relics-title">유물 스물넷</h2>
+          <p>엽전 값은 도깨비 장터에서 살 때의 값이다.</p>
+
+          <h3>흔함 · 15엽전</h3>
+          <div class="table-scroll" role="region" aria-label="흔함 · 15엽전 유물" tabindex="0"><table class="wide-table">
+            <thead><tr><th scope="col">유물</th><th scope="col">효과</th><th scope="col">끌리는 칸</th><th scope="col">자료</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">붉나무 가지</th><td>전투를 시작할 때 막기 4</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr155">벽사수</a></td></tr>
+              <tr><th scope="row">콩 주머니</th><td>전투마다 한 번, 첫 차례 앞에 콩 병사가 끼어들어 요괴 하나에 피해 4</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr143">백갑신병</a></td></tr>
+              <tr><th scope="row">체</th><td>전투가 시작되면 가장 빠른 요괴가 구멍을 세느라 첫 차례를 쉰다. 야광은 도망치지 못한다</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr214">야광</a></td></tr>
+              <tr><th scope="row">수결 붙인 종이</th><td>쉬는 칸에서 쉬면 다음 전투를 보호막 5를 두르고 시작한다</td><td>쉬는 칸</td><td><a href="/posts/korean-folklore-research/#cr120">독각</a></td></tr>
+              <tr><th scope="row">철마</th><td>레벨업 회복이 3에서 8로</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr302">철마</a></td></tr>
+              <tr><th scope="row">흰죽 한 그릇</th><td>전투에서 이기면 체력 2 회복</td><td>잡요괴</td><td><a href="/posts/korean-folklore-research/#cr83">구업</a></td></tr>
+              <tr><th scope="row">베개 속 닭</th><td>전투를 시작할 때 나비의 첫 차례를 5 당긴다</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr316">침중계</a></td></tr>
+              <tr><th scope="row">소 고삐</th><td>산짐승(산령, 백포건, 새끼 호랑이, 삼각록)이 첫 차례를 쉰다</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr176">산령</a></td></tr>
+            </tbody>
+          </table></div>
+          <h3>드묾 · 25엽전</h3>
+          <div class="table-scroll" role="region" aria-label="드묾 · 25엽전 유물" tabindex="0"><table class="wide-table">
+            <thead><tr><th scope="col">유물</th><th scope="col">효과</th><th scope="col">끌리는 칸</th><th scope="col">자료</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">은비녀</th><td>느림에 걸리지 않는다</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr140">물귀신</a></td></tr>
+              <tr><th scope="row">복숭아나무 칼</th><td>헷갈림에 걸리지 않는다</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr272">장화훤요</a></td></tr>
+              <tr><th scope="row">쇠도끼</th><td>막기와 보호막에 주는 피해 2배</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr70">거악</a></td></tr>
+              <tr><th scope="row">숨긴 작은 칼</th><td>전투의 첫 공격은 막기와 숨기를 무시한다</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr347">흑호</a></td></tr>
+              <tr><th scope="row">이름 쪽지</th><td>이름난 요괴와 우두머리에게 주는 피해 +3</td><td>이름난 요괴</td><td><a href="/posts/korean-folklore-research/#cr159">복중능언</a></td></tr>
+              <tr><th scope="row">용손의 비늘</th><td>이름난 요괴를 이길 때마다 최대 체력 +4</td><td>이름난 요괴</td><td><a href="/posts/korean-folklore-research/#cr241">용손</a></td></tr>
+              <tr><th scope="row">대나무 잎</th><td>체력이 처음으로 절반 아래가 되면 죽엽군이 끼어들어 막기 10을 준다 (전투마다 한 번)</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr253">이죽이병</a></td></tr>
+              <tr><th scope="row">천량 쌀자루</th><td>상점 값 30% 할인</td><td>상점</td><td><a href="/posts/korean-folklore-research/#cr294">천량</a></td></tr>
+            </tbody>
+          </table></div>
+          <h3>귀함 · 40엽전</h3>
+          <div class="table-scroll" role="region" aria-label="귀함 · 40엽전 유물" tabindex="0"><table class="wide-table">
+            <thead><tr><th scope="col">유물</th><th scope="col">효과</th><th scope="col">끌리는 칸</th><th scope="col">자료</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">명주단원</th><td>엽전을 얻을 때마다 +3. 상점 진열이 하나 늘어난다</td><td>상점</td><td><a href="/posts/korean-folklore-research/#cr132">명주단원</a></td></tr>
+              <tr><th scope="row">흑호의 수염</th><td>체력이 절반 이하일 때 주는 피해 2배</td><td>쉬는 칸을 건너뜀</td><td><a href="/posts/korean-folklore-research/#cr347">흑호</a></td></tr>
+              <tr><th scope="row">용선 그림</th><td>동네마다 칸 하나를 건너뛸 수 있다. 말 재주와 겹치면 두 번</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr174">사십팔용선</a></td></tr>
+              <tr><th scope="row">까마귀 깃털</th><td>사건 칸에서 선택지가 하나 더 보이고, 지도에서 사건 칸의 내용을 미리 안다</td><td>사건</td><td><a href="/posts/korean-folklore-research/#cr231">오래명운</a></td></tr>
+              <tr><th scope="row">근화초 씨앗</th><td>전투의 처음 세 차례 동안 내 차례마다 체력 2 회복</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr87">근화초</a></td></tr>
+              <tr><th scope="row">흰 까치 깃털</th><td>유물과 재주의 보상 후보가 하나 더 나온다</td><td>이름난 요괴 · 보물</td><td><a href="/posts/korean-folklore-research/#cr150">백작</a></td></tr>
+              <tr><th scope="row">여섯 상아 장식</th><td>모든 기술의 쉬는 턴 −1 (0 아래로는 내려가지 않는다)</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr248">육아상</a></td></tr>
+              <tr><th scope="row">해주 그물</th><td>전투를 시작할 때 요괴 모두 느림</td><td>—</td><td><a href="/posts/korean-folklore-research/#cr361">해주</a></td></tr>
+            </tbody>
+          </table></div>
+          <p class="table-note">체, 소 고삐, 쇠도끼는 각각 <a href="/posts/turn-based-roguelike-elites/">9편</a>의 야광, 산령·백포건, 거해·구업·수부선인과 맞물리도록 골랐다.</p>
+        </section>
+
+        <section id="coins" aria-labelledby="coins-title">
+          <h2 id="coins-title">엽전</h2>
+          <ul>
+            <li><strong>얻는 곳:</strong> 잡요괴 무리 4~9(<a href="/posts/turn-based-roguelike-yokai/">8편</a>), 이름난 요괴 10, 우두머리 15, 사건.</li>
+            <li><strong>한 판에 모이는 양:</strong> 동네마다 약 50, 한 판에 약 150이다. 판이 끝나면 사라진다.</li>
+            <li><strong>쓰는 곳:</strong> 도깨비 장터, 그리고 몇몇 사건.</li>
+          </ul>
+        </section>
+
+        <section id="shop" aria-labelledby="shop-title">
+          <h2 id="shop-title">도깨비 장터</h2>
+          <p>도깨비들이 길목에 펴는 장터다. 동네마다 지도에 하나나 둘 있다. 도깨비 재주가 있으면 안면이 있어 20% 싸게 판다.</p>
+          <div class="table-scroll" role="region" aria-label="도깨비 장터 진열" tabindex="0"><table>
+            <thead><tr><th scope="col">진열</th><th scope="col">값</th><th scope="col">내용</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">유물 셋</th><td>15 / 25 / 40</td><td>흔함 둘, 드묾 하나 (20% 귀함)</td></tr>
+              <tr><th scope="row">떡 한 접시</th><td>8</td><td>체력 10 회복. 한 장터에서 두 번까지</td></tr>
+              <tr><th scope="row">칸 되돌리기</th><td>10</td><td>찍어 둔 재주 칸 하나를 지우고 포인트를 돌려받는다. 그 칸 다음 칸도 함께 지워진다</td></tr>
+              <tr><th scope="row">다시 뽑기 표</th><td>12</td><td>다음에 보는 보상 후보(유물이나 재주)를 한 번 다시 뽑는다</td></tr>
+            </tbody>
+          </table></div>
+          <ul>
+            <li><strong>할인은 곱해진다.</strong> 도깨비 재주 20%와 천량 쌀자루 30%를 함께 가지면 값의 56%만 낸다.</li>
+            <li><strong>금덩이 2칸 후보 ①</strong>(<a href="/posts/turn-based-roguelike-skill-numbers/">7편</a>)이 있으면 장터에서 처음 사는 물건이 반값이다.</li>
+            <li>한 판 엽전이 약 150이라, 귀함 하나를 사면 그 판의 장터는 거의 끝난다. 유물을 살지, 떡과 다시 뽑기로 버틸지가 고민거리다.</li>
+          </ul>
+        </section>
+
+        <section id="events" aria-labelledby="events-title">
+          <h2 id="events-title">사건 아홉</h2>
+          <p>사건 칸에서는 그 동네의 사건 셋 가운데 하나가 나온다. 한 판에서 같은 사건은 두 번 나오지 않는다. “더 보이는 선택지”는 자라 재주나 까마귀 깃털이 있을 때만 보인다.</p>
+
+            <article class="concept">
+              <h4>흰 까치가 앉은 집 <span class="concept-genre">마을</span></h4>
+              <p>지붕에 흰 까치가 앉은 집에서 잔치가 한창이다. <span class="table-note">(<a href="/posts/korean-folklore-research/#cr150">백작</a>)</span></p>
+              <ol><li><strong>잔치에 끼어 먹는다:</strong> 체력 10 회복</li><li><strong>까치에게 소원을 빈다:</strong> 엽전 15</li><li><strong>까치를 따라간다 (더 보이는 선택지):</strong> 귀함 유물 후보 셋 가운데 하나. 대신 체력 −8</li></ol>
+            </article>
+            <article class="concept">
+              <h4>대나무 통 속 사람들 <span class="concept-genre">마을</span></h4>
+              <p>버려진 대나무 통에서 손가락만 한 사람들이 나와 수다를 떤다. <span class="table-note">(<a href="/posts/korean-folklore-research/#cr284">죽통미녀</a>)</span></p>
+              <ol><li><strong>같이 웃고 떠든다:</strong> 체력 6 회복</li><li><strong>노래를 배운다:</strong> 다음 전투에서 첫 차례를 5 당긴다</li></ol>
+            </article>
+            <article class="concept">
+              <h4>밥 달라는 줄 <span class="concept-genre">마을</span></h4>
+              <p>백죽모의 무리가 밥을 달라고 길에 줄을 섰다. <span class="table-note">(<a href="/posts/korean-folklore-research/#cr151">백죽모</a>)</span></p>
+              <ol><li><strong>떡을 나눈다:</strong> 엽전 −10, 경험치 3</li><li><strong>모른 척한다:</strong> 잡요괴 전투. 이겨도 엽전은 없다</li><li><strong>같이 줄을 선다 (더 보이는 선택지):</strong> 떡을 얻어먹고 체력 8 회복</li></ol>
+            </article>
+            <article class="concept">
+              <h4>먹이를 기다리는 자라 <span class="concept-genre">강</span></h4>
+              <p>물가의 자라가 고개를 내밀고 무언가를 기다린다. <span class="table-note">(<a href="/posts/korean-folklore-research/#cr322">토주원</a>)</span></p>
+              <ol><li><strong>먹이를 사 준다:</strong> 엽전 −5, 흔함 유물 하나 (구슬로 보답)</li><li><strong>그냥 지나간다:</strong> 아무 일 없음</li></ol>
+            </article>
+            <article class="concept">
+              <h4>소 울음이 나는 우물 <span class="concept-genre">강</span></h4>
+              <p>오래된 우물에서 소 울음소리가 난다. 마을 사람들이 복을 빌지 메울지 다툰다. <span class="table-note">(<a href="/posts/korean-folklore-research/#cr275">정여우후</a>)</span></p>
+              <ol><li><strong>복을 빈다:</strong> 반반의 확률로 엽전 20 또는 아무 일 없음</li><li><strong>우물을 메운다:</strong> 체력 −5, 최대 체력 +4</li><li><strong>우물 속을 들여다본다 (더 보이는 선택지):</strong> 드묾 유물 후보 셋 가운데 하나. 대신 다음 전투를 느림으로 시작</li></ol>
+            </article>
+            <article class="concept">
+              <h4>폭포를 오르는 물고기 <span class="concept-genre">강</span></h4>
+              <p>붉은 물고기들이 폭포를 거슬러 오르려 애쓰고 있다. <span class="table-note">(<a href="/posts/korean-folklore-research/#cr41">가사어</a>)</span></p>
+              <ol><li><strong>같이 폭포를 오른다:</strong> 체력 −6, 포인트 1</li><li><strong>응원만 한다:</strong> 체력 4 회복</li></ol>
+            </article>
+            <article class="concept">
+              <h4>움직이는 산 <span class="concept-genre">산</span></h4>
+              <p>아까 지나온 산이 슬금슬금 앞을 막는다. <span class="table-note">(<a href="/posts/korean-folklore-research/#cr79">공주산</a>)</span></p>
+              <ol><li><strong>똑바로 바라본다:</strong> 산이 멈추고 길이 열린다. 다음 칸 하나를 건너뛴다</li><li><strong>산을 따라 걷는다:</strong> 엽전 10. 대신 다음 전투의 첫 차례를 쉰다</li></ol>
+            </article>
+            <article class="concept">
+              <h4>하룻밤 꽃 <span class="concept-genre">산</span></h4>
+              <p>아침에 싹튼 꽃이 벌써 활짝 피었다. 저녁이면 진다. <span class="table-note">(<a href="/posts/korean-folklore-research/#cr87">근화초</a>)</span></p>
+              <ol><li><strong>꽃을 바라본다:</strong> 체력 12 회복</li><li><strong>씨를 받는다:</strong> 귀함 유물 근화초 씨앗. 대신 체력 −10</li></ol>
+            </article>
+            <article class="concept">
+              <h4>흰 기운의 거북 <span class="concept-genre">산</span></h4>
+              <p>흰 기운을 내뿜는 큰 거북이 나비 앞에 엎드린다. <span class="table-note">(<a href="/posts/korean-folklore-research/#cr329">현구</a>)</span></p>
+              <ol><li><strong>등에 탄다:</strong> 다음 칸 하나를 건너뛰고 체력 5 회복</li><li><strong>이야기를 듣는다:</strong> 경험치 6</li><li><strong>등껍질 무늬를 배운다 (더 보이는 선택지):</strong> 거북 재주가 있으면 포인트 1, 없으면 다음 전투를 보호막 8로 시작</li></ol>
+            </article>
+        </section>
+
+        <section id="rest" aria-labelledby="rest-title">
+          <h2 id="rest-title">쉬는 칸과 보물 칸</h2>
+          <ul>
+            <li><strong>쉬는 칸:</strong> 낮잠(최대 체력의 30% 회복)과 수련(경험치 5) 가운데 하나를 고른다. 거북 재주가 있으면 낮잠이 5 더 회복하고, 수결 붙인 종이가 있으면 다음 전투를 보호막 5로 시작한다.</li>
+            <li><strong>보물 칸:</strong> 버려진 상자에서 유물 후보 셋 가운데 하나를 고른다. 싸움 없이 유물을 얻는 유일한 칸이다.</li>
+          </ul>
+          <p class="image-credit">유물과 사건의 이름은 <a href="/posts/korean-folklore-research/">한국 괴물·귀신</a>의 해당 항목에서 가져왔고, 효과와 수치는 이 기획을 위해 새로 붙였다.</p>
+        </section>
+        <p class="post-back"><a href="/">← 전체 글 목록</a></p>
+      </article>
+    </main>
+    <footer lang="en" class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>
