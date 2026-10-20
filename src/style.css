@@ -125,8 +125,6 @@ hr { border: 0; border-top: 1px solid var(--border); }
 }
 
 .research-post h3 { font-size: 1.2em; line-height: 1.4; margin-top: 1.75em; }
-.research-post .post-next { margin-top: 3em; }
-.research-post .post-next + .post-back { margin-top: .5em; }
 .research-post .table-scroll { overflow-x: auto; margin: 1em 0; }
 .research-post table { width: 100%; border-collapse: collapse; font-size: .875em; line-height: 1.5; word-break: keep-all; }
 .research-post caption { text-align: left; font-weight: bold; padding-bottom: .5em; }

@@ -24,7 +24,6 @@ SETTINGS = {
     'avifQuality': 45,
     'catalogMaxSize': [320, 240],
     'puzzleMaxSize': [320, 320],
-    'conceptMaxSize': [960, 540],
     'atlasMaxSize': [1152, 1152],
 }
 IMAGE_TAG = re.compile(r'<img\b[^>]*>', re.I)
@@ -44,8 +43,6 @@ def write_json(path, data):
 
 
 def limit(route):
-    if route.startswith('/images/folklore-game/'):
-        return SETTINGS['conceptMaxSize']
     if route.startswith('/images/korean-folklore/'):
         return SETTINGS['atlasMaxSize']
     if route.startswith('/images/logic-puzzles/'):
@@ -187,7 +184,6 @@ def optimize():
     records = sorted((ROOT / 'public/data').glob('*.json')) + [
         ROOT / 'docs/jjang-gameplay-images.json',
         ROOT / 'docs/korean-folklore-images.json',
-        ROOT / 'docs/folklore-game-concepts/redraw-2026-10-06/manifest.json',
     ]
     for path in records:
         data = read_json(path)

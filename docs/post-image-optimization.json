@@ -10,10 +10,6 @@
       320,
       320
     ],
-    "conceptMaxSize": [
-      960,
-      540
-    ],
     "atlasMaxSize": [
       1152,
       1152
@@ -26,12 +22,6 @@
       "beforeBytes": 25981732,
       "afterBytes": 3753450,
       "resized": 726
-    },
-    "folklore-game": {
-      "images": 43,
-      "beforeBytes": 110324920,
-      "afterBytes": 2253568,
-      "resized": 43
     },
     "jjang-games": {
       "images": 3525,
@@ -58,12 +48,12 @@
       "resized": 48
     }
   },
-  "processedImages": 17537,
+  "processedImages": 17494,
   "skippedImages": 0,
-  "beforeBytes": 427710865,
-  "afterBytes": 83022333,
+  "beforeBytes": 317385945,
+  "afterBytes": 80768765,
   "formats": {
-    "avif": 16504,
+    "avif": 16461,
     "webp": 1033
   },
   "outputHashes": {
@@ -897,49 +887,6 @@
     "/images/classic-games/sfc-472397.avif": "7f78f9a746b357a4a08070c9d6a8884d26d9df8a8fbbedb75bb73e14905a1a6c",
     "/images/classic-games/sfc-765181.avif": "3a9fdb4d609d331198a913e7e363024afcb8fdb2787fda7d8fc157b804c2387c",
     "/images/classic-games/sfc-846681.avif": "fc727b45bfec1263e5447c36cba304ecaa4bae2d9701ef75219c1a8fa57ab3b9",
-    "/images/folklore-game/concept-1-deckbuilder.avif": "03632458f7571fb0746355a98d4a345b178b0b3173e5fdab250d49db046469eb",
-    "/images/folklore-game/concept-10-gate-inspection.avif": "d2e8ebc7c1f589c870ba620f921f12d9e94c47face08757e32e6aefcc869022f",
-    "/images/folklore-game/concept-11-word-puzzle.avif": "ec30ffe5c8c7ccd9026dbe248e9727ac8eb6a39b94e0f44abf43c4c77da64470",
-    "/images/folklore-game/concept-12-afterlife-loop.avif": "5051360394e6d5eea8562f0aa7db4f0bb5391910807ead19373aceff3aafb7aa",
-    "/images/folklore-game/concept-13-yut-roguelike.avif": "9e1cd7f6220e0db74d518f7285be189b7b37226becec5d5c5e27ef316a89d013",
-    "/images/folklore-game/concept-14-io-bulgasari.avif": "3a1b1f3528d70d4add825fc4dc031ee10e37541e15ed240ff2f3828e85389f80",
-    "/images/folklore-game/concept-15-io-dokkaebibul.avif": "bdc0b51874dcd5cb8da8ec1052d4507cc8d8846426e6e068466815a836b91505",
-    "/images/folklore-game/concept-16-io-geumjul.avif": "6f81b7bf48a5baf6a9182e1f83c7d33530fdfa85f46cba2c6a94a7ba9f213020",
-    "/images/folklore-game/concept-17-io-dungap.avif": "bc15778976211ecd54c96f623701fc4bc955ca80784cea701757aa22f27c06ba",
-    "/images/folklore-game/concept-18-io-yagwang.avif": "9093e66a011c3fdee02f1961c9a9b094173eb271c12012bb23f16513ed31fe31",
-    "/images/folklore-game/concept-19-indie-tomb.avif": "984fa2d81f2e97b09cc4cefc69e743f7e2b7580a1c034b8fa9c2eec0694688ff",
-    "/images/folklore-game/concept-2-bullet-heaven.avif": "db19a639349e8effa3e2bbe0d5198de1b8cc2708657280d89222548f6a0b9bee",
-    "/images/folklore-game/concept-20-indie-memory.avif": "37e78e179cdf28d6efb4c9288e32bc6bee2a8e61837fdfc449d1ecc9e0ea0837",
-    "/images/folklore-game/concept-21-indie-lineage.avif": "7d827a66343ccf8ba6ff4341191dac0c3318ca522bb56f6f34053e21860718e8",
-    "/images/folklore-game/concept-22-indie-runner.avif": "aa3d6e4b56b4a15c40b596fbb089679c164766f4f6eacbd1bf13e2e13c66e9a8",
-    "/images/folklore-game/concept-23-indie-blocks.avif": "a40e1f3e660d3acc0d34cf3997a7ded88a4a965655e0ccf85c621037f1dd640c",
-    "/images/folklore-game/concept-24-indie-beat.avif": "3de0a5a5a9c34ef60e403d79c712e2625640b9d2ecbbdd7a7b1fa5a1076d80d5",
-    "/images/folklore-game/concept-25-indie-well.avif": "943ee976137df9cfe18e73c20a5675040dae30108da84360d020219c2c3fb2b0",
-    "/images/folklore-game/concept-26-indie-flight.avif": "4223e19b17c410f94aa24d0b2721b95c5b3045a760620fe3f5eb7f68793bde91",
-    "/images/folklore-game/concept-27-indie-oneday.avif": "faaa8e1321c3d96e39f1aeda396f7ad04f93f6f4b6c99f3e635fae7623c7257f",
-    "/images/folklore-game/concept-28-indie-shipwreck.avif": "7ba7055dc1e15515d9f85717c0299358c9abbaaf6586184d893b9f4491bc496a",
-    "/images/folklore-game/concept-29-itch-table.avif": "7856267852d6b0716ab9d6a540967e0e74be4604ab865ea3af46aca0eacedc3a",
-    "/images/folklore-game/concept-3-metroidvania.avif": "84bce4d685cf3c27c09ef648dee8e04b7ace68802fb46f4f5a2f39d8e0ff5929",
-    "/images/folklore-game/concept-30-itch-vn.avif": "2c5e0ec13dd97c62f0ed0c4d2eebcf2d225b3d0c88aa2d9c5ef89dcd9d1c8ffd",
-    "/images/folklore-game/concept-31-itch-hike.avif": "c252fa226bbadd4401ec2d1a86915158f8e7cbdaba36519b0566bc2cb93e554f",
-    "/images/folklore-game/concept-32-itch-bag.avif": "b35ae085e54d1047be150a31e2fb89edf4bd9d69e35899f36b8a38181d6867a9",
-    "/images/folklore-game/concept-33-itch-sweeper.avif": "e643a42e2ab50a9d54d0a30f91d3c519ace46ca1c5f8611bdb408e2d3936229d",
-    "/images/folklore-game/concept-34-turn-golf.avif": "4589b2428af7486e55833e11be47e8951303dc147834154b0ad2b6537db4d435",
-    "/images/folklore-game/concept-35-turn-board.avif": "24894ab34f75bef5d6b940abd3cf5e38bbcf1caa850b6efec7e542717dbbb7d2",
-    "/images/folklore-game/concept-36-turn-gauge.avif": "0fb9481fdc2724ff1009e31de7ec103301d59446189d9c5555a895eec000ab2c",
-    "/images/folklore-game/concept-37-turn-clash.avif": "42d8866069325a76796ac487f9b8d4adeca87bbbaf467a601f1767e8c9395416",
-    "/images/folklore-game/concept-38-turn-stress.avif": "d74145ddc46a82bec21673ab636a3086fde8d3f6a854392e6b236112a1ca0c24",
-    "/images/folklore-game/concept-39-turn-calendar.avif": "263f69fb3f5fc4c28a2eed50993b53e00d65231abded41bf72cd65b611932119",
-    "/images/folklore-game/concept-4-survival-craft.avif": "8da4adff6417c97750f09e0e92e8b4c72ecf00d9d207863e851c903a72eef7a8",
-    "/images/folklore-game/concept-40-turn-crpg.avif": "eff5060831328aa534231831346c82d09d903a4459e761da76e01494d6973ef4",
-    "/images/folklore-game/concept-41-turn-parry.avif": "48b2d29d49cfec3ce50558b7c08825426037653337a4c78514d302ea69438a63",
-    "/images/folklore-game/concept-42-turn-break.avif": "85b93e6c7a804cf6f49d57413dd1a5621cc50f26659239079d25bca5d547f68d",
-    "/images/folklore-game/concept-43-turn-diorama.avif": "c2ef9159af5caefe2e839ec1f7d499969b1d6ef89c2d34d979a9dc0c5258a201",
-    "/images/folklore-game/concept-5-boss-rush.avif": "aeb04de4759c72d485138380d31d668f88adf1e570c40ade56b77330bc0af5e0",
-    "/images/folklore-game/concept-6-boomer-shooter.avif": "0157d3cb8af06a4e1a2b8d9c1cca09b0055078128a533ee7163c739ebf204099",
-    "/images/folklore-game/concept-7-psychological-horror.avif": "18d1dfc60495687ed555cb8d643a064a5a747f1d8560d2d432381e0c7901f5d3",
-    "/images/folklore-game/concept-8-tactical-rpg.avif": "5c04f2cde72b5cd6f78dd196b6c0e73a2105fc6484488556ffeaa5514f0967bd",
-    "/images/folklore-game/concept-9-mercy-rpg.avif": "a4e5774644cc99db899daca56bec7c8feeb50f594c884e52a661e1bad4bf6665",
     "/images/jjang-games/2d-2007100514100095.avif": "313a98ac6dfc6928baf1b531a4913a7651b6d83be2d26a4068417e12d54a99f3",
     "/images/jjang-games/2d-2007100514100150.avif": "f5b8ef6ab6aae3217204dd24190de7ee914212fc3bd3d0b54a30f8f2d5c3d0a7",
     "/images/jjang-games/2d-2007100514100201.avif": "bdf08aa2906421ccbe8450583b56d17b28cb13cf09f21e58f36328d5bc082368",
