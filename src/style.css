@@ -131,6 +131,7 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .research-post th, .research-post td { padding: .45em .6em; border-bottom: 1px solid var(--soft-border); text-align: left; vertical-align: top; }
 .research-post thead th { border-bottom-color: var(--border); white-space: nowrap; }
 .research-post tbody th { white-space: nowrap; }
+.research-post table.wide-table { min-width: 36em; }
 .research-post .table-note { font-size: .75em; color: var(--muted); }
 .design-post .post-toc { padding: .75em 1em; border: 1px solid var(--soft-border); background: var(--surface); }
 .design-post .post-toc ol { margin: 0; padding-left: 1.5em; }

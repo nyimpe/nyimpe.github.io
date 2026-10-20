@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="갈림길 지도, 구역마다의 전직, 판을 넘는 영구 성장으로 짠 턴제 로그라이크의 큰 뼈대.">
-    <title>턴제 로그라이크 기획 — 큰 뼈대 · nyimpe</title>
+    <title>턴제 로그라이크 기획 1 — 큰 뼈대 · nyimpe</title>
     <link rel="canonical" href="https://nyimpe.github.io/posts/turn-based-roguelike-skeleton/">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="ko_KR">
-    <meta property="og:title" content="턴제 로그라이크 기획 — 큰 뼈대">
+    <meta property="og:title" content="턴제 로그라이크 기획 1 — 큰 뼈대">
     <meta property="og:description" content="갈림길 지도, 구역마다의 전직, 판을 넘는 영구 성장으로 짠 턴제 로그라이크의 큰 뼈대.">
     <meta property="og:url" content="https://nyimpe.github.io/posts/turn-based-roguelike-skeleton/">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -34,9 +34,9 @@
     <main id="content">
       <article class="research-post design-post">
         <header class="post-header">
-          <h1>턴제 로그라이크 기획 — 큰 뼈대</h1>
+          <h1>턴제 로그라이크 기획 1 — 큰 뼈대</h1>
           <time datetime="2026-10-20">2026.10.20</time>
-          <p class="image-credit">확정한 뼈대 · 세계관·전투 세부 규칙·수치는 다음 글에서 정한다</p>
+          <p class="image-credit">확정한 뼈대 · 세계관은 <a href="/posts/turn-based-roguelike-world/">2편 그믐 나례 세계관</a>, 전투 세부 규칙·수치는 다음 글에서 정한다</p>
         </header>
 
         <p><strong>슬레이 더 스파이어처럼 판마다 지도와 보상이 달라지는 턴제 로그라이크다. 다만 덱 대신 캐릭터가 전직과 스킬트리로 강해지고, 죽어도 남는 영구 성장이 그 위에 얹힌다.</strong> 전투는 평범한 턴제 스킬 전투로 두고, 재미의 중심은 무엇을 얻어 어떻게 강해질지 고르는 데 둔다.</p>
@@ -94,7 +94,7 @@
         <section id="in-run" aria-labelledby="in-run-title">
           <h2 id="in-run-title">한 판 안의 성장: 전직 갈림길</h2>
           <p>판은 <strong>견습생</strong>으로 시작한다. 각 구역의 보스를 잡으면 <strong>전직 후보 셋 가운데 하나</strong>를 고른다. 후보는 무작위로 나오되, 지금 직업과 이어지는 직업이 주로 나온다.</p>
-          <div class="table-scroll" role="region" aria-label="한 판 안의 성장 요소" tabindex="0"><table>
+          <div class="table-scroll" role="region" aria-label="한 판 안의 성장 요소" tabindex="0"><table class="wide-table">
             <thead><tr><th scope="col">요소</th><th scope="col">언제 얻나</th><th scope="col">무작위</th><th scope="col">역할</th></tr></thead>
             <tbody>
               <tr><th scope="row">전직</th><td>구역 보스 처치</td><td>후보 셋 중 하나</td><td>구역마다의 큰 방향. 이전 직업의 스킬은 남는다</td></tr>
@@ -194,7 +194,7 @@
         <section id="open" aria-labelledby="open-title">
           <h2 id="open-title">아직 정하지 않은 것</h2>
           <ul>
-            <li><strong>세계관</strong>: <a href="/posts/korean-folklore-research/">한국 괴물·귀신</a>에 정리한 자료로 만든다. 견습생, 직업, 거점, 영구 재화, 보스의 이름과 의미가 여기서 정해진다.</li>
+            <li><strong>세계관</strong>: <a href="/posts/turn-based-roguelike-world/">2편 그믐 나례 세계관</a>에서 <a href="/posts/korean-folklore-research/">한국 괴물·귀신</a>의 자료로 정했다. 견습생은 초라니, 직업은 탈, 거점은 나례도감이다.</li>
             <li><strong>전투 세부 규칙</strong>: 한 번에 가질 수 있는 스킬 수, 자원(행동력·기력 등), 상태 이상의 종류.</li>
             <li><strong>직업 목록과 전직 관계도</strong>: 처음에는 6~8개로 시작한다.</li>
             <li><strong>수치</strong>: 영구 트리의 단계별 효과, 재화 획득량, 저주 단계 목록.</li>
