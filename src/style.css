@@ -138,6 +138,7 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .design-post section { scroll-margin-top: 1em; }
 .design-post .concept { margin: 2.5em 0 3.5em; }
 .design-post .concept h3 { font-size: 1.375em; margin: 0 0 .6em; }
+.design-post .concept h4 { font-size: 1.25em; margin: 0 0 .4em; }
 .design-post .concept-genre { display: inline-block; margin-right: .4em; padding: .1em .5em; border: 1px solid var(--border); border-radius: 3px; color: var(--muted); font-size: .6em; font-weight: normal; vertical-align: middle; }
 .design-post .concept-shot { margin: 0 0 1em; }
 .design-post .concept-shot img { display: block; width: 100%; height: auto; border: 1px solid var(--soft-border); image-rendering: pixelated; }
