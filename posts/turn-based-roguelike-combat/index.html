@@ -44,7 +44,7 @@
         <section id="rules" aria-labelledby="rules-title">
           <h2 id="rules-title">전투 규칙</h2>
           <ul>
-            <li><strong>나비 혼자 요괴 1~3마리와 겨룬다.</strong> 나비가 먼저 행동하고, 그다음 요괴들이 차례로 행동한다.</li>
+            <li><strong>나비 혼자 요괴 1~3마리와 겨룬다.</strong> 차례는 속도에 따라 정해지고, 화면 위 순서 막대에 다음 여덟 차례가 보인다. 자세한 규칙은 <a href="/posts/turn-based-roguelike-turn-order/">6편 순서 막대</a>에 있다.</li>
             <li><strong>체력:</strong> 나비는 30에서 시작한다. 전투가 끝나도 체력은 그대로 이어지고, 쉬는 칸에서 채운다.</li>
             <li><strong>기술:</strong> 한 턴에 하나만 쓴다. 기술마다 쉬는 턴(쿨타임)이 있어서, 센 기술은 쓰고 나면 몇 턴 기다려야 한다.</li>
             <li><strong>기술은 네 개까지 든다.</strong> 기본 기술 둘에, 배운 재주마다 하나씩 더한다. 산 끝에서 섞은 기술은 다섯 번째 칸에 든다.</li>
@@ -69,7 +69,7 @@
             <thead><tr><th scope="col">상태</th><th scope="col">효과</th></tr></thead>
             <tbody>
               <tr><th scope="row">헷갈림</th><td>이번 턴의 행동이 다른 행동으로 바뀐다. 요괴에게 걸면 미리 보이던 행동이 바뀐다</td></tr>
-              <tr><th scope="row">느림</th><td>기술의 쉬는 턴이 1씩 늘어난다</td></tr>
+              <tr><th scope="row">느림</th><td>속도가 2 줄어 차례가 늦게 온다</td></tr>
               <tr><th scope="row">보호막</th><td>막기처럼 피해를 줄이지만, 턴이 지나도 사라지지 않는다</td></tr>
             </tbody>
           </table></div>
@@ -105,7 +105,7 @@
 
         <section id="next" aria-labelledby="next-title">
           <h2 id="next-title">다음 글</h2>
-          <p>이 규칙을 화면으로 옮긴 시안은 <a href="/posts/turn-based-roguelike-screens/">5편 플레이 화면 시안</a>에 있다. 재주별 기술의 수치는 그 뒤에 다 붙인다.</p>
+          <p>이 규칙을 화면으로 옮긴 시안은 <a href="/posts/turn-based-roguelike-screens/">5편 플레이 화면 시안</a>에, 속도와 순서 막대는 <a href="/posts/turn-based-roguelike-turn-order/">6편 순서 막대</a>에 있다. 재주별 기술의 수치는 그 뒤에 다 붙인다.</p>
           <p class="image-credit">우두머리 이름은 <a href="/posts/korean-folklore-research/">한국 괴물·귀신</a>의 해당 항목으로 연결된다. 우두머리의 성격과 행동은 이 기획을 위해 새로 붙였다.</p>
         </section>
         <p class="post-back"><a href="/">← 전체 글 목록</a></p>

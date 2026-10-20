@@ -199,8 +199,8 @@ def bar(img, x, y, w, ratio, color):
 
 
 SKILLS = [
-    {"name": "할퀴기", "kind": "공격", "line": "피해 6", "color": (226, 84, 70), "state": "ready"},
-    {"name": "웅크리기", "kind": "막기", "line": "막기 6", "color": (70, 130, 210), "state": "selected"},
+    {"name": "할퀴기", "kind": "공격", "line": "피해 6", "color": (226, 84, 70), "state": "selected"},
+    {"name": "웅크리기", "kind": "막기", "line": "막기 6", "color": (70, 130, 210), "state": "ready"},
     {"name": "돌진", "kind": "말 재주", "line": "피해 14", "color": (236, 150, 50), "state": "cooldown", "wait": 2},
     {"name": "비어 있음", "kind": "", "line": "강 끝에서 배움", "color": (180, 170, 150), "state": "locked"},
 ]
@@ -248,45 +248,104 @@ def label_box(img, x0, y0, x1, y1):
     d.rectangle([x0 + 1, y0 + 1, x1 - 1, y1 - 1], fill=(64, 52, 60))
 
 
+def cat_face():
+    face = Image.new("RGBA", (16, 15), (0, 0, 0, 0))
+    f = ImageDraw.Draw(face)
+    f.polygon([(2, 6), (3, 1), (7, 4)], fill=(249, 150, 70))
+    f.polygon([(13, 6), (12, 1), (8, 4)], fill=(253, 253, 253))
+    f.ellipse([1, 3, 14, 13], fill=(253, 253, 253))
+    f.pieslice([1, 3, 14, 13], 180, 270, fill=(249, 150, 70))
+    f.rectangle([4, 7, 5, 8], fill=INK)
+    f.rectangle([10, 7, 11, 8], fill=INK)
+    f.point((7, 10), fill=(240, 150, 160))
+    return outline(face)
+
+
+def fish_face():
+    face = Image.new("RGBA", (16, 15), (0, 0, 0, 0))
+    f = ImageDraw.Draw(face)
+    f.polygon([(10, 7), (15, 3), (14, 7), (15, 12)], fill=(226, 64, 60))
+    f.ellipse([0, 4, 12, 12], fill=(246, 154, 52))
+    f.ellipse([2, 8, 10, 12], fill=(255, 214, 120))
+    f.polygon([(4, 5), (7, 1), (9, 5)], fill=(226, 64, 60))
+    f.rectangle([2, 6, 4, 8], fill=(255, 255, 255))
+    f.point((3, 7), fill=INK)
+    return outline(face, (110, 44, 24))
+
+
+ORDER = [("cat", None), ("fish", "cloud"), ("cat", None), ("fish", "wave"), ("cat", None), ("fish", None), ("cat", None), ("cat", None)]
+
+
+def order_bar(lo):
+    d = ImageDraw.Draw(lo)
+    d.rectangle([0, 12, W, 31], fill=(64, 52, 60))
+    d.line([0, 31, W, 31], fill=INK)
+    faces = {"cat": cat_face(), "fish": fish_face()}
+    rims = {"cat": (249, 150, 70), "fish": (214, 70, 60)}
+    x = 22
+    for i, (who, badge) in enumerate(ORDER):
+        size = 18 if i == 0 else 15
+        y0 = 13 if i == 0 else 14
+        rim = (255, 196, 40) if i == 0 else rims[who]
+        d.rectangle([x, y0, x + size, y0 + size], fill=INK)
+        d.rectangle([x + 1, y0 + 1, x + size - 1, y0 + size - 1], fill=rim)
+        d.rectangle([x + 2, y0 + 2, x + size - 2, y0 + size - 2], fill=(255, 250, 236))
+        face = faces[who]
+        lo.alpha_composite(face, (x + (size + 1 - face.width) // 2, y0 + (size + 1 - face.height) // 2 + 1))
+        if badge:
+            bx, by = x + size - 6, y0 + size - 5
+            d.rectangle([bx, by, bx + 8, by + 6], fill=INK)
+            d.rectangle([bx + 1, by + 1, bx + 7, by + 5], fill=(255, 252, 242))
+            if badge == "cloud":
+                d.ellipse([bx + 1, by + 1, bx + 5, by + 4], fill=(150, 156, 170))
+                d.ellipse([bx + 3, by + 1, bx + 7, by + 4], fill=(150, 156, 170))
+            else:
+                d.line([bx + 1, by + 2, bx + 3, by + 1, bx + 5, by + 2, bx + 7, by + 1], fill=(70, 130, 210))
+                d.line([bx + 1, by + 4, bx + 3, by + 3, bx + 5, by + 4, bx + 7, by + 3], fill=(70, 130, 210))
+        x += size + 4
+    return x
+
+
 def main():
     lo = Image.new("RGBA", (W, H), (0, 0, 0, 255))
     sky(lo)
     hills(lo)
     waterfall(lo)
     pond_and_bank(lo)
-    rain_cloud(lo, 226, 50)
+    rain_cloud(lo, 226, 56)
 
     fish = fish_sprite()
-    lo.alpha_composite(fish, (162, 30))
+    lo.alpha_composite(fish, (162, 36))
     d = ImageDraw.Draw(lo)
-    d.ellipse([254, 112, 290, 120], outline=(240, 250, 255))
-    d.ellipse([246, 114, 298, 124], outline=(200, 236, 250))
+    d.ellipse([254, 114, 290, 122], outline=(240, 250, 255))
+    d.ellipse([246, 116, 298, 126], outline=(200, 236, 250))
 
     cat = outline(cat_sprite(58), (24, 20, 28))
-    d.ellipse([58, 99, 92, 105], fill=(170, 150, 100))
-    lo.alpha_composite(cat, (60, 44))
+    d.ellipse([58, 101, 92, 107], fill=(170, 150, 100))
+    lo.alpha_composite(cat, (60, 46))
 
     hud(lo)
+    bar_end = order_bar(lo)
     panel(lo)
     boxes = skill_buttons(lo)
 
     # name plates with health bars
-    label_box(lo, 8, 15, 98, 33)
-    bar(lo, 12, 26, 82, 22 / 30, (110, 200, 90))
-    label_box(lo, 210, 15, 314, 33)
-    bar(lo, 214, 26, 96, 41 / 55, (230, 80, 70))
+    label_box(lo, 4, 34, 58, 52)
+    bar(lo, 8, 45, 46, 22 / 30, (110, 200, 90))
+    label_box(lo, 212, 34, 316, 52)
+    bar(lo, 216, 45, 96, 41 / 55, (230, 80, 70))
     # slow status chip
-    d.rectangle([8, 35, 40, 44], fill=(255, 244, 214), outline=BROWN)
-    snail(lo, 10, 36)
+    d.rectangle([4, 54, 36, 63], fill=(255, 244, 214), outline=BROWN)
+    snail(lo, 6, 55)
 
-    # intent bubble above the fish head
-    d.rectangle([136, 16, 196, 32], fill=INK)
-    d.rectangle([137, 17, 195, 31], fill=(255, 252, 242))
-    d.polygon([(170, 32), (178, 32), (178, 37)], fill=INK)
-    d.ellipse([140, 20, 148, 26], fill=(150, 156, 170))
-    d.ellipse([144, 18, 152, 26], fill=(150, 156, 170))
-    d.line([142, 28, 141, 30], fill=(120, 170, 220))
-    d.line([146, 28, 145, 30], fill=(120, 170, 220))
+    # intent bubble beside the fish head
+    d.rectangle([100, 42, 160, 58], fill=INK)
+    d.rectangle([101, 43, 159, 57], fill=(255, 252, 242))
+    d.polygon([(160, 47), (160, 53), (165, 50)], fill=INK)
+    d.ellipse([104, 46, 112, 52], fill=(150, 156, 170))
+    d.ellipse([108, 44, 116, 52], fill=(150, 156, 170))
+    d.line([106, 54, 105, 56], fill=(120, 170, 220))
+    d.line([110, 54, 109, 56], fill=(120, 170, 220))
     # coin icon in the HUD
     d.ellipse([289, 2, 296, 9], fill=(250, 200, 60), outline=BROWN_D)
     d.rectangle([292, 5, 293, 6], fill=BROWN_D)
@@ -298,21 +357,25 @@ def main():
         t.text((xy[0] * S, xy[1] * S), s, font=font(size, bold), fill=fill, anchor=anchor)
 
     text((4, 1.6), "강 · 우두머리", 26)
-    text((160, 1.6), "3번째 턴 · 나비 차례", 26, anchor="ma")
+    text((160, 1.6), "나비 차례", 26, anchor="ma")
     text((250, 1.6), "꼬리 3", 26)
     text((298, 1.6), "42", 26)
 
-    text((12, 16.6), "나비", 26, fill=(255, 246, 226))
-    text((94, 17.2), "22/30", 22, fill=(255, 246, 226), anchor="ra")
-    text((22, 35.4), "느림", 22, fill=(120, 70, 40))
-    text((214, 16.6), "용이 되고 싶은 물고기", 24, fill=(255, 246, 226))
-    text((310, 17.2), "41/55", 22, fill=(255, 246, 226), anchor="ra")
-    text((154, 17.6), "비 부르기", 24)
-    text((154, 24.2), "다음 턴 물살 18", 20, fill=(120, 90, 70), bold=False)
+    text((4, 18.4), "지금", 22, fill=(255, 220, 120))
+    text((bar_end + 4, 15.2), "속도  나비 10 (느림 -2)", 20, fill=(255, 246, 226), bold=False)
+    text((bar_end + 4, 22.4), "물고기 8", 20, fill=(255, 246, 226), bold=False)
+
+    text((8, 35.6), "나비", 24, fill=(255, 246, 226))
+    text((54, 36.2), "22/30", 20, fill=(255, 246, 226), anchor="ra")
+    text((18, 54.6), "느림", 22, fill=(120, 70, 40))
+    text((216, 35.6), "용이 되고 싶은 물고기", 24, fill=(255, 246, 226))
+    text((312, 36.2), "41/55", 22, fill=(255, 246, 226), anchor="ra")
+    text((118, 43.6), "비 부르기", 24)
+    text((118, 50.2), "그다음 물살 18", 20, fill=(120, 90, 70), bold=False)
 
     # speech bubble from the fish
-    sx, sy = 112, 52
-    t.polygon([((sx + 50) * S, (sy + 4) * S), ((sx + 58) * S, (sy + 7) * S), ((sx + 50) * S, (sy + 9) * S)], fill=INK)
+    sx, sy = 112, 66
+    t.polygon([((sx + 50) * S, (sy + 3) * S), ((sx + 58) * S, (sy - 1) * S), ((sx + 50) * S, (sy + 8) * S)], fill=INK)
     t.rounded_rectangle([sx * S, sy * S, (sx + 51) * S, (sy + 12) * S], radius=10, fill=(255, 255, 255), outline=INK, width=4)
     t.text(((sx + 25.5) * S, (sy + 6) * S), "나도 용이 될 거야!", font=font(22), fill=INK, anchor="mm")
 

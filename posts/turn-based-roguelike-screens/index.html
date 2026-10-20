@@ -71,13 +71,14 @@
         <section id="battle" aria-labelledby="battle-title">
           <h2 id="battle-title">3. 강 우두머리와의 전투</h2>
           <figure class="concept-shot">
-            <a href="/images/turn-based-roguelike-screens/03-river-leader.webp"><img src="/images/turn-based-roguelike-screens/03-river-leader.webp" width="1280" height="720" loading="lazy" decoding="async" alt="전투 화면. 왼쪽 물가에 고양이 나비가 앉아 있고, 오른쪽 폭포 앞 연못에서 뿔이 난 주황 물고기가 뛰어올라 나도 용이 될 거야!라고 외친다. 물고기 위 말풍선에 비 부르기, 다음 턴 물살 18이 보인다. 아래에는 할퀴기, 웅크리기, 쉬는 턴이 2 남은 돌진, 잠긴 빈칸이 있다."></a>
-            <figcaption>물고기 머리 위에 다음 행동이 보인다. 다음 턴에 물살 18이 오니 웅크리기를 골랐다.</figcaption>
+            <a href="/images/turn-based-roguelike-screens/03-river-leader.webp"><img src="/images/turn-based-roguelike-screens/03-river-leader.webp" width="1280" height="720" loading="lazy" decoding="async" alt="전투 화면. 맨 위에 나비와 물고기의 얼굴 여덟 개가 행동 순서대로 놓인 순서 막대가 있다. 왼쪽 물가에 고양이 나비가 앉아 있고, 오른쪽 폭포 앞 연못에서 뿔이 난 주황 물고기가 뛰어올라 나도 용이 될 거야!라고 외친다. 물고기 옆 말풍선에 비 부르기, 그다음 물살 18이 보인다. 아래에는 골라진 할퀴기, 웅크리기, 쉬는 턴이 2 남은 돌진, 잠긴 빈칸이 있다."></a>
+            <figcaption>맨 위 순서 막대를 보면 물살 앞에 나비 차례가 하나 더 있다. 그래서 지금은 할퀴고, 그 차례에 웅크린다.</figcaption>
           </figure>
           <ul>
-            <li><strong>미리 보기:</strong> “비 부르기 · 다음 턴 물살 18”. 지금은 공격이 오지 않으니, 다음 턴을 대비해 막기를 쌓는다.</li>
+            <li><strong>순서 막대:</strong> 다음 여덟 차례가 얼굴로 보인다. 물고기 칸의 작은 그림이 그 차례의 행동이다. 자세한 규칙은 <a href="/posts/turn-based-roguelike-turn-order/">6편 순서 막대</a>에 있다.</li>
+            <li><strong>미리 보기:</strong> “비 부르기 · 그다음 물살 18”. 지금 웅크리면 막기가 물살 전에 사라지니, 물살 바로 앞의 내 차례에 막는다.</li>
             <li><strong>쉬는 턴:</strong> 돌진은 방금 써서 2턴을 기다려야 한다.</li>
-            <li><strong>상태:</strong> 나비는 물보라에 맞아 <strong>느림</strong>에 걸렸다. 기술의 쉬는 턴이 1씩 늘어난다.</li>
+            <li><strong>상태:</strong> 나비는 물보라에 맞아 <strong>느림</strong>에 걸렸다. 속도가 12에서 10으로 줄어 차례가 늦게 온다.</li>
             <li><strong>빈칸:</strong> 네 번째 기술 칸은 강 끝에서 두 번째 재주를 배우면 채워진다.</li>
           </ul>
         </section>
