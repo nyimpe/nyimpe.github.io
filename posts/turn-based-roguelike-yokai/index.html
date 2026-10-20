@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="마을·강·산의 잡요괴 아홉의 체력, 속도, 행동과 확률, 칸에서 나오는 무리, 무리마다 평균 잃는 체력.">
+    <title>턴제 로그라이크 기획 8 — 동네별 잡요괴 · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/turn-based-roguelike-yokai/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="턴제 로그라이크 기획 8 — 동네별 잡요괴">
+    <meta property="og:description" content="마을·강·산의 잡요괴 아홉의 체력, 속도, 행동과 확률, 칸에서 나오는 무리, 무리마다 평균 잃는 체력.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/turn-based-roguelike-yokai/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=writing" aria-label="글쓰기" title="글쓰기"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post design-post">
+        <header class="post-header">
+          <h1>턴제 로그라이크 기획 8 — 동네별 잡요괴</h1>
+          <time datetime="2026-10-20">2026.10.20</time>
+          <p class="image-credit"><a href="/posts/turn-based-roguelike-world/">2편</a>의 동네 요괴에 수치를 붙인 글 · 규칙은 <a href="/posts/turn-based-roguelike-combat/">4편</a>, <a href="/posts/turn-based-roguelike-turn-order/">6편</a>, <a href="/posts/turn-based-roguelike-skill-numbers/">7편</a>을 따른다 · 수치는 모두 초안이다</p>
+        </header>
+
+        <p><strong>동네마다 잡요괴 셋, 무리 넷이다. 잡요괴는 확률에 따라 행동을 고르고, 바로 다음 행동만 순서 막대에 보인다.</strong> 동네를 지날수록 한 번 싸울 때 잃는 체력이 조금씩 늘어난다.</p>
+
+        <nav class="post-toc" aria-label="목차"><ol>
+          <li><a href="#rules">잡요괴 규칙</a></li>
+          <li><a href="#actions">행동 종류</a></li>
+          <li><a href="#areas">동네별 잡요괴</a><ol><li><a href="#village">마을</a></li><li><a href="#river">강</a></li><li><a href="#mountain">산</a></li></ol></li>
+          <li><a href="#check">계산과 조정</a></li>
+        </ol></nav>
+
+        <section id="rules" aria-labelledby="rules-title">
+          <h2 id="rules-title">잡요괴 규칙</h2>
+          <ul>
+            <li><strong>행동 고르기:</strong> 차례가 끝날 때마다 다음 행동을 확률대로 하나 고른다. 같은 행동을 세 번 연달아 하지는 않는다.</li>
+            <li><strong>미리 보기:</strong> 고른 행동은 머리 위와 순서 막대의 그 요괴 칸에 바로 보인다. 그다음 행동은 보이지 않는다.</li>
+            <li><strong>힘 모으기:</strong> 힘을 모은 요괴의 다음 행동은 정해진 큰 공격이다. 그래서 힘 모으기가 보이면 두 차례 뒤까지 알 수 있다.</li>
+            <li><strong>무리:</strong> 잡요괴 칸에서는 그 동네의 무리 넷 가운데 하나가 나온다. 같은 무리는 연달아 나오지 않는다. 지도 아래쪽 줄에서는 앞의 두 무리가, 위쪽 줄에서는 뒤의 두 무리가 더 자주 나온다.</li>
+            <li><strong>항복과 보상:</strong> 체력이 0이 된 요괴는 항복하고 친구가 되어 물러난다. 칸 하나를 이기면 마리 수와 상관없이 경험치 3을 받고, 무리마다 정해진 엽전을 받는다.</li>
+          </ul>
+        </section>
+
+        <section id="actions" aria-labelledby="actions-title">
+          <h2 id="actions-title">행동 종류</h2>
+          <div class="table-scroll" role="region" aria-label="잡요괴 행동 종류" tabindex="0"><table>
+            <thead><tr><th scope="col">행동</th><th scope="col">하는 일</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">공격</th><td>나비에게 피해. 두 번 공격은 같은 피해를 두 번 준다</td></tr>
+              <tr><th scope="row">막기</th><td>자기 다음 차례까지 피해를 줄인다</td></tr>
+              <tr><th scope="row">보호막</th><td>막기처럼 피해를 줄이지만 사라지지 않는다</td></tr>
+              <tr><th scope="row">지키기</th><td>짝에게 막기를 준다. 짝이 없으면 자기에게</td></tr>
+              <tr><th scope="row">힘 모으기</th><td>다음 차례에 정해진 큰 공격을 한다</td></tr>
+              <tr><th scope="row">장난 · 간지럼</th><td>나비를 헷갈리게 한다. 다음 나비 차례에 다른 기술이 무작위로 나간다</td></tr>
+              <tr><th scope="row">물 튀기기 · 천둥 울음</th><td>나비를 느리게 한다. 속도 −2</td></tr>
+              <tr><th scope="row">숨기</th><td>자기 다음 차례까지 공격이 닿지 않는다</td></tr>
+              <tr><th scope="row">뛰어오르기</th><td>자기 다음 차례를 5 당긴다</td></tr>
+              <tr><th scope="row">회복</th><td>요괴 모두의 체력을 되찾는다</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section id="areas" aria-labelledby="areas-title">
+          <h2 id="areas-title">동네별 잡요괴</h2>
+          <p>재주를 가르쳐 주는 요괴도 평소에는 잡요괴로 나온다. 그 재주를 배우면 겨룬 뒤 웃으며 인사하고 물러날 뿐, 하는 일은 같다.</p>
+
+          <section id="village" aria-labelledby="village-title">
+            <h3 id="village-title">마을</h3>
+            <div class="table-scroll" role="region" aria-label="마을 잡요괴" tabindex="0"><table class="wide-table">
+              <thead><tr><th scope="col">요괴</th><th scope="col">체력</th><th scope="col">속도</th><th scope="col">행동 (확률)</th><th scope="col">특징</th></tr></thead>
+              <tbody>
+              <tr><th scope="row"><a href="/posts/korean-folklore-research/#cr116">도깨비</a></th><td>10</td><td>12</td><td>방망이: 공격 4 (50%)<br>장난: 나비를 헷갈리게 한다 (30%)<br>숨기: 막기 4 (20%)</td><td>스스로를 김씨라 부르는 장난꾸러기. 도깨비 재주를 가르쳐 준다</td></tr>
+              <tr><th scope="row"><a href="/posts/korean-folklore-research/#cr42">귀구</a></th><td>8</td><td>10</td><td>물기: 공격 3 (60%)<br>지키기: 짝에게 막기 4 (40%)</td><td>붉은 개와 검은 개가 늘 한 쌍으로 나온다. 개 재주를 가르쳐 준다</td></tr>
+              <tr><th scope="row"><a href="/posts/korean-folklore-research/#cr43">금두꺼비</a></th><td>14</td><td>8</td><td>혀 치기: 공격 4 (50%)<br>금빛 울음: 자기 보호막 4 (30%)<br>행운 모으기: 힘 모으기, 다음 차례 혀 치기 8 (20%)</td><td>쓰러뜨리면 엽전 +3. 두꺼비 재주를 가르쳐 준다</td></tr>
+              </tbody>
+            </table></div>
+            <div class="table-scroll" role="region" aria-label="마을 무리" tabindex="0"><table>
+              <thead><tr><th scope="col">무리</th><th scope="col">엽전</th><th scope="col">평균 잃는 체력</th></tr></thead>
+              <tbody>
+              <tr><th scope="row">도깨비 1</th><td>4</td><td>약 5</td></tr>
+              <tr><th scope="row">귀구 한 쌍</th><td>6</td><td>약 5</td></tr>
+              <tr><th scope="row">금두꺼비 1</th><td>7</td><td>약 5</td></tr>
+              <tr><th scope="row">금두꺼비 1 + 귀구 1</th><td>9</td><td>약 9</td></tr>
+              </tbody>
+            </table></div>
+            <p class="table-note">평균 잃는 체력은 나비가 체력 30, 속도 10, 재주 없음일 때 2,000번 돌린 계산값이다.</p>
+          </section>
+          <section id="river" aria-labelledby="river-title">
+            <h3 id="river-title">강</h3>
+            <div class="table-scroll" role="region" aria-label="강 잡요괴" tabindex="0"><table class="wide-table">
+              <thead><tr><th scope="col">요괴</th><th scope="col">체력</th><th scope="col">속도</th><th scope="col">행동 (확률)</th><th scope="col">특징</th></tr></thead>
+              <tbody>
+              <tr><th scope="row"><a href="/posts/korean-folklore-research/#cr41">가사어</a></th><td>8</td><td>12</td><td>튀어 오르기: 공격 3 (60%)<br>물 튀기기: 나비를 느리게 한다 (40%)</td><td>가사 무늬의 붉은 물고기. 셋이 떼로 다닌다</td></tr>
+              <tr><th scope="row"><a href="/posts/korean-folklore-research/#cr322">자라</a></th><td>20</td><td>8</td><td>물기: 공격 5 (40%)<br>목 숨기: 막기 8 (35%)<br>구슬 머금기: 힘 모으기, 다음 차례 구슬 뱉기 9 (25%)</td><td>먹이를 주면 구슬로 보답한다는 자라. 자라 재주를 가르쳐 준다</td></tr>
+              <tr><th scope="row"><a href="/posts/korean-folklore-research/#cr240">용마</a></th><td>18</td><td>12</td><td>앞발 차기: 공격 6 (50%)<br>날뛰기: 공격 4를 두 번 (30%)<br>투레질: 힘 모으기, 다음 차례 뒷발 차기 10 (20%)</td><td>폭포 아래 사는 푸른 말. 말 재주를 가르쳐 준다</td></tr>
+              </tbody>
+            </table></div>
+            <div class="table-scroll" role="region" aria-label="강 무리" tabindex="0"><table>
+              <thead><tr><th scope="col">무리</th><th scope="col">엽전</th><th scope="col">평균 잃는 체력</th></tr></thead>
+              <tbody>
+              <tr><th scope="row">가사어 3</th><td>8</td><td>약 11</td></tr>
+              <tr><th scope="row">자라 1 + 가사어 1</th><td>6</td><td>약 6</td></tr>
+              <tr><th scope="row">용마 1</th><td>4</td><td>약 10</td></tr>
+              <tr><th scope="row">자라 1</th><td>4</td><td>약 4</td></tr>
+              </tbody>
+            </table></div>
+            <p class="table-note">평균 잃는 체력은 나비가 체력 36, 속도 12, 말 재주(돌진)일 때 2,000번 돌린 계산값이다.</p>
+          </section>
+          <section id="mountain" aria-labelledby="mountain-title">
+            <h3 id="mountain-title">산</h3>
+            <div class="table-scroll" role="region" aria-label="산 잡요괴" tabindex="0"><table class="wide-table">
+              <thead><tr><th scope="col">요괴</th><th scope="col">체력</th><th scope="col">속도</th><th scope="col">행동 (확률)</th><th scope="col">특징</th></tr></thead>
+              <tbody>
+              <tr><th scope="row"><a href="/posts/korean-folklore-research/#cr46">목객</a></th><td>12</td><td>12</td><td>솔방울 던지기: 공격 5 (50%)<br>나무 위로: 다음 자기 차례까지 공격이 닿지 않는다 (30%)<br>간지럼: 나비를 헷갈리게 한다 (20%)</td><td>나무를 날쌔게 타는 아이만 한 산 요괴</td></tr>
+              <tr><th scope="row"><a href="/posts/korean-folklore-research/#cr329">현구</a></th><td>34</td><td>8</td><td>등 밀기: 공격 8 (40%)<br>흰 기운: 자기 보호막 8 (30%)<br>천둥 울음: 공격 5, 나비를 느리게 한다 (30%)</td><td>아이들과 친한 큰 거북. 울음이 천둥 같다. 거북 재주를 가르쳐 준다</td></tr>
+              <tr><th scope="row"><a href="/posts/korean-folklore-research/#cr179">삼각록</a></th><td>18</td><td>12</td><td>뿔 받기: 공격 8 (50%)<br>뛰어오르기: 자기 다음 차례를 5 당긴다 (25%)<br>상서로운 빛: 요괴 모두 체력 4 회복 (25%)</td><td>뿔이 셋 달린 사슴. 비밀 재주의 주인이다</td></tr>
+              </tbody>
+            </table></div>
+            <div class="table-scroll" role="region" aria-label="산 무리" tabindex="0"><table>
+              <thead><tr><th scope="col">무리</th><th scope="col">엽전</th><th scope="col">평균 잃는 체력</th></tr></thead>
+              <tbody>
+              <tr><th scope="row">목객 2</th><td>6</td><td>약 7</td></tr>
+              <tr><th scope="row">현구 1</th><td>4</td><td>약 11</td></tr>
+              <tr><th scope="row">삼각록 1 + 목객 1</th><td>6</td><td>약 13</td></tr>
+              <tr><th scope="row">삼각록 1</th><td>4</td><td>약 7</td></tr>
+              </tbody>
+            </table></div>
+            <p class="table-note">평균 잃는 체력은 나비가 체력 42, 속도 12, 말 재주(돌진)일 때 2,000번 돌린 계산값이다.</p>
+          </section>
+        </section>
+
+        <section id="check" aria-labelledby="check-title">
+          <h2 id="check-title">계산과 조정</h2>
+          <p>나비가 순서 막대를 읽고, 다음 자기 차례 전에 들어올 공격이 6 이상이면 웅크리고, 아니면 체력이 가장 적은 요괴를 돌진이나 할퀴기로 치는 단순한 전략으로 무리마다 2,000번씩 돌렸다.</p>
+          <ul>
+            <li><strong>처음 수치로는 마을이 너무 셌다.</strong> 도깨비 둘 무리에서 평균 체력 25를 잃고 넷 중 한 번은 졌다. 도깨비 체력을 14에서 10으로, 공격을 5에서 4로 낮추고 도깨비 둘 무리는 뺐다.</li>
+            <li><strong>산은 반대로 너무 쉬웠다.</strong> 현구 한 마리에 평균 3만 잃었다. 현구, 목객, 삼각록의 공격과 체력을 올렸다.</li>
+            <li><strong>무거운 요괴끼리 섞인 무리는 뺐다.</strong> 자라와 용마 무리는 스무 번에 열아홉 번, 용마와 가사어 무리는 열에 네 번 졌다.</li>
+            <li>지금은 한 번 싸울 때 마을 5~9, 강 4~11, 산 7~13을 잃는다. 쉬는 칸과 레벨업 회복(3)으로 버틸 수 있는 정도다.</li>
+          </ul>
+          <p class="image-credit">계산 코드는 <a href="https://github.com/nyimpe/nyimpe.github.io/tree/main/docs/turn-based-roguelike-balance">docs/turn-based-roguelike-balance</a>에 있다. 요괴 이름은 <a href="/posts/korean-folklore-research/">한국 괴물·귀신</a>의 해당 항목으로 연결되고, 행동과 수치는 이 기획을 위해 새로 붙였다. 이름난 요괴는 다음 글에서 정한다.</p>
+        </section>
+        <p class="post-back"><a href="/">← 전체 글 목록</a></p>
+      </article>
+    </main>
+    <footer lang="en" class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>
