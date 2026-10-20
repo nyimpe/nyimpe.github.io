@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="고양이 요괴 나비의 꼬리 수행 턴제 로그라이크 기획 1~10편을 한 장에 모은 요약. 한 판의 흐름, 핵심 숫자, 시스템별 요약, 아직 정하지 않은 것.">
+    <title>턴제 로그라이크 기획 11 — 한눈에 보기 · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/turn-based-roguelike-overview/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="턴제 로그라이크 기획 11 — 한눈에 보기">
+    <meta property="og:description" content="고양이 요괴 나비의 꼬리 수행 턴제 로그라이크 기획 1~10편을 한 장에 모은 요약. 한 판의 흐름, 핵심 숫자, 시스템별 요약, 아직 정하지 않은 것.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/turn-based-roguelike-overview/">
+    <meta property="og:image" content="https://nyimpe.github.io/images/turn-based-roguelike-screens/03-river-leader.webp">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=writing" aria-label="글쓰기" title="글쓰기"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post design-post">
+        <header class="post-header">
+          <h1>턴제 로그라이크 기획 11 — 한눈에 보기</h1>
+          <time datetime="2026-10-20">2026.10.20</time>
+          <p class="image-credit">1~10편의 요약 · 자세한 내용과 근거는 각 편에 있다 · 수치는 모두 초안이다</p>
+        </header>
+
+        <p><strong>꼬리가 하나뿐인 어린 고양이 요괴 나비가 꼬리 아홉 달린 큰 요괴가 되려고 마을, 강, 산을 지나는 턴제 로그라이크다.</strong> 슬레이 더 스파이어처럼 판마다 지도와 보상이 바뀌지만, 덱 대신 요괴에게 배우는 <strong>재주</strong>로 강해진다. 지면 툇마루로 돌아와 낮잠을 자고, 판을 넘어 남는 <strong>꼬리</strong>로 조금씩 수행이 쌓인다.</p>
+
+        <figure class="concept-shot">
+          <a href="/images/turn-based-roguelike-screens/03-river-leader.webp"><img src="/images/turn-based-roguelike-screens/03-river-leader.webp" width="1280" height="720" loading="lazy" decoding="async" alt="전투 화면 시안. 맨 위 순서 막대에 나비와 물고기 얼굴 여덟 개가 행동 순서대로 놓여 있고, 물가의 고양이 나비와 폭포 앞에서 뛰어오른 물고기 우두머리가 겨룬다. 아래에 기술 버튼 네 개가 있다."></a>
+          <figcaption>강 우두머리전 시안 (<a href="/posts/turn-based-roguelike-screens/">5편</a>, <a href="/posts/turn-based-roguelike-turn-order/">6편</a>). 위쪽 막대에 다음 여덟 차례가 보인다.</figcaption>
+        </figure>
+
+        <nav class="post-toc" aria-label="목차"><ol>
+          <li><a href="#sheet">게임 한 장</a></li>
+          <li><a href="#run">한 판의 흐름</a></li>
+          <li><a href="#numbers">핵심 숫자</a></li>
+          <li><a href="#systems">시스템별 요약</a></li>
+          <li><a href="#terms">1편 용어와 지금 용어</a></li>
+          <li><a href="#changed">중간에 바뀐 것</a></li>
+          <li><a href="#open">아직 정하지 않은 것</a></li>
+          <li><a href="#posts">편별 목록</a></li>
+        </ol></nav>
+
+        <section id="sheet" aria-labelledby="sheet-title">
+          <h2 id="sheet-title">게임 한 장</h2>
+          <div class="table-scroll" role="region" aria-label="게임 개요" tabindex="0"><table>
+            <tbody>
+              <tr><th scope="row">장르</th><td>턴제 로그라이크. 덱 없이 재주로 빌드를 만든다</td></tr>
+              <tr><th scope="row">주인공</th><td>나비. 꼬리 하나인 어린 고양이 요괴. 생김새는 이 블로그의 주황·흰 픽셀 고양이</td></tr>
+              <tr><th scope="row">분위기</th><td>밝고 장난스럽다. 요괴는 적이 아니라 겨루기를 좋아하는 맞수다</td></tr>
+              <tr><th scope="row">한 판</th><td>30~40분. 마을, 강, 산을 지나 산꼭대기의 꼬리 아홉 큰 고양이와 겨룬다</td></tr>
+              <tr><th scope="row">전투</th><td>속도에 따라 차례가 오고, 화면 위 순서 막대에 다음 여덟 차례가 보인다. 한 차례에 기술 하나</td></tr>
+              <tr><th scope="row">판 안 성장</th><td>동네 우두머리를 이기면 재주를 하나 배우고, 레벨업 포인트로 재주 칸을 찍는다</td></tr>
+              <tr><th scope="row">영구 성장</th><td>수행이 쌓이면 꼬리가 하나씩 늘고, 꼬리마다 힘이 생긴다</td></tr>
+              <tr><th scope="row">자료</th><td><a href="/posts/korean-folklore-research/">한국 괴물·귀신</a>의 요괴들이 맞수와 유물, 사건이 된다</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section id="run" aria-labelledby="run-title">
+          <h2 id="run-title">한 판의 흐름</h2>
+          <ol>
+            <li><strong>툇마루:</strong> 베개 속 작은 닭이 깨우면 출발한다.</li>
+            <li><strong>마을:</strong> 갈림길 지도와 우두머리가 처음부터 보인다. 잡요괴, 이름난 요괴, 쉬는 칸, 도깨비 장터, 사건, 보물 칸을 골라 지난다. 끝에서 <strong>도깨비 김서방</strong>(체력 40)을 이기면 첫 재주를 배운다.</li>
+            <li><strong>강:</strong> 같은 방식으로 지나 <strong>용이 되고 싶은 물고기</strong>(55)를 이기면 두 번째 재주를 배운다.</li>
+            <li><strong>산:</strong> <strong>숨바꼭질 털북숭이</strong>(70)를 이기면 두 재주를 섞은 기술이 생긴다.</li>
+            <li><strong>산꼭대기:</strong> <strong>꼬리 아홉 큰 고양이</strong>(100)를 처음 이기면 아홉 번째 꼬리를 받는다. 첫 엔딩이다.</li>
+            <li><strong>지면:</strong> 툇마루로 돌아가 낮잠을 잔다. 재주, 유물, 엽전은 잊고, 수행과 꼬리, 재주 숙련은 남는다.</li>
+          </ol>
+        </section>
+
+        <section id="numbers" aria-labelledby="numbers-title">
+          <h2 id="numbers-title">핵심 숫자</h2>
+          <div class="table-scroll" role="region" aria-label="핵심 숫자" tabindex="0"><table>
+            <thead><tr><th scope="col">항목</th><th scope="col">값</th><th scope="col">어디에</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">나비</th><td>체력 30, 속도 10. 레벨업마다 최대 체력 +3, 체력 3 회복, 포인트 1</td><td><a href="/posts/turn-based-roguelike-combat/">4편</a>, <a href="/posts/turn-based-roguelike-skill-numbers/">7편</a></td></tr>
+              <tr><th scope="row">경험치</th><td>잡요괴 칸 3, 이름난 요괴 6, 우두머리 10. 10마다 레벨업, 한 판 7~8번</td><td><a href="/posts/turn-based-roguelike-skill-numbers/">7편</a></td></tr>
+              <tr><th scope="row">기술</th><td>할퀴기 피해 6, 웅크리기 막기 6. 최대 넷, 섞은 기술은 다섯째 칸</td><td><a href="/posts/turn-based-roguelike-combat/">4편</a></td></tr>
+              <tr><th scope="row">차례</th><td>간격 = 120 ÷ 속도. 같으면 나비 먼저. 막대는 여덟 칸</td><td><a href="/posts/turn-based-roguelike-turn-order/">6편</a></td></tr>
+              <tr><th scope="row">상태</th><td>헷갈림, 느림(속도 −2), 보호막</td><td><a href="/posts/turn-based-roguelike-combat/">4편</a>, <a href="/posts/turn-based-roguelike-turn-order/">6편</a></td></tr>
+              <tr><th scope="row">재주</th><td>여섯. 재주마다 기술 하나와 칸 여섯. 다 채우려면 5포인트</td><td><a href="/posts/turn-based-roguelike-growth/">3편</a>, <a href="/posts/turn-based-roguelike-skill-numbers/">7편</a></td></tr>
+              <tr><th scope="row">꼬리</th><td>아홉. 2~8번은 열 판에서 열다섯 판쯤, 9번은 첫 승리</td><td><a href="/posts/turn-based-roguelike-growth/">3편</a></td></tr>
+              <tr><th scope="row">요괴</th><td>잡요괴 아홉(무리 열둘), 이름난 요괴 아홉, 우두머리 셋과 최종 하나</td><td><a href="/posts/turn-based-roguelike-yokai/">8편</a>, <a href="/posts/turn-based-roguelike-elites/">9편</a>, <a href="/posts/turn-based-roguelike-combat/">4편</a></td></tr>
+              <tr><th scope="row">잃는 체력</th><td>잡요괴 한 번 마을 5~9, 강 4~11, 산 7~13. 이름난 요괴 한 번 마을 약 12, 강 12~16, 산 14~18</td><td><a href="/posts/turn-based-roguelike-yokai/">8편</a>, <a href="/posts/turn-based-roguelike-elites/">9편</a></td></tr>
+              <tr><th scope="row">엽전</th><td>한 판 약 150. 유물 15·25·40, 떡 8, 칸 되돌리기 10, 다시 뽑기 표 12</td><td><a href="/posts/turn-based-roguelike-relics/">10편</a></td></tr>
+              <tr><th scope="row">유물·사건</th><td>유물 스물넷(흔함·드묾·귀함 여덟씩), 사건 아홉</td><td><a href="/posts/turn-based-roguelike-relics/">10편</a></td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section id="systems" aria-labelledby="systems-title">
+          <h2 id="systems-title">시스템별 요약</h2>
+
+          <h3>지도와 칸 · <a href="/posts/turn-based-roguelike-skeleton/">1편</a>, <a href="/posts/turn-based-roguelike-relics/">10편</a></h3>
+          <p>동네마다 갈림길 지도가 처음부터 보이고, 우두머리도 미리 공개된다. 칸은 잡요괴, 이름난 요괴(유물), 쉬는 칸(낮잠 또는 수련), 도깨비 장터, 사건, 보물(유물 확정) 여섯 가지다. 무작위는 늘 미리 보여 주고, 보상은 늘 후보 셋 가운데 고른다.</p>
+
+          <h3>재주 · <a href="/posts/turn-based-roguelike-growth/">3편</a>, <a href="/posts/turn-based-roguelike-skill-numbers/">7편</a></h3>
+          <p>도깨비(교란), 개(방어·반격), 말(공격·속도), 거북(보호·회복), 두꺼비(운), 자라(모으기) 여섯이다. 재주마다 기술 하나와 “길 위에서” 효과 하나가 있고, 두 갈래가 그 기술을 서로 다른 방향으로 바꾼다. 갈래의 두 번째 칸은 판마다 후보가 바뀌어 같은 재주도 매번 조금씩 다르게 자란다.</p>
+
+          <h3>꼬리 · <a href="/posts/turn-based-roguelike-growth/">3편</a></h3>
+          <p>꼬리 2개부터 8개까지 힘 둘(체력, 시작 포인트)과 선택지 다섯(재주 해금 둘, 다시 뽑기, 지도 미리 보기, 첫 재주 고르기)이 생긴다. 첫 승리는 꼬리 없이도 가능하게 맞춘다.</p>
+
+          <h3>전투 · <a href="/posts/turn-based-roguelike-combat/">4편</a>, <a href="/posts/turn-based-roguelike-turn-order/">6편</a></h3>
+          <p>속도로 차례가 정해지고, 순서 막대에 다음 여덟 차례와 요괴의 행동이 보인다. 막기는 막은 쪽의 다음 차례에 사라지므로 큰 공격 바로 앞 차례에 막는 것이 기본이다. 말 재주는 차례를 당기고, 도깨비 재주는 요괴의 차례를 밀고, 개 재주는 짝꿍 차례를 끼워 넣는다.</p>
+
+          <h3>요괴 · <a href="/posts/turn-based-roguelike-yokai/">8편</a>, <a href="/posts/turn-based-roguelike-elites/">9편</a>, <a href="/posts/turn-based-roguelike-combat/">4편</a></h3>
+          <p>잡요괴는 확률로 행동하고 다음 행동만 보인다. 이름난 요괴와 우두머리는 정해진 순서를 되풀이하고 두 차례 앞까지 보인다. 이름난 요괴는 저마다 버릇이 하나 있다. 신발을 훔쳐 도망치는 야광, 껍질을 벗으면 빨라지는 거해, 먼저 덤비지 않는 산령 같은 식이다.</p>
+
+          <h3>유물·장터·사건 · <a href="/posts/turn-based-roguelike-relics/">10편</a></h3>
+          <p>유물은 모두 자료 속 이야기에서 왔다. 체는 야광을 붙잡고, 소 고삐는 산짐승을 멈춘다. 어떤 유물은 이름난 요괴나 상점, 사건 칸으로 길을 끌어당긴다. 도깨비 장터에서는 유물, 떡, 칸 되돌리기, 다시 뽑기 표를 판다.</p>
+
+          <h3>화면 · <a href="/posts/turn-based-roguelike-screens/">5편</a></h3>
+          <p>320×180 픽셀 캔버스를 4배로 키운 시안 세 장이 있다. 재주 고르기, 강 동네 지도, 강 우두머리전이다. Codex로 다시 그릴 프롬프트도 준비해 두었다.</p>
+        </section>
+
+        <section id="terms" aria-labelledby="terms-title">
+          <h2 id="terms-title">1편 용어와 지금 용어</h2>
+          <p>1편은 세계관을 정하기 전에 쓴 뼈대라 일반적인 말을 썼다. 지금은 이렇게 부른다.</p>
+          <div class="table-scroll" role="region" aria-label="용어 대응" tabindex="0"><table>
+            <thead><tr><th scope="col">1편</th><th scope="col">지금</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">견습생</th><td>꼬리 하나인 나비</td></tr>
+              <tr><th scope="row">구역</th><td>동네 (마을, 강, 산)</td></tr>
+              <tr><th scope="row">전직, 직업</th><td>재주</td></tr>
+              <tr><th scope="row">직업 트리</th><td>재주 칸</td></tr>
+              <tr><th scope="row">거점</th><td>나비네 툇마루</td></tr>
+              <tr><th scope="row">영구 재화, 영구 트리</th><td>수행, 꼬리</td></tr>
+              <tr><th scope="row">직업 숙련</th><td>재주 숙련</td></tr>
+              <tr><th scope="row">저주 단계</th><td>수행 단계 (아홉 번째 꼬리 뒤에 열림)</td></tr>
+              <tr><th scope="row">상점</th><td>도깨비 장터</td></tr>
+              <tr><th scope="row">정예</th><td>이름난 요괴</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+
+        <section id="changed" aria-labelledby="changed-title">
+          <h2 id="changed-title">중간에 바뀐 것</h2>
+          <ul>
+            <li><strong>세계관:</strong> 처음에는 한 해의 소문이 귀신이 되는 어두운 그믐밤 이야기였다. 너무 어둡고 복잡해서 밝은 고양이 요괴의 수행 이야기로 바꿨다.</li>
+            <li><strong>차례:</strong> 4편의 “나비가 먼저, 그다음 요괴”를 6편에서 속도와 순서 막대로 바꿨다. 악튜러스의 상단 순서 표시를 참고했다.</li>
+            <li><strong>느림:</strong> “쉬는 턴 +1”에서 “속도 −2”로 바뀌었다.</li>
+            <li><strong>레벨업:</strong> 7편의 계산에서 체력 30으로는 강 우두머리를 넘기 어려워, 레벨업마다 최대 체력 +3을 넣었다.</li>
+            <li><strong>요괴 수치:</strong> 8·9편에서 계산을 돌려 마을은 약하게, 산은 세게 다시 맞췄다.</li>
+          </ul>
+        </section>
+
+        <section id="open" aria-labelledby="open-title">
+          <h2 id="open-title">아직 정하지 않은 것</h2>
+          <ul>
+            <li>섞은 기술의 나머지 열두 조합, 비밀 재주(삼각록)의 수치</li>
+            <li>판마다 다른 우두머리가 나오도록 동네마다 우두머리 둘씩 더</li>
+            <li>꼬리 아홉 큰 고양이의 행동 하나하나와 수치</li>
+            <li>꼬리 하나를 얻는 데 드는 수행의 양, 수행 단계의 목록</li>
+            <li>아트 규격(기준 해상도, 스프라이트 크기, 애니메이션)과 실제 스프라이트</li>
+            <li>마을 한 동네를 실제로 해 볼 수 있는 시제품</li>
+          </ul>
+        </section>
+
+        <section id="posts" aria-labelledby="posts-title">
+          <h2 id="posts-title">편별 목록</h2>
+          <div class="table-scroll" role="region" aria-label="편별 목록" tabindex="0"><table>
+            <thead><tr><th scope="col">편</th><th scope="col">글</th><th scope="col">정한 것</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1</th><td><a href="/posts/turn-based-roguelike-skeleton/">큰 뼈대</a></td><td>갈림길 지도, 구역마다의 전직, 판을 넘는 영구 성장</td></tr>
+              <tr><th scope="row">2</th><td><a href="/posts/turn-based-roguelike-world/">꼬리 수행 세계관</a></td><td>꼬리 하나인 고양이 요괴 나비, 규칙 셋, 마을·강·산</td></tr>
+              <tr><th scope="row">3</th><td><a href="/posts/turn-based-roguelike-growth/">재주와 꼬리</a></td><td>재주 여섯의 생김새, 꼬리 아홉의 힘</td></tr>
+              <tr><th scope="row">4</th><td><a href="/posts/turn-based-roguelike-combat/">전투와 우두머리</a></td><td>한 차례에 기술 하나, 기술 넷, 상태 셋, 우두머리 셋과 최종</td></tr>
+              <tr><th scope="row">5</th><td><a href="/posts/turn-based-roguelike-screens/">플레이 화면 시안</a></td><td>재주 고르기, 강 지도, 강 우두머리전 픽셀 목업</td></tr>
+              <tr><th scope="row">6</th><td><a href="/posts/turn-based-roguelike-turn-order/">순서 막대</a></td><td>속도에 따른 차례, 다음 여덟 차례가 보이는 막대</td></tr>
+              <tr><th scope="row">7</th><td><a href="/posts/turn-based-roguelike-skill-numbers/">재주 여섯의 수치</a></td><td>칸마다 수치, 레벨업, 섞은 기술, 균형 점검</td></tr>
+              <tr><th scope="row">8</th><td><a href="/posts/turn-based-roguelike-yokai/">동네별 잡요괴</a></td><td>잡요괴 아홉, 무리 열둘, 무리마다 잃는 체력</td></tr>
+              <tr><th scope="row">9</th><td><a href="/posts/turn-based-roguelike-elites/">동네별 이름난 요괴</a></td><td>버릇 하나씩 가진 이름난 요괴 아홉</td></tr>
+              <tr><th scope="row">10</th><td><a href="/posts/turn-based-roguelike-relics/">유물, 상점, 사건</a></td><td>유물 스물넷, 도깨비 장터, 사건 아홉, 쉬는 칸·보물 칸</td></tr>
+            </tbody>
+          </table></div>
+        </section>
+        <p class="post-back"><a href="/">← 전체 글 목록</a></p>
+      </article>
+    </main>
+    <footer lang="en" class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>
