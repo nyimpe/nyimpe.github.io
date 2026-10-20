@@ -1,6 +1,6 @@
 # 턴제 로그라이크 기획 5 — 플레이 화면 시안
 
-`/posts/turn-based-roguelike-screens/`에 실린 세 장의 화면 시안을 만드는 스크립트다.
+`/posts/turn-based-roguelike-overview/`(턴제 로그라이크 기획 — 묘수)에 실린 세 장의 화면 시안을 만드는 스크립트다.
 AI 이미지 생성이 아니라 Pillow로 320×180 캔버스에 픽셀을 직접 그린 뒤 4배로 키우고,
 글자만 최종 해상도(1280×720)에서 Apple SD Gothic Neo로 얹었다.
 주인공 나비는 `public/cat.png`를 줄여 팔레트에 맞춘 것이다.
