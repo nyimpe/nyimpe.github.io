@@ -35,3 +35,17 @@ toggle.addEventListener("click", () => {
 preferredTheme.addEventListener("change", () => {
   if (!savedTheme) applyTheme(preferredTheme.matches ? "dark" : "light");
 });
+
+// The menu marks the current page with a filled icon instead of a highlight.
+const category = new URLSearchParams(window.location.search).get("category");
+const currentHref = window.location.pathname === "/" && (category === "game" || category === "writing")
+  ? `/?category=${category}`
+  : window.location.pathname;
+for (const link of document.querySelectorAll(".site-nav > a")) {
+  const icon = link.querySelector("use");
+  const href = icon?.getAttribute("href").replace(/-fill$/, "");
+  const isCurrent = link.getAttribute("href") === currentHref;
+  if (isCurrent) link.setAttribute("aria-current", "page");
+  else link.removeAttribute("aria-current");
+  if (icon && !href.endsWith("#github")) icon.setAttribute("href", isCurrent ? `${href}-fill` : href);
+}

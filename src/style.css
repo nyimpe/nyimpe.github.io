@@ -55,9 +55,8 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .site-header { position: relative; display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; }
 .header-content { flex: 1; min-width: 0; }
 .site-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .5em; margin-bottom: .5em; }
-.site-nav > a { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 3px; }
+.site-nav > a, .site-nav > a:visited, .site-nav > a:hover { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 3px; color: var(--text); }
 .site-nav > a:hover { background: var(--hover); }
-.site-nav > a[aria-current="page"] { color: var(--text); background: var(--hover); box-shadow: inset 0 -2px var(--link); }
 .site-nav svg { display: block; width: 20px; height: 20px; }
 .theme-toggle { margin-left: auto; width: 32px; height: 32px; padding: 0; border: 1px solid var(--border); border-radius: 3px; color: var(--text); background: var(--control); font-size: 1.2em; line-height: 1; }
 .theme-toggle:hover { background: var(--hover); }

@@ -13,12 +13,3 @@ const heading = document.getElementById("posts-title");
 heading.textContent = labels[category];
 heading.lang = category === "writing" ? "ko" : "en";
 document.title = `${category === "all" ? "Home" : labels[category]} · nyimpe`;
-
-const activeHref = category === "all" ? "/" : `/?category=${category}`;
-for (const link of document.querySelectorAll(".site-nav > a")) {
-  if (link.getAttribute("href") === activeHref) {
-    link.setAttribute("aria-current", "page");
-  } else {
-    link.removeAttribute("aria-current");
-  }
-}
