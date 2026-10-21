@@ -120,7 +120,9 @@ hr { border: 0; border-top: 1px solid var(--border); }
   .post-header h1 { font-size: 1.75em; }
   .post-list { padding: 0; }
   .post-list li { gap: .75em; padding: .6em 0; }
-  .post-list-entry { grid-template-columns: minmax(0, 1fr); gap: .1em; }
+  .post-list-entry { align-items: center; gap: .75em; }
+  .post-list a { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .post-list time { font-size: .75em; }
   .research-post .creature-list { grid-template-columns: minmax(0, 1fr); }
 }
 
