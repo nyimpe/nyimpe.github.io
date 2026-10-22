@@ -1,6 +1,6 @@
 {
   "base": "http://127.0.0.1:8082",
-  "checkedAt": "2026-10-22T23:32:15.130Z",
+  "checkedAt": "2026-10-22T23:34:32.953Z",
   "scope": "Article browser automation; not actual mobile touch, Roblox runtime, multiplayer, or gameplay validation",
   "layouts": [
     {
@@ -39,8 +39,8 @@
   "consoleErrors": [],
   "failedRequests": [],
   "articleStatus": 200,
-  "builtArticleSha256": "0a978b6359877ade81664bf8bcc76b700c9c21fbc05cceedd694bb239c2361d0",
-  "servedArticleSha256": "0a978b6359877ade81664bf8bcc76b700c9c21fbc05cceedd694bb239c2361d0",
+  "builtArticleSha256": "abd3855634f973cb194a6ea833b4547d86cbfa60bc958ef9104f677178178cf4",
+  "servedArticleSha256": "abd3855634f973cb194a6ea833b4547d86cbfa60bc958ef9104f677178178cf4",
   "structure": {
     "h1": "로블록스 기획안 발굴 3 — 인기 게임에서 가져온 여섯 방향",
     "concepts": 6,
@@ -70,5 +70,9 @@
     "1280px light process diagram",
     "390px writing list with date on one line"
   ],
-  "visualFollowup": "Removed duplicate concept numbering in TOC; rebuilt and reran the complete local article checks successfully."
+  "consistencyChecks": [
+    "20-second practice plus 25-second installation leaves time within the proposed 60-second onboarding gate",
+    "Room judging defines votes, averaging, minimum sample and tie handling",
+    "Six concepts and all displayed popularity metrics match the research JSON"
+  ]
 }
