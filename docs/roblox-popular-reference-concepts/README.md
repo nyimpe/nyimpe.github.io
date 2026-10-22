@@ -6,7 +6,7 @@
 - `roblox-snapshot.json`: 공식 place → universe 확인과 공식 게임 API 응답. `playing`은 조회 순간 인원, `visits`는 중복을 포함하는 누적 방문이다. 고유 이용자나 매출이 아니다.
 - `steam-snapshot.json`: 상점의 영어 누적 리뷰 표시와 실패한 전체 언어 API 조회를 함께 보존한다. API는 HTTP 200이었지만 JSON 대신 HTML을 반환했으며 유효한 0건 관측이 아니다. 상점 표본을 전체 언어 리뷰·판매량으로 바꾸어 해석하지 않는다.
 - `verification.local.json`: 빌드·구조·브라우저 화면·테마·목차·홈 필터·링크 확인.
-- `verification.live.json`: 배포 후 공개 URL의 응답·배포 파일 해시·동일 브라우저 경로 확인. 공개 검증 뒤 추가한다.
+- `verification.live.json`: 배포 후 공개 URL의 응답·배포 파일 해시·동일 브라우저 경로 확인. 2026-10-23 공개 검증을 완료했다.
 
 ## 중복 검토 범위
 
