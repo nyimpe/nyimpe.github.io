@@ -1,0 +1,113 @@
+{
+  "checked_date": "2026-10-22",
+  "timezone": "Asia/Seoul",
+  "scope": "문헌 시장 조사와 Roblox 구현 기획. 게임 제작 또는 직접 플레이 검증 아님.",
+  "selection": "공식 성과 지표가 있는 네 가지 반복 판단 유형의 목적 표집. 전체 시장 순위나 성공 확률 추정 아님.",
+  "metrics": [
+    {
+      "game": "Teamfight Tactics",
+      "metric": "monthly players",
+      "value_lower_bound": 33000000,
+      "comparison": ">",
+      "period": "September 2019",
+      "source": "https://teamfighttactics.leagueoflegends.com/en-gb/news/dev/tft-update-numbers-and-what-s-next/",
+      "limitation": "역사적 공식 발표이며 2026년 MAU가 아님"
+    },
+    {
+      "game": "Backpack Battles",
+      "metric": "early access units sold worldwide",
+      "value_lower_bound": 1000000,
+      "comparison": ">",
+      "published": "2025-06-16",
+      "source": "https://game.shochiku.co.jp/news/over-1-million-copies-sold-worldwide-a-pvp-inventory-management-auto-battler-backpack-battles-is-finally-releasing-full-1-0-version/",
+      "limitation": "발표 시점 누적 판매량, Roblox 수익성을 뜻하지 않음"
+    },
+    {
+      "game": "Mechabellum",
+      "metric": "recent review summary displayed on Steam store",
+      "window": "last 30 days as displayed on 2026-10-22",
+      "reviews": 401,
+      "positive_percent": 67,
+      "source": "https://store.steampowered.com/app/669330/Mechabellum/",
+      "limitation": "누적 전체 언어 API 표본과 기간 및 필터가 달라 직접 차이 비교 불가; 원인 미조사"
+    }
+  ],
+  "current_snapshots": [
+    "steam-snapshot.json",
+    "roblox-snapshot.json"
+  ],
+  "supporting_reference": {
+    "game": "Hearthstone Battlegrounds",
+    "source": "https://hearthstone.blizzard.com/en-us/news/23156373/hearthstone-battlegrounds",
+    "published": "2019-11-01",
+    "use": "구매·판매·새로고침·고정·결합·배치의 출시 당시 규칙",
+    "limitation": "최신 시즌 규칙 및 모드 단독 최신 MAU나 매출을 주장하지 않음"
+  },
+  "roblox_reference": {
+    "name": "OTOCHESS",
+    "source": "https://devforum.roblox.com/t/otochess-beta-testing/2097243",
+    "published": "2023-01-04",
+    "access": "검색에 색인된 제작자 글 확인. 직접 open은 bot challenge.",
+    "use": "베타 당시 여러 동시 참가자가 있어야 시작 가능한 조건",
+    "limitation": "현재 성공 여부와 운영 상태를 추론하지 않음"
+  },
+  "candidate_comparison": [
+    {
+      "candidate": "소규모 편성 대전",
+      "reference": [
+        "Super Auto Pets",
+        "Mechabellum",
+        "Hearthstone Battlegrounds"
+      ],
+      "decision": "구매 대 강화 대 앞뒤 배치",
+      "state": "5개 유닛, 6칸 배치, 골드, 승패",
+      "failure": "노출된 역할, 보호 연결 실패, 상성 대응 실패",
+      "recovery": "도전 안에서 재편성, 종료 후 새 조합",
+      "priority": "first prototype"
+    },
+    {
+      "candidate": "조립 로봇 대전",
+      "reference": [
+        "Backpack Battles"
+      ],
+      "decision": "새 무기 공간 대 냉각 연계",
+      "state": "몸체 점유 칸, 연결, 발열",
+      "failure": "과열 또는 상대에 대한 화력 부족",
+      "recovery": "부품 재배치",
+      "priority": "alternative if construction and visual identity are strongest"
+    },
+    {
+      "candidate": "2인 협동 방어",
+      "reference": [
+        "Mechabellum"
+      ],
+      "decision": "두 전선 투자와 역할 보완",
+      "state": "부대 배치, 보급, 공유 코어, 지원 이동",
+      "failure": "전선 돌파와 코어 소진",
+      "recovery": "부대 복구, 같은 적 순서 재도전, 이탈 시 제어 인계",
+      "priority": "alternative if co-op is primary"
+    }
+  ],
+  "prior_concept_check": {
+    "read": [
+      "posts/roblox-2d-to-3d-concepts/index.html",
+      "docs/roblox-2d-to-3d-concepts/concepts.json"
+    ],
+    "comparison": "기존 Pokémon × Dragon Quest Monsters는 탐사·수집·기술 계승·명령 전투. 이번 1안은 판 안의 구매·배치·자동전투.",
+    "keyword_search": "현재 posts 및 docs의 autobattler, 오토배틀, 자동전투, 백팩, 메카벨, 전략적 팀. Roblox 관련 최근 commit 이력 확인.",
+    "limit": "삭제된 모든 기획에 대한 전수 독창성 감사 아님"
+  },
+  "verification_not_performed": [
+    "직접 경쟁작 플레이",
+    "Roblox Studio 실행",
+    "실제 모바일 게임 입력",
+    "Roblox 다중 접속 및 저장 실패 재현",
+    "게임 밸런스",
+    "재미 및 리텐션",
+    "결제 및 매출"
+  ],
+  "art": {
+    "type": "HTML/CSS 배치 설명도",
+    "limit": "실제 게임 화면과 전투 시뮬레이션이 아님"
+  }
+}

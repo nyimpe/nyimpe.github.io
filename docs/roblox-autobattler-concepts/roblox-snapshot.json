@@ -1,0 +1,110 @@
+[
+  {
+    "placeId": 17569406428,
+    "universeId": 6014726446,
+    "retrieved_at": "2026-10-22T21:46:16.424278+09:00",
+    "source_url": "https://games.roblox.com/v1/games?universeIds=6014726446",
+    "resolver_url": "https://apis.roblox.com/universes/v1/places/17569406428/universe",
+    "votes_url": "https://games.roblox.com/v1/games/votes?universeIds=6014726446",
+    "game": [
+      {
+        "id": 6014726446,
+        "rootPlaceId": 17569406428,
+        "name": "Units Battlegrounds ⚔️",
+        "description": "Welcome to ⭐Units Battlegrounds⭐ \n\nThe new location is Live!  \n\nThe first game in Roblox in the Auto Battler genre!\nCollect different units and send them into battle! \n\n🏋️ Defeat your enemies and upgrade your units to become even stronger!\n💪 Fight other players and get rewards!\n💸 Collect units and trade with other players\n🔥 Upgrade your unit and be the most powerful!\n⚔️ Fight the raid boss!\n\n🤝 Join our group and get +10% coins!\n👑 Premium players receive +15% coins. \n\nJoin the group for codes and announcements!\n\nTags: Strategy, Tower Defense, TD, Battle, Unit Collection, Upgrade, Auto-Battle, Co-op, Single-Player, Solo, PvP, Boss Battles, Tactical, Fantasy, Synergy, Cooperative Play, Competitive Play, Leveling Up, Crafting, Enhancements, Gems, Gold, Bonus Weekend, RNG, Simulator, Auto Chess",
+        "sourceName": null,
+        "sourceDescription": null,
+        "creator": {
+          "id": 34611856,
+          "name": "Kemurox Fan Group",
+          "type": "Group",
+          "isRNVAccount": false,
+          "hasVerifiedBadge": false
+        },
+        "price": null,
+        "allowedGearGenres": [
+          "All"
+        ],
+        "allowedGearCategories": [],
+        "isGenreEnforced": false,
+        "copyingAllowed": false,
+        "playing": 22,
+        "visits": 73413610,
+        "maxPlayers": 18,
+        "created": "2024-05-21T18:20:29.26Z",
+        "updated": "2026-09-23T10:41:16.566Z",
+        "studioAccessToApisAllowed": false,
+        "createVipServersAllowed": false,
+        "universeAvatarType": "MorphToR15",
+        "genre": "All",
+        "genre_l1": "Action",
+        "genre_l2": "Battlegrounds & Fighting",
+        "untranslated_genre_l1": "action",
+        "isAllGenre": true,
+        "isFavoritedByUser": false,
+        "favoritedCount": 73063,
+        "canonicalUrlPath": "/games/17569406428/Units-Battlegrounds",
+        "isContentRestricted": false
+      }
+    ],
+    "votes": [
+      {
+        "id": 6014726446,
+        "upVotes": 101969,
+        "downVotes": 7024
+      }
+    ],
+    "interpretation": "valid point-in-time observation; visits are not unique users; playing is not daily average"
+  },
+  {
+    "placeId": 131532563270485,
+    "universeId": 7217696611,
+    "retrieved_at": "2026-10-22T21:46:17.447140+09:00",
+    "source_url": "https://games.roblox.com/v1/games?universeIds=7217696611",
+    "resolver_url": "https://apis.roblox.com/universes/v1/places/131532563270485/universe",
+    "votes_url": "https://games.roblox.com/v1/games/votes?universeIds=7217696611",
+    "game": [
+      {
+        "id": 0,
+        "rootPlaceId": 0,
+        "name": "[TITLE UNAVAILABLE]",
+        "description": "[DESCRIPTION UNAVAILABLE]",
+        "sourceName": null,
+        "sourceDescription": null,
+        "creator": {
+          "id": 0,
+          "name": "[UNKNOWN]",
+          "type": "User",
+          "isRNVAccount": false,
+          "hasVerifiedBadge": false
+        },
+        "price": null,
+        "allowedGearGenres": [],
+        "allowedGearCategories": [],
+        "isGenreEnforced": false,
+        "copyingAllowed": false,
+        "playing": 0,
+        "visits": 0,
+        "maxPlayers": 0,
+        "created": "0001-01-01T05:51:00Z",
+        "updated": "0001-01-01T05:51:00Z",
+        "studioAccessToApisAllowed": false,
+        "createVipServersAllowed": false,
+        "universeAvatarType": null,
+        "genre": null,
+        "isAllGenre": false,
+        "isFavoritedByUser": false,
+        "favoritedCount": 0,
+        "isContentRestricted": true
+      }
+    ],
+    "votes": [
+      {
+        "id": 7217696611,
+        "upVotes": 3,
+        "downVotes": 0
+      }
+    ],
+    "interpretation": "unavailable metadata; placeholder zero values excluded from analysis"
+  }
+]
