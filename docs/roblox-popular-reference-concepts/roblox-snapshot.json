@@ -1,0 +1,153 @@
+{
+  "checked_date": "2026-10-23",
+  "timezone": "Asia/Seoul",
+  "observations": [
+    {
+      "name": "Dress To Impress",
+      "place_id": 15101393044,
+      "universe_id": 5203828273,
+      "resolve_url": "https://apis.roblox.com/universes/v1/places/15101393044/universe",
+      "url": "https://games.roblox.com/v1/games?universeIds=5203828273",
+      "checked_at": "2026-10-22T23:23:29.712067+00:00",
+      "data": {
+        "id": 5203828273,
+        "rootPlaceId": 15101393044,
+        "name": "[🎃] Dress To Impress",
+        "description": "Create stunning outfits 👗💖⭐, and strut the runway to show off your unique style. Collaborate, compete, and explore a world of glamour with friends!\n\n⭐ Are you ready to be the TOP MODEL?\n👗 NEW ITEMS! Check them out.\n🍿 Vote for your favorite outfits!\n💃 Use poses on the runway to show off your outfit!\n\nFind more about Dress To Impress by joining our community.\nhttps://www.roblox.com/communities/17264167/Dress-To-Impress-Group#!/about",
+        "sourceName": null,
+        "sourceDescription": null,
+        "creator": {
+          "id": 17264167,
+          "name": "Dress To Impress Group",
+          "type": "Group",
+          "isRNVAccount": false,
+          "hasVerifiedBadge": true
+        },
+        "price": null,
+        "allowedGearGenres": [
+          "All"
+        ],
+        "allowedGearCategories": [],
+        "isGenreEnforced": false,
+        "copyingAllowed": false,
+        "playing": 74206,
+        "visits": 11212611135,
+        "maxPlayers": 13,
+        "created": "2023-10-18T09:11:36.563Z",
+        "updated": "2026-10-22T21:13:33.765Z",
+        "studioAccessToApisAllowed": false,
+        "createVipServersAllowed": false,
+        "universeAvatarType": "MorphToR15",
+        "genre": "All",
+        "genre_l1": "Roleplay & Avatar Sim",
+        "genre_l2": "Dress Up",
+        "untranslated_genre_l1": "roleplay_and_avatar_sim",
+        "isAllGenre": true,
+        "isFavoritedByUser": false,
+        "favoritedCount": 7655153,
+        "canonicalUrlPath": "/games/15101393044/Dress-To-Impress",
+        "isContentRestricted": false,
+        "isOfficiallyLicensed": false,
+        "isCommunityLicensed": false
+      }
+    },
+    {
+      "name": "Build A Boat For Treasure",
+      "place_id": 537413528,
+      "universe_id": 210851291,
+      "resolve_url": "https://apis.roblox.com/universes/v1/places/537413528/universe",
+      "url": "https://games.roblox.com/v1/games?universeIds=210851291",
+      "checked_at": "2026-10-22T23:23:29.713420+00:00",
+      "data": {
+        "id": 210851291,
+        "rootPlaceId": 537413528,
+        "name": "Build A Boat For Treasure",
+        "description": "Build your ship and set sail for your adventure!\r\n\r\nLiked the game? Don't forget to leave a Thumbs Up(👍) and Favorite(🌟) . Thank you!\r\n\r\nDon't forget to check out our group!\r\nhttps://www.roblox.com/My/Groups.aspx?gid=2782840\r\n\r\nGroup Perks:\r\n✨Member✨\r\n--- 25% more gold!\r\n💫Mega Member💫\r\n--- 300% more health!\r\n--- 25% more gold!\r\n🌟Royal Member🌟\r\n--- +4 Barrels Of TNT!\r\n--- 300% more health!\r\n--- 25% more gold!",
+        "sourceName": null,
+        "sourceDescription": null,
+        "creator": {
+          "id": 2782840,
+          "name": "Chillz Studios",
+          "type": "Group",
+          "isRNVAccount": false,
+          "hasVerifiedBadge": true
+        },
+        "price": null,
+        "allowedGearGenres": [
+          "Adventure"
+        ],
+        "allowedGearCategories": [],
+        "isGenreEnforced": true,
+        "copyingAllowed": false,
+        "playing": 10694,
+        "visits": 5235198854,
+        "maxPlayers": 7,
+        "created": "2016-11-02T15:36:44.187Z",
+        "updated": "2026-10-09T19:52:38.404Z",
+        "studioAccessToApisAllowed": false,
+        "createVipServersAllowed": false,
+        "universeAvatarType": "MorphToR15",
+        "genre": "Adventure",
+        "genre_l1": "Simulation",
+        "genre_l2": "Sandbox",
+        "untranslated_genre_l1": "simulation",
+        "isAllGenre": false,
+        "isFavoritedByUser": false,
+        "favoritedCount": 8553308,
+        "canonicalUrlPath": "/games/537413528/Build-A-Boat-For-Treasure",
+        "isContentRestricted": false,
+        "isOfficiallyLicensed": false,
+        "isCommunityLicensed": false
+      }
+    },
+    {
+      "name": "Blox Fruits",
+      "place_id": 2753915549,
+      "universe_id": 994732206,
+      "resolve_url": "https://apis.roblox.com/universes/v1/places/2753915549/universe",
+      "url": "https://games.roblox.com/v1/games?universeIds=994732206",
+      "checked_at": "2026-10-22T23:23:29.715506+00:00",
+      "data": {
+        "id": 994732206,
+        "rootPlaceId": 2753915549,
+        "name": "Blox Fruits",
+        "description": "OUT NOW: 🧲 Magnet + 🏝️ Sea 1 + MORE \nWelcome to Blox Fruits! Become a master swordsman or a powerful blox fruit user as you train to become the strongest player to ever live. You can choose to fight against tough enemies or have powerful boss battles while sailing across the ocean to find hidden secrets. \n\nCurrent level cap: 3000\nCurrent fruits in the game:\nRocket, Spin, Blade, Spring, Bomb, Smoke, Spike, Flame, Ice, Sand, Dark, Eagle, Diamond, Light, Rubber, Ghost, Magma, Quake, Buddha, Love, Creation, Spider, Sound, Phoenix, Portal, Lightning, Pain, Blizzard, Gravity, Mammoth, T-Rex, Dough, Shadow, Venom, Gas, Spirit, Tiger, Yeti, Magnet, Kitsune, Control, and Dragon\n\nFAQ:\n-Fruits spawn in the map every hour / despawn after 20 mins\n-You can buy fruits from the Blox Fruits Dealer. He restocks random fruits every 4 hours\n-More info in the group description\n\nDo not exploit, our auto-detection will catch you and we do not appeal our bans.",
+        "sourceName": null,
+        "sourceDescription": null,
+        "creator": {
+          "id": 4372130,
+          "name": "Gamer Robot Inc",
+          "type": "Group",
+          "isRNVAccount": false,
+          "hasVerifiedBadge": true
+        },
+        "price": null,
+        "allowedGearGenres": [
+          "Adventure"
+        ],
+        "allowedGearCategories": [],
+        "isGenreEnforced": true,
+        "copyingAllowed": false,
+        "playing": 120541,
+        "visits": 65061559515,
+        "maxPlayers": 12,
+        "created": "2019-01-16T03:29:19.433Z",
+        "updated": "2026-10-22T17:28:11.337Z",
+        "studioAccessToApisAllowed": false,
+        "createVipServersAllowed": false,
+        "universeAvatarType": "MorphToR15",
+        "genre": "Adventure",
+        "genre_l1": "RPG",
+        "genre_l2": "Action RPG",
+        "untranslated_genre_l1": "rpg",
+        "isAllGenre": false,
+        "isFavoritedByUser": false,
+        "favoritedCount": 20112616,
+        "canonicalUrlPath": "/games/2753915549/Blox-Fruits",
+        "isContentRestricted": false,
+        "isOfficiallyLicensed": false,
+        "isCommunityLicensed": false
+      }
+    }
+  ]
+}

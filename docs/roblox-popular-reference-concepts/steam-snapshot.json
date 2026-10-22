@@ -1,0 +1,104 @@
+{
+  "checked_date": "2026-10-23",
+  "timezone": "Asia/Seoul",
+  "api_attempts": [
+    {
+      "name": "Ultimate Chicken Horse",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "url": "https://store.steampowered.com/appreviews/386940?json=1&language=all&purchase_type=all&filter=all&num_per_page=0"
+    },
+    {
+      "name": "Unpacking",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "url": "https://store.steampowered.com/appreviews/1135690?json=1&language=all&purchase_type=all&filter=all&num_per_page=0"
+    },
+    {
+      "name": "R.E.P.O.",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "url": "https://store.steampowered.com/appreviews/3241660?json=1&language=all&purchase_type=all&filter=all&num_per_page=0"
+    },
+    {
+      "name": "Moving Out 2",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "url": "https://store.steampowered.com/appreviews/1641700?json=1&language=all&purchase_type=all&filter=all&num_per_page=0"
+    },
+    {
+      "name": "PowerWash Simulator",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "url": "https://store.steampowered.com/appreviews/1290000?json=1&language=all&purchase_type=all&filter=all&num_per_page=0"
+    },
+    {
+      "name": "Viscera Cleanup Detail",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "url": "https://store.steampowered.com/appreviews/246900?json=1&language=all&purchase_type=all&filter=all&num_per_page=0"
+    },
+    {
+      "name": "Keep Talking and Nobody Explodes",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "url": "https://store.steampowered.com/appreviews/341800?json=1&language=all&purchase_type=all&filter=all&num_per_page=0"
+    },
+    {
+      "name": "Hades",
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "url": "https://store.steampowered.com/appreviews/1145360?json=1&language=all&purchase_type=all&filter=all&num_per_page=0"
+    }
+  ],
+  "api_failure": "The appreviews endpoints returned HTML rather than JSON (HTTP 200); not a valid zero observation. The web reader could not open the API either.",
+  "observations": [
+    {
+      "name": "Ultimate Chicken Horse",
+      "app_id": 386940,
+      "url": "https://store.steampowered.com/app/386940/",
+      "metric": "English-language cumulative review summary displayed on Steam store",
+      "reviews": 14828,
+      "positive_percent": 96,
+      "checked_date": "2026-10-23",
+      "access": "web page reader; crawled today per tool",
+      "limitation": "Not all-language API totals, not sales or concurrent players; displayed percentages rounded by Steam."
+    },
+    {
+      "name": "R.E.P.O.",
+      "app_id": 3241660,
+      "url": "https://store.steampowered.com/app/3241660/",
+      "metric": "English-language cumulative review summary displayed on Steam store",
+      "reviews": 140346,
+      "positive_percent": 96,
+      "checked_date": "2026-10-23",
+      "access": "web page reader; crawled today per tool",
+      "limitation": "Not all-language API totals, not sales or concurrent players; displayed percentages rounded by Steam."
+    },
+    {
+      "name": "PowerWash Simulator",
+      "app_id": 1290000,
+      "url": "https://store.steampowered.com/app/1290000/",
+      "metric": "English-language cumulative review summary displayed on Steam store",
+      "reviews": 38598,
+      "positive_percent": 97,
+      "checked_date": "2026-10-23",
+      "access": "web page reader; crawled today per tool",
+      "limitation": "Not all-language API totals, not sales or concurrent players; displayed percentages rounded by Steam."
+    },
+    {
+      "name": "Keep Talking and Nobody Explodes",
+      "app_id": 341800,
+      "url": "https://store.steampowered.com/app/341800/",
+      "metric": "English-language cumulative review summary displayed on Steam store",
+      "reviews": 8138,
+      "positive_percent": 98,
+      "checked_date": "2026-10-23",
+      "access": "web page reader; crawled today per tool",
+      "limitation": "Not all-language API totals, not sales or concurrent players; displayed percentages rounded by Steam."
+    },
+    {
+      "name": "Hades",
+      "app_id": 1145360,
+      "url": "https://store.steampowered.com/app/1145360/",
+      "metric": "English-language cumulative review summary displayed on Steam store",
+      "reviews": 143114,
+      "positive_percent": 98,
+      "checked_date": "2026-10-23",
+      "access": "web page reader; crawled today per tool",
+      "limitation": "Not all-language API totals, not sales or concurrent players; displayed percentages rounded by Steam."
+    }
+  ]
+}
