@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="예전 인기 2D 게임의 규칙 하나를 골라 로블록스 3D 협동·대전 게임으로 다시 짠 기획 열한 가지. 제목 없이 참고한 게임으로 부르고, 장르는 로블록스 조사의 추천 순위를 따랐다.">
+    <meta name="description" content="예전 인기 2D 게임의 규칙 하나를 골라 로블록스 3D 협동·대전 게임으로 다시 짠 기획 열세 가지. 제목 없이 참고한 게임으로 부르고, 9개 관심 장르와 추가 장르를 다루고, 시장 근거의 시점과 표본을 구분했다.">
     <title>로블록스 게임 기획 — 2D 고전을 3D로 · nyimpe</title>
     <link rel="canonical" href="https://nyimpe.github.io/posts/roblox-2d-to-3d-concepts/">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="ko_KR">
     <meta property="og:title" content="로블록스 게임 기획 — 2D 고전을 3D로">
-    <meta property="og:description" content="팩맨, 볼더 대시, 윈드재머즈, 마이크로 머신즈, 레밍스 같은 2D 고전의 규칙을 로블록스 3D 게임으로 옮기는 기획 열한 가지.">
+    <meta property="og:description" content="과거 2D 게임을 로블록스 3D 협동·생존·RP·스포츠·레이싱·턴제·퍼즐·샌드박스·스토리로 재설계한 13개 안.">
     <meta property="og:url" content="https://nyimpe.github.io/posts/roblox-2d-to-3d-concepts/">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/src/style.css">
@@ -35,416 +35,322 @@
       <article class="research-post design-post">
         <header class="post-header">
           <h1>로블록스 게임 기획 — 2D 고전을 3D로</h1>
-          <time datetime="2026-10-21">2026.10.21</time>
-          <p class="image-credit">제목 없이 참고한 게임으로만 부른다 · 장르는 로블록스 개발 조사의 추천 순위를 따랐다 · 원작은 7~12번 포스트의 도감에서 골랐다 · 인원·시간·기간은 모두 초안이다</p>
+          <time datetime="2026-10-22">2026.10.22</time>
+          <p class="image-credit">13개 안 · 신작 제목 없이 레퍼런스로 구분 · 9개 관심 장르와 추가 장르 · 인원·시간·콘텐츠 수는 검증 전 설계 가설</p>
         </header>
-
-        <p><strong>예전에 인기 있던 2D 게임에서 규칙 하나를 골라, 로블록스의 3D 협동·대전 게임으로 다시 짠 기획 열한 가지다.</strong> 이름은 붙이지 않았다. 기획마다 어느 게임에서 무엇을 가져왔는지로 부른다. 장르는 로블록스 개발 조사에서 추천한 순위를 따랐고, 원작은 <a href="/posts/logic-puzzles/">7번</a>부터 <a href="/posts/retrogames-onl-snes/">12번</a>까지의 포스트에 모은 고전 게임 도감에서 찾았다. 마지막 하나는 추천 목록 밖의 장르다.</p>
-
+        <p><strong>과거 2D 게임의 익숙한 규칙을, 로블록스에서 여럿이 움직이는 3D 공간에 맞게 다시 설계했다.</strong> 코옵 호러와 서바이벌은 두 안씩, 타운 RP는 서로 다른 두 테마로 나누고 스포츠·레이싱·수집 육성·퍼즐·빌딩·스토리까지 다뤘다. 마지막에는 아케이드 액션도 넣었다. 아래 작품명은 새 게임의 이름이 아니라 참고한 원작이다.</p>
+        <p>각 안에서 <strong>무엇을 반복해서 판단하는지, 3D 공간이 그 판단을 어떻게 바꾸는지, 실패해도 어떻게 다시 참여하는지</strong>를 중심에 둔다. 하나를 먼저 출시한 뒤 나머지를 모두 만들라는 계획은 아니다. 각 장르를 독립 후보로 비교하는 문서다.</p>
         <nav class="post-toc" aria-label="목차"><ol>
-          <li><a href="#criteria">고르는 기준</a></li>
-          <li><a href="#overview">한눈에 보기</a></li>
+          <li><a href="#criteria">설계 기준</a></li>
+          <li><a href="#overview">13개 안 한눈에 보기</a></li>
           <li><a href="#clock-tower">Clock Tower × Sweet Home — 코옵 호러 탈출</a></li>
           <li><a href="#pac-man">Pac-Man — 코옵 추격 호러</a></li>
           <li><a href="#dig-dug">Dig Dug × Boulder Dash × Mr. Driller — 협동 채굴 서바이벌</a></li>
-          <li><a href="#zombies">Zombies Ate My Neighbors — 이웃 구출 서바이벌</a></li>
+          <li><a href="#zombies">Zombies Ate My Neighbors — 구조 중심 서바이벌</a></li>
           <li><a href="#harvest-moon">Harvest Moon × Tapper — 시골 장터 타운 RP</a></li>
+          <li><a href="#theme-hospital">Theme Hospital — 기묘한 병원 타운 RP</a></li>
           <li><a href="#windjammers">Windjammers × 열혈 피구 — 아케이드 스포츠</a></li>
-          <li><a href="#micro-machines">Micro Machines × R.C. Pro-Am × Excitebike — 장난감 차 레이싱</a></li>
-          <li><a href="#monsters">Dragon Warrior Monsters × Monster Rancher — 수집·육성 턴제</a></li>
+          <li><a href="#micro-machines">Micro Machines × R.C. Pro-Am × Excitebike — 레이싱·드라이빙</a></li>
+          <li><a href="#monsters">초기 Pokémon × Dragon Quest Monsters — 수집·육성 턴제 RPG</a></li>
           <li><a href="#lemmings">Lemmings — 코옵 퍼즐</a></li>
-          <li><a href="#rampage">Rampage — 짓고 부수기</a></li>
-          <li><a href="#snow-bros">번외: Snow Bros × Bubble Bobble — 코옵 아케이드 액션</a></li>
-          <li><a href="#pick">무엇부터 만들까</a></li>
-          <li><a href="#sources">출처</a></li>
+          <li><a href="#rampage">Rampage × Rampart — 빌딩·샌드박스</a></li>
+          <li><a href="#ghost-trick">Ghost Trick — 협동 내러티브·스토리</a></li>
+          <li><a href="#snow-bros">Snow Bros × Bubble Bobble — 코옵 아케이드 액션 · 추가 장르</a></li>
+          <li><a href="#pick">조건별 우선 검증 후보</a></li>
+          <li><a href="#market">제시된 시장 수치 확인</a></li>
+          <li><a href="#sources">출처와 확인 범위</a></li>
         </ol></nav>
-
         <section id="criteria" aria-labelledby="criteria-title">
-          <h2 id="criteria-title">고르는 기준</h2>
-          <h3>장르: 로블록스 조사의 추천 순위</h3>
-          <p>로블록스 개발 조사에서 과포화 장르와 2D를 빼고, 작은 팀이 해 볼 만한 장르에 순위를 매겼다. 기획은 이 순위에 맞춰 골랐다.</p>
-          <div class="table-scroll" role="region" aria-label="장르 추천 순위와 이 글의 기획" tabindex="0"><table>
-            <thead><tr><th scope="col">순위</th><th scope="col">장르</th><th scope="col">조사에서 본 신호</th><th scope="col">이 글의 기획</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">1</th><td>코옵 호러 탈출 서바이벌</td><td>공급 부족. 단, 순수 호러는 식는 중이라 투표·역할·배신 같은 소셜 요소가 필요하다</td><td><a href="#clock-tower">01</a>, <a href="#pac-man">02</a></td></tr>
-              <tr><th scope="row">2</th><td>서바이벌</td><td>비포화 장르 기회 점수 1위</td><td><a href="#dig-dug">03</a>, <a href="#zombies">04</a></td></tr>
-              <tr><th scope="row">3</th><td>틈새 테마 타운 RP</td><td>성장 +65%, 포화도 34%</td><td><a href="#harvest-moon">05</a></td></tr>
-              <tr><th scope="row">4</th><td>아케이드 스포츠</td><td>로블록스 공식 “공급 부족”</td><td><a href="#windjammers">06</a></td></tr>
-              <tr><th scope="row">5</th><td>레이싱·드라이빙</td><td>로블록스 공식 지목</td><td><a href="#micro-machines">07</a></td></tr>
-              <tr><th scope="row">6</th><td>수집·육성 턴제 RPG</td><td>Loomian Legacy 9억 방문</td><td><a href="#monsters">08</a></td></tr>
-              <tr><th scope="row">7</th><td>퍼즐</td><td>만들기 쉽고 돈 벌기 어렵다</td><td><a href="#lemmings">09</a></td></tr>
-              <tr><th scope="row">8</th><td>빌딩·샌드박스</td><td>저장 기능을 직접 짜야 한다</td><td><a href="#rampage">10</a></td></tr>
-              <tr><th scope="row">9</th><td>내러티브·스토리</td><td>다시 올 이유가 약하다</td><td>다루지 않았다</td></tr>
-              <tr><th scope="row">밖</th><td>코옵 아케이드 액션</td><td>추천 목록에 없다</td><td><a href="#snow-bros">번외</a></td></tr>
-            </tbody>
-          </table></div>
-          <p>과포화로 뺀 브레인롯, 시뮬레이터, 오비, 타이쿤, 애니메 IP와 중간 구간인 격투, 타워 디펜스, 파쿠르는 중심에 두지 않았다.</p>
-
-          <h3>로블록스가 보는 것</h3>
+          <h2 id="criteria-title">설계 기준</h2>
           <ul>
-            <li><strong>28일 리텐션.</strong> 추천 노출은 D1, D2~7, D8~28 복귀율과 친구와 함께 한 플레이를 따로 본다. 그래서 기획마다 <em>친구와 해야 더 좋은 이유</em>와 <em>다음 주에 돌아올 이유</em>를 넣었다.</li>
-            <li><strong>모바일이 세션의 70~80%.</strong> 이동 말고 버튼은 두세 개까지만 쓴다.</li>
-            <li><strong>5~8주 안에 내고 매주 업데이트.</strong> 첫 제작 범위는 1~2명이 그 안에 만들 만큼으로 잡았다.</li>
-            <li><strong>다른 플랫폼의 이식작은 대부분 실패한다.</strong> 그래서 원작을 옮기지 않는다. 규칙 하나만 가져와 여럿이 함께 하는 로블록스 판으로 다시 짠다.</li>
+            <li><strong>원작 버전을 지정한다.</strong> 초기 2D판의 규칙을 참고한다. 입체처럼 보이는 2D 등각 화면도 포함하고, 이미 3D인 Monster Rancher는 2D 원작 목록에서 뺐다. Ghost Trick은 DS 원작의 2D 플레이를 기준으로 선택한 보조 레퍼런스다.</li>
+            <li><strong>3D의 효과를 구체적으로 쓴다.</strong> 높이, 가려지는 시야, 동선, 운반, 구조물 연결이 선택을 바꿔야 한다. 원작 인지도나 3D화 자체가 성공을 보장한다고 보지 않는다.</li>
+            <li><strong>원작 사실과 새 규칙을 나눈다.</strong> 아래의 판 목표·역할·복구·운영은 제안이다. 원작 이름·캐릭터·지도·음악·아트는 제작 자산으로 복제하지 않는다.</li>
+            <li><strong>빈 서버와 이탈을 고려한다.</strong> 공통 핑으로 음성 없이 소통하고, 필수 도구·조작권을 넘기거나 NPC로 보완한다. 역할 협동이 친구 네 명을 항상 모아야만 시작되는 조건이 되지 않게 한다.</li>
+            <li><strong>작은 검증판을 먼저 비교한다.</strong> 완성 일정은 팀 경험과 자산에 따라 달라진다. 여기 적은 시제품 범위는 출시 약속이 아니며 실제 플레이·매출·성능 검증은 아직 하지 않았다.</li>
           </ul>
-
-          <h3>2D에서 3D로 옮기는 원칙</h3>
-          <ol>
-            <li><strong>규칙 하나만 가져온다.</strong> 팩맨 유령들의 성격, 볼더 대시의 떨어지는 돌, 윈드재머즈의 벽 튕김처럼, 원작을 원작답게 만든 규칙 하나를 기획의 가운데에 둔다.</li>
-            <li><strong>혼자 하던 일을 넷이 나눈다.</strong> 원작은 대부분 한두 명이 하는 게임이다. 혼자 하던 일을 나눠 맡겨 서로가 필요하게 만든다.</li>
-            <li><strong>원작의 한 화면을 지킨다.</strong> 2D 게임은 판 전체가 한눈에 보였다. 3D로 바꾸며 이것이 사라지면 원작의 재미도 같이 사라진다. 3D Lemmings(PS1)는 카메라를 돌려 가며 봐야 해서 원작의 한눈에 보는 맛이 줄었다. 높은 시점, 지도, 소리로 보이지 않는 정보를 채운다. 반대로 일부러 가리면 공포가 된다(<a href="#pac-man">02</a>).</li>
-            <li><strong>이름, 캐릭터, 그림, 음악은 가져오지 않는다.</strong> 규칙은 빌려 올 수 있지만 이름과 생김새는 저작권 신고 대상이고, 로블록스는 신고가 들어오면 게임을 내린다.</li>
-          </ol>
+          <p class="table-note">장르 선택은 요청한 관심 분야를 따랐다. 시장표에는 2024년 공식 자료와 2026년 초 민간 분석이 섞여 있어 현재 성공 순위로 사용하지 않는다. <a href="#market">원출처와 해석은 뒤의 시장 수치 확인 표</a>에 적었다.</p>
         </section>
-
         <section id="overview" aria-labelledby="overview-title">
-          <h2 id="overview-title">한눈에 보기</h2>
-          <div class="table-scroll" role="region" aria-label="기획 열한 가지 비교" tabindex="0"><table class="wide-table concept-table">
-            <thead><tr><th scope="col">번호</th><th scope="col">레퍼런스</th><th scope="col">장르(순위)</th><th scope="col">인원</th><th scope="col">한 판</th><th scope="col">첫 제작</th><th scope="col">넷코드 부담</th></tr></thead>
+          <h2 id="overview-title">13개 안 한눈에 보기</h2>
+          <div class="table-scroll" role="region" aria-label="13개 기획 비교" tabindex="0"><table class="wide-table">
+            <thead><tr><th scope="col">번호</th><th scope="col">참고 게임</th><th scope="col">장르</th><th scope="col">로블록스에서 하는 일</th></tr></thead>
             <tbody>
-              <tr><th scope="row">01</th><td>Clock Tower × Sweet Home</td><td>코옵 호러 탈출(1)</td><td>4</td><td>15~20분</td><td>4~6주</td><td>낮음</td></tr>
-              <tr><th scope="row">02</th><td>Pac-Man</td><td>코옵 추격 호러(1)</td><td>4 또는 4:1</td><td>5~8분</td><td>2~3주</td><td>낮음</td></tr>
-              <tr><th scope="row">03</th><td>Dig Dug × Boulder Dash × Mr. Driller</td><td>서바이벌(2)</td><td>4</td><td>15~25분</td><td>5~7주</td><td>중간</td></tr>
-              <tr><th scope="row">04</th><td>Zombies Ate My Neighbors</td><td>서바이벌(2)</td><td>4</td><td>10~15분</td><td>4~5주</td><td>중간</td></tr>
-              <tr><th scope="row">05</th><td>Harvest Moon × Tapper</td><td>타운 RP(3)</td><td>20~30</td><td>없음</td><td>6~8주</td><td>낮음</td></tr>
-              <tr><th scope="row">06</th><td>Windjammers × 열혈 피구</td><td>아케이드 스포츠(4)</td><td>2:2, 3:3</td><td>3~5분</td><td>4~6주</td><td>높음</td></tr>
-              <tr><th scope="row">07</th><td>Micro Machines × R.C. Pro-Am × Excitebike</td><td>레이싱(5)</td><td>8</td><td>3~4분</td><td>6~8주</td><td>높음</td></tr>
-              <tr><th scope="row">08</th><td>Dragon Warrior Monsters × Monster Rancher</td><td>수집·육성 턴제(6)</td><td>1~4</td><td>없음</td><td>8주 이상</td><td>낮음</td></tr>
-              <tr><th scope="row">09</th><td>Lemmings</td><td>퍼즐(7)</td><td>2~4</td><td>3~6분</td><td>3~4주</td><td>낮음</td></tr>
-              <tr><th scope="row">10</th><td>Rampage</td><td>빌딩·파괴(8)</td><td>8~12(두 팀)</td><td>6~8분</td><td>4~6주</td><td>중간(물리)</td></tr>
-              <tr><th scope="row">번외</th><td>Snow Bros × Bubble Bobble</td><td>코옵 아케이드 액션</td><td>2~4</td><td>10분</td><td>3~4주</td><td>중간</td></tr>
+              <tr><th scope="row">01</th><td><a href="#clock-tower">Clock Tower × Sweet Home</a></td><td>코옵 호러 탈출</td><td>싸울 수 없는 추적자가 있는 저택에서, 동료마다 다른 도구를 연결해 탈출 경로를 만든다.</td></tr>
+              <tr><th scope="row">02</th><td><a href="#pac-man">Pac-Man</a></td><td>코옵 추격 호러</td><td>시야가 가려진 입체 미로에서 회수물을 나눠 모으고, 짧은 반격 시간을 동료 구조에 쓸지 추가 수집에 쓸지 결정한다.</td></tr>
+              <tr><th scope="row">03</th><td><a href="#dig-dug">Dig Dug × Boulder Dash × Mr. Driller</a></td><td>협동 채굴 서바이벌</td><td>파내는 행동이 귀환 경로를 바꾸는 광산에서, 광석 한 덩이를 더 챙길지 동료와 함께 올라갈지 결정한다.</td></tr>
+              <tr><th scope="row">04</th><td><a href="#zombies">Zombies Ate My Neighbors</a></td><td>구조 중심 서바이벌</td><td>괴물을 전부 잡는 대신 동네 사람을 구조한다. 서로 다른 집에서 벌어지는 위험의 순서를 정하고 탈출 차량까지 호송한다.</td></tr>
+              <tr><th scope="row">05</th><td><a href="#harvest-moon">Harvest Moon × Tapper</a></td><td>시골 장터 타운 RP</td><td>농장, 조리대, 장터가 이어진 작은 마을에서 친구와 가게를 운영한다. 농사 결과가 다음 장날의 주문과 역할놀이로 이어진다.</td></tr>
+              <tr><th scope="row">06</th><td><a href="#theme-hospital">Theme Hospital</a></td><td>기묘한 병원 타운 RP</td><td>머리가 풍선처럼 커지는 식의 가상 증상을 다루는 작은 병원에서 접수·검사·치료를 나눠 맡는다.</td></tr>
+              <tr><th scope="row">07</th><td><a href="#windjammers">Windjammers × 열혈 피구</a></td><td>아케이드 스포츠</td><td>상대 골 뒤 공간을 노리는 원반 경기에서, 벽 튕김·높은 패스·짧은 수비 이탈로 빈 골문을 만든다.</td></tr>
+              <tr><th scope="row">08</th><td><a href="#micro-machines">Micro Machines × R.C. Pro-Am × Excitebike</a></td><td>레이싱·드라이빙</td><td>책상 위 장난감 차량으로 달리며, 넓고 느린 길과 자·책으로 만든 좁은 지름길 중 하나를 고른다.</td></tr>
+              <tr><th scope="row">09</th><td><a href="#monsters">초기 Pokémon × Dragon Quest Monsters</a></td><td>수집·육성 턴제 RPG</td><td>들판의 서식 행동을 관찰해 동료를 모으고, 기술 계승으로 친구와 다른 파티를 만드는 작은 턴제 RPG다.</td></tr>
+              <tr><th scope="row">10</th><td><a href="#lemmings">Lemmings</a></td><td>코옵 퍼즐</td><td>계속 앞으로 걷는 작은 생물들을 다리·방향 전환·굴착으로 구한다. 다른 층을 맡은 동료와 출발 시점을 맞춘다.</td></tr>
+              <tr><th scope="row">11</th><td><a href="#rampage">Rampage × Rampart</a></td><td>빌딩·샌드박스</td><td>작은 요새를 짓고 서로 공격해 본 뒤 무너진 부분을 고친다. 잘 지은 구조가 무엇인지 플레이 결과로 배운다.</td></tr>
+              <tr><th scope="row">12</th><td><a href="#ghost-trick">Ghost Trick</a></td><td>협동 내러티브·스토리</td><td>사건 직전의 짧은 시간을 되돌려 반복하며, 각자 다른 물건에 깃들어 사고의 원인을 바꾼다.</td></tr>
+              <tr><th scope="row">13</th><td><a href="#snow-bros">Snow Bros × Bubble Bobble</a></td><td>코옵 아케이드 액션 · 추가 장르</td><td>적을 가둬 굴릴 수 있는 덩어리로 만들고, 동료가 몰아둔 적을 경사로에서 한 번에 휩쓴다.</td></tr>
             </tbody>
           </table></div>
-          <p class="table-note">넷코드 부담은 조사의 구분을 따랐다. 반응 속도가 승패를 가르는 스포츠·레이싱은 지연 보상과 물리 소유권을 직접 다뤄야 하고, 서버가 판을 쥐는 격자·AI·턴제는 부담이 작다.</p>
         </section>
 
         <section class="concept" id="clock-tower" aria-labelledby="clock-tower-title">
           <h2 id="clock-tower-title">01. Clock Tower × Sweet Home</h2>
-          <p class="concept-meta">코옵 호러 탈출(추천 1위) · 4인 · 한 판 15~20분 · 원작: <a href="/posts/retrogames-onl-snes/?q=clock+tower">Clock Tower</a>(SNES), <a href="/posts/retrogames-onl-snes/?q=sweet+home">Sweet Home</a>(패미컴)</p>
-          <p class="concept-pitch">네 사람이 서로 다른 도구를 하나씩 들고 저택을 빠져나간다. 가위를 든 추적자는 이길 수 없다. 숨고, 소리로 꾀어내고, 끌려간 동료를 꺼내 온다.</p>
-          <h3>원작에서 가져오는 것</h3>
-          <ul>
-            <li><strong>Clock Tower:</strong> 싸울 수 없는 추적자, 가구 속에 숨기, 붙잡히면 버튼을 연타해 버티는 패닉, 판마다 바뀌는 방 배치와 여러 엔딩.</li>
-            <li><strong>Sweet Home:</strong> 동료마다 도구가 하나씩 정해져 있다(라이터, 열쇠, 카메라, 구급상자, 청소기). 그 동료가 빠지면 그 도구가 필요한 길도 막힌다.</li>
-          </ul>
-          <h3>3D와 로블록스에서 바뀌는 것</h3>
-          <ul>
-            <li><strong>도구는 넷이다.</strong> 라이터(어둠과 덩굴), 열쇠(잠긴 문), 카메라(벽화 속 단서를 찍고, 추적자를 2초 멈춘다), 구급상자(쓰러진 동료 일으키기). 시작할 때 무작위로 나눠 받아 판마다 길 순서가 달라진다.</li>
-            <li><strong>저택은 방 조각을 이어 붙여 만든다.</strong> 출구 셋 가운데 하나가 매번 열린다.</li>
-            <li><strong>추적자는 소리를 따라온다.</strong> 달리기, 문 세게 닫기, 물건 떨어뜨리기가 소리를 낸다. 일부러 소리를 내 동료에게서 떼어 놓을 수 있다.</li>
-            <li><strong>잡혀도 바로 죽지 않는다.</strong> 30초 동안 끌려간 상태가 되고, 그 사이 동료가 구급상자나 연타로 꺼내 주면 돌아온다.</li>
-            <li><strong>같은 곳에 연달아 숨으면 들킬 확률이 오른다.</strong> 숨을 곳을 돌려 써야 한다.</li>
-          </ul>
-          <h3>소셜 요소</h3>
-          <p>세 판에 한 번쯤 <strong>홀린 판</strong>이 섞인다. 둘째 층부터 넷 가운데 한 명이 몰래 홀린 사람이 되고, 추적자에게 동료의 위치를 알려 주면 혼자만 큰 보상을 받는다. 남은 셋은 투표로 홀린 사람을 지목할 수 있고, 맞히면 닫힌 출구가 하나 더 열린다. 협동판과 배신판이 섞여 같은 저택도 다르게 논다.</p>
-          <h3>다시 오게 하는 것</h3>
-          <ul>
-            <li>카메라로 찍은 단서가 <strong>사진첩</strong>에 쌓인다. 누가 살아 나갔는지, 어느 출구였는지에 따라 엔딩이 갈리고 엔딩마다 사진 한 장을 준다.</li>
-            <li>매주 새 방 조각 묶음과 추적자 변종 하나.</li>
-            <li>결제: 손전등 빛 색, 도구 겉모양, 동료를 일으키는 동작, 개인 서버.</li>
-          </ul>
-          <h3>위험과 첫 제작 범위</h3>
-          <p>Doors, The Mimic, Piggy처럼 방을 이어 붙이는 호러가 이미 많다. 다른 점은 <strong>도구가 사람마다 달라서 서로가 필요하다</strong>는 것 하나라서, 첫 판부터 그게 드러나야 한다. 첫 제작은 방 조각 20개, 도구 4개, 추적자 1명, 출구 2개, 엔딩 3개다.</p>
-          <p class="ref-list">레퍼런스 · 원작: Clock Tower(1995), Sweet Home(1989) · 3D·로블록스: Doors(방 조각), Dead by Daylight(끌려간 동료 구하기), Among Us(투표), Lethal Company(넷이 같이 하는 혼란)</p>
+          <p class="concept-meta">코옵 호러 탈출 · 2~4인 · 12~15분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">싸울 수 없는 추적자가 있는 저택에서, 동료마다 다른 도구를 연결해 탈출 경로를 만든다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> Clock Tower(1995)의 추격·숨기·탐색, Sweet Home(1989)의 인물별 전용 도구와 일행 구성을 참고한다. Sweet Home에는 전용 도구를 대신하는 물건도 있다. 방을 무작위로 조합하거나 쓰러진 동료를 구조하는 규칙은 아래 기획에서 추가한다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 문, 복도 모퉁이, 층간 시야 때문에 추적자와 동료의 위치를 동시에 볼 수 없다. 한 명은 위층 창에서 감시하고, 한 명은 아래층에서 소리를 내고, 나머지는 잠긴 길을 연다. 공간을 나눠 맡는 이유가 생긴다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 매 순간 「지금 도구를 사용해 소음을 낼지, 숨고 기다릴지, 추적자를 다른 길로 유인할지」를 고른다. 전원에게 보이는 진행표의 단서 3개를 모아 출구 하나를 열고 탈출하면 성공한다.</p>
+          <p><strong>한 장면 예시.</strong> 지하 발전기를 켜려면 조명 담당이 배전함을 비추고 수리 담당이 작업해야 한다. 추적자가 계단을 내려오자 감시 담당이 핑을 찍고, 다른 동료가 위층 종을 울린다. 수리 완료 후에는 종을 울린 동료까지 돌아와야 전원 탈출 보너스를 받는다.</p>
+          <p><strong>실패와 복구.</strong> 잡힌 사람은 방에 갇혀 문틈으로 단서를 표시할 수 있다. 동료가 구출할 수 있고, 시간이 끝나거나 전원이 갇히면 실패한다. 필수 도구는 바닥에 남아 인계되며, 이탈 시에도 같은 규칙을 적용한다. 한 명만 남으면 조명을 거치대에 설치한 뒤 직접 수리하는 순차 조작으로 바뀐다. 실패 후 같은 방 구성으로 재도전할 수 있다.</p>
+          <p><strong>친구와 하는 이유.</strong> 기본은 전원 협동이다. 시작 전에 합의한 별도 배신 모드에서만 출구 투표와 제한된 방해를 허용한다. 투표는 경로 선택에 쓰고 플레이어를 추방하지 않는다. 첫 시제품에서는 배신 모드를 만들지 않는다.</p>
+          <p><strong>모바일 조작.</strong> 이동 + 상호작용 + 소리 내기/숨기. 문·도구·위험을 가리키는 공통 핑으로 음성 없이도 진행한다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 단서 위치·추적자 순찰·출구 조건을 조합해 역할을 바꿔 다시 한다. 보상은 사진 기록과 도구 외형이며, 유료 부활이나 추적자 탐지 우위는 넣지 않는다.</p>
+          <p><strong>첫 시제품 범위.</strong> 고정 저택 1개, 방 6개, 도구 3개, 추적자 1종, 출구 1개. 먼저 두 명이 역할을 바꿔 두 판을 즐기는지 확인한다. 절차적 저택·여러 엔딩·배신은 이후 판단한다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 숨기만 하거나 한 명이 모든 도구를 독점하면 협동이 약해진다. 이동 속도보다 서로 다른 위치에서 동시에 할 일을 먼저 검증한다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://wayforward.com/games/clock-tower/">WayForward — Clock Tower</a> · <a href="https://rainwarrior.ca/projects/nes/sweethome_manual.html">Sweet Home 원본 설명서 보존·번역</a></p>
         </section>
-
         <section class="concept" id="pac-man" aria-labelledby="pac-man-title">
           <h2 id="pac-man-title">02. Pac-Man</h2>
-          <p class="concept-meta">코옵 추격 호러(추천 1위) · 4인 협동 또는 4:1 비대칭 · 한 판 5~8분 · 원작: <a href="/posts/classic-games/?q=팩맨">팩맨·미스 팩맨</a>(tooli), <a href="/posts/playretrogames/?q=pac-man">Pac-Man</a>(Play Retro Games)</p>
-          <p class="concept-pitch">1인칭으로 들어간 팩맨 미로. 유령 넷은 원작처럼 성격이 다르다. 뒤를 쫓는 놈, 앞질러 막는 놈, 둘 사이를 노리는 놈, 가까워지면 물러나는 놈.</p>
-          <h3>원작에서 가져오는 것</h3>
-          <ul>
-            <li><strong>유령마다 목표 칸을 정하는 규칙.</strong> 빨강은 플레이어가 있는 칸, 분홍은 플레이어 네 칸 앞, 하늘색은 빨강 유령에서 플레이어 두 칸 앞까지 그은 선을 두 배로 늘린 칸, 주황은 여덟 칸 밖이면 쫓고 안이면 구석으로 간다.</li>
-            <li>쫓기와 흩어지기를 번갈아 하는 시간표.</li>
-            <li>큰 알약을 먹으면 잠깐 쫓고 쫓기는 관계가 뒤집힌다.</li>
-          </ul>
-          <h3>3D와 로블록스에서 바뀌는 것</h3>
-          <ul>
-            <li><strong>위에서 다 보이던 미로를 벽 높이 3미터의 1인칭 미로로.</strong> 모퉁이 너머가 안 보이니 원작의 다 보이는 판이 그대로 공포가 된다.</li>
-            <li><strong>안 보이는 정보는 소리로 준다.</strong> 유령마다 발소리가 다르고 가까울수록 커진다. 위에서 본 지도는 작은 알약을 4분의 1 먹을 때마다 3초 열린다.</li>
-            <li><strong>유령은 가장 가까운 플레이어를 기준으로 움직인다.</strong> 넷이 흩어지면 유령도 흩어지고, 뭉치면 넷이 한꺼번에 몰린다. 원작의 규칙이 그대로 넷의 작전이 된다.</li>
-            <li><strong>큰 알약은 한 사람만 먹는다.</strong> 먹은 사람만 유령을 잡을 수 있어서 나머지 셋이 유령을 그쪽으로 몰아 줘야 한다.</li>
-            <li><strong>잡히면 유령 집에 갇힌다.</strong> 동료가 집 앞의 열쇠 알약을 먹으면 풀려난다.</li>
-            <li><strong>비대칭 모드:</strong> 한 사람이 빨강 유령을 직접 조종하고 나머지 세 유령은 AI가 맡는다.</li>
-          </ul>
-          <h3>다시 오게 하는 것</h3>
-          <ul>
-            <li>매주 새 미로 하나와 그 미로의 주간 순위표. 문이 열리고 닫히는 미로, 불이 꺼지는 미로, 알약이 움직이는 미로처럼 규칙을 하나씩 바꾼다.</li>
-            <li>결제: 플레이어 겉모습, 발자국 효과, 개인 서버. 유령 위치를 알려 주는 것은 팔지 않는다.</li>
-          </ul>
-          <h3>위험과 첫 제작 범위</h3>
-          <p>얕다. 몇 판 하면 다 본 느낌이 들 수 있어서 주간 미로 변주가 곧 게임의 수명이다. 로블록스에 팩맨 이름을 단 시뮬레이터와 오비는 있지만, 유령 성격을 살린 협동 추격은 찾지 못했다. 이름, 노란 원 모양, 유령 생김새는 쓰지 않는다. 첫 제작은 미로 3개, 유령 4종, 큰 알약, 유령 집 구출로, 열한 개 가운데 가장 작다.</p>
-          <p class="ref-list">레퍼런스 · 원작: Pac-Man(1980), Ms. Pac-Man(1982) · 3D·로블록스: Piggy(쫓기며 탈출), Flee the Facility(갇힌 동료 구하기), Pac-Man 99(여럿이 하는 팩맨)</p>
+          <p class="concept-meta">코옵 추격 호러 · 2~4인 · 6~8분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">시야가 가려진 입체 미로에서 회수물을 나눠 모으고, 짧은 반격 시간을 동료 구조에 쓸지 추가 수집에 쓸지 결정한다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> 1980년 아케이드판의 미로 수집, 추적자 회피, 파워 아이템에 의한 관계 역전을 가져온다. 원작 유령의 세부 좌표 공식을 그대로 복제하지 않고, 추격·우회 차단의 두 행동을 읽기 쉽게 다시 만든다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 중앙 감시 발판에서는 일부 복도가 보이지만 직접 수집할 수 없다. 복도에서는 발소리와 바닥 경고만 보인다. 감시 위치를 비우고 수집에 합류하는 순간 정보와 속도를 교환한다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 「안전한 복도를 더 돌지, 위험한 구역을 지금 털지, 반격 충전을 구조에 쓸지」를 고른다. 팀 목표량을 회수한 뒤 모두 출구에 도착하면 성공한다.</p>
+          <p><strong>한 장면 예시.</strong> 왼쪽 구역에 동료가 갇혔지만 오른쪽에 회수물이 몰려 있다. 반격 장치를 구조용으로 쓰면 기록은 늦어져도 네 명이 다시 나눠 움직인다. 수집에 쓰면 두 명으로 나머지 미로를 돌아야 한다.</p>
+          <p><strong>실패와 복구.</strong> 붙잡히면 구조 가능한 대기실로 이동하고 제한된 횟수로 복도 한 곳을 표시한다. 전원 체포 또는 시간 종료가 실패다. 부활 대기보다 구조 동선이 길어지는 문제를 작은 미로에서 먼저 점검한다.</p>
+          <p><strong>친구와 하는 이유.</strong> 회수 진행과 충전량은 공유한다. 반격 능력의 소유자는 팀이 정하며 역할을 고정하지 않는다. 한 명이 적을 유인하고 다른 명이 구조할 수 있지만, 강제 희생 보상은 두지 않는다.</p>
+          <p><strong>모바일 조작.</strong> 이동 + 장치 사용 + 핑. 가까운 회수물은 자동 획득하고 경고는 소리와 화면 표시를 함께 쓴다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 같은 미로에서 목표 구역과 추적 패턴을 바꾸는 도전, 친구 기록 경주. 외형과 개인 서버를 수익 후보로 둔다.</p>
+          <p><strong>첫 시제품 범위.</strong> 한눈에 설명 가능한 미로 1개, 추적 행동 2종, 반격 장치 1종, 구조 지점 1개. PvP 추적자·여러 층·주간 미로 제작은 제외한다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 3D 미로 추격만으로는 새롭지 않다. 수집·반격·구조의 선택이 실제로 갈라지는지가 차별점이다. 길을 잃는 불편을 공포로 착각하지 않도록 핑과 표식을 시험한다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://www.pacman.com/en/history/">Bandai Namco — PAC-MAN 역사</a></p>
         </section>
-
         <section class="concept" id="dig-dug" aria-labelledby="dig-dug-title">
           <h2 id="dig-dug-title">03. Dig Dug × Boulder Dash × Mr. Driller</h2>
-          <p class="concept-meta">협동 채굴 서바이벌(추천 2위) · 4인 · 한 판 15~25분 · 원작: <a href="/posts/retrogames-onl-snes/?q=dig+dug">Dig Dug</a>(NES), <a href="/posts/retrogames-onl-snes/?q=boulder+dash">Boulder Dash</a>(NES), <a href="/posts/retrogames-onl-snes/?q=mr.+driller">Mr. Driller</a>(PS1)</p>
-          <p class="concept-pitch">넷이 같이 땅을 파고 내려가 광석을 들고 올라온다. 파낸 자리 위의 돌은 떨어지고, 공기는 줄어들고, 굴 속에는 부풀려 터뜨려야 하는 괴물이 산다.</p>
-          <h3>원작에서 가져오는 것</h3>
-          <ul>
-            <li><strong>Boulder Dash:</strong> 아래 흙을 파면 돌이 떨어진다. 떨어지는 돌은 사람도 괴물도 깔아 버린다.</li>
-            <li><strong>Dig Dug:</strong> 괴물은 파낸 굴로 다닌다. 펌프로 부풀려 터뜨리거나 돌을 떨어뜨려 잡는다.</li>
-            <li><strong>Mr. Driller:</strong> 공기가 계속 줄어 공기 캡슐을 주워야 한다. 같은 색 블록은 붙어 있으면 함께 무너진다.</li>
-          </ul>
-          <h3>3D와 로블록스에서 바뀌는 것</h3>
-          <ul>
-            <li><strong>갱도는 블록 격자다.</strong> 단면 10×10칸의 세로 갱도를 아래로 30층만 미리 만들고, 멀리 지나간 층은 지운다. 돌이 떨어지는 계산은 물리 엔진이 아니라 서버가 한 박자에 한 칸씩 격자로 처리한다. 볼더 대시와 같은 방식이라 가볍고, 모두에게 똑같이 보인다.</li>
-            <li><strong>도구로 역할이 나뉜다.</strong> 빨리 파는 드릴, 돌을 멈추는 버팀목, 큰 광석 가방, 괴물 위치를 듣는 청음기. 캠프에서 하나씩 골라 들고 내려간다.</li>
-            <li><strong>광석은 들고 올라와야 돈이 된다.</strong> 깊을수록 값진 광석이 나오고 공기는 빨리 준다. 올라가는 길은 내려가며 판 굴이라, 내가 판 모양이 돌아올 때의 위험이 된다.</li>
-            <li><strong>공기가 떨어져 쓰러진 동료는 캡슐을 나눠 주면 일어난다.</strong></li>
-          </ul>
-          <h3>다시 오게 하는 것</h3>
-          <ul>
-            <li>광석으로 드릴 속도, 공기통, 펌프를 키우고 캠프를 꾸민다.</li>
-            <li>사흘마다 팀 할당량. 채우면 팀 전원에게 보상을 준다.</li>
-            <li>매주 새 지층 하나. 미끄러운 얼음층, 블록이 녹아 흘러내리는 용암층.</li>
-            <li>결제: 장비 겉모양, 캠프 꾸미기, 광석 가방 칸, 개인 서버.</li>
-          </ul>
-          <h3>위험과 첫 제작 범위</h3>
-          <p>로블록스에는 채굴 시뮬레이터가 넘친다. 혼자 클릭해서 캐는 게임처럼 보이면 그 무리에 묻힌다. 썸네일과 첫 1분을 <strong>넷이 무너지는 갱도에서 뛰쳐나오는 장면</strong>으로 채운다. 블록 수가 서버 부하를 정하므로, 떨어짐 계산은 바뀐 칸 주변만 한다. Deep Rock Galactic 같은 협동 채굴은 로블록스에서 뚜렷한 강자를 찾지 못했다. 드릴 차량으로 내려가는 Drill to Earth's Core 정도가 가깝다. 첫 제작은 지층 2개, 괴물 2종, 도구 4개, 광석 4종, 캠프 1곳이다.</p>
-          <p class="ref-list">레퍼런스 · 원작: Dig Dug(1982), Boulder Dash(1984), Mr. Driller(1999) · 3D·로블록스: Deep Rock Galactic(협동 채굴과 역할), Lethal Company(할당량과 들고 나오기), 99 Nights in the Forest(로블록스 협동 생존)</p>
+          <p class="concept-meta">협동 채굴 서바이벌 · 2~4인 · 12~18분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">파내는 행동이 귀환 경로를 바꾸는 광산에서, 광석 한 덩이를 더 챙길지 동료와 함께 올라갈지 결정한다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> Dig Dug의 굴 파기와 지형을 이용한 대응, Boulder Dash의 지지 흙을 제거하면 떨어지는 바위, Mr. Driller의 산소 압박을 결합한다. Mr. Driller의 같은 색 연결·소멸 규칙은 필요할 때 추가하며 단순 중력 규칙과 구분한다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 수직 갱도, 옆길, 머리 위 바위가 서로 이어진다. 바로 아래를 파는 사람이 윗사람의 발판을 없앨 수 있고, 광석 운반자는 사다리와 버팀목이 필요한 지점을 동료에게 알려야 한다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 「어느 블록을 파고 어디에 버팀목을 남길지, 산소를 나눌지, 목표량을 채웠어도 더 내려갈지」를 고른다. 광석은 지상 캠프로 운반한 것만 정산한다.</p>
+          <p><strong>한 장면 예시.</strong> 목표량은 채웠지만 옆굴에 큰 광맥이 보인다. 우회로를 파면 바위가 귀환 사다리를 막는다. 한 명이 버팀목을 설치하고 두 명이 운반하는 동안 마지막 한 명이 산소를 전달한다. 버팀목이 부족하면 광맥을 포기한다.</p>
+          <p><strong>실패와 복구.</strong> 산소가 떨어진 동료는 운반하거나 산소를 나눠 구조한다. 전원 쓰러지면 이번 탐사의 미반출 광석만 잃고 캠프에서 다시 시작한다. 멀어진 지층도 서버 상태와 귀환 경로는 보존하며 화면 표시만 줄인다.</p>
+          <p><strong>친구와 하는 이유.</strong> 굴착·운반·지지·탐지 도구를 캠프에서 골라 들고 중간에 넘길 수 있다. 여러 사람이 한 블록을 연타하는 것보다 서로의 길을 지켜 주는 일이 중요해야 한다.</p>
+          <p><strong>모바일 조작.</strong> 자동으로 가까운 블록을 가리키고 파기/설치 + 도구 전환. 위험 블록에는 낙하 예상 영역을 보여 준다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 광맥·약한 지반·산소 위치의 조합과 선택형 탐사 의뢰. 캠프 전시물과 도구 외형을 보상으로 삼고, 가방 크기·산소 판매는 핵심 선택을 훼손하므로 초기 수익안에서 뺀다.</p>
+          <p><strong>첫 시제품 범위.</strong> 작은 광산 1개, 3층, 흙·바위·광석, 버팀목·산소, 추격 생물 1종. 장기 성장과 거대 절차 생성은 만들기 전에 귀환 판단이 재미있는지 본다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 자유 굴착, 낙하 상태 공유, 복귀 가능한 경로가 어렵다. 격자 규칙으로 먼저 구현해도 성능과 동기화는 실제 여러 기기에서 검증해야 한다. 강자 부재나 개발 기간은 단정하지 않는다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://www.arcadearchives.com/en/title/aca-218/">Hamster — Dig Dug</a> · <a href="https://secure.cdn.us.playstation.com/manuals/classic/games/mr-driller-manual-en.pdf">PlayStation — Mr. Driller 원본 설명서</a> · <a href="https://bbg-entertainment.com/game/boulder-dash-i/">BBG — Boulder Dash 원작</a></p>
         </section>
-
         <section class="concept" id="zombies" aria-labelledby="zombies-title">
           <h2 id="zombies-title">04. Zombies Ate My Neighbors</h2>
-          <p class="concept-meta">이웃 구출 서바이벌(추천 2위) · 4인 · 한 판 10~15분 · 원작: <a href="/posts/retrogames-onl-snes/?q=zombies+ate">Zombies Ate My Neighbors</a>(SNES·메가 드라이브)</p>
-          <p class="concept-pitch">동네마다 이웃 열 명이 괴물에게 쫓기고 있다. 물총과 엉뚱한 무기로 괴물을 막고, 이웃을 많이 구할수록 다음 동네가 열린다. 무섭지 않은 B급 공포.</p>
-          <h3>원작에서 가져오는 것</h3>
-          <ul>
-            <li><strong>목표는 다 잡는 게 아니라 이웃을 구하는 것.</strong> 이웃이 모두 잡히면 진다.</li>
-            <li><strong>웃긴 괴물과 웃긴 무기.</strong> 물총, 접시, 토마토, 탄산 캔. 괴물마다 잘 듣는 무기가 다르다.</li>
-            <li>구한 이웃 수가 다음 판으로 이어진다.</li>
-          </ul>
-          <h3>3D와 로블록스에서 바뀌는 것</h3>
-          <ul>
-            <li><strong>위에서 본 2인 협동을 어깨 시점 4인으로.</strong> 한 판은 집 안과 마당을 오가는 동네 한 블록이다.</li>
-            <li><strong>이웃은 겁에 질려 움직인다.</strong> 손을 잡고 이끌거나 업고 뛰어 구출 지점까지 데려간다. 넷이 나눠 맡아야 시간 안에 많이 구한다.</li>
-            <li><strong>무기는 판 안에서 줍는다.</strong> 판마다 무기 조합이 다르다.</li>
-            <li><strong>피와 점프 스케어가 없다.</strong> 로블록스는 6월부터 Kids(5~8), Select(9~15), 일반(16+)으로 나눠 노출한다. 01과 02가 16세 이상에 가깝다면 이 기획은 9~15세를 노린다.</li>
-          </ul>
-          <h3>다시 오게 하는 것</h3>
-          <ul>
-            <li>원작처럼 동네가 많다. 매주 동네 하나씩 늘린다.</li>
-            <li>구한 이웃은 로비인 <strong>우리 동네</strong>로 이사 와서 산다. 많이 구할수록 로비가 붐빈다.</li>
-            <li>결제: 무기 겉모양, 우리 동네 집 꾸미기, 개인 서버.</li>
-          </ul>
-          <h3>위험과 첫 제작 범위</h3>
-          <p>로블록스에 좀비 웨이브 슈팅은 흔하다. 다른 점은 이웃 구출이라는 목표와 웃긴 무기다. Kids·Select 노출 조건(개발자 신분 인증, 2단계 인증 등)은 공식 페이지에서 다시 확인해야 한다. 첫 제작은 동네 3곳, 괴물 5종, 무기 6개, 이웃 행동 하나다.</p>
-          <p class="ref-list">레퍼런스 · 원작: Zombies Ate My Neighbors(1993) · 3D·로블록스: Left 4 Dead(4인 협동), Plants vs. Zombies: Garden Warfare(무섭지 않은 좀비), 99 Nights in the Forest(아이들 구출)</p>
+          <p class="concept-meta">구조 중심 서바이벌 · 1~4인 · 10~12분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">괴물을 전부 잡는 대신 동네 사람을 구조한다. 서로 다른 집에서 벌어지는 위험의 순서를 정하고 탈출 차량까지 호송한다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> 1993년 2D 원작의 이웃 구출 목표, 협동, 상황별 도구와 B급 괴물 분위기를 참고한다. 움직이는 주민·호송·집별 위험 시간은 새로 제안하는 규칙이다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 담장 너머, 집 안 2층, 좁은 골목이 다른 구조 경로를 만든다. 울타리를 넘어 빨리 들어갈 수 있지만 주민을 데리고 돌아올 때는 문을 열어야 한다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 「먼저 구할 주민, 호송 경로, 한정 장비를 쓸 위치」를 비교한다. 예를 들어 주민 6명 중 4명을 차량으로 데려오면 탈출 가능하고, 남은 사람을 구하면 추가 기록이 붙는다.</p>
+          <p><strong>한 장면 예시.</strong> 옥상 주민은 곧 포위되지만 구조에는 사다리가 필요하다. 두 명이 사다리를 옮기는 동안 나머지는 골목의 주민 둘을 먼저 대피시킨다. 차량 출발 직전 마지막 집을 확인할지 투표한다.</p>
+          <p><strong>실패와 복구.</strong> 플레이어는 동료가 일으킬 수 있다. 주민 구조 실패는 판의 점수에 반영하고 다음 판에서 다시 시도한다. 사다리는 두 명이 빠르게 들거나 한 명이 운반 카트로 천천히 끌 수 있어 이탈해도 진행된다. 호송 NPC가 끼이면 가까운 안전 지점으로 되돌려 길찾기 오류가 실패 원인이 되지 않게 한다.</p>
+          <p><strong>친구와 하는 이유.</strong> 운반 중에는 도구 사용이 제한되어 엄호가 필요하다. NPC는 함께 있어도 목표를 공유하고, 혼자 들어온 사람에게는 적은 인원의 구조 의뢰를 준다.</p>
+          <p><strong>모바일 조작.</strong> 이동 + 도구 사용 + 주민 인솔/놓기. 조준 보조를 두고 무기 종류는 초기에 두 개로 줄인다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 주민 위치·도로 봉쇄·운반 조건을 바꾼 의뢰. 구한 주민은 로비에서 짧은 후일담을 보여 주고, 집 꾸미기·차량 외형이 수익 후보가 된다.</p>
+          <p><strong>첫 시제품 범위.</strong> 동네 1블록, 집 3채, 주민 4명, 괴물 2종, 구조 차량 1대. 공포 연출은 유머와 추격 위주로 잡되 연령 분류는 완성 콘텐츠로 따로 판단한다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 총 쏘기만 해도 해결되면 구조가 장식이 된다. 구조 우선순위와 호송 동선이 승패를 바꾸는지 먼저 본다. NPC 길찾기 비용도 핵심 위험이다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://help.games.disney.com/article/gamesapps-about-zombies-ate-my-neighbors-and-ghoul-patrol">Disney — Zombies Ate My Neighbors</a></p>
         </section>
-
         <section class="concept" id="harvest-moon" aria-labelledby="harvest-moon-title">
           <h2 id="harvest-moon-title">05. Harvest Moon × Tapper</h2>
-          <p class="concept-meta">틈새 테마 타운 RP(추천 3위) · 서버당 20~30인 · 한 판 없음 · 원작: <a href="/posts/classic-games/?q=하베스트문">하베스트문 한글판</a>(SFC), <a href="/posts/playretrogames/?q=tapper">Tapper</a>(아케이드)</p>
-          <p class="concept-pitch">계절이 도는 작은 시골 마을. 누구는 밭을 갈고, 누구는 장터 주막에서 손님을 받고, 누구는 낚시를 한다. 닷새마다 장이 선다.</p>
-          <h3>원작에서 가져오는 것</h3>
-          <ul>
-            <li><strong>Harvest Moon:</strong> 계절과 날씨, 하루씩 자라는 작물, 달력에 박힌 마을 축제. 오늘 한 일이 내일로 이어진다.</li>
-            <li><strong>Tapper:</strong> 여러 줄의 카운터로 손님이 밀려오고, 잔을 미끄러뜨려 내보낸다. 놓치면 진다. 주막 일의 짧은 놀이가 된다.</li>
-          </ul>
-          <h3>3D와 로블록스에서 바뀌는 것</h3>
-          <ul>
-            <li><strong>현실 1시간이 마을의 하루, 현실 1주가 한 계절.</strong> 계절이 주간 업데이트 주기와 맞아 매주 새 작물과 축제가 들어온다.</li>
-            <li><strong>직업끼리 물건이 오가야 돈이 돈다.</strong> 농부의 작물이 주막의 음식이 되고, 어부의 생선이 장터에 오르고, 목수가 집 부품을 판다. NPC가 사 주는 값은 낮게 두고, 사람끼리 사고팔 때 값이 나게 한다.</li>
-            <li><strong>닷새장.</strong> 정해진 시간마다 장터가 열려 모두가 한곳에 모인다. RP 게임은 사람이 모이는 순간이 핵심이다.</li>
-            <li>밭과 집은 저장된다. 따로 떨어진 섬이 아니라 마을 안의 내 자리다.</li>
-          </ul>
-          <h3>다시 오게 하는 것</h3>
-          <ul>
-            <li>작물이 자라는 시간 때문에 다음 날 다시 와야 한다.</li>
-            <li>계절 한정 작물과 축제 꾸밈.</li>
-            <li>결제: 옷, 집 꾸밈, 소달구지 같은 탈것, 밭 넓히기.</li>
-          </ul>
-          <h3>위험과 첫 제작 범위</h3>
-          <p>Grow a Garden(2025) 이후 작물 키우기는 방치형 시뮬레이터로 꽉 찼다. <strong>혼자 자라길 기다리는 게임</strong>이 되면 진다. 사람끼리 주고받는 것이 중심이어야 한다. 조사의 위험대로 콘텐츠 양 싸움이기도 하다. 테마를 좁힐수록 성장 구간에 들어가므로 한국 시골 장터와 주막으로 좁혔다. 첫 제작은 마을 하나, 직업 셋(농부, 주막, 어부), 작물 8종, 축제 하나다.</p>
-          <p class="ref-list">레퍼런스 · 원작: Harvest Moon(1996), Tapper(1983) · 3D·로블록스: Animal Crossing(마을과 계절), Bloxburg·Brookhaven(로블록스 RP), Work at a Pizza Place(일을 나눠 맡는 RP)</p>
+          <p class="concept-meta">시골 장터 타운 RP · 4~8인부터 · 장터 의뢰 8~10분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">농장, 조리대, 장터가 이어진 작은 마을에서 친구와 가게를 운영한다. 농사 결과가 다음 장날의 주문과 역할놀이로 이어진다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> 초기 Harvest Moon의 계절·작물·마을 생활과, Tapper의 밀려오는 주문에 맞춰 여러 줄을 관리하는 규칙을 참고한다. 술집 외형 대신 과일 음료와 식사 장터로 다시 만든다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 농장과 가게 사이 운반, 골목의 배달 동선, 카운터 앞 손님 위치가 일의 순서를 바꾼다. 직접 자리에 서서 주문을 받고 물건을 건네는 행동이 마을 생활을 만든다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 「어떤 주문을 받아 어느 재료를 누구에게 넘길지」를 고른다. 농사는 다음 주문의 재료 공급이고, 한 장터 영업에서 정한 공동 주문량을 맞추는 짧은 목표가 있다.</p>
+          <p><strong>한 장면 예시.</strong> 축제에 필요한 과일은 충분한데 요리 담당이 한 명뿐이다. 농부가 추가 수확을 멈추고 포장을 돕거나, 가게가 복잡한 주문을 거절하고 단순 메뉴를 빨리 처리한다.</p>
+          <p><strong>실패와 복구.</strong> 주문을 놓쳐도 그 주문의 수입만 줄고 집과 농장은 유지된다. 오프라인 동안 작물이 썩거나 연속 출석이 끊겨 재산을 잃는 규칙은 두지 않는다. 빈 역할은 NPC가 기본 속도로 맡는다. 장터 의뢰는 선택 참여이며 영업 시간 밖에도 같은 마을에서 자유롭게 생활한다.</p>
+          <p><strong>친구와 하는 이유.</strong> 플레이어는 농부·점원 외에 손님·주민을 선택해 친구 가게를 방문하고 메뉴를 주문하거나, 마을 게시판의 정해진 행사 틀로 잔치를 연다. 주문 실적이 없어도 집과 관계 기록은 남는다. NPC 주문은 사람이 적을 때 공급하고, 자유 가격 거래는 초기에는 열지 않는다.</p>
+          <p><strong>모바일 조작.</strong> 이동 + 집기/건네기 + 작업 선택. 재료는 정해진 선반과 카운터에 놓아 작은 물건 정밀 배치를 줄인다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 상점 꾸미기, 메뉴 조합, 정기 축제. 매주 새 모델을 만드는 약속보다 기존 재료로 주문 조건을 바꾸는 운영을 먼저 검증한다. 간판·앞치마·가구 외형을 판다.</p>
+          <p><strong>첫 시제품 범위.</strong> 골목 1개, 재배·조리·판매 3역할, 작물 3종, 메뉴 3종, 축제 주문 1종. 대형 마을·낚시·주택 자유 건축은 이후다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 농사 대기나 반복 버튼 누르기만 남을 수 있다. 물건을 전달받아 내가 할 일이 바뀌는 순간이 충분한지 확인한다. 저장 복원과 역할 이탈도 검사해야 한다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://www.nintendo.com/en-gb/Games/Super-Nintendo/Harvest-Moon--788055.html">Nintendo — Harvest Moon SNES</a> · <a href="https://arcarc.xmission.com/PDF_Arcade_Bally_Midway/Tapper_Parts_and_Operating_Manual_%28Dec_1983%29.pdf">Bally Midway — Tapper 원본 설명서 보존본</a></p>
         </section>
-
+        <section class="concept" id="theme-hospital" aria-labelledby="theme-hospital-title">
+          <h2 id="theme-hospital-title">06. Theme Hospital</h2>
+          <p class="concept-meta">기묘한 병원 타운 RP · 3~6인부터 · 진료 교대 8분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">머리가 풍선처럼 커지는 식의 가상 증상을 다루는 작은 병원에서 접수·검사·치료를 나눠 맡는다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> 1997년 원작의 제한된 자원, 병원 운영, 우스꽝스러운 가상 질환을 참고한다. 한 명이 병원 전체를 관리하던 구조를 플레이어가 각 현장에서 일하는 구조로 바꾼다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 병실 위치, 복도 혼잡, 장비 운반이 직접 이동의 문제로 바뀐다. 접수자는 기다리는 줄을 보고, 검사자는 검사실 상황을 보고, 운반자는 두 공간을 잇는다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 「어느 환자를 먼저 받을지, 비어 있는 장비를 어디로 옮길지, 지금 치료할지 추가 검사를 할지」를 고른다. 교대가 끝날 때 목표 진료 수와 대기 시간 조건을 함께 맞추면 성공한다.</p>
+          <p><strong>한 장면 예시.</strong> 같은 검사기를 기다리는 환자 셋이 몰린다. 접수 담당은 다른 검사만 필요한 환자를 먼저 안내하고, 운반 담당은 옆방의 장비를 가져온다. 치료 담당은 검사 결과가 완성된 환자부터 맡는다.</p>
+          <p><strong>실패와 복구.</strong> 대기 한도를 넘긴 NPC는 다른 병원으로 가며 평판이 조금 줄어든다. 즉사·영구 파산 대신 다음 교대에서 회복할 수 있게 한다. 필수 역할은 자동 NPC가 대체하고 잘못 안내된 환자는 접수대로 돌아온다.</p>
+          <p><strong>친구와 하는 이유.</strong> 친구는 환자 역할을 선택해 상황극을 할 수 있다. 환자 플레이어에게 진료를 강제하지 않고 NPC 진료만으로도 목표를 달성한다. 자격을 독점한 사람 한 명 때문에 진행이 멈추지 않게 한다.</p>
+          <p><strong>모바일 조작.</strong> 이동 + 대상 선택 + 검사/전달. 검사 놀이는 큰 버튼 순서나 색 맞추기 수준으로 시작한다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 오늘의 가상 증상 조합, 병실 배치, 직원·환자 역할 교대가 재방문 이유다. 병실 장식과 근무복을 수익 후보로 두고 실제 의료 조언이나 의료 효능은 다루지 않는다.</p>
+          <p><strong>첫 시제품 범위.</strong> 진료소 1곳, 접수·검사·치료 3역할, 가상 증상 3종, 장비 2개, NPC 환자. 건물 확장과 장비 경제는 제외한다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 환자 수만 늘면 대기 게임이 된다. 역할마다 혼잡을 바꾸는 선택이 있어야 한다. 평소 진료와 다른 사건을 얼마나 적은 자산으로 만들 수 있는지도 확인한다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://www.ea.com/games/theme/theme-hospital">EA — Theme Hospital</a></p>
+        </section>
         <section class="concept" id="windjammers" aria-labelledby="windjammers-title">
-          <h2 id="windjammers-title">06. Windjammers × 열혈 피구</h2>
-          <p class="concept-meta">아케이드 스포츠(추천 4위) · 2:2 또는 3:3 · 한 판 3~5분 · 원작: <a href="/posts/retrogames-onl-snes/?q=windjammers">Windjammers</a>(네오지오), <a href="/posts/classic-games/?q=돗지볼">슈퍼 돗지볼 열혈 피구</a>(tooli)</p>
-          <p class="concept-pitch">원반을 던지고 받는다. 벽에 튕겨 꺾고, 받는 순간 힘을 모아 필살 투구를 날린다. 상대 골라인에 넣으면 점수, 몸에 맞히면 골문이 빈다.</p>
-          <h3>원작에서 가져오는 것</h3>
-          <ul>
-            <li><strong>Windjammers:</strong> 원반을 상대 진영 뒤 골라인에 넣으면 점수. 벽 튕기기, 휘어 던지기, 높이 띄우기, 받는 타이밍에 따라 세지는 필살 투구.</li>
-            <li><strong>열혈 피구:</strong> 선수마다 다른 필살 슛(지그재그, 분신, 솟았다 떨어지기). 맞은 선수는 쓰러진다.</li>
-          </ul>
-          <h3>3D와 로블록스에서 바뀌는 것</h3>
-          <ul>
-            <li><strong>높이가 생긴다.</strong> 원작의 띄워 던지기가 진짜 포물선이 되고, 점프해서 받을 수 있다.</li>
-            <li><strong>원반에 맞으면 3초 쓰러진다.</strong> 그 사이 그 선수의 골문 쪽이 빈다. 피구의 맞히기가 득점 기회를 만든다.</li>
-            <li><strong>조작은 셋.</strong> 이동, 던지기(누른 시간이 세기, 손을 뗄 때 미는 방향이 휘기), 대시. 받기는 원반 가까이 있으면 저절로 되고, 타이밍이 맞으면 완벽 받기로 필살 게이지가 찬다.</li>
-          </ul>
-          <h3>넷코드</h3>
-          <p>원반은 서버가 가진다. 던질 때 출발점, 속도, 휘기 값만 보내고 모든 클라이언트가 같은 공식으로 궤적을 계산한다. 받기는 받는 사람의 핑만큼 시간을 되돌려 판정하되 창을 0.25초로 넉넉하게 둔다. Blade Ball이 쫓아오는 공과 넉넉한 쳐내기 창으로 같은 문제를 풀었다.</p>
-          <h3>다시 오게 하는 것</h3>
-          <ul>
-            <li>4주짜리 시즌 순위. 28일 리텐션 주기와 맞춘다.</li>
-            <li>필살 투구는 플레이로 해금한다. 결제는 원반과 선수 겉모양, 득점 효과만.</li>
-            <li>친구와 2인 파티로 매칭하면 보상이 더 붙는다.</li>
-          </ul>
-          <h3>위험과 첫 제작 범위</h3>
-          <p>대전이라 사람이 적으면 매칭이 안 된다. 빈자리를 채우는 봇이 처음부터 있어야 한다. 넷코드 튜닝이 이 기획에서 가장 오래 걸린다. 첫 제작은 코트 2개, 필살 투구 4종, 봇, 2:2만이다.</p>
-          <p class="ref-list">레퍼런스 · 원작: Windjammers(1994), Super Dodge Ball(1987) · 3D·로블록스: Blade Ball(쳐내기 타이밍), Rocket League(짧은 팀 경기), Dodgeball!(로블록스 피구)</p>
+          <h2 id="windjammers-title">07. Windjammers × 열혈 피구</h2>
+          <p class="concept-meta">아케이드 스포츠 · 2 대 2 · 3~5분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">상대 골 뒤 공간을 노리는 원반 경기에서, 벽 튕김·높은 패스·짧은 수비 이탈로 빈 골문을 만든다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> Windjammers의 상대 골 구역에 넣는 원반 대결, 벽 반사와 특수 투구, 열혈 피구의 받기·맞히기와 팀 구성을 참고한다. 두 게임의 점수 체계를 모두 넣지 않고 골 득점으로 통일한다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 3D 코트에서는 낮은 벽을 넘기는 높은 패스와 기둥 뒤로 감기는 궤적이 구분된다. 한 명이 전방에서 받을 때 다른 한 명이 뒤 골문을 지켜야 한다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 「직접 득점할지, 동료에게 패스할지, 상대를 짧게 경직시켜 다음 슛 공간을 만들지」를 판단한다. 몸에 맞히기는 점수가 아니라 위치를 흔드는 수단이다.</p>
+          <p><strong>한 장면 예시.</strong> 수비 둘이 골 중앙에 모이면 공격자가 같은 진영 측면의 동료에게 패스한다. 앞 수비가 그쪽으로 이동하는 순간, 원반을 받은 동료는 중앙에서 열린 골 구역을 노려 던진다. 뒤 수비는 패스를 따라갈지 중앙을 지킬지 판단한다.</p>
+          <p><strong>실패와 복구.</strong> 맞은 선수는 잠깐 움직임이 제한되지만 경기에서 탈락하지 않는다. 실점하면 즉시 중앙 재개, 이탈 자리는 봇이 채운다.</p>
+          <p><strong>친구와 하는 이유.</strong> 패스 후 바로 슛하면 방향 선택 폭이 넓어져 둘이 위치를 바꿀 이유가 생긴다. 친구 파티의 능력치를 높이는 보상은 두지 않는다.</p>
+          <p><strong>모바일 조작.</strong> 이동 + 던지기/패스 + 대시. 받기는 가까운 범위에서 자동 처리하고, 높은 공은 명확한 낙하지점으로 읽게 한다. 기본 시점은 코트 전체가 보이는 높은 시점이다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 친구 재대결, 동일 능력치 시즌 기록, 코트별 반사 규칙. 원반·유니폼·득점 효과만 수익 후보로 둔다.</p>
+          <p><strong>첫 시제품 범위.</strong> 코트 1개, 원반 1종, 직선·반사·높은 패스, 봇. 특수 기술은 기본 패스와 수비가 재미있을 때 추가한다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 공의 화면 위치와 실제 판정이 어긋나면 곧 불공정해진다. 서버 판정과 지연 처리는 설계 과제이며 특정 지연 보정값으로 해결된다고 약속하지 않는다. 두 휴대폰의 실제 네트워크에서 먼저 시험한다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://www.dotemu.com/games/windjammers/">Dotemu — Windjammers</a> · <a href="https://www.nintendo.com/us/store/products/arcade-archives-super-dodge-ball-switch/">Nintendo — Super Dodge Ball 원작 재발매</a></p>
         </section>
-
         <section class="concept" id="micro-machines" aria-labelledby="micro-machines-title">
-          <h2 id="micro-machines-title">07. Micro Machines × R.C. Pro-Am × Excitebike</h2>
-          <p class="concept-meta">레이싱(추천 5위) · 8인 · 한 판 3~4분 · 원작: <a href="/posts/playretrogames/?q=micro+machines">Micro Machines</a>(메가 드라이브), <a href="/posts/retrogames-onl-snes/?q=pro-am">R.C. Pro-Am</a>(NES), <a href="/posts/retrogames-onl-snes/?q=excitebike">Excitebike</a>(NES)</p>
-          <p class="concept-pitch">장난감 자동차가 되어 부엌 식탁, 욕조 가장자리, 책상 위를 달린다. 시리얼 그릇을 돌고 자 다리를 건넌다. 트랙은 플레이어가 집 안 물건을 놓아 직접 만든다.</p>
-          <h3>원작에서 가져오는 것</h3>
-          <ul>
-            <li><strong>Micro Machines:</strong> 집 안 물건이 곧 트랙. 화면 밖으로 밀려나면 지는 대결 방식.</li>
-            <li><strong>R.C. Pro-Am:</strong> 트랙 위 아이템과 부품. 주운 부품으로 차가 빨라진다.</li>
-            <li><strong>Excitebike:</strong> 트랙을 직접 짓는 디자인 모드.</li>
-          </ul>
-          <h3>3D와 로블록스에서 바뀌는 것</h3>
-          <ul>
-            <li><strong>위에서 보던 시점을 차 뒤 시점으로.</strong> 높이가 생겨 식탁에서 바닥으로 뛰어내리는 지름길이 생긴다. 밀려나기 대결은 따로 모드로 둔다.</li>
-            <li><strong>모바일 조작:</strong> 가속은 저절로, 좌우 조향에 드리프트와 아이템 버튼 두 개.</li>
-            <li><strong>트랙 편집:</strong> 방 하나에 책, 컵, 자, 블록 같은 물건 30개를 놓고 체크포인트를 찍으면 트랙이 된다. 저장하고 공유하고 좋아요를 받는다. 매주 이번 주 트랙을 뽑는다.</li>
-          </ul>
-          <h3>넷코드</h3>
-          <p>차의 물리는 운전하는 사람의 클라이언트가 맡고, 서버는 체크포인트 통과 순서와 속도 상한만 검사한다. 차끼리 부딪히면 살짝 미는 것으로 끝낸다. 서로의 물리를 세게 주고받지 않아야 지연 때 튕겨 나가는 일이 줄어든다.</p>
-          <h3>다시 오게 하는 것</h3>
-          <ul>
-            <li>남이 만든 트랙이 매일 새 콘텐츠가 된다.</li>
-            <li>차 부품 모으기와 도색.</li>
-            <li>결제: 차 겉모양, 편집기 꾸밈 물건 묶음, 개인 서버.</li>
-          </ul>
-          <h3>위험과 첫 제작 범위</h3>
-          <p>조사에서 짚은 대로 차량 물리와 모바일 조작감이 가장 어렵다. 로블록스에서 집 안 장난감 차 경주는 Tub Car Simulator 정도였고 지금은 비어 있다. 공식 Hot Wheels Open World는 장난감 차지만 집 안 크기의 감각은 아니다. 첫 제작은 방 2개(부엌, 욕실), 차 4대, 아이템 4개, 편집기 물건 20개다.</p>
-          <p class="ref-list">레퍼런스 · 원작: Micro Machines(1991), R.C. Pro-Am(1988), Excitebike(1984) · 3D·로블록스: Re-Volt(집 안 RC카 경주), Mario Kart(아이템 경주), Trackmania(트랙 만들기와 공유)</p>
+          <h2 id="micro-machines-title">08. Micro Machines × R.C. Pro-Am × Excitebike</h2>
+          <p class="concept-meta">레이싱·드라이빙 · 2~6인부터 · 2~4분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">책상 위 장난감 차량으로 달리며, 넓고 느린 길과 자·책으로 만든 좁은 지름길 중 하나를 고른다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> 초기 2D Micro Machines의 생활용품 트랙, NES R.C. Pro-Am의 장애물·아이템 경주, Excitebike의 코스 편집을 참고한다. 후대 3D 작품을 원작으로 묶지 않는다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 책 위로 올라가는 경사, 책상 밑 터널, 떨어지는 지름길이 진짜 높이와 폭을 갖는다. 작은 차라서 익숙한 책상이 낯선 지형으로 보이는 것이 핵심이다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 「안전한 바깥길로 갈지, 좁은 다리를 타 기록을 줄일지, 다음 코너를 위해 속도를 줄일지」를 고른다. 정해진 체크포인트를 순서대로 통과해 완주한다.</p>
+          <p><strong>한 장면 예시.</strong> 선두는 자로 만든 다리를 건너면 2초를 줄이지만 떨어지면 뒤 체크포인트로 돌아간다. 뒤차는 안전 경로로 가서 선두의 실수를 노린다. 수치는 튜닝용 가설이다.</p>
+          <p><strong>실패와 복구.</strong> 트랙 밖으로 떨어지면 최근 체크포인트에서 짧게 복귀한다. 큰 충돌 연쇄는 초기판에서 제외하고 차끼리는 통과하게 한다. 뒤처진 사람도 완주 기록을 남긴다.</p>
+          <p><strong>친구와 하는 이유.</strong> 레이스 뒤 경사로 하나를 바꾸고 친구에게 같은 조건으로 달려 보게 한다. 편집은 체크포인트가 검증된 제한된 부품 교체부터 시작한다.</p>
+          <p><strong>모바일 조작.</strong> 자동 가속 + 좌우 조향 + 브레이크/드리프트. 카메라를 직접 돌려야만 코너가 보이는 코스는 피한다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 트랙별 개인 기록, 친구 유령 기록, 제한된 코스 조합. 차체 외형과 도색을 팔고 차 성능은 공통으로 둔다.</p>
+          <p><strong>첫 시제품 범위.</strong> 책상 1개, 차량 조작 1종, 코스 1개, 체크포인트 복귀. 자유 편집기·공개 공유·아이템 공격은 조작 검증 이후다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 차량 튕김과 모바일 조향이 가장 큰 위험이다. 유저 제작 트랙이 저절로 콘텐츠를 공급한다는 전제를 두지 않는다. 편집과 저장은 별도 개발 범위다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://www.nintendo.co.jp/clv/manuals/en/pdf/CLV-P-NAAHE_en.pdf">Nintendo — Excitebike 원본 설명서</a></p>
         </section>
-
         <section class="concept" id="monsters" aria-labelledby="monsters-title">
-          <h2 id="monsters-title">08. Dragon Warrior Monsters × Monster Rancher</h2>
-          <p class="concept-meta">수집·육성 턴제 RPG(추천 6위) · 1~4인 · 한 판 없음 · 원작: <a href="/posts/retrogames-onl-snes/?q=dragon+warrior+monsters">Dragon Warrior Monsters</a>(GBC), <a href="/posts/playretrogames/?q=monster+rancher">Monster Rancher</a>(PS1)</p>
-          <p class="concept-pitch">3D 들판을 돌아다니며 괴물을 동료로 삼고, 둘을 배합해 새 괴물을 얻는다. 친구를 만나면 그 친구의 아바타에서 괴물 알이 하나 태어난다.</p>
-          <h3>원작에서 가져오는 것</h3>
-          <ul>
-            <li><strong>Dragon Warrior Monsters:</strong> 괴물을 잡지 않고 고기를 줘서 동료가 되고 싶게 만든다. 두 마리를 배합하면 새 종이 나오고 부모의 기술을 물려받는다.</li>
-            <li><strong>Monster Rancher:</strong> 아무 CD나 넣으면 그 CD에서 괴물이 태어난다.</li>
-          </ul>
-          <h3>3D와 로블록스에서 바뀌는 것</h3>
-          <ul>
-            <li><strong>조사의 결론대로 메뉴식 턴제.</strong> 3D 들판, 고정 카메라 전투, 명령 메뉴. 격자 위에서 움직이는 전술 턴제는 하지 않는다.</li>
-            <li><strong>CD 자리에 로블록스 아바타.</strong> 같은 서버에 있는 친구의 아바타 색과 장신구, 계정 번호로 괴물 알 하나를 만든다. 친구마다 다른 알이 나오니 친구와 노는 것이 곧 수집이 된다. 같은 친구에게서는 한 번만 받는다.</li>
-            <li><strong>배합도 둘이 한다.</strong> 내 괴물과 친구의 괴물을 배합하면 알이 둘에게 하나씩 생긴다.</li>
-            <li>들판은 넷까지 같이 다니고, 전투는 둘씩 짝을 지어 2:2로 한다.</li>
-          </ul>
-          <h3>다시 오게 하는 것</h3>
-          <ul>
-            <li>도감과 배합 계보 채우기.</li>
-            <li>매주 새 종 두세 마리와 계절 한정 들판.</li>
-            <li>결제: 괴물 꾸밈, 목장 꾸미기, 보관함 칸. 부화를 앞당기는 것은 팔지 않는다.</li>
-          </ul>
-          <h3>위험과 첫 제작 범위</h3>
-          <p>만들 것이 가장 많다. 괴물 하나마다 모델, 기술, 성장 곡선이 필요하다. Loomian Legacy가 7년째 있고 Blox Monsters가 2026년 4월에 나왔다. 다른 점은 배합과 친구 아바타 알 두 가지다. 괴물 도감의 재료로 <a href="/posts/korean-folklore-research/">한국 괴물·귀신</a>을 쓸 수도 있다. 첫 제작은 들판 2곳, 괴물 30종, 기술 40개, 배합표, 친구 알로, 8주를 넘긴다.</p>
-          <p class="ref-list">레퍼런스 · 원작: Dragon Warrior Monsters(1998), Monster Rancher(1997) · 3D·로블록스: Loomian Legacy·Doodle World(로블록스 메뉴식 턴제), Pokémon Let's Go(들판에 보이는 괴물)</p>
+          <h2 id="monsters-title">09. 초기 Pokémon × Dragon Quest Monsters</h2>
+          <p class="concept-meta">수집·육성 턴제 RPG · 혼자 또는 2인 · 탐사 10~15분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">들판의 서식 행동을 관찰해 동료를 모으고, 기술 계승으로 친구와 다른 파티를 만드는 작은 턴제 RPG다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> 게임보이 Pokémon의 탐색·수집·상성 턴제, 1998년 게임보이 Dragon Quest Monsters의 동료 몬스터와 배합·기술 계승을 참고한다. 기존 후보 Monster Rancher는 원본이 3D여서 이번 2D 레퍼런스 목록에서 제외했다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 나무 위, 물가, 굴 입구처럼 서식 위치를 높이와 시야로 관찰한다. 먹이로 유인해 접근하는 탐색은 3D이고 전투는 읽기 쉬운 명령 메뉴로 유지한다. 카메라만 3D로 바꾸는 데 그치지 않는다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 「어느 서식 행동을 따라갈지, 전투에서 어떤 상성과 기술을 쓸지, 배합 결과에 어떤 기술을 남길지」를 고른다. 탐사 의뢰를 마치고 귀환하면 새 조합을 시험한다.</p>
+          <p><strong>한 장면 예시.</strong> 한 동료는 빠르지만 방어 기술이 없고 다른 동료는 느리지만 아군 보호 기술이 있다. 기술 하나를 계승한 새 개체를 만들어, 친구의 공격형 파티와 같은 보스에게 다른 방식으로 도전한다.</p>
+          <p><strong>실패와 복구.</strong> 패배하면 이번 탐사를 마치고 캠프로 돌아오며 수집한 동료를 영구 삭제하지 않는다. 초기 배합도 부모를 없애지 않는 계승 실험으로 제안한다. 원작의 배합 소모 규칙과 구분한다.</p>
+          <p><strong>친구와 하는 이유.</strong> 2인 전투에서는 각자 한 자리를 지휘하고, 제한 시간에 명령이 없으면 기본 방어한다. 친구 파티를 빌려 연습할 수 있지만 희귀 개체를 얻으려면 여러 계정을 만들어야 하는 구조는 두지 않는다.</p>
+          <p><strong>모바일 조작.</strong> 탐색은 이동 + 관찰/먹이, 전투는 큰 명령 버튼. 실시간 회피와 메뉴 조작을 동시에 요구하지 않는다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 도감 채우기보다 소수 동료의 기술 조합과 선택형 도전 의뢰를 먼저 검증한다. 외형·캠프 장식이 수익 후보이며 유료 무작위 희귀 개체 판매는 초기안에 없다.</p>
+          <p><strong>첫 시제품 범위.</strong> 서식지 1곳, 동료 6종, 기술 8개, 계승 조합 3개, 보스 1종. 30종 도감·자유 거래·랭크 PvP·매주 신종 추가를 처음부터 약속하지 않는다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 모델·애니메이션·기술·전투 균형의 제작량이 크다. 6종만으로 다른 선택이 나오는지 확인해야 한다. 누적 방문 수가 큰 기존작의 존재는 이 기획의 수익성을 증명하지 않는다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://press.pokemon.com/en-AU/products/Pokemon-Blue">Pokémon 공식 — Pokémon Blue</a> · <a href="https://www.jp.square-enix.com/column/detail/64/">Square Enix — Dragon Quest Monsters 원작 소개</a></p>
         </section>
-
         <section class="concept" id="lemmings" aria-labelledby="lemmings-title">
-          <h2 id="lemmings-title">09. Lemmings</h2>
-          <p class="concept-meta">코옵 퍼즐(추천 7위) · 2~4인 · 한 판 3~6분 · 원작: <a href="/posts/retrogames-onl-snes/?q=lemmings">Lemmings</a>(아미가·DOS·SNES 등)</p>
-          <p class="concept-pitch">앞만 보고 걷는 작은 생물 스무 마리를 출구까지 데려간다. 기술 여덟 가지를 넷이 두 개씩 나눠 들고 있어서, 누가 언제 쓸지 말로 맞춰야 한다.</p>
-          <h3>원작에서 가져오는 것</h3>
-          <ul>
-            <li><strong>레밍은 걷기만 한다.</strong> 플레이어는 특정 레밍에게 기술을 준다. 오르기, 낙하산, 폭파, 막기, 계단 쌓기, 옆으로 파기, 비스듬히 파기, 아래로 파기.</li>
-            <li>기술마다 쓸 수 있는 횟수가 정해져 있다.</li>
-            <li>정해진 수 이상 살려야 통과한다.</li>
-          </ul>
-          <h3>3D와 로블록스에서 바뀌는 것</h3>
-          <ul>
-            <li><strong>커서 대신 아바타.</strong> 플레이어가 판 위를 걸어 다니며 레밍에게 다가가 기술을 건다. 플레이어가 길을 막고 서 있으면 레밍이 돌아선다. 몸으로 막는 것이 3D에서만 생기는 해법이다.</li>
-            <li><strong>판은 좁은 디오라마.</strong> 기본 카메라를 높게 두어 한 판이 한 화면에 들어오게 한다.</li>
-            <li><strong>기술은 넷이 두 개씩.</strong> 혼자서는 못 푼다. 둘이면 넷씩 나눈다.</li>
-            <li>레밍은 계속 걸어오고 시간은 흐른다. 말이 엇갈리면 웃음이 터진다.</li>
-          </ul>
-          <h3>다시 오게 하는 것</h3>
-          <ul>
-            <li>판마다 별 셋(살린 수, 시간, 아낀 기술).</li>
-            <li>다음 단계로 판 편집기와 공유.</li>
-            <li>결제: 레밍과 아바타 겉모양, 개인 서버. 조사대로 퍼즐은 결제가 약하다.</li>
-          </ul>
-          <h3>위험과 첫 제작 범위</h3>
-          <p>돈을 벌기보다 로블록스 제작을 익히는 첫 게임이나, 다른 기획의 주간 이벤트 모드로 쓰기에 맞다. <a href="/posts/logic-puzzles/">7번 포스트의 논리 퍼즐</a>도 같은 방식으로 바꿀 수 있다. 지뢰찾기를 넷이 직접 밟아 보는 지뢰밭처럼. 첫 제작은 판 15개, 기술 6개, 2~4인이다.</p>
-          <p class="ref-list">레퍼런스 · 원작: Lemmings(1991), 3D Lemmings(1995) · 3D·로블록스: Overcooked(시간에 쫓기는 협동), Pikmin(무리 이끌기), Portal 2(협동 퍼즐)</p>
+          <h2 id="lemmings-title">10. Lemmings</h2>
+          <p class="concept-meta">코옵 퍼즐 · 1~4인 · 4~6분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">계속 앞으로 걷는 작은 생물들을 다리·방향 전환·굴착으로 구한다. 다른 층을 맡은 동료와 출발 시점을 맞춘다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> 1991년 2D 원작의 자동 이동, 제한된 기술, 목표 구조 수를 참고한다. 움직이는 생물 하나하나를 조종하기보다 환경과 행동을 바꾼다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 윗길의 구멍이 아랫길의 착지점이 된다. 위층에서 다리를 놓는 사람과 아래층에서 흐름을 막는 사람이 서로의 공간을 확인해야 한다. 높은 기본 시점과 층 투명화로 가려짐을 줄인다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 「한정된 기술을 어느 지점에 쓰고, 지금 무리를 보내도 되는지」를 고른다. 예를 들어 12마리 중 9마리를 출구에 도착시키면 성공한다.</p>
+          <p><strong>한 장면 예시.</strong> 상층 담당이 벽을 파는 동안 아래층 담당은 정지 표식으로 무리를 기다리게 한다. 다리가 완성됐다는 핑을 받은 뒤 정지를 풀어 낙하 지점에 몰리지 않게 한다.</p>
+          <p><strong>실패와 복구.</strong> 목표 구조 수를 달성할 수 없게 되면 즉시 재시작을 제안한다. 준비 단계는 시간을 멈추고 실행 단계만 흐르게 한다. 혼자서는 모든 도구를 쓰고 여럿이면 도구를 넘겨 쓸 수 있다.</p>
+          <p><strong>친구와 하는 이유.</strong> 필수 기술을 특정 사람 계정에 잠그지 않는다. 역할은 공간으로 나누고, 실패 후 경로를 함께 되짚는 것이 대화의 재료가 된다.</p>
+          <p><strong>모바일 조작.</strong> 이동 + 도구 선택 + 큰 대상 지정. 정확히 작은 생물을 터치하기보다 무리나 경로 표식을 고른다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 기술 수를 줄인 재도전, 다른 출구, 친구 기록. 스테이지 수를 늘리기 전에 같은 판에서 두 해법이 생기는지 본다. 외형 중심 수익안의 결제 의사는 별도 검증한다.</p>
+          <p><strong>첫 시제품 범위.</strong> 한 디오라마, 기술 3종, 퍼즐 5개. 자유 지형 파괴와 공개 편집기는 제외한다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 3D 가림 때문에 실패하면 추론보다 카메라와 싸우게 된다. 정보 공유가 퍼즐 풀이를 돕는지 실제 모바일 화면에서 확인한다. 퍼즐이 무조건 만들기 쉽다는 가정은 하지 않는다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://sony.mediaroom.com/2006-03-20-Beloved-Videogame-Classic-Lemmings-Celebrates-15th-Anniversary-With-Its-Debut-on-the-PSP-PlayStation-Portable-System">Sony — Lemmings 원작 15주년</a></p>
         </section>
-
         <section class="concept" id="rampage" aria-labelledby="rampage-title">
-          <h2 id="rampage-title">10. Rampage</h2>
-          <p class="concept-meta">빌딩·샌드박스와 파괴(추천 8위) · 8~12인, 두 팀 · 한 판 6~8분 · 원작: <a href="/posts/playretrogames/?q=rampage">Rampage</a>(아케이드·NES 등)</p>
-          <p class="concept-pitch">한 팀은 3분 동안 블록으로 마을을 짓고, 다른 팀은 거대 괴수가 되어 3분 동안 부순다. 그다음 역할을 바꾼다.</p>
-          <h3>원작에서 가져오는 것</h3>
-          <ul>
-            <li>거대 괴수가 건물을 기어올라 주먹으로 부순다. 건물은 층마다 금이 가다가 충분히 부서지면 무너진다.</li>
-            <li>셋이 같이 하지만 점수는 각자 센다. 협력과 경쟁 사이.</li>
-          </ul>
-          <h3>3D와 로블록스에서 바뀌는 것</h3>
-          <ul>
-            <li><strong>짓는 팀:</strong> 나무, 벽돌, 강철 블록은 값과 단단함이 다르고, 정해진 예산 안에서 짓는다. 건물 안에 보물 상자 다섯 개를 숨긴다.</li>
-            <li><strong>부수는 팀:</strong> 기어오르기, 주먹, 몸통 박치기. 상자를 찾아 깨면 점수.</li>
-            <li><strong>역할을 바꿔 두 판, 점수는 합산.</strong> 내가 지은 것이 어떻게 무너지는지 보고 나면 다음에 더 잘 짓는다.</li>
-            <li>로블록스의 무너지는 물리 자체가 볼거리다. 연결이 끊긴 블록은 떨어진다.</li>
-          </ul>
-          <h3>성능</h3>
-          <p>부서진 블록은 서버당 2,000개까지만 두고, 떨어진 블록은 5초 뒤 사라진다. 블록은 정해진 크기 격자에 맞춰 놓게 해서 연결 계산을 단순하게 한다.</p>
-          <h3>다시 오게 하는 것</h3>
-          <ul>
-            <li>설계도 저장과 공유. Build a Boat for Treasure처럼 지어 둔 것을 다시 불러온다.</li>
-            <li>괴수 해금과 꾸밈.</li>
-            <li>결제: 괴수 겉모양, 블록 색과 재질 묶음, 설계도 칸.</li>
-          </ul>
-          <h3>위험과 첫 제작 범위</h3>
-          <p>설계도 저장을 직접 짜야 한다. 블록 목록을 줄여 DataStore에 넣는다. 괴수 파괴 게임은 Kaiju Universe, Smash the City가 이미 있지만 짓기와 부수기를 번갈아 하는 판은 찾지 못했다. 첫 제작은 블록 3종, 괴수 2종, 맵 하나다.</p>
-          <p class="ref-list">레퍼런스 · 원작: Rampage(1986) · 3D·로블록스: Build a Boat for Treasure(짓기와 저장), Natural Disaster Survival(무너지는 물리), Kaiju Universe(괴수)</p>
+          <h2 id="rampage-title">11. Rampage × Rampart</h2>
+          <p class="concept-meta">빌딩·샌드박스 · 2~4인부터 · 공방 8~10분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">작은 요새를 짓고 서로 공격해 본 뒤 무너진 부분을 고친다. 잘 지은 구조가 무엇인지 플레이 결과로 배운다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> Rampage의 건물을 오르고 부수는 행동, Rampart의 건축→공격→복구 주기를 참고한다. 원작과 달리 블록 지지와 입체 침입 경로를 설계의 중심에 둔다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 옆에서 파고드는 길, 지붕으로 오르는 길, 기둥 하나를 끊는 길이 경쟁한다. 높이만 쌓는 것보다 통로 폭·벽 두께·기둥 연결이 방어 방식이 된다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 「제한된 예산을 바깥벽·기둥·우회 통로 중 어디에 쓸지, 공격은 어디를 먼저 무너뜨릴지」를 고른다. 양 팀이 같은 예산으로 공격과 방어를 모두 맡고 남은 목표물 수를 비교한다.</p>
+          <p><strong>한 장면 예시.</strong> 첫 공격에서 얇은 중앙 기둥이 끊겨 지붕이 무너졌다. 다음 복구에서는 강한 벽을 더 사는 대신 기둥 둘을 나눠 놓는다. 공격자는 지붕을 포기하고 문으로 돌아가야 한다.</p>
+          <p><strong>실패와 복구.</strong> 무너지기 전 설계도는 남고 라운드 후 예산이 초기화된다. 정해진 공격 단계 외에는 남의 구조물을 파괴할 수 없다. 저장 실패 시 이전 설계도를 덮어쓰지 않고 재시도를 알린다.</p>
+          <p><strong>친구와 하는 이유.</strong> 친구가 만든 요새를 시험 공격하고 같이 고치는 협동 시험도 제공한다. 첫 시제품은 경쟁보다 함께 구조를 실험하는 모드로 시작할 수 있다.</p>
+          <p><strong>모바일 조작.</strong> 큰 격자에 놓기 + 90도 회전 + 되돌리기. 공격은 이동과 타격 하나로 시작한다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 설계도 개선, 같은 예산 도전, 제한된 부품 조합. 색·장식·외형을 수익 후보로 두고 더 강한 블록은 팔지 않는다.</p>
+          <p><strong>첫 시제품 범위.</strong> 부지 1개, 블록 3종, 공격 행동 1종, 목표물 1종, 설계도 1칸. 작은 블록 수로 연결 판정과 저장 복원부터 확인한다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 자유 물리 붕괴와 대량 파편은 성능·공정성을 흔든다. 파괴 판정은 단순한 연결 규칙으로 시작하고 파편은 연출로 분리한다. 실제 허용 블록 수는 기기 부하 측정 뒤 정한다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://elibrary.arcade-museum.com/magazines/pm/PlayMeter-1991-02/PlayMeter-1991-02-148.pdf">Atari — Rampart 당시 홍보물 보존본</a> · <a href="https://www.videogamemanual.com/PS2/Midway%20Arcade%20Treasures%20%28USA%29.pdf">Midway — 원작 수록 Arcade Treasures 설명서 보존본</a></p>
         </section>
-
+        <section class="concept" id="ghost-trick" aria-labelledby="ghost-trick-title">
+          <h2 id="ghost-trick-title">12. Ghost Trick</h2>
+          <p class="concept-meta">협동 내러티브·스토리 · 1~3인 · 사건 10~15분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">사건 직전의 짧은 시간을 되돌려 반복하며, 각자 다른 물건에 깃들어 사고의 원인을 바꾼다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> 닌텐도 DS 원작의 2D 장면, 물건에 빙의해 작동시키는 조작, 사건 전 시간을 되짚는 구조를 참고한다. 다른 후보와 같은 규모의 대중 흥행작이라고 단정하지 않고, 스토리·퍼즐 규칙의 보조 레퍼런스로 고른다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 방 안의 스위치와 복도 물건, 위층 창밖 장치가 서로 보이지 않는다. 한 사람은 사건 원인을 보고 다른 사람은 멀리 있는 원인을 바꾼다. 벽과 층을 넘는 인과관계를 전달하는 협동이다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 「어떤 물건을 언제 작동시키면 다음 사건이 어떻게 바뀔지」를 가설로 세우고 실행한다. 정해진 시간 안에 사고를 막고 원인을 설명하는 단서를 모으면 사건을 마친다.</p>
+          <p><strong>한 장면 예시.</strong> 창밖 상자가 떨어져 출입문을 막는다. 위층 담당이 선풍기로 종이를 날려 관리인의 동선을 바꾸고, 복도 담당이 조명을 켜 관리인이 제때 상자를 옮기게 한다. 직접 상자만 밀면 다른 사고가 생긴다.</p>
+          <p><strong>실패와 복구.</strong> 실패하면 사건 시작 직전으로 즉시 되돌아가고 이미 본 단서는 기록에 남는다. 긴 대사와 연출은 반복하지 않는다. 혼자서는 물건 사이를 전환해 같은 사건을 풀 수 있다.</p>
+          <p><strong>친구와 하는 이유.</strong> 각자 본 장면을 사건판에 핑으로 연결한다. 중요한 결정 전에는 전원 준비 상태를 확인하며, 이탈하면 해당 물건의 조작권을 넘긴다.</p>
+          <p><strong>모바일 조작.</strong> 카메라 회전 + 빙의할 물건 선택 + 작동. 연결 가능한 물건을 크게 표시해 정밀 이동을 줄인다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 최초 해결 이후에는 다른 인물의 시점, 선택적 구조 목표, 두 번째 원인 경로를 찾는다. 재방문이 약하면 매주 새 에피소드를 만드는 대신 단편형 협동 경험으로 범위를 제한한다. 꾸밈과 후속 사건 묶음은 검증 후 수익 후보로 둔다.</p>
+          <p><strong>첫 시제품 범위.</strong> 방 2개, 물건 6개, 사고 1개, 해결 경로 2개. 목소리 연기·대형 분기·장편 시나리오는 제외한다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 정답을 아는 사람이 모두 지시할 수 있고 사건 제작 비용이 높다. 새 플레이어의 정보가 해결에 필요한지, 이미 푼 사람이 다시 참여할 이유가 있는지 확인한다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://news.capcomusa.com/lets/browse/japans-ghost-trick-web-demo">Capcom — 원작의 물건 작동과 사건 구조</a> · <a href="https://news.capcomusa.com/lets/browse/ghost-trick-will-possess-your-phone-or-tablet-and-make-it-do-things">Capcom — DS 원작과 2D 아트 설명</a></p>
+        </section>
         <section class="concept" id="snow-bros" aria-labelledby="snow-bros-title">
-          <h2 id="snow-bros-title">번외. Snow Bros × Bubble Bobble</h2>
-          <p class="concept-meta">코옵 아케이드 액션(추천 목록 밖) · 2~4인 · 한 판 10분 · 원작: <a href="/posts/classic-games/?q=스노우+브라더스">스노우 브라더스</a>, <a href="/posts/classic-games/?q=버블보블">버블보블</a>(tooli)</p>
-          <p class="concept-pitch">괴물에 눈을 뿌려 눈덩이로 만들고, 밀어서 비탈로 굴린다. 굴러가는 눈덩이는 다른 괴물을 삼키며 커진다.</p>
-          <h3>원작에서 가져오는 것</h3>
-          <ul>
-            <li><strong>Snow Bros:</strong> 눈을 쏘아 적을 눈덩이로 만들고, 밀어 굴리면 다른 적까지 휩쓴다. 한 번에 많이 잡을수록 보너스가 크다.</li>
-            <li><strong>Bubble Bobble:</strong> 둘이 함께, 거품에 가두고 터뜨리기, 거품을 밟고 올라가기, 시간을 끌면 나타나는 잡을 수 없는 놈.</li>
-            <li>한 화면이 한 층인 구조.</li>
-          </ul>
-          <h3>3D와 로블록스에서 바뀌는 것</h3>
-          <ul>
-            <li><strong>판은 비탈과 계단이 있는 둥근 섬.</strong> 눈덩이가 진짜로 구르며 커진다. 높은 데서 밀어야 멀리 가니 넷이 어디서 밀지 짠다.</li>
-            <li><strong>거품은 동료를 띄운다.</strong> 동료를 거품에 태워 높은 곳에 올려 보낸다.</li>
-            <li>층을 올라가며 열 층마다 큰 놈이 있다.</li>
-          </ul>
-          <h3>위험과 첫 제작 범위</h3>
-          <p>한국에서는 오락실 향수가 크지만, 로블록스 이용자 대부분인 해외 10대는 원작을 모른다. 원작 인지도가 아니라 굴리면 커지는 재미로 승부해야 한다. 추천 목록 밖이라 장르 신호도 없다. 첫 제작은 섬 10층, 괴물 4종, 큰 놈 하나다.</p>
-          <p class="ref-list">레퍼런스 · 원작: Snow Bros(1990), Bubble Bobble(1986) · 3D·로블록스: Katamari Damacy(굴리면 커지기), It Takes Two(둘이 나눠 맡는 협동)</p>
+          <h2 id="snow-bros-title">13. Snow Bros × Bubble Bobble</h2>
+          <p class="concept-meta">코옵 아케이드 액션 · 추가 장르 · 1~4인 · 5~8분 · 인원과 시간은 검증 전 가설</p>
+          <p class="concept-pitch">적을 가둬 굴릴 수 있는 덩어리로 만들고, 동료가 몰아둔 적을 경사로에서 한 번에 휩쓴다.</p>
+          <p><strong>참고한 원작의 규칙.</strong> Snow Bros의 눈으로 가두고 굴리는 연쇄 공격, Bubble Bobble의 거품 포획과 협동을 참고한다. 원작 캐릭터와 눈사람·공룡 외형을 그대로 쓰지는 않는다.</p>
+          <p><strong>3D 공간이 바꾸는 것.</strong> 계단을 오르는 길과 아래로 굴리는 길이 다르다. 동료가 적을 비탈 아래로 유도한 뒤 위에서 덩어리를 굴리면 평지보다 긴 연쇄가 난다.</p>
+          <p><strong>반복해서 내릴 결정과 목표.</strong> 「지금 작은 덩어리를 밀어 안전하게 처리할지, 적을 더 모아 큰 연쇄를 노릴지」를 결정한다. 제한 시간 안에 구역의 적을 정리하면 다음 구역으로 간다.</p>
+          <p><strong>한 장면 예시.</strong> 한 명이 다리 위에서 적을 가두는 동안 다른 한 명이 비탈 아래 적을 유인한다. 성급히 밀면 둘만 맞히고, 너무 기다리면 포획이 풀려 위층이 위험해진다.</p>
+          <p><strong>실패와 복구.</strong> 쓰러진 플레이어는 포획 덩어리에 잠깐 갇히며 동료가 풀어 준다. 전원 쓰러지면 현재 구역부터 다시 시작한다. 동료를 방해하려고 밀 수는 없게 한다.</p>
+          <p><strong>친구와 하는 이유.</strong> 유인·포획·발사 역할을 상황에 따라 바꾸고 팀 연쇄 기록을 공유한다. 마지막 타격만 보상하지 않는다.</p>
+          <p><strong>모바일 조작.</strong> 이동 + 포획 발사 + 밀기. 밀기 전 예상 경로를 보여 주고 작은 적에 조준 보조를 둔다.</p>
+          <p><strong>재방문과 수익 후보.</strong> 경사·통로·적 순서의 조합, 더 적은 발사로 클리어하는 기록. 포획 효과와 아바타 외형이 수익 후보다.</p>
+          <p><strong>첫 시제품 범위.</strong> 작은 섬 1개, 구역 3개, 적 2종, 포획과 굴림. 보스·10층 던전·자유 점프 기술은 제외한다.</p>
+          <p><strong>먼저 검증할 위험.</strong> 3D에서도 적과 굴림 경로를 읽기 쉬워야 한다. 덩어리가 우연히 튕기는 볼거리보다 의도한 연쇄가 나오는지 확인한다. 목록 밖 장르이므로 제공된 시장 지표로 정당화하지 않는다.</p>
+          <p class="ref-list">원작 근거 · <a href="https://www.toaplangames.co.jp/en/license/license-20.html">TATSUJIN — Snow Bros</a> · <a href="https://www.taito.co.jp/en/bub">Taito — Bubble Bobble</a></p>
         </section>
 
         <section id="pick" aria-labelledby="pick-title">
-          <h2 id="pick-title">무엇부터 만들까</h2>
-          <p>조사의 요약은 <strong>소셜 요소가 있는 코옵 생존 탈출이 가장 안전하다</strong>였다. 여기에 작은 팀이 5~8주 안에 낼 수 있는지, 넷코드 부담이 작은지, 로블록스에 뚜렷한 강자가 없는지를 더해 골랐다.</p>
-          <div class="table-scroll" role="region" aria-label="만드는 순서 제안" tabindex="0"><table>
-            <thead><tr><th scope="col">순서</th><th scope="col">기획</th><th scope="col">이유</th></tr></thead>
+          <h2 id="pick-title">조건별 우선 검증 후보</h2>
+          <p><strong>내 우선 후보는 03번 협동 채굴, 01번 도구 협동 호러, 07번 팀 원반 경기다.</strong> 각각 귀환 판단, 역할을 맞춘 추적자 대응, 짧은 패스와 수비라는 서로 다른 재미를 검증할 수 있다. 시장 성공률 순위가 아니라 규칙의 선명함과 확인할 질문을 기준으로 한 판단이다.</p>
+          <div class="table-scroll" role="region" aria-label="팀 조건별 시제품 선택" tabindex="0"><table>
+            <thead><tr><th scope="col">조건</th><th scope="col">먼저 볼 안</th><th scope="col">확인할 질문</th></tr></thead>
             <tbody>
-              <tr><th scope="row">첫 출시</th><td><a href="#pac-man">02. Pac-Man</a></td><td>가장 작고 규칙이 분명하다. 서버 AI, 동료 구출, 4인 협동, 주간 미로 업데이트까지 로블록스 운영 한 바퀴를 2~3주 만에 작게 돌려 볼 수 있다.</td></tr>
-              <tr><th scope="row">본 게임</th><td><a href="#dig-dug">03. Dig Dug × Boulder Dash × Mr. Driller</a></td><td>서바이벌, 협동, 들고 나오기, 판 밖 성장이 다 있다. 떨어짐을 서버 격자로 처리해 넷코드 부담이 중간에 그친다. 로블록스에 비슷한 강자가 없다.</td></tr>
-              <tr><th scope="row">다음 후보</th><td><a href="#clock-tower">01</a>, <a href="#zombies">04</a>, <a href="#windjammers">06</a></td><td>01은 1위 장르지만 방 조각 호러 경쟁이 많다. 04는 어린 이용자 쪽을 맡는다. 06은 사람이 모인 뒤에 낼 대전이다.</td></tr>
-              <tr><th scope="row">보류</th><td><a href="#monsters">08</a>, <a href="#harvest-moon">05</a>, <a href="#micro-machines">07</a>, <a href="#lemmings">09</a></td><td>08은 만들 것이 너무 많다. 05는 농사 테마가 방치형 시뮬레이터와 겹친다. 07은 차량 물리가 무겁다. 09는 수익이 약해 이벤트 모드로 돌린다.</td></tr>
+              <tr><th scope="row">협동 생존을 깊게</th><td><a href="#dig-dug">03. Dig Dug × Boulder Dash × Mr. Driller</a></td><td>광석 한 덩이를 더 얻기 위해 귀환 경로를 위험하게 만들 것인가? 친구가 다른 결정을 내리는가?</td></tr>
+              <tr><th scope="row">소셜 호러 중심</th><td><a href="#clock-tower">01. Clock Tower × Sweet Home</a></td><td>추적자보다 동료의 역할과 신호를 보고 행동을 바꾸는 순간이 생기는가?</td></tr>
+              <tr><th scope="row">짧은 경기·반복 대전</th><td><a href="#windjammers">07. Windjammers × 열혈 피구</a></td><td>패스·수비가 혼자 던지기보다 유리하고, 모바일에서도 판정을 납득하는가?</td></tr>
+              <tr><th scope="row">작게 제작을 익히기</th><td><a href="#pac-man">02. Pac-Man</a> 또는 <a href="#lemmings">10. Lemmings</a></td><td>미로 하나·퍼즐 몇 개에서 수집과 구조, 도구와 출발 시점의 선택이 갈리는가?</td></tr>
+              <tr><th scope="row">꾸미기·역할놀이 운영</th><td><a href="#harvest-moon">05. Harvest Moon × Tapper</a> 또는 <a href="#theme-hospital">06. Theme Hospital</a></td><td>재료를 넘기거나 대기열을 풀어 주는 일이 자발적인 대화와 역할 교대를 만드는가?</td></tr>
             </tbody>
           </table></div>
-          <p>02와 03은 둘 다 서버가 판의 정답을 쥐는 격자·AI 구조라 같은 코드 바탕을 나눠 쓸 수 있다. 02로 배운 것이 그대로 03의 바닥이 된다.</p>
+          <p>첫 검증에서는 보상과 튜토리얼을 더하기 전에 <strong>처음 온 사람이 목표를 이해하는지, 실패 원인을 설명하는지, 스스로 역할을 바꿔 한 판 더 하는지</strong>를 관찰한다. 실제 모바일 2대 이상에서 가림·조작·지연·중도 이탈을 확인한다. 이 관찰이 끝나기 전에는 콘텐츠 수나 주간 업데이트 약속을 늘리지 않는다.</p>
         </section>
 
+        <section id="market" aria-labelledby="market-title">
+          <h2 id="market-title">제시된 시장 수치 확인</h2>
+          <p>2026-10-22에 출처를 확인했다. 검색량은 수요의 과거 신호, 누적 방문은 장기 이용 기록, CCU는 특정 순간 동접이다. 서로 더하거나 같은 척도처럼 비교하지 않는다.</p>
+          <div class="table-scroll" role="region" aria-label="시장 근거와 해석 한계" tabindex="0"><table class="wide-table">
+            <thead><tr><th scope="col">장르</th><th scope="col">제시된 수치</th><th scope="col">확인한 의미와 한계</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">코옵 호러 탈출</th><td>5개 게임·CCU 약 7.8만</td><td>2026-02-20 민간 도구의 호러 테마 추적 표본 5작·77.7K다. 전체 시장이 아니며 코옵 탈출만의 표본도 아니다. 공식 공급 부족 판정으로 쓰지 않는다. <a href="https://devforum.roblox.com/t/market-friday-an-ml-tool-that-tracks-roblox-genre-trends-%E2%80%94-heres-this-weeks-full-market-report/4413816">출처</a></td></tr>
+              <tr><th scope="row">서바이벌</th><td>기회 점수 0.72</td><td>2026-03-06 ROLearn 자체 합성 지표다. 성공 확률이나 현재 공식 순위가 아니다. <a href="https://rolearn.dev/insights/unsaturated-roblox-game-genres-2026/">출처</a></td></tr>
+              <tr><th scope="row">틈새 타운 RP</th><td>+65%·포화도 34%</td><td>2026-02-20 Town and City 추적 19작의 민간 지표다. 틈새 테마 RP 전체에 같은 수치를 적용할 수 없다. <a href="https://devforum.roblox.com/t/market-friday-an-ml-tool-that-tracks-roblox-genre-trends-%E2%80%94-heres-this-weeks-full-market-report/4413816">출처</a></td></tr>
+              <tr><th scope="row">아케이드 스포츠</th><td>분기 1,350만 검색</td><td>Roblox 공식 2024년 1분기 스포츠 관련 검색량이다. 아케이드 스포츠만의 검색량이나 2026년 현재 분기 값이 아니다. <a href="https://about.roblox.com/newsroom/2024/07/roblox-genre-insights-what-will-you-create-next">출처</a></td></tr>
+              <tr><th scope="row">레이싱·드라이빙</th><td>분기 약 1,250만 검색</td><td>같은 공식 자료의 2024년 1분기 값이다. 관심의 과거 신호로 활용한다. <a href="https://about.roblox.com/newsroom/2024/07/roblox-genre-insights-what-will-you-create-next">출처</a></td></tr>
+              <tr><th scope="row">수집·육성 턴제</th><td>Loomian Legacy 9억 방문</td><td>2026-10-22 공식 공개 API 조회에서 누적 방문 909,485,398회. 방문은 고유 이용자·동접·매출과 다르다. <a href="https://games.roblox.com/v1/games?universeIds=117307972">출처</a></td></tr>
+              <tr><th scope="row">퍼즐</th><td>기회 점수 0.68</td><td>ROLearn의 2026-03-06 자체 점수다. 제작 난도와 결제율은 개별 규칙·운영에 따라 검증한다. <a href="https://rolearn.dev/insights/unsaturated-roblox-game-genres-2026/">출처</a></td></tr>
+              <tr><th scope="row">빌딩·샌드박스</th><td>기회 점수 0.60</td><td>같은 민간 분석이다. 저장·복원과 구조물 성능은 이번 기획의 구현 과제로 별도 평가한다. <a href="https://rolearn.dev/insights/unsaturated-roblox-game-genres-2026/">출처</a></td></tr>
+              <tr><th scope="row">내러티브·스토리</th><td>2026 Q2 신흥 1순위</td><td>2026-03-06에 발표한 Q2 전망의 최상위 후보다. Q2가 끝난 뒤 집계한 실적 순위가 아니다. <a href="https://rolearn.dev/trend-reports/emerging-roblox-game-genres-q2-2026/">출처</a></td></tr>
+            </tbody>
+          </table></div>
+          <p>ROLearn의 <a href="https://rolearn.dev/trend-reports/genre-shift-2026-predictions/">2026-02-14 전망</a>은 순수 호러의 포화 신호와 소셜 결합 가능성을 제시했다. 이것도 전망이다. 이번 호러안에 역할과 구조를 넣은 이유는 그 전망을 사실로 단정해서가 아니라 친구와 행동을 맞출 명확한 규칙이 필요하기 때문이다.</p>
+          <p class="table-note">DevForum 글은 Roblox 도메인에 있지만 작성자는 민간 도구 개발자다. 봇 확인으로 직접 본문 열람이 막혀 검색 색인으로 날짜·표를 확인했다. 기회 점수의 원자료와 가중치는 이번 자료만으로 재현하지 못했다. 현재 장르별 전체 공급이나 경쟁작 부재를 입증한 조사는 아니다.</p>
+        </section>
         <section id="sources" aria-labelledby="sources-title">
-          <h2 id="sources-title">출처</h2>
+          <h2 id="sources-title">출처와 확인 범위</h2>
+          <p>원작 규칙의 근거는 각 기획 아래에 연결했다. 권리자·공식 발매사 소개를 우선했고, Sweet Home·Tapper·Rampart·Rampage는 원본 설명서·홍보물을 보존한 외부 사이트임을 표시했다. Micro Machines와 R.C. Pro-Am의 원본 설명서는 이번 검토에서 별도 직접 열람을 완료하지 못했으며 세부 코스·부품 수 같은 수치는 쓰지 않았다.</p>
           <ul class="ref-list">
-            <li><strong>장르 순위와 시장:</strong> 로블록스 개발 조사(개인 메모, 2026-10-21). 그 메모의 주요 출처는 <a href="https://about.roblox.com/newsroom/2026/06/optimizing-discovery-great-games-reach-millions-players-roblox">디스커버리 최적화 공식 발표(2026-06)</a>, <a href="https://about.roblox.com/newsroom/2024/07/roblox-genre-insights-what-will-you-create-next">장르 인사이트 공식 발표(2024-07)</a>, <a href="https://rolearn.dev/insights/unsaturated-roblox-game-genres-2026">비포화 장르 기회 점수(RoLearn)</a>, <a href="https://www.deconstructoroffun.com/blog/how-to-build-a-real-business-on-roblox-in-2026">Deconstructor of Fun</a>다.</li>
-            <li><strong>경쟁작 확인(2026-10-21 검색):</strong> <a href="https://en.wikipedia.org/wiki/List_of_Roblox_games">List of Roblox games</a>, <a href="https://rowatcher.com/news/the-most-popular-roblox-games-right-now-ranked-by-live-players">RoWatcher 실시간 순위</a>, <a href="https://rowatcher.com/games/4777817887/blade-ball">Blade Ball(RoWatcher)</a>, <a href="https://earnaldo.com/blog/drill-to-earths-core-vs-mine-a-mountain">Drill to Earth's Core 비교</a>, <a href="https://racinggames.gg/article/roblox-hot-wheels-open-world-trailer-gameplay-cars-release-price">Hot Wheels Open World</a>, <a href="https://earnaldo.com/blog/kaiju-universe-vs-blox-fruits">Kaiju Universe 비교</a>, <a href="https://earnaldo.com/blog/blox-monsters-vs-loomian-legacy">Blox Monsters·Loomian Legacy 비교</a>, <a href="https://www.pcgamesn.com/roblox/grow-a-garden-player-count">Grow a Garden 동시 접속</a>. 서드파티 트래커와 2차 자료라 들어가기 전에 로블록스 페이지에서 다시 확인한다.</li>
-            <li><strong>원작:</strong> <a href="/posts/logic-puzzles/">온라인 논리 퍼즐 41종</a>, <a href="/posts/classic-games/">tooli의 고전게임 정리</a>, <a href="/posts/jjang-games/">짱게임 2D·오락실 게임 도감</a>, <a href="/posts/playretro-io/">PlayRetro.io</a>, <a href="/posts/playretrogames/">Play Retro Games</a>, <a href="/posts/retrogames-onl-snes/">RetroGames.onl</a>. 원작 설명의 규칙은 널리 알려진 내용만 적었다.</li>
+            <li><a href="https://about.roblox.com/newsroom/2024/07/roblox-genre-insights-what-will-you-create-next">Roblox 장르 인사이트 · 2024-07-18</a></li>
+            <li><a href="https://devforum.roblox.com/t/market-friday-an-ml-tool-that-tracks-roblox-genre-trends-%E2%80%94-heres-this-weeks-full-market-report/4413816">ROLearn 개발자의 Market Friday · 2026-02-20</a></li>
+            <li><a href="https://rolearn.dev/insights/unsaturated-roblox-game-genres-2026/">ROLearn 비포화 장르 분석 · 2026-03-06</a></li>
+            <li><a href="https://rolearn.dev/trend-reports/emerging-roblox-game-genres-q2-2026/">ROLearn Q2 전망 · 2026-03-06</a></li>
+            <li><a href="https://rolearn.dev/trend-reports/genre-shift-2026-predictions/">ROLearn 장르 변화 전망 · 2026-02-14</a></li>
+            <li><a href="https://www.roblox.com/games/306964494/Loomian-Legacy">Loomian Legacy 공식 페이지</a></li>
+            <li><a href="https://games.roblox.com/v1/games?universeIds=117307972">Loomian Legacy 공식 공개 통계 API</a></li>
           </ul>
+          <p>검증한 것은 원작 구분, 출처의 시점과 표본, 기획 안의 규칙 연결, 게시물 표시와 링크다. 아직 Roblox 게임을 구현하거나 실제 이용자의 재미·재방문·결제·서버 성능을 검증한 결과는 아니다.</p>
         </section>
         <p class="post-back"><a href="/">← 전체 글 목록</a></p>
       </article>

@@ -1,0 +1,95 @@
+{
+  "checked_date": "2026-10-22",
+  "sources": [
+    [
+      "Roblox 장르 인사이트 · 2024-07-18",
+      "https://about.roblox.com/newsroom/2024/07/roblox-genre-insights-what-will-you-create-next"
+    ],
+    [
+      "ROLearn 개발자의 Market Friday · 2026-02-20",
+      "https://devforum.roblox.com/t/market-friday-an-ml-tool-that-tracks-roblox-genre-trends-%E2%80%94-heres-this-weeks-full-market-report/4413816"
+    ],
+    [
+      "ROLearn 비포화 장르 분석 · 2026-03-06",
+      "https://rolearn.dev/insights/unsaturated-roblox-game-genres-2026/"
+    ],
+    [
+      "ROLearn Q2 전망 · 2026-03-06",
+      "https://rolearn.dev/trend-reports/emerging-roblox-game-genres-q2-2026/"
+    ],
+    [
+      "ROLearn 장르 변화 전망 · 2026-02-14",
+      "https://rolearn.dev/trend-reports/genre-shift-2026-predictions/"
+    ],
+    [
+      "Loomian Legacy 공식 페이지",
+      "https://www.roblox.com/games/306964494/Loomian-Legacy"
+    ],
+    [
+      "Loomian Legacy 공식 공개 통계 API",
+      "https://games.roblox.com/v1/games?universeIds=117307972"
+    ]
+  ],
+  "claims": [
+    {
+      "genre": "코옵 호러 탈출",
+      "supplied_claim": "5개 게임·CCU 약 7.8만",
+      "interpretation": "2026-02-20 민간 도구의 호러 테마 추적 표본 5작·77.7K다. 전체 시장이 아니며 코옵 탈출만의 표본도 아니다. 공식 공급 부족 판정으로 쓰지 않는다.",
+      "source": "https://devforum.roblox.com/t/market-friday-an-ml-tool-that-tracks-roblox-genre-trends-%E2%80%94-heres-this-weeks-full-market-report/4413816"
+    },
+    {
+      "genre": "서바이벌",
+      "supplied_claim": "기회 점수 0.72",
+      "interpretation": "2026-03-06 ROLearn 자체 합성 지표다. 성공 확률이나 현재 공식 순위가 아니다.",
+      "source": "https://rolearn.dev/insights/unsaturated-roblox-game-genres-2026/"
+    },
+    {
+      "genre": "틈새 타운 RP",
+      "supplied_claim": "+65%·포화도 34%",
+      "interpretation": "2026-02-20 Town and City 추적 19작의 민간 지표다. 틈새 테마 RP 전체에 같은 수치를 적용할 수 없다.",
+      "source": "https://devforum.roblox.com/t/market-friday-an-ml-tool-that-tracks-roblox-genre-trends-%E2%80%94-heres-this-weeks-full-market-report/4413816"
+    },
+    {
+      "genre": "아케이드 스포츠",
+      "supplied_claim": "분기 1,350만 검색",
+      "interpretation": "Roblox 공식 2024년 1분기 스포츠 관련 검색량이다. 아케이드 스포츠만의 검색량이나 2026년 현재 분기 값이 아니다.",
+      "source": "https://about.roblox.com/newsroom/2024/07/roblox-genre-insights-what-will-you-create-next"
+    },
+    {
+      "genre": "레이싱·드라이빙",
+      "supplied_claim": "분기 약 1,250만 검색",
+      "interpretation": "같은 공식 자료의 2024년 1분기 값이다. 관심의 과거 신호로 활용한다.",
+      "source": "https://about.roblox.com/newsroom/2024/07/roblox-genre-insights-what-will-you-create-next"
+    },
+    {
+      "genre": "수집·육성 턴제",
+      "supplied_claim": "Loomian Legacy 9억 방문",
+      "interpretation": "2026-10-22 공식 공개 API 조회에서 누적 방문 909,485,398회. 방문은 고유 이용자·동접·매출과 다르다.",
+      "source": "https://games.roblox.com/v1/games?universeIds=117307972"
+    },
+    {
+      "genre": "퍼즐",
+      "supplied_claim": "기회 점수 0.68",
+      "interpretation": "ROLearn의 2026-03-06 자체 점수다. 제작 난도와 결제율은 개별 규칙·운영에 따라 검증한다.",
+      "source": "https://rolearn.dev/insights/unsaturated-roblox-game-genres-2026/"
+    },
+    {
+      "genre": "빌딩·샌드박스",
+      "supplied_claim": "기회 점수 0.60",
+      "interpretation": "같은 민간 분석이다. 저장·복원과 구조물 성능은 이번 기획의 구현 과제로 별도 평가한다.",
+      "source": "https://rolearn.dev/insights/unsaturated-roblox-game-genres-2026/"
+    },
+    {
+      "genre": "내러티브·스토리",
+      "supplied_claim": "2026 Q2 신흥 1순위",
+      "interpretation": "2026-03-06에 발표한 Q2 전망의 최상위 후보다. Q2가 끝난 뒤 집계한 실적 순위가 아니다.",
+      "source": "https://rolearn.dev/trend-reports/emerging-roblox-game-genres-q2-2026/"
+    }
+  ],
+  "limitations": [
+    "DevForum 원문은 봇 확인으로 직접 열람 불가; 검색 색인으로 날짜와 표를 확인함.",
+    "ROLearn 원자료와 가중치는 이번 열람 자료만으로 재현하지 못함.",
+    "Loomian API 수치는 조회 순간 스냅샷이며 계속 변함.",
+    "경쟁작 전체 조사나 실제 플레이테스트를 수행한 기록이 아님."
+  ]
+}

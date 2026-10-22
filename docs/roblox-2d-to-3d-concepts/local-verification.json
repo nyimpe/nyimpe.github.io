@@ -1,0 +1,166 @@
+{
+  "date": "2026-10-22",
+  "build": "pass; existing Phaser chunk warning",
+  "structural_issues": [],
+  "concept_count": 13,
+  "external_http_checks": [
+    {
+      "url": "https://about.roblox.com/newsroom/2024/07/roblox-genre-insights-what-will-you-create-next",
+      "status": 200
+    },
+    {
+      "url": "https://arcarc.xmission.com/PDF_Arcade_Bally_Midway/Tapper_Parts_and_Operating_Manual_%28Dec_1983%29.pdf",
+      "status": 200
+    },
+    {
+      "url": "https://bbg-entertainment.com/game/boulder-dash-i/",
+      "status": 200
+    },
+    {
+      "url": "https://devforum.roblox.com/t/market-friday-an-ml-tool-that-tracks-roblox-genre-trends-%E2%80%94-heres-this-weeks-full-market-report/4413816",
+      "status": 200
+    },
+    {
+      "url": "https://elibrary.arcade-museum.com/magazines/pm/PlayMeter-1991-02/PlayMeter-1991-02-148.pdf",
+      "status": 200
+    },
+    {
+      "url": "https://games.roblox.com/v1/games?universeIds=117307972",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/nyimpe",
+      "status": 200
+    },
+    {
+      "url": "https://github.com/nyimpe/nyimpe.github.io",
+      "status": 200
+    },
+    {
+      "url": "https://help.games.disney.com/article/gamesapps-about-zombies-ate-my-neighbors-and-ghoul-patrol",
+      "status": 200
+    },
+    {
+      "url": "https://news.capcomusa.com/lets/browse/ghost-trick-will-possess-your-phone-or-tablet-and-make-it-do-things",
+      "status": 200
+    },
+    {
+      "url": "https://news.capcomusa.com/lets/browse/japans-ghost-trick-web-demo",
+      "status": 200
+    },
+    {
+      "url": "https://press.pokemon.com/en-AU/products/Pokemon-Blue",
+      "status": 200
+    },
+    {
+      "url": "https://rainwarrior.ca/projects/nes/sweethome_manual.html",
+      "status": 200
+    },
+    {
+      "url": "https://rolearn.dev/insights/unsaturated-roblox-game-genres-2026/",
+      "status": 200
+    },
+    {
+      "url": "https://rolearn.dev/trend-reports/emerging-roblox-game-genres-q2-2026/",
+      "status": 200
+    },
+    {
+      "url": "https://rolearn.dev/trend-reports/genre-shift-2026-predictions/",
+      "status": 200
+    },
+    {
+      "url": "https://secure.cdn.us.playstation.com/manuals/classic/games/mr-driller-manual-en.pdf",
+      "status": 200
+    },
+    {
+      "url": "https://sony.mediaroom.com/2006-03-20-Beloved-Videogame-Classic-Lemmings-Celebrates-15th-Anniversary-With-Its-Debut-on-the-PSP-PlayStation-Portable-System",
+      "status": 200
+    },
+    {
+      "url": "https://wayforward.com/games/clock-tower/",
+      "status": 200
+    },
+    {
+      "url": "https://www.arcadearchives.com/en/title/aca-218/",
+      "status": 200
+    },
+    {
+      "url": "https://www.dotemu.com/games/windjammers/",
+      "status": 200
+    },
+    {
+      "url": "https://www.ea.com/games/theme/theme-hospital",
+      "status": 200
+    },
+    {
+      "url": "https://www.jp.square-enix.com/column/detail/64/",
+      "status": 200
+    },
+    {
+      "url": "https://www.nintendo.co.jp/clv/manuals/en/pdf/CLV-P-NAAHE_en.pdf",
+      "status": 200
+    },
+    {
+      "url": "https://www.nintendo.com/en-gb/Games/Super-Nintendo/Harvest-Moon--788055.html",
+      "status": 200
+    },
+    {
+      "url": "https://www.nintendo.com/us/store/products/arcade-archives-super-dodge-ball-switch/",
+      "status": 200
+    },
+    {
+      "url": "https://www.pacman.com/en/history/",
+      "status": 200
+    },
+    {
+      "url": "https://www.roblox.com/games/306964494/Loomian-Legacy",
+      "status": 200
+    },
+    {
+      "url": "https://www.taito.co.jp/en/bub",
+      "status": 200
+    },
+    {
+      "url": "https://www.toaplangames.co.jp/en/license/license-20.html",
+      "status": 200
+    },
+    {
+      "url": "https://www.videogamemanual.com/PS2/Midway%20Arcade%20Treasures%20%28USA%29.pdf",
+      "status": 200
+    }
+  ],
+  "article_sha256": "88dd5155957f76aa91dabc6666e0a551b573d551e41b7543cafa5b030c550b3a",
+  "browser": {
+    "desktop_width": 1280,
+    "mobile_widths": [
+      390,
+      320
+    ],
+    "document_overflow": false,
+    "toc_navigation": "pass",
+    "theme_toggle_and_reload": "pass",
+    "writing_category_to_article": "pass",
+    "console_errors": []
+  },
+  "untested": [
+    "Roblox runtime",
+    "gameplay fun and balance",
+    "retention and monetization",
+    "real mobile game controls and networking"
+  ],
+  "review_corrections": [
+    "Solo fallback for simultaneous horror tool use",
+    "Solo ladder cart for rescue",
+    "Disc ownership and defender movement example",
+    "Resident/customer and optional social events for town RP"
+  ],
+  "preserved_existing_anchors": true,
+  "integrated_remote_base": "72cfc802",
+  "after_rebase_checks": [
+    "build passed",
+    "390px post and writing index no document overflow",
+    "filled writing navigation icon and right-aligned mobile date preserved",
+    "writing index links to 13-concept article",
+    "no console warnings/errors"
+  ]
+}
