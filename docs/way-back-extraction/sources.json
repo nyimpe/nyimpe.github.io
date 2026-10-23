@@ -1,0 +1,12 @@
+{
+  "checked_date": "2026-10-23",
+  "timezone": "Asia/Seoul",
+  "note": "공식 사이트의 응답만 확인했다. 원작의 수치(타일 크기, 이동 속도, 전투 규칙)는 문서에 옮기지 않았다.",
+  "sources": [
+    { "name": "Escape from Tarkov 공식 사이트", "url": "https://www.escapefromtarkov.com/", "use": "원정·탈출·장비 손실·부위 피해의 참고 범위", "status": "응답함 (페이지 제목만 확인)" },
+    { "name": "Diablo IV 공식 사이트", "url": "https://diablo4.blizzard.com/en-us/", "use": "하드코어 영구 죽음과 장비 등급의 참고 범위", "status": "응답함. 하드코어 설명은 이 페이지에 없음" },
+    { "name": "바람의나라", "url": "https://baram.nexon.com/", "use": "4방향 격자 이동과 앞 칸 공격의 참고 범위", "status": "응답함 (넥슨 공식)" },
+    { "name": "어둠의 전설", "url": "https://lod.nexon.com/", "use": "4방향 격자 이동과 앞 칸 공격의 참고 범위", "status": "응답함 (넥슨 공식). darkages.nexon.com은 존재하지 않음" },
+    { "name": "Godot — TileMapLayer", "url": "https://docs.godotengine.org/en/stable/classes/class_tilemaplayer.html", "use": "격자 지도 구현 후보", "status": "응답함 (Godot 4.7 문서)" }
+  ]
+}

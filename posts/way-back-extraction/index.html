@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="바람의나라식 격자 이동, 총 없는 타르코프식 원정과 탈출, 디아블로 하드코어의 영구 죽음을 합친 2D 픽셀아트 로그라이크 기획. 이동·전투·원정·죽음·성장·파밍·탐험 규칙과 첫 시제품 범위.">
+  <title>귀로 — 격자 이동 하드코어 탈출 로그라이크 기획 · nyimpe</title>
+  <link rel="canonical" href="https://nyimpe.github.io/posts/way-back-extraction/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="귀로 — 격자 이동 하드코어 탈출 로그라이크 기획">
+  <meta property="og:description" content="한 칸씩 걷는 수색꾼이 버려진 도시에 들어가 쓸 만한 것을 챙기고 제한 시간 안에 살아 나오는 게임. 죽으면 캐릭터는 사라지고 야영지만 남는다.">
+  <meta property="og:url" content="https://nyimpe.github.io/posts/way-back-extraction/">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/src/style.css">
+  <script type="module" src="/src/main.js"></script>
+  <style>
+    .brief { padding: 1em 1.2em; border-left: 4px solid var(--link); background: var(--surface); }
+    .brief p:first-child { margin-top: 0; }
+    .brief p:last-child { margin-bottom: 0; }
+    .loop { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .6em; padding: 0; list-style: none; margin: 1.5em 0; }
+    .loop li { min-width: 0; padding: .85em; border: 1px solid var(--soft-border); background: var(--surface); }
+    .loop b, .loop span { display: block; }
+    .loop span { margin-top: .4em; font-size: .875em; }
+    .rules { border: 1px solid var(--soft-border); padding: 1em 1.2em; background: var(--surface); }
+    .rules p { margin: 0 0 .5em; }
+    .rules ol { margin: 0; padding-left: 1.4em; }
+    .rules li { margin: .3em 0; }
+    .scene { margin: 1.2em 0; padding: .6em 1em; border-left: 4px solid var(--border); background: var(--surface); }
+    .scene p { margin: 0; }
+    .diagram { margin: 1.5em 0; }
+    .diagram svg { display: block; width: 100%; height: auto; border: 1px solid var(--soft-border); background: var(--background); }
+    .diagram svg text { font-family: inherit; fill: var(--text); }
+    .diagram figcaption { margin-top: .4em; font-size: .8125em; color: var(--muted); }
+    .research-post .compact-table tbody th { white-space: normal; min-width: 5em; }
+    @media (max-width: 620px) { .loop { grid-template-columns: repeat(2,minmax(0,1fr)); } h1 { font-size: 1.7em; } }
+    @media (max-width: 360px) { .loop { grid-template-columns: minmax(0,1fr); } }
+    @media print { .site-header,.site-footer,.post-back,.post-toc { display: none; } body { max-width: none; } .table-scroll { overflow: visible; } .research-post table.wide-table { min-width: 0; } .diagram,tr,.loop,.rules { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=writing" aria-label="글쓰기" title="글쓰기"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post design-post">
+        <header class="post-header">
+          <h1>귀로 — 격자 이동 하드코어 탈출 로그라이크 기획</h1>
+          <time datetime="2026-10-23">2026.10.23</time>
+          <p class="image-credit">가제 · 상세 기획안 · 2D 픽셀아트 · PC 키보드 우선 · 싱글플레이 이후 PvPvE 검토</p>
+        </header>
+        <div class="brief">
+          <p><strong>버려진 성곽 도시에 한 칸씩 걸어 들어가, 쓸 만한 것을 챙기고, 성문이 닫히기 전에 탈출구로 살아 나오는 2D 픽셀아트 하드코어 로그라이크.</strong> 죽으면 캐릭터는 영구히 사라진다. 남는 것은 창고에 미리 들여놓은 물건과 야영지에 쌓인 것뿐이다.</p>
+          <p>요청한 다섯 조건을 하나의 규칙으로 묶었다. 바람의나라·어둠의 전설처럼 <strong>4방향 격자를 한 칸씩 실시간으로 걷고 바라보는 방향의 앞 칸을 친다.</strong> 타르코프의 원정·탈출구·부위 피해·장비 손실은 가져오되 총 대신 <strong>피해 종류와 방어구 등급</strong>으로 바꿨다. 디아블로 하드코어처럼 <strong>캐릭터의 레벨·숙련·몸에 지닌 것은 죽음과 함께 삭제</strong>된다.</p>
+          <p>이번 결과물은 <strong>기획안</strong>이다. 실행 가능한 게임은 아직 만들지 않았다. 아래의 시간·수량·확률·피해 수치는 모두 플레이테스트 전의 설계 가설이다.</p>
+        </div>
+        <nav class="post-toc" aria-label="목차"><ol>
+          <li><a href="#merge">다섯 조건을 하나로 묶는 결정</a></li>
+          <li><a href="#world">세계와 야영지</a></li>
+          <li><a href="#movement">이동과 화면: 바람의나라식 격자</a></li>
+          <li><a href="#combat">전투: 총 없는 타르코프</a></li>
+          <li><a href="#raid">원정: 들어가고, 챙기고, 나온다</a></li>
+          <li><a href="#death">죽음: 디아블로 하드코어</a></li>
+          <li><a href="#growth">성장: 캐릭터에 쌓이는 것, 야영지에 남는 것</a></li>
+          <li><a href="#economy">파밍과 경제</a></li>
+          <li><a href="#explore">탐험: 첫 지역의 세 구역</a></li>
+          <li><a href="#art">픽셀아트와 화면 구성</a></li>
+          <li><a href="#prototype">첫 시제품의 범위와 제작 순서</a></li>
+          <li><a href="#validation">검증 기준과 주요 위험</a></li>
+          <li><a href="#sources">참고 자료와 문서의 범위</a></li>
+        </ol></nav>
+
+        <section id="merge"><h2>01. 다섯 조건을 하나로 묶는 결정</h2>
+          <p><strong>반복해서 묻는 질문은 “이번엔 무엇을 들고 들어가고, 어디까지 들어가고, 언제 돌아 나올까”다.</strong> 들고 들어간 것은 전부 잃을 수 있고, 깊이 갈수록 좋은 것이 있고, 시간은 한 방향으로만 흐른다. 다섯 조건은 이 질문을 매번 어렵게 만드는 쪽으로만 쓴다.</p>
+          <div class="table-scroll" role="region" aria-label="요청 조건과 설계 결정" tabindex="0"><table class="wide-table"><thead><tr><th scope="col">요청</th><th scope="col">설계 결정</th><th scope="col">왜 이렇게 묶는가</th></tr></thead><tbody>
+            <tr><th scope="row">2D 픽셀아트 스프라이트</th><td>32×32 타일, 4방향 캐릭터 스프라이트, 탑다운 3/4 시점. 장비는 몸에 보이게 그린다.</td><td>격자 판정과 그림이 1:1로 맞아야 “내가 맞은 이유”가 화면에 보인다.</td></tr>
+            <tr><th scope="row">바람의나라·어둠의 전설식 이동</th><td>4방향, 한 칸씩, 실시간. 바라보는 방향 = 공격 방향. 칸 중간에서 멈추지 않는다.</td><td>위치와 방향이 전투의 전부가 된다. 조준 없이도 “어느 칸에 서느냐”로 싸움이 갈린다.</td></tr>
+            <tr><th scope="row">레벨업·파밍·성장·탐험</th><td>캐릭터 층(레벨·능력치·숙련·기술)과 야영지 층(창고·천막·상인 신뢰·지도 지식)을 분리한다.</td><td>캐릭터는 빨리 크고 빨리 죽는다. 야영지는 느리게 쌓인다. 죽어도 “배운 것”과 “가져온 것”은 남는다.</td></tr>
+            <tr><th scope="row">타르코프식, 총은 없음</th><td>제한 시간 원정, 조건이 다른 탈출구, 가져간 장비 전부를 건다. 부위 피해·출혈·골절, 피해 종류 대 방어구 등급, 내구도, 무게.</td><td>탄약 관통 대신 “베기·찌르기·타격 중 무엇을 들고 가느냐”가 준비 단계의 선택이 된다.</td></tr>
+            <tr><th scope="row">디아블로 하드코어</th><td>캐릭터 영구 삭제, 등급과 접사가 붙은 장비, 몇 번 맞으면 죽는 피해, 죽은 캐릭터의 명부.</td><td>죽음이 숫자가 아니라 기록이 된다. 다음 캐릭터는 명부를 보고 더 조심스럽게 들어간다.</td></tr>
+          </tbody></table></div>
+          <p>PvP는 첫 버전에 넣지 않는다. 다른 수색꾼은 <strong>사람처럼 행동하는 AI</strong>로 먼저 만든다. 줍고, 서로 부르고, 챙긴 것을 들고 탈출구로 사라진다. 이 행동이 긴장을 만들지 못하면 실제 플레이어를 넣어도 같은 문제를 겪는다.</p>
+        </section>
+
+        <section id="world"><h2>02. 세계와 야영지</h2>
+          <div class="rules">
+            <p><strong>재앙으로 버려진 성곽 도시가 있다.</strong> 성벽 밖 야영지에 모인 수색꾼들은 성문이 열리는 동안 도시 안으로 들어가 쓸 만한 것을 가져와 산다. 도시 안에는 먼저 들어간 다른 수색꾼 무리, 주인을 잃은 사냥개, 그리고 사람들이 도시를 버리게 만든 “뒤틀린 것들”이 남아 있다.</p>
+            <ol>
+              <li>성문은 정해진 시간만 열린다. 그 안에 탈출구로 나오지 못하면 돌아오지 못한다.</li>
+              <li>도시 안에서 죽은 수색꾼은 돌아오지 않는다. 그가 지녔던 것은 그 자리에 남는다.</li>
+              <li>야영지의 창고와 천막은 한 사람의 것이 아니라 야영지의 것이다. 다음 수색꾼이 이어받는다.</li>
+            </ol>
+          </div>
+          <p>분위기는 어둡고 긴장되지만 공포물은 아니다. 피와 비명보다 <strong>잿빛 거리, 닫히는 성문, 남은 시간</strong>으로 압박한다. 도시와 재앙에 이름을 붙이지 않고, 이야기는 명부와 물건 설명 한두 줄로만 보탠다. 설정은 이 문단과 세 규칙이 전부이며, 필요해질 때까지 늘리지 않는다.</p>
+          <div class="table-scroll" role="region" aria-label="야영지 구성" tabindex="0"><table class="compact-table"><thead><tr><th scope="col">야영지</th><th scope="col">역할</th></tr></thead><tbody>
+            <tr><th scope="row">창고</th><td>격자 칸 보관함. 여기 있는 것만 “내 것”이다. 원정에 들고 나간 순간부터 잃을 수 있다.</td></tr>
+            <tr><th scope="row">내 천막</th><td>침상·작업대·화덕 세 설비를 단계별로 고친다. 치료 시간, 수리, 소비품 제작을 맡는다.</td></tr>
+            <tr><th scope="row">상인 3명</th><td>대장장이(무기·방어구·수리), 약제사(치료·소비품), 수집가(귀중품 매입·열쇠·기술서·회수 의뢰·의뢰).</td></tr>
+            <tr><th scope="row">명부</th><td>죽은 캐릭터의 기록. 이름, 레벨, 원정 횟수, 가져온 가치, 죽은 곳과 원인, 마지막 장비.</td></tr>
+            <tr><th scope="row">성문</th><td>원정 출발. 장비를 확정하고 들어가면 야영지로 돌아올 길은 탈출구뿐이다.</td></tr>
+          </tbody></table></div>
+        </section>
+
+        <section id="movement"><h2>03. 이동과 화면: 바람의나라식 격자</h2>
+          <p><strong>캐릭터는 항상 칸의 중앙에 서 있고, 입력은 한 칸 단위로 처리된다.</strong> 키를 누르고 있으면 끊김 없이 다음 칸으로 이어서 걷고, 떼면 지금 가던 칸에 도착해 멈춘다. 다음 칸 도착 직전의 입력은 버퍼에 담아 바로 이어 걷는다. 칸 사이에서 멈추거나 되돌아가는 일은 없다.</p>
+          <ul>
+            <li><strong>속도:</strong> 걷기 4칸/초, 달리기 6칸/초. 달리기는 기력을 쓰고 소리가 커진다. 다리를 다치면 걷기 2칸/초, 달리기 불가.</li>
+            <li><strong>방향:</strong> 마지막으로 걸은 방향을 바라본다. 제자리에서 돌기만 하려면 Shift를 누른 채 방향키를 누른다. 이 조작은 시제품에서 “눌렀다 떼기 = 회전, 누르고 있기 = 이동” 방식과 비교해 결정한다.</li>
+            <li><strong>상호작용:</strong> 앞 칸의 문·상자·시체·떨어진 물건에만 E가 통한다. 문은 열고 닫을 수 있고 닫힌 문은 시야와 소리를 막는다.</li>
+            <li><strong>시야:</strong> 벽 너머와 닫힌 방은 어둡다. 지상은 화면 전체, 지하는 횃불 없이 반경 3칸만 보인다.</li>
+            <li><strong>클릭 이동:</strong> 원작처럼 클릭해 길을 찾아가는 방식을 선택 지원하되, 전투 판정은 키보드 기준으로 설계하고 클릭 이동 중 공격은 멈춘다.</li>
+          </ul>
+          <div class="table-scroll" role="region" aria-label="PC 조작" tabindex="0"><table class="compact-table"><thead><tr><th scope="col">행동</th><th scope="col">PC 키보드</th><th scope="col">비고</th></tr></thead><tbody>
+            <tr><th scope="row">이동</th><td>방향키 / WASD</td><td>누르고 있으면 연속 이동</td></tr>
+            <tr><th scope="row">제자리 회전</th><td>Shift + 방향</td><td>가설. 시제품 A에서 결정</td></tr>
+            <tr><th scope="row">달리기</th><td>Ctrl + 이동</td><td>기력 소모, 소리 반경 확대</td></tr>
+            <tr><th scope="row">공격</th><td>Space / J</td><td>바라보는 앞 칸</td></tr>
+            <tr><th scope="row">기술 1~3</th><td>1 · 2 · 3</td><td>배운 기술만</td></tr>
+            <tr><th scope="row">투척</th><td>F</td><td>바라보는 방향 직선 4칸</td></tr>
+            <tr><th scope="row">막기</th><td>K 누르고 있기</td><td>방패를 들었을 때만</td></tr>
+            <tr><th scope="row">상호작용</th><td>E</td><td>앞 칸 대상</td></tr>
+            <tr><th scope="row">가방 · 지도</th><td>Tab · M</td><td>세상은 멈추지 않는다</td></tr>
+          </tbody></table></div>
+          <p>십자 패드가 격자와 그대로 맞기 때문에 모바일 이식은 가능하지만, 첫 버전은 PC 키보드만 검증한다. 화면은 640×360을 기준으로 정수 배 확대해 가로 20칸, 세로 11칸이 보인다.</p>
+        </section>
+
+        <section id="combat"><h2>04. 전투: 총 없는 타르코프</h2>
+          <figure class="diagram" id="grid-art">
+            <svg viewBox="0 0 600 260" role="img" aria-label="격자 전투 규칙 그림. 플레이어가 동쪽을 바라보고 있으며 앞 칸이 공격 칸, 그 다음 칸은 창의 사거리다. 상하좌우 네 칸만 플레이어를 칠 수 있고 대각선 칸은 공격할 수 없다. 왼쪽 복도는 한 칸 폭이라 한 번에 한 명만 들어온다." xmlns="http://www.w3.org/2000/svg">
+              <g fill="var(--surface)" stroke="var(--soft-border)" stroke-width="1">
+                <rect x="12" y="12" width="396" height="220"/>
+              </g>
+              <g fill="var(--border)" fill-opacity=".55" stroke="none">
+                <rect x="12" y="12" width="132" height="88"/>
+                <rect x="12" y="144" width="132" height="88"/>
+              </g>
+              <g stroke="var(--soft-border)" stroke-width="1" fill="none">
+                <path d="M12 56H408M12 100H408M12 144H408M12 188H408M56 12V232M100 12V232M144 12V232M188 12V232M232 12V232M276 12V232M320 12V232M364 12V232"/>
+              </g>
+              <rect x="232" y="100" width="44" height="44" fill="var(--link)" fill-opacity=".4"/>
+              <rect x="276" y="100" width="44" height="44" fill="var(--link)" fill-opacity=".15"/>
+              <g fill="none" stroke="var(--link)" stroke-width="2" stroke-dasharray="4 3">
+                <rect x="146" y="102" width="40" height="40"/>
+                <rect x="234" y="102" width="40" height="40"/>
+                <rect x="190" y="58" width="40" height="40"/>
+                <rect x="190" y="146" width="40" height="40"/>
+              </g>
+              <g stroke="var(--muted)" stroke-width="2" stroke-linecap="round">
+                <path d="M160 72l12 12M172 72l-12 12M248 72l12 12M260 72l-12 12M160 160l12 12M172 160l-12 12M248 160l12 12M260 160l-12 12"/>
+              </g>
+              <g>
+                <circle cx="210" cy="122" r="13" fill="var(--link)"/>
+                <path d="M223 122l10-7v14z" fill="var(--link)"/>
+                <text x="210" y="126" font-size="11" text-anchor="middle" fill="var(--background)" font-weight="bold">나</text>
+              </g>
+              <g fill="var(--code)">
+                <circle cx="298" cy="122" r="12"/>
+                <circle cx="166" cy="122" r="12"/>
+                <circle cx="210" cy="166" r="12"/>
+              </g>
+              <g font-size="10" text-anchor="middle" fill="var(--background)" font-weight="bold">
+                <text x="298" y="126">적</text>
+                <text x="166" y="126">적</text>
+                <text x="210" y="170">개</text>
+              </g>
+              <g font-size="10" fill="var(--text)">
+                <text x="254" y="97" text-anchor="middle">앞 칸</text>
+                <text x="298" y="97" text-anchor="middle">창 2칸</text>
+                <text x="166" y="97" text-anchor="middle">등 뒤</text>
+                <text x="78" y="126" text-anchor="middle">복도 1칸</text>
+              </g>
+              <g font-size="11" fill="var(--text)">
+                <rect x="424" y="16" width="14" height="14" fill="var(--link)" fill-opacity=".4" stroke="none"/><text x="446" y="28">앞 칸 = 공격 판정</text>
+                <rect x="424" y="44" width="14" height="14" fill="var(--link)" fill-opacity=".15" stroke="none"/><text x="446" y="56">창은 앞 2칸</text>
+                <rect x="425" y="73" width="12" height="12" fill="none" stroke="var(--link)" stroke-width="2" stroke-dasharray="3 2"/><text x="446" y="84">인접 4칸만 피격</text>
+                <path d="M426 101l10 10M436 101l-10 10" stroke="var(--muted)" stroke-width="2" stroke-linecap="round"/><text x="446" y="112">대각선은 공격 불가</text>
+                <rect x="424" y="128" width="14" height="14" fill="var(--border)" fill-opacity=".55" stroke="none"/><text x="446" y="140">벽·복도: 한 번에 한 명</text>
+                <circle cx="431" cy="163" r="7" fill="var(--code)"/><text x="446" y="168">약탈자 · 사냥개</text>
+                <circle cx="431" cy="191" r="7" fill="var(--link)"/><path d="M438 191l6-4v8z" fill="var(--link)"/><text x="446" y="196">나와 바라보는 방향</text>
+              </g>
+            </svg>
+            <figcaption>격자 전투의 네 가지 원칙. 앞 칸만 친다, 인접 4칸만 나를 친다, 대각선은 서로 안전하다, 복도에서는 한 명씩 상대한다. 등 뒤의 적은 방어구 등급을 한 단계 무시한다.</figcaption>
+          </figure>
+          <h3>앞 칸 판정과 피하기</h3>
+          <p>공격은 <strong>선딜 → 판정 → 후딜</strong>로 진행되고, 판정 순간 앞 칸에 적이 있을 때만 맞는다. 적도 같은 규칙이다. 그래서 피하기는 구르기가 아니라 <strong>옆 칸으로 한 걸음</strong>이다. 적이 선딜 동작을 보이면 옆으로 비켜서고, 적의 후딜 동안 등 뒤나 옆 칸으로 돌아가 친다. 적의 선딜은 0.5초 이상으로 시작하고, 설정에서 “공격 칸 표시”를 켜면 적이 칠 칸이 잠깐 빛난다.</p>
+          <p>한 캐릭터는 상하좌우 <strong>네 칸에서만</strong> 맞을 수 있다. 벽을 등지면 세 칸, 모퉁이에 서면 두 칸, 한 칸 복도에서는 한 칸이다. 대각선에 선 적은 나를 못 치고 나도 못 친다. 많은 적을 만났을 때의 정답은 능력치가 아니라 복도로 물러나는 것이다.</p>
+          <h3>무기: 피해 종류가 곧 선택</h3>
+          <div class="table-scroll" role="region" aria-label="무기 종류" tabindex="0"><table class="wide-table"><thead><tr><th scope="col">무기</th><th scope="col">피해 종류</th><th scope="col">기본 피해</th><th scope="col">범위</th><th scope="col">선딜</th><th scope="col">특징</th></tr></thead><tbody>
+            <tr><th scope="row">단검</th><td>찌르기</td><td>18</td><td>앞 1칸</td><td>0.15초</td><td>기력 소모 적음. 등 뒤 공격 피해 2배. 내구도가 빨리 닳는다.</td></tr>
+            <tr><th scope="row">손도끼</th><td>베기</td><td>26</td><td>앞 1칸</td><td>0.30초</td><td>출혈 확률 높음. 방패와 문을 빨리 부순다.</td></tr>
+            <tr><th scope="row">장검</th><td>베기</td><td>24</td><td>앞줄 3칸(앞·앞 양옆)</td><td>0.35초</td><td>여러 적을 한 번에. 복도에서는 이점이 없다.</td></tr>
+            <tr><th scope="row">창</th><td>찌르기</td><td>28</td><td>앞 2칸</td><td>0.40초</td><td>두 칸 밖에서 먼저 친다. 바로 앞 칸은 피해 70%.</td></tr>
+            <tr><th scope="row">철퇴</th><td>타격</td><td>32</td><td>앞 1칸</td><td>0.50초</td><td>판금에 유효. 사슬·판금 상대를 0.3초 경직시킨다. 무겁다.</td></tr>
+            <tr><th scope="row">투척 단검 · 돌</th><td>찌르기 · 타격</td><td>14 · 10</td><td>직선 4칸</td><td>0.20초</td><td>소모품. 다가오는 적을 먼저 맞히거나 소리로 유인한다.</td></tr>
+          </tbody></table></div>
+          <p class="table-note">선딜 뒤 후딜은 선딜과 같은 길이로 시작한다. 숙련이 오르면 선딜과 기력 소모가 줄고 후딜은 유지한다. 활은 첫 버전에서 제외하고, 원거리는 투척물로만 둔다.</p>
+          <h3>피해 종류 대 방어구: 관통 대신 상성</h3>
+          <div class="table-scroll" role="region" aria-label="피해 종류별 방어구 감소율" tabindex="0"><table class="compact-table"><thead><tr><th scope="col">피해 감소율</th><th scope="col">천옷 (0등급)</th><th scope="col">가죽 (1등급)</th><th scope="col">사슬 (2등급)</th><th scope="col">판금 (3등급)</th></tr></thead><tbody>
+            <tr><th scope="row">베기</th><td>0%</td><td>20%</td><td>50%</td><td>70%</td></tr>
+            <tr><th scope="row">찌르기</th><td>0%</td><td>10%</td><td>25%</td><td>55%</td></tr>
+            <tr><th scope="row">타격</th><td>0%</td><td>10%</td><td>15%</td><td>25%</td></tr>
+            <tr><th scope="row">무게</th><td>1</td><td>3</td><td>8</td><td>14</td></tr>
+          </tbody></table></div>
+          <p>방어구는 맞을 때마다 내구도가 줄고, 0이 되면 천옷으로 취급한다. 등 뒤에서 맞으면 등급을 한 단계 낮춰 계산한다. 판금을 입은 적에게 손도끼는 거의 통하지 않고 철퇴는 통한다. 반대로 판금은 무거워서 달리기 기력이 빨리 바닥나고 하수구 탈출구를 못 쓴다. <strong>무엇을 들고 들어가느냐가 총알 선택을 대신한다.</strong></p>
+          <h3>부위와 부상</h3>
+          <div class="table-scroll" role="region" aria-label="부위별 체력과 파괴 효과" tabindex="0"><table class="wide-table"><thead><tr><th scope="col">부위</th><th scope="col">체력</th><th scope="col">앞에서 맞을 확률</th><th scope="col">0이 되면</th></tr></thead><tbody>
+            <tr><th scope="row">머리</th><td>35</td><td>10%</td><td>사망</td></tr>
+            <tr><th scope="row">몸통</th><td>85</td><td>55%</td><td>사망</td></tr>
+            <tr><th scope="row">팔</th><td>60</td><td>25%</td><td>선딜 50% 증가, 방패를 들 수 없음. 넘치는 피해의 70%는 몸통으로</td></tr>
+            <tr><th scope="row">다리</th><td>65</td><td>10%</td><td>달리기 불가, 걷기 2칸/초. 넘치는 피해의 70%는 몸통으로</td></tr>
+          </tbody></table></div>
+          <ul>
+            <li><strong>출혈:</strong> 베기에 맞으면 확률로 시작. 초당 1씩 몸통이 줄고 붕대로 멈춘다. 붕대는 2초 동안 서 있어야 한다.</li>
+            <li><strong>골절:</strong> 타격에 팔·다리를 맞으면 확률로 시작. 해당 부위가 파괴된 것과 같은 효과이며 부목으로 고친다.</li>
+            <li><strong>통증:</strong> 부위가 하나라도 절반 아래면 기력 회복이 느려진다. 진통제로 원정 동안 무시한다.</li>
+            <li><strong>등 뒤:</strong> 등 뒤에서 맞으면 머리 확률이 30%로 오른다. 단검의 등 뒤 2배와 겹치면 머리 한 방이 난다. 적도 플레이어의 등을 노린다.</li>
+          </ul>
+          <p><strong>기력은 100</strong>이다. 공격·달리기·막기에 쓰고, 가만히 있거나 걸으면 회복된다. 무게 한도를 넘기면 회복이 절반이 되고, 0이 되면 공격할 수 없고 걷기만 된다. 왼손에는 <strong>방패 또는 횃불</strong> 중 하나만 든다. 방패는 정면 피해의 60%를 내구도로 받고 막는 동안 기력을 쓴다. 횃불은 지하에서 시야를 반경 7칸으로 넓힌다. 지하에서 방패를 고르면 어둠 속에서 싸우고, 횃불을 고르면 막지 못한다.</p>
+          <h3>기술: 칸을 다루는 여섯 가지</h3>
+          <p>기술서를 읽으면 캐릭터가 배우고, 3개까지 장착한다. 배운 기술은 캐릭터가 죽으면 사라지며, 읽지 않은 기술서는 창고에 두면 남는다.</p>
+          <div class="table-scroll" role="region" aria-label="기술 목록" tabindex="0"><table class="wide-table"><thead><tr><th scope="col">기술</th><th scope="col">효과</th><th scope="col">재사용</th></tr></thead><tbody>
+            <tr><th scope="row">밀치기</th><td>앞 칸의 적을 한 칸 민다. 뒤가 벽이면 0.5초 경직.</td><td>4초</td></tr>
+            <tr><th scope="row">후퇴 베기</th><td>공격한 뒤 즉시 뒤로 한 칸 물러난다.</td><td>5초</td></tr>
+            <tr><th scope="row">돌진 찌르기</th><td>앞으로 두 칸 달려가 친다. 창·단검 전용. 몸통 확률 80%.</td><td>6초</td></tr>
+            <tr><th scope="row">다리 베기</th><td>다리를 노린다(확률 80%). 사냥개와 도망치는 적에게.</td><td>5초</td></tr>
+            <tr><th scope="row">휘두르기</th><td>인접 4칸을 전부 친다. 기력 40.</td><td>8초</td></tr>
+            <tr><th scope="row">숨죽이기</th><td>5초 동안 소리 반경 0, 이동 2칸/초.</td><td>15초</td></tr>
+          </tbody></table></div>
+          <h3>적과 소리</h3>
+          <div class="table-scroll" role="region" aria-label="적 종류" tabindex="0"><table class="wide-table"><thead><tr><th scope="col">적</th><th scope="col">행동</th><th scope="col">상대법</th></tr></thead><tbody>
+            <tr><th scope="row">약탈자 (도끼·창)</th><td>2~3명이 무리로 다닌다. 상자를 열고 시체를 뒤지고, 소리를 들으면 서로 부른다. 챙긴 것을 들고 탈출구로 사라진다.</td><td>복도로 끌어들여 한 명씩. 죽이면 그가 주운 것까지 얻는다.</td></tr>
+            <tr><th scope="row">사냥개</th><td>빠르다(6칸/초). 다리를 물고 출혈을 낸다. 둘씩 다닌다.</td><td>벽을 등지고 창이나 다리 베기. 달려서 못 도망간다.</td></tr>
+            <tr><th scope="row">뒤틀린 것</th><td>느리고(2칸/초) 크다. 타격 공격에 선딜이 길다. 피부가 판금과 같다.</td><td>철퇴나 등 뒤. 베기로는 시간만 쓴다. 피할 수 있으니 반드시 싸울 필요는 없다.</td></tr>
+            <tr><th scope="row">구역 보스</th><td>성채 지하에 경비 둘과 함께 있다. 지하문 열쇠를 가지고 있다.</td><td>첫 버전에서는 한 종류. 경비를 떼어 놓는 것이 공략의 절반.</td></tr>
+          </tbody></table></div>
+          <p>소리는 반경으로 처리한다. 걷기 3칸, 달리기 7칸, 전투 10칸, 문 부수기 12칸. 반경 안의 약탈자는 소리 난 곳으로 온다. 감각 능력치가 높으면 적의 소리 반경이 지도에 희미한 원으로 보인다.</p>
+        </section>
+
+        <section id="raid"><h2>05. 원정: 들어가고, 챙기고, 나온다</h2>
+          <ol class="loop" aria-label="반복 플레이의 네 단계">
+            <li><b>1 · 준비</b><span>창고에서 무기·방어구·왼손·배낭·소비품을 고른다. 전부 잃을 수 있다.</span></li>
+            <li><b>2 · 원정</b><span>입구 셋 중 한 곳에서 시작해 20분 안에 챙기고 싸우고 피한다.</span></li>
+            <li><b>3 · 탈출</b><span>열린 탈출구 중 하나로 나간다. 조건과 거리가 다르다.</span></li>
+            <li><b>4 · 정리</b><span>창고에 넣고 팔고 고치고 치료한다. 다음 원정의 질문이 바뀐다.</span></li>
+          </ol>
+          <h3>출발 전</h3>
+          <p>창고에서 꺼내 몸에 걸친 것과 배낭에 넣은 것이 이번 원정의 전부다. <strong>보안 주머니 2칸</strong>은 예외로, 열쇠나 작은 귀중품을 넣으면 죽어도 야영지로 돌아온다. 이 주머니의 칸 수는 하드코어 강도를 조정하는 첫 번째 손잡이이며, 무기나 방어구는 들어가지 않는다.</p>
+          <p>돈과 장비가 바닥나도 출발은 막지 않는다. 캐릭터마다 <strong>기본 보급</strong>으로 녹슨 단검, 천옷, 붕대 2개를 무료로 받는다. 빈손으로 들어가서 약탈자의 것을 빼앗아 나오는 것도 하나의 원정이다.</p>
+          <h3>안에서</h3>
+          <p>제한 시간은 첫 지역 기준 <strong>20분</strong>이다. 남은 시간은 화면 구석에 항상 보이고, 2분 전에 한 번 경고한다. 시간이 끝나면 실종으로 처리되어 죽음과 같다. 원정 중에는 아무것도 멈추지 않는다. 가방을 열어도, 지도를 봐도 적은 다가온다.</p>
+          <p>원정 중에 게임을 종료하면 캐릭터는 그 자리에 남고, 5분 안에 돌아오면 이어서 한다. 5분이 지나면 실종이다. 저장 파일을 되돌려 죽음을 무르는 방법은 두지 않는다.</p>
+          <div class="table-scroll" role="region" aria-label="탈출구 종류" tabindex="0"><table class="wide-table"><thead><tr><th scope="col">탈출구</th><th scope="col">위치</th><th scope="col">조건</th><th scope="col">읽는 법</th></tr></thead><tbody>
+            <tr><th scope="row">쪽문</th><td>바깥 구역 입구 근처</td><td>항상 열림</td><td>가장 안전하지만 깊이 갔다면 가장 멀다.</td></tr>
+            <tr><th scope="row">무너진 성벽</th><td>바깥 구역 반대편</td><td>밧줄 1개 소모</td><td>밧줄을 챙겨 갔다면 어디서든 가까운 출구가 하나 생긴다.</td></tr>
+            <tr><th scope="row">마차</th><td>시장 거리</td><td>15~18분 사이에만</td><td>시간을 재며 시장을 털고 바로 나가는 경로.</td></tr>
+            <tr><th scope="row">하수구</th><td>시장 거리 아래</td><td>큰 배낭·판금 불가</td><td>가볍게 들어간 사람의 지름길.</td></tr>
+            <tr><th scope="row">지하문</th><td>성채 지하 보스 방 뒤</td><td>열쇠 필요</td><td>보스를 잡거나 열쇠를 사 온 사람만. 가장 깊은 곳에서 바로 나간다.</td></tr>
+          </tbody></table></div>
+          <p>입장할 때 지도에 <strong>이번에 열린 탈출구</strong>가 표시된다. 쪽문은 항상, 나머지 넷 중 둘이 무작위로 열리고 둘은 닫힌다. 출발 전에는 알 수 없으므로 밧줄과 열쇠는 보험이 된다.</p>
+          <h3>원정마다 바뀌는 것</h3>
+          <p>지도의 뼈대는 매번 같다. 구역의 위치, 큰 건물, 탈출구 자리, 보스 방은 외울 수 있고 외워야 한다. 바뀌는 것은 <strong>어느 문이 잠겼는지, 전리품이 어디 있는지, 약탈자가 어디를 도는지, 어느 탈출구가 열렸는지</strong>다. 여기에 입장마다 원정 변수가 하나 붙는다.</p>
+          <div class="table-scroll" role="region" aria-label="원정 변수" tabindex="0"><table class="compact-table"><thead><tr><th scope="col">변수</th><th scope="col">효과</th></tr></thead><tbody>
+            <tr><th scope="row">비</th><td>소리 반경 −2칸, 지상 시야 −2칸. 몰래 다니기 좋고 기습당하기도 좋다.</td></tr>
+            <tr><th scope="row">순찰 강화</th><td>약탈자 무리 +1. 전리품 가치 +20%.</td></tr>
+            <tr><th scope="row">떠돌이 상인</th><td>시장 거리 어딘가에서 한 번 거래. 가져온 것을 안에서 팔거나 붕대를 산다.</td></tr>
+            <tr><th scope="row">붕괴</th><td>구역 사이 통로 하나가 막힌다. 외운 길이 하나 사라진다.</td></tr>
+          </tbody></table></div>
+          <h3>첫 원정 15분</h3>
+          <ol>
+            <li><strong>0~2분:</strong> 야영지에서 이름을 짓고 기본 보급을 받는다. 창고는 비어 있다. 명부도 비어 있다.</li>
+            <li><strong>2~4분:</strong> 바깥 구역에서 사냥개 한 마리를 벽을 등지고 상대한다. 첫 상자에서 붕대와 귀중품 하나를 얻는다.</li>
+            <li><strong>4~10분:</strong> 시장 거리 가장자리에서 약탈자 둘의 소리를 듣는다. 싸우거나 돌아간다. 상점 잔해에서 가죽옷을 줍는다.</li>
+            <li><strong>10~13분:</strong> 남은 시간과 열린 탈출구를 보고 쪽문으로 돌아간다. 마차는 아직 안 열렸다.</li>
+            <li><strong>13~15분:</strong> 창고에 가죽옷을 넣고 귀중품을 판다. 다음엔 밧줄을 살지, 가죽옷을 입고 들어갈지 고른다.</li>
+          </ol>
+          <div class="scene"><p><strong>실제 장면:</strong> 14분째, 배낭에 귀중품 셋과 기술서 하나. 몸통은 절반, 붕대는 없다. 마차가 1분 뒤에 열리는데 마차까지 약탈자 둘이 돌고 있다. 쪽문은 안전하지만 6분 거리다. 밧줄은 안 가져왔다. 지금 가진 것을 지키며 돌아갈지, 시장의 남은 상자 둘을 더 보고 마차에 걸지 고른다.</p></div>
+        </section>
+
+        <section id="death"><h2>06. 죽음: 디아블로 하드코어</h2>
+          <p><strong>캐릭터가 죽으면 캐릭터는 삭제된다.</strong> 레벨, 능력치, 무기 숙련, 배운 기술, 몸에 걸친 것과 배낭에 든 것이 함께 사라진다. 시체는 그 원정 안에서만 존재하고, 약탈자가 뒤진다. 어려운 난이도를 고르는 선택지가 아니라 이 게임의 유일한 규칙이다.</p>
+          <div class="table-scroll" role="region" aria-label="죽음 뒤에 사라지는 것과 남는 것" tabindex="0"><table class="compact-table"><thead><tr><th scope="col">사라진다</th><th scope="col">남는다</th></tr></thead><tbody>
+            <tr><td>레벨 · 능력치 · 무기 숙련</td><td>창고에 넣어 둔 모든 것</td></tr>
+            <tr><td>배운 기술</td><td>읽지 않은 기술서</td></tr>
+            <tr><td>몸에 걸친 장비 · 배낭의 내용</td><td>보안 주머니 2칸의 내용</td></tr>
+            <tr><td>진행 중이던 의뢰</td><td>상인 신뢰 · 천막 설비 · 지도 지식 · 도감</td></tr>
+            <tr><td>그 캐릭터의 이름</td><td>명부의 한 줄</td></tr>
+          </tbody></table></div>
+          <h3>명부</h3>
+          <p>죽은 캐릭터는 명부에 한 줄로 남는다. 이름, 레벨, 원정 횟수, 가져온 가치의 합, 죽은 구역과 원인, 마지막 장비. 새 캐릭터의 이름을 짓기 전에 명부를 지나간다. “열셋째 원정, 성채 지하, 사냥개, 철퇴와 판금”이라는 한 줄이 다음 캐릭터의 준비를 바꾼다.</p>
+          <h3>회수 의뢰</h3>
+          <p>출발 전에 수집가에게 품목별로 비용을 내면 회수 의뢰가 걸린다. 죽은 뒤 <strong>그 원정이 끝날 때까지 아무도 줍지 않은 품목</strong>만 실시간 12시간 뒤 창고로 돌아온다. 약탈자는 좋은 것부터 줍기 때문에 비싼 장비일수록 돌아올 확률이 낮다. 돌아온 장비는 다음 캐릭터가 쓴다.</p>
+          <h3>하드코어 강도를 조정하는 손잡이</h3>
+          <ul>
+            <li><strong>보안 주머니 칸 수:</strong> 2칸에서 시작. 첫 죽음 뒤 이탈이 심하면 3칸, 죽음이 가볍게 느껴지면 1칸.</li>
+            <li><strong>기본 보급:</strong> 녹슨 단검·천옷·붕대 2개. 빈손 탈출이 반복되면 밧줄 1개를 더한다.</li>
+            <li><strong>회수 의뢰 비용과 반환 조건:</strong> 비용을 낮추거나 “약탈자가 주운 것도 50% 확률로 반환”으로 완화한다.</li>
+            <li><strong>실종 유예:</strong> 종료 후 5분. 비정상 종료가 잦으면 10분.</li>
+          </ul>
+          <p>장비 파괴나 창고 손실로 벌을 키우지는 않는다. 벌은 캐릭터 한 명으로 충분하다. 조정은 항상 완화하는 방향으로만 열어 두고, 더 가혹한 선택 모드는 첫 버전에 두지 않는다.</p>
+        </section>
+
+        <section id="growth"><h2>07. 성장: 캐릭터에 쌓이는 것, 야영지에 남는 것</h2>
+          <p>성장을 두 층으로 나눈다. <strong>캐릭터 층은 원정 다섯 번이면 레벨 10에 닿을 만큼 빠르고, 죽으면 0이 된다.</strong> 야영지 층은 캐릭터 열 명을 거치며 천천히 쌓이고, 다음 캐릭터가 더 깊이 갈 수 있게 한다. 두 층의 속도가 하드코어의 손맛을 결정한다.</p>
+          <div class="table-scroll" role="region" aria-label="성장 축" tabindex="0"><table class="wide-table"><thead><tr><th scope="col">축</th><th scope="col">어떻게 오르나</th><th scope="col">무엇이 바뀌나</th><th scope="col">죽으면</th></tr></thead><tbody>
+            <tr><th scope="row">레벨 (1~30)</th><td>처치, 처음 발견한 장소·물건, 탈출 성공 시 가져온 가치</td><td>레벨당 능력치 2점</td><td>사라짐</td></tr>
+            <tr><th scope="row">능력치 4종</th><td>레벨업으로 분배</td><td>힘: 무게 한도·타격 피해 / 민첩: 선딜·후딜·기력 / 체력: 모든 부위 체력 +3 / 감각: 소리 표시·숨은 전리품·예고 길이</td><td>사라짐</td></tr>
+            <tr><th scope="row">무기 숙련 5단계</th><td>해당 종류로 적중</td><td>단계마다 선딜 −8%, 기력 −8%</td><td>사라짐</td></tr>
+            <tr><th scope="row">기술 3슬롯</th><td>기술서를 읽음</td><td>칸을 다루는 행동이 늘어남</td><td>사라짐. 안 읽은 기술서는 창고에 남음</td></tr>
+            <tr><th scope="row">장비 등급·접사</th><td>원정에서 줍거나 상인 신뢰로 구매</td><td>일반·상급·희귀·유일. 접사 1~3개 (날카로운: 출혈 확률 / 가벼운: 무게 / 단단한: 내구 / 조용한: 소리 반경)</td><td>몸에 있으면 사라짐. 창고에 있으면 남음</td></tr>
+            <tr><th scope="row">창고</th><td>천막 설비로 확장</td><td>10×8칸에서 시작, 최대 10×16칸</td><td>남음</td></tr>
+            <tr><th scope="row">천막 설비 3종</th><td>재료와 돈</td><td>침상(치료 시간 30분→10분), 작업대(수리·투척 단검·밧줄 제작), 화덕(붕대·음식 제작)</td><td>남음</td></tr>
+            <tr><th scope="row">상인 신뢰 3단계</th><td>판매액과 의뢰 완료</td><td>판매 품목 확대, 회수 의뢰 비용 감소, 열쇠 구매 가능</td><td>남음</td></tr>
+            <tr><th scope="row">지도 지식</th><td>직접 본 탈출구·잠긴 문·숨은 창고</td><td>다음 원정부터 지도에 영구 표시</td><td>남음</td></tr>
+          </tbody></table></div>
+          <p>직업은 없다. 능력치 분배와 들고 가는 무기가 역할을 만든다. 민첩과 단검으로 등 뒤를 노리는 캐릭터, 힘과 철퇴와 판금으로 지하를 버티는 캐릭터, 감각과 숨죽이기로 싸우지 않고 줍는 캐릭터가 같은 규칙에서 나온다. 레벨 30 근처의 캐릭터가 죽었을 때의 상실감이 이 게임의 가장 큰 감정이며, 그 상실을 창고와 명부가 받아 준다.</p>
+        </section>
+
+        <section id="economy"><h2>08. 파밍과 경제</h2>
+          <p>모든 물건은 <strong>칸 수, 무게, 상인 매입가</strong>를 설명에 함께 표시한다. 가방이 찼을 때 “무엇을 버릴까”는 매 원정의 작은 질문이고, 가치를 숨기지 않아야 그 질문이 성립한다.</p>
+          <div class="table-scroll" role="region" aria-label="전리품 종류" tabindex="0"><table class="wide-table"><thead><tr><th scope="col">종류</th><th scope="col">예시</th><th scope="col">어디서</th><th scope="col">쓰임</th></tr></thead><tbody>
+            <tr><th scope="row">소비품</th><td>붕대, 부목, 진통제, 말린 고기, 밧줄, 투척 단검</td><td>상자, 약탈자 시체, 약제사</td><td>원정 중 생존. 밧줄은 탈출구.</td></tr>
+            <tr><th scope="row">장비</th><td>무기 6종, 방어구 3등급, 방패, 횃불, 배낭 2종</td><td>상점 잔해, 약탈자, 대장장이</td><td>다음 원정의 선택. 등급과 접사로 차이.</td></tr>
+            <tr><th scope="row">귀중품</th><td>은잔, 인장 반지, 약병, 비단</td><td>집 안 서랍, 성채 금고</td><td>판매. 칸당 가치가 높아 깊은 곳의 보상이 된다.</td></tr>
+            <tr><th scope="row">재료</th><td>쇳조각, 가죽, 약초, 밧줄 섬유</td><td>자원 칸, 사냥개</td><td>천막 설비 개선, 작업대·화덕 제작, 의뢰.</td></tr>
+            <tr><th scope="row">열쇠</th><td>창고 열쇠, 지하문 열쇠</td><td>보스, 약탈자 대장, 수집가(신뢰 3)</td><td>잠긴 방과 탈출구. 사용 횟수 3회.</td></tr>
+            <tr><th scope="row">기술서</th><td>밀치기 책, 후퇴 베기 책</td><td>성채 서고, 떠돌이 상인</td><td>읽으면 기술. 안 읽으면 창고 자산.</td></tr>
+          </tbody></table></div>
+          <h3>가방과 무게</h3>
+          <p>배낭이 없으면 주머니 4칸이다. 작은 배낭은 12칸, 큰 배낭은 24칸이며 큰 배낭은 하수구를 못 지난다. 무게 한도는 힘 10 기준 25이고 힘 1점마다 1.5가 는다. 한도를 넘기면 기력 회복이 절반이 되고, 한도의 1.5배를 넘기면 걷기만 된다. 판금(14)과 철퇴(6)를 함께 들면 귀중품을 많이 못 챙긴다.</p>
+          <h3>상인과 의뢰</h3>
+          <div class="table-scroll" role="region" aria-label="상인 3명" tabindex="0"><table class="compact-table"><thead><tr><th scope="col">상인</th><th scope="col">거래</th><th scope="col">의뢰 예시</th></tr></thead><tbody>
+            <tr><th scope="row">대장장이</th><td>무기·방어구·방패 판매, 수리(내구 회복, 최대치 −5%)</td><td>“판금 조각 3개를 가져와라”, “철퇴로 뒤틀린 것 하나를 잡아라”</td></tr>
+            <tr><th scope="row">약제사</th><td>소비품 판매, 치료(즉시 완치, 부위당 비용)</td><td>“시장 거리 약방에서 약초 5개”, “사냥개 5마리”</td></tr>
+            <tr><th scope="row">수집가</th><td>귀중품 매입, 열쇠·기술서 판매, 회수 의뢰</td><td>“성채 금고를 열어 표식을 남겨라”, “인장 반지 하나”</td></tr>
+          </tbody></table></div>
+          <p>의뢰는 상인당 하나씩 열리고 완료하면 신뢰가 오른다. 진행 중이던 의뢰는 캐릭터가 죽으면 사라지지만 신뢰는 남는다. 원정 후 부상은 그대로 남아, 약제사에게 돈을 내거나 침상에서 실시간으로 회복한다. 부상을 안고 출발할 수도 있다. 허기·갈증은 첫 버전에서 제외한다.</p>
+          <p><strong>경제의 바닥:</strong> 수입은 귀중품 판매와 의뢰, 지출은 장비·치료·회수 의뢰·천막이다. 돈이 바닥나도 기본 보급으로 출발할 수 있다. 플레이어 간 거래, 경매, 현금 구매는 넣지 않는다.</p>
+        </section>
+
+        <section id="explore"><h2>09. 탐험: 첫 지역의 세 구역</h2>
+          <figure class="diagram" id="map-art">
+            <svg viewBox="0 0 600 230" role="img" aria-label="첫 지역 지도 뼈대. 왼쪽에 입구 세 곳과 바깥 구역, 가운데에 시장 거리, 오른쪽에 성채 지하가 있다. 탈출구 다섯 곳은 실선으로 고정되어 있고, 잠긴 문·전리품·순찰·붕괴·떠돌이 상인은 점선으로 원정마다 바뀐다." xmlns="http://www.w3.org/2000/svg">
+              <g stroke="var(--border)" stroke-width="1.5">
+                <rect x="66" y="20" width="166" height="176" fill="var(--surface)"/>
+                <rect x="240" y="20" width="166" height="176" fill="var(--surface)"/>
+                <rect x="414" y="20" width="172" height="176" fill="var(--border)" fill-opacity=".25"/>
+              </g>
+              <g font-size="11" fill="var(--text)" font-weight="bold">
+                <text x="74" y="36">바깥 구역 · 위험 낮음</text>
+                <text x="248" y="36">시장 거리 · 중간</text>
+                <text x="422" y="36">성채 지하 · 높음 · 어둠</text>
+              </g>
+              <g fill="var(--link)">
+                <path d="M46 56l14 8-14 8z"/><path d="M46 100l14 8-14 8z"/><path d="M46 144l14 8-14 8z"/>
+              </g>
+              <text x="8" y="112" font-size="11" fill="var(--text)">입구 3곳</text>
+              <g fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 3">
+                <rect x="222" y="78" width="36" height="20"/>
+                <rect x="222" y="126" width="36" height="20"/>
+                <rect x="396" y="98" width="36" height="20"/>
+                <rect x="118" y="100" width="56" height="20"/>
+                <rect x="282" y="90" width="48" height="20"/>
+                <rect x="296" y="138" width="72" height="20"/>
+              </g>
+              <g font-size="10" fill="var(--muted)" text-anchor="middle">
+                <text x="240" y="92">잠긴 문?</text>
+                <text x="240" y="140">붕괴?</text>
+                <text x="414" y="112">잠긴 문?</text>
+                <text x="146" y="114">전리품?</text>
+                <text x="306" y="104">순찰?</text>
+                <text x="332" y="152">떠돌이 상인?</text>
+              </g>
+              <g fill="var(--link)" stroke="var(--background)" stroke-width="1.5">
+                <rect x="78" y="48" width="12" height="12"/>
+                <rect x="78" y="166" width="12" height="12"/>
+                <rect x="252" y="48" width="12" height="12"/>
+                <rect x="252" y="166" width="12" height="12"/>
+                <rect x="560" y="102" width="12" height="12"/>
+              </g>
+              <g font-size="10" fill="var(--text)">
+                <text x="94" y="58">쪽문 · 항상</text>
+                <text x="94" y="176">성벽 · 밧줄</text>
+                <text x="268" y="58">마차 · 15~18분</text>
+                <text x="268" y="176">하수구 · 큰 배낭 ×</text>
+                <text x="572" y="94" text-anchor="end">지하문 · 열쇠</text>
+              </g>
+              <g>
+                <path d="M470 91l9 9-9 9-9-9z" fill="var(--code)"/>
+                <text x="470" y="128" font-size="10" fill="var(--text)" text-anchor="middle">보스 + 열쇠</text>
+                <path d="M520 151l9 9-9 9-9-9z" fill="var(--code)" fill-opacity=".6"/>
+                <text x="520" y="184" font-size="10" fill="var(--text)" text-anchor="middle">뒤틀린 것</text>
+              </g>
+              <text x="66" y="220" font-size="11" fill="var(--muted)">실선 = 매번 같은 뼈대 · 점선 = 원정마다 바뀌는 것</text>
+            </svg>
+            <figcaption>첫 지역의 뼈대. 구역·탈출구·보스 방은 외울 수 있고, 문·전리품·순찰·붕괴·상인은 매번 다르다. 깊이 갈수록 칸당 가치는 오르고 돌아올 길은 길어진다.</figcaption>
+          </figure>
+          <div class="table-scroll" role="region" aria-label="세 구역" tabindex="0"><table class="wide-table"><thead><tr><th scope="col">구역</th><th scope="col">위험</th><th scope="col">적</th><th scope="col">전리품</th><th scope="col">탈출구</th><th scope="col">외우면 생기는 것</th></tr></thead><tbody>
+            <tr><th scope="row">바깥 구역</th><td>낮음 · 지상 · 밝음</td><td>사냥개, 약탈자 1무리</td><td>소비품, 가죽, 재료</td><td>쪽문, 무너진 성벽</td><td>입구별 가장 짧은 쪽문 길</td></tr>
+            <tr><th scope="row">시장 거리</th><td>중간 · 지상 · 좁은 골목</td><td>약탈자 2~3무리, 사냥개</td><td>장비, 귀중품, 약초</td><td>마차, 하수구</td><td>골목의 복도 자리, 마차 시간에 맞춘 경로</td></tr>
+            <tr><th scope="row">성채 지하</th><td>높음 · 어둠 · 횃불 필요</td><td>뒤틀린 것, 보스와 경비</td><td>희귀 장비, 기술서, 금고 귀중품</td><td>지하문(열쇠)</td><td>서고와 금고 위치, 보스 방 우회로</td></tr>
+          </tbody></table></div>
+          <p>잠긴 문은 열쇠로 열거나 도끼·철퇴로 20초 동안 부순다. 부수는 소리는 12칸까지 퍼진다. 숨은 창고는 감각이 높을수록 멀리서 표시된다. 두 번째 지역은 첫 지역의 세 구역이 검증된 뒤에 만들고, 지역마다 새로운 적의 예고·탈출구 조건·원정 변수를 한 묶음으로 추가한다.</p>
+        </section>
+
+        <section id="art"><h2>10. 픽셀아트와 화면 구성</h2>
+          <ul>
+            <li><strong>규격:</strong> 32×32 타일, 캐릭터 32×48(한 칸을 차지하고 위로 솟음). 기준 화면 640×360에 가로 20칸, 세로 11칸. 정수 배로만 확대한다.</li>
+            <li><strong>애니메이션:</strong> 4방향 × 대기·걷기·달리기·피격·사망, 그리고 무기 종류 5개 × 4방향 공격. 방어구 3등급과 왼손(방패·횃불)은 몸에 보이고 등급은 색으로 구별한다. 멀리서도 “판금에 철퇴”가 읽혀야 한다.</li>
+            <li><strong>색:</strong> 야영지는 따뜻한 불빛, 도시는 잿빛 돌과 푸른 그림자, 지하는 거의 검정에 횃불 주황. 피는 작게, 출혈은 캐릭터 발밑의 점으로.</li>
+            <li><strong>예고와 소리:</strong> 적의 선딜 포즈를 가장 크게 그린다. 공격 칸 표시(설정), 소리 반경 원(감각)은 바닥에 얇게 겹친다.</li>
+            <li><strong>UI:</strong> 왼쪽 아래 부위 체력 인체 아이콘, 기력 막대, 무게. 오른쪽 위 남은 시간. 가방은 격자이며 열어도 세상이 멈추지 않으므로 반투명으로 겹친다.</li>
+          </ul>
+          <p>원작 이동의 참고는 넥슨 <a href="https://baram.nexon.com/">바람의나라</a>와 <a href="https://lod.nexon.com/">어둠의 전설</a>의 공식 사이트로 한정한다. 타일 크기·속도·원작의 전투 규칙 수치는 이 문서에 옮기지 않았으며 위의 수치는 이 게임을 위한 가설이다.</p>
+        </section>
+
+        <section id="prototype"><h2>11. 첫 시제품의 범위와 제작 순서</h2>
+          <p>첫 목표는 콘텐츠 양이 아니라 <strong>“준비 → 원정 → 탈출 또는 죽음 → 창고와 명부”를 한 바퀴 끝낼 수 있는가</strong>다. 엔진 후보는 묘수와 같은 Godot 4로 두되, A 단계는 저장소의 다른 시제품처럼 브라우저에서 먼저 만들어도 된다.</p>
+          <div class="table-scroll" role="region" aria-label="시제품 포함 범위" tabindex="0"><table class="wide-table"><thead><tr><th scope="col">항목</th><th scope="col">첫 시제품</th><th scope="col">후속</th></tr></thead><tbody>
+            <tr><th scope="row">플레이어</th><td>1인, 외형 1종, 능력치 4, 레벨 1~10</td><td>레벨 30, 외형 선택</td></tr>
+            <tr><th scope="row">지역</th><td>1지역 3구역, 입구 3, 탈출구 5, 원정 변수 4</td><td>두 번째 지역</td></tr>
+            <tr><th scope="row">적</th><td>약탈자 2종, 사냥개, 뒤틀린 것 1, 보스 1</td><td>변형과 야간</td></tr>
+            <tr><th scope="row">전투</th><td>무기 6종, 방어구 3등급, 방패·횃불, 부위 4, 출혈·골절·통증, 소리</td><td>접사 확대, 유일 장비</td></tr>
+            <tr><th scope="row">기술</th><td>6종 중 3슬롯</td><td>추가 기술서</td></tr>
+            <tr><th scope="row">야영지</th><td>창고, 천막 설비 3, 상인 3, 명부, 회수 의뢰, 의뢰 3</td><td>의뢰 묶음, 천막 단계 확대</td></tr>
+            <tr><th scope="row">기술 기반</th><td>Godot 4, PC 키보드, 로컬 저장</td><td>모바일 십자 패드, PvPvE 서버</td></tr>
+          </tbody></table></div>
+          <ol>
+            <li><strong>A · 격자 조작 검증:</strong> 네모 캐릭터로 방 하나. 이동·회전·앞 칸 공격·옆 칸 피하기. “바람의나라처럼 걷는 느낌”과 “앞 칸 판정이 공정하다는 느낌”을 먼저 확인한다. 제자리 회전 방식을 여기서 결정한다.</li>
+            <li><strong>B · 전투 완결:</strong> 무기 6종, 방어구, 부위와 부상, 기력, 적 3종의 예고, 소리 반경. 복도와 광장에서 같은 적 셋을 상대하는 차이가 나야 한다.</li>
+            <li><strong>C · 원정 완결:</strong> 제한 시간, 입구, 탈출구 5종, 전리품, 가방과 무게, 실종 처리. 종료 후 복귀와 저장 되돌리기 차단을 검증한다.</li>
+            <li><strong>D · 죽음과 야영지:</strong> 창고, 천막, 상인, 명부, 회수 의뢰, 새 캐릭터 흐름. 죽은 뒤 새 캐릭터로 다시 성문 앞에 서기까지 1분을 넘기지 않게 한다.</li>
+            <li><strong>E · 아트와 지역 완성:</strong> 세 구역 에셋, 보스, 원정 변수. 조작과 죽음의 규칙이 검증되기 전에는 지역을 늘리지 않는다.</li>
+            <li><strong>F · 후속, PvPvE 기술 검증:</strong> 별도 단계로 두 사람이 한 지도에서 만나는 것만 시험한다. 서버가 위치·피해·전리품·탈출을 확정하는 구조를 B 단계부터 규칙과 화면을 분리해 준비한다.</li>
+          </ol>
+          <p>첫 시제품에서 제외하는 범위는 PvP, 길드, 거래소, 현금 구매, 허기·갈증, 날씨 전반, 직업, 스토리 컷신, 두 번째 지역, 활이다.</p>
+        </section>
+
+        <section id="validation"><h2>12. 검증 기준과 주요 위험</h2>
+          <p>아래 수치는 <strong>개발 후 시험할 통과 기준 초안</strong>이며 현재 달성한 결과가 아니다. 초기 관찰은 5명으로 시작하고, 소수의 반응을 시장성의 증거로 해석하지 않는다.</p>
+          <div class="table-scroll" role="region" aria-label="시제품 검증 조건" tabindex="0"><table class="wide-table"><thead><tr><th scope="col">질문</th><th scope="col">관찰·통과 조건 초안</th><th scope="col">실패하면</th></tr></thead><tbody>
+            <tr><th scope="row">격자 이동이 답답하지 않은가</th><td>5명 중 4명이 원하는 칸에 멈추고, 입력이 씹혔다는 말이 없다.</td><td>속도와 입력 버퍼 길이, 회전 방식을 바꾼다.</td></tr>
+            <tr><th scope="row">앞 칸 공격이 공정한가</th><td>맞은 뒤 “피할 수 있었다”고 답하는 비율 4/5. 예고 0.5초.</td><td>예고를 늘리고 공격 칸 표시를 기본으로 켠다.</td></tr>
+            <tr><th scope="row">무기·방어구 선택이 달라지는가</th><td>적 구성을 바꿔 주면 들고 가는 무기가 바뀐다.</td><td>피해 감소율 표를 수정한다. 만능 무기를 없앤다.</td></tr>
+            <tr><th scope="row">죽음이 그만두게 만드는가</th><td>첫 죽음 뒤 5명 중 4명이 새 캐릭터로 한 번 더 출발한다.</td><td>보안 주머니·기본 보급·회수 의뢰를 완화한다. 벌을 더 키우지 않는다.</td></tr>
+            <tr><th scope="row">탈출 판단이 생기는가</th><td>12분 이후 자발적으로 나가는 원정이 절반 이상. 시간 초과 실종은 10% 아래.</td><td>탈출구 조건과 시간 경고를 조정한다.</td></tr>
+            <tr><th scope="row">버리는 고민이 생기는가</th><td>가방이 찼을 때 물건을 바꿔 넣는 행동이 원정당 1회 이상.</td><td>칸 수와 귀중품 가치 분포를 조정한다.</td></tr>
+            <tr><th scope="row">야영지 성장이 느껴지는가</th><td>세 번째 캐릭터가 첫 캐릭터보다 깊은 구역에 닿는다.</td><td>지도 지식 표시와 창고 보급을 강화한다.</td></tr>
+            <tr><th scope="row">실종 규칙을 받아들이는가</th><td>원정 중 종료 후 복귀 실패 사례를 기록하고 불만 원인을 분류한다.</td><td>유예 시간을 늘리고 비정상 종료를 구분한다.</td></tr>
+          </tbody></table></div>
+          <p>가장 큰 위험은 <strong>하드코어가 재미가 아니라 이탈이 되는 것</strong>이다. 그래서 완화 손잡이를 처음부터 문서에 적어 두고, 벌을 키우는 방향의 조정은 하지 않는다. 두 번째 위험은 격자 실시간 전투가 밋밋해지는 것이다. 능력치 숫자가 아니라 복도·등 뒤·대각선·소리가 승부를 가르지 않으면 기술과 적 행동을 먼저 고친다. 세 번째는 AI 약탈자가 “다른 사람”처럼 느껴지지 않는 것이다. 줍고 부르고 사라지는 행동이 없으면 타르코프의 긴장은 생기지 않는다.</p>
+        </section>
+
+        <section id="sources"><h2>13. 참고 자료와 문서의 범위</h2>
+          <p>자료 확인일: <strong>2026.10.23 KST</strong>. 참고작은 공식 사이트로만 확인했고, 규칙의 수치는 원작에서 옮기지 않았다. 인기·매출·시장 조사는 이번 범위에 넣지 않았다.</p>
+          <ul>
+            <li><a href="https://www.escapefromtarkov.com/">Escape from Tarkov 공식 사이트</a>: 원정·탈출·장비 손실·부위 피해의 참고 범위.</li>
+            <li><a href="https://diablo4.blizzard.com/en-us/">Diablo IV 공식 사이트</a>: 하드코어 캐릭터의 영구 죽음과 장비 등급의 참고 범위.</li>
+            <li><a href="https://baram.nexon.com/">바람의나라</a> · <a href="https://lod.nexon.com/">어둠의 전설</a>: 4방향 격자 이동과 앞 칸 공격의 참고 범위.</li>
+            <li><a href="https://docs.godotengine.org/en/stable/classes/class_tilemaplayer.html">Godot — TileMapLayer</a>: 격자 지도 구현 후보.</li>
+          </ul>
+          <p>요청한 기획안까지 작성했다. <strong>게임 런타임, 실제 조작감, 밸런스, 재미, 온라인은 아직 검증하지 않았다.</strong> 저장소의 <a href="/posts/turn-based-roguelike-overview/">묘수</a>는 턴제이고 <a href="/posts/pawprint-expedition/">작은 발자국</a>은 죽어도 집이 남는 생활형이다. 이번 안은 실시간 격자, 영구 죽음, 제한 시간 탈출이라는 점에서 둘과 겹치지 않는다.</p>
+        </section>
+        <p class="post-back"><a href="/?category=writing">← 글 목록으로</a></p>
+      </article>
+    </main>
+    <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>
