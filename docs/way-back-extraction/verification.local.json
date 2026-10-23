@@ -1,8 +1,12 @@
 {
   "base": "http://127.0.0.1:8080",
-  "checkedAt": "2026-10-23T19:55:00+09:00",
+  "checkedAt": "2026-10-23T21:05:00+09:00",
   "scope": "글의 빌드·구조·브라우저 화면 확인. 게임 런타임, 조작감, 밸런스, 온라인 검증이 아니다.",
-  "build": { "command": "npm run build", "ok": true, "builtArticleSha256": "572c2cc536ed8045cdf10a06aa8b3d10643d870140a3d2f5c5d84999602f5e9c" },
+  "build": {
+    "command": "npm run build",
+    "ok": true,
+    "builtArticleSha256": "cea24e467afb0f8c7ad393f977da899d5cb5fab186fc530b35ea0aaaf3000fbd"
+  },
   "structure": {
     "h1": "귀로 — 격자 이동 하드코어 탈출 로그라이크 기획",
     "sections": 13,
@@ -10,7 +14,7 @@
     "missingAnchors": [],
     "duplicateIds": [],
     "inlineSvgDiagrams": 2,
-    "tables": 17,
+    "tables": 18,
     "canonical": "https://nyimpe.github.io/posts/way-back-extraction/",
     "externalLinks": [
       "https://www.escapefromtarkov.com/",
@@ -18,18 +22,60 @@
       "https://baram.nexon.com/",
       "https://lod.nexon.com/",
       "https://docs.godotengine.org/en/stable/classes/class_tilemaplayer.html"
-    ]
+    ],
+    "folkloreLinks": 12,
+    "folkloreAnchorsExist": [
+      "cr55",
+      "cr86",
+      "cr123",
+      "cr317",
+      "cr51",
+      "cr290",
+      "cr117",
+      "cr116"
+    ],
+    "leftoverOldTerms": []
   },
   "layouts": [
-    { "width": 1024, "scrollWidth": 1024, "clientWidth": 1024, "loopColumns": 4 },
-    { "width": 375, "scrollWidth": 375, "clientWidth": 375, "loopColumns": "166.703px 166.703px" },
-    { "width": 320, "scrollWidth": 320, "clientWidth": 320, "loopColumns": "288px" }
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "clientWidth": 1024,
+      "loopColumns": 4
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "loopColumns": "166.703px 166.703px"
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "clientWidth": 320,
+      "loopColumns": "288px"
+    }
   ],
-  "themes": { "dark": "격자·지도 SVG가 CSS 변수로 그려져 두 테마에서 읽힘", "light": "확인함" },
+  "themes": {
+    "dark": "격자·지도 SVG가 CSS 변수로 그려져 두 테마에서 읽힘",
+    "light": "확인함"
+  },
   "navigation": [
-    { "path": "/", "newPostVisible": true, "number": "20", "first": true },
-    { "path": "/?category=writing", "newPostVisible": true },
-    { "path": "/?category=game", "newPostVisible": false }
+    {
+      "path": "/",
+      "newPostVisible": true,
+      "number": "20",
+      "first": true
+    },
+    {
+      "path": "/?category=writing",
+      "newPostVisible": true
+    },
+    {
+      "path": "/?category=game",
+      "newPostVisible": false
+    }
   ],
-  "consoleErrors": []
+  "consoleErrors": [],
+  "revision": "2차: 개·고양이 주인공, 도감 귀신·괴물, 세계·야영지 구체화, 제목 후보 기록"
 }
