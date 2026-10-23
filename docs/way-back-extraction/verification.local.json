@@ -1,11 +1,11 @@
 {
   "base": "http://127.0.0.1:8080",
-  "checkedAt": "2026-10-23T21:50:00+09:00",
+  "checkedAt": "2026-10-24T06:05:00+09:00",
   "scope": "글의 빌드·구조·브라우저 화면 확인. 게임 런타임, 조작감, 밸런스, 온라인 검증이 아니다.",
   "build": {
     "command": "npm run build",
     "ok": true,
-    "builtArticleSha256": "4a4ab47d6eb6e4e7a3511a92bab67a0d003ada233c6ae31153956ee3ec529bb0"
+    "builtArticleSha256": "d576f37e57c61620128ffbb6c1fdcc3dcfcf9acb6ca9dc50edb6391dfa73b58a"
   },
   "structure": {
     "h1": "귀로 — 격자 이동 하드코어 탈출 로그라이크 기획",
@@ -77,5 +77,5 @@
     }
   ],
   "consoleErrors": [],
-  "revision": "3차: 10장에 에셋 프롬프트 문서 링크 추가 (art-note)"
+  "revision": "4차: 10장 art-note 문구(Lastbell로 이동)"
 }
