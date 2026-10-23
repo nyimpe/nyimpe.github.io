@@ -1,6 +1,6 @@
 {
   "base": "http://127.0.0.1:8080",
-  "checkedAt": "2026-10-23T11:00:00+09:00",
+  "checkedAt": "2026-10-23T19:55:00+09:00",
   "scope": "글의 빌드·구조·브라우저 화면 확인. 게임 런타임, 조작감, 밸런스, 온라인 검증이 아니다.",
   "build": { "command": "npm run build", "ok": true, "builtArticleSha256": "572c2cc536ed8045cdf10a06aa8b3d10643d870140a3d2f5c5d84999602f5e9c" },
   "structure": {
