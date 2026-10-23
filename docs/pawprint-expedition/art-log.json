@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-23",
+  "method": "built-in image_gen",
+  "assets": [
+    {
+      "asset": "public/posts/pawprint-expedition/home-concept.png",
+      "generatedSource": "/Users/sushi/.codex/generated_images/01a167f4-2b5a-7620-b11e-24e97eb5bbbf/exec-a5b1d43c-aa2a-4d9a-88a2-8926be41e602.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 3055954,
+      "sha256": "4d0d781a506bee3cf425201a20e453ad618fd9b548fc7ff52f05b180b25a2365",
+      "purpose": "Gameplay concept, not runtime screenshot or production pixel tileset",
+      "visualReview": {
+        "subject": "pass",
+        "requestedActivities": "pass",
+        "mobileHudVisibility": "pass at concept scale only",
+        "pixelGrid": "not production validated; dense pixel-style illustration",
+        "notes": "HUD contains item count digits despite icon-led prompt; no text labels. Camera and asset density need simplification for actual tiles."
+      }
+    },
+    {
+      "asset": "public/posts/pawprint-expedition/dungeon-concept.png",
+      "generatedSource": "/Users/sushi/.codex/generated_images/01a167f4-2b5a-7620-b11e-24e97eb5bbbf/exec-416f8681-63ea-44bd-90f1-80c983b65928.png",
+      "width": 1672,
+      "height": 941,
+      "bytes": 2706550,
+      "sha256": "6d7758cd5ca896d144ce0251240e2158a570cd4eb892d99b7cc801f1f3b8aac5",
+      "purpose": "Gameplay concept, not runtime screenshot or production pixel tileset",
+      "visualReview": {
+        "subject": "pass",
+        "requestedActivities": "pass",
+        "mobileHudVisibility": "pass at concept scale only",
+        "pixelGrid": "not production validated; dense pixel-style illustration",
+        "notes": "HUD contains item count digits despite icon-led prompt; no text labels. Camera and asset density need simplification for actual tiles."
+      }
+    }
+  ],
+  "rawSourcesPreserved": true,
+  "pixelizationOrRetouching": false
+}

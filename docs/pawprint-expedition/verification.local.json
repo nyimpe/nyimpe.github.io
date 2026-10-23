@@ -1,0 +1,180 @@
+{
+  "scope": "Article verification only; no game runtime or real device test",
+  "layouts": [
+    {
+      "clientWidth": 1280,
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 1672,
+          "src": "/posts/pawprint-expedition/home-concept.png",
+          "width": 798
+        },
+        {
+          "complete": false,
+          "naturalWidth": 0,
+          "src": "/posts/pawprint-expedition/dungeon-concept.png",
+          "width": 798
+        }
+      ],
+      "loopColumns": "192.805px 192.805px 192.805px 192.805px",
+      "scrollWidth": 1280,
+      "width": 1280
+    },
+    {
+      "clientWidth": 390,
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 1672,
+          "src": "/posts/pawprint-expedition/home-concept.png",
+          "width": 356
+        },
+        {
+          "complete": false,
+          "naturalWidth": 0,
+          "src": "/posts/pawprint-expedition/dungeon-concept.png",
+          "width": 356
+        }
+      ],
+      "loopColumns": "174.203px 174.203px",
+      "scrollWidth": 390,
+      "width": 390
+    },
+    {
+      "clientWidth": 320,
+      "images": [
+        {
+          "complete": true,
+          "naturalWidth": 1672,
+          "src": "/posts/pawprint-expedition/home-concept.png",
+          "width": 286
+        },
+        {
+          "complete": false,
+          "naturalWidth": 0,
+          "src": "/posts/pawprint-expedition/dungeon-concept.png",
+          "width": 286
+        }
+      ],
+      "loopColumns": "288px",
+      "scrollWidth": 320,
+      "width": 320
+    }
+  ],
+  "tocAndImages": {
+    "hash": "#dungeon",
+    "loaded": true
+  },
+  "themeReload": "light",
+  "navigation": [
+    {
+      "path": "/",
+      "visible": true
+    },
+    {
+      "path": "/?category=writing",
+      "visible": true
+    },
+    {
+      "path": "/?category=game",
+      "visible": false
+    }
+  ],
+  "homeClickThrough": true,
+  "structure": {
+    "anchors": [
+      {
+        "exists": true,
+        "href": "#direction"
+      },
+      {
+        "exists": true,
+        "href": "#loop"
+      },
+      {
+        "exists": true,
+        "href": "#dungeon"
+      },
+      {
+        "exists": true,
+        "href": "#collection"
+      },
+      {
+        "exists": true,
+        "href": "#life"
+      },
+      {
+        "exists": true,
+        "href": "#characters"
+      },
+      {
+        "exists": true,
+        "href": "#mobile"
+      },
+      {
+        "exists": true,
+        "href": "#art"
+      },
+      {
+        "exists": true,
+        "href": "#online"
+      },
+      {
+        "exists": true,
+        "href": "#prototype"
+      },
+      {
+        "exists": true,
+        "href": "#validation"
+      },
+      {
+        "exists": true,
+        "href": "#sources"
+      }
+    ],
+    "canonical": "https://nyimpe.github.io/posts/pawprint-expedition/",
+    "headings": 12
+  },
+  "console": [],
+  "checkedAt": "2026-10-23T09:03:46.421Z",
+  "httpAndHashes": [
+    {
+      "path": "posts/pawprint-expedition/index.html",
+      "status": 200,
+      "matchesBuild": true,
+      "sha256": "d14c30518d2e6212201c238a03574d5644431f74ce91dcbf00678d0b5b282c71"
+    },
+    {
+      "path": "posts/pawprint-expedition/home-concept.png",
+      "status": 200,
+      "matchesBuild": true,
+      "sha256": "4d0d781a506bee3cf425201a20e453ad618fd9b548fc7ff52f05b180b25a2365"
+    },
+    {
+      "path": "posts/pawprint-expedition/dungeon-concept.png",
+      "status": 200,
+      "matchesBuild": true,
+      "sha256": "6d7758cd5ca896d144ce0251240e2158a570cd4eb892d99b7cc801f1f3b8aac5"
+    }
+  ],
+  "build": {
+    "result": "pass",
+    "knownWarning": "Existing Phaser bundle exceeds 500 kB; the new article does not import Phaser."
+  },
+  "structuralAudit": {
+    "duplicateIds": [],
+    "brokenInternalLinksOrAssets": [],
+    "tocLinks": 12
+  },
+  "visualReview": [
+    "320px dark heading and intro",
+    "1280px dark dungeon concept and route",
+    "390px layout dimensions"
+  ],
+  "limitations": [
+    "Browser viewport resize, not physical mobile input",
+    "No gameplay, balance, fps or networking validated",
+    "Second image uses lazy loading and was checked after TOC navigation"
+  ]
+}
