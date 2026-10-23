@@ -5,6 +5,7 @@
 - **테마:** 모든 페이지의 상단 버튼으로 라이트·다크 모드를 전환합니다. 기본값은 시스템 설정이고, 직접 선택한 값은 브라우저에 저장됩니다.
 - **게임:** 기존 Phaser 3 게임 5개를 각각 독립 페이지로 연결했습니다. 시작 버튼을 누를 때 해당 게임을 불러옵니다.
 - **꼬리 수행 시제품:** `/posts/nabi-village/`의 턴제 로그라이크 시제품(마을 한 동네)은 `src/games/nabi-village/`에 있다. 그림·소리는 Ninja Adventure Asset Pack(CC0)에서 필요한 것만 `scripts/build-nabi-village-assets.py`로 복사하고, 팩 원본은 저장소에 두지 않는다.
+- **작은 발자국 시제품:** `/posts/pawprint-prototype/`는 생활형 던전 RPG 기획(`/posts/pawprint-expedition/`)의 첫 브라우저 시제품이다. 게임 본체는 의존성 없는 단일 파일 `public/posts/pawprint-prototype/play.html`이며, 글 안의 틀(iframe)과 전체 화면 링크로 연다. 그림은 모두 코드로 그린 임시 픽셀아트다.
 - **턴제 로그라이크 기획:** `/posts/turn-based-roguelike-overview/` 한 글에 기획 1~11편을 합쳤다. 옛 열 편의 주소는 `public/posts/turn-based-roguelike-*/`의 넘겨주기 페이지가 새 글의 해당 절로 보낸다.
 - **괴물·귀신:** `/posts/korean-folklore-research/`에 326항목의 이미지·설명·출처를 정리했습니다.
 - **빌드:** Vite가 HTML 페이지와 게임 모듈을 빌드합니다. 
