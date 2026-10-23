@@ -1,11 +1,11 @@
 {
   "base": "http://127.0.0.1:8080",
-  "checkedAt": "2026-10-23T21:05:00+09:00",
+  "checkedAt": "2026-10-23T21:50:00+09:00",
   "scope": "글의 빌드·구조·브라우저 화면 확인. 게임 런타임, 조작감, 밸런스, 온라인 검증이 아니다.",
   "build": {
     "command": "npm run build",
     "ok": true,
-    "builtArticleSha256": "cea24e467afb0f8c7ad393f977da899d5cb5fab186fc530b35ea0aaaf3000fbd"
+    "builtArticleSha256": "4a4ab47d6eb6e4e7a3511a92bab67a0d003ada233c6ae31153956ee3ec529bb0"
   },
   "structure": {
     "h1": "귀로 — 격자 이동 하드코어 탈출 로그라이크 기획",
@@ -77,5 +77,5 @@
     }
   ],
   "consoleErrors": [],
-  "revision": "2차: 개·고양이 주인공, 도감 귀신·괴물, 세계·야영지 구체화, 제목 후보 기록"
+  "revision": "3차: 10장에 에셋 프롬프트 문서 링크 추가 (art-note)"
 }

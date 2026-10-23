@@ -1,12 +1,13 @@
 {
   "base": "https://nyimpe.github.io",
-  "checkedAt": "2026-10-23T20:07:42+09:00",
+  "checkedAt": "2026-10-23T21:40:00+09:00",
   "scope": "배포 후 공개 URL의 응답과 배포 파일 해시 확인. 게임 런타임, 조작감, 밸런스, 온라인 검증이 아니다.",
-  "deployRun": "https://github.com/nyimpe/nyimpe.github.io/actions/runs/39943015541",
-  "commit": "89a60492",
+  "deployRun": "https://github.com/nyimpe/nyimpe.github.io/actions/runs/39950008522",
+  "commit": "1ef31e48",
   "articleStatus": 200,
-  "builtArticleSha256": "572c2cc536ed8045cdf10a06aa8b3d10643d870140a3d2f5c5d84999602f5e9c",
-  "servedArticleSha256": "572c2cc536ed8045cdf10a06aa8b3d10643d870140a3d2f5c5d84999602f5e9c",
+  "builtArticleSha256": "cea24e467afb0f8c7ad393f977da899d5cb5fab186fc530b35ea0aaaf3000fbd",
+  "servedArticleSha256": "cea24e467afb0f8c7ad393f977da899d5cb5fab186fc530b35ea0aaaf3000fbd",
   "match": true,
-  "homeListsNewPost": true
+  "homeListsNewPost": true,
+  "revision": "2차 수정본"
 }
