@@ -4,7 +4,6 @@ const games = {
   shikaku: () => import("./games/shikaku/main.js"),
   "vampire-survivor": () => import("./games/vampire-survivor/main.js"),
   "hole-io": () => import("./games/hole-io/main.js"),
-  "nabi-village": () => import("./games/nabi-village/main.js"),
 };
 
 const stage = document.querySelector(".game-stage");
