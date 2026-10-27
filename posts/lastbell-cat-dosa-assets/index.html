@@ -56,13 +56,15 @@
         <div class="brief">
           <p><strong>조선 도사 한복을 입은 인간형 고양이 한 명을 PixelLab으로 처음부터 만들고, 무기 없이 맨손으로 움직이는 동작 7종을 8방향 모두 뽑아 Lastbell 시제품의 고르기 화면 첫 자리에 넣었다.</strong></p>
           <p>무기는 주운 것에 따라 손에 따로 겹쳐 그릴 예정이라 캐릭터는 늘 빈손이다. 그래서 그림과 함께 동작·방향·칸마다 손이 어디 있는지 적은 데이터도 만들었다. 앞서 만든 Lastbell 그림은 참조하지 않았다.</p>
-          <p>쓴 생성 횟수는 모두 약 267회(구독 한 달 2,000회 가운데)이고, 그중 절반 이상이 원하지 않는 무기·효과가 그려져 다시 뽑는 데 들었다.</p>
+          <p>한손·양손 공격은 처음 만든 것이 팔만 움직여 어색했다. 그래서 공격 애니메이션 레퍼런스를 먼저 찾고, 그 동작의 관절을 고양이에게 옮겨 다시 만들었다.</p>
+          <p>쓴 생성 횟수는 모두 약 337회(구독 한 달 2,000회 가운데)이고, 그중 절반 가까이가 원하지 않는 무기·효과가 그려져 다시 뽑는 데 들었다.</p>
         </div>
 
         <nav class="post-toc" aria-label="목차"><ol>
           <li><a href="#character">캐릭터: 여행자에서 허름한 도사까지</a></li>
           <li><a href="#motions">맨손 동작 7종</a></li>
           <li><a href="#redo">다시 만든 것들</a></li>
+          <li><a href="#attacks">공격 다시 만들기: 레퍼런스에서 옮기기</a></li>
           <li><a href="#hands">무기를 겹칠 손 위치</a></li>
           <li><a href="#game">게임에 넣은 모습</a></li>
           <li><a href="#cost">쓴 횟수</a></li>
@@ -85,11 +87,11 @@
         </section>
 
         <section id="motions"><h2>02. 맨손 동작 7종</h2>
-          <p>모두 기본형에서 출발해 PixelLab의 v3 자유 동작으로 만들었다. 동작마다 서 있는 자세 1칸과 움직임 8칸이고(걷기는 반복을 위해 서 있는 칸을 뺀 8칸), 한 칸은 96×96이다. 아래 그림은 윗줄이 남·남동·동·북동, 아랫줄이 남서·서·북서·북이다. 무기와 물건은 그리지 않고 쥐는 손 모양만 남겼다.</p>
+          <p>모두 기본형에서 출발했다. 걷기·시전 두 가지·줍기·사망은 PixelLab의 v3 자유 동작으로 만들었고, 한손·양손 공격은 레퍼런스 동작의 관절을 옮겨 만들었다(<a href="#attacks">04장</a>). 대부분 서 있는 자세 1칸과 움직임 8칸이고(걷기는 반복을 위해 서 있는 칸을 뺀 8칸, 한손 공격은 6칸), 한 칸은 96×96이다. 아래 그림은 윗줄이 남·남동·동·북동, 아랫줄이 남서·서·북서·북이다. 무기와 물건은 그리지 않고 쥐는 손 모양만 남겼다.</p>
           <div class="motions">
             <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/walk.gif" width="768" height="320" loading="lazy" alt="고양이 도사가 여덟 방향으로 걷는 움직이는 그림."><figcaption><strong>걷기.</strong> 두 걸음 한 바퀴. 게임에서는 실제로 움직인 거리만큼 칸을 넘겨 발이 미끄러지지 않게 한다.</figcaption></figure>
-            <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/attack_1h.gif" width="768" height="320" loading="lazy" alt="고양이 도사가 여덟 방향으로 빈 주먹을 어깨 뒤에서 대각선으로 내려 휘두르는 움직이는 그림."><figcaption><strong>한손 무기 공격.</strong> 칼자루를 쥔 듯한 빈 주먹을 어깨 뒤로 뺐다가 대각선으로 내려 휘두른다.</figcaption></figure>
-            <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/attack_2h.gif" width="768" height="320" loading="lazy" alt="고양이 도사가 여덟 방향으로 두 손을 머리 위로 크게 들었다가 앞으로 내려찍는 움직이는 그림."><figcaption><strong>양손 무기 공격.</strong> 두 팔을 머리 위로 크게 들었다가 앞으로 내려찍는다.</figcaption></figure>
+            <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/attack_1h.gif" width="768" height="320" loading="lazy" alt="고양이 도사가 여덟 방향으로 한 발을 크게 내딛으며 빈손을 머리 뒤로 들었다가 몸을 틀며 내려 휘두르는 움직이는 그림."><figcaption><strong>한손 무기 공격.</strong> Flare 인물의 검 휘두르기를 옮겼다. 한 발을 내딛으며 손을 머리 뒤로 들었다가 몸을 틀며 내려벤다. 다 뻗은 자세를 길게 붙잡는다.</figcaption></figure>
+            <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/attack_2h.gif" width="768" height="320" loading="lazy" alt="고양이 도사가 여덟 방향으로 두 손을 옆으로 당겼다가 머리 위로 들어 몸을 비틀며 내려치는 움직이는 그림."><figcaption><strong>양손 무기 공격.</strong> Hormelz 대검 기사의 양손 베기를 옮겼다. 두 손을 옆으로 당겼다가 머리 위로 들어 올려, 몸을 비틀며 내려친다. 머리 위 정점과 낮게 멈춘 자세를 길게 붙잡는다.</figcaption></figure>
             <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/cast_staff.gif" width="768" height="320" loading="lazy" alt="고양이 도사가 여덟 방향으로 한 팔을 높이 들고 다른 손바닥을 앞으로 내미는 움직이는 그림."><figcaption><strong>지팡이 마법 시전.</strong> 지팡이를 쥘 손을 높이 들고, 반대 손바닥을 앞으로 내민다.</figcaption></figure>
             <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/cast_scroll.gif" width="768" height="320" loading="lazy" alt="고양이 도사가 여덟 방향으로 한 팔을 앞으로 뻗어 두 손가락으로 가리키는 움직이는 그림."><figcaption><strong>한손 두루마리 마법 시전.</strong> 한 손을 앞으로 뻗어 두 손가락으로 가리킨다.</figcaption></figure>
             <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/pickup.gif" width="768" height="320" loading="lazy" alt="고양이 도사가 여덟 방향으로 허리를 깊이 숙여 땅을 짚었다가 일어나는 움직이는 그림."><figcaption><strong>수그리기(줍기).</strong> 허리와 무릎을 굽혀 손으로 땅을 짚었다가 일어난다.</figcaption></figure>
@@ -98,29 +100,42 @@
         </section>
 
         <section id="redo"><h2>03. 다시 만든 것들</h2>
-          <p><strong>정해진 동작(템플릿)은 이 캐릭터에 맞지 않았다.</strong> PixelLab의 템플릿 줍기·쓰러지기를 먼저 써 봤는데, 지운 줄 알았던 지팡이와 앞선 상태의 빨간 망토·깨끗한 흰 도포가 다시 나타나 다른 캐릭터처럼 보였다. 템플릿 뼈대에 캐릭터를 입히는 skeleton-v3도 몸이 뭉개졌다. 그래서 일곱 동작 모두 동작을 글로 설명하는 v3로 만들었다.</p>
+          <p><strong>정해진 동작(템플릿)은 이 캐릭터에 맞지 않았다.</strong> PixelLab의 템플릿 줍기·쓰러지기를 먼저 써 봤는데, 지운 줄 알았던 지팡이와 앞선 상태의 빨간 망토·깨끗한 흰 도포가 다시 나타나 다른 캐릭터처럼 보였다. 템플릿 뼈대에 캐릭터를 입히는 skeleton-v3도 몸이 뭉개졌다. 그래서 일곱 동작 모두 동작을 글로 설명하는 v3로 먼저 만들었다(공격 두 가지는 뒤에 다시 만들었다).</p>
           <p><strong>설명에 물건 이름을 쓰면 그 물건을 그린다.</strong> "지팡이를 쥔 듯이"라고 쓰자 지팡이를, "두루마리를 든 듯이"라고 쓰자 허리의 호리병을 손에 쥐여 그렸다. 두 번째부터는 물건 이름을 빼고 팔과 손의 자세만 적은 뒤 "손은 비어 있다, 칼날·무기·효과 없음"을 붙였다.</p>
           <p><strong>그래도 방향마다 따로 확인해야 했다.</strong> 같은 설명으로 8방향을 뽑아도 어떤 방향은 칼날·칼바람·번개·파란 마법 빛·흰 연기를 지어냈다. 특히 뒷모습과 비스듬한 방향에서 잦았다. 그런 방향만 지우고 다시 뽑기를 서너 차례 했다. 남은 작은 흠은 손으로 지웠다. 줍기에서 땅에 생기는 녹색 잎이나 몸과 떨어진 작은 점은 스크립트로, 두루마리 남서쪽 한 칸의 흰 반짝임은 픽셀을 직접 지웠다.</p>
         </section>
 
-        <section id="hands"><h2>04. 무기를 겹칠 손 위치</h2>
-          <p>무기를 따로 그려 손에 붙이려면 칸마다 손의 위치와 방향을 알아야 한다. 걷기를 뺀 6동작 × 8방향 × 9칸, 모두 432칸마다 PixelLab의 골격 추정으로 손목과 팔꿈치 위치를 받았다(한 칸에 0.1회).</p>
-          <figure class="concept-shot"><a href="/posts/lastbell-cat-dosa-assets/hands-south.png"><img src="/posts/lastbell-cat-dosa-assets/hands-south.png" width="2592" height="240" loading="lazy" alt="남쪽을 향한 한손 공격 아홉 칸. 칸마다 휘두르는 손에 노란 원과 선, 다른 손에 하늘색 원과 선이 표시되어 있다."></a><figcaption>한손 공격 남쪽 9칸. 노란 표시가 무기를 쥘 손(main), 하늘색이 다른 손(off)이고, 선은 팔꿈치에서 손목으로 향하는 방향이다.</figcaption></figure>
-          <p>추정값을 그대로 쓸 수는 없었다. 추정기는 칸마다 왼손·오른손 이름을 자주 바꿔 붙이고, 몸에 가려진 손은 허공이나 갓·호리병 위에 찍었다. 그래서 칸 사이에서 가까운 점끼리 이어 같은 손으로 추적하고, 처음 자세에서 가장 멀리 나가는 손을 무기를 쥘 손으로 정했다. 앞뒤 칸보다 튀거나 두 손이 한 점에 겹친 34칸은 5배로 확대해 직접 보고 32칸을 고쳤다. 방향 전체에서 두 손이 뒤바뀐 구간도 함께 바로잡았다.</p>
+        <section id="attacks"><h2>04. 공격 다시 만들기: 레퍼런스에서 옮기기</h2>
+          <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/attack-before-after.gif" width="768" height="320" loading="lazy" alt="공격 전후 비교 움직이는 그림. 윗줄은 한손, 아랫줄은 양손 공격이고, 남쪽과 동쪽을 향한 예전 공격과 새 공격이 번갈아 놓여 있다. 예전 것은 선 채 팔만 움직이고, 새 것은 발을 내딛고 몸을 튼다."><figcaption>윗줄 한손, 아랫줄 양손. 왼쪽부터 예전 남쪽 · 새 남쪽 · 예전 동쪽 · 새 동쪽.</figcaption></figure>
+          <p><strong>무엇이 어색했나.</strong> 글로 설명해 만든 첫 공격은 몸통과 다리가 그대로 선 채 팔만 움직였다. 내딛는 발도, 몸 비틀기도, 체중 이동도 없고 칸 간격이 일정해서 무게가 느껴지지 않았다. 그래서 바로 고치지 않고 레퍼런스부터 찾았다.</p>
+          <p><strong>동작 원리.</strong> Slynyrd의 <a href="https://www.slynyrd.com/blog/2025/5/23/pixelblog-56-top-down-character-attack-animation">Pixelblog 56 (탑다운 캐릭터 공격)</a>은 공격을 준비 1칸, 짧게 휘두르는 칸 여럿, 다 뻗은 자세 1칸을 길게, 회복 1칸으로 나눈다. 칸 시간은 검이 100·50·50·50·100·50ms(합 400ms), 망치가 250·50·50·50·300·100ms(합 800ms)다. 무거운 무기일수록 준비와 마무리를 길게 끈다. <a href="https://slynyrd.com/blog/2018/9/8/pixelblog-9-melee-attacks">Pixelblog 9 (근접 공격)</a>은 대검 내려베기가 머리 위에서 몸 바로 앞까지 90° 호를 그린다고 설명한다.</p>
+          <div class="table-scroll" role="region" aria-label="공격 레퍼런스" tabindex="0"><table class="compact-table"><thead><tr><th scope="col">공격</th><th scope="col">움직임 레퍼런스</th><th scope="col">만든 칸</th></tr></thead><tbody>
+            <tr><th scope="row">한손</th><td><a href="https://opengameart.org/content/isometric-hero-and-heroine">Flare 인물</a>의 검 휘두르기 4칸(8방향, CC-BY 3.0)</td><td>서기 · 반쯤 준비 · 준비 · 휘두름 · 타격 · 다 뻗음</td></tr>
+            <tr><th scope="row">양손</th><td><a href="https://hormelz.itch.io/8-directional-great-sword-knight-character">Hormelz 8방향 대검 기사</a>의 무료 양손 베기 12칸(CC0)</td><td>서기 · 반쯤 당김 · 당김 · 머리 위 · 정점 · 내려벰 · 낮게 멈춤 · 붙잡음 · 회복</td></tr>
+          </tbody></table></div>
+          <p>같은 작가의 8방향 기사 공격과 32px 병사 공격도 살펴봤지만, 앞의 것은 맨손 연타이고 뒤의 것은 4칸이라 동작 정보가 부족해서 쓰지 않았다.</p>
+          <p><strong>옮긴 방법.</strong> 레퍼런스 칸마다 PixelLab 골격 추정으로 관절 18개를 뽑았다. 그 관절을 고양이 키에 맞게 줄이고, 레퍼런스가 서 있는 자세의 엉덩이와 발이 고양이의 엉덩이와 발에 오도록 옮겼다. 머리는 고양이 것을 목에 붙여 따라가게 했다. 그다음 PixelLab의 골격 애니메이션(skeleton-v3)에 고양이의 서 있는 그림과 함께 보내 칸마다 그 자세로 다시 그렸다. 레퍼런스의 칸 사이는 Slynyrd의 순서에 맞게 보간해 준비와 회복 칸을 넣었다.</p>
+          <p><strong>여기서도 생긴 문제.</strong> 동작 이름에 "검 베기(sword slash)"라고 쓰자 칼을 그렸다. "빈손 휘두르기, 손에 아무것도 없음"으로 바꾸자 무기가 사라졌다. 한손 공격의 마지막 회복 칸은 여러 방향에서 얼룩지게 번져서 빼고, 다 뻗은 자세에서 바로 대기로 돌아가게 했다. 게임은 칸마다 시간 비중을 받아 준비 자세와 다 뻗은 자세를 다른 칸의 두 배, 양손 정점을 2.5배 길이로 보인다.</p>
+        </section>
+
+        <section id="hands"><h2>05. 무기를 겹칠 손 위치</h2>
+          <p>무기를 따로 그려 손에 붙이려면 칸마다 손의 위치와 방향을 알아야 한다. 시전·줍기·사망은 칸마다 PixelLab의 골격 추정으로 손목과 팔꿈치 위치를 받았다(한 칸에 0.1회). 공격 두 가지는 다시 추정하지 않았다. 골격 애니메이션은 보낸 관절대로 그리니 보낸 관절 좌표가 곧 손 위치다. 칼을 쥔 손은 레퍼런스에서 정했다. Flare는 칼이 따로 그려진 레이어라 칸마다 칼에 가장 가까운 손목이 칼 쥔 손이고, 대검은 두 손 모두 칼자루 위에 있다.</p>
+          <figure class="concept-shot"><a href="/posts/lastbell-cat-dosa-assets/hands-south.png"><img src="/posts/lastbell-cat-dosa-assets/hands-south.png" width="1728" height="240" loading="lazy" alt="남쪽을 향한 한손 공격 여섯 칸. 칸마다 휘두르는 손에 노란 원과 선, 다른 손에 하늘색 원과 선이 표시되어 있다."></a><figcaption>한손 공격 남쪽 6칸. 노란 표시가 무기를 쥘 손(main), 하늘색이 다른 손(off)이고, 선은 팔꿈치에서 손목으로 향하는 방향이다.</figcaption></figure>
+          <p>추정값은 그대로 쓸 수 없었다. 추정기는 칸마다 왼손·오른손 이름을 자주 바꿔 붙이고, 몸에 가려진 손은 허공이나 갓·호리병 위에 찍었다. 그래서 칸 사이에서 가까운 점끼리 이어 같은 손으로 추적하고, 처음 자세에서 가장 멀리 나가는 손을 무기를 쥘 손으로 정했다. 앞뒤 칸보다 튀거나 두 손이 한 점에 겹친 칸은 5배로 확대해 직접 보고 고쳤다. 방향 전체에서 두 손이 뒤바뀐 구간도 함께 바로잡았다.</p>
           <div class="shots">
-            <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/weapon-attack_1h.gif" width="768" height="320" loading="lazy" alt="한손 공격 여덟 방향에 임시 칼을 손 위치 데이터대로 쥐여 휘두르는 움직이는 그림."><figcaption>손 위치 데이터만으로 임시 칼을 쥐여 본 한손 공격.</figcaption></figure>
-            <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/weapon-attack_2h.gif" width="768" height="320" loading="lazy" alt="양손 공격 여덟 방향에 임시 칼을 손 위치 데이터대로 쥐여 내려찍는 움직이는 그림."><figcaption>같은 방식의 양손 공격. 뒷모습에서는 칼을 몸 뒤에 그린다.</figcaption></figure>
+            <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/weapon-attack_1h.gif" width="768" height="320" loading="lazy" alt="한손 공격 여덟 방향에 임시 칼을 손 위치 데이터대로 쥐여 휘두르는 움직이는 그림."><figcaption>손 위치 데이터만으로 임시 칼을 쥐여 본 한손 공격. 게임과 같은 칸 시간이다.</figcaption></figure>
+            <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/weapon-attack_2h.gif" width="768" height="320" loading="lazy" alt="양손 공격 여덟 방향에 임시 칼을 손 위치 데이터대로 두 손으로 쥐여 머리 위에서 내려치는 움직이는 그림."><figcaption>같은 방식의 양손 공격. 뒷모습에서는 칼을 몸 뒤에 그린다.</figcaption></figure>
           </div>
           <p>데이터는 동작 → 방향 → 칸 순서의 JSON 하나다. 좌표는 96×96 칸의 왼쪽 위 기준 픽셀이고, 무기를 캐릭터 위에 그릴지(front) 아래에 그릴지(back)도 함께 적었다.</p>
 <pre><code>"attack_1h": { "south": {
-  "main_side": "left",
+  "main_side": "right",
   "layer": { "main": "front", "off": "front" },
-  "frames": [ { "main": { "x": 72.5, "y": 41.0, "angle": 0.0 },
-                "off":  { "x": 30.7, "y": 56.5, "angle": 108.0 } }, ... ] } }</code></pre>
+  "frames": [ ..., { "main": { "x": 34.9, "y": 26.7, "angle": -97.8 },
+                     "off":  { "x": 59.4, "y": 51.4, "angle": 74.2 } }, ... ] } }</code></pre>
           <p>등을 보이는 북·북동·북서는 손이 몸에 가려지니 무기를 뒤에, 옆모습 동·서는 크게 움직이는 손이 보이는 쪽 손이니 앞에 그린다.</p>
         </section>
 
-        <section id="game"><h2>05. 게임에 넣은 모습</h2>
+        <section id="game"><h2>06. 게임에 넣은 모습</h2>
           <div class="shots">
             <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/game-choose.webp" width="800" height="450" loading="lazy" alt="캐릭터 고르기 화면. 카드 네 장 가운데 첫 카드에 고양이 도사가 강조되어 있고, 옆으로 기사, 붉은 머리 인물, 어두운 인물 카드가 있다."><figcaption>고르기 화면. 개·고양이·병사를 빼고 고양이 도사를 첫 자리에 넣었다.</figcaption></figure>
             <figure class="concept-shot"><img src="/posts/lastbell-cat-dosa-assets/game-field.webp" width="800" height="450" loading="lazy" alt="게임 화면. 모닥불 옆 풀밭에 고양이 도사가 서 있고, 왼쪽 위에 체력과 기력 막대, 오른쪽 위에 안전 지점 안내가 있다."><figcaption>모닥불에서 시작한 원정. 2배 확대 시점.</figcaption></figure>
@@ -128,7 +143,7 @@
           <p>게임은 동작마다 시트 한 장(행 8방향 × 열 칸 수)을 읽는다. 서 있으면 대기, 움직이면 걷기를 그리고, 공격할 때는 든 무기를 본다. 창·철퇴처럼 무거운 무기면 양손 내려치기, 나머지는 한손 휘두르기다. 떨어진 물건이나 상자를 열면 줍기가 한 번 돈다. 지팡이·두루마리 시전과 사망은 시트를 만들어 두었지만, 게임에 마법이나 쓰러지는 단계가 아직 없어 연결하지 않았다. 손 위치 데이터로 무기를 실제로 겹쳐 그리는 일도 다음 차례다.</p>
         </section>
 
-        <section id="cost"><h2>06. 쓴 횟수</h2>
+        <section id="cost"><h2>07. 쓴 횟수</h2>
           <div class="table-scroll" role="region" aria-label="작업별 PixelLab 생성 횟수" tabindex="0"><table class="compact-table"><thead><tr><th scope="col">작업</th><th scope="col">횟수</th><th scope="col">비고</th></tr></thead><tbody>
             <tr><th scope="row">여행자·고양이·강아지</th><td>14</td><td>2 + 6 + 6</td></tr>
             <tr><th scope="row">도사 한복(고양이·강아지)</th><td>20</td><td>상태 하나에 10</td></tr>
@@ -136,13 +151,14 @@
             <tr><th scope="row">동작 6종(시험·재생성 포함)</th><td>154</td><td>방향당 2. 템플릿·skeleton-v3 시험과 다시 뽑기가 절반 넘게 차지</td></tr>
             <tr><th scope="row">걷기 8방향</th><td>16</td><td>게임에 넣으면서 추가</td></tr>
             <tr><th scope="row">손 위치 추정 432칸</th><td>43.2</td><td>칸당 0.1</td></tr>
-            <tr><th scope="row">합계</th><td>약 267</td><td></td></tr>
+            <tr><th scope="row">공격 다시 만들기</th><td>70</td><td>레퍼런스 관절 추정, 남쪽·동쪽 시험, 두 공격 × 8방향(방향당 3), 새 한손 공격의 손 추정</td></tr>
+            <tr><th scope="row">합계</th><td>약 337</td><td></td></tr>
           </tbody></table></div>
         </section>
 
-        <section id="left"><h2>07. 확인한 것과 남은 것</h2>
-          <p><strong>확인한 것.</strong> 일곱 동작 × 8방향을 모두 확대해 무기·효과가 남지 않았는지 봤다. 게임에서 고르기 화면, 걷기, 공격, 사망 화면의 초상이 새 고양이로 그려지고 시트 다섯 장이 오류 없이 불러와지는 것을 브라우저로 확인했다.</p>
-          <p><strong>남은 것.</strong> 게임 안의 줍기는 화면으로 직접 보지 못했다. 손 위치는 표시된 칸과 뒤바뀐 방향만 고쳐서, 표시 없이 어긋난 칸이 아직 있다. 한손 공격 북서쪽 5번째 칸에서 칼이 엉덩이 쪽을 가리키는 것이 그 예다. 지팡이 시전 남서쪽은 들어 올린 손이 아니라 앞으로 내민 손이 무기를 쥘 손으로 잡혀 있다. 웅크려 걷기·밀치기 시트는 없고, 서쪽 걷기 뒷부분에서는 허리의 호리병이 몇 칸 사라진다.</p>
+        <section id="left"><h2>08. 확인한 것과 남은 것</h2>
+          <p><strong>확인한 것.</strong> 일곱 동작 × 8방향을 모두 확대해 무기·효과가 남지 않았는지 봤다. 게임에서 고르기 화면, 걷기, 새 한손 공격, 사망 화면의 초상이 새 고양이로 그려지고 시트가 오류 없이 불러와지는 것을 브라우저로 확인했다.</p>
+          <p><strong>남은 것.</strong> 게임 안의 줍기와 양손 공격(창·철퇴를 들어야 나온다)은 화면으로 직접 보지 못했다. 새 공격 가운데 몇 칸은 골격 애니메이션이 조금 번지게 그렸다(양손 남쪽·북서쪽 뒷부분). 시전·줍기·사망의 손 위치는 표시된 칸과 뒤바뀐 방향만 고쳐서, 표시 없이 어긋난 칸이 아직 있을 수 있다. 지팡이 시전 남서쪽은 들어 올린 손이 아니라 앞으로 내민 손이 무기를 쥘 손으로 잡혀 있다. 웅크려 걷기·밀치기 시트는 없고, 서쪽 걷기 뒷부분에서는 허리의 호리병이 몇 칸 사라진다.</p>
         </section>
         <p class="post-back"><a href="/">← 전체 글 목록</a></p>
       </article>
