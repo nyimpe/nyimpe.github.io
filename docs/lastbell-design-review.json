@@ -1,0 +1,95 @@
+{
+  "checked_at": "2026-10-27T00:00:00+09:00",
+  "scope": "Lastbell current prototype and the shared Myogwirok draft; market cases, core fun, online hardcore design, and replayability",
+  "source_draft": "https://chatgpt.com/share/6ae04dd5-a2a4-83ec-9357-9a517000287c",
+  "current_prototype": {
+    "repository": "https://github.com/nyimpe/lastbell",
+    "reviewed_commit": "4c2f0c9",
+    "mode": "single-player browser prototype",
+    "implemented": [
+      "eight-direction free movement and mouse aiming",
+      "telegraphed cone melee attacks, shove, crouch, and blocking",
+      "four safe zones and three distance-based danger tiers",
+      "enemy-specific weaknesses and rival scavenger AI",
+      "gate key objective, escape and retirement",
+      "persistent starting-tool unlocks"
+    ],
+    "not_implemented": [
+      "online co-op",
+      "PvP or PvPvE matchmaking",
+      "authoritative multiplayer server",
+      "human retention test"
+    ]
+  },
+  "market_cases": [
+    {
+      "name": "Escape From Duckov",
+      "metric": "about 10,700 English Steam reviews at 93% positive",
+      "metric_type": "platform review snapshot",
+      "source": "https://store.steampowered.com/app/3167020/Escape_from_Duckov/",
+      "lesson": "single-player PvE extraction can lower the PvP barrier while preserving loot and return decisions"
+    },
+    {
+      "name": "ZERO Sievert",
+      "metric": "more than 600,000 copies sold; about 8,100 English Steam reviews at 85% positive",
+      "metric_type": "official store claim and platform review snapshot",
+      "source": "https://store.steampowered.com/app/1782120/ZERO_Sievert/",
+      "lesson": "top-down pixel extraction has demonstrated commercial demand without multiplayer"
+    },
+    {
+      "name": "Hunt: Showdown 1896",
+      "metric": "more than 10 million players",
+      "metric_type": "developer announcement",
+      "source": "https://press.crytek.com/post-malones-murder-circus-encore-unleashes-midwinter-terror-live-now-in-extraction-shooter-heavyweight-hunt-showdown-1896",
+      "lesson": "replaceable hunters, equipment loss, sound and PvPvE can support a long-running online extraction game"
+    },
+    {
+      "name": "Project Zomboid",
+      "metric": "about 161,300 English Steam reviews at 93% positive",
+      "metric_type": "platform review snapshot",
+      "source": "https://store.steampowered.com/app/108600/Project_Zomboid/",
+      "lesson": "top-down knowledge mastery, permadeath and multiplayer can sustain long-term interest when supported by broad systemic play"
+    },
+    {
+      "name": "Risk of Rain 2",
+      "metric": "more than 4 million Steam copies; 57% of players over 10 hours",
+      "metric_type": "developer announcement",
+      "source": "https://store.steampowered.com/news/posts/?appids=632360&enddate=1616684427&feed=steam_community_announcements",
+      "lesson": "run-specific item combinations and co-op support replay better than map randomization alone"
+    },
+    {
+      "name": "Phasmophobia",
+      "metric": "more than 25 million early-access copies",
+      "metric_type": "developer announcement",
+      "source": "https://www.kineticgames.co.uk/news/announcing-kinetic-publishing",
+      "lesson": "shared deduction and player knowledge can be a strong form of co-op progression"
+    },
+    {
+      "name": "Albion Online",
+      "metric": "350,000 daily active accounts on 2024-05-01",
+      "metric_type": "developer announcement",
+      "source": "https://albiononline.com/news/record-player-numbers",
+      "lesson": "spatially separated risk levels let players choose when to accept full-loss play"
+    }
+  ],
+  "warning_case": {
+    "name": "The Cycle: Frontier",
+    "result": "service ended after initial attention declined and the game was no longer financially viable",
+    "source": "https://store.steampowered.com/news/posts/?enddate=1687935728&feed=steam_community_announcements",
+    "lesson": "servers, anti-cheat, matchmaking, reconnects, audit logs and live retention are core online scope"
+  },
+  "measurement_caveats": [
+    "sales, cumulative players, daily active accounts and review counts are different measures and must not be combined",
+    "English Steam reviews do not represent total buyers or Korean players",
+    "successful comparables show demand for individual patterns, not causation or Lastbell sales potential",
+    "the Korean-folklore and cat-dosa combination has not been market-tested",
+    "the prototype has not yet completed human fun, completion, retry or retention tests"
+  ],
+  "recommended_sequence": [
+    "finish and observe the single-player objective-to-escape-to-inheritance loop",
+    "add a small run-build layer, one cursed relic and three authored encounters",
+    "run a two-player authoritative synchronization test",
+    "test four-player solo PvPvE with one small map before adding parties or an economy",
+    "choose single-player, co-op or PvPvE as the product only from observed repeat play"
+  ]
+}
