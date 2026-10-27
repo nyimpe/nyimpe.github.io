@@ -8,7 +8,7 @@
   "scope": "Myowol Nightwalk design, the Lastbell-named current prototype, and the shared Myogwirok draft; market cases, core fun, detailed expedition mechanics, online hardcore design, and replayability",
   "source_draft": "https://chatgpt.com/share/6ae04dd5-a2a4-83ec-9357-9a517000287c",
   "current_prototype": {
-    "repository": "https://github.com/nyimpe/lastbell",
+    "repository": "nyimpe/lastbell (private)",
     "reviewed_commit": "4c2f0c9",
     "mode": "single-player browser prototype",
     "implemented": [
@@ -98,7 +98,7 @@
     "choose single-player, co-op or PvPvE as the product only from observed repeat play"
   ],
   "next_playable_slice": {
-    "design_document": "https://github.com/nyimpe/lastbell/blob/main/docs/myowol-nightwalk-v0.2.md",
+    "design_document": "nyimpe/lastbell docs/myowol-nightwalk-v0.2.md (private)",
     "additions": [
       "three Myoan talismans: tracking, true-form sight, and sound sight",
       "one throwable sound lure",
