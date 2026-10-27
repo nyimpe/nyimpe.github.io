@@ -5,7 +5,6 @@
 - **테마:** 모든 페이지의 상단 버튼으로 라이트·다크 모드를 전환합니다. 기본값은 시스템 설정이고, 직접 선택한 값은 브라우저에 저장됩니다.
 - **게임:** 기존 Phaser 3 게임 5개를 각각 독립 페이지로 연결했습니다. 시작 버튼을 누를 때 해당 게임을 불러옵니다.
 - **괴물·귀신:** `/posts/korean-folklore-research/`에 326항목의 이미지·설명·출처를 정리했습니다.
-- **캐릭터 스프라이트:** `/posts/open-character-sprites/`에 CC0 11개 팩, 20종의 4·8방향 GIF와 원본 ZIP을 정리했습니다. 수집 출처와 프레임 정보는 `public/posts/open-character-sprites/catalog.json`, 재생성은 `python3 scripts/build-open-character-sprites.py`입니다.
 - **빌드:** Vite가 HTML 페이지와 게임 모듈을 빌드합니다. 
 - **포스팅 이미지:** `npm run optimize:images`가 해상도·품질을 낮추고 WebP와 AVIF를 비교해 더 작은 파일을 선택합니다. 게시물·JSON·현재 이미지 기록의 경로, 크기, 캐시 해시를 함께 수정합니다. Pillow 11.3 이상(WebP·AVIF 지원)이 필요하며, 게시물을 다시 생성한 뒤 실행합니다. 설정과 결과는 `docs/post-image-optimization.json`에 기록하고, 이미 처리한 파일은 해시로 확인해 재압축을 건너뜁니다.
 - **외부 링크:** 다른 사이트로 가는 링크는 빌드할 때 `target="_blank" rel="noopener noreferrer"`가 자동으로 붙어 새 탭에서 열립니다. HTML에 직접 쓸 필요가 없습니다(`vite.config.js`).
