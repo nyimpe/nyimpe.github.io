@@ -1,6 +1,11 @@
 {
   "checked_at": "2026-10-27T00:00:00+09:00",
-  "scope": "Lastbell current prototype and the shared Myogwirok draft; market cases, core fun, online hardcore design, and replayability",
+  "working_title_ko": "묘월야행",
+  "working_title_en": "MYOWOL: NIGHTWALK",
+  "title_status": "provisional",
+  "prototype_repository_name": "lastbell",
+  "source_draft_title": "묘귀록",
+  "scope": "Myowol Nightwalk design, the Lastbell-named current prototype, and the shared Myogwirok draft; market cases, core fun, detailed expedition mechanics, online hardcore design, and replayability",
   "source_draft": "https://chatgpt.com/share/6ae04dd5-a2a4-83ec-9357-9a517000287c",
   "current_prototype": {
     "repository": "https://github.com/nyimpe/lastbell",
@@ -81,7 +86,7 @@
   "measurement_caveats": [
     "sales, cumulative players, daily active accounts and review counts are different measures and must not be combined",
     "English Steam reviews do not represent total buyers or Korean players",
-    "successful comparables show demand for individual patterns, not causation or Lastbell sales potential",
+    "successful comparables show demand for individual patterns, not causation or Myowol Nightwalk sales potential",
     "the Korean-folklore and cat-dosa combination has not been market-tested",
     "the prototype has not yet completed human fun, completion, retry or retention tests"
   ],
@@ -91,5 +96,24 @@
     "run a two-player authoritative synchronization test",
     "test four-player solo PvPvE with one small map before adding parties or an economy",
     "choose single-player, co-op or PvPvE as the product only from observed repeat play"
-  ]
+  ],
+  "next_playable_slice": {
+    "design_document": "https://github.com/nyimpe/lastbell/blob/main/docs/myowol-nightwalk-v0.2.md",
+    "additions": [
+      "three Myoan talismans: tracking, true-form sight, and sound sight",
+      "one throwable sound lure",
+      "one cursed relic called the Eclipse Bell",
+      "three authored encounters",
+      "one optional Myowol Nightwalk extension after obtaining the gate key",
+      "one result screen that explains death or successful return"
+    ],
+    "stop_condition": "connect all additions into one return on the existing map, make the planned behavior measurable, then stop adding content and observe five players",
+    "non_goals": [
+      "12-player matchmaking or parties",
+      "a second map or full procedural generation",
+      "crafting, player trading, guilds, seasons, or battle passes",
+      "complex body-part injuries or a large item economy",
+      "simultaneous mobile and console release"
+    ]
+  }
 }
