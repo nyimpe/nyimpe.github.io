@@ -1,0 +1,143 @@
+Collected character sprite assets — checked 2026-10-27
+All listed downloaded artwork: CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+Attribution is not required by CC0; creators are credited here voluntarily.
+This applies to the listed files, not every linked product by an author.
+GIFs: custom preview timing, integer nearest-neighbor enlargement,
+reflections where documented, Skeleton cell background removal.
+Original downloaded files are unchanged. Not tested inside a game engine.
+
+Ninja Adventure — Pixel-Boy · AAA
+https://pixel-boy.itch.io/ninja-adventure-asset-pack
+CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+전체 itch.io 팩과 공개 Godot 프로젝트의 내용은 다르다. 아래 다운로드는 저장소의 캐릭터 PNG 2장만 담은 표본이다.
+File: ninja_blue.png
+Source: https://raw.githubusercontent.com/pixel-boy/NinjaAdventure/6ac78232d5aedcc85ce5f27d060ea92366f7c24a/content/character/ninja_blue/sprite.png
+SHA256: f2dd61a264c251b81e63da7a28ab0fdccd261b807e5fa7d1832a468e14a21078
+File: samurai_blue.png
+Source: https://raw.githubusercontent.com/pixel-boy/NinjaAdventure/6ac78232d5aedcc85ce5f27d060ea92366f7c24a/content/character/samurai_blue/sprite.png
+SHA256: 7307266f5a51c5a7446350bf5a5866930fccbebd67429f11dca213086f89e062
+
+Tiny RPG · Characters & Portraits — tiopalada
+https://opengameart.org/content/tiny-rpg-cc0-characters-and-portraits
+CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+CC0는 이 무료 데모 묶음에 적용된다. 연결된 유료 Character/Face Workshop 전체의 이용 조건과 혼동하지 않는다.
+File: tinyrpgfacencharsdemocc0.zip
+Source: https://opengameart.org/sites/default/files/tinyrpgfacencharsdemocc0.zip
+SHA256: ace2f4136234924ae2f602c029cbb3e3eb38ebdf65fe14508bbd0be8a664c2e7
+
+RPG Character · Knight (Gameboy) — Chasersgaming
+https://opengameart.org/content/rpg-character-knight-gameboy
+CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+이 OGA 무료 파일은 4방향이다. 원문에서 연결한 itch.io의 8방향판과 구분했다. 시트에는 제목과 무기 그림도 있어 전체를 균일 격자로 자르면 안 된다.
+File: Knight Sprite Sheet 1 Gameboy.zip
+Source: https://opengameart.org/sites/default/files/Knight%20Sprite%20Sheet%201%20Gameboy.zip
+SHA256: b38492b3715ad0421e1636b4f75f8166715f924ea0aa3246a1f14b08878680f0
+
+RPG Character · Ranger (Gameboy) — Chasersgaming
+https://opengameart.org/content/rpg-character-ranger-gameboy
+CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+GIF는 Walk 폴더의 EAST/NORTH/SOUTH/WEST PNG 네 장에서 만들었다. 공격·달리기 등은 원본 묶음에서 따로 꺼낼 수 있다.
+File: GB Ranger Files FREE.zip
+Source: https://opengameart.org/sites/default/files/GB%20Ranger%20Files%20FREE.zip
+SHA256: 5d517081d8409be7606922d1cdd98f26ab7778169b011da6af8caa473ec587ca
+
+8-Bit Character — Puru32
+https://opengameart.org/content/8-bit-character
+CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+앞·뒤·오른쪽 PNG 3장이며 왼쪽은 오른쪽을 좌우 반전했다. 시트 한 장은 24×48, 프레임 한 칸은 24×16이다.
+File: front-sheet.png
+Source: https://opengameart.org/sites/default/files/front-sheet.png
+SHA256: 3dfe70e88fcad070c5b01f4c8252ad6a90eb791edbdc316a17d9d3c9b7026225
+File: back-sheet.png
+Source: https://opengameart.org/sites/default/files/back-sheet.png
+SHA256: a4a556bb05bb226cae8f26fbde706d53e62e95eb13b3196343159707a7d47923
+File: side-sheet.png
+Source: https://opengameart.org/sites/default/files/side-sheet.png
+SHA256: 402d4020aad4ebfb90c44b0308df2a689bd1e4787f69da52bc92218b83a5b00a
+File: dancebonus.png
+Source: https://opengameart.org/sites/default/files/dancebonus.png
+SHA256: a3764cd562c3783de3f6e98c02c70c6deba2f2bf5eecdefcaf03c485773836de
+
+Puny Characters — Shade
+https://opengameart.org/content/puny-characters
+CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+오크가 추가된 OGA 첨부판을 수집했다. 32×32 셀 안에 작은 캐릭터가 들어 있으므로 여백을 매 프레임 따로 자르면 위치가 흔들릴 수 있다.
+File: puny-charactersorcs_included.zip
+Source: https://opengameart.org/sites/default/files/puny-charactersorcs_included.zip
+SHA256: 861ad0bfcff9fcd8cb6bbc8d494783203ed148186c9252943f6841ea9f3eb66b
+
+Space Guy — patvanmackelberg
+https://opengameart.org/content/space-guy-8-directional-animated-character-16x16
+CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+위쪽 8행은 걷기, 아래쪽은 사격 자세다. 사격 자세를 걷기 루프에 섞지 않았다.
+File: blitzorion.png
+Source: https://opengameart.org/sites/default/files/blitzorion.png
+SHA256: 13745f7232bcb96a4ef227c8b2624a105c4b4bdad6f6fc71678d970436b7727f
+
+Killbot — patvanmackelberg
+https://opengameart.org/content/killbot-8-directional
+CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+시트는 192×216이다. 걷기 영역은 왼쪽 4열×8행이고, 마지막 행은 방향별 조준 자세다.
+File: sKillBot.png
+Source: https://opengameart.org/sites/default/files/sKillBot.png
+SHA256: 1083fa33318ffe8b711148a59374d986f6bb018124b79f59965fb97ea9e31539
+
+Skeleton and Friends — patvanmackelberg
+https://opengameart.org/content/skeleton-and-friends-8-directional
+CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+8방향 GIF는 Skeleton과 Shade만 사용했다. 함께 든 불타는 해골·보스·기타 그림까지 모두 8방향이라고 보지는 않는다. 해골 시트의 녹색·갈색 격자 배경은 미리보기에서 제거했다.
+File: Skeleton.png
+Source: https://opengameart.org/sites/default/files/Skeleton.png
+SHA256: 69d4b97c7a73bad833eff54465079f57039550b7f4dfb4938c7dd02e37894af4
+File: Shade.png
+Source: https://opengameart.org/sites/default/files/Shade.png
+SHA256: 5b3540e60618846e28fe74e7c30e2738214362639caf49df8aa05816fdd232e1
+File: Fire Skull.png
+Source: https://opengameart.org/sites/default/files/Fire%20Skull.png
+SHA256: 113a2cb23063c8991348720846fce1b940c7b46a901bdc21d708546841bc6808
+File: Skeleton Weapon Overlay.png
+Source: https://opengameart.org/sites/default/files/Skeleton%20Weapon%20Overlay.png
+SHA256: 9940e3162cbb8a0baef5739e9a9f12709d686f63dcdf8fe7944cc5fe51f46a90
+File: Skeleton With Weapon.png
+Source: https://opengameart.org/sites/default/files/Skeleton%20With%20Weapon.png
+SHA256: 03768c46a93be91cf034d053be37295852b8958ff81b426489138634e516a79d
+File: Skeleton Rise Animation.png
+Source: https://opengameart.org/sites/default/files/Skeleton%20Rise%20Animation.png
+SHA256: 7986e2f2c2daef06bff788238cdd11e9deb31851d37f830070332c2212d1e843
+File: Player Attack + Sword.png
+Source: https://opengameart.org/sites/default/files/Player%20Attack%20%2B%20Sword.png
+SHA256: e2037bec449ae3a9f78127e886ad634a46dde85f0c7b15ca624bbd6a3d883121
+File: Gate Keeper Idle.png
+Source: https://opengameart.org/sites/default/files/Gate%20Keeper%20Idle.png
+SHA256: 8d14b57017c183488ec72cedc57a60da12485fcc028e9522e31ec35f311ec174
+File: Gate Keeper Raise staff.png
+Source: https://opengameart.org/sites/default/files/Gate%20Keeper%20Raise%20staff.png
+SHA256: 92e6141e30ce57e3c8b6e30e072533b0141d42afcea495d5ddf25542614f98e0
+
+RPG Sprite · Human Male — TheNess
+https://opengameart.org/content/rpg-sprite-8-direction-human-male-16x16
+CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+원본은 S·E·N·SE·NE 다섯 방향을 그린 시트다. W·SW·NW를 좌우 반전해서 8방향 미리보기를 만들었다. 마지막 두 열의 추가 자세와 아래 저자 표시는 걷기에서 뺐다.
+File: sprite_oga.png
+Source: https://opengameart.org/sites/default/files/sprite_oga.png
+SHA256: 73e9dd026aad920fd37594016f90a2888bd6da3b43e717e91349c28122c47b7e
+
+Hand-Drawn Square Characters — rgsdev · Raphael Gonçalves
+https://opengameart.org/content/hand-drawn-square-characters-animated-8-directions-top-down-free-cc0
+CC0-1.0
+https://creativecommons.org/publicdomain/zero/1.0/
+파일명 idle의 4프레임 바운스를 재생했다(제작자는 Idle/Walk로 소개). 오른쪽을 포함한 다섯 방향이 들어 있고 왼쪽 세 방향은 반전해 8방향으로 구성했다. 점프·사망 효과·총도 별도로 포함된다.
+File: square_characters_animated_8_directions_top_down_free_cc0.zip
+Source: https://opengameart.org/sites/default/files/square_characters_animated_8_directions_top_down_free_cc0.zip
+SHA256: 19ff6932e32f49d7e8c755515e27f9a70e5e4319ab0fb860cf8aef6bc92cb2dd

@@ -1,0 +1,186 @@
+{
+  "checked_at": "2026-10-27",
+  "packs": 11,
+  "previews": [
+    {
+      "id": "ninja-adventure-ninja",
+      "frames": 4,
+      "size": [
+        576,
+        164
+      ],
+      "directions": 4
+    },
+    {
+      "id": "ninja-adventure-samurai",
+      "frames": 4,
+      "size": [
+        576,
+        164
+      ],
+      "directions": 4
+    },
+    {
+      "id": "tiny-rpg-human",
+      "frames": 4,
+      "size": [
+        576,
+        164
+      ],
+      "directions": 4
+    },
+    {
+      "id": "tiny-rpg-werewolf",
+      "frames": 4,
+      "size": [
+        576,
+        164
+      ],
+      "directions": 4
+    },
+    {
+      "id": "tiny-rpg-catfolk",
+      "frames": 4,
+      "size": [
+        576,
+        164
+      ],
+      "directions": 4
+    },
+    {
+      "id": "knight-knight",
+      "frames": 4,
+      "size": [
+        576,
+        164
+      ],
+      "directions": 4
+    },
+    {
+      "id": "ranger-ranger",
+      "frames": 4,
+      "size": [
+        576,
+        164
+      ],
+      "directions": 4
+    },
+    {
+      "id": "eight-bit-eight-bit",
+      "frames": 4,
+      "size": [
+        576,
+        164
+      ],
+      "directions": 4
+    },
+    {
+      "id": "puny-mage",
+      "frames": 2,
+      "size": [
+        576,
+        328
+      ],
+      "directions": 8
+    },
+    {
+      "id": "puny-warrior",
+      "frames": 2,
+      "size": [
+        576,
+        328
+      ],
+      "directions": 8
+    },
+    {
+      "id": "puny-orc",
+      "frames": 2,
+      "size": [
+        576,
+        328
+      ],
+      "directions": 8
+    },
+    {
+      "id": "space-guy-space-guy",
+      "frames": 4,
+      "size": [
+        576,
+        328
+      ],
+      "directions": 8
+    },
+    {
+      "id": "killbot-killbot",
+      "frames": 4,
+      "size": [
+        576,
+        328
+      ],
+      "directions": 8
+    },
+    {
+      "id": "skeleton-skeleton",
+      "frames": 4,
+      "size": [
+        576,
+        328
+      ],
+      "directions": 8
+    },
+    {
+      "id": "skeleton-shade",
+      "frames": 4,
+      "size": [
+        576,
+        328
+      ],
+      "directions": 8
+    },
+    {
+      "id": "human-base-human-base",
+      "frames": 4,
+      "size": [
+        576,
+        328
+      ],
+      "directions": 8
+    },
+    {
+      "id": "square-base",
+      "frames": 4,
+      "size": [
+        576,
+        328
+      ],
+      "directions": 8
+    },
+    {
+      "id": "square-hero",
+      "frames": 4,
+      "size": [
+        576,
+        328
+      ],
+      "directions": 8
+    },
+    {
+      "id": "square-square-skeleton",
+      "frames": 4,
+      "size": [
+        576,
+        328
+      ],
+      "directions": 8
+    },
+    {
+      "id": "square-monster",
+      "frames": 4,
+      "size": [
+        576,
+        328
+      ],
+      "directions": 8
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="상업 이용·수정·재배포가 가능한 CC0 캐릭터 스프라이트 11개 팩. 4방향·8방향, 캐릭터 20종의 움직이는 GIF, 원본 다운로드와 제작자·라이선스 정리.">
+  <title>오픈 캐릭터 스프라이트 · 4방향·8방향 11선 · nyimpe</title>
+  <link rel="canonical" href="https://nyimpe.github.io/posts/open-character-sprites/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="오픈 캐릭터 스프라이트 · 4방향·8방향 11선">
+  <meta property="og:description" content="CC0 캐릭터 11개 팩과 20종 GIF 미리보기. 닌자·기사·마법사·오크·로봇·해골을 방향별로 비교하고 원본을 내려받는다.">
+  <meta property="og:url" content="https://nyimpe.github.io/posts/open-character-sprites/">
+  <meta property="og:image" content="https://nyimpe.github.io/posts/open-character-sprites/overview.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/sprite-gallery.css">
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/sprite-gallery.js"></script>
+</head>
+<body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=writing" aria-label="글쓰기" title="글쓰기"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post sprite-post">
+        <header class="post-header">
+          <h1>오픈 캐릭터 스프라이트<br>4방향·8방향 11선</h1>
+          <time datetime="2026-10-27">2026.10.27</time>
+          <p class="sprite-meta">CC0 11개 팩 · 캐릭터 20종 GIF · 4방향 5팩 / 8방향 6팩</p>
+        </header>
+        <div class="sprite-intro">
+          <p><strong>오픈소스 게임에 넣거나 상업 프로젝트에서 수정·재배포할 수 있는 캐릭터 스프라이트를 모았다.</strong> 이번 목록은 모두 제작자 배포 페이지에 CC0로 명시된 파일이다. 원본과 출처를 함께 수집하고, 실제 시트에서 프레임을 잘라 움직이는 GIF 20개를 만들었다.</p>
+          <p>캐릭터가 여러 명인 팩은 선택 상자로 바꿔 볼 수 있다. 작은 픽셀 캐릭터, 게임보이풍 기사, 8방향 로봇과 해골, 손그림 캐릭터까지 화풍과 쓰임을 나누어 비교한다.</p>
+          <p><a href="/posts/open-character-sprites/downloads/all-cc0-character-sprites.zip" download>수집한 원본 전체 ZIP</a> · <a href="/posts/open-character-sprites/CREDITS.txt">제작자·출처·라이선스</a> · <a href="/posts/open-character-sprites/catalog.json">프레임·원본 파일 정보 JSON</a></p>
+        </div>
+        <section id="how-to-read">
+          <h2>방향과 GIF를 읽는 법</h2>
+          <p>4방향은 <strong>남(S)·동(E)·북(N)·서(W)</strong>, 8방향은 윗줄 <strong>S·SE·E·NE</strong>, 아랫줄 <strong>N·NW·W·SW</strong> 순서다. 방향은 캐릭터가 바라보는 쪽이다. 원본 배열은 팩마다 달라 미리보기에서 순서를 통일했다.</p>
+          <p>Human Male과 Square Characters는 다섯 방향 그림에 좌우 반전 세 방향을 보충했다. 8-Bit Character의 왼쪽도 반전이다. 비대칭 무기·문양을 붙일 때는 이 차이를 확인해야 한다.</p>
+          <p>GIF는 대표 걷기 동작이며 Square Characters는 원본의 <code>idle</code> 바운스다. 속도는 비교하기 위해 프레임당 140ms로 맞췄다. 원본 다운로드는 수정하지 않았고, 미리보기만 확대·반전·배경 정리를 했다. 게임 엔진에서의 동작 연결은 별도로 확인해야 한다.</p>
+        </section>
+        <nav aria-label="캐릭터 팩 목차"><ol class="sprite-index">
+          <li><a href="#ninja-adventure">Ninja Adventure</a> · 4방향</li>
+          <li><a href="#tiny-rpg">Tiny RPG · Characters &amp; Portraits</a> · 4방향</li>
+          <li><a href="#knight">RPG Character · Knight (Gameboy)</a> · 4방향</li>
+          <li><a href="#ranger">RPG Character · Ranger (Gameboy)</a> · 4방향</li>
+          <li><a href="#eight-bit">8-Bit Character</a> · 4방향</li>
+          <li><a href="#puny">Puny Characters</a> · 8방향</li>
+          <li><a href="#space-guy">Space Guy</a> · 8방향</li>
+          <li><a href="#killbot">Killbot</a> · 8방향</li>
+          <li><a href="#skeleton">Skeleton and Friends</a> · 8방향</li>
+          <li><a href="#human-base">RPG Sprite · Human Male</a> · 8방향</li>
+          <li><a href="#square">Hand-Drawn Square Characters</a> · 8방향</li>
+        </ol></nav>
+        <div class="sprite-toolbar" role="group" aria-label="미리보기 표시">
+          <button class="plain-button" type="button" data-sprite-filter="all" aria-pressed="true" hidden>전체 11팩</button>
+          <button class="plain-button" type="button" data-sprite-filter="4" aria-pressed="false" hidden>4방향 5팩</button>
+          <button class="plain-button" type="button" data-sprite-filter="8" aria-pressed="false" hidden>8방향 6팩</button>
+          <button class="plain-button" id="sprite-motion" type="button" aria-pressed="false" hidden>GIF 모두 정지</button>
+        </div>
+        <p class="sprite-count" id="sprite-count" role="status">11개 팩 표시</p>
+        <div class="sprite-gallery">
+          <section class="sprite-card" id="ninja-adventure" data-directions="4" data-motion="걷기">
+            <h2>01. Ninja Adventure</h2>
+            <p class="sprite-meta">4방향 · 16×16 · CC0 · Pixel-Boy · AAA</p>
+            <p>닌자 마을 분위기의 4방향 캐릭터 팩. 제작자 페이지는 50종 이상의 캐릭터와 몬스터·타일·효과음을 제공한다. 여기서는 제작자의 공개 Godot 저장소에 있는 닌자와 사무라이 두 명을 수집했다.</p>
+            <label for="choose-ninja-adventure">캐릭터 선택 </label><select id="choose-ninja-adventure">
+              <option data-gif="/posts/open-character-sprites/ninja-adventure-ninja.gif" data-still="/posts/open-character-sprites/ninja-adventure-ninja.png">파란 닌자</option>
+              <option data-gif="/posts/open-character-sprites/ninja-adventure-samurai.gif" data-still="/posts/open-character-sprites/ninja-adventure-samurai.png">파란 사무라이</option>
+            </select>
+            <figure>
+              <img class="sprite-preview" src="/posts/open-character-sprites/ninja-adventure-ninja.gif" data-gif="/posts/open-character-sprites/ninja-adventure-ninja.gif" data-still="/posts/open-character-sprites/ninja-adventure-ninja.png" width="576" height="164" loading="lazy" alt="파란 닌자 · 4방향 걷기 미리보기">
+              <figcaption>4방향 걷기 · S · E · N · W · 2종 미리보기</figcaption>
+            </figure>
+            <p class="sprite-note">전체 itch.io 팩과 공개 Godot 프로젝트의 내용은 다르다. 아래 다운로드는 저장소의 캐릭터 PNG 2장만 담은 표본이다.</p>
+            <p class="sprite-links"><a href="https://pixel-boy.itch.io/ninja-adventure-asset-pack">제작자 배포 페이지</a><a href="/posts/open-character-sprites/downloads/ninja-adventure.zip" download>이 팩 원본 ZIP</a><a class="gif-download" href="/posts/open-character-sprites/ninja-adventure-ninja.gif" download>현재 GIF 저장</a></p>
+          </section>
+          <section class="sprite-card" id="tiny-rpg" data-directions="4" data-motion="걷기">
+            <h2>02. Tiny RPG · Characters &amp; Portraits</h2>
+            <p class="sprite-meta">4방향 · 48×48 · CC0 · tiopalada</p>
+            <p>모자 쓴 인간, 늑대인간, 고양이 수인 세 명의 캐릭터 시트와 초상화가 함께 들어 있다. 작은 체형에 의상과 얼굴이 분명해 NPC나 파티형 RPG에 잘 어울린다.</p>
+            <label for="choose-tiny-rpg">캐릭터 선택 </label><select id="choose-tiny-rpg">
+              <option data-gif="/posts/open-character-sprites/tiny-rpg-human.gif" data-still="/posts/open-character-sprites/tiny-rpg-human.png">인간 마법사</option>
+              <option data-gif="/posts/open-character-sprites/tiny-rpg-werewolf.gif" data-still="/posts/open-character-sprites/tiny-rpg-werewolf.png">늑대인간</option>
+              <option data-gif="/posts/open-character-sprites/tiny-rpg-catfolk.gif" data-still="/posts/open-character-sprites/tiny-rpg-catfolk.png">고양이 수인</option>
+            </select>
+            <figure>
+              <img class="sprite-preview" src="/posts/open-character-sprites/tiny-rpg-human.gif" data-gif="/posts/open-character-sprites/tiny-rpg-human.gif" data-still="/posts/open-character-sprites/tiny-rpg-human.png" width="576" height="164" loading="lazy" alt="인간 마법사 · 4방향 걷기 미리보기">
+              <figcaption>4방향 걷기 · S · E · N · W · 3종 미리보기</figcaption>
+            </figure>
+            <p class="sprite-note">CC0는 이 무료 데모 묶음에 적용된다. 연결된 유료 Character/Face Workshop 전체의 이용 조건과 혼동하지 않는다.</p>
+            <p class="sprite-links"><a href="https://opengameart.org/content/tiny-rpg-cc0-characters-and-portraits">제작자 배포 페이지</a><a href="/posts/open-character-sprites/downloads/tiny-rpg.zip" download>이 팩 원본 ZIP</a><a class="gif-download" href="/posts/open-character-sprites/tiny-rpg-human.gif" download>현재 GIF 저장</a></p>
+          </section>
+          <section class="sprite-card" id="knight" data-directions="4" data-motion="걷기">
+            <h2>03. RPG Character · Knight (Gameboy)</h2>
+            <p class="sprite-meta">4방향 · 16×24 · CC0 · Chasersgaming</p>
+            <p>녹색 게임보이 팔레트의 기사. 걷기·달리기·밀기·공격·피격과 초상화, 무기 그림을 한 장에서 찾을 수 있다.</p>
+            <figure>
+              <img class="sprite-preview" src="/posts/open-character-sprites/knight-knight.gif" data-gif="/posts/open-character-sprites/knight-knight.gif" data-still="/posts/open-character-sprites/knight-knight.png" width="576" height="164" loading="lazy" alt="게임보이 기사 · 4방향 걷기 미리보기">
+              <figcaption>4방향 걷기 · S · E · N · W · 1종 미리보기</figcaption>
+            </figure>
+            <p class="sprite-note">이 OGA 무료 파일은 4방향이다. 원문에서 연결한 itch.io의 8방향판과 구분했다. 시트에는 제목과 무기 그림도 있어 전체를 균일 격자로 자르면 안 된다.</p>
+            <p class="sprite-links"><a href="https://opengameart.org/content/rpg-character-knight-gameboy">제작자 배포 페이지</a><a href="/posts/open-character-sprites/downloads/knight.zip" download>이 팩 원본 ZIP</a><a class="gif-download" href="/posts/open-character-sprites/knight-knight.gif" download>현재 GIF 저장</a></p>
+          </section>
+          <section class="sprite-card" id="ranger" data-directions="4" data-motion="걷기">
+            <h2>04. RPG Character · Ranger (Gameboy)</h2>
+            <p class="sprite-meta">4방향 · 16×24 · CC0 · Chasersgaming</p>
+            <p>후드와 활을 쓰는 레인저. 기사와 같은 규격으로, 동작별·방향별 PNG와 BMP가 나뉘어 있어 꺼내 쓰기 편하다.</p>
+            <figure>
+              <img class="sprite-preview" src="/posts/open-character-sprites/ranger-ranger.gif" data-gif="/posts/open-character-sprites/ranger-ranger.gif" data-still="/posts/open-character-sprites/ranger-ranger.png" width="576" height="164" loading="lazy" alt="게임보이 레인저 · 4방향 걷기 미리보기">
+              <figcaption>4방향 걷기 · S · E · N · W · 1종 미리보기</figcaption>
+            </figure>
+            <p class="sprite-note">GIF는 Walk 폴더의 EAST/NORTH/SOUTH/WEST PNG 네 장에서 만들었다. 공격·달리기 등은 원본 묶음에서 따로 꺼낼 수 있다.</p>
+            <p class="sprite-links"><a href="https://opengameart.org/content/rpg-character-ranger-gameboy">제작자 배포 페이지</a><a href="/posts/open-character-sprites/downloads/ranger.zip" download>이 팩 원본 ZIP</a><a class="gif-download" href="/posts/open-character-sprites/ranger-ranger.gif" download>현재 GIF 저장</a></p>
+          </section>
+          <section class="sprite-card" id="eight-bit" data-directions="4" data-motion="걷기">
+            <h2>05. 8-Bit Character</h2>
+            <p class="sprite-meta">4방향 · 일부 방향 반전 · 24×16 · CC0 · Puru32</p>
+            <p>앞·뒤·옆 걷기 시트와 보너스 춤 동작을 제공하는 작은 현대풍 캐릭터. 단순한 모험 게임이나 8비트 시제품에 쓰기 좋다.</p>
+            <figure>
+              <img class="sprite-preview" src="/posts/open-character-sprites/eight-bit-eight-bit.gif" data-gif="/posts/open-character-sprites/eight-bit-eight-bit.gif" data-still="/posts/open-character-sprites/eight-bit-eight-bit.png" width="576" height="164" loading="lazy" alt="8비트 소년 · 4방향 걷기 미리보기">
+              <figcaption>4방향 걷기 · S · E · N · W · 1종 미리보기</figcaption>
+            </figure>
+            <p class="sprite-note">앞·뒤·오른쪽 PNG 3장이며 왼쪽은 오른쪽을 좌우 반전했다. 시트 한 장은 24×48, 프레임 한 칸은 24×16이다.</p>
+            <p class="sprite-links"><a href="https://opengameart.org/content/8-bit-character">제작자 배포 페이지</a><a href="/posts/open-character-sprites/downloads/eight-bit.zip" download>이 팩 원본 ZIP</a><a class="gif-download" href="/posts/open-character-sprites/eight-bit-eight-bit.gif" download>현재 GIF 저장</a></p>
+          </section>
+          <section class="sprite-card" id="puny" data-directions="8" data-motion="걷기">
+            <h2>06. Puny Characters</h2>
+            <p class="sprite-meta">8방향 · 32×32 캔버스 · 약 16×16 인물 · CC0 · Shade</p>
+            <p>전사·궁수·마법사·오크를 같은 화풍으로 모을 수 있는 팩. 대기·걷기·검·활·지팡이 공격·투척·피격·사망을 8방향으로 제공한다.</p>
+            <label for="choose-puny">캐릭터 선택 </label><select id="choose-puny">
+              <option data-gif="/posts/open-character-sprites/puny-mage.gif" data-still="/posts/open-character-sprites/puny-mage.png">청록 마법사</option>
+              <option data-gif="/posts/open-character-sprites/puny-warrior.gif" data-still="/posts/open-character-sprites/puny-warrior.png">파란 전사</option>
+              <option data-gif="/posts/open-character-sprites/puny-orc.gif" data-still="/posts/open-character-sprites/puny-orc.png">오크 전사</option>
+            </select>
+            <figure>
+              <img class="sprite-preview" src="/posts/open-character-sprites/puny-mage.gif" data-gif="/posts/open-character-sprites/puny-mage.gif" data-still="/posts/open-character-sprites/puny-mage.png" width="576" height="328" loading="lazy" alt="청록 마법사 · 8방향 걷기 미리보기">
+              <figcaption>8방향 걷기 · S · SE · E · NE / N · NW · W · SW · 3종 미리보기</figcaption>
+            </figure>
+            <p class="sprite-note">오크가 추가된 OGA 첨부판을 수집했다. 32×32 셀 안에 작은 캐릭터가 들어 있으므로 여백을 매 프레임 따로 자르면 위치가 흔들릴 수 있다.</p>
+            <p class="sprite-links"><a href="https://opengameart.org/content/puny-characters">제작자 배포 페이지</a><a href="/posts/open-character-sprites/downloads/puny.zip" download>이 팩 원본 ZIP</a><a class="gif-download" href="/posts/open-character-sprites/puny-mage.gif" download>현재 GIF 저장</a></p>
+          </section>
+          <section class="sprite-card" id="space-guy" data-directions="8" data-motion="걷기">
+            <h2>07. Space Guy</h2>
+            <p class="sprite-meta">8방향 · 16×16 · CC0 · patvanmackelberg</p>
+            <p>흰색과 하늘색 옷의 SF 인물. 8방향 걷기와 방향별 한 칸짜리 사격 자세가 있어 작은 슈팅 게임의 기본 캐릭터로 쓰기 좋다.</p>
+            <figure>
+              <img class="sprite-preview" src="/posts/open-character-sprites/space-guy-space-guy.gif" data-gif="/posts/open-character-sprites/space-guy-space-guy.gif" data-still="/posts/open-character-sprites/space-guy-space-guy.png" width="576" height="328" loading="lazy" alt="SF 캐릭터 · 8방향 걷기 미리보기">
+              <figcaption>8방향 걷기 · S · SE · E · NE / N · NW · W · SW · 1종 미리보기</figcaption>
+            </figure>
+            <p class="sprite-note">위쪽 8행은 걷기, 아래쪽은 사격 자세다. 사격 자세를 걷기 루프에 섞지 않았다.</p>
+            <p class="sprite-links"><a href="https://opengameart.org/content/space-guy-8-directional-animated-character-16x16">제작자 배포 페이지</a><a href="/posts/open-character-sprites/downloads/space-guy.zip" download>이 팩 원본 ZIP</a><a class="gif-download" href="/posts/open-character-sprites/space-guy-space-guy.gif" download>현재 GIF 저장</a></p>
+          </section>
+          <section class="sprite-card" id="killbot" data-directions="8" data-motion="걷기">
+            <h2>08. Killbot</h2>
+            <p class="sprite-meta">8방향 · 24×24 · CC0 · patvanmackelberg</p>
+            <p>회색 몸과 빨간 눈의 로봇. 8방향 이동과 총을 겨누는 그림이 들어 있어 적 로봇이나 플레이어 유닛으로 쓸 수 있다.</p>
+            <figure>
+              <img class="sprite-preview" src="/posts/open-character-sprites/killbot-killbot.gif" data-gif="/posts/open-character-sprites/killbot-killbot.gif" data-still="/posts/open-character-sprites/killbot-killbot.png" width="576" height="328" loading="lazy" alt="킬봇 · 8방향 걷기 미리보기">
+              <figcaption>8방향 걷기 · S · SE · E · NE / N · NW · W · SW · 1종 미리보기</figcaption>
+            </figure>
+            <p class="sprite-note">시트는 192×216이다. 걷기 영역은 왼쪽 4열×8행이고, 마지막 행은 방향별 조준 자세다.</p>
+            <p class="sprite-links"><a href="https://opengameart.org/content/killbot-8-directional">제작자 배포 페이지</a><a href="/posts/open-character-sprites/downloads/killbot.zip" download>이 팩 원본 ZIP</a><a class="gif-download" href="/posts/open-character-sprites/killbot-killbot.gif" download>현재 GIF 저장</a></p>
+          </section>
+          <section class="sprite-card" id="skeleton" data-directions="8" data-motion="걷기">
+            <h2>09. Skeleton and Friends</h2>
+            <p class="sprite-meta">8방향 · 32×32 · 일부 추가 그림은 별도 크기 · CC0 · patvanmackelberg</p>
+            <p>해골과 검은 유령(Shade)의 8방향 걷기, 무기 오버레이와 무장 해골, 플레이어 공격 그림 등을 함께 제공한다. 장비를 따로 겹치는 방식을 살펴보기에도 좋다.</p>
+            <label for="choose-skeleton">캐릭터 선택 </label><select id="choose-skeleton">
+              <option data-gif="/posts/open-character-sprites/skeleton-skeleton.gif" data-still="/posts/open-character-sprites/skeleton-skeleton.png">해골</option>
+              <option data-gif="/posts/open-character-sprites/skeleton-shade.gif" data-still="/posts/open-character-sprites/skeleton-shade.png">검은 유령</option>
+            </select>
+            <figure>
+              <img class="sprite-preview" src="/posts/open-character-sprites/skeleton-skeleton.gif" data-gif="/posts/open-character-sprites/skeleton-skeleton.gif" data-still="/posts/open-character-sprites/skeleton-skeleton.png" width="576" height="328" loading="lazy" alt="해골 · 8방향 걷기 미리보기">
+              <figcaption>8방향 걷기 · S · SE · E · NE / N · NW · W · SW · 2종 미리보기</figcaption>
+            </figure>
+            <p class="sprite-note">8방향 GIF는 Skeleton과 Shade만 사용했다. 함께 든 불타는 해골·보스·기타 그림까지 모두 8방향이라고 보지는 않는다. 해골 시트의 녹색·갈색 격자 배경은 미리보기에서 제거했다.</p>
+            <p class="sprite-links"><a href="https://opengameart.org/content/skeleton-and-friends-8-directional">제작자 배포 페이지</a><a href="/posts/open-character-sprites/downloads/skeleton.zip" download>이 팩 원본 ZIP</a><a class="gif-download" href="/posts/open-character-sprites/skeleton-skeleton.gif" download>현재 GIF 저장</a></p>
+          </section>
+          <section class="sprite-card" id="human-base" data-directions="8" data-motion="걷기">
+            <h2>10. RPG Sprite · Human Male</h2>
+            <p class="sprite-meta">8방향 · 일부 방향 반전 · 16×16 · CC0 · TheNess</p>
+            <p>옷을 덧그리기 좋은 작은 인간 베이스. 정면·옆·후면·대각선 걷기와 펀치에 가까운 추가 자세가 들어 있다.</p>
+            <figure>
+              <img class="sprite-preview" src="/posts/open-character-sprites/human-base-human-base.gif" data-gif="/posts/open-character-sprites/human-base-human-base.gif" data-still="/posts/open-character-sprites/human-base-human-base.png" width="576" height="328" loading="lazy" alt="인간 베이스 · 8방향 걷기 미리보기">
+              <figcaption>8방향 걷기 · S · SE · E · NE / N · NW · W · SW · 1종 미리보기</figcaption>
+            </figure>
+            <p class="sprite-note">원본은 S·E·N·SE·NE 다섯 방향을 그린 시트다. W·SW·NW를 좌우 반전해서 8방향 미리보기를 만들었다. 마지막 두 열의 추가 자세와 아래 저자 표시는 걷기에서 뺐다.</p>
+            <p class="sprite-links"><a href="https://opengameart.org/content/rpg-sprite-8-direction-human-male-16x16">제작자 배포 페이지</a><a href="/posts/open-character-sprites/downloads/human-base.zip" download>이 팩 원본 ZIP</a><a class="gif-download" href="/posts/open-character-sprites/human-base-human-base.gif" download>현재 GIF 저장</a></p>
+          </section>
+          <section class="sprite-card" id="square" data-directions="8" data-motion="대기">
+            <h2>11. Hand-Drawn Square Characters</h2>
+            <p class="sprite-meta">8방향 · 일부 방향 반전 · 128×128 · CC0 · rgsdev · Raphael Gonçalves</p>
+            <p>기본형·영웅·해골·몬스터 네 명을 손그림으로 만든 팩. 픽셀아트 대신 부드러운 윤곽의 캐릭터가 필요할 때 고를 수 있다.</p>
+            <label for="choose-square">캐릭터 선택 </label><select id="choose-square">
+              <option data-gif="/posts/open-character-sprites/square-base.gif" data-still="/posts/open-character-sprites/square-base.png">기본형</option>
+              <option data-gif="/posts/open-character-sprites/square-hero.gif" data-still="/posts/open-character-sprites/square-hero.png">영웅</option>
+              <option data-gif="/posts/open-character-sprites/square-square-skeleton.gif" data-still="/posts/open-character-sprites/square-square-skeleton.png">해골</option>
+              <option data-gif="/posts/open-character-sprites/square-monster.gif" data-still="/posts/open-character-sprites/square-monster.png">몬스터</option>
+            </select>
+            <figure>
+              <img class="sprite-preview smooth" src="/posts/open-character-sprites/square-base.gif" data-gif="/posts/open-character-sprites/square-base.gif" data-still="/posts/open-character-sprites/square-base.png" width="576" height="328" loading="lazy" alt="기본형 · 8방향 대기 미리보기">
+              <figcaption>8방향 대기 · S · SE · E · NE / N · NW · W · SW · 4종 미리보기</figcaption>
+            </figure>
+            <p class="sprite-note">파일명 idle의 4프레임 바운스를 재생했다(제작자는 Idle/Walk로 소개). 오른쪽을 포함한 다섯 방향이 들어 있고 왼쪽 세 방향은 반전해 8방향으로 구성했다. 점프·사망 효과·총도 별도로 포함된다.</p>
+            <p class="sprite-links"><a href="https://opengameart.org/content/hand-drawn-square-characters-animated-8-directions-top-down-free-cc0">제작자 배포 페이지</a><a href="/posts/open-character-sprites/downloads/square.zip" download>이 팩 원본 ZIP</a><a class="gif-download" href="/posts/open-character-sprites/square-base.gif" download>현재 GIF 저장</a></p>
+          </section>
+        </div>
+        <section id="license">
+          <h2>이용 조건과 고르는 기준</h2>
+          <p><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 공식 설명</a>에 따르면 복사·수정·배포·상업적 이용이 가능하다. 저작자 표시는 필수가 아니지만, 이 글과 다운로드에는 제작자와 원문 링크를 함께 남겼다. 여기서 확인한 것은 목록의 에셋 파일이며 게임 코드의 라이선스와는 별개다.</p>
+          <ul>
+            <li><strong>여러 직업의 8방향 전투:</strong> Puny Characters. 전사·궁수·마법사·오크를 한 화풍으로 맞출 수 있다.</li>
+            <li><strong>4방향 마을·모험:</strong> Ninja Adventure. 전체 팩을 받으면 캐릭터와 주변 환경을 함께 구성하기 좋다.</li>
+            <li><strong>캐릭터와 대화 초상화:</strong> Tiny RPG. 무료 데모 세 캐릭터의 시트와 얼굴 그림을 함께 쓸 수 있다.</li>
+            <li><strong>작은 8방향 슈팅:</strong> Space Guy와 Killbot. 이동과 조준 자세를 구분하기 편하다.</li>
+            <li><strong>장비 오버레이 실험:</strong> Skeleton and Friends. 몸·무기·무장 결과를 비교할 수 있다.</li>
+            <li><strong>손그림 화면:</strong> Square Characters. 왼쪽 방향은 반전이며 픽셀아트와 해상도·윤곽이 다르다.</li>
+          </ul>
+          <p>4방향 게임에서 대각선 이동이 가능하다고 해서 대각선 그림까지 들어 있는 것은 아니다. 이번에는 방향별 그림이 없고 회전만으로 이동 방향을 표현하는 탑다운 자료와, 출처가 불분명한 상업 게임 추출 자료는 제외했다.</p>
+          <p class="sprite-meta">확인일: 2026-10-27. 원본 URL·SHA-256·잘라낸 프레임·좌우 반전 정보는 <a href="/posts/open-character-sprites/catalog.json">수집 기록</a>에 남겼다. GIF는 원본 프레임으로 재구성한 미리보기이며 제작자의 공식 애니메이션 속도를 뜻하지 않는다.</p>
+        </section>
+        <p class="sprite-back"><a href="/">← 전체 글 목록</a></p>
+      </article>
+    </main>
+    <footer lang="en" class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+</body>
+</html>

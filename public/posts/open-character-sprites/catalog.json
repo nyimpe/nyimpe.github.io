@@ -1,0 +1,4980 @@
+{
+  "title": "오픈 캐릭터 스프라이트 · 4방향·8방향 11선",
+  "checked_at": "2026-10-27",
+  "license_scope": "Listed downloaded assets only; not all assets sold or linked by each author.",
+  "packs": [
+    {
+      "id": "ninja-adventure",
+      "title": "Ninja Adventure",
+      "author": "Pixel-Boy · AAA",
+      "directions": 4,
+      "size": "16×16",
+      "description": "닌자 마을 분위기의 4방향 캐릭터 팩. 제작자 페이지는 50종 이상의 캐릭터와 몬스터·타일·효과음을 제공한다. 여기서는 제작자의 공개 Godot 저장소에 있는 닌자와 사무라이 두 명을 수집했다.",
+      "note": "전체 itch.io 팩과 공개 Godot 프로젝트의 내용은 다르다. 아래 다운로드는 저장소의 캐릭터 PNG 2장만 담은 표본이다.",
+      "motion": "walk",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://pixel-boy.itch.io/ninja-adventure-asset-pack",
+      "originals": [
+        {
+          "file": "originals/ninja-adventure/ninja_blue.png",
+          "url": "https://raw.githubusercontent.com/pixel-boy/NinjaAdventure/6ac78232d5aedcc85ce5f27d060ea92366f7c24a/content/character/ninja_blue/sprite.png",
+          "sha256": "f2dd61a264c251b81e63da7a28ab0fdccd261b807e5fa7d1832a468e14a21078",
+          "bytes": 6139
+        },
+        {
+          "file": "originals/ninja-adventure/samurai_blue.png",
+          "url": "https://raw.githubusercontent.com/pixel-boy/NinjaAdventure/6ac78232d5aedcc85ce5f27d060ea92366f7c24a/content/character/samurai_blue/sprite.png",
+          "sha256": "7307266f5a51c5a7446350bf5a5866930fccbebd67429f11dca213086f89e062",
+          "bytes": 5536
+        }
+      ],
+      "previews": [
+        {
+          "id": "ninja",
+          "label": "파란 닌자",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  0,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  0,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  0,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  0,
+                  48,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  48,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  48,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  48,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  48,
+                  48,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  16,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  16,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  16,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  16,
+                  48,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  32,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  32,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  32,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/ninja_blue.png",
+                "rect": [
+                  32,
+                  48,
+                  16,
+                  16
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "samurai",
+          "label": "파란 사무라이",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  0,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  0,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  0,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  0,
+                  48,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  48,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  48,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  48,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  48,
+                  48,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  16,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  16,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  16,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  16,
+                  48,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  32,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  32,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  32,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/ninja-adventure/samurai_blue.png",
+                "rect": [
+                  32,
+                  48,
+                  16,
+                  16
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "license_evidence": "Creator itch.io page: Creative Commons Zero (CC0); commercial use permitted; attribution not required.",
+      "repository": "https://github.com/pixel-boy/NinjaAdventure/tree/6ac78232d5aedcc85ce5f27d060ea92366f7c24a"
+    },
+    {
+      "id": "tiny-rpg",
+      "title": "Tiny RPG · Characters & Portraits",
+      "author": "tiopalada",
+      "directions": 4,
+      "size": "48×48",
+      "description": "모자 쓴 인간, 늑대인간, 고양이 수인 세 명의 캐릭터 시트와 초상화가 함께 들어 있다. 작은 체형에 의상과 얼굴이 분명해 NPC나 파티형 RPG에 잘 어울린다.",
+      "note": "CC0는 이 무료 데모 묶음에 적용된다. 연결된 유료 Character/Face Workshop 전체의 이용 조건과 혼동하지 않는다.",
+      "motion": "walk",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://opengameart.org/content/tiny-rpg-cc0-characters-and-portraits",
+      "originals": [
+        {
+          "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip",
+          "url": "https://opengameart.org/sites/default/files/tinyrpgfacencharsdemocc0.zip",
+          "sha256": "ace2f4136234924ae2f602c029cbb3e3eb38ebdf65fe14508bbd0be8a664c2e7",
+          "bytes": 50677
+        }
+      ],
+      "previews": [
+        {
+          "id": "human",
+          "label": "인간 마법사",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  0,
+                  0,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  48,
+                  0,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  0,
+                  0,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  96,
+                  0,
+                  48,
+                  48
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  0,
+                  144,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  48,
+                  144,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  0,
+                  144,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  96,
+                  144,
+                  48,
+                  48
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  0,
+                  96,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  48,
+                  96,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  0,
+                  96,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  96,
+                  96,
+                  48,
+                  48
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  0,
+                  48,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  48,
+                  48,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  0,
+                  48,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar00.png",
+                "rect": [
+                  96,
+                  48,
+                  48,
+                  48
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "werewolf",
+          "label": "늑대인간",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  0,
+                  0,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  48,
+                  0,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  0,
+                  0,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  96,
+                  0,
+                  48,
+                  48
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  0,
+                  144,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  48,
+                  144,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  0,
+                  144,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  96,
+                  144,
+                  48,
+                  48
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  0,
+                  96,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  48,
+                  96,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  0,
+                  96,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  96,
+                  96,
+                  48,
+                  48
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  0,
+                  48,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  48,
+                  48,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  0,
+                  48,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar01.png",
+                "rect": [
+                  96,
+                  48,
+                  48,
+                  48
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "catfolk",
+          "label": "고양이 수인",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  0,
+                  0,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  48,
+                  0,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  0,
+                  0,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  96,
+                  0,
+                  48,
+                  48
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  0,
+                  144,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  48,
+                  144,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  0,
+                  144,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  96,
+                  144,
+                  48,
+                  48
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  0,
+                  96,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  48,
+                  96,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  0,
+                  96,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  96,
+                  96,
+                  48,
+                  48
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  0,
+                  48,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  48,
+                  48,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  0,
+                  48,
+                  48,
+                  48
+                ]
+              },
+              {
+                "file": "originals/tiny-rpg/tinyrpgfacencharsdemocc0.zip!charWorkshopIDemo/20250303demoChar02.png",
+                "rect": [
+                  96,
+                  48,
+                  48,
+                  48
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "license_evidence": "License(s): CC0 "
+    },
+    {
+      "id": "knight",
+      "title": "RPG Character · Knight (Gameboy)",
+      "author": "Chasersgaming",
+      "directions": 4,
+      "size": "16×24",
+      "description": "녹색 게임보이 팔레트의 기사. 걷기·달리기·밀기·공격·피격과 초상화, 무기 그림을 한 장에서 찾을 수 있다.",
+      "note": "이 OGA 무료 파일은 4방향이다. 원문에서 연결한 itch.io의 8방향판과 구분했다. 시트에는 제목과 무기 그림도 있어 전체를 균일 격자로 자르면 안 된다.",
+      "motion": "walk",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://opengameart.org/content/rpg-character-knight-gameboy",
+      "originals": [
+        {
+          "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip",
+          "url": "https://opengameart.org/sites/default/files/Knight%20Sprite%20Sheet%201%20Gameboy.zip",
+          "sha256": "b38492b3715ad0421e1636b4f75f8166715f924ea0aa3246a1f14b08878680f0",
+          "bytes": 11426
+        }
+      ],
+      "previews": [
+        {
+          "id": "knight",
+          "label": "게임보이 기사",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  32,
+                  24,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  32,
+                  48,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  32,
+                  72,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  32,
+                  96,
+                  16,
+                  24
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  48,
+                  24,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  48,
+                  48,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  48,
+                  72,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  48,
+                  96,
+                  16,
+                  24
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  64,
+                  24,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  64,
+                  48,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  64,
+                  72,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  64,
+                  96,
+                  16,
+                  24
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  16,
+                  24,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  16,
+                  48,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  16,
+                  72,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/knight/Knight Sprite Sheet 1 Gameboy.zip!Knight Sprite Sheet 1 Gameboy.png",
+                "rect": [
+                  16,
+                  96,
+                  16,
+                  24
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "license_evidence": "License(s): CC0 "
+    },
+    {
+      "id": "ranger",
+      "title": "RPG Character · Ranger (Gameboy)",
+      "author": "Chasersgaming",
+      "directions": 4,
+      "size": "16×24",
+      "description": "후드와 활을 쓰는 레인저. 기사와 같은 규격으로, 동작별·방향별 PNG와 BMP가 나뉘어 있어 꺼내 쓰기 편하다.",
+      "note": "GIF는 Walk 폴더의 EAST/NORTH/SOUTH/WEST PNG 네 장에서 만들었다. 공격·달리기 등은 원본 묶음에서 따로 꺼낼 수 있다.",
+      "motion": "walk",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://opengameart.org/content/rpg-character-ranger-gameboy",
+      "originals": [
+        {
+          "file": "originals/ranger/GB Ranger Files FREE.zip",
+          "url": "https://opengameart.org/sites/default/files/GB%20Ranger%20Files%20FREE.zip",
+          "sha256": "5d517081d8409be7606922d1cdd98f26ab7778169b011da6af8caa473ec587ca",
+          "bytes": 128094
+        }
+      ],
+      "previews": [
+        {
+          "id": "ranger",
+          "label": "게임보이 레인저",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_SOUTH.png",
+                "rect": [
+                  0,
+                  0,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_SOUTH.png",
+                "rect": [
+                  16,
+                  0,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_SOUTH.png",
+                "rect": [
+                  32,
+                  0,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_SOUTH.png",
+                "rect": [
+                  48,
+                  0,
+                  16,
+                  24
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_EAST.png",
+                "rect": [
+                  0,
+                  0,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_EAST.png",
+                "rect": [
+                  16,
+                  0,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_EAST.png",
+                "rect": [
+                  32,
+                  0,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_EAST.png",
+                "rect": [
+                  48,
+                  0,
+                  16,
+                  24
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_NORTH.png",
+                "rect": [
+                  0,
+                  0,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_NORTH.png",
+                "rect": [
+                  16,
+                  0,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_NORTH.png",
+                "rect": [
+                  32,
+                  0,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_NORTH.png",
+                "rect": [
+                  48,
+                  0,
+                  16,
+                  24
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_WEST.png",
+                "rect": [
+                  0,
+                  0,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_WEST.png",
+                "rect": [
+                  16,
+                  0,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_WEST.png",
+                "rect": [
+                  32,
+                  0,
+                  16,
+                  24
+                ]
+              },
+              {
+                "file": "originals/ranger/GB Ranger Files FREE.zip!GB Ranger Files FREE/GB Ranger Free Set PNG/GB Ranger Single Sheets/Walk/GB_Ranger_Walk_WEST.png",
+                "rect": [
+                  48,
+                  0,
+                  16,
+                  24
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "license_evidence": "License(s): CC0 "
+    },
+    {
+      "id": "eight-bit",
+      "title": "8-Bit Character",
+      "author": "Puru32",
+      "directions": 4,
+      "size": "24×16",
+      "description": "앞·뒤·옆 걷기 시트와 보너스 춤 동작을 제공하는 작은 현대풍 캐릭터. 단순한 모험 게임이나 8비트 시제품에 쓰기 좋다.",
+      "note": "앞·뒤·오른쪽 PNG 3장이며 왼쪽은 오른쪽을 좌우 반전했다. 시트 한 장은 24×48, 프레임 한 칸은 24×16이다.",
+      "motion": "walk",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://opengameart.org/content/8-bit-character",
+      "originals": [
+        {
+          "file": "originals/eight-bit/front-sheet.png",
+          "url": "https://opengameart.org/sites/default/files/front-sheet.png",
+          "sha256": "3dfe70e88fcad070c5b01f4c8252ad6a90eb791edbdc316a17d9d3c9b7026225",
+          "bytes": 434
+        },
+        {
+          "file": "originals/eight-bit/back-sheet.png",
+          "url": "https://opengameart.org/sites/default/files/back-sheet.png",
+          "sha256": "a4a556bb05bb226cae8f26fbde706d53e62e95eb13b3196343159707a7d47923",
+          "bytes": 358
+        },
+        {
+          "file": "originals/eight-bit/side-sheet.png",
+          "url": "https://opengameart.org/sites/default/files/side-sheet.png",
+          "sha256": "402d4020aad4ebfb90c44b0308df2a689bd1e4787f69da52bc92218b83a5b00a",
+          "bytes": 396
+        },
+        {
+          "file": "originals/eight-bit/dancebonus.png",
+          "url": "https://opengameart.org/sites/default/files/dancebonus.png",
+          "sha256": "a3764cd562c3783de3f6e98c02c70c6deba2f2bf5eecdefcaf03c485773836de",
+          "bytes": 510
+        }
+      ],
+      "previews": [
+        {
+          "id": "eight-bit",
+          "label": "8비트 소년",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/eight-bit/front-sheet.png",
+                "rect": [
+                  0,
+                  0,
+                  24,
+                  16
+                ]
+              },
+              {
+                "file": "originals/eight-bit/front-sheet.png",
+                "rect": [
+                  0,
+                  16,
+                  24,
+                  16
+                ]
+              },
+              {
+                "file": "originals/eight-bit/front-sheet.png",
+                "rect": [
+                  0,
+                  0,
+                  24,
+                  16
+                ]
+              },
+              {
+                "file": "originals/eight-bit/front-sheet.png",
+                "rect": [
+                  0,
+                  32,
+                  24,
+                  16
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/eight-bit/back-sheet.png",
+                "rect": [
+                  0,
+                  0,
+                  24,
+                  16
+                ]
+              },
+              {
+                "file": "originals/eight-bit/back-sheet.png",
+                "rect": [
+                  0,
+                  16,
+                  24,
+                  16
+                ]
+              },
+              {
+                "file": "originals/eight-bit/back-sheet.png",
+                "rect": [
+                  0,
+                  0,
+                  24,
+                  16
+                ]
+              },
+              {
+                "file": "originals/eight-bit/back-sheet.png",
+                "rect": [
+                  0,
+                  32,
+                  24,
+                  16
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/eight-bit/side-sheet.png",
+                "rect": [
+                  0,
+                  0,
+                  24,
+                  16
+                ]
+              },
+              {
+                "file": "originals/eight-bit/side-sheet.png",
+                "rect": [
+                  0,
+                  16,
+                  24,
+                  16
+                ]
+              },
+              {
+                "file": "originals/eight-bit/side-sheet.png",
+                "rect": [
+                  0,
+                  0,
+                  24,
+                  16
+                ]
+              },
+              {
+                "file": "originals/eight-bit/side-sheet.png",
+                "rect": [
+                  0,
+                  32,
+                  24,
+                  16
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/eight-bit/side-sheet.png",
+                "rect": [
+                  0,
+                  0,
+                  24,
+                  16
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/eight-bit/side-sheet.png",
+                "rect": [
+                  0,
+                  16,
+                  24,
+                  16
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/eight-bit/side-sheet.png",
+                "rect": [
+                  0,
+                  0,
+                  24,
+                  16
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/eight-bit/side-sheet.png",
+                "rect": [
+                  0,
+                  32,
+                  24,
+                  16
+                ],
+                "flip": true
+              }
+            ]
+          }
+        }
+      ],
+      "license_evidence": "License(s): CC0 "
+    },
+    {
+      "id": "puny",
+      "title": "Puny Characters",
+      "author": "Shade",
+      "directions": 8,
+      "size": "32×32 캔버스 · 약 16×16 인물",
+      "description": "전사·궁수·마법사·오크를 같은 화풍으로 모을 수 있는 팩. 대기·걷기·검·활·지팡이 공격·투척·피격·사망을 8방향으로 제공한다.",
+      "note": "오크가 추가된 OGA 첨부판을 수집했다. 32×32 셀 안에 작은 캐릭터가 들어 있으므로 여백을 매 프레임 따로 자르면 위치가 흔들릴 수 있다.",
+      "motion": "walk",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://opengameart.org/content/puny-characters",
+      "originals": [
+        {
+          "file": "originals/puny/puny-charactersorcs_included.zip",
+          "url": "https://opengameart.org/sites/default/files/puny-charactersorcs_included.zip",
+          "sha256": "861ad0bfcff9fcd8cb6bbc8d494783203ed148186c9252943f6841ea9f3eb66b",
+          "bytes": 510693
+        }
+      ],
+      "previews": [
+        {
+          "id": "mage",
+          "label": "청록 마법사",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  64,
+                  0,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  96,
+                  0,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "SE": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  64,
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  96,
+                  32,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  64,
+                  64,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  96,
+                  64,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "NE": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  64,
+                  96,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  96,
+                  96,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  64,
+                  128,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  96,
+                  128,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "NW": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  64,
+                  160,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  96,
+                  160,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  64,
+                  192,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  96,
+                  192,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "SW": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  64,
+                  224,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Mage-Cyan.png",
+                "rect": [
+                  96,
+                  224,
+                  32,
+                  32
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "warrior",
+          "label": "파란 전사",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  64,
+                  0,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  96,
+                  0,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "SE": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  64,
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  96,
+                  32,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  64,
+                  64,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  96,
+                  64,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "NE": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  64,
+                  96,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  96,
+                  96,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  64,
+                  128,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  96,
+                  128,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "NW": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  64,
+                  160,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  96,
+                  160,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  64,
+                  192,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  96,
+                  192,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "SW": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  64,
+                  224,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Warrior-Blue.png",
+                "rect": [
+                  96,
+                  224,
+                  32,
+                  32
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "orc",
+          "label": "오크 전사",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  64,
+                  0,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  96,
+                  0,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "SE": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  64,
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  96,
+                  32,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  64,
+                  64,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  96,
+                  64,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "NE": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  64,
+                  96,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  96,
+                  96,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  64,
+                  128,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  96,
+                  128,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "NW": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  64,
+                  160,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  96,
+                  160,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  64,
+                  192,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  96,
+                  192,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "SW": [
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  64,
+                  224,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/puny/puny-charactersorcs_included.zip!Puny-Characters/Orc-Grunt.png",
+                "rect": [
+                  96,
+                  224,
+                  32,
+                  32
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "license_evidence": "License(s): CC0 "
+    },
+    {
+      "id": "space-guy",
+      "title": "Space Guy",
+      "author": "patvanmackelberg",
+      "directions": 8,
+      "size": "16×16",
+      "description": "흰색과 하늘색 옷의 SF 인물. 8방향 걷기와 방향별 한 칸짜리 사격 자세가 있어 작은 슈팅 게임의 기본 캐릭터로 쓰기 좋다.",
+      "note": "위쪽 8행은 걷기, 아래쪽은 사격 자세다. 사격 자세를 걷기 루프에 섞지 않았다.",
+      "motion": "walk",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://opengameart.org/content/space-guy-8-directional-animated-character-16x16",
+      "originals": [
+        {
+          "file": "originals/space-guy/blitzorion.png",
+          "url": "https://opengameart.org/sites/default/files/blitzorion.png",
+          "sha256": "13745f7232bcb96a4ef227c8b2624a105c4b4bdad6f6fc71678d970436b7727f",
+          "bytes": 4512
+        }
+      ],
+      "previews": [
+        {
+          "id": "space-guy",
+          "label": "SF 캐릭터",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  0,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  16,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  32,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  48,
+                  0,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "SE": [
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  0,
+                  80,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  16,
+                  80,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  32,
+                  80,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  48,
+                  80,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  0,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  16,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  32,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  48,
+                  32,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "NE": [
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  0,
+                  64,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  16,
+                  64,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  32,
+                  64,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  48,
+                  64,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  0,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  16,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  32,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  48,
+                  16,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "NW": [
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  0,
+                  96,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  16,
+                  96,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  32,
+                  96,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  48,
+                  96,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  0,
+                  48,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  16,
+                  48,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  32,
+                  48,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  48,
+                  48,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "SW": [
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  0,
+                  112,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  16,
+                  112,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  32,
+                  112,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/space-guy/blitzorion.png",
+                "rect": [
+                  48,
+                  112,
+                  16,
+                  16
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "license_evidence": "License(s): CC0 "
+    },
+    {
+      "id": "killbot",
+      "title": "Killbot",
+      "author": "patvanmackelberg",
+      "directions": 8,
+      "size": "24×24",
+      "description": "회색 몸과 빨간 눈의 로봇. 8방향 이동과 총을 겨누는 그림이 들어 있어 적 로봇이나 플레이어 유닛으로 쓸 수 있다.",
+      "note": "시트는 192×216이다. 걷기 영역은 왼쪽 4열×8행이고, 마지막 행은 방향별 조준 자세다.",
+      "motion": "walk",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://opengameart.org/content/killbot-8-directional",
+      "originals": [
+        {
+          "file": "originals/killbot/sKillBot.png",
+          "url": "https://opengameart.org/sites/default/files/sKillBot.png",
+          "sha256": "1083fa33318ffe8b711148a59374d986f6bb018124b79f59965fb97ea9e31539",
+          "bytes": 5143
+        }
+      ],
+      "previews": [
+        {
+          "id": "killbot",
+          "label": "킬봇",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  0,
+                  0,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  24,
+                  0,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  48,
+                  0,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  72,
+                  0,
+                  24,
+                  24
+                ]
+              }
+            ],
+            "SE": [
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  0,
+                  168,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  24,
+                  168,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  48,
+                  168,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  72,
+                  168,
+                  24,
+                  24
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  0,
+                  24,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  24,
+                  24,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  48,
+                  24,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  72,
+                  24,
+                  24,
+                  24
+                ]
+              }
+            ],
+            "NE": [
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  0,
+                  144,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  24,
+                  144,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  48,
+                  144,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  72,
+                  144,
+                  24,
+                  24
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  0,
+                  72,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  24,
+                  72,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  48,
+                  72,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  72,
+                  72,
+                  24,
+                  24
+                ]
+              }
+            ],
+            "NW": [
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  0,
+                  96,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  24,
+                  96,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  48,
+                  96,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  72,
+                  96,
+                  24,
+                  24
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  0,
+                  48,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  24,
+                  48,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  48,
+                  48,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  72,
+                  48,
+                  24,
+                  24
+                ]
+              }
+            ],
+            "SW": [
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  0,
+                  120,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  24,
+                  120,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  48,
+                  120,
+                  24,
+                  24
+                ]
+              },
+              {
+                "file": "originals/killbot/sKillBot.png",
+                "rect": [
+                  72,
+                  120,
+                  24,
+                  24
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "license_evidence": "License(s): CC0 "
+    },
+    {
+      "id": "skeleton",
+      "title": "Skeleton and Friends",
+      "author": "patvanmackelberg",
+      "directions": 8,
+      "size": "32×32 · 일부 추가 그림은 별도 크기",
+      "description": "해골과 검은 유령(Shade)의 8방향 걷기, 무기 오버레이와 무장 해골, 플레이어 공격 그림 등을 함께 제공한다. 장비를 따로 겹치는 방식을 살펴보기에도 좋다.",
+      "note": "8방향 GIF는 Skeleton과 Shade만 사용했다. 함께 든 불타는 해골·보스·기타 그림까지 모두 8방향이라고 보지는 않는다. 해골 시트의 녹색·갈색 격자 배경은 미리보기에서 제거했다.",
+      "motion": "walk",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://opengameart.org/content/skeleton-and-friends-8-directional",
+      "originals": [
+        {
+          "file": "originals/skeleton/Skeleton.png",
+          "url": "https://opengameart.org/sites/default/files/Skeleton.png",
+          "sha256": "69d4b97c7a73bad833eff54465079f57039550b7f4dfb4938c7dd02e37894af4",
+          "bytes": 4777
+        },
+        {
+          "file": "originals/skeleton/Shade.png",
+          "url": "https://opengameart.org/sites/default/files/Shade.png",
+          "sha256": "5b3540e60618846e28fe74e7c30e2738214362639caf49df8aa05816fdd232e1",
+          "bytes": 3626
+        },
+        {
+          "file": "originals/skeleton/Fire Skull.png",
+          "url": "https://opengameart.org/sites/default/files/Fire%20Skull.png",
+          "sha256": "113a2cb23063c8991348720846fce1b940c7b46a901bdc21d708546841bc6808",
+          "bytes": 2827
+        },
+        {
+          "file": "originals/skeleton/Skeleton Weapon Overlay.png",
+          "url": "https://opengameart.org/sites/default/files/Skeleton%20Weapon%20Overlay.png",
+          "sha256": "9940e3162cbb8a0baef5739e9a9f12709d686f63dcdf8fe7944cc5fe51f46a90",
+          "bytes": 1634
+        },
+        {
+          "file": "originals/skeleton/Skeleton With Weapon.png",
+          "url": "https://opengameart.org/sites/default/files/Skeleton%20With%20Weapon.png",
+          "sha256": "03768c46a93be91cf034d053be37295852b8958ff81b426489138634e516a79d",
+          "bytes": 5413
+        },
+        {
+          "file": "originals/skeleton/Skeleton Rise Animation.png",
+          "url": "https://opengameart.org/sites/default/files/Skeleton%20Rise%20Animation.png",
+          "sha256": "7986e2f2c2daef06bff788238cdd11e9deb31851d37f830070332c2212d1e843",
+          "bytes": 7291
+        },
+        {
+          "file": "originals/skeleton/Player Attack + Sword.png",
+          "url": "https://opengameart.org/sites/default/files/Player%20Attack%20%2B%20Sword.png",
+          "sha256": "e2037bec449ae3a9f78127e886ad634a46dde85f0c7b15ca624bbd6a3d883121",
+          "bytes": 14636
+        },
+        {
+          "file": "originals/skeleton/Gate Keeper Idle.png",
+          "url": "https://opengameart.org/sites/default/files/Gate%20Keeper%20Idle.png",
+          "sha256": "8d14b57017c183488ec72cedc57a60da12485fcc028e9522e31ec35f311ec174",
+          "bytes": 3820
+        },
+        {
+          "file": "originals/skeleton/Gate Keeper Raise staff.png",
+          "url": "https://opengameart.org/sites/default/files/Gate%20Keeper%20Raise%20staff.png",
+          "sha256": "92e6141e30ce57e3c8b6e30e072533b0141d42afcea495d5ddf25542614f98e0",
+          "bytes": 10740
+        }
+      ],
+      "previews": [
+        {
+          "id": "skeleton",
+          "label": "해골",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  0,
+                  0,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  32,
+                  0,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  64,
+                  0,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  96,
+                  0,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "SE": [
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  0,
+                  160,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  32,
+                  160,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  64,
+                  160,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  96,
+                  160,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  0,
+                  64,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  32,
+                  64,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  64,
+                  64,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  96,
+                  64,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "NE": [
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  0,
+                  128,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  32,
+                  128,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  64,
+                  128,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  96,
+                  128,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  0,
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  32,
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  64,
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  96,
+                  32,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "NW": [
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  0,
+                  192,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  32,
+                  192,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  64,
+                  192,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  96,
+                  192,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  0,
+                  96,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  32,
+                  96,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  64,
+                  96,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  96,
+                  96,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "SW": [
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  0,
+                  224,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  32,
+                  224,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  64,
+                  224,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Skeleton.png",
+                "rect": [
+                  96,
+                  224,
+                  32,
+                  32
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "shade",
+          "label": "검은 유령",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  0,
+                  0,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  32,
+                  0,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  64,
+                  0,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  96,
+                  0,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "SE": [
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  0,
+                  160,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  32,
+                  160,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  64,
+                  160,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  96,
+                  160,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  0,
+                  64,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  32,
+                  64,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  64,
+                  64,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  96,
+                  64,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "NE": [
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  0,
+                  128,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  32,
+                  128,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  64,
+                  128,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  96,
+                  128,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  0,
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  32,
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  64,
+                  32,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  96,
+                  32,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "NW": [
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  0,
+                  192,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  32,
+                  192,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  64,
+                  192,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  96,
+                  192,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  0,
+                  96,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  32,
+                  96,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  64,
+                  96,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  96,
+                  96,
+                  32,
+                  32
+                ]
+              }
+            ],
+            "SW": [
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  0,
+                  224,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  32,
+                  224,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  64,
+                  224,
+                  32,
+                  32
+                ]
+              },
+              {
+                "file": "originals/skeleton/Shade.png",
+                "rect": [
+                  96,
+                  224,
+                  32,
+                  32
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "license_evidence": "License(s): CC0 "
+    },
+    {
+      "id": "human-base",
+      "title": "RPG Sprite · Human Male",
+      "author": "TheNess",
+      "directions": 8,
+      "size": "16×16",
+      "description": "옷을 덧그리기 좋은 작은 인간 베이스. 정면·옆·후면·대각선 걷기와 펀치에 가까운 추가 자세가 들어 있다.",
+      "note": "원본은 S·E·N·SE·NE 다섯 방향을 그린 시트다. W·SW·NW를 좌우 반전해서 8방향 미리보기를 만들었다. 마지막 두 열의 추가 자세와 아래 저자 표시는 걷기에서 뺐다.",
+      "motion": "walk",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://opengameart.org/content/rpg-sprite-8-direction-human-male-16x16",
+      "originals": [
+        {
+          "file": "originals/human-base/sprite_oga.png",
+          "url": "https://opengameart.org/sites/default/files/sprite_oga.png",
+          "sha256": "73e9dd026aad920fd37594016f90a2888bd6da3b43e717e91349c28122c47b7e",
+          "bytes": 23364
+        }
+      ],
+      "previews": [
+        {
+          "id": "human-base",
+          "label": "인간 베이스",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  0,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  16,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  32,
+                  0,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  48,
+                  0,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  0,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  16,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  32,
+                  16,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  48,
+                  16,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  0,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  16,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  32,
+                  32,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  48,
+                  32,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "SE": [
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  0,
+                  48,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  16,
+                  48,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  32,
+                  48,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  48,
+                  48,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "NE": [
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  0,
+                  64,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  16,
+                  64,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  32,
+                  64,
+                  16,
+                  16
+                ]
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  48,
+                  64,
+                  16,
+                  16
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  0,
+                  16,
+                  16,
+                  16
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  16,
+                  16,
+                  16,
+                  16
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  32,
+                  16,
+                  16,
+                  16
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  48,
+                  16,
+                  16,
+                  16
+                ],
+                "flip": true
+              }
+            ],
+            "SW": [
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  0,
+                  48,
+                  16,
+                  16
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  16,
+                  48,
+                  16,
+                  16
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  32,
+                  48,
+                  16,
+                  16
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  48,
+                  48,
+                  16,
+                  16
+                ],
+                "flip": true
+              }
+            ],
+            "NW": [
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  0,
+                  64,
+                  16,
+                  16
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  16,
+                  64,
+                  16,
+                  16
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  32,
+                  64,
+                  16,
+                  16
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/human-base/sprite_oga.png",
+                "rect": [
+                  48,
+                  64,
+                  16,
+                  16
+                ],
+                "flip": true
+              }
+            ]
+          }
+        }
+      ],
+      "license_evidence": "License(s): CC0 "
+    },
+    {
+      "id": "square",
+      "title": "Hand-Drawn Square Characters",
+      "author": "rgsdev · Raphael Gonçalves",
+      "directions": 8,
+      "size": "128×128",
+      "description": "기본형·영웅·해골·몬스터 네 명을 손그림으로 만든 팩. 픽셀아트 대신 부드러운 윤곽의 캐릭터가 필요할 때 고를 수 있다.",
+      "note": "파일명 idle의 4프레임 바운스를 재생했다(제작자는 Idle/Walk로 소개). 오른쪽을 포함한 다섯 방향이 들어 있고 왼쪽 세 방향은 반전해 8방향으로 구성했다. 점프·사망 효과·총도 별도로 포함된다.",
+      "motion": "idle",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://opengameart.org/content/hand-drawn-square-characters-animated-8-directions-top-down-free-cc0",
+      "originals": [
+        {
+          "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip",
+          "url": "https://opengameart.org/sites/default/files/square_characters_animated_8_directions_top_down_free_cc0.zip",
+          "sha256": "19ff6932e32f49d7e8c755515e27f9a70e5e4319ab0fb860cf8aef6bc92cb2dd",
+          "bytes": 2787603
+        }
+      ],
+      "previews": [
+        {
+          "id": "base",
+          "label": "기본형",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_down (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_down (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_down (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_down (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "SE": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_down_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_down_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_down_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_down_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "NE": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_up_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_up_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_up_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_up_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_up (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_up (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_up (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_up (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              }
+            ],
+            "SW": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_down_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_down_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_down_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_down_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              }
+            ],
+            "NW": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_up_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_up_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_up_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Base Character/idle_up_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "hero",
+          "label": "영웅",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_down (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_down (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_down (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_down (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "SE": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_down_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_down_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_down_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_down_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "NE": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_up_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_up_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_up_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_up_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_up (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_up (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_up (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_up (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              }
+            ],
+            "SW": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_down_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_down_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_down_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_down_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              }
+            ],
+            "NW": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_up_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_up_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_up_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Hero/idle_up_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "square-skeleton",
+          "label": "해골",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_down (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_down (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_down (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_down (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "SE": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_down_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_down_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_down_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_down_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "NE": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_up_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_up_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_up_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_up_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_up (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_up (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_up (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_up (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              }
+            ],
+            "SW": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_down_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_down_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_down_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_down_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              }
+            ],
+            "NW": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_up_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_up_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_up_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Skeleton/idle_up_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "monster",
+          "label": "몬스터",
+          "duration_ms": 140,
+          "sequences": {
+            "S": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_down (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_down (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_down (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_down (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "SE": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_down_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_down_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_down_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_down_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "E": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "NE": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_up_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_up_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_up_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_up_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "N": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_up (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_up (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_up (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_up (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ]
+              }
+            ],
+            "W": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              }
+            ],
+            "SW": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_down_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_down_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_down_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_down_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              }
+            ],
+            "NW": [
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_up_right (1).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_up_right (2).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_up_right (3).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              },
+              {
+                "file": "originals/square/square_characters_animated_8_directions_top_down_free_cc0.zip!Square characters animated 8 directions top down free cc0/Sprites/Monster/idle_up_right (4).png",
+                "rect": [
+                  0,
+                  0,
+                  128,
+                  128
+                ],
+                "flip": true
+              }
+            ]
+          }
+        }
+      ],
+      "license_evidence": "License(s): CC0 "
+    }
+  ]
+}
