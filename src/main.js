@@ -1,6 +1,7 @@
-import { rememberPostScroll } from './post-scroll.js';
+import { keepSectionLinksOutOfHistory, rememberPostScroll } from './post-scroll.js';
 
 rememberPostScroll();
+keepSectionLinksOutOfHistory();
 
 const themeKey = "nyimpe-theme";
 const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)");

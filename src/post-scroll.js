@@ -1,3 +1,16 @@
+// Table-of-contents jumps replace the current entry so Back (or a mobile swipe) leaves the post.
+export function keepSectionLinksOutOfHistory() {
+  document.querySelector('main')?.addEventListener('click', (event) => {
+    if (event.defaultPrevented || event.button !== 0
+      || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const link = event.target.closest?.('a[href^="#"]');
+    if (!link || link.hash.length < 2) return;
+    event.preventDefault();
+    // A replaced fragment navigation still scrolls, opens <details> and updates :target natively.
+    location.replace(link.hash);
+  });
+}
+
 // Keep reading positions on this browser, independently for each post/filter URL.
 export function rememberPostScroll() {
   if (!/^\/posts\/[^/]+\/(?:index\.html)?$/.test(location.pathname)

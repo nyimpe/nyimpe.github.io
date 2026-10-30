@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
 
 const source = readFileSync(new URL('../src/post-scroll.js', import.meta.url), 'utf8')
-  .replace('export function', 'function');
+  .replaceAll('export function', 'function');
 
 function setup({ path = '/posts/game-feel/', search = '', hash = '', saved,
   denied = false, loading = false } = {}) {
@@ -132,6 +132,27 @@ const tests = {
     s.flushTimers();
     s.event(s.window, 'pagehide');
   },
+};
+
+tests['replace history for section links only'] = async () => {
+  let onClick;
+  const replaced = [];
+  runInNewContext(`${source}\nkeepSectionLinksOutOfHistory();`, {
+    document: { querySelector: () => ({ addEventListener: (type, fn) => { onClick = fn; } }) },
+    location: { replace: (hash) => replaced.push(hash) },
+  });
+  const click = (link, fields = {}) => {
+    const e = { button: 0, target: { closest: () => link }, defaultPrevented: false,
+      preventDefault() { this.defaultPrevented = true; }, ...fields };
+    onClick(e);
+    return e.defaultPrevented;
+  };
+  assert.equal(click({ hash: '#chapter-4' }), true);
+  assert.equal(click({ hash: '#chapter-4' }, { metaKey: true }), false);
+  assert.equal(click({ hash: '#chapter-4' }, { button: 1 }), false);
+  assert.equal(click({ hash: '' }), false);
+  assert.equal(click(null), false);
+  assert.deepEqual(replaced, ['#chapter-4']);
 };
 
 for (const [name, test] of Object.entries(tests)) {
