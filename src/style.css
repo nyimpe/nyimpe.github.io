@@ -157,6 +157,15 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .lenses-book .book-detailed-contents .toc-minor { padding-left: 1em; font-size: .9em; }
 .lenses-book .book-detailed-contents span { color: var(--muted); font-size: .8em; }
 .lenses-book .book-colophon { margin-top: 4em; padding-top: 1em; border-top: 1px solid var(--border); font-size: .8em; }
+.feel-book .book-lens-directory .toc-1 { margin-top: 1em; font-weight: 600; }
+.feel-book .book-lens-directory .toc-2 { padding-left: 1em; font-size: .9em; }
+.feel-book .book-figure a { display: block; }
+.feel-book .book-figure img { width: 100%; height: auto; }
+.feel-book .book-cover { max-width: 22rem; }
+.feel-book .book-page h3 { scroll-margin-top: 1em; }
+.feel-book .book-footnote { color: var(--muted); font-size: .8em; }
+.feel-book .book-index-original { margin: .25em 0 1.25em; color: var(--muted); font-size: .75em; }
+.feel-book .book-index-original summary { cursor: pointer; }
 
 @media print {
   .lenses-book .book-page-number a { display: none; }
