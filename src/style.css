@@ -131,6 +131,39 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .book-figure img { display: block; width: auto; max-width: 100%; height: auto; margin-inline: auto; border: 1px solid var(--soft-border); background: #fff; }
 .book-figure figcaption { margin-top: .45em; color: var(--muted); font-size: .75em; text-align: center; }
 
+.lenses-book .book-kicker { margin: 0; color: var(--muted); font-size: .8em; letter-spacing: .08em; }
+.lenses-book .book-subtitle { margin: .25em 0 1em; font-size: 1.1em; }
+.lenses-book .book-reading-guide { margin-top: 1.5em; }
+.lenses-book .book-toc { margin-bottom: 1.25em; scroll-margin-top: 1em; }
+.lenses-book .book-lens-directory { margin: 1em 0 1.5em; padding: 1em 1.25em; border: 1px solid var(--soft-border); }
+.lenses-book .book-lens-directory summary { cursor: pointer; font-weight: 600; }
+.lenses-book .book-lens-directory ol { columns: 2 15em; column-gap: 2em; list-style: none; padding: 0; }
+.lenses-book .book-lens-directory li { break-inside: avoid; margin: .35em 0; }
+.lenses-book .book-lens-directory span { display: inline-block; width: 3ch; color: var(--muted); font-variant-numeric: tabular-nums; }
+.lenses-book .book-terminology { color: var(--muted); font-size: .8em; }
+.lenses-book .book-page[id] { margin-top: 2em; padding-top: 1em; border-top: 0; }
+.lenses-book .book-page:has(> h2) { margin-top: 4em; padding-top: 2em; border-top: 1px solid var(--border); }
+.lenses-book .book-page-number a { margin-left: .8em; }
+.lenses-book .book-page h2 { line-height: 1.45; }
+.lenses-book .lens-heading { margin-top: 2.5em; padding: .7em .85em; border-left: 3px solid var(--link); background: var(--surface); scroll-margin-top: 1em; }
+.lenses-book .lens-heading span { display: block; margin-bottom: .25em; color: var(--muted); font-size: .7em; }
+.lenses-book .book-questions { padding-left: 1.4em; }
+.lenses-book .book-questions li { margin-block: .5em; }
+.lenses-book .figure-translation { margin: .4em 0; color: var(--muted); font-size: .8em; white-space: pre-line; }
+.lenses-book .book-reference-original { margin-top: -.5em; color: var(--muted); font-size: .75em; }
+.lenses-book .book-source-note { color: var(--muted); font-size: .8em; }
+.lenses-book .book-detailed-contents p { margin-block: .4em; }
+.lenses-book .book-detailed-contents .toc-major { margin-top: 1.5em; font-weight: 600; }
+.lenses-book .book-detailed-contents .toc-minor { padding-left: 1em; font-size: .9em; }
+.lenses-book .book-detailed-contents span { color: var(--muted); font-size: .8em; }
+.lenses-book .book-colophon { margin-top: 4em; padding-top: 1em; border-top: 1px solid var(--border); font-size: .8em; }
+
+@media print {
+  .lenses-book .book-page-number a { display: none; }
+  .lenses-book .book-page:has(> h2) { break-before: page; }
+  .lenses-book .book-figure { break-inside: avoid; }
+}
+
 @media (max-width: 1055px) {
   .site-header { padding-right: 48px; min-height: 56px; }
   .site-cat { left: auto; right: 0; width: 32px; height: 56px; }
