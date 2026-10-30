@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PC와 모바일에서 포스트를 읽던 위치를 자동으로 저장하고 다시 방문하면 이어 읽을 수 있습니다.">
+    <title>읽던 위치에서 이어 읽기 · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/reading-position/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="읽던 위치에서 이어 읽기">
+    <meta property="og:description" content="포스트별 읽던 위치 자동 저장과 복원 기능 안내.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/reading-position/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=writing" aria-label="글쓰기" title="글쓰기"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post">
+        <header class="post-header">
+          <h1>읽던 위치에서 이어 읽기</h1>
+          <time datetime="2026-10-30">2026.10.30</time>
+          <p>긴 글을 나누어 읽기 편하도록 포스트에 읽던 위치 자동 저장을 추가했습니다. PC와 모바일에서 별도 설정 없이 사용할 수 있습니다.</p>
+        </header>
+        <section id="continue-reading">
+          <h2>다시 열면 읽던 곳으로</h2>
+          <p>포스트 본문을 스크롤하면 현재 위치가 자동으로 저장됩니다. 다른 페이지를 보고 돌아오거나, 글을 새로 열거나, 새로고침하면 마지막으로 읽던 위치에서 이어 볼 수 있습니다.</p>
+          <p>여러 글을 번갈아 읽어도 위치는 각각 따로 기억합니다. 처음부터 다시 읽고 싶다면 맨 위로 스크롤하면 됩니다. 이후에는 맨 위가 새로운 읽기 위치로 저장됩니다.</p>
+        </section>
+        <section id="section-links">
+          <h2>목차와 바로가기는 그대로</h2>
+          <p>목차에서 특정 장을 선택하거나 절 바로가기 링크로 들어왔을 때는 링크가 가리키는 곳으로 이동합니다. 저장된 위치가 목차 이동을 방해하지 않습니다.</p>
+          <p>이미지 등 페이지의 기본 요소가 준비된 뒤 읽던 위치로 이동합니다. 기다리는 동안 직접 스크롤하거나 화면을 터치하고 키보드를 조작했다면 그 조작을 우선합니다.</p>
+        </section>
+        <section id="mobile">
+          <h2>모바일에서도 자동 저장</h2>
+          <p>스마트폰에서 손가락으로 스크롤할 때도 같은 방식으로 저장됩니다. 다른 탭이나 앱으로 전환해 페이지가 숨겨질 때, 페이지에서 나갈 때에도 현재 위치를 저장합니다.</p>
+          <p>게임 도감처럼 아래로 내릴수록 목록이 늘어나는 포스트는 읽던 위치까지 필요한 항목을 먼저 표시한 뒤 이동합니다. 도감의 검색·필터가 다른 주소는 위치를 따로 기억합니다.</p>
+        </section>
+        <section id="storage">
+          <h2>사용 중인 브라우저에 보관</h2>
+          <p>읽던 위치는 지금 사용하는 기기와 브라우저에 저장됩니다. PC에서 읽던 위치가 스마트폰으로 동기화되지는 않습니다. 다른 브라우저나 기기에서는 각각의 읽기 위치를 기억합니다.</p>
+          <p>브라우저의 사이트 데이터를 지우면 저장된 위치도 사라집니다. 저장소 사용이 차단된 환경에서는 위치를 보관하지 못할 수 있지만 본문과 목차는 계속 사용할 수 있습니다.</p>
+        </section>
+        <p><a href="/posts/game-feel/">Game Feel 읽기</a> · <a href="/posts/game-design-theory-and-practice/">Game Design: Theory &amp; Practice 읽기</a></p>
+      </article>
+    </main>
+    <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>

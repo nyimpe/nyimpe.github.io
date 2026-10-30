@@ -99,3 +99,8 @@ for (const card of cards) {
 }
 readLocation();
 filter.hidden = false;
+
+window.addEventListener('post-scroll-restore', ({ detail }) => {
+  while (renderedCount < matches.length
+    && document.documentElement.scrollHeight < detail.top + window.innerHeight) loadMore();
+});

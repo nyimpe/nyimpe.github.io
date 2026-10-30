@@ -1,3 +1,7 @@
+import { rememberPostScroll } from './post-scroll.js';
+
+rememberPostScroll();
+
 const themeKey = "nyimpe-theme";
 const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)");
 const toggle = document.getElementById("theme-toggle");
