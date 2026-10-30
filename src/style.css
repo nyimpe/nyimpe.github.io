@@ -109,6 +109,28 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .research-post .creature-source { font-size: .75em; color: var(--muted); }
 .research-post .post-back { margin-top: 3em; }
 
+.book-post { max-width: 46rem; margin-inline: auto; }
+.book-post .book-byline { margin: .5em 0 0; color: var(--muted); }
+.book-post .book-note { margin: 1.25em 0 0; padding: .85em 1em; border-left: 3px solid var(--border); background: var(--surface); font-size: .875em; }
+.book-toc { margin: 2.5em 0 4em; padding: 1em 1.25em; border: 1px solid var(--soft-border); background: var(--surface); }
+.book-toc h2 { margin: 0 0 .75em; font-size: 1.25em; }
+.book-toc ol { columns: 2 16em; column-gap: 2.5em; margin: 0; padding-left: 1.5em; }
+.book-toc li { break-inside: avoid; margin: .3em 0; }
+.book-translation { line-height: 1.9; }
+.book-page { position: relative; padding-top: 1px; scroll-margin-top: 1em; }
+.book-page[id] { margin-top: 5em; padding-top: 2em; border-top: 1px solid var(--border); }
+.book-page:first-child { margin-top: 0; border-top: 0; }
+.book-page h2 { margin-top: 1.75em; font-size: 2em; }
+.book-page h3 { margin-top: 2em; font-size: 1.35em; }
+.book-page h4 { margin-top: 1.75em; font-size: 1.1em; }
+.book-page-number { margin: 2.5em 0 .5em; color: var(--muted); font-size: .7em; text-align: right; font-variant-numeric: tabular-nums; }
+.book-page[id] > .book-page-number { margin-top: 0; }
+.book-callout { margin: 1.5em 0; padding: .8em 1em; border-block: 1px solid var(--soft-border); font-weight: 600; }
+.book-lead { color: var(--muted); font-size: 1.05em; }
+.book-figure { margin: 2em auto; }
+.book-figure img { display: block; width: auto; max-width: 100%; height: auto; margin-inline: auto; border: 1px solid var(--soft-border); background: #fff; }
+.book-figure figcaption { margin-top: .45em; color: var(--muted); font-size: .75em; text-align: center; }
+
 @media (max-width: 1055px) {
   .site-header { padding-right: 48px; min-height: 56px; }
   .site-cat { left: auto; right: 0; width: 32px; height: 56px; }
@@ -123,6 +145,9 @@ hr { border: 0; border-top: 1px solid var(--border); }
   .post-list a { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
   .post-list time { font-size: .75em; }
   .research-post .creature-list { grid-template-columns: minmax(0, 1fr); }
+  .book-toc ol { columns: 1; }
+  .book-translation { line-height: 1.75; }
+  .book-page h2 { font-size: 1.65em; }
 }
 
 .research-post h3 { font-size: 1.2em; line-height: 1.4; margin-top: 1.75em; }
