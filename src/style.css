@@ -166,6 +166,16 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .feel-book .book-footnote { color: var(--muted); font-size: .8em; }
 .feel-book .book-index-original { margin: .25em 0 1.25em; color: var(--muted); font-size: .75em; }
 .feel-book .book-index-original summary { cursor: pointer; }
+.theory-book .book-lens-directory .toc-1 { margin-top: 1em; font-weight: 600; }
+.theory-book .book-lens-directory .toc-2 { padding-left: 1em; font-size: .9em; }
+.theory-book .book-lens-directory .toc-3 { padding-left: 2em; font-size: .85em; }
+.theory-book .book-figure a { display: block; }
+.theory-book .book-figure img { width: 100%; height: auto; }
+.theory-book .book-cover { max-width: 22rem; }
+.theory-book .book-page h3 { scroll-margin-top: 1em; }
+.theory-book .book-interview-question { margin-top: 1.5em; }
+.theory-book .book-index-original { margin: .25em 0 1.25em; color: var(--muted); font-size: .75em; }
+.theory-book .book-index-original summary { cursor: pointer; }
 
 @media print {
   .lenses-book .book-page-number a { display: none; }
