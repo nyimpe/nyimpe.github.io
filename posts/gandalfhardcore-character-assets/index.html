@@ -11,6 +11,7 @@
     <meta property="og:title" content="GandalfHardcore 캐릭터 에셋 팩">
     <meta property="og:description" content="18개 ZIP에 담긴 캐릭터 레이어와 부가 에셋의 구성, 라이선스, 게임 활용 예시.">
     <meta property="og:url" content="https://nyimpe.github.io/posts/gandalfhardcore-character-assets/">
+    <meta property="og:image" content="https://nyimpe.github.io/images/gandalfhardcore-assets/character-combinations.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/src/style.css">
     <script type="module" src="/src/main.js"></script>
@@ -49,10 +50,19 @@
         </div>
         <p class="table-note">ZIP 내부 파일 기준이다. 홍보 이미지와 남녀 중복 버전을 포함한 수치이며, 폴더 전체 용량은 약 3.4MB다.</p>
 
+        <figure class="asset-figure">
+          <div class="asset-preview-scroll">
+            <a href="/images/gandalfhardcore-assets/character-combinations.png" target="_blank" rel="noopener noreferrer" aria-label="레이어 조합 캐릭터 프리뷰 크게 보기">
+              <img src="/images/gandalfhardcore-assets/character-combinations.png" width="1200" height="720" loading="eager" decoding="async" alt="피부, 의상, 머리, 모자, 장비 레이어를 조합한 광부, 마녀, 농부, 방패 여전사 캐릭터">
+            </a>
+          </div>
+          <figcaption>실제 로컬 에셋을 같은 프레임 좌표에 겹친 조합 예시. 모바일에서는 좌우로 밀거나 이미지를 눌러 크게 볼 수 있다.</figcaption>
+        </figure>
+
         <aside class="asset-note asset-license" aria-labelledby="license-title">
           <h2 id="license-title">무료지만, 자유 재배포 에셋은 아니다</h2>
           <p>공식 페이지와 동봉된 README의 라이선스는 상업·비상업 게임 및 프로젝트 사용, 필요한 수정, 지정 웹사이트에 결과물 전시를 허용한다. 반면 에셋의 재판매·재패키징·재배포, AI 학습, NFT·암호화폐·Web3, 게임 개발 도구 포함, 인쇄물 사용은 금지한다.</p>
-          <p>따라서 일반적인 의미의 오픈소스라기보다 <strong>무료 배포되는 커스텀 라이선스 에셋</strong>으로 보는 편이 정확하다. 게임에는 사용할 수 있지만 ZIP이나 원본 스프라이트를 다시 배포하면 안 된다. 아래 목록도 원본 파일을 사이트에 복사하지 않고 구성만 기록했다.</p>
+          <p>따라서 일반적인 의미의 오픈소스라기보다 <strong>무료 배포되는 커스텀 라이선스 에셋</strong>으로 보는 편이 정확하다. 게임에는 사용할 수 있지만 ZIP이나 원본 스프라이트를 다시 배포하면 안 된다. 이 페이지에는 원본 시트 대신 실제 에셋을 축소·합성한 전시용 프리뷰만 게시했다.</p>
         </aside>
 
         <nav class="post-toc" aria-label="글 목차">
@@ -177,6 +187,14 @@
         <section id="sheet">
           <h2>스프라이트 시트 구조</h2>
           <p>기본 캐릭터와 옷·머리·장비 레이어는 대부분 800×448 PNG다. 한 프레임이 80×64이므로 가로 10칸, 세로 7줄의 같은 격자를 공유한다. 투명 배경 위에서 동일한 프레임 좌표를 겹치면 캐릭터가 조립된다.</p>
+          <figure class="asset-figure">
+            <div class="asset-preview-scroll">
+              <a href="/images/gandalfhardcore-assets/animation-poses.png" target="_blank" rel="noopener noreferrer" aria-label="7개 애니메이션 포즈 프리뷰 크게 보기">
+                <img src="/images/gandalfhardcore-assets/animation-poses.png" width="1200" height="540" loading="lazy" decoding="async" alt="같은 캐릭터 레이어로 만든 대기, 걷기, 달리기, 점프, 낙하, 공격, 사망 포즈">
+              </a>
+            </div>
+            <figcaption>같은 조합을 유지한 채 프레임 행만 바꾼 7개 동작의 실제 모습.</figcaption>
+          </figure>
           <div class="table-scroll">
             <table>
               <caption>공식 페이지에 안내된 7개 애니메이션</caption>
@@ -203,6 +221,14 @@
 
         <section id="examples">
           <h2>어떤 식으로 활용할 수 있나</h2>
+          <figure class="asset-figure">
+            <div class="asset-preview-scroll">
+              <a href="/images/gandalfhardcore-assets/extras-overview.png" target="_blank" rel="noopener noreferrer" aria-label="NPC와 부가 에셋 프리뷰 크게 보기">
+                <img src="/images/gandalfhardcore-assets/extras-overview.png" width="1200" height="900" loading="lazy" decoding="async" alt="여신 NPC 초상화, 슬라임, 여우 펫, 위습, 코인, 하트 이펙트 에셋">
+              </a>
+            </div>
+            <figcaption>NPC 초상화, 적, 펫, 보상 아이콘과 상태 이펙트. 원본 시트는 공개하지 않고 화면 표시용으로 축소했다.</figcaption>
+          </figure>
           <div class="asset-examples">
             <section>
               <h3>1. 꾸밀 수 있는 플레이어 캐릭터</h3>
