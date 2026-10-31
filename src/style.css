@@ -245,6 +245,12 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .asset-post .asset-preview-scroll a { display: block; }
 .asset-post .asset-preview-scroll img { display: block; width: 100%; height: auto; }
 .asset-post .asset-figure figcaption { margin-top: .5em; color: var(--muted); font-size: .75em; }
+.asset-post .asset-gallery { margin-top: 5em; padding-top: 1em; border-top: 1px solid var(--border); }
+.asset-post .asset-gallery-index { columns: 3 10em; column-gap: 2em; margin: 1.5em 0 3em; padding: 1em 1em 1em 2.5em; border: 1px solid var(--soft-border); background: var(--surface); font-size: .875em; }
+.asset-post .asset-gallery-index li { break-inside: avoid; margin: .25em 0; }
+.asset-post .asset-contact-sheet { scroll-margin-top: 1em; margin: 3em 0; }
+.asset-post .asset-contact-sheet h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 1em; margin: 0 0 .6em; }
+.asset-post .asset-contact-sheet h3 small { color: var(--muted); font-size: .65em; font-weight: normal; white-space: nowrap; }
 .asset-post .asset-examples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5em; }
 .asset-post .asset-examples section { min-width: 0; padding-top: .25em; border-top: 1px solid var(--soft-border); }
 .asset-post .asset-examples h3 { margin-top: .75em; }
@@ -254,6 +260,8 @@ hr { border: 0; border-top: 1px solid var(--border); }
 @media (max-width: 540px) {
   .asset-post .asset-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .asset-post .asset-preview-scroll img { width: 720px; max-width: none; }
+  .asset-post .asset-contact-sheet .asset-preview-scroll img { width: 900px; }
+  .asset-post .asset-gallery-index { columns: 2 8em; }
   .asset-post .asset-examples { grid-template-columns: minmax(0, 1fr); gap: .75em; }
 }
 
