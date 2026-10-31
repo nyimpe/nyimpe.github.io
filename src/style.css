@@ -232,6 +232,25 @@ hr { border: 0; border-top: 1px solid var(--border); }
 .design-post .io-common h3 { margin-top: .75em; }
 .design-post .io-common li { margin: .35em 0; }
 
+.asset-post .asset-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; margin: 2em 0 .5em; border: 1px solid var(--soft-border); background: var(--soft-border); }
+.asset-post .asset-summary div { padding: 1em .75em; background: var(--surface); text-align: center; }
+.asset-post .asset-summary strong { display: block; font-size: 1.5em; font-variant-numeric: tabular-nums; }
+.asset-post .asset-summary span { display: block; color: var(--muted); font-size: .75em; }
+.asset-post .asset-note { margin: 2.5em 0; padding: .25em 1em .5em; border: 1px solid var(--soft-border); background: var(--surface); }
+.asset-post .asset-note h2 { margin-top: .75em; font-size: 1.25em; }
+.asset-post .asset-license { border-left: 3px solid var(--border); }
+.asset-post .asset-catalog th:first-child { min-width: 12em; }
+.asset-post .asset-examples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5em; }
+.asset-post .asset-examples section { min-width: 0; padding-top: .25em; border-top: 1px solid var(--soft-border); }
+.asset-post .asset-examples h3 { margin-top: .75em; }
+.asset-post .asset-steps li { margin: .75em 0; padding-left: .25em; }
+.asset-post .asset-source { margin-top: 2em; padding-top: 1em; border-top: 1px solid var(--soft-border); color: var(--muted); font-size: .8125em; }
+
+@media (max-width: 540px) {
+  .asset-post .asset-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .asset-post .asset-examples { grid-template-columns: minmax(0, 1fr); gap: .75em; }
+}
+
 .puzzle-post .puzzle-index { margin-bottom: 2em; padding: .75em 1em; border: 1px solid var(--soft-border); background: var(--surface); }
 .puzzle-post .puzzle-index summary { cursor: pointer; font-weight: bold; }
 .puzzle-post .puzzle-index ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35em 1.5em; margin: 1em 0 .25em; padding-left: 1.5em; font-size: .875em; }
