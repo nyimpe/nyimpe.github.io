@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Survive as long as you can while dodging waves of enemies. Attacks are automatic. Defeat enemies and collect experience to level up.">
+    <title>Vampire Survivor Lite · nyimpe</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=design" aria-label="Game Design" title="Game Design"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#design"></use></svg></a>
+          <a href="/?category=note" aria-label="Note" title="Note"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="Orange and white pixel-art cat">
+    </header>
+    <main id="content">
+      <article>
+        <header class="post-header">
+          <h1>Vampire Survivor Lite</h1>
+          <time datetime="2026-07-10">2026.07.10</time>
+        </header>
+        <p>Survive as long as you can while dodging waves of enemies. Attacks are automatic. Defeat enemies and collect experience to level up.</p>
+        <p class="game-instructions">Move with the <kbd>Arrow keys</kbd> or <kbd>W A S D</kbd>. On touch screens or with a mouse, hold and drag in the direction you want to move.</p>
+        <div class="game-stage landscape" data-game="vampire-survivor" data-state="idle">
+          <div id="game-container" class="game-container" tabindex="0" role="region" aria-label="Vampire Survivor Lite game screen" aria-describedby="keyboard-help"></div>
+          <div class="game-placeholder">
+            <span class="game-symbol" aria-hidden="true">🧛</span>
+            <p class="game-status" role="status">Start when you’re ready.</p>
+            <button id="start-game" class="plain-button" type="button">Start game</button>
+          </div>
+        </div>
+        <p class="game-instructions" id="keyboard-help">Click the game screen or select it with Tab to use keyboard controls.</p>
+        <div class="game-actions">
+          <button id="restart-game" class="plain-button" type="button" hidden>Restart</button>
+          <a href="/">← All posts</a>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+    <script type="module" src="/src/game-page.js"></script>
+  </body>
+</html>

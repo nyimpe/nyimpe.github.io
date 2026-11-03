@@ -1,0 +1,27 @@
+{
+  "collectedAt": "2026-10-06",
+  "source": "https://www.playretro.io/",
+  "scope": "전체 게임 목록의 모든 페이지",
+  "inventory": {
+    "pages": 35,
+    "listedLinks": 420
+  },
+  "games": 411,
+  "platformCounts": {
+    "browser": 411
+  },
+  "genreCounts": {
+    "레이싱/스포츠": 63,
+    "퍼즐/보드": 74,
+    "액션/아케이드": 237,
+    "슈팅": 32,
+    "RPG": 1,
+    "어드벤처": 1,
+    "대전/격투": 3
+  },
+  "images": 411,
+  "detailFailures": [],
+  "missingImages": [],
+  "renamedFromDetail": [],
+  "robots": "User-agent: *\nDisallow: /direct/\nDisallow: /ilar_game_pixel\nDisallow: /fblogin\nDisallow: /log/fpe\nUser-agent: AdsBot-Google\nDisallow: /direct/\nDisallow: /log/fpe\nDisallow: /fblogin\n"
+}

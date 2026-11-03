@@ -1,0 +1,93 @@
+{
+  "collectedAt": "2026-10-06",
+  "source": "https://www.playretrogames.com/",
+  "scope": "전체 게임 목록의 모든 페이지",
+  "inventory": {
+    "pages": 241,
+    "advertisedGames": 8432,
+    "listedLinks": 13493
+  },
+  "games": 8432,
+  "platformCounts": {
+    "atari-2600": 534,
+    "atari-7800": 61,
+    "atari-lynx": 42,
+    "capcom-cps-1": 32,
+    "capcom-cps-2": 38,
+    "capcom-cps-3": 6,
+    "coin-op-arcade": 834,
+    "gb": 141,
+    "gbc": 325,
+    "gba": 686,
+    "mame": 607,
+    "nec-pc-engine": 79,
+    "nec-pc-engine-cd": 67,
+    "nec-turbografx-16": 49,
+    "nec-turbografx-16-cd": 24,
+    "neo-geo": 135,
+    "nintendo": 347,
+    "nintendo-64": 471,
+    "sega": 1088,
+    "sega-32x": 18,
+    "sega-cd": 47,
+    "sega-game-gear": 200,
+    "sega-master-system": 260,
+    "sega-saturn": 1,
+    "sony-playstation": 1404,
+    "super-nintendo": 936
+  },
+  "genreCounts": {
+    "미니게임/모음": 67,
+    "슈팅": 1313,
+    "퍼즐/보드": 562,
+    "액션/아케이드": 2838,
+    "전략/시뮬레이션": 284,
+    "레이싱/스포츠": 1924,
+    "대전/격투": 824,
+    "어드벤처": 127,
+    "RPG": 415,
+    "기타/미분류": 19,
+    "창작/교육": 59
+  },
+  "images": 8425,
+  "detailFailures": [],
+  "missingImages": [
+    {
+      "id": "prg-3890",
+      "source": "https://www.playretrogames.com/3890-konami-88-games",
+      "reason": "404 Client Error: Not Found for url: https://games.playretrogames.com/gameimages/3890-konami-88-games-n.jpg?v=1"
+    },
+    {
+      "id": "prg-6492",
+      "source": "https://www.playretrogames.com/6492-biohazard-2",
+      "reason": "404 Client Error: Not Found for url: https://games.playretrogames.com/gameimages/38-biohazard-2-n.jpg?v=1"
+    },
+    {
+      "id": "prg-2642",
+      "source": "https://www.playretrogames.com/2642-janou-touryumon",
+      "reason": "404 Client Error: Not Found for url: https://games.playretrogames.com/gameimages/2642-janou-touryumon-n.jpg?v=1"
+    },
+    {
+      "id": "prg-4125",
+      "source": "https://www.playretrogames.com/4125-dr-robotnik-s-mean-bean-machine",
+      "reason": "404 Client Error: Not Found for url: https://games.playretrogames.com/gameimages/4125-dr-robotnik-s-mean-bean-machine.robotnik-s-mean-bean-machine-europe.sms-n.jpg?v=1"
+    },
+    {
+      "id": "prg-3187",
+      "source": "https://www.playretrogames.com/3187-kirby-superstar",
+      "reason": "404 Client Error: Not Found for url: https://games.playretrogames.com/gameimages/3187-kirby-superstar-n.jpg?v=1"
+    },
+    {
+      "id": "prg-426",
+      "source": "https://www.playretrogames.com/426-nba-give-n-go",
+      "reason": "404 Client Error: Not Found for url: https://games.playretrogames.com/gameimages/426-nba-give-n-go-n.jpg?v=1"
+    },
+    {
+      "id": "prg-1478",
+      "source": "https://www.playretrogames.com/1478-syvalion",
+      "reason": "404 Client Error: Not Found for url: https://games.playretrogames.com/gameimages/1478-syvalion-n.jpg?v=1"
+    }
+  ],
+  "renamedFromDetail": [],
+  "robots": "User-agent: *\nDisallow: /gameroms/\nDisallow: /snes_master.swf\nDisallow: /segasegafinal.swf\nDisallow: /neogeo_final.swf\nDisallow: /neogeobig.swf\nDisallow: /flash/Nesbox.swf\n"
+}

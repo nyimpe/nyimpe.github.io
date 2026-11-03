@@ -1,0 +1,344 @@
+{
+  "source": "https://www.tooli.co.kr/",
+  "collectedAt": "2026-10-06",
+  "platformBasis": "Tooli 고전게임 메뉴의 게시판 분류. 게임보이 게시판은 GBA 게임을 포함합니다.",
+  "inventory": {
+    "pc": {
+      "label": "PC",
+      "boardCount": 429,
+      "pages": 22,
+      "collected": 429,
+      "pinned": 4
+    },
+    "lounge": {
+      "label": "오락실",
+      "boardCount": 193,
+      "pages": 10,
+      "collected": 197,
+      "pinned": 4
+    },
+    "boy": {
+      "label": "게임보이",
+      "boardCount": 13,
+      "pages": 1,
+      "collected": 15,
+      "pinned": 2
+    },
+    "sfc": {
+      "label": "슈퍼패미콤",
+      "boardCount": 15,
+      "pages": 1,
+      "collected": 17,
+      "pinned": 2
+    },
+    "md": {
+      "label": "메가드라이브",
+      "boardCount": 40,
+      "pages": 2,
+      "collected": 43,
+      "pinned": 3
+    },
+    "msx": {
+      "label": "MSX",
+      "boardCount": 34,
+      "pages": 1,
+      "collected": 37,
+      "pinned": 3
+    },
+    "flash": {
+      "label": "플래시",
+      "boardCount": 126,
+      "pages": 1,
+      "collected": 127,
+      "pinned": 1
+    }
+  },
+  "restrictedPosts": [
+    {
+      "id": "flash-470248",
+      "title": "마우스움직임으로 하는 리듬게임",
+      "source": "https://www.tooli.co.kr/flash/470248"
+    }
+  ],
+  "listedPosts": 865,
+  "games": 845,
+  "platformCounts": {
+    "pc": 424,
+    "lounge": 193,
+    "boy": 13,
+    "sfc": 15,
+    "md": 40,
+    "msx": 34,
+    "flash": 126
+  },
+  "genreCounts": {
+    "레이싱/스포츠": 104,
+    "액션/아케이드": 296,
+    "퍼즐/보드": 106,
+    "전략/시뮬레이션": 106,
+    "미니게임/모음": 6,
+    "어드벤처": 48,
+    "RPG": 72,
+    "슈팅": 50,
+    "리듬": 2,
+    "대전/격투": 53,
+    "창작/교육": 2
+  },
+  "screenshots": 830,
+  "imageKinds": {
+    "source-screenshot": 715,
+    "flash-capture": 115
+  },
+  "flashCaptureFailures": [
+    {
+      "id": "flash-849609",
+      "title": "장미와 동백",
+      "source": "https://www.tooli.co.kr/flash/849609",
+      "movie": "https://file.tooli.co.kr/flash/rosecamellia2.swf",
+      "reason": "Blank movie frame"
+    },
+    {
+      "id": "flash-470712",
+      "title": "Territory war (포트리스)",
+      "source": "https://www.tooli.co.kr/flash/470712",
+      "movie": "https://games.armorgames.com/games0015/territorywar.swf",
+      "reason": "fetch failed"
+    },
+    {
+      "id": "flash-469132",
+      "title": "화장실 소변 조준 게임",
+      "source": "https://www.tooli.co.kr/flash/469132",
+      "movie": "https://file.tooli.co.kr/flash/j20.swf",
+      "reason": "SWF HTTP 404"
+    },
+    {
+      "id": "flash-468309",
+      "title": "과일 없에기",
+      "source": "https://www.tooli.co.kr/flash/468309",
+      "movie": "https://www.miniclip.com/gamefiles0304/fruit.swf",
+      "reason": "Not a Flash movie"
+    },
+    {
+      "id": "flash-467177",
+      "title": "방탈출게임 2편",
+      "source": "https://www.tooli.co.kr/flash/467177",
+      "movie": "https://www.fasco-cs.com/works/viridian/viridian_game_e.swf",
+      "reason": "SWF HTTP 404"
+    }
+  ],
+  "missingScreenshots": [
+    {
+      "id": "pc-473722",
+      "title": "무인도이야기 (Drifting Story)",
+      "source": "https://www.tooli.co.kr/pc/473722",
+      "reason": "원문에 스크린샷 없음"
+    },
+    {
+      "id": "pc-472872",
+      "title": "스카이팀 게임 여러게 모음",
+      "source": "https://www.tooli.co.kr/pc/472872",
+      "reason": "원문에 스크린샷 없음"
+    },
+    {
+      "id": "pc-472939",
+      "title": "시발원숭이의 모험4",
+      "source": "https://www.tooli.co.kr/pc/472939",
+      "reason": "원문에 스크린샷 없음"
+    },
+    {
+      "id": "pc-473057",
+      "title": "어스토니시아 스토리",
+      "source": "https://www.tooli.co.kr/pc/473057",
+      "reason": "원문에 스크린샷 없음"
+    },
+    {
+      "id": "flash-470712",
+      "title": "Territory war (포트리스)",
+      "source": "https://www.tooli.co.kr/flash/470712",
+      "reason": "원문 게임 파일의 화면 확인 불가"
+    },
+    {
+      "id": "flash-468309",
+      "title": "과일 없에기",
+      "source": "https://www.tooli.co.kr/flash/468309",
+      "reason": "원문 게임 파일의 화면 확인 불가"
+    },
+    {
+      "id": "flash-469220",
+      "title": "리얼 탁구",
+      "source": "https://www.tooli.co.kr/flash/469220",
+      "reason": "원문 게임 파일의 화면 확인 불가"
+    },
+    {
+      "id": "flash-470248",
+      "title": "마우스움직임으로 하는 리듬게임",
+      "source": "https://www.tooli.co.kr/flash/470248",
+      "reason": "원문 비공개"
+    },
+    {
+      "id": "flash-467177",
+      "title": "방탈출게임 2편",
+      "source": "https://www.tooli.co.kr/flash/467177",
+      "reason": "원문 게임 파일의 화면 확인 불가"
+    },
+    {
+      "id": "flash-467267",
+      "title": "방탈출게임 3편",
+      "source": "https://www.tooli.co.kr/flash/467267",
+      "reason": "원문 게임 파일의 화면 확인 불가"
+    },
+    {
+      "id": "flash-849609",
+      "title": "장미와 동백",
+      "source": "https://www.tooli.co.kr/flash/849609",
+      "reason": "원문 게임 파일의 화면 확인 불가"
+    },
+    {
+      "id": "flash-472012",
+      "title": "중독성강한 별찾기 게임 (71스테이지)",
+      "source": "https://www.tooli.co.kr/flash/472012",
+      "reason": "원문에 스크린샷 없음"
+    },
+    {
+      "id": "flash-469596",
+      "title": "클리어 힐 스노우보드",
+      "source": "https://www.tooli.co.kr/flash/469596",
+      "reason": "원문 게임 파일의 화면 확인 불가"
+    },
+    {
+      "id": "flash-471909",
+      "title": "학교에서 하기좋은 마우스로 하는 중독성게임 14개모음",
+      "source": "https://www.tooli.co.kr/flash/471909",
+      "reason": "원문에 스크린샷 없음"
+    },
+    {
+      "id": "flash-469132",
+      "title": "화장실 소변 조준 게임",
+      "source": "https://www.tooli.co.kr/flash/469132",
+      "reason": "원문 게임 파일의 화면 확인 불가"
+    }
+  ],
+  "excluded": [
+    {
+      "id": "pc-1575384",
+      "title": "윈도우 7 이상에서 윈도우용 고전게임 실행하는 방법",
+      "source": "https://www.tooli.co.kr/pc/1575384",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "pc-1166095",
+      "title": "윈도우7, 8, 10에서 가상 윈도우 XP 설치하는 방법",
+      "source": "https://www.tooli.co.kr/pc/1166095",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "pc-474064",
+      "title": "문제가 되는자료는 삭제하도록 하겠습니다.",
+      "source": "https://www.tooli.co.kr/pc/474064",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "pc-474061",
+      "title": "윈도우 XP 비스타 7에서 도스게임실행하는 프로그램 입니다.",
+      "source": "https://www.tooli.co.kr/pc/474061",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "pc-2864333",
+      "title": "3.5 인치 IPS 액정의 휴대용 게임기 X6 17.11",
+      "source": "https://www.tooli.co.kr/pc/2864333",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "lounge-496663",
+      "title": "오락실게임 실행기자료 마메론2005 0.64버전(넷플레이지원)",
+      "source": "https://www.tooli.co.kr/lounge/496663",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "lounge-472851",
+      "title": "문제가 되는자료는 삭제하도록 하겠습니다.",
+      "source": "https://www.tooli.co.kr/lounge/472851",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "lounge-472849",
+      "title": "오락실게임 실행기 마메32플러스플러스 0.116버전 (넷플레이 지원)",
+      "source": "https://www.tooli.co.kr/lounge/472849",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "lounge-472848",
+      "title": "오락실게임 실행기자료 마메32플러스 0.84버전 (넷플레이 지원안함)",
+      "source": "https://www.tooli.co.kr/lounge/472848",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "boy-472547",
+      "title": "문제가 되는자료는 삭제하도록 하겠습니다.",
+      "source": "https://www.tooli.co.kr/boy/472547",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "boy-472542",
+      "title": "게임보이 실행기 자료 Visualboyadvance1.8.0beta2",
+      "source": "https://www.tooli.co.kr/boy/472542",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "sfc-472400",
+      "title": "문제가 되는자료는 삭제하도록 하겠습니다.",
+      "source": "https://www.tooli.co.kr/sfc/472400",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "sfc-472398",
+      "title": "슈퍼패미콤 실행기자료 zsnesw142",
+      "source": "https://www.tooli.co.kr/sfc/472398",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "md-1128277",
+      "title": "문제가 되는자료는 삭제하도록 하겠습니다.",
+      "source": "https://www.tooli.co.kr/md/1128277",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "md-1128243",
+      "title": "메가드라이브 실행기자료 Gens32 Surreal V1.90Std",
+      "source": "https://www.tooli.co.kr/md/1128243",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "md-472351",
+      "title": "메가드라이브 실행기자료 gens2.11",
+      "source": "https://www.tooli.co.kr/md/472351",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "msx-840448",
+      "title": "MSX 실행기 자료 2 bluemsx_v282full",
+      "source": "https://www.tooli.co.kr/msx/840448",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "msx-472249",
+      "title": "문제가 되는자료는 삭제하도록 하겠습니다.",
+      "source": "https://www.tooli.co.kr/msx/472249",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "msx-472247",
+      "title": "Msx 실행기자료 및 사용법 꼭 읽어 보세요 paraMSX v0.50b beta",
+      "source": "https://www.tooli.co.kr/msx/472247",
+      "reason": "공지·실행기·기기 소개"
+    },
+    {
+      "id": "flash-472160",
+      "title": "10초에서 20초가량 게임 로딩시간이 있습니다.",
+      "source": "https://www.tooli.co.kr/flash/472160",
+      "reason": "공지·실행기·기기 소개"
+    }
+  ],
+  "classification": "PC 원문 카테고리를 통합하고 다른 게시판의 장르는 편집 분류했습니다. 기본 진행은 장르별 안내이며, 원문 조작법이 있는 경우 별도로 표시합니다."
+}

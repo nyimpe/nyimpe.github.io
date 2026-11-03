@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="넷핵의 상호작용 밀도와 DCSS의 투명한 규칙을 잇고, 숨은 감정·저주·배고픔·기술 훈련 관리·조합 폭발을 걷어낸 한 시간짜리 로그라이크 기획. 가제 '우물 아래'.">
+    <title>우물 아래: 넷핵과 DCSS를 잇는 로그라이크 기획 · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/beneath-the-well-concept/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="우물 아래: 넷핵과 DCSS를 잇는 한 시간짜리 로그라이크 기획">
+    <meta property="og:description" content="동사 6개 × 상태 6개의 상호작용 문법, 전부 보이는 규칙과 시계, 사인 보고서와 비동기 유령, 8 캐릭터와 6 신, 12층+3분기 구조의 계승작 기획.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/beneath-the-well-concept/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=design" aria-label="Game Design" title="Game Design"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#design"></use></svg></a>
+          <a href="/?category=note" aria-label="Note" title="Note"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post design-post asset-post">
+        <header class="post-header">
+          <h1>우물 아래: 넷핵과 DCSS를 잇는 한 시간짜리 로그라이크 기획</h1>
+          <time datetime="2026-11-01">2026.11.01</time>
+          <p class="image-credit"><a href="/posts/nethack/">넷핵</a>과 <a href="/posts/dungeon-crawl-stone-soup/">던전 크롤 스톤 수프</a> 조사 글을 참고한 독립 기획 · 가제 <strong>우물 아래</strong></p>
+        </header>
+
+        <p>넷핵과 DCSS는 같은 뼈대를 공유한다. 턴제, 격자, 영구 죽음, 그리고 <strong>바닥의 물건을 들고 다시 올라오기</strong>. 이 기획은 그 뼈대를 그대로 두고 두 게임이 40년과 20년에 걸쳐 증명한 것만 가져온다. 넷핵에서는 모든 것이 서로 반응하는 밀도와 다른 플레이어의 흔적을, DCSS에서는 전부 보이는 규칙과 덜어내는 용기를 가져온다. 대신 숨은 감정 규칙, 저주, 배고픔, 기술 훈련 관리, 종족×배경×신의 조합 폭발, 50층짜리 길이는 버린다. 그리고 한 판이 한 시간 안에 끝나고 손가락 하나로도 되는 게임으로 다시 만든다.</p>
+
+        <div class="asset-summary" aria-label="기획 범위 요약">
+          <div><strong>12+3</strong><span>본층 + 분기</span></div>
+          <div><strong>8</strong><span>캐릭터</span></div>
+          <div><strong>6</strong><span>신</span></div>
+          <div><strong>60분</strong><span>한 판 목표</span></div>
+        </div>
+
+        <aside class="asset-note" aria-labelledby="pillar-title">
+          <h2 id="pillar-title">설계 원칙 세 가지</h2>
+          <ul>
+            <li><strong>규칙은 전부 보인다.</strong> 확률, 쿨다운, 시계, 남은 턴이 모두 화면에 있다. 숨기는 것은 "다음 층에 무엇이 있는가"뿐이다. 죽음은 반드시 설명된다.</li>
+            <li><strong>모든 것은 서로 반응한다.</strong> 단 상호작용은 수십 년 누적이 아니라 <em>동사 6개 × 상태 6개</em> 문법으로 설계한다. 새 아이템은 이 표를 채워야만 들어온다.</li>
+            <li><strong>한 판은 한 시간.</strong> 깊이 대신 밀도를 택한다. 판 밖 성장은 옆으로만 넓어지고 위로는 자라지 않는다.</li>
+          </ul>
+        </aside>
+
+        <nav class="post-toc" aria-label="글 목차">
+          <ol>
+            <li><a href="#inherit">두 게임에서 가져온 것과 버린 것</a></li>
+            <li><a href="#world">한 문단 세계와 세 가지 규칙</a></li>
+            <li><a href="#run">한 판의 구조</a></li>
+            <li><a href="#characters">캐릭터 8종</a></li>
+            <li><a href="#gods">신 6위와 보이는 계약</a></li>
+            <li><a href="#grammar">상호작용 문법: 동사 6개 × 상태 6개</a></li>
+            <li><a href="#items">아이템과 감정</a></li>
+            <li><a href="#clocks">보이는 시계</a></li>
+            <li><a href="#death">죽음의 처리: 사인 보고서, 유령, 도감</a></li>
+            <li><a href="#vows">서약과 점수</a></li>
+            <li><a href="#growth">성장: 판 안과 판 밖</a></li>
+            <li><a href="#interface">인터페이스와 플랫폼</a></li>
+            <li><a href="#prototype">첫 검증 범위와 위험</a></li>
+            <li><a href="#comparison">세 게임 비교</a></li>
+          </ol>
+        </nav>
+
+        <section id="inherit" class="concept">
+          <h2>1. 두 게임에서 가져온 것과 버린 것</h2>
+          <p>요소별로 두 원작이 어떻게 했는지, 이 기획이 무엇을 택했는지 한 표로 정리한다. "버림"으로 표시한 항목이 진입 장벽이거나 지나치게 복잡하다고 판단한 시스템이다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>요소별 계승 결정</caption>
+              <thead><tr><th scope="col">요소</th><th scope="col">넷핵</th><th scope="col">DCSS</th><th scope="col">우물 아래</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">목표 구조</th><td>부적을 들고 50층을 다시 오름</td><td>오브를 들고 전 층을 다시 오름</td><td><strong>계승.</strong> 심장을 들면 탈출 구간 3층이 새로 열림. 긴장은 남기고 길이는 줄임.</td></tr>
+                <tr><th scope="row">상호작용</th><td>40년 누적, 예측 불가</td><td>아이템당 용도 하나</td><td><strong>계승·재설계.</strong> 동사 6개 × 상태 6개 문법. 표가 데브팀을 대신한다.</td></tr>
+                <tr><th scope="row">규칙 공개</th><td>숨김. 위키 필수</td><td>공개. 스포일러 없이 승리 가능</td><td><strong>DCSS 계승·강화.</strong> 숫자까지 공개. 죽음마다 사인 보고서.</td></tr>
+                <tr><th scope="row">아이템 감정</th><td>가격·제단·애완동물로 추리</td><td>사용하면 확정</td><td><strong>DCSS 계승.</strong> 물약·두루마리만 미확인. 후보 풀을 보여 주고, 미확인 아이템은 절대 즉사시키지 않음.</td></tr>
+                <tr><th scope="row">저주(BUC)</th><td>핵심 시스템</td><td>0.27에서 삭제</td><td><strong>버림.</strong> 장비는 집는 순간 전부 공개.</td></tr>
+                <tr><th scope="row">식량</th><td>배고픔 시계, 시체 먹기</td><td>0.26에서 삭제, 조트 시계</td><td><strong>버림.</strong> 대신 층마다 보이는 깊이 시계.</td></tr>
+                <tr><th scope="row">캐릭터 선택</th><td>13직업 × 5종족 × 3성향</td><td>27종족 × 25배경</td><td><strong>축소.</strong> 종족과 배경을 합친 캐릭터 8종. 출시 때 4종.</td></tr>
+                <tr><th scope="row">신</th><td>기도 타이머 숨김</td><td>26신, 신앙심은 보임</td><td><strong>축소·공개.</strong> 6신. 주는 것·대가·응급 능력 쿨다운을 숫자로 표시.</td></tr>
+                <tr><th scope="row">성장</th><td>레벨 + 무기 숙련</td><td>기술 27종 수동·자동 훈련, 적성표</td><td><strong>버림·교체.</strong> 기술 훈련 없음. 레벨업마다 특성 3지선다.</td></tr>
+                <tr><th scope="row">능력치</th><td>힘·민첩·건강·지능·지혜·매력</td><td>힘·지능·민첩</td><td><strong>축소.</strong> 체력·공격·방어·속도 4개만.</td></tr>
+                <tr><th scope="row">애완동물</th><td>전 직업 기본</td><td>없음(소환 제외)</td><td><strong>부분 계승.</strong> 캐릭터 1종의 정체성으로만.</td></tr>
+                <tr><th scope="row">흔적 공유</th><td>본즈 파일</td><td>유령 볼트</td><td><strong>계승·현대화.</strong> 친구·공개 유령이 비동기로 다음 판에 등장. 옵트인.</td></tr>
+                <tr><th scope="row">컨덕트</th><td>자동 추적, 기록용</td><td>토너먼트 배너</td><td><strong>계승·앞당김.</strong> 시작 시 고르는 서약. 점수 배율과 휘장.</td></tr>
+                <tr><th scope="row">엘베레스·공포</th><td>먼지 새김, 규칙 복잡</td><td>없음</td><td><strong>단순화.</strong> 분필 3회, 10턴, 던지거나 불에 지워짐. 남은 턴 표시.</td></tr>
+                <tr><th scope="row">한 판 길이</th><td>수십 시간</td><td>3~8시간</td><td><strong>60분.</strong> 아무 때나 중단, 이어 하기.</td></tr>
+                <tr><th scope="row">입력 장치</th><td>터미널 키보드</td><td>키보드, 웹 타일</td><td><strong>현대화.</strong> PC 키보드 + 모바일 한 손 터치. 같은 세이브.</td></tr>
+                <tr><th scope="row">게헨놈 미로</th><td>길고 단조로움(5.0에서 개편)</td><td>해당 없음</td><td><strong>버림.</strong> 미로 층 없음. 깊은 층은 좁고 밀도 높게.</td></tr>
+                <tr><th scope="row">제노사이드·소원</th><td>핵심 보상</td><td>없음·획득 두루마리</td><td><strong>버림.</strong> 한 번에 판을 뒤집는 보상 대신 분기 열쇠와 신의 선물.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="world" class="concept">
+          <h2>2. 한 문단 세계와 세 가지 규칙</h2>
+          <p>마을 한가운데 우물이 말랐다. 바닥을 들여다보니 돌이 비켜나 있고 아래로 계단이 이어진다. 그 끝에 <strong>샘의 심장</strong>이 있어서, 누군가 들고 올라오면 물이 다시 찬다고 한다. 마을 사람들은 내려가는 이에게 등불과 분필, 밧줄을 쥐여 주고 우물가에 앉아 기다린다. 돌아오는 사람은 드물지만 마을은 밝고, 우물가에는 늘 누군가의 응원이 있다.</p>
+          <ol>
+            <li><strong>죽으면 끝이다.</strong> 캐릭터는 마을로 돌아오지 않는다. 다음 사람이 내려간다.</li>
+            <li><strong>들고 올라와야 한다.</strong> 심장은 바닥에 있고, 물은 지상에서 찬다.</li>
+            <li><strong>오래 머물면 깊이가 깨어난다.</strong> 한 층에 머문 시간은 화면에 보이고, 다 쓰면 깊이의 것이 올라온다.</li>
+          </ol>
+          <p>고유명사는 우물, 샘의 심장, 마을 셋이면 충분하다. 괴물과 아이템 이름은 모두 보통명사다. 설정은 더 쓰지 않는다. 설정이 필요한 순간은 플레이테스트가 알려 준다.</p>
+        </section>
+
+        <section id="run" class="concept">
+          <h2>3. 한 판의 구조</h2>
+          <p>본층 12개, 분기 3개 중 2개 선택, 탈출 3층. 분기 끝에는 <strong>열쇠</strong>가 하나씩 있고 12층의 문은 열쇠 두 개로 열린다. DCSS의 "룬 3개로 입장"을 "열쇠 2개"로 줄이고, 넷핵의 "부적을 들고 다시 오르기"를 "심장을 들고 3층 탈출"로 압축했다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>구간별 내용과 시간 예산</caption>
+              <thead><tr><th scope="col">구간</th><th scope="col">층</th><th scope="col">내용</th><th scope="col">시간</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">입구</th><td>1 ~ 4</td><td>동사 6개를 하나씩 쓰게 되는 상황이 자연스럽게 배치된다. 첫 제단은 3층. 튜토리얼 모드는 따로 없고 1~4층 자체가 튜토리얼이다.</td><td>10분</td></tr>
+                <tr><th scope="row">갈림</th><td>5 ~ 8</td><td>분기 입구 3개가 5·6·7층에 하나씩. 뿌리층(식물·독·풀), 침수층(물·전기·젖음), 결정층(얼음·유리·소리). 분기는 각 2층이고 끝에 열쇠. 어느 둘을 고르냐가 판의 경로를 정한다.</td><td>25분</td></tr>
+                <tr><th scope="row">깊은 곳</th><td>9 ~ 12</td><td>좁고 밀도 높은 층. 깊이 시계가 짧아진다. 12층 문은 열쇠 두 개. 문 너머 심장 방에는 보스 대신 "지키는 것"이 있다. 죽이지 않고도 심장을 들 수 있지만 들면 깨어난다.</td><td>15분</td></tr>
+                <tr><th scope="row">탈출</th><td>12 → 상층 3층</td><td>심장을 드는 순간 기존 계단이 막히고 새 길이 위로 열린다. 지키는 것이 뒤따르고, 깊이 시계는 모든 층에서 절반이다. 올라온 층은 다시 내려갈 수 없다.</td><td>10분</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li>평균 60분, 빠르면 45분, 느리면 75분. 층마다 자동 저장되고 아무 턴에서나 종료할 수 있다. 다시 열면 그 턴에서 이어진다.</li>
+            <li>층은 영구적이다. 올라가서 내려와도 같은 층이다. DCSS의 그라인딩 금지 원칙을 지키기 위해 괴물은 재생성되지 않는다.</li>
+            <li>12층이 아닌 분기 2개를 모두 건너뛰면 열쇠가 없어 문이 안 열린다. 대신 분기는 짧고, 들어가면 돌아오는 길이 보장된다.</li>
+          </ul>
+        </section>
+
+        <section id="characters" class="concept">
+          <h2>4. 캐릭터 8종</h2>
+          <p>종족과 배경을 따로 고르게 하면 조합은 늘지만 초보자는 무엇이 다른지 모른다. 그래서 하나로 합쳐 "이 캐릭터는 이런 식으로 논다"가 이름만 보고도 읽히게 했다. 캐릭터는 시작 장비, 고유 능력 하나, 레벨업 특성 풀의 절반을 정한다. 나머지 절반은 공용이다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>캐릭터와 뿌리</caption>
+              <thead><tr><th scope="col">캐릭터</th><th scope="col">한 줄</th><th scope="col">고유 능력</th><th scope="col">뿌리</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">등불지기</th><td>튼튼하고 단순. 첫 판 추천.</td><td>등불 반경이 넓고 한 번 쓰러져도 1체력으로 버팀(판당 1회)</td><td>넷핵 발키리, DCSS 파이터</td></tr>
+                <tr><th scope="row">수맥 탐지사</th><td>파고, 찾고, 돌아간다.</td><td>곡괭이로 벽을 팜. 층의 열쇠·계단 방향이 보임</td><td>넷핵 고고학자</td></tr>
+                <tr><th scope="row">들개 조련사</th><td>개와 둘이서.</td><td>길동무 개. 명령은 따라와·기다려 둘뿐. 개가 물건을 물어 옴</td><td>넷핵 애완동물</td></tr>
+                <tr><th scope="row">약초꾼</th><td>물약을 보면 안다.</td><td>미확인 물약이 처음부터 확정. 독 상태 면역</td><td>넷핵 치유사·사제</td></tr>
+                <tr><th scope="row">돌팔매꾼</th><td>닿기 전에 끝낸다.</td><td>던지기 사거리 +2, 던진 물건 회수 자동</td><td>DCSS 헌터, 넷핵 레인저</td></tr>
+                <tr><th scope="row">그림자 걷는 이</th><td>싸움을 고른다.</td><td>움직이지 않으면 투명. 첫 타격 2배</td><td>DCSS 스토커, 넷핵 도적</td></tr>
+                <tr><th scope="row">불씨 술사</th><td>상태 문법을 직접 쓴다.</td><td>불·얼음·전기 중 하나를 턴마다 손끝에 붙임</td><td>DCSS 원소술사</td></tr>
+                <tr><th scope="row">맨손 수도자</th><td>무기 없이, 빠르게.</td><td>속도 +1. 무기 없음 서약이 기본으로 켜짐</td><td>넷핵·DCSS 몽크</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>출시 때는 등불지기, 수맥 탐지사, 들개 조련사, 불씨 술사 넷을 연다. 나머지 넷은 특정 조건(열쇠 종류별 획득, 서약 승리 등)으로 해금한다. 해금은 선택지가 늘어날 뿐 강해지지 않는다.</p>
+        </section>
+
+        <section id="gods" class="concept">
+          <h2>5. 신 6위와 보이는 계약</h2>
+          <p>신은 판 중간의 빌드 선택이다. 3층과 7층, 분기 입구에 제단이 있고 한 판에 한 신만 섬긴다. DCSS에서 가장 좋은 부분인 "강한 보상에는 대가가 붙는다"를 유지하되, 계약 전문을 제단에서 숫자까지 읽을 수 있게 한다. 넷핵의 숨은 기도 타이머는 응급 능력의 보이는 쿨다운으로 바꿨다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>신과 계약</caption>
+              <thead><tr><th scope="col">신</th><th scope="col">주는 것</th><th scope="col">대가</th><th scope="col">응급 능력(쿨다운)</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">샘</th><td>턴마다 회복, 물 지형에서 속도 +1</td><td>불 동사 사용 금지</td><td>완전 회복 (200턴)</td></tr>
+                <tr><th scope="row">불꽃</th><td>공격 +2, 불 상태 피해 2배</td><td>젖음 상태에서 능력 전부 정지</td><td>주변 3칸 폭발 (150턴)</td></tr>
+                <tr><th scope="row">그늘</th><td>은신, 뒤에서 치면 즉사(보스 제외)</td><td>등불 반경 절반</td><td>10턴 투명 (120턴)</td></tr>
+                <tr><th scope="row">뿌리</th><td>풀 지형이 늘고 식물 동료 소환</td><td>풀을 태우면 신앙심 큰 폭 감소</td><td>주변을 덩굴로 묶음 (150턴)</td></tr>
+                <tr><th scope="row">저울</th><td>방어 +2, 모든 상태이상 지속 절반</td><td>미확인 물약 금지, 서약 하나 강제</td><td>상태이상 전부 해제 (100턴)</td></tr>
+                <tr><th scope="row">주사위</th><td>층마다 무작위 선물</td><td>층마다 무작위 재앙. 둘 다 미리 보임</td><td>지금 효과를 다시 굴림 (80턴)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li>신앙심은 0~100 막대로 보인다. 계약을 어기면 "경고 → 능력 정지 → 분노(추격자 1체)" 세 단계가 순서대로 오고, 다음 단계까지 남은 횟수가 표시된다.</li>
+            <li>신을 바꾸려면 다른 제단에서 갈아타면 된다. 이전 신의 분노는 그 판 안에서만 유효하다.</li>
+            <li>주사위는 넷핵의 좀(Xom) 계승이지만, 다음 층의 선물과 재앙을 미리 보여 주는 점이 다르다. 무작위는 유지하고 불투명은 제거한다.</li>
+          </ul>
+        </section>
+
+        <section id="grammar" class="concept">
+          <h2>6. 상호작용 문법: 동사 6개 × 상태 6개</h2>
+          <p>넷핵의 재미는 "이걸 저기에 쓰면 어떻게 될까"에 있고, 그 답이 준비되어 있다는 데 있다. 하지만 40년치 누적을 처음부터 만들 수는 없다. 대신 <strong>문법</strong>을 만든다. 모든 아이템은 6개 동사 중 셋 이상에 대한 반응이 정의되어야 하고, 모든 괴물과 지형은 6개 상태에 대한 반응이 정의되어야 한다. 새 아이템을 넣으려면 표를 채워야 하므로, 데브팀이 생각하는 대신 표가 생각한다.</p>
+          <h3>동사 6개</h3>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>모든 아이템에 적용되는 동사</caption>
+              <thead><tr><th scope="col">동사</th><th scope="col">뜻</th><th scope="col">예</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">쓰다</th><td>본래 용도</td><td>물약을 마심, 횃불을 켬, 열쇠로 문을 엶</td></tr>
+                <tr><th scope="row">던지다</th><td>사거리 안 어느 칸으로</td><td>물약을 던지면 그 칸에 상태를 뿌림, 돌을 던지면 소리로 괴물을 끎</td></tr>
+                <tr><th scope="row">붓다</th><td>발밑이나 인접 칸에</td><td>기름을 복도에 부음, 물을 불에 부음, 독을 칼에 부음</td></tr>
+                <tr><th scope="row">새기다</th><td>바닥에 표식</td><td>분필로 공포 표식, 흙에 화살표로 길 표시(관전자에게 보임)</td></tr>
+                <tr><th scope="row">차다</th><td>인접 대상에 힘</td><td>문을 부숨, 상자를 밈, 물웅덩이로 괴물을 밀어 넣음</td></tr>
+                <tr><th scope="row">먹이다</th><td>다른 존재에게 줌</td><td>개에게 고기, 괴물에게 수면 열매, 식물에게 물</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>상태 6개와 조합</h3>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>상태가 겹칠 때의 규칙 (모두 도감에 공개)</caption>
+              <thead><tr><th scope="col">조합</th><th scope="col">결과</th><th scope="col">쓰임</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">불 + 기름</th><td>불이 기름 칸을 따라 번짐</td><td>복도에 기름을 붓고 횃불을 던져 무리를 태움</td></tr>
+                <tr><th scope="row">젖음 + 전기</th><td>젖은 칸끼리 감전이 전이</td><td>침수층에서 전기 두루마리 한 장으로 방 전체</td></tr>
+                <tr><th scope="row">젖음 + 얼음</th><td>얼어붙어 2턴 이동 불가</td><td>물에 빠진 괴물을 얼려 도망</td></tr>
+                <tr><th scope="row">불 + 얼음</th><td>녹아서 젖음</td><td>얼음 벽을 녹여 길 내기, 얼어붙은 상자 열기</td></tr>
+                <tr><th scope="row">독 + 불</th><td>독구름이 타며 폭발</td><td>독구름 속 괴물에게 불씨를 던짐. 자신도 조심</td></tr>
+                <tr><th scope="row">기름 + 얼음</th><td>미끄러져 한 칸 더 밀림</td><td>차기와 조합해 구멍으로 떨어뜨림</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li>괴물마다 태그 2~3개(예: 젖은, 금속, 날개, 무리, 식물). 태그가 상태 반응을 정한다. 금속은 전기에 2배, 식물은 불에 2배, 날개는 기름 위에서 미끄러지지 않는다. 태그는 괴물을 길게 누르면 보인다.</li>
+            <li>지형도 같은 표를 쓴다. 물, 풀, 쇠창살, 문, 구멍, 제단. 풀은 타고, 물은 전기를 전하고, 쇠창살은 전기를 전하되 불을 막는다.</li>
+            <li>동사마다 <strong>숨은 특수 규칙을 한두 개</strong> 둔다. 예컨대 자기 등불을 제단에 먹이면 그 신이 한 번 대답한다. 넷핵식 놀라움을 완전히 없애지 않기 위한 예외이고, 발견하면 도감에 영구히 남는다.</li>
+            <li>자기 자신에게 던지기, 가방을 가방에 넣기 같은 엉뚱한 입력에도 한 줄 대사가 있다. 비용이 거의 들지 않고 넷핵 정신의 핵심이다.</li>
+          </ul>
+        </section>
+
+        <section id="items" class="concept">
+          <h2>7. 아이템과 감정</h2>
+          <p>아이템은 네 묶음이다. 총 80종 안팎으로 시작하고, 묶음마다 공개 수준이 다르다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>아이템 묶음과 공개 수준</caption>
+              <thead><tr><th scope="col">묶음</th><th scope="col">수</th><th scope="col">공개</th><th scope="col">비고</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">장비</th><td>무기 12, 방어구 10, 장신구 8</td><td>집는 순간 전부</td><td>저주 없음. 강화 수치와 특성이 툴팁에 다 적힘. 칸 12개 제한.</td></tr>
+                <tr><th scope="row">소모품</th><td>물약 10, 두루마리 8</td><td>미확인. 후보 풀 표시</td><td>소지 무제한. 쓰면 그 판에서 확정. 미확인 상태에서 최악은 독·수면이고 즉사는 없음.</td></tr>
+                <tr><th scope="row">도구</th><td>횃불, 분필, 밧줄, 곡괭이, 기름통, 물통 등 12</td><td>전부</td><td>동사 문법의 중심. 충전 횟수 표시.</td></tr>
+                <tr><th scope="row">열쇠·심장</th><td>열쇠 3, 심장 1</td><td>전부</td><td>버릴 수 없음. 심장은 들면 가방 한 칸을 영구히 차지.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li>미확인 물약의 툴팁은 "남은 후보: 회복, 속도, 독"처럼 그 판에서 아직 확정되지 않은 종류만 보여 준다. 하나씩 확정될수록 추리가 좁혀진다. 넷핵의 가격 감정이 주던 "추리하는 재미"를 숨은 규칙 없이 남기는 방법이다.</li>
+            <li>물약은 마시거나, 던지거나, 붓는다. 같은 물약이 세 동사에서 다르게 작동한다. 회복 물약을 던지면 괴물이 회복되고, 독 물약을 칼에 부으면 독 무기가 된다.</li>
+            <li>소모품이 무제한이라 "아끼다 죽는" 문제는 줄지만, 대신 깊이 시계 때문에 "쓸 시간"이 제한된다.</li>
+          </ul>
+        </section>
+
+        <section id="clocks" class="concept">
+          <h2>8. 보이는 시계</h2>
+          <p>넷핵의 배고픔과 기도 타이머, DCSS의 조트 시계는 모두 "오래 머물지 말라"는 압력이다. 이 기획은 그 압력을 전부 화면 위의 숫자로 바꾼다.</p>
+          <ul>
+            <li><strong>깊이 시계:</strong> 층마다 턴 예산이 있다. 입구 400턴, 갈림 300, 깊은 곳 200, 탈출 100. 화면 위에 남은 턴이 항상 보이고, 0이 되면 "깊이의 것"이 계단에서 올라온다. 죽일 수 없고 층을 떠나면 사라진다. 남은 예산은 다음 층으로 이월되지 않는다.</li>
+            <li><strong>응급 능력 쿨다운:</strong> 신의 능력은 남은 턴이 숫자로 보인다. "지금 빌면 안 되는" 상황이 없다. 대신 못 쓰는 동안은 버튼이 회색이다.</li>
+            <li><strong>상태 남은 턴:</strong> 독, 수면, 화상, 얼어붙음, 투명 모두 아이콘 옆에 턴 수가 붙는다. 괴물에게 걸린 상태도 같다.</li>
+            <li><strong>공포 표식:</strong> 분필은 판당 3회. 새기면 10턴 동안 인접 괴물이 다가오지 않는다. 표식 위에서 던지거나 불이 닿으면 지워진다. 남은 턴은 바닥에 숫자로 표시된다.</li>
+            <li><strong>위험 표시:</strong> 괴물을 길게 누르면 체력, 공격, 태그, 그리고 "이번 턴에 당신에게 닿을 수 있음" 여부가 뜬다. DCSS의 위험 색 표시를 한 단계 더 구체화한 것이다.</li>
+          </ul>
+        </section>
+
+        <section id="death" class="concept">
+          <h2>9. 죽음의 처리: 사인 보고서, 유령, 도감</h2>
+          <p>영구 죽음은 유지한다. 되돌리기는 없다. 대신 죽음이 <strong>설명되고, 남고, 쌓이게</strong> 한다.</p>
+          <h3>사인 보고서</h3>
+          <ul>
+            <li>죽는 순간 화면에 네 줄이 뜬다. 무엇이 죽였는가, 어떤 규칙이 작동했는가, 직전 5턴에 무슨 일이 있었는가, 다음엔 무엇을 해 볼 수 있는가.</li>
+            <li>"다음엔" 줄은 템플릿이 아니라 그 상황의 선택지에서 고른다. 예: "젖은 상태에서 전기 괴물에게 인접했다. 분필 표식이 2회 남아 있었다."</li>
+            <li>규칙 줄은 도감 항목으로 바로 연결된다. 넷핵의 YASD가 주는 "아, 그런 규칙이" 순간을 위키 없이 게임 안에서 준다.</li>
+          </ul>
+          <h3>유령</h3>
+          <ul>
+            <li>죽은 캐릭터는 마지막 장비와 함께 유령이 된다. 친구 목록이나 공개 풀에 올리면(옵트인) 다른 사람의 판 한 층에 나타난다.</li>
+            <li>유령은 죽은 층에 서 있고, 그 사람의 사인 보고서 첫 줄을 말한다. 이기면 그 장비 중 하나를 얻는다. 넷핵 본즈의 "남의 흔적을 만나는" 경험을 서버 없이, 비동기로 옮긴 것이다.</li>
+            <li>유령은 판당 최대 하나이고 1~4층에는 나오지 않는다.</li>
+          </ul>
+          <h3>도감</h3>
+          <ul>
+            <li>만난 괴물, 써 본 아이템, 본 상태 조합, 발견한 숨은 규칙이 채워진다. 판 밖에서 읽을 수 있고 판 안에서도 길게 누르면 열린다.</li>
+            <li>도감은 능력을 주지 않는다. 지식만 쌓인다. 수평 성장의 핵심이다.</li>
+          </ul>
+        </section>
+
+        <section id="vows" class="concept">
+          <h2>10. 서약과 점수</h2>
+          <p>넷핵의 컨덕트는 게임이 몰래 세어 주는 기록이고, DCSS의 배너는 토너먼트용이다. 이 기획은 둘을 앞으로 당겨 <strong>시작할 때 고르는 서약</strong>으로 만든다. 서약은 점수 배율과 휘장을 주고, 몇몇 해금의 조건이 된다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>서약 8종</caption>
+              <thead><tr><th scope="col">서약</th><th scope="col">조건</th><th scope="col">배율</th><th scope="col">뿌리</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">채식</th><td>고기를 먹지 않음. 먹이다 동사로 줄 수만 있음</td><td>×1.2</td><td>넷핵 채식</td></tr>
+                <tr><th scope="row">무신</th><td>제단을 쓰지 않음</td><td>×1.3</td><td>넷핵 무신론</td></tr>
+                <tr><th scope="row">맨손</th><td>무기를 들지 않음. 던지기는 허용</td><td>×1.3</td><td>넷핵 무기 없음</td></tr>
+                <tr><th scope="row">읽지 않기</th><td>두루마리를 쓰지 않음. 던지기는 허용</td><td>×1.2</td><td>넷핵 문맹</td></tr>
+                <tr><th scope="row">혼자</th><td>길동무·소환 없음</td><td>×1.2</td><td>넷핵 petless(5.0)</td></tr>
+                <tr><th scope="row">어둠</th><td>등불을 켜지 않음. 시야 1칸</td><td>×1.5</td><td>넷핵 젠(Zen)</td></tr>
+                <tr><th scope="row">빈손</th><td>장비를 집지 않음. 시작 장비만</td><td>×1.5</td><td>넷핵 pauper(5.0)</td></tr>
+                <tr><th scope="row">조용히</th><td>직접 죽이지 않음. 상태·지형·동료만</td><td>×2.0</td><td>넷핵 평화주의</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li>점수는 도달 층 × 열쇠 수 × 서약 배율에 시간 보너스를 더한다. 승리하면 탈출 시간이 기록된다.</li>
+            <li>일일 씨앗은 모든 사람이 같은 던전을 받는다. 순위는 점수와 시간 두 가지. DCSS 토너먼트의 "비반복 조합 연승" 같은 기록도 캐릭터×신 조합으로 센다.</li>
+          </ul>
+        </section>
+
+        <section id="growth" class="concept">
+          <h2>11. 성장: 판 안과 판 밖</h2>
+          <h3>판 안</h3>
+          <ul>
+            <li>레벨은 12까지. 레벨업마다 특성 3개 중 하나를 고른다. 절반은 캐릭터 전용 풀, 절반은 공용 풀에서 나온다. 같은 특성은 두 번 나오지 않는다.</li>
+            <li>기술 훈련은 없다. 적성표도 없다. "무엇을 올릴까"는 레벨업 화면 한 번으로 끝난다.</li>
+            <li>능력치는 체력·공격·방어·속도 넷. 장비와 특성이 이 넷만 건드린다. 상태이상은 능력치가 아니라 행동을 제한한다.</li>
+          </ul>
+          <h3>판 밖</h3>
+          <ul>
+            <li>해금만 있다. 캐릭터 4종, 서약, 도감 항목, 마을의 모습. 수치 성장은 없다. 첫 판의 등불지기와 100판째의 등불지기는 같은 체력으로 시작한다.</li>
+            <li>마을은 돌아온 횟수와 열쇠 종류에 따라 보이는 것이 바뀐다. 우물가 사람 수, 등불 색, 개의 수. 전부 장식이고 전부 눈에 띈다.</li>
+            <li>이것이 DCSS의 그라인딩 금지를 판 밖까지 확장한 것이다. 실력이 결과를 정해야 사인 보고서가 의미를 가진다.</li>
+          </ul>
+        </section>
+
+        <section id="interface" class="concept">
+          <h2>12. 인터페이스와 플랫폼</h2>
+          <ul>
+            <li><strong>자동 탐색·자동 전투·계단으로 가기:</strong> DCSS의 o, Tab, G를 그대로. 괴물이 보이면 멈추고, 미확인 아이템을 밟으면 멈춘다.</li>
+            <li><strong>한 손 터치:</strong> 탭은 이동·공격, 길게 누르면 툴팁, 두 번 탭은 확인. 동사 6개는 아이템을 누르면 바퀴 메뉴로 뜬다. 세로 화면 기준.</li>
+            <li><strong>키보드:</strong> vi 키와 숫자 패드 모두. 동사는 숫자 1~6.</li>
+            <li><strong>관전과 리플레이:</strong> 판은 씨앗과 입력 기록으로 저장되므로 리플레이가 작다. 친구의 진행 중 판을 지연 없이 볼 수 있고, 바닥에 새긴 화살표가 관전자에게도 보인다.</li>
+            <li><strong>세션:</strong> 10분 단위로 끊어도 된다. 종료 시 자동 저장, 불러오면 세이브 삭제. 세이브 복제는 막는다.</li>
+            <li><strong>접근성:</strong> 색맹 팔레트, 글자 크기, 화면 낭독용 턴 로그, 애니메이션 끄기. ASCII 모드도 둔다. 두 원작이 터미널에서 태어났다는 점에 대한 예의이기도 하다.</li>
+            <li><strong>플랫폼:</strong> PC와 모바일 동시. 같은 계정, 같은 세이브. 웹 빌드로 설치 없이 체험 가능.</li>
+          </ul>
+        </section>
+
+        <section id="prototype" class="concept">
+          <h2>13. 첫 검증 범위와 위험</h2>
+          <div class="table-scroll">
+            <table class="wide-table concept-table">
+              <caption>프로토타입 단계별 질문</caption>
+              <thead><tr><th scope="col">단계</th><th scope="col">범위</th><th scope="col">검증 질문</th><th scope="col">측정</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">1. 문법</th><td>4층, 캐릭터 2, 동사 6 × 상태 6, 괴물 12, 아이템 24</td><td>문법만으로 넷핵식 "그 순간"이 생기는가</td><td>테스터가 말로 설명하는 순간 수, 판당 3회 이상</td></tr>
+                <tr><th scope="row">2. 한 판</th><td>12층, 분기 1, 깊이 시계, 사인 보고서</td><td>60분 안에 끝나고 죽음이 설명되는가</td><td>중앙값 60분 ±15, "왜 죽었는지 안다" 80%</td></tr>
+                <tr><th scope="row">3. 다시 하기</th><td>신 6, 서약 8, 유령, 일일 씨앗</td><td>두 번째 판을 스스로 시작하는가</td><td>첫 죽음 뒤 재시작률 70%</td></tr>
+                <tr><th scope="row">4. 손</th><td>모바일 터치 전체</td><td>한 손으로 60분이 피곤하지 않은가</td><td>터치 오입력 판당 5회 이하</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="io-common">
+            <h3>위험과 대응</h3>
+            <ul>
+              <li><strong>문법이 넷핵만큼 놀랍지 않다:</strong> 표로 만든 상호작용은 예측 가능하다. 대응은 동사마다 숨은 규칙 한두 개와, 조합 결과를 "도감에 적히기 전까지는 모르게" 하는 것이다. 공개는 발견 뒤에 한다.</li>
+              <li><strong>규칙 공개가 긴장을 없앤다:</strong> 숫자를 다 보여 주면 계산 게임이 될 수 있다. 대응은 숨기는 대상을 "다음 층"과 "미확인 소모품의 정체"로 한정하고 나머지는 전부 여는 것이다. DCSS가 이미 이 선에서 성공했다.</li>
+              <li><strong>60분이 얕다:</strong> 12층은 짧다. 대응은 분기 3개 중 2개 선택과 캐릭터×신 조합으로 판마다 경로가 달라지게 하는 것이다. 깊이는 층 수가 아니라 선택 수에서 나온다.</li>
+              <li><strong>유령이 밸런스를 깬다:</strong> 남의 장비를 얻는 것은 강력하다. 대응은 유령을 판당 하나, 5층 이후, 장비 하나만으로 제한하고 서약 "혼자"에서는 끄는 것이다.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="comparison" class="concept">
+          <h2>14. 세 게임 비교</h2>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>원작 둘과 기획의 자리</caption>
+              <thead><tr><th scope="col">항목</th><th scope="col">넷핵</th><th scope="col">DCSS</th><th scope="col">우물 아래</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">한 판</th><td>수십 시간</td><td>3~8시간</td><td>45~75분</td></tr>
+                <tr><th scope="row">층 수</th><td>약 50 + 원소계</td><td>본 던전 15 + 분기 다수</td><td>12 + 분기 2×2 + 탈출 3</td></tr>
+                <tr><th scope="row">캐릭터 선택지</th><td>13 × 5 × 3</td><td>27 × 25</td><td>8</td></tr>
+                <tr><th scope="row">신</th><td>성향별 1, 기도 중심</td><td>26</td><td>6, 계약 공개</td></tr>
+                <tr><th scope="row">숨은 규칙</th><td>대부분</td><td>거의 없음</td><td>동사당 1~2개, 발견 후 공개</td></tr>
+                <tr><th scope="row">감정</th><td>가격·제단·추리</td><td>사용</td><td>사용 + 후보 풀 표시</td></tr>
+                <tr><th scope="row">시계</th><td>배고픔(숨김)</td><td>조트 시계(반공개)</td><td>깊이 시계(숫자)</td></tr>
+                <tr><th scope="row">죽음 뒤</th><td>본즈, 기록</td><td>유령 볼트, 기록</td><td>사인 보고서, 유령, 도감</td></tr>
+                <tr><th scope="row">판 밖 성장</th><td>없음</td><td>없음</td><td>해금만</td></tr>
+                <tr><th scope="row">플랫폼</th><td>터미널, 타일</td><td>타일, 웹</td><td>PC, 모바일, 웹</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>이 기획이 두 원작보다 나은 게임이라는 뜻은 아니다. 넷핵의 깊이와 DCSS의 조합 폭은 길이와 복잡함의 대가로 얻은 것이고, 이 기획은 그 대가를 치르지 않는 대신 그 깊이도 포기한다. 남기려는 것은 하나다. 한 시간 뒤에 "방금 그거 봤어?"라고 말하게 되는 순간. 그 순간이 문법 하나로 재현된다면 이 기획은 성립한다. 첫 프로토타입이 답할 질문이다.</p>
+        </section>
+
+        <p class="post-back"><a href="/">← 모든 포스트</a></p>
+      </article>
+    </main>
+    <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>

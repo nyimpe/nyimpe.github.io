@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="1987년부터 개발 중인 로그라이크 넷핵(NetHack)의 계보, 데브팀, 던전 구조, 핵심 시스템, 승천 경로, 컨덕트, 2026년 5.0.0 변경점, 변종과 서버까지 정리한 조사 기록.">
+    <title>넷핵(NetHack) · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/nethack/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="넷핵(NetHack): 39년째 개발 중인 로그라이크">
+    <meta property="og:description" content="계보와 역사, 13개 직업과 던전 구조, 감정·축복·기도·소원 같은 핵심 시스템, 승천 경로, 컨덕트, 5.0.0 변경점, 변종과 공개 서버 정리.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/nethack/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=design" aria-label="Game Design" title="Game Design"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#design"></use></svg></a>
+          <a href="/?category=note" aria-label="Note" title="Note"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post design-post asset-post">
+        <header class="post-header">
+          <h1>넷핵(NetHack): 39년째 개발 중인 로그라이크</h1>
+          <time datetime="2026-11-01">2026.11.01</time>
+          <p class="image-credit">넷핵 위키, 위키백과, nethack.org 공식 뉴스, 5.0.0 보도(The Register, LWN, Slashdot)를 2026-11-01 기준으로 대조해 정리했다 · 자매 글: <a href="/posts/dungeon-crawl-stone-soup/">던전 크롤 스톤 수프</a></p>
+        </header>
+
+        <p>넷핵은 1987년 7월 28일에 첫 판이 나온 뒤 지금까지 같은 팀이 이어서 개발하는 텍스트 기반 로그라이크다. 플레이어는 약 50층 깊이의 지하 미궁 <strong>Mazes of Menace</strong>로 내려가 <strong>옌더의 부적(Amulet of Yendor)</strong>을 찾고, 다시 지상을 지나 원소계와 아스트랄계까지 올라가 자기 신의 제단에 부적을 바쳐야 한다. 이 마지막 단계를 <strong>승천(ascension)</strong>이라고 부른다. 죽으면 그 캐릭터는 끝이고, 아이템 외형은 판마다 바뀌며, 모든 물건은 축복·보통·저주 중 하나다. 이 세 가지 규칙 위에 39년치 상호작용이 쌓여 있다.</p>
+
+        <div class="asset-summary" aria-label="핵심 숫자 요약">
+          <div><strong>1987</strong><span>첫 공개(1.3d)</span></div>
+          <div><strong>5.0.0</strong><span>2026-05-02 최신판</span></div>
+          <div><strong>13</strong><span>직업(역할)</span></div>
+          <div><strong>3,100+</strong><span>5.0.0 수정·변경 항목</span></div>
+        </div>
+
+        <nav class="post-toc" aria-label="글 목차">
+          <ol>
+            <li><a href="#lineage">계보와 버전 역사</a></li>
+            <li><a href="#devteam">데브팀과 개발 방식</a></li>
+            <li><a href="#character">캐릭터: 13개 직업, 5개 종족, 3개 성향</a></li>
+            <li><a href="#dungeon">던전 구조</a></li>
+            <li><a href="#systems">핵심 시스템</a></li>
+            <li><a href="#tdttoe">데브팀은 모든 것을 생각해 뒀다</a></li>
+            <li><a href="#route">표준 승천 경로</a></li>
+            <li><a href="#conduct">컨덕트: 스스로 거는 제약</a></li>
+            <li><a href="#v500">5.0.0에서 바뀐 것</a></li>
+            <li><a href="#community">변종, 공개 서버, 토너먼트, AI 연구</a></li>
+            <li><a href="#assessment">강점과 약점</a></li>
+            <li><a href="#sources">출처</a></li>
+          </ol>
+        </nav>
+
+        <section id="lineage" class="concept">
+          <h2>1. 계보와 버전 역사</h2>
+          <p>넷핵의 뿌리는 1980년 유닉스에서 나온 <em>Rogue</em>다. 1982년경 제이 펜레이슨(Jay Fenlason)이 Rogue를 본떠 괴물과 아이템을 더한 <em>Hack</em>을 만들었고, 1984년 12월 안드리스 브라우어르(Andries Brouwer)가 이를 대폭 다시 써서 Hack 1.0을 유즈넷에 올렸다. 이후 DOS용 PC Hack, 아타리 ST용 ST Hack 등으로 갈라진 가지를 마이크 스티븐슨(Mike Stephenson)이 다시 합쳤고, 그 결과가 네트워크로 협업해 만들었다는 뜻의 이름을 단 <strong>NetHack</strong>이다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>주요 버전 연표</caption>
+              <thead><tr><th scope="col">시기</th><th scope="col">버전</th><th scope="col">의미</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">1984.12</th><td>Hack 1.0</td><td>브라우어르의 전면 재작성. 문서로 남은 첫 조상.</td></tr>
+                <tr><th scope="row">1987.07</th><td>NetHack 1.3d</td><td>첫 공개. 같은 해와 이듬해에 1.4f, 2.2a, 2.3e가 뒤따름.</td></tr>
+                <tr><th scope="row">1989</th><td>3.0</td><td>대규모 확장. 데브팀 원본을 뜻하는 "바닐라"라는 말이 이때 정착.</td></tr>
+                <tr><th scope="row">1993.01</th><td>3.1</td><td>복수 던전 분기, 직업별 퀘스트, 게헨놈과 새 엔드게임 도입.</td></tr>
+                <tr><th scope="row">1996.04</th><td>3.2</td><td>안정화 판. 이츠하크 밀러(Izchak Miller)를 기리는 판.</td></tr>
+                <tr><th scope="row">1999.12</th><td>3.3</td><td>종족과 직업 분리, 수도승·레인저 추가, 탈것 도입.</td></tr>
+                <tr><th scope="row">2002.03 / 2003.12</th><td>3.4.0 / 3.4.3</td><td>3.4.3은 이후 12년간 유일한 공식판. 지금도 이 판을 기준으로 삼는 변종이 많다.</td></tr>
+                <tr><th scope="row">2014.09</th><td>(개발 스냅샷 유출)</td><td>외부에서 개발판을 공개. 팀은 유출된 번호(3.4.4, 3.5)를 영구 폐기.</td></tr>
+                <tr><th scope="row">2015.12</th><td>3.6.0</td><td>12년 만의 공식판. 커뮤니티 패치 일부를 흡수.</td></tr>
+                <tr><th scope="row">2018 ~ 2023.02</th><td>3.6.1 ~ 3.6.7</td><td>3.6.1부터 소스가 GitHub으로. 3.6.7은 보안 수정 포함 버그픽스.</td></tr>
+                <tr><th scope="row">2015 ~ 2026.04</th><td>3.7.0 (WIP)</td><td>공개 개발 브랜치. 공식 릴리스는 한 번도 없었음.</td></tr>
+                <tr><th scope="row">2026.05.02</th><td><strong>5.0.0</strong></td><td>3.7 작업을 통째로 담은 메이저 릴리스. 37번째 공개판.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>왜 4.0이 아니라 5.0인가. 이미 <em>NetHack 4</em>라는 이름의 독립 변종이 있고, 3.7.0은 개발 빌드 번호로 너무 오래 써서 혼동을 피하려 했다는 것이 데브팀의 설명이다. 3.4.3에서 3.6.0까지 12년이 걸린 이유로는 팀이 조용히 작업을 계속했다는 점, 2014년 유출 사건, 개발 인프라 교체, 그리고 합쳐진 코드에서 버그를 걷어내는 데 시간이 걸렸다는 점이 공식 연혁에 적혀 있다.</p>
+        </section>
+
+        <section id="devteam" class="concept">
+          <h2>2. 데브팀과 개발 방식</h2>
+          <ul>
+            <li><strong>폐쇄형 핵심 팀:</strong> 공식 저장소를 수정할 수 있는 사람은 데브팀 구성원뿐이다. 초기에는 스티븐슨, 밀러, 재닛 월즈(Janet Walz)가 조율했고, 이후 켄 로버(Ken Lorber), 팻 랭킨(Pat Rankin), 데릭 레이(Derek S. Ray), 파시 칼리넨(Pasi Kallinen) 등이 합류했다.</li>
+            <li><strong>라이선스:</strong> 넷핵 일반 공중 사용 허가서(NetHack General Public License). OSI 승인을 받은 카피레프트 라이선스로, 이식과 포크를 허용한다. 수십 개의 변종이 존재하는 법적 토대다.</li>
+            <li><strong>누적형 설계:</strong> 한 번 들어간 기능은 거의 빠지지 않는다. 대신 상호작용이 계속 덧붙는다. 이 방식이 <a href="/posts/dungeon-crawl-stone-soup/">DCSS</a>의 "과감히 삭제" 철학과 가장 대비되는 지점이다.</li>
+            <li><strong>플랫폼:</strong> 공식 바이너리는 Windows(타일·TTY 동시 제공, Arm 포함), MS-DOS, Amiga. 소스는 Linux, macOS, 각종 유닉스, VMS까지 지원한다. 인터페이스는 tty, curses, X11, Qt, Windows GUI가 있다.</li>
+          </ul>
+        </section>
+
+        <section id="character" class="concept">
+          <h2>3. 캐릭터: 13개 직업, 5개 종족, 3개 성향</h2>
+          <p>시작할 때 직업(role), 종족(race), 성별, 성향(alignment)을 고르거나 무작위로 맡긴다. 종족은 인간, 엘프, 드워프, 노움, 오크 다섯 가지이고 성향은 질서·중립·혼돈 셋이다. 직업마다 허용되는 종족·성향 조합이 다르다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>13개 직업과 시작 특성</caption>
+              <thead><tr><th scope="col">직업</th><th scope="col">시작 특성</th><th scope="col">허용 종족(성향)</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">고고학자 Archeologist</th><td>탐색, 곡괭이로 시작</td><td>인간(질서·중립), 드워프(질서), 노움(중립)</td></tr>
+                <tr><th scope="row">야만인 Barbarian</th><td>독 저항, 양손검</td><td>인간(중립·혼돈), 오크(혼돈)</td></tr>
+                <tr><th scope="row">동굴인 Caveman</th><td>높은 체력. 5.0.0부터 Cave Dweller 표기</td><td>인간(질서·중립), 드워프(질서), 노움(중립)</td></tr>
+                <tr><th scope="row">치유사 Healer</th><td>독 저항, 청진기, 치료 마법봉</td><td>인간(중립), 노움(중립)</td></tr>
+                <tr><th scope="row">기사 Knight</th><td>조랑말, 창. 엑스칼리버 획득 조건</td><td>인간(질서)</td></tr>
+                <tr><th scope="row">수도승 Monk</th><td>투명체 감지, 수면 저항, 빠름. 맨손 격투</td><td>인간(질서·중립·혼돈)</td></tr>
+                <tr><th scope="row">사제 Priest</th><td>모든 아이템의 축복·저주 상태를 봄</td><td>인간(질서·중립·혼돈), 엘프(혼돈)</td></tr>
+                <tr><th scope="row">레인저 Ranger</th><td>탐색, 활과 다량의 화살</td><td>인간(중립·혼돈), 엘프(혼돈), 노움(중립), 오크(혼돈)</td></tr>
+                <tr><th scope="row">도적 Rogue</th><td>은신, 투척 단검</td><td>인간(혼돈), 오크(혼돈)</td></tr>
+                <tr><th scope="row">사무라이 Samurai</th><td>빠름, 카타나와 유미</td><td>인간(질서)</td></tr>
+                <tr><th scope="row">관광객 Tourist</th><td>돈과 카메라, 하와이안 셔츠. 가장 약한 시작</td><td>인간(중립)</td></tr>
+                <tr><th scope="row">발키리 Valkyrie</th><td>냉기 저항, 은신. 가장 쉬운 시작으로 통함</td><td>인간(질서·중립), 드워프(질서)</td></tr>
+                <tr><th scope="row">마법사 Wizard</th><td>마법 저항 망토, 마법봉과 반지, 마법 미사일 주문</td><td>인간(중립·혼돈), 엘프(혼돈), 노움(중립), 오크(혼돈)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>모든 직업에는 전용 퀘스트와 퀘스트 아티팩트가 있고, 대부분 애완동물(새끼 고양이, 강아지, 기사의 조랑말)과 함께 시작한다. 애완동물은 아이템을 밟아 저주 여부를 알려 주고, 상점에서 물건을 훔쳐다 주는 등 단순한 전투 보조 이상으로 쓰인다.</p>
+        </section>
+
+        <section id="dungeon" class="concept">
+          <h2>4. 던전 구조</h2>
+          <p>넷핵의 던전은 하나의 긴 수직 통로가 아니다. 본 던전에서 여러 분기가 갈라지고, 깊이가 판마다 범위 안에서 무작위로 정해진다. 아래는 넷핵 위키의 3.4.3 기준 깊이 범위이며 5.0.0에서도 큰 틀은 같다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>분기와 특수 층의 깊이 범위</caption>
+              <thead><tr><th scope="col">영역</th><th scope="col">깊이</th><th scope="col">내용</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">파멸의 던전 Dungeons of Doom</th><td>1 ~ 25-29</td><td>본 던전. 신탁(5-9층), 큰 방(10-12), Rogue 오마주 층(15-18), 메두사의 섬(21-28), 맨 아래 성(Castle). 성의 탑에는 소원 마법봉이 있다.</td></tr>
+                <tr><th scope="row">노움 광산 Gnomish Mines</th><td>3 ~ 13</td><td>2-4층에서 갈라짐. 광산 마을(Minetown)에 상점과 신전, 맨 아래 Mines' End에 행운석.</td></tr>
+                <tr><th scope="row">소코반 Sokoban</th><td>2 ~ 9</td><td>신탁 아래층에서 위로 올라가는 분기. 상자 밀기 퍼즐 4층. 보상은 보유 가방 또는 반사 부적.</td></tr>
+                <tr><th scope="row">퀘스트 Quest</th><td>11 ~ 21</td><td>경험 레벨 14부터 입장. 직업별 전용 맵과 보스, 퀘스트 아티팩트, 그리고 열림의 종(Bell of Opening).</td></tr>
+                <tr><th scope="row">루디오스 요새 Fort Ludios</th><td>11 ~ 27</td><td>마법 포털로만 가는 선택 분기. 병사와 금화가 가득한 요새.</td></tr>
+                <tr><th scope="row">게헨놈 Gehennom</th><td>27 ~ 52</td><td>성 아래. 죽음의 계곡, 아스모데우스·주이블렉스·바알제붑·오르쿠스의 소굴, 블라드의 탑(촛대), 옌더의 마법사 탑, 맨 아래 진동하는 사각형.</td></tr>
+                <tr><th scope="row">몰록의 성소 Sanctum</th><td>진동 사각형 바로 아래</td><td>소환 의식(invocation) 뒤에만 열림. 몰록의 대사제가 진짜 부적을 가짐.</td></tr>
+                <tr><th scope="row">원소계 Elemental Planes</th><td>-1 ~ -4</td><td>부적을 들고 1층 위로 올라가면 땅·공기·불·물의 순서로 통과.</td></tr>
+                <tr><th scope="row">아스트랄계 Astral Plane</th><td>-5</td><td>세 제단 중 자기 성향의 제단에 부적을 바치면 승천.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="systems" class="concept">
+          <h2>5. 핵심 시스템</h2>
+          <ul>
+            <li><strong>감정(identification):</strong> 물약·두루마리·반지·마법봉·마법서의 외형이 판마다 뒤섞인다. 감정 두루마리 외에도 상점 가격으로 추리하기, 애완동물 반응 보기, 제단에 떨어뜨려 축복 여부 보기 같은 간접 감정이 플레이의 큰 부분이다.</li>
+            <li><strong>BUC:</strong> 모든 물건은 축복(Blessed)·보통(Uncursed)·저주(Cursed) 중 하나다. 같은 두루마리도 축복과 저주에서 효과가 갈리고, 저주된 장비는 벗을 수 없다.</li>
+            <li><strong>행운(Luck):</strong> 눈에 보이지 않는 수치가 명중, 기도 성공, 소원 등 거의 모든 확률에 끼어든다. 행운석을 들면 유지되고, 거울을 깨거나 평화로운 존재를 죽이면 떨어진다.</li>
+            <li><strong>기도(prayer):</strong> 체력이 아주 낮거나 질식·석화 같은 위기에 기도하면 신이 구해 준다. 다만 직전 기도에서 보통 1,000턴 가까이 지나야 하고, 그 전에 또 빌면 신이 노한다.</li>
+            <li><strong>엘베레스(Elbereth):</strong> 바닥에 이 단어를 새기면 대부분의 괴물이 다가오지 못한다. 먼지 새김은 금방 지워지므로 영구 새김 수단을 확보하는 것이 중요하다.</li>
+            <li><strong>변신(polymorph):</strong> 자기 자신도, 아이템 더미도 다른 것으로 바꿀 수 있다. 제어 없는 변신은 시스템 쇼크(system shock)로 죽을 수 있고, 변신 제어 반지가 있으면 강력한 형태를 골라 쓴다.</li>
+            <li><strong>소원(wish):</strong> 소원 마법봉, 물의 요정, 왕좌 등에서 얻는다. 승천 장비 세트(회색 드래곤 비늘 갑옷, 반사 방패, 가속 장화 등)를 맞추는 수단이지만, 소원 없이 깨는 것도 공식 컨덕트다.</li>
+            <li><strong>본즈(bones):</strong> 죽은 캐릭터의 층이 파일로 남아 다음 판이나 같은 서버의 다른 사람 판에 유령과 함께 다시 나타난다. 전 캐릭터의 장비는 대부분 저주된 채로 그 자리에 있다.</li>
+            <li><strong>식량과 시간:</strong> 배고픔이 시계 역할을 하고, 시체를 먹으면 저항력을 얻거나 반대로 중독·석화된다. 코카트리스 시체를 맨손으로 만지면 즉사한다.</li>
+          </ul>
+        </section>
+
+        <section id="tdttoe" class="concept">
+          <h2>6. 데브팀은 모든 것을 생각해 뒀다</h2>
+          <p>"The DevTeam Thinks of Everything"(줄여서 TDTTOE)은 플레이어가 엉뚱한 행동을 했을 때 게임이 이미 그 경우를 준비해 둔 상황을 가리키는 커뮤니티 표현이다. 넷핵의 재미가 어디서 오는지 가장 잘 설명하는 말이기도 하다.</p>
+          <ul>
+            <li>물약을 자기 자신에 담그려 하면 "이건 물약병이지 클라인 병이 아니다"라고 거절한다.</li>
+            <li>가방을 자기 안에 넣으려 하면 "흥미로운 위상수학 연습이 되겠군"이라고 대꾸한다.</li>
+            <li>눈이 먼 상태에서 눈가리개를 쓰면 "여전히 보이지 않는다"는 메시지가 따로 있다.</li>
+            <li>고고학자가 페도라를 쓰고 #tip 명령을 쓰면 모자를 살짝 들어 인사한다.</li>
+            <li>화난 신에게 기도하면 번개가 치고, 전격 저항이 있으면 분해 광선이 이어지며, 그것마저 버티면 신이 "믿을 수 없다"고 말한다.</li>
+            <li>장갑을 끼고 코카트리스 시체를 집어 무기로 휘두르면 맞는 괴물이 돌이 된다. 장갑이 없으면 자신이 돌이 된다.</li>
+            <li>젖은 수건으로 괴물을 때릴 수 있고, 5.0.0부터는 독 구름 피해도 줄여 준다.</li>
+            <li>애완동물이 상점 물건을 물고 문 밖으로 나오면 주인은 값을 치르지 않아도 된다. 상점 주인도 이를 알고 애완동물을 경계한다.</li>
+            <li>자신에게 크림파이를 던지면 눈이 가려지고, 얼굴을 닦아 낼 때까지 앞이 보이지 않는다.</li>
+          </ul>
+          <p>이런 상호작용은 설계 문서에서 체계적으로 나온 것이 아니라 수십 년간 한 건씩 덧붙은 결과다. 그래서 위키 없이 처음 플레이하면 대부분 "아직 몰랐던 규칙"에 죽는다. 커뮤니티는 이것을 YASD(Yet Another Stupid Death)라고 부르며 즐긴다.</p>
+        </section>
+
+        <section id="route" class="concept">
+          <h2>7. 표준 승천 경로</h2>
+          <p>넷핵 위키의 표준 전략은 승천을 네 단계로 나눈다. 한 판에 수만 턴, 실제 시간으로 수십 시간이 걸리는 것이 보통이다.</p>
+          <ol>
+            <li><strong>초반:</strong> 소코반을 풀고 노움 광산을 내려간다. 광산 마을의 상점에서 가격 감정을, 신전에서 축복 감정을 한다. 목표는 마법 저항, 반사, 독 저항을 장비로 확보하는 것이다. 독 저항이 없으면 독에 즉사할 수 있었는데, 5.0.0에서 이 즉사가 사라졌다.</li>
+            <li><strong>중반:</strong> 경험 레벨 14를 찍고 퀘스트를 깨서 열림의 종을 얻는다. 반사나 실명 상태로 메두사를 잡고, 부양·악기·도개교 파괴 중 하나로 성에 들어가 소원 마법봉을 손에 넣는다.</li>
+            <li><strong>게헨놈:</strong> 미로층을 파내려가며 악마 군주들을 지나친다. 블라드의 탑에서 촛대를, 옌더의 마법사에게서 죽은 자의 서를 얻는다. 마법사는 죽여도 되살아나 부적이나 퀘스트 아티팩트를 훔치러 쫓아온다.</li>
+            <li><strong>승천 질주:</strong> 진동 사각형에서 종·촛대·책으로 의식을 치러 성소를 열고, 대사제를 쓰러뜨려 부적을 얻는다. 가짜 부적에 주의. 지상까지 올라간 뒤 원소계 넷과 아스트랄계를 지나 자기 성향의 제단에 부적을 바친다.</li>
+            </ol>
+        </section>
+
+        <section id="conduct" class="concept">
+          <h2>8. 컨덕트: 스스로 거는 제약</h2>
+          <p>게임은 플레이어가 지킨 금욕을 자동 추적해 사망·승천 기록에 남긴다. #conduct 명령으로 확인한다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>공식 컨덕트</caption>
+              <thead><tr><th scope="col">컨덕트</th><th scope="col">조건</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">채식 / 비건 / 단식</th><td>고기를 안 먹음 / 동물성 식품 전부 안 먹음 / 아무것도 안 먹음. 뒤로 갈수록 엄격.</td></tr>
+                <tr><th scope="row">무신론</th><td>기도, 제물, 제단 이용 등 종교 행위 일절 없음.</td></tr>
+                <tr><th scope="row">평화주의</th><td>직접 괴물을 죽이지 않음. 애완동물이 대신 싸움.</td></tr>
+                <tr><th scope="row">무기 없음</th><td>든 무기로 때리지 않음. 투척과 마법봉은 허용.</td></tr>
+                <tr><th scope="row">문맹</th><td>두루마리·마법서를 읽지 않고 새기지도 않음.</td></tr>
+                <tr><th scope="row">변신 금지 (자신 / 아이템)</th><td>자기 변신 없음 / 아이템 더미 변신 없음.</td></tr>
+                <tr><th scope="row">제노사이드 없음</th><td>한 종을 통째로 지우는 제노사이드 두루마리 미사용.</td></tr>
+                <tr><th scope="row">소원 없음 / 아티팩트 소원 없음</th><td>소원 자체를 안 빎 / 아티팩트만 빌지 않음.</td></tr>
+                <tr><th scope="row">젠(Zen) / 누디스트</th><td>처음부터 끝까지 눈먼 채로 / 갑옷 없이. 시작 옵션으로 켬.</td></tr>
+                <tr><th scope="row">5.0.0 추가</th><td>빈털터리(pauper), 영구 귀머거리(permadeaf), 애완동물 없음(petless), 소코반 규칙 위반 없음.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>비공식 도전으로는 최소 턴 승천, 실시간 최단 승천, 여러 컨덕트를 동시에 지키는 조합 승천이 있다. 공개 서버의 기록판은 이런 조합을 세어 순위를 매긴다.</p>
+        </section>
+
+        <section id="v500" class="concept">
+          <h2>9. 5.0.0에서 바뀐 것</h2>
+          <p>2026년 5월 2일에 나온 5.0.0은 3.6.7의 직계 후속이고, 2015년부터 2026년 4월까지의 3.7 개발 브랜치를 통째로 담았다. 이전 세이브와 본즈 파일은 호환되지 않는다. 커뮤니티 평가는 "새 시스템보다 누적 개선"이라는 쪽이 많다.</p>
+          <h3>엔진과 코드</h3>
+          <ul>
+            <li>C99 표준 준수로 코드 현대화. 크로스 컴파일이 쉬워져 Amiga 포트가 되살아났다.</li>
+            <li>lex/yacc로 만들던 레벨·던전 컴파일러를 <strong>Lua</strong> 스크립트로 교체. 퀘스트 텍스트도 Lua로 작성한다.</li>
+            <li>지도에 유니코드 기호 사용 가능, 접근성 기능 작업 시작, 신규 플레이어용 선택형 튜토리얼.</li>
+          </ul>
+          <h3>던전 생성</h3>
+          <ul>
+            <li><strong>테마 방(themed rooms):</strong> 비직사각형 방, 얼음 방, 방 속의 방, 조각상 정원(일부 조각상은 괴물) 등이 본 던전에 섞인다.</li>
+            <li>게헨놈이 단조로운 미로에서 벗어나 용암, 동굴형 층, 미리 만든 구역이 섞인다. 큰 방 디자인 3종 추가, 대부분의 특수층이 상하좌우 반전으로 생성된다.</li>
+            <li>성에서 리치 군주가 처음부터 생성되지 않고, 성 상자에 레벨 상승 물약이 추가된다.</li>
+          </ul>
+          <h3>괴물과 아이템</h3>
+          <ul>
+            <li>새 괴물 4종: 디스플레이서 비스트, 금룡과 새끼 금룡, 무작위 돌연변이를 일으키는 유전공학자(genetic engineer).</li>
+            <li>새 아이템: 비행 부적, 수호 부적, 연쇄 번개 마법서, 주의의 투구, 은 메이스, 정지 마법봉.</li>
+            <li>괴물이 열쇠로 상자를 열고 물건을 꺼내며, 시체에서 저항을 얻기도 한다. 평화로운 괴물은 자리를 바꿔 지나갈 수 있다.</li>
+          </ul>
+          <h3>밸런스</h3>
+          <ul>
+            <li>독 즉사 제거, 유니콘 뿔로 능력치 회복 불가, 소원 마법봉은 1충전으로 시작하고 1:1까지만 재충전.</li>
+            <li>옌더의 부적을 집으면 소원 하나를 준다. 드래곤 비늘 갑옷은 외재 능력 두 개를 준다.</li>
+            <li>기억상실은 지도와 아이템 지식 대신 기술 훈련과 주문을 지운다. 높은 레벨에서는 자연 회복이 느려진다.</li>
+          </ul>
+        </section>
+
+        <section id="community" class="concept">
+          <h2>10. 변종, 공개 서버, 토너먼트, AI 연구</h2>
+          <h3>변종</h3>
+          <p>넷핵 라이선스 덕에 포크가 많다. 넷핵 위키가 활발히 개발 중으로 분류하는 것만 추려도 다음과 같다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>주요 변종</caption>
+              <thead><tr><th scope="col">이름</th><th scope="col">기반</th><th scope="col">특징</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">SLASH'EM</th><td>3.4.x</td><td>괴물·아이템·직업·종족을 대폭 늘린 고전 변종. 최근 다시 유지보수 상태.</td></tr>
+                <tr><th scope="row">UnNetHack</th><td>3.6.6</td><td>무작위성과 난도, 새 층을 추가. 가장 오래 이어진 활성 변종.</td></tr>
+                <tr><th scope="row">NetHack 4 / Fourk</th><td>3.4.3</td><td>AceHack과 NitroHack을 합쳐 인터페이스를 개선. 5.0 번호가 4를 건너뛴 이유.</td></tr>
+                <tr><th scope="row">dNetHack</th><td>3.4.3</td><td>아티팩트와 괴물, 던전을 재구성한 대규모 변종.</td></tr>
+                <tr><th scope="row">xNetHack</th><td>3.7 dev</td><td>바닐라의 밸런스 문제를 고치며 공식 변경을 따라감.</td></tr>
+                <tr><th scope="row">EvilHack / Hack'EM</th><td>3.6.7</td><td>훨씬 어렵게 만든 변종과 그 위에 SLASH'EM 콘텐츠를 얹은 후속.</td></tr>
+                <tr><th scope="row">NerfHack / CrecelleHack</th><td>3.7 dev</td><td>애완동물 절도와 가격 감정을 없앤 변종 / 날씨와 밤낮을 더한 변종.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>공개 서버</h3>
+          <ul>
+            <li><strong>nethack.alt.org(NAO):</strong> 미국 버지니아. 바닐라 5.0.0. ssh, 텔넷, 웹 클라이언트, 타일 클라이언트로 접속. 다른 사람의 본즈를 만나고, 진행 중인 게임을 구경할 수 있다.</li>
+            <li><strong>hardfought.org:</strong> 미국·영국·호주. 3.4.3, 5.0.0, 그리고 위 변종 대부분을 한곳에서 제공한다.</li>
+            <li><strong>em.slashem.me:</strong> 독일. SLASH'EM 계열 중심.</li>
+            <li>한국·미국에 서버를 둔 NetHack Live는 모바일 브라우저 타일 플레이를 제공한다.</li>
+          </ul>
+          <h3>토너먼트</h3>
+          <p>1999년부터 2016년까지 11월마다 열린 /dev/null/nethack 대회가 원조이고, 그 뒤를 이어 매년 11월에 <strong>TNNT(The November NetHack Tournament)</strong>가, 6월에는 변종 중심의 <strong>Junethack</strong>이 열린다.</p>
+          <h3>AI 연구</h3>
+          <p>2020년 페이스북 AI 리서치가 옥스퍼드·NYU·UCL과 함께 넷핵을 강화학습 환경으로 포장한 <strong>NetHack Learning Environment(NLE)</strong>를 NeurIPS에 발표했다. 절차적 생성, 긴 지평, 부분 관측, 방대한 상호작용 때문에 사람에게도 가장 어려운 로그라이크라는 점이 선정 이유였다. 2021년 NeurIPS 대회에서는 어떤 에이전트도 승천하지 못했다.</p>
+        </section>
+
+        <section id="assessment" class="concept">
+          <h2>11. 강점과 약점</h2>
+          <div class="io-common">
+            <h3>강점</h3>
+            <ul>
+              <li><strong>상호작용 밀도:</strong> 아이템·괴물·지형·상태가 거의 모두 서로 반응한다. 같은 상황을 푸는 방법이 여러 개라서 창발적인 이야기가 생긴다.</li>
+              <li><strong>영구성:</strong> 39년간 같은 핵심 규칙 위에 쌓였고, 본즈와 공개 서버로 플레이어끼리 흔적을 주고받는다.</li>
+              <li><strong>가벼움과 이식성:</strong> 텍스트 터미널 하나면 어디서나 돈다. 1980년대 유닉스부터 2026년 Windows on Arm까지 같은 게임이다.</li>
+            </ul>
+            <h3>약점</h3>
+            <ul>
+              <li><strong>지식 의존:</strong> 감정, 저주, 기도 타이머, 즉사 조건 같은 핵심 규칙이 게임 안에서 설명되지 않는다. 위키 없이 승천하는 사람은 드물다.</li>
+              <li><strong>긴 호흡과 반복:</strong> 승천까지 수십 시간이 걸리고, 게헨놈 미로 구간은 오래 지루하다는 평이 많았다. 5.0.0의 게헨놈 개편이 이 불만에 대한 답이다.</li>
+              <li><strong>최적 행동의 지루함:</strong> 가격 감정, 제단 왕복, 소코반 반복처럼 안전하지만 귀찮은 절차가 승천의 전제가 된다. DCSS가 설계 원칙으로 삼아 잘라낸 부분이 바로 이것이다.</li>
+            </ul>
+          </div>
+          <p>정리하면 넷핵은 "규칙을 배우는 과정" 자체가 콘텐츠인 게임이다. 처음 100판은 죽음에서 규칙을 하나씩 배우고, 그 다음부터는 아는 규칙을 조합해 자기만의 승천 방식을 만든다. 2026년의 5.0.0은 그 구조를 바꾸지 않고 바닥을 다진 릴리스다.</p>
+        </section>
+
+        <section id="sources" class="concept">
+          <h2>12. 출처</h2>
+          <ul class="ref-list">
+            <li><a href="https://nethackwiki.com/wiki/NetHack">NetHack Wiki: NetHack</a>, <a href="https://nethackwiki.com/wiki/Game_history">Game history</a>, <a href="https://nethackwiki.com/wiki/NetHack_5.0.0">NetHack 5.0.0</a>, <a href="https://nethackwiki.com/wiki/Standard_strategy">Standard strategy</a>, <a href="https://nethackwiki.com/wiki/Conduct">Conduct</a>, <a href="https://nethackwiki.com/wiki/Role">Role</a>, <a href="https://nethackwiki.com/wiki/Mazes_of_Menace">Mazes of Menace</a>, <a href="https://nethackwiki.com/wiki/The_DevTeam_Thinks_of_Everything">The DevTeam Thinks of Everything</a>, <a href="https://nethackwiki.com/wiki/Public_server">Public server</a>, <a href="https://nethackwiki.com/wiki/Variant">Variant</a></li>
+            <li><a href="https://nethack.org/common/news.html">nethack.org 공식 뉴스</a> (5.0.0 릴리스 2026-05-02, 3.6.7 릴리스 2023-02-16)</li>
+            <li><a href="https://en.wikipedia.org/wiki/NetHack">Wikipedia: NetHack</a></li>
+            <li><a href="https://www.theregister.com/on-prem/2026/05/05/classic-ascii-game-nethack-debuts-version-50/5223743">The Register: Classic ASCII game NetHack debuts version 5.0</a>, <a href="https://lwn.net/Articles/1071175/">LWN: NetHack 5.0.0 released</a>, <a href="https://games.slashdot.org/story/26/05/04/0137222/nethack-50-released">Slashdot: NetHack 5.0 Released</a></li>
+            <li><a href="https://arxiv.org/abs/2006.13760">The NetHack Learning Environment (NeurIPS 2020)</a></li>
+          </ul>
+        </section>
+
+        <p class="post-back"><a href="/">← 모든 포스트</a></p>
+      </article>
+    </main>
+    <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>

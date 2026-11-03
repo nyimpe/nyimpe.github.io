@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="1997년 린리의 던전 크롤에서 2006년 포크된 던전 크롤 스톤 수프(DCSS)의 역사, 명문화된 설계 철학, 27개 종족과 25개 배경, 26명의 신, 룬과 던전 분기, 제거의 역사, 0.34까지의 버전 연표, 온라인 서버와 토너먼트를 정리한 조사 기록.">
+    <title>던전 크롤 스톤 수프(DCSS) · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/dungeon-crawl-stone-soup/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="던전 크롤 스톤 수프(DCSS): 덜어내며 다듬은 로그라이크">
+    <meta property="og:description" content="역사와 설계 철학, 종족·배경·신 시스템, 룬과 던전 분기, 식량 제거까지의 삭제 역사, 0.34 Doomed Geometries까지의 연표, 웹타일 서버와 토너먼트 정리.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/dungeon-crawl-stone-soup/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=design" aria-label="Game Design" title="Game Design"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#design"></use></svg></a>
+          <a href="/?category=note" aria-label="Note" title="Note"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post design-post asset-post">
+        <header class="post-header">
+          <h1>던전 크롤 스톤 수프(DCSS): 덜어내며 다듬은 로그라이크</h1>
+          <time datetime="2026-11-01">2026.11.01</time>
+          <p class="image-credit">공식 매뉴얼(crawl_manual.rst), 변경 기록(changelog.txt), 개발 블로그 crawl.develz.org, 위키백과를 2026-11-01 기준으로 대조해 정리했다 · 자매 글: <a href="/posts/nethack/">넷핵</a></p>
+        </header>
+
+        <p>던전 크롤 스톤 수프(Dungeon Crawl Stone Soup, 줄여서 DCSS)는 1997년에 나온 <em>린리의 던전 크롤</em>을 2006년에 커뮤니티가 이어받아 만든 로그라이크다. 목표는 던전 깊은 곳의 <strong>조트의 오브(Orb of Zot)</strong>를 집어 1층 위 계단으로 탈출하는 것이고, 조트의 영역에 들어가려면 여러 분기 끝에 있는 <strong>룬(rune)</strong>을 최소 3개 모아야 한다. 룬은 한 판에 15개가 생성된다. 이 게임이 다른 로그라이크와 가장 다른 점은 설계 원칙을 매뉴얼에 명문화하고, 그 원칙에 어긋나는 시스템을 꾸준히 삭제해 왔다는 것이다.</p>
+
+        <div class="asset-summary" aria-label="핵심 숫자 요약">
+          <div><strong>1997</strong><span>원작 공개</span></div>
+          <div><strong>0.34.1</strong><span>2026-03-14 최신판</span></div>
+          <div><strong>27 · 26</strong><span>종족 · 신</span></div>
+          <div><strong>15</strong><span>한 판의 룬 수</span></div>
+        </div>
+
+        <nav class="post-toc" aria-label="글 목차">
+          <ol>
+            <li><a href="#history">역사: 린리의 크롤에서 스톤 수프까지</a></li>
+            <li><a href="#philosophy">명문화된 설계 철학</a></li>
+            <li><a href="#character">캐릭터: 종족, 배경, 기술</a></li>
+            <li><a href="#gods">26명의 신</a></li>
+            <li><a href="#dungeon">던전 분기와 룬</a></li>
+            <li><a href="#tactics">전술 전투와 편의 기능</a></li>
+            <li><a href="#removals">제거의 역사</a></li>
+            <li><a href="#versions">버전 연표: 0.25부터 0.34까지</a></li>
+            <li><a href="#online">온라인 플레이와 토너먼트</a></li>
+            <li><a href="#platforms">플랫폼, 모드, 라이선스</a></li>
+            <li><a href="#assessment">강점과 약점</a></li>
+            <li><a href="#sources">출처</a></li>
+          </ol>
+        </nav>
+
+        <section id="history" class="concept">
+          <h2>1. 역사: 린리의 크롤에서 스톤 수프까지</h2>
+          <p>호주의 린리 헨젤(Linley Henzell)이 1995년에 개인 프로젝트로 시작해 1997년 10월에 공개했다. Rogue, Hack, Moria의 전통 위에 있지만, 당시로서는 드물게 영구 던전 지도, 기술 숙련도 시스템, 종교 시스템을 갖췄다. 헨젤은 넷핵의 라이선스를 약간 손봐 "크롤 일반 공중 사용 허가서"를 만들었고, 1999년 법대에 들어가면서 개발을 크롤 데브팀에 넘겼다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>원작에서 스톤 수프까지</caption>
+              <thead><tr><th scope="col">시기</th><th scope="col">사건</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">1995</th><td>헨젤이 개발 시작.</td></tr>
+                <tr><th scope="row">1997.10</th><td>린리의 던전 크롤 첫 공개.</td></tr>
+                <tr><th scope="row">1999.03</th><td>헨젤이 3.3 이후 은퇴. 데브팀이 이어받음.</td></tr>
+                <tr><th scope="row">2003 초</th><td>4.0.0 베타 26을 끝으로 공개 개발 정체.</td></tr>
+                <tr><th scope="row">2003 ~ 2005</th><td>브렌트 로스(Brent Ross)가 혼자 4.1 알파를 작업. 외부에서는 거의 보이지 않음.</td></tr>
+                <tr><th scope="row">2006</th><td>다르샨 샬리그램(Darshan "greensnark" Shaligram)과 에릭 파이퍼(Erik Piper)가 4.0 베타 26을 참조판으로 삼아 <strong>스톤 수프</strong> 시작. 0.1 공개.</td></tr>
+                <tr><th scope="row">2008</th><td>ASCII Dreams 올해의 로그라이크 투표 1위.</td></tr>
+                <tr><th scope="row">2021.01</th><td>0.26에서 식량 시스템 제거. 조트 시계로 대체.</td></tr>
+                <tr><th scope="row">2026.02 / 03</th><td>0.34 "Doomed Geometries" / 0.34.1 버그픽스. 0.35 개발 시작.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>이름의 "스톤 수프"는 여러 사람이 재료를 하나씩 보태 수프를 만든다는 민담에서 왔다. 지금은 원작 계열 중 유일하게 개발이 이어지는 버전이고, 역사적 이유로 0.x 번호 체계를 그대로 쓴다. 개발은 GitHub과 Libera.chat의 #crawl-dev 채널에서 공개적으로 이뤄지며, 공식 About 페이지에 40여 명의 팀원이 이름을 올리고 있다.</p>
+        </section>
+
+        <section id="philosophy" class="concept">
+          <h2>2. 명문화된 설계 철학</h2>
+          <p>공식 매뉴얼의 "Philosophy" 절은 DCSS를 "전술적 판타지 던전 크롤"로 규정하고, 목표를 주요와 부차로 나눠 적는다. 기능 추가와 삭제는 이 목록에 비춰 결정된다.</p>
+          <aside class="asset-note" aria-labelledby="goal-title">
+            <h2 id="goal-title">주요 목표</h2>
+            <ul>
+              <li><strong>도전적이되 자의적이지 않은 무작위성:</strong> 운보다 실력이 결과를 더 많이 좌우해야 한다. 중반 이후의 죽음은 대부분 플레이어 실수로 설명할 수 있어야 한다.</li>
+              <li><strong>의미 있는 선택, 뻔한 답 금지:</strong> 한 선택이 항상 옳은 "노브레이너"를 없앤다. 영구 저항이 드물고, 아티팩트와 획득 두루마리가 무작위인 이유.</li>
+              <li><strong>그라인딩 금지:</strong> 위험은 낮고 시간은 오래 걸리며 보상이 있는 행동을 없앤다. 상점은 물건을 사 주지 않고, 던전 층은 영구적이라 재생성 농사가 불가능하다.</li>
+              <li><strong>쓸 만한 인터페이스와 신규 지원:</strong> 장거리 이동, 탐색, 메모를 자동화하고 튜토리얼을 둔다. 타일과 ASCII, vi 키와 숫자 패드를 모두 지원한다.</li>
+            </ul>
+          </aside>
+          <aside class="asset-note" aria-labelledby="minor-title">
+            <h2 id="minor-title">부차 목표</h2>
+            <ul>
+              <li><strong>명확성:</strong> 스포일러 없이 이길 수 있어야 한다. 규칙은 매뉴얼이나 게임 안에 적고, 정밀한 숫자보다 정성적인 피드백을 선호한다.</li>
+              <li><strong>내적 일관성:</strong> 이름과 배치가 세계관에 맞아야 하지만, 충돌하면 게임플레이가 우선이다.</li>
+              <li><strong>재플레이성:</strong> 분기, 종족, 신, 플레이 스타일이 서로 다른 경험을 줘야 한다. 모든 조합이 똑같이 강할 필요는 없다.</li>
+              <li><strong>의도된 과급 괴물:</strong> 초반에 강한 괴물이 나오는 것은 버그가 아니라 설계다. 캐릭터와의 유대를 만들고, 초반 어비스 추방도 같은 맥락이다.</li>
+            </ul>
+          </aside>
+          <p>매뉴얼은 "무적 상태에 도달할 수 있다면 게임은 무의미하다"고 못 박는다. 밸런스를 "부드럽게"가 아니라 "단단하게" 잡는다는 뜻이고, 피할 수 없는 죽음이 가끔 있는 것도 감수한다.</p>
+        </section>
+
+        <section id="character" class="concept">
+          <h2>3. 캐릭터: 종족, 배경, 기술</h2>
+          <p>시작할 때 종족(species)과 배경(background)을 고른다. 종족은 능력치, 적성, 특수 능력을 정하고 배경은 시작 장비와 기술만 정한다. 매뉴얼은 종족을 난이도별 세 묶음으로 나눈다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>27개 종족 (0.34 기준)</caption>
+              <thead><tr><th scope="col">묶음</th><th scope="col">종족</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">단순 (9)</th><td>놀(Gnoll), 미노타우로스, 머포크, 가고일, 산 드워프(Mountain Dwarf), 드라코니안(8색), 트롤, 딥 엘프, 바라키(Barachi)</td></tr>
+                <tr><th scope="row">중급 (9)</th><td>인간, 코볼드, 데몬스폰, 진(Djinn), 스프리건, 레버넌트(Revenant), 텐구, 오니, 코글린(Coglin)</td></tr>
+                <tr><th scope="row">고급 (9)</th><td>게일 켄타우로스(Gale Centaur), 바인 스토커, 폴터가이스트, 데미갓, 포르미시드(Formicid), 나가, 옥토포드, 펠리드(Felid), 미라</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>고급 묶음은 규칙이 크게 다른 종족이다. 펠리드는 고양이라서 무기와 갑옷을 못 쓰는 대신 목숨이 여러 개고, 데미갓은 신을 섬길 수 없으며, 포르미시드는 순간이동과 가속이 아예 안 된다. 폴터가이스트는 작은 물건에 빙의해 싸우는 무형 언데드로 0.33에서 추가됐다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>25개 배경 (원소술사의 불·얼음·공기·흙 4계열은 하나로 셈)</caption>
+              <thead><tr><th scope="col">계열</th><th scope="col">배경</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">전사</th><td>파이터, 글래디에이터, 몽크, 헌터, 브리건드(독 다트)</td></tr>
+                <tr><th scope="row">광신도</th><td>버서커(트로그), 카오스 나이트(좀), 신더 어콜라이트(이그니스). 셋 다 신을 섬긴 채 시작.</td></tr>
+                <tr><th scope="row">모험가</th><td>아티피서(마법봉), 원더러(무작위), 델버(D:5에서 탈출 도구와 함께 시작)</td></tr>
+                <tr><th scope="row">변신체</th><td>셰이프시프터, 스토커, 미스틱. 0.33에서 재편된 탈리스만(talisman) 변신 시스템 기반.</td></tr>
+                <tr><th scope="row">전사-마법사</th><td>워퍼, 헥스슬링어, 인챈터, 리버</td></tr>
+                <tr><th scope="row">마법사</th><td>헤지 위저드, 컨저러, 서머너, 네크로맨서, 포지라이트(Forgewright, 0.33 신설), 원소술사(4계열), 알케미스트</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>기술과 성장</h3>
+          <ul>
+            <li>기술은 전투, 원거리, 마법, 기타로 나뉘고 각각 27레벨이 상한이다. 캐릭터 레벨도 27이 최대다.</li>
+            <li>종족별 <strong>적성(aptitude)</strong>이 각 기술의 성장 속도를 정한다. 같은 경험치로도 딥 엘프는 마법이, 미노타우로스는 근접이 훨씬 빨리 오른다.</li>
+            <li>기술 훈련은 자동 또는 수동이며, 기술별로 집중하거나 끌 수 있다. 최소 하나는 켜져 있어야 한다.</li>
+            <li>능력치는 3, 9, 15레벨마다 하나씩 올린다. 넷핵식 레벨 드레인이나 능력치 영구 손실은 없다.</li>
+          </ul>
+        </section>
+
+        <section id="gods" class="concept">
+          <h2>4. 26명의 신</h2>
+          <p>신은 선택 사항이지만 대부분의 빌드에서 중심축이다. 제단에서 귀의하면 신마다 다른 행동으로 신앙심(piety)을 쌓고, 그 대가로 능력을 받는다. 신앙을 배반하면 신의 분노가 따라온다. 매뉴얼은 '?/G'로 전체 목록을 보도록 안내하며, 위키백과 기준 현재 26명이다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>신과 한 줄 요약</caption>
+              <thead><tr><th scope="col">성향</th><th scope="col">신</th><th scope="col">요지</th></tr></thead>
+              <tbody>
+                <tr><th scope="row" rowspan="3">선</th><td>진(Zin)</td><td>질서. 돌연변이 치료, 혼돈 존재 응징.</td></tr>
+                <tr><td>빛나는 자(The Shining One)</td><td>성기사. 언데드·악마에 성스러운 피해, 천사 소환.</td></tr>
+                <tr><td>엘리빌론(Elyvilon)</td><td>치유. 자신과 타인 회복, 적을 평화롭게 만듦.</td></tr>
+                <tr><th scope="row" rowspan="16">중립</th><td>아셴자리(Ashenzari)</td><td>저주받은 장비를 묶는 대신 지식과 감지를 줌. 0.27에서 재설계.</td></tr>
+                <tr><td>체이브리아도스(Cheibriados)</td><td>느림. 속도를 포기하면 능력치가 오름.</td></tr>
+                <tr><td>디트메노스(Dithmenos)</td><td>그림자. 은신과 그림자 분신. 0.32에서 개편.</td></tr>
+                <tr><td>페드하스(Fedhas Madash)</td><td>식물. 시체로 식물 기르기, 포자.</td></tr>
+                <tr><td>고자그(Gozag)</td><td>금. 신앙심 대신 돈으로 능력을 삼.</td></tr>
+                <tr><td>헤플리아클카나(Hepliaklqana)</td><td>조상 혼령 동반자.</td></tr>
+                <tr><td>이그니스(Ignis)</td><td>꺼져 가는 불. 강하지만 유한한 힘. 0.28 추가.</td></tr>
+                <tr><td>지바(Jiyva)</td><td>슬라임. 돌연변이와 아이템 소화.</td></tr>
+                <tr><td>네멜렉스 조베(Nemelex Xobeh)</td><td>카드 덱으로 무작위 효과.</td></tr>
+                <tr><td>오카와루(Okawaru)</td><td>전사. 영웅화와 광분, 장비 보상. 0.28 조정.</td></tr>
+                <tr><td>카즐랄(Qazlal)</td><td>폭풍. 원소 구름과 재해.</td></tr>
+                <tr><td>루(Ru)</td><td>희생. 능력을 영구히 버리고 힘을 얻음.</td></tr>
+                <tr><td>시프 무나(Sif Muna)</td><td>마법. 마법서 선물, 마력 회복.</td></tr>
+                <tr><td>우스카야우(Uskayaw)</td><td>춤. 전투 중 연속 공격으로 리듬을 쌓음.</td></tr>
+                <tr><td>베후멧(Vehumet)</td><td>파괴 마법 강화.</td></tr>
+                <tr><td>우젠 의회(Wu Jian Council)</td><td>무술. 이동과 결합한 타격.</td></tr>
+                <tr><th scope="row" rowspan="7">혼돈·악</th><td>트로그(Trog)</td><td>분노. 주문 금지, 광폭화, 무기 선물.</td></tr>
+                <tr><td>좀(Xom)</td><td>변덕. 기분에 따라 축복과 재앙을 무작위로 내림.</td></tr>
+                <tr><td>이레델렘눌(Yredelemnul)</td><td>죽음. 언데드 부하. 0.28과 0.32에서 재설계.</td></tr>
+                <tr><td>키쿠바쿠다(Kikubaaqudgha)</td><td>강령술. 0.29에서 개편.</td></tr>
+                <tr><td>마클렙(Makhleb)</td><td>파괴. 피로 치유, 악마 소환. 0.32에서 개편.</td></tr>
+                <tr><td>베오그(Beogh)</td><td>오크 신. 오크 추종자를 거느림. 0.32에서 개편.</td></tr>
+                <tr><td>루고누(Lugonu)</td><td>어비스. 추방과 공간 왜곡. 0.30부터 더 쉽게 만남.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>신 시스템은 "노브레이너 금지" 원칙이 가장 잘 드러나는 곳이다. 트로그는 주문을 금지하고, 체이브리아도스는 속도를 뺏고, 루는 능력을 영구히 빼앗는다. 강한 보상에는 항상 대가가 붙는다.</p>
+        </section>
+
+        <section id="dungeon" class="concept">
+          <h2>5. 던전 분기와 룬</h2>
+          <p>던전은 넷핵처럼 분기 구조지만 층 수가 훨씬 적고, 대신 각 분기가 뚜렷한 주제와 전용 괴물을 가진다. 본 던전은 15층이고, 룬이 있는 분기는 "끝까지 내려가면 보상"이라는 구조로 통일되어 있다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>분기와 룬 (한 판 15개)</caption>
+              <thead><tr><th scope="col">분기</th><th scope="col">룬</th><th scope="col">비고</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">본 던전 Dungeon</th><td>없음</td><td>15층. 신전, 소굴, 오크 광산, 금고, 심연 등으로 가는 입구.</td></tr>
+                <tr><th scope="row">에큐메니컬 신전 Temple</th><td>없음</td><td>여러 신의 제단이 모인 안전 구역.</td></tr>
+                <tr><th scope="row">오크 광산 / 엘프 전당</th><td>없음</td><td>장비와 상점. 엘프 전당은 마법사가 많아 위험.</td></tr>
+                <tr><th scope="row">소굴 Lair</th><td>없음</td><td>동물 분기. 아래 네 하위 분기 중 두 개만 생성.</td></tr>
+                <tr><th scope="row">늪 Swamp / 모래톱 Shoals</th><td>1 (둘 중 하나)</td><td>부패의 룬 / 따개비 룬. 늪은 0.26에서 개편.</td></tr>
+                <tr><th scope="row">뱀 굴 Snake Pit / 거미 굴 Spider Nest</th><td>1 (둘 중 하나)</td><td>뱀 룬 / 거미줄 룬. 거미 굴은 0.28에서 개편.</td></tr>
+                <tr><th scope="row">슬라임 굴 Slime Pits</th><td>1</td><td>슬라임 룬. 벽이 산성. 0.34에서 대폭 개편.</td></tr>
+                <tr><th scope="row">금고 Vaults</th><td>1</td><td>은 룬. 마지막 층에 들어서면 경보가 울리고 적이 몰려옴.</td></tr>
+                <tr><th scope="row">심연 Abyss</th><td>1</td><td>심연 룬. 끝없이 변하는 공간. 0.29에서 더 깊고 보상이 커짐.</td></tr>
+                <tr><th scope="row">지옥 Hells (디스, 게헨나, 코키토스, 타르타로스)</th><td>4</td><td>철·흑요석·얼음·뼈 룬. 현관(Vestibule)에서 네 지옥으로 갈라짐. 0.28에서 새 괴물과 효과.</td></tr>
+                <tr><th scope="row">판데모니움 Pandemonium</th><td>5</td><td>악마 군주 넷(체레보프, 믈로네그, 롬 로본, 글루륵스 블로크)의 룬 4개와 떠도는 악마 룬 1개.</td></tr>
+                <tr><th scope="row">무덤 Tomb</th><td>1</td><td>황금 룬. 미라와 저주의 분기.</td></tr>
+                <tr><th scope="row">조트 Zot</th><td>목표</td><td>룬 3개로 입장. 맨 아래에 오브. 0.34에서 개편.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>포털 볼트와 시계</h3>
+          <ul>
+            <li>본 던전 곳곳에 시간 제한이 있는 일회성 입구가 열린다. 하수도, 납골당, 성채(Bailey), 얼음 동굴, 화산, 마법사 연구실, 소금 황야, 건틀릿, 보물고(Trove), 0.33의 네크로폴리스가 여기에 든다.</li>
+            <li><strong>지구라트(Ziggurat)</strong>는 층마다 괴물이 기하급수로 늘어나는 27층짜리 선택 도전이다.</li>
+            <li><strong>조트의 시계:</strong> 0.26에서 식량을 없애며 넣은 장치다. 한 분기에 너무 오래 머물면 조트가 감지해 영구 최대 체력을 깎는다. 더 깊이 내려가거나 분기를 바꾸면 주의가 흩어진다. "배고픔"이라는 간접 시계를 "머무르면 손해"라는 직접 시계로 바꾼 셈이다.</li>
+          </ul>
+        </section>
+
+        <section id="tactics" class="concept">
+          <h2>6. 전술 전투와 편의 기능</h2>
+          <p>DCSS의 재미는 한 턴 한 턴의 전투 판단에 있다. 넷핵이 "무엇을 할 수 있는가"를 묻는다면 DCSS는 "지금 어디에 서야 하는가"를 묻는다.</p>
+          <ul>
+            <li><strong>복도와 시야:</strong> 대부분의 죽음은 넓은 방에서 포위당해 일어난다. 복도로 물러나 하나씩 상대하기, 시야를 끊어 원거리 적을 다가오게 하기가 기본이다.</li>
+            <li><strong>소음과 은신:</strong> 행동마다 소음이 있고 괴물은 소리로 깬다. 은신 기술과 느린 접근이 전투 수를 줄인다.</li>
+            <li><strong>소모품의 재발견:</strong> 0.34부터 소모품은 소지품 칸을 차지하지 않는다. 물약과 두루마리를 아끼다 죽는 패턴을 줄이려는 변경이다.</li>
+            <li><strong>탈리스만 변신:</strong> 0.33에서 변신 주문을 들고 다니는 탈리스만 아이템 12종으로 재편했다. 변신 기술을 올리면 형태가 강해진다.</li>
+            <li><strong>둠(doom) 시스템:</strong> 0.34에서 전략적 피해를 다시 설계했다. 플레이어 돌연변이가 줄고, 특정 적과 효과가 "둠"이라는 누적 상태를 쌓아 나중에 터진다.</li>
+            <li><strong>자동화:</strong> 자동 탐색(o), 자동 이동(G), 자동 전투(Tab), 자동 메모, 재고(stash) 검색이 기본이다. 반복 작업을 없애는 것이 인터페이스 목표의 핵심이다.</li>
+            <li><strong>퀴버:</strong> 0.26부터 주문, 마법봉, 능력까지 투사체처럼 장전하고 자동 조준으로 쏠 수 있다.</li>
+          </ul>
+        </section>
+
+        <section id="removals" class="concept">
+          <h2>7. 제거의 역사</h2>
+          <p>DCSS를 다른 로그라이크와 구분 짓는 것은 추가 목록보다 삭제 목록이다. 변경 기록에서 확인되는 굵직한 삭제만 모았다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>주요 삭제와 교체</caption>
+              <thead><tr><th scope="col">버전</th><th scope="col">사라진 것</th><th scope="col">이유 또는 대체</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">0.25 (2020.06)</th><td>획득 두루마리의 비밀 규칙</td><td>스포일러 없이 이해되도록 선택지를 직접 보여 주는 방식으로.</td></tr>
+                <tr><th scope="row">0.26 (2021.01)</th><td><strong>식량과 배고픔 전체</strong></td><td>결정을 만들지 않는 잡무라는 판단. 조트의 시계로 교체. 구울의 시체 먹기는 처치 시 회복으로.</td></tr>
+                <tr><th scope="row">0.27 (2021.07)</th><td>저주받은 아이템</td><td>장비 감정의 함정 요소 제거. 아셴자리는 "스스로 저주를 거는" 신으로 재설계.</td></tr>
+                <tr><th scope="row">0.29 (2022.08)</th><td>기존 원거리 무기 체계</td><td>투척·사격 재설계. 네크로맨시와 키쿠바쿠다 개편.</td></tr>
+                <tr><th scope="row">0.30 (2023.05)</th><td>팔렌통가(Palentonga)</td><td>아르마타우르(Armataur)로 교체.</td></tr>
+                <tr><th scope="row">0.32 (2024.08)</th><td>힐 오크(Hill Orc)</td><td>산 드워프로 교체. 베오그는 오크 추종자 신으로 개편.</td></tr>
+                <tr><th scope="row">0.33 (2025.05)</th><td>층마다 흩어진 유령 볼트</td><td>반복 입장 가능한 네크로폴리스 포털로 통합.</td></tr>
+                <tr><th scope="row">0.34 (2026.02)</th><td>소모품의 소지품 제한</td><td>물약·두루마리 무제한 보유.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>식량 제거 당시 개발진이 커뮤니티에 남긴 설명은 간단했다. 배고픔은 어떤 의미 있는 결정도 만들지 않았고, 주문을 많이 쓰는 캐릭터와 트롤·뱀파이어·스프리건에게만 성가셨다는 것이다. 이보다 앞서 2014년에 켄타우로스와 하플링의 특수 식단, 암브로시아와 로열 젤리가 먼저 빠졌고, 2016년 포럼에서는 "식량은 그라인딩을 막는 타이머였는데 시체가 흔한 크롤에서는 그 역할을 못 한다"는 논의가 있었다. 삭제는 한 번에 일어나지 않고 몇 년에 걸쳐 역할을 잃은 뒤 이뤄진다.</p>
+        </section>
+
+        <section id="versions" class="concept">
+          <h2>8. 버전 연표: 0.25부터 0.34까지</h2>
+          <p>메이저 판은 대략 연 1회이고 모두 별명이 붙는다. 날짜는 변경 기록의 태그 기준이다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>최근 메이저 판</caption>
+              <thead><tr><th scope="col">판</th><th scope="col">날짜</th><th scope="col">핵심 변경</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">0.25</th><td>2020.06.12</td><td>여러 학파의 주문 재설계, 획득 두루마리 탈스포일러, 실패 주문·신의 분노·조트 함정 개편.</td></tr>
+                <tr><th scope="row">0.26 "Roll Around the Clock"</th><td>2021.01.08</td><td>팔렌통가 종족, 델버 배경, 식량 제거, 늪 개편, 퀴버 재설계.</td></tr>
+                <tr><th scope="row">0.27</th><td>2021.07.30</td><td>진(Djinni) 종족, 새 주문과 마법서, 아셴자리 재설계, 저주 아이템 제거.</td></tr>
+                <tr><th scope="row">0.28</th><td>2022.02.03</td><td>신더 어콜라이트와 이그니스, 지옥 개편, 이레델렘눌 재설계, 거미 굴 개편, 보조 장비 오브.</td></tr>
+                <tr><th scope="row">0.29</th><td>2022.08.25</td><td>메테오란 종족, 원거리 재설계, 네크로맨시·키쿠바쿠다 개편, 어비스 심화.</td></tr>
+                <tr><th scope="row">0.30</th><td>2023.05.05</td><td>리버 배경, 아르마타우르, 새 주문과 아티팩트, 루고누 접근성.</td></tr>
+                <tr><th scope="row">0.31</th><td>2024.01.19</td><td>셰이프시프터·알케미스트 배경과 기술, 많은 새 괴물, 종족 대개편.</td></tr>
+                <tr><th scope="row">0.32</th><td>2024.08.29</td><td>베오그·디트메노스·이레델렘눌·마클렙 개편, 산 드워프, 코글린 종족.</td></tr>
+                <tr><th scope="row">0.33 "Reforge Yourself"</th><td>2025.05.02</td><td>포지라이트 학파와 배경, 폴터가이스트·레버넌트 종족, 탈리스만 12종, 네크로폴리스.</td></tr>
+                <tr><th scope="row">0.34 "Doomed Geometries"</th><td>2026.02.05</td><td>새 에고 다수, 둠 시스템, 돌연변이 축소, 소모품 무제한, 보물고·슬라임 굴·조트 개편, 수십 종의 새 괴물.</td></tr>
+                <tr><th scope="row">0.34.1</th><td>2026.03.14</td><td>버그픽스. 현재 안정판.</td></tr>
+                <tr><th scope="row">0.35 (trunk)</th><td>개발 중</td><td>아네모켄타우로스(Anemocentaur) 종족이 이미 트렁크에 들어감.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="online" class="concept">
+          <h2>9. 온라인 플레이와 토너먼트</h2>
+          <p>DCSS는 설치 없이 브라우저에서 바로 할 수 있다. 공식 플레이 페이지에서 <strong>WebTiles</strong> 서버를 고르면 되고, 모든 서버의 게임 기록이 공유되어 다른 사람의 플레이를 실시간으로 구경할 수 있다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>공식 목록의 WebTiles 서버</caption>
+              <thead><tr><th scope="col">약칭</th><th scope="col">주소</th><th scope="col">위치</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">CAO</th><td>webtiles.akrasiac.org</td><td>미국</td></tr>
+                <tr><th scope="row">CBR2</th><td>cbro.berotato.org</td><td>미국</td></tr>
+                <tr><th scope="row">CDI</th><td>crawl.dcss.io</td><td>미국 뉴욕</td></tr>
+                <tr><th scope="row">CNC</th><td>crawl.nemelex.cards</td><td>한국</td></tr>
+                <tr><th scope="row">CPO</th><td>crawl.project357.org</td><td>호주</td></tr>
+                <tr><th scope="row">CUE</th><td>underhound.eu</td><td>유럽</td></tr>
+                <tr><th scope="row">CXC</th><td>crawl.xtahua.com</td><td>프랑스</td></tr>
+                <tr><th scope="row">LLD</th><td>lazy-life.ddo.jp</td><td>일본</td></tr>
+                <tr><th scope="row">CBRG / CRG</th><td>crawl-br.roguelikes.gg / crawl.roguelikes.gg</td><td>미기재</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>토너먼트</h3>
+          <p>메이저 판이 나올 때마다 16일간 토너먼트가 열린다. 온라인 게임은 모두 점수에 들어가고, 개인과 클랜 순위, 배너(업적)가 있다. 0.34 대회 결과는 다음과 같다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>0.34 토너먼트 (2026.02.06 ~ 02.22)</caption>
+              <thead><tr><th scope="col">항목</th><th scope="col">수치</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">참가자</th><td>3,194명 (0.23 이후 최다)</td></tr>
+                <tr><th scope="row">게임 수</th><td>90,631판</td></tr>
+                <tr><th scope="row">총 플레이 시간</th><td>34,962시간, 1인 평균 10.95시간</td></tr>
+                <tr><th scope="row">룬 획득자</th><td>985명</td></tr>
+                <tr><th scope="row">승리</th><td>412명이 1,326승. 승률 1.46%</td></tr>
+                <tr><th scope="row">기록</th><td>실시간 최단 23분 30초, 최소 턴 12,904턴, 연승 14, 비반복 조합 연승 세계 기록 102</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>승률 1.46%라는 숫자가 DCSS의 난도를 요약한다. 한 판은 3~8시간으로 넷핵보다 짧지만, 이기는 판은 100판 중 한둘이다.</p>
+        </section>
+
+        <section id="platforms" class="concept">
+          <h2>10. 플랫폼, 모드, 라이선스</h2>
+          <ul>
+            <li><strong>플랫폼:</strong> 공식 패키지는 Windows, macOS, Linux. 콘솔(ASCII)과 타일 두 인터페이스를 같은 빌드에서 제공한다. Android는 비공식 포트가 Google Play에 있다.</li>
+            <li><strong>라이선스:</strong> GPL 2.0 이상. 소스는 GitHub crawl/crawl에 있고, 설계 논의와 변경 이유가 커밋과 변경 기록에 남아 있다.</li>
+            <li><strong>던전 스프린트:</strong> 한 층짜리 압축 모드 9종. 레드 소냐, 멘카우레의 보라 성채, 10룬 도전, 페드하스의 질주, 지구라트 스프린트, 썬더돔, 구덩이, 피의 투기장, 라인스프린트.</li>
+            <li><strong>포크:</strong> 설계 방향에 동의하지 않는 쪽에서 갈라진 변종이 있다. 식량과 옛 시스템을 되살린 계열, 더 어렵게 만든 Hellcrawl, 밸런스 실험용 bcrawl 등이 알려져 있다. 원작 계열은 Crawl Classic으로 남아 있다.</li>
+          </ul>
+        </section>
+
+        <section id="assessment" class="concept">
+          <h2>11. 강점과 약점</h2>
+          <div class="io-common">
+            <h3>강점</h3>
+            <ul>
+              <li><strong>설명 가능한 죽음:</strong> 스포일러 없이 이길 수 있도록 규칙이 게임 안에 적혀 있고, 죽음의 원인이 대개 자기 판단에서 나온다. 로그라이크 입문용으로 자주 추천되는 이유다.</li>
+              <li><strong>빌드 다양성:</strong> 종족 27 × 배경 25 × 신 26의 조합이 실제로 다르게 플레이된다. 토너먼트의 "비반복 조합 연승" 기록이 이것을 증명한다.</li>
+              <li><strong>접근성:</strong> 브라우저에서 바로 하고, 자동 탐색과 자동 전투가 반복을 없앤다. 한 판이 몇 시간이면 끝난다.</li>
+              <li><strong>투명한 개발:</strong> 철학 문서, 공개 변경 기록, 공개 채널. "왜 이 기능을 뺐는가"를 추적할 수 있는 드문 프로젝트다.</li>
+            </ul>
+            <h3>약점</h3>
+            <ul>
+              <li><strong>잦은 변화:</strong> 매년 종족·신·배경이 추가되고 삭제된다. 익숙한 조합이 사라지는 데 불만을 가진 플레이어가 포크를 만든다.</li>
+              <li><strong>세계의 얇음:</strong> 설계 원칙이 게임플레이를 우선하므로 넷핵식 "이 물건을 저기에 쓰면 어떻게 될까"라는 발견의 재미는 적다. 아이템 하나에 기계적 용도는 하나뿐이다.</li>
+              <li><strong>높은 벽:</strong> 규칙이 투명해도 승률은 1~2%다. 설명 가능한 죽음이 반복되는 것을 즐기지 못하면 오래 가기 어렵다.</li>
+            </ul>
+          </div>
+          <p>정리하면 DCSS는 "무엇을 뺄 것인가"를 설계의 중심에 둔 게임이다. 1997년의 원작에서 출발했지만 20년 동안 식량, 저주, 비밀 규칙을 차례로 걷어내며 전술 판단만 남겼다. <a href="/posts/nethack/">넷핵</a>이 규칙을 배우는 게임이라면 DCSS는 아는 규칙 안에서 더 잘 판단하는 게임이다.</p>
+        </section>
+
+        <section id="sources" class="concept">
+          <h2>12. 출처</h2>
+          <ul class="ref-list">
+            <li><a href="https://github.com/crawl/crawl/blob/master/crawl-ref/docs/crawl_manual.rst">공식 매뉴얼 crawl_manual.rst</a> (철학, 종족, 배경, 기술, 스프린트)</li>
+            <li><a href="https://github.com/crawl/crawl/blob/master/crawl-ref/docs/changelog.txt">변경 기록 changelog.txt</a> (0.25 ~ 0.35 날짜와 하이라이트, 0.26 식량 제거)</li>
+            <li><a href="https://crawl.develz.org/wordpress/about">crawl.develz.org About</a> (역사, 팀, 서버), <a href="https://crawl.develz.org/wordpress/0-26-roll-around-the-clock">0.26 발표</a>, <a href="https://crawl.develz.org/wordpress/?p=5642">0.33 발표</a>, <a href="https://crawl.develz.org/wordpress/?p=5759">0.34 발표</a>, <a href="https://crawl.develz.org/wordpress/0-34-tournament-results">0.34 토너먼트 결과</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Dungeon_Crawl_Stone_Soup">Wikipedia: Dungeon Crawl Stone Soup</a>, <a href="https://roguebasin.com/index.php/Crawl">RogueBasin: Crawl</a></li>
+          </ul>
+        </section>
+
+        <p class="post-back"><a href="/">← 모든 포스트</a></p>
+      </article>
+    </main>
+    <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>

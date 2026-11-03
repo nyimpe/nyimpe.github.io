@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="넷핵 규칙을 C#으로 다시 구현한 로그라이크 Pathos의 역사, 엔진과 코덱스 구조, 40층 던전, 4개 모듈, 카르마 시스템, 넷핵과의 차이, 라이선스, 2026년 11월 스팀 출시까지 정리한 조사 기록.">
+    <title>파토스(Pathos) · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/pathos-nethack-codex/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="파토스(Pathos): 넷핵을 터치 화면으로 다시 만든 11년차 로그라이크">
+    <meta property="og:description" content="1인 개발 무료 게임으로 출발해 스팀 유료판을 앞둔 Pathos의 구조와 시스템, 넷핵과의 차이, 공개 저장소에서 집계한 콘텐츠 규모 정리.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/pathos-nethack-codex/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=design" aria-label="Game Design" title="Game Design"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#design"></use></svg></a>
+          <a href="/?category=note" aria-label="Note" title="Note"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post design-post asset-post">
+        <header class="post-header">
+          <h1>파토스(Pathos): 넷핵을 터치 화면으로 다시 만든 11년차 로그라이크</h1>
+          <time datetime="2026-11-02">2026.11.02</time>
+          <p class="image-credit">공식 공개 저장소, 스팀 상점 데이터, 넷핵 위키, RogueBasin, Roguetemple 릴리스 글, 보도 자료를 2026-11-02 기준으로 대조했다. 직접 플레이한 평가는 아니다 · 자매 글: <a href="/posts/nethack/">넷핵</a>, <a href="/posts/dungeon-crawl-stone-soup/">던전 크롤 스톤 수프</a></p>
+        </header>
+
+        <p>파토스는 호주 개발자 캘런 호지스킨(Callan Hodgskin)이 2015년 4월 13일에 시작한 턴제 로그라이크다. 오래 쓴 이름 <strong>Pathos: Nethack Codex</strong>가 말해 주듯 넷핵의 규칙과 소재를 가져왔지만, 넷핵의 C 코드를 고친 변종이 아니라 C#으로 새로 만든 엔진 위에 콘텐츠를 다시 정의한 게임으로 보인다. 터치 조작을 기준으로 설계했고, 10년 넘게 수익화 없이 무료로 배포됐다. 그 게임이 이번 주 처음으로 유료 스팀판을 낸다.</p>
+
+        <div class="asset-summary" aria-label="핵심 숫자 요약">
+          <div><strong>2015</strong><span>개발 시작(4월 13일)</span></div>
+          <div><strong>30</strong><span>직업(종족 21, 특수 18)</span></div>
+          <div><strong>4</strong><span>캠페인 모듈</span></div>
+          <div><strong>2026.11.3</strong><span>스팀 상점 표기 출시일</span></div>
+        </div>
+
+        <nav class="post-toc" aria-label="글 목차">
+          <ol>
+            <li><a href="#history">역사와 버전 연표</a></li>
+            <li><a href="#architecture">엔진과 코덱스 구조</a></li>
+            <li><a href="#character">캐릭터 만들기</a></li>
+            <li><a href="#modules">4개 캠페인 모듈</a></li>
+            <li><a href="#dungeon">Nethack Codex 던전 구조</a></li>
+            <li><a href="#systems">핵심 시스템</a></li>
+            <li><a href="#compare">넷핵과 무엇이 다른가</a></li>
+            <li><a href="#content">공개 저장소로 본 규모</a></li>
+            <li><a href="#platforms">플랫폼과 번역</a></li>
+            <li><a href="#license">라이선스와 모딩</a></li>
+            <li><a href="#steam">2026년 스팀판과 Contrary Games</a></li>
+            <li><a href="#assessment">강점과 약점</a></li>
+            <li><a href="#unknown">확인하지 못한 것</a></li>
+            <li><a href="#sources">출처</a></li>
+          </ol>
+        </nav>
+
+        <section id="history" class="concept">
+          <h2>1. 역사와 버전 연표</h2>
+          <p>게임에 포함된 변경 기록 파일은 2015-04-13의 "Pathos first started!"로 시작해 2026-07-11까지 날짜별 1,300개 항목, 3,660줄이 이어진다. 항목 수는 2017년(251개)이 정점이고 2024년 이후로는 해마다 15~28개로 줄었다. 2016~2017년에는 이틀에 한 번꼴로 기록이 남았고, 2026년 기록은 인터페이스 다듬기가 중심이다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>주요 연표 (날짜는 변경 기록 기준, 버전은 릴리스 글 기준)</caption>
+              <thead><tr><th scope="col">시기</th><th scope="col">버전</th><th scope="col">내용</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">2015.04.13</th><td>시작</td><td>개발 시작. RogueBasin은 2015-04-28을 1.0으로 적는다.</td></tr>
+                <tr><th scope="row">2015.09 ~ 10</th><td>첫 출시</td><td>Google Play(9/6), Apple(10/13), Windows Store(10/17) 순서로 공개.</td></tr>
+                <tr><th scope="row">2015.10 ~ 12</th><td></td><td>부활 후 계속하기(10/31), 실시간·턴제 전환(12/13).</td></tr>
+                <tr><th scope="row">2016.02</th><td></td><td>넷핵의 본즈에 해당하는 레버넌트 층 추가(2/7).</td></tr>
+                <tr><th scope="row">2016.06</th><td></td><td>손으로 만든 대체 퀘스트 Dhak Legacy 베타(6/18).</td></tr>
+                <tr><th scope="row">2016.10 ~ 11</th><td></td><td>분할 화면 협동 미리보기(10/30), 멀티플레이 베타(11/3).</td></tr>
+                <tr><th scope="row">2017</th><td>4.6 ~ 5.0</td><td>건슬링거(3/10), 작업대 제작(3/14), 맵 편집 스튜디오 알파(4/24). 해적·바드·죄수 등 직업 확장.</td></tr>
+                <tr><th scope="row">2018.06</th><td>5.6</td><td>최대 6인 파티(6/4)와 Sonyvanda 타일셋. 같은 해 저항력을 백분율로 변경(5.7).</td></tr>
+                <tr><th scope="row">2019.01</th><td>5.9</td><td>Xbox 지원(1/12).</td></tr>
+                <tr><th scope="row">2019.08</th><td>6.0</td><td>60번째 공개 릴리스. 환경 효과와 앰비언트 사운드.</td></tr>
+                <tr><th scope="row">2021</th><td>6.5 ~ 6.6</td><td>Pixel Sojourn 모듈, 시야선 계산 도입, 브라우저용 WebAssembly 판 시범 공개.</td></tr>
+                <tr><th scope="row">2023.01</th><td>7.0</td><td>콘텐츠 공식 저장소를 GitHub에 공개(1/15).</td></tr>
+                <tr><th scope="row">2024.01 ~ 03</th><td>7.2</td><td>네 번째 모듈 Kaloi Opus. 20개가 넘는 생성 알고리즘을 쓴 대규모 지상 맵.</td></tr>
+                <tr><th scope="row">2025.01</th><td>7.3</td><td>마을 경비대와 대화, 대화 트리와 편집기, 모듈별 타이틀 음악, Flatpak 배포 지원.</td></tr>
+                <tr><th scope="row">2026.02</th><td>7.4</td><td>앱스토어 표기 2월 19일. 3월에 Windows판이 .NET 10으로 이전.</td></tr>
+                <tr><th scope="row">2026.09.12</th><td>스팀 데모</td><td>Contrary Games 명의로 무료 데모 공개.</td></tr>
+                <tr><th scope="row">2026.11</th><td>스팀 정식판</td><td>상점 페이지는 11월 3일, 데모 페이지와 보도는 11월 4일로 표기.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>이용 규모는 개발자 공개 수치로만 확인된다. 호지스킨은 2023년 한 해 8만 4천 명이 110만 판을 끝냈다고 밝혔고, 2026년 3월 보도 자료는 누적 플레이어를 100만 명 이상으로 적었다. 앱스토어 평점은 4.7(362건), Google Play는 4.6이다.</p>
+        </section>
+
+        <section id="architecture" class="concept">
+          <h2>2. 엔진과 코덱스 구조</h2>
+          <p>이름의 두 단어가 곧 구조다. 개발자 설명에 따르면 <strong>Pathos</strong>는 게임 엔진이고 <strong>Nethack</strong>은 엔진이 실행하는 데이터인 <strong>코덱스</strong>다. 공개 저장소의 README도 같은 개념을 쓴다.</p>
+          <ul>
+            <li><strong>Manifest:</strong> 게임 엔진이 실행하는 중립적인 콘텐츠 정의. 개별 콘텐츠를 알지 못하도록 설계했다.</li>
+            <li><strong>Codex:</strong> 매니페스트에 등록된 콘텐츠에 이름을 붙이는 층. 예컨대 "바바리안은 양손검으로 시작한다"를 C# 코드로 직접 쓴다. JIT 비용을 줄이려고 바이너리(<code>Pathos.Codex</code>)로 직렬화한다.</li>
+            <li><strong>Module:</strong> 같은 코덱스로 세계를 생성하는 C# 코드. 저장소에는 Nethack, Opus, SPD(Pixel Sojourn), Dhak, 샌드박스 모듈이 있다.</li>
+            <li><strong>Invention:</strong> 호지스킨이 2015년 7월부터 GitLab에 공개한 C#·.NET 앱 프레임워크. iOS, Android, Windows에서 코드를 100% 공유한다고 소개한다. 저장소의 "Made with Invention"이 이것을 가리킨다.</li>
+          </ul>
+          <p>이 분리 덕에 Dhak Legacy 모듈 파일은 2KB도 안 된다. 미리 만든 퀘스트 파일을 불러오기만 하면 되기 때문이다. 반대로 Kaloi Opus 코드는 약 385KB, Nethack 모듈은 약 239KB다.</p>
+        </section>
+
+        <section id="character" class="concept">
+          <h2>3. 캐릭터 만들기</h2>
+          <p>넷핵의 직업·종족 조합에 특수 속성과 동료 선택을 더했다. 스팀 페이지 기준으로 직업 30, 종족 21, 특수 18, 동료 9이다. 코덱스 파일에 등록된 종족 이름은 28개로 상점 표기보다 많은데, 어떤 종족이 빠지는지는 확인하지 못했다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>코덱스에 정의된 선택지 (2026년 8월 저장소 기준)</caption>
+              <thead><tr><th scope="col">구분</th><th scope="col">목록</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">직업 30</th><td>barbarian, bard, caveman, convict, druid, explorer, gladiator, gunslinger, healer, hunter, jester, knight, miner, monk, mystic, necromancer, ninja, paladin, pirate, priest, ranger, reaver, rogue, samurai, shaman, templar, tinker, tourist, valkyrie, wizard</td></tr>
+                <tr><th scope="row">특수 18</th><td>colossus, drunkard, glass, midget, fugitive, noble, protagonist, psychic, quantum, scholar, skeleton, vampire, 원소 5종(frost, flame, shock, earth, water), werewolf</td></tr>
+                <tr><th scope="row">동료 9</th><td>dog, cat, horse, bird, monkey, rat, egg, imp, ghoul</td></tr>
+                <tr><th scope="row">종족(일부)</th><td>human, elf, dwarf, gnome, orc처럼 넷핵에 있는 종족 외에 angel, demon, dracon, changeling, echo, plasmoid, robot, minotaur, tortle, troll 등</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>특수 속성은 능력치와 제약을 함께 바꾼다. glass는 생명 성장과 방어가 낮은 대신 마나와 반사 능력을 주고, fugitive는 현상수배 상태로 시작한다. 넷핵 위키는 죄수와 해적 직업, 켤 수 있는 총기를 넷핵 변종에서 온 요소로 꼽는다.</p>
+        </section>
+
+        <section id="modules" class="concept">
+          <h2>4. 4개 캠페인 모듈</h2>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>공식 모듈</caption>
+              <thead><tr><th scope="col">모듈</th><th scope="col">도입</th><th scope="col">형식</th><th scope="col">특징</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Nethack Codex</th><td>2015</td><td>절차 생성 40층 던전</td><td>손으로 만든 분기 포함. 게임 안 설명은 처음 하는 사람에게 권한다.</td></tr>
+                <tr><th scope="row">Dhak Legacy</th><td>2016 베타</td><td>수제 지상 맵</td><td>고정된 맵을 탐험하는 대체 모험. 독립 명예의 전당.</td></tr>
+                <tr><th scope="row">Pixel Sojourn</th><td>2021</td><td>절차 생성</td><td>켄 왕(Ken Wang) 제작. <em>Shattered Pixel Dungeon</em>의 맵 생성을 기반으로 한 헌정 모듈.</td></tr>
+                <tr><th scope="row">Kaloi Opus</th><td>2024</td><td>절차 생성 대형 지상 세계</td><td>지상·지하 맵, 세트피스, 곁가지 던전. 레딧 이용자 중에는 넷핵보다 ADOM에 가깝다고 평하는 사람도 있다.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>네 모듈이 같은 코덱스를 쓰므로 괴물과 아이템, 규칙 지식이 그대로 옮겨 간다. 던전 하나를 끝없이 파는 넷핵 구조에 "같은 규칙으로 다른 모험"이라는 축을 더한 셈이다.</p>
+        </section>
+
+        <section id="dungeon" class="concept">
+          <h2>5. Nethack Codex 던전 구조</h2>
+          <p>모듈 소스 코드에 층과 분기 규칙이 그대로 드러나 있다. 깊이는 넷핵보다 짧은 40층이고, 지형이 세 구간으로 나뉜다. 1~19층은 성(castle) 양식, 20~29층은 동굴, 30~39층은 네더, 40층은 결전 층이다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>분기별 생성 범위 (PathosNethack.cs 기준)</caption>
+              <thead><tr><th scope="col">분기</th><th scope="col">입구 층</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Minetown / 광산</th><td>2 ~ 4</td></tr>
+                <tr><th scope="row">Sokoban</th><td>3 ~ 8</td></tr>
+                <tr><th scope="row">Fort Ludios</th><td>8 ~ 13</td></tr>
+                <tr><th scope="row">Labyrinth</th><td>11 ~ 16</td></tr>
+                <tr><th scope="row">Lost Chambers</th><td>14 ~ 19</td></tr>
+                <tr><th scope="row">Medusa Lair</th><td>20 ~ 24</td></tr>
+                <tr><th scope="row">Elf Kingdom</th><td>21 ~ 29</td></tr>
+                <tr><th scope="row">Lich Tower</th><td>30 ~ 34</td></tr>
+                <tr><th scope="row">Black Market</th><td>31 ~ 39</td></tr>
+                <tr><th scope="row">Infernal Abyss</th><td>40</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>분기는 이 순서로 반드시 하나씩 생기며 한 층에 둘이 겹치지 않는다. 넷핵의 소코반과 포트 루디오스 이름을 쓰지만, 광산 아래 Underdeep이나 엘프 왕국처럼 넷핵에 없는 지역이 많다. 목표도 다르다. 옌더의 부적은 아이템 표에 없고, 40층에서 숙적(nemesis)을 쓰러뜨린 뒤 1층까지 돌아가 던전을 탈출하면 끝난다. 원소계와 아스트랄계도 없다.</p>
+        </section>
+
+        <section id="systems" class="concept">
+          <h2>6. 핵심 시스템</h2>
+          <ul>
+            <li><strong>카르마:</strong> RogueBasin에 따르면 성향과 신이 없고, 대신 던전 시민으로서의 행동을 이 수치로 평가한다. 코드에는 −1000(damned)부터 +1000(exalted)까지 10단계 평판이 있다. 변경 기록 기준으로 괴물 처치, 시체 제물, 금화 기부로 오르고, 바위나 석상, 통을 부수면 조금 떨어지며, 최종 명성 점수에도 들어간다.</li>
+            <li><strong>기도:</strong> 넷핵처럼 위기 탈출 수단이지만 카르마 단계에 묶여 있다. good 이상이면 생명과 마나를 완전히 채우고, exalted면 죽은 충직한 동료를 한 명 되살린다(2025년, 2020년 변경 기록).</li>
+            <li><strong>성소와 은혜(boon):</strong> holy shrine, dark sepulchre, sacred grove, mystic coven, craft station 다섯 종류가 있고 카르마를 지불해 축복, 저주 해제, 언데드 소환, 복제, 재충전 같은 효과를 산다. 카르마는 평판이면서 화폐다.</li>
+            <li><strong>BUC와 감정:</strong> 축복·보통·저주 3단계와 외형 뒤섞기는 넷핵에서 그대로 왔다. 보통 90%, 축복과 저주가 각 5%로 생성 빈도가 코드에 정의되어 있다.</li>
+            <li><strong>파티:</strong> 혼자 또는 최대 6명으로 시작한다. CPU 동료는 똑똑한 애완동물처럼 움직이고, 주인공이 죽으면 동료를 넘겨받아 계속할 수 있다.</li>
+            <li><strong>부활:</strong> 기본은 영구 죽음이지만 부활 후 계속하기가 있다. 스팀 페이지도 "영구 죽음, 부활 옵션 포함"으로 적는다. 부활하면 저주된 장비가 풀리고 능력치가 회복된다.</li>
+            <li><strong>레버넌트 층:</strong> 넷핵의 본즈에 해당한다. 예전에 죽은 내 캐릭터가 돌아와 덤비고, 그 층에 남은 아티팩트는 복제품이다.</li>
+            <li><strong>실시간 토글:</strong> 턴제가 기본이고, 켜면 시간이 저절로 흐른다.</li>
+            <li><strong>제작:</strong> 2017년 추가된 작업대와 레시피. 쓸수록 엔트로피가 쌓여 사고 확률이 오르고, 95%를 넘으면 작업대가 부서질 수 있다.</li>
+            <li><strong>원소 효과:</strong> 원소 상호작용이 지형에 남는다. 물에 불을 쓰면 증기, 용암에 물을 쓰면 증기가 퍼지는 식이다. 푸딩은 철에 맞으면 분열하고 그렘린은 물에서 불어난다.</li>
+            <li><strong>협동:</strong> 분할 화면 로컬 협동과 TCP/IP 멀티플레이가 있다. 넷핵 위키는 후자를 "그래픽 텔넷"이라고 부른다. 호스트 한 명이 게임을 열면 다른 사람이 접속한다.</li>
+          </ul>
+        </section>
+
+        <section id="compare" class="concept">
+          <h2>7. 넷핵과 무엇이 다른가</h2>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>넷핵 5.0.0과 Pathos 비교</caption>
+              <thead><tr><th scope="col">항목</th><th scope="col">넷핵</th><th scope="col">Pathos</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">구현</th><td>C, 1987년부터 누적</td><td>C#, 2015년 자체 엔진</td></tr>
+                <tr><th scope="row">승리 조건</th><td>부적을 들고 아스트랄계에서 승천</td><td>40층 숙적 처치 후 1층으로 탈출</td></tr>
+                <tr><th scope="row">깊이</th><td>약 50층과 원소계</td><td>40층과 분기 10곳</td></tr>
+                <tr><th scope="row">캐릭터</th><td>직업 13, 종족 5</td><td>직업 30, 종족 21, 특수 18</td></tr>
+                <tr><th scope="row">종교</th><td>성향 3종과 신, 기도 타이머</td><td>성향·신 없음, 카르마 단일 수치</td></tr>
+                <tr><th scope="row">저항</th><td>대부분 있거나 없거나</td><td>0~100% 백분율</td></tr>
+                <tr><th scope="row">죽음</th><td>영구</td><td>영구, 단 부활 후 계속 가능</td></tr>
+                <tr><th scope="row">동료</th><td>애완동물 중심</td><td>최대 6인 파티와 용병</td></tr>
+                <tr><th scope="row">조작</th><td>키보드 명령 수십 개</td><td>터치 우선, 키보드·마우스·컨트롤러 지원</td></tr>
+                <tr><th scope="row">시각</th><td>ASCII 기본, 타일 선택</td><td>타일 4종, 애니메이션, 음악과 효과음</td></tr>
+                <tr><th scope="row">학습</th><td>외부 위키 의존</td><td>게임 안 문맥 도움말과 안내서</td></tr>
+                <tr><th scope="row">플레이어 간 연결</th><td>공개 서버, 본즈 공유</td><td>전역 명예의 전당, 직접 접속 협동</td></tr>
+                <tr><th scope="row">라이선스</th><td>NGPL, 전체 소스 공개</td><td>콘텐츠만 CC BY-NC 공개</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><a href="/posts/nethack/">넷핵</a>이 게임 규칙을 게임 밖에서 배우게 한다면, Pathos는 같은 소재를 유지하면서 설명을 안으로 끌어들였다. 그러나 <a href="/posts/dungeon-crawl-stone-soup/">DCSS</a>처럼 귀찮은 절차를 원칙적으로 잘라내는 방향은 아니고, 오히려 직업과 괴물을 계속 늘리는 넷핵 쪽 누적형에 가깝다. 스팀 소개문이 YASD(Yet Another Stupid Death)라는 넷핵 커뮤니티 용어를 그대로 쓰는 것도 같은 맥락이다.</p>
+        </section>
+
+        <section id="content" class="concept">
+          <h2>8. 공개 저장소로 본 규모</h2>
+          <p>공식 저장소가 자동 생성하는 CSV를 직접 세었다. 2026년 8월 7일 커밋 기준이다.</p>
+          <div class="table-scroll">
+            <table class="wide-table">
+              <caption>콘텐츠 집계</caption>
+              <thead><tr><th scope="col">항목</th><th scope="col">수</th><th scope="col">메모</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">개체(Entities.csv)</th><td>691</td><td>기반형 21, 고유 개체 63, 66개 계열. 앱스토어는 Slash'EM에서 온 괴물이 200종 이상이라고 적는다.</td></tr>
+                <tr><th scope="row">아이템(Items.csv)</th><td>643</td><td>무기 182, 방어구 106, 도구 68, 책 62, 음식 38, 반지 37, 보석 36, 두루마리 34, 마법봉 34, 물약 32, 부적 14</td></tr>
+                <tr><th scope="row">PathosEntities.cs</th><td>약 1.33MB</td><td>괴물 정의. Codex와 Modules의 코드 파일 중 가장 크다.</td></tr>
+                <tr><th scope="row">PathosItems.cs</th><td>약 600KB</td><td>권총, 샷건, 저격총, 중기관총 같은 현대 총기까지 포함.</td></tr>
+                <tr><th scope="row">저장소 활동</th><td>커밋 262</td><td>스타 205, 포크 48. 2023년 1월 생성, 마지막 푸시 2026-08-07.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>고유 개체 명단에는 아스모데우스, 오르쿠스처럼 넷핵에 나오는 악마 군주 외에 크툴루, 베크나, 프랑켄슈타인의 괴물, 반 헬싱, 린스윈드의 동행인 투플라워가 섞여 있다. 넷핵의 잡식성을 계승한 대목이다.</p>
+        </section>
+
+        <section id="platforms" class="concept">
+          <h2>9. 플랫폼과 번역</h2>
+          <ul>
+            <li><strong>무료 배포처:</strong> 공식 사이트가 Google Play, App Store, Microsoft Store(Xbox 포함), Windows 설치판, Android 사이드로드, WebAssembly 브라우저판, Linux를 안내한다. 앱스토어판은 Apple Silicon Mac과 visionOS에서도 돈다.</li>
+            <li><strong>Linux:</strong> 공식 빌드가 아니라 hydrian의 커뮤니티 저장소가 Flatpak, Lutris, Wine 실행법을 정리한다.</li>
+            <li><strong>스팀:</strong> Windows 전용 표기. Steam Deck 지원을 내세우지만 상점 분류는 부분 컨트롤러 지원이다. 최소 사양은 Windows 10/11 64비트, 4GB RAM, 저장 공간 1GB.</li>
+            <li><strong>번역:</strong> 커뮤니티가 맡았다. 저장소 집계에서 <strong>한국어는 5,282개 문자열 중 5,268개</strong>를 옮긴 상태이고 안내서 파일도 있다. 스팀 페이지도 한국어를 지원 언어로 표기한다.</li>
+          </ul>
+          <p>언어 수는 자료마다 15개 이상, 16개, 17개, 18개로 다르다. 번역 진척이 낮은 언어까지 세는지에 따른 차이로 보인다.</p>
+        </section>
+
+        <section id="license" class="concept">
+          <h2>10. 라이선스와 모딩</h2>
+          <p>넷핵 위키는 Pathos를 무료 오픈소스 게임이라고 소개하지만 정확히는 절반만 맞다. 공식 저장소에 있는 것은 콘텐츠 정의, 모듈 생성 코드, 에셋이고 <strong>라이선스는 CC BY-NC 4.0</strong>이다. README는 변종의 상업화를 금지한다. 빌드할 때 설치된 Pathos의 어셈블리를 참조하므로 엔진 본체는 이 저장소에 없다. README가 언급하는 Invention 프레임워크는 별도로 GitLab에 공개되어 있다.</p>
+          <ul>
+            <li><strong>쉬운 모드:</strong> 타일, 음악, 효과음 교체. 캐릭터와 애완동물 스프라이트 가져오기.</li>
+            <li><strong>스튜디오:</strong> 퀘스트와 맵 편집기. 스팀판은 창작마당과 연동한다.</li>
+            <li><strong>변종:</strong> 저장소를 포크해 C#으로 콘텐츠와 월드 생성을 수정하고, Visual Studio에서 실행하면 게임이 포크한 코드로 뜬다. PathosMaker 도구가 에셋 처리를 자동화한다.</li>
+          </ul>
+          <p>이 구조에는 앞으로 정리될 문제가 하나 있다. README는 지금도 "Pathos는 수익화한 적이 없다"는 전제로 변종의 비상업 조건을 설명하지만, 스팀 상점 데이터는 무료 게임이 아니라고 표시한다. 커뮤니티가 기여한 레벨, 타일, 번역의 권리가 유료판과 어떻게 정리됐는지는 공개 자료로 확인하지 못했다.</p>
+        </section>
+
+        <section id="steam" class="concept">
+          <h2>11. 2026년 스팀판과 Contrary Games</h2>
+          <ul>
+            <li><strong>회사:</strong> Contrary Games는 2025년 호주 퍼스에서 세운 인디 스튜디오다. 개발에 캘런 호지스킨과 카일 버메이스(Kyle Vermaes), 아트에 아일라 호지스킨(Isla Hodgskin)이 올라 있다.</li>
+            <li><strong>이름 변경:</strong> 스팀에서는 부제 없이 <em>Pathos</em>로 나온다. 소개문에 넷핵의 이름은 모듈명 NetHack Codex로만 남았다.</li>
+            <li><strong>왜 유료인가:</strong> COGconnected 보도에 따르면 10년 넘게 무료였던 게임의 강화판으로, 지속 개발을 지원할 수단이라는 설명이다. 옛 책 삽화에서 영감을 얻은 비주얼 개선을 포함한다. 키 아트는 스위스 민담의 인물 슈트루트 폰 빙켈리트에서 따왔다고 한다.</li>
+            <li><strong>스팀 전용 기능:</strong> 창작마당, 클라우드 저장(설정, 커스텀 영웅, 세이브, 본즈), 도전 과제, Remote Play Together, Steam Deck.</li>
+            <li><strong>데모:</strong> 2026-09-12 공개. 정식판의 일부를 담았고 조회 시점 리뷰는 21건 중 85%가 긍정이다. 표본이 작다.</li>
+            <li><strong>언론:</strong> GameRant는 11월 RPG 6선의 6위에 올리며 화려하지는 않지만 10년 개발의 결실이 보인다고 평했다.</li>
+          </ul>
+          <p>같은 스튜디오의 다음 작품 <em>Zeroth</em>는 2026년 3월에 발표한 물리 기반 로그라이크 플랫포머다. 메타 진행이 없고 <em>Noita</em>, <em>Terraria</em>, <em>Spelunky</em>를 영향작으로 꼽으며, Pathos의 정신적 후속작으로 소개된다.</p>
+        </section>
+
+        <section id="assessment" class="concept">
+          <h2>12. 강점과 약점</h2>
+          <p>정식판 리뷰가 아직 없어 아래는 수집한 사실을 바탕으로 한 판단이다.</p>
+          <div class="io-common">
+            <h3>강점</h3>
+            <ul>
+              <li><strong>진입 장벽 해소:</strong> 터치 조작, 문맥 도움말, 타일과 소리, 부활 옵션이 넷핵의 네 가지 벽을 한꺼번에 낮춘다. 전통 로그라이크를 휴대폰에서 끝까지 할 수 있는 드문 사례다.</li>
+              <li><strong>끈질긴 개발:</strong> 11년간 1,300개 날짜의 변경 기록이 쌓였다. 1인 프로젝트로는 드문 지속력이다.</li>
+              <li><strong>구조의 재사용성:</strong> 코덱스와 모듈을 분리해 같은 규칙으로 새 캠페인을 내고, 외부 기여자의 모듈까지 공식으로 받아들였다.</li>
+              <li><strong>조합 폭:</strong> 30 × 21 × 18에 동료와 모듈까지 곱하면 넷핵보다 캐릭터 변주가 훨씬 넓다.</li>
+            </ul>
+            <h3>약점</h3>
+            <ul>
+              <li><strong>이름의 문제:</strong> 넷핵이라는 이름을 앞세웠다가 스팀에서 부제를 뗐다. 넷핵 애호가에게는 다른 게임이고, 신규 이용자에게는 낯선 게임이다.</li>
+              <li><strong>밸런스 부담:</strong> 조합과 콘텐츠가 많을수록 강함의 편차를 관리하기 어렵다. 변경 기록에도 괴물 레벨과 난이도 재조정이 자주 나온다.</li>
+              <li><strong>유료화의 과제:</strong> 무료판이 계속 남는다면 스팀판은 그 차이를 값으로 설득해야 한다. 무료판과 유료판의 관계는 아직 분명하지 않다.</li>
+              <li><strong>반쪽 공개:</strong> 콘텐츠는 열려 있지만 엔진은 저장소에 없고 변종의 상업화도 금지된다. 넷핵 변종 생태계처럼 독립 포크가 자라기는 어렵다.</li>
+              <li><strong>존재감:</strong> 이번 조사에서 큰 매체의 깊이 있는 리뷰를 찾지 못했다. 넷핵·DCSS의 공개 서버와 토너먼트에 해당하는 것도 찾지 못했다.</li>
+            </ul>
+          </div>
+          <p>정리하면 Pathos는 "넷핵을 그대로 옮긴 모바일판"이 아니라 "넷핵을 교과서 삼아 다시 쓴 자기 게임"이다. 계승작을 설계하는 쪽에서 보면 가장 배울 것은 규칙 자체보다 터치 인터페이스, 게임 안 도움말, 그리고 엔진과 콘텐츠를 나눈 방식이다.</p>
+        </section>
+
+        <section id="unknown" class="concept">
+          <h2>13. 확인하지 못한 것</h2>
+          <ul>
+            <li><strong>스팀 가격:</strong> 11월 2일 조회 시 상점 데이터에 가격이 없다.</li>
+            <li><strong>출시일:</strong> 상점 페이지는 11월 3일, 데모 페이지는 11월 4일이다. 시간대 차이일 수 있으나 확인하지 못했다.</li>
+            <li><strong>무료판의 장래:</strong> 공식 사이트는 무료 빌드와 PayPal 기부를 계속 안내하지만, 유지 정책을 밝힌 공지는 찾지 못했다.</li>
+            <li><strong>새 비주얼:</strong> 책 삽화풍 개선의 구체적 범위를 찾지 못했다. 상점 소개의 타일셋은 기존과 같은 4종이다.</li>
+            <li><strong>레딧 원문:</strong> 개발 회고와 r/Games 글은 접속 차단으로 원문 대신 검색 결과 요약만 확인했다. 개발자의 엔진 설명도 이 경로다.</li>
+            <li><strong>구현 계보:</strong> "넷핵 코드 포크가 아니다"는 저장소 구조와 변경 기록에서 끌어낸 추론이다. 넷핵 코드를 쓰지 않았다는 개발자의 명시적 진술을 찾지는 못했다.</li>
+            <li>같은 이름의 다른 게임이 있다. 스팀의 2017년 퍼즐 게임 <em>PATHOS</em>는 이 글과 무관하다.</li>
+          </ul>
+        </section>
+
+        <section id="sources" class="concept">
+          <h2>14. 출처</h2>
+          <ul class="ref-list">
+            <li><a href="https://github.com/callanh/pathos-official">GitHub: callanh/pathos-official</a> (README, license.txt, Assets의 변경 기록·Entities.csv·Items.csv·Translations.txt, Codex, Modules)</li>
+            <li><a href="https://gitlab.com/hodgskin-callan/Invention">GitLab: Invention</a></li>
+            <li><a href="https://pathos.azurewebsites.net/">Pathos 공식 사이트</a></li>
+            <li><a href="https://store.steampowered.com/app/5062560/Pathos/">Steam: Pathos</a>, <a href="https://store.steampowered.com/app/5136900/Pathos_Demo/">Pathos Demo</a></li>
+            <li><a href="https://apps.apple.com/app/pathos-nethack-codex/id1045848120">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.x10host.pathos">Google Play</a>, <a href="https://xbox.com/en-US/games/store/pathos/9nblggh6c16j">Xbox Store</a></li>
+            <li><a href="https://nethackwiki.com/wiki/Pathos">NetHack Wiki: Pathos</a>, <a href="https://roguebasin.com/index.php/Pathos:_NetHack_Codex">RogueBasin: Pathos</a></li>
+            <li><a href="https://forums.roguetemple.com/index.php?topic=4769.0">Roguetemple 릴리스 스레드</a></li>
+            <li><a href="https://cogconnected.com/2026/09/pathos-steam-release-confirmed-for-november-4-demo-coming-soon/">COGconnected: Pathos Steam Release Confirmed</a>, <a href="https://gamerant.com/rpgs-new-games-releasing-november-2026-ranked/">GameRant: RPGs Releasing in November 2026</a></li>
+            <li><a href="https://www.gamespress.com/Zeroth-Announced---A-Comically-Dangerous-Physics-Driven-Roguelike-Plat">Games Press: Zeroth Announced</a></li>
+            <li><a href="https://x.com/Callan_Hodgskin/status/1743916842983518351">Callan Hodgskin: 2023년 결산 게시물</a> (본문은 검색 결과로 확인)</li>
+            <li><a href="https://www.reddit.com/r/roguelikedev/comments/437jtm/feedback_friday_9_pathos_nethack_codex/">r/roguelikedev Feedback Friday #9</a>, <a href="https://www.reddit.com/r/pathos_nethack/">r/pathos_nethack</a> (검색 결과 요약으로 확인)</li>
+            <li><a href="https://github.com/hydrian/Pathos-Linux">hydrian/Pathos-Linux</a></li>
+          </ul>
+        </section>
+
+        <p class="post-back"><a href="/">← 모든 포스트</a></p>
+      </article>
+    </main>
+    <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+name: Notify Discord of pushed commits
+
+on:
+  push:
+    branches: ["**"]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send commit messages to Discord
+        env:
+          # The webhook URL lives in a repository secret; never commit it to this public repo.
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        shell: python
+        run: |
+          import json
+          import os
+          import sys
+          import time
+          import urllib.request
+
+          webhook = os.environ.get("DISCORD_WEBHOOK_URL")
+          if not webhook:
+              sys.exit("DISCORD_WEBHOOK_URL secret is not set.")
+
+          with open(os.environ["GITHUB_EVENT_PATH"], encoding="utf-8") as f:
+              event = json.load(f)
+
+          commits = event.get("commits") or []
+          if event.get("deleted") or not commits:
+              print("No new commits to announce.")
+              sys.exit(0)
+
+          # One Discord message per commit, containing only the commit message.
+          for index, commit in enumerate(commits):
+              if index:
+                  time.sleep(1)  # stay under Discord's webhook rate limit
+              message = commit["message"].strip()
+              if len(message) > 2000:  # Discord message length limit
+                  message = message[:1999] + "…"
+              payload = {
+                  "username": "git",
+                  "content": message,
+                  "allowed_mentions": {"parse": []},  # never ping @everyone or users from a commit message
+                  "flags": 4,  # suppress link previews
+              }
+              request = urllib.request.Request(
+                  webhook,
+                  data=json.dumps(payload).encode("utf-8"),
+                  headers={"Content-Type": "application/json", "User-Agent": "nyimpe.github.io push notifier"},
+              )
+              with urllib.request.urlopen(request) as response:
+                  print(f"Discord responded {response.status} for {commit['id'][:7]}.")
