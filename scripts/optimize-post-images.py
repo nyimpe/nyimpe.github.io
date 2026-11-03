@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Optimize referenced post images, then synchronize HTML, data and provenance.
+"""Optimize referenced post images, then synchronize the HTML and catalog data.
 
 Requires Pillow >= 11.3 with WebP and AVIF support. Run after regenerating posts.
 Unchanged output hashes are skipped, so repeated runs never recompress them.
@@ -180,17 +180,11 @@ def optimize():
                 if key != 'optimizedFrom' and isinstance(item, (dict, list)):
                     update_records(item)
 
-    # Update current manifests; historical generation batches remain provenance.
-    records = sorted((ROOT / 'public/data').glob('*.json')) + [
-        ROOT / 'docs/jjang-gameplay-images.json',
-        ROOT / 'docs/korean-folklore-images.json',
-    ]
-    for path in records:
+    # The catalog data files mirror the image routes, sizes and hashes shown on the pages.
+    for path in sorted((ROOT / 'public/data').glob('*.json')):
         data = read_json(path)
         before = json.dumps(data, ensure_ascii=False)
         update_records(data)
-        if path.name == 'manifest.json':
-            data['total_image_bytes'] = sum(asset['bytes'] for asset in data['assets'])
         if json.dumps(data, ensure_ascii=False) != before:
             write_json(path, data)
 

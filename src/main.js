@@ -1,8 +1,10 @@
-import { keepSectionLinksOutOfHistory, rememberPostScroll } from './post-scroll.js';
+import { requestedCategory } from "./categories.js";
+import { keepSectionLinksOutOfHistory, rememberPostScroll } from "./post-scroll.js";
 
 rememberPostScroll();
 keepSectionLinksOutOfHistory();
 
+// Theme: the system preference applies until the reader picks one, which this browser remembers.
 const themeKey = "nyimpe-theme";
 const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)");
 const toggle = document.getElementById("theme-toggle");
@@ -41,16 +43,17 @@ preferredTheme.addEventListener("change", () => {
   if (!savedTheme) applyTheme(preferredTheme.matches ? "dark" : "light");
 });
 
-// The menu marks the current page with a filled icon instead of a highlight.
-const category = new URLSearchParams(window.location.search).get("category");
-const currentHref = window.location.pathname === "/" && (category === "game" || category === "design" || category === "note")
+// Menu: the current page gets a filled icon instead of a highlight.
+const category = requestedCategory();
+const currentHref = window.location.pathname === "/" && category
   ? `/?category=${category}`
   : window.location.pathname;
 for (const link of document.querySelectorAll(".site-nav > a")) {
-  const icon = link.querySelector("use");
-  const href = icon?.getAttribute("href").replace(/-fill$/, "");
   const isCurrent = link.getAttribute("href") === currentHref;
   if (isCurrent) link.setAttribute("aria-current", "page");
   else link.removeAttribute("aria-current");
-  if (icon && !href.endsWith("#github")) icon.setAttribute("href", isCurrent ? `${href}-fill` : href);
+  const icon = link.querySelector("use");
+  if (!icon) continue;
+  const symbol = icon.getAttribute("href").replace(/-fill$/, "");
+  if (!symbol.endsWith("#github")) icon.setAttribute("href", isCurrent ? `${symbol}-fill` : symbol);
 }

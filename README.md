@@ -7,22 +7,33 @@
 - **게임:** 기존 Phaser 3 게임 5개를 각각 독립 페이지로 연결했습니다. 시작 버튼을 누를 때 해당 게임을 불러옵니다.
 - **괴물·귀신:** `/posts/korean-folklore-research/`에 326항목의 이미지·설명·출처를 정리했습니다.
 - **빌드:** Vite가 HTML 페이지와 게임 모듈을 빌드합니다. 
-- **포스팅 이미지:** `npm run optimize:images`가 해상도·품질을 낮추고 WebP와 AVIF를 비교해 더 작은 파일을 선택합니다. 게시물·JSON·현재 이미지 기록의 경로, 크기, 캐시 해시를 함께 수정합니다. Pillow 11.3 이상(WebP·AVIF 지원)이 필요하며, 게시물을 다시 생성한 뒤 실행합니다. 설정과 결과는 `docs/post-image-optimization.json`에 기록하고, 이미 처리한 파일은 해시로 확인해 재압축을 건너뜁니다.
+- **포스팅 이미지:** `npm run optimize:images`가 해상도·품질을 낮추고 WebP와 AVIF를 비교해 더 작은 파일을 선택합니다. 게시물과 `public/data` JSON의 경로, 크기, 캐시 해시를 함께 수정합니다. Pillow 11.3 이상(WebP·AVIF 지원)이 필요하며, 이미지가 있는 게시물을 추가한 뒤 실행합니다. 설정과 결과는 `docs/post-image-optimization.json`에 기록하고, 이미 처리한 파일은 해시로 확인해 재압축을 건너뜁니다. 이 기록을 지우면 다음 실행에서 모든 이미지를 다시 압축하므로 함께 보관합니다.
+- **검사:** `npm test`가 읽던 위치 저장·복원 로직(`src/post-scroll.js`)의 단위 테스트를 실행합니다.
 - **외부 링크:** 다른 사이트로 가는 링크는 빌드할 때 `target="_blank" rel="noopener noreferrer"`가 자동으로 붙어 새 탭에서 열립니다. HTML에 직접 쓸 필요가 없습니다(`vite.config.js`).
 - **배포:** `main`에 push하면 GitHub Actions가 `dist/`를 GitHub Pages에 배포합니다.
 - **알림:** 어느 브랜치든 push하면 GitHub Actions가 새 커밋마다 커밋 메시지만 `git`이라는 이름으로 디스코드에 보냅니다. 웹훅 주소는 저장소 시크릿 `DISCORD_WEBHOOK_URL`에 있습니다(`.github/workflows/discord-notify.yml`).
 
 ```text
-index.html                  홈: 기술 스택 엠블렘, 기록 목록
+index.html                  홈: 기록 목록(분류 필터)
 about/index.html            소개
 posts/<slug>/index.html     게임 또는 일반 기록 페이지
-src/style.css            공통 스타일
+src/style.css               공통 스타일
+src/classic-games.css       게임 도감 페이지 스타일
+src/main.js                 공통 테마 초기화·전환·선호도 저장, 현재 메뉴 표시
+src/categories.js           홈 분류 이름과 쿼리 문자열 해석(main.js·post-filter.js 공용)
+src/post-filter.js          홈 기록 목록의 분류 필터
+src/post-scroll.js          포스트 읽던 위치 저장·복원
+src/game-page.js            게임 페이지의 시작·로딩·포커스 처리
+src/classic-games.js        게임 도감의 플랫폼·장르·검색 필터와 점진 표시
+src/folklore-filter.js      괴물·귀신 글의 초성 필터
+src/games/                  Phaser 게임 소스와 자산
 public/cat.png              첨부 이미지에서 배경을 제거한 고양이
 public/favicon.ico          동일 고양이 얼굴을 사용한 다중 크기 아이콘
-src/game-page.js            게임 페이지의 시작·로딩·포커스 처리
-src/main.js                 공통 테마 초기화·전환·선호도 저장
-src/post-scroll.js          포스트 읽던 위치 저장·복원
-src/games/                  기존 Phaser 게임 소스와 자산
+public/icons/navigation.svg 메뉴 아이콘 스프라이트
+public/images/, public/data/ 게시물 이미지와 게임 도감 데이터
+scripts/optimize-post-images.py  게시물 이미지 최적화
+scripts/verify-post-scroll.mjs   읽던 위치 로직 단위 테스트
+docs/post-image-optimization.json 이미지 최적화 설정·결과·해시 기록
 vite.config.js              여러 HTML 진입점 수집, 외부 링크 새 탭 처리
 ```
 
@@ -38,6 +49,7 @@ npm run dev
 개발 서버는 `http://127.0.0.1:8080`입니다.
 
 ```sh
+npm test
 npm run build
 npm run preview
 ```

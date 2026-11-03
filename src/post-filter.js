@@ -1,14 +1,12 @@
-const requestedCategory = new URLSearchParams(window.location.search).get("category");
-const category = requestedCategory === "game" || requestedCategory === "design" || requestedCategory === "note"
-  ? requestedCategory
-  : "all";
-const labels = { all: "Recent Posts", game: "Game", design: "Game Design", note: "Note" };
+import { categoryLabels, requestedCategory } from "./categories.js";
 
+const category = requestedCategory();
+const label = category ? categoryLabels[category] : "Recent Posts";
+
+// Entries without a category are notes.
 for (const entry of document.querySelectorAll(".post-list > li")) {
-  const entryCategory = entry.dataset.category ?? "note";
-  entry.hidden = category !== "all" && entryCategory !== category;
+  entry.hidden = category !== null && (entry.dataset.category ?? "note") !== category;
 }
 
-const heading = document.getElementById("posts-title");
-heading.textContent = labels[category];
-document.title = `${category === "all" ? "Home" : labels[category]} · nyimpe`;
+document.getElementById("posts-title").textContent = label;
+document.title = `${category ? label : "Home"} · nyimpe`;

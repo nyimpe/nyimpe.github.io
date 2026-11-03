@@ -5,7 +5,6 @@ import { Game } from "./scenes/Game.js";
 const config = {
   type: Phaser.AUTO,
   title: "Jump",
-  description: "",
   parent: "game-container",
   width: 430,
   height: 932,
