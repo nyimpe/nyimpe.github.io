@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DCSS·넷핵·파토스의 한 걸음 한 턴 위에 발더스 게이트와 디비니티: 오리지널 신의 파티, 여러 해법, 지형 전술을 얹은 2D 픽셀 판타지 로그라이크 기획. 제목과 세계관은 정하지 않고 게임의 방식, 긴장 구조, 다회차, 시장 조사를 다룬다.">
+    <title>한 걸음 한 턴, 셋이서 내려간다: 실시간 턴제 파티 로그라이크 기획 · nyimpe</title>
+    <link rel="canonical" href="https://nyimpe.github.io/posts/party-roguelike-design/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="한 걸음 한 턴, 셋이서 내려간다: 실시간 턴제 파티 로그라이크 기획">
+    <meta property="og:description" content="고전 로그라이크의 턴 위에서 동료를 모으고, 방마다 놓인 상황을 싸움·잠입·교섭·환경으로 푸는 2~3시간짜리 영구 죽음 원정. 스팀 직접 집계로 본 시장 조사 포함.">
+    <meta property="og:url" content="https://nyimpe.github.io/posts/party-roguelike-design/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.js"></script>
+    <style>
+      .notes-post .concept h3 { margin-top: 1.6em; }
+      .notes-post .pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65em; list-style: none; padding: 0; }
+      .notes-post .pillars li { border: 1px solid var(--soft-border); background: var(--surface); padding: .75em; font-size: .875em; }
+      .notes-post .pillars strong, .notes-post .pillars span { display: block; }
+      .notes-post .pillars span { margin-top: .4em; color: var(--muted); }
+      .notes-post .route-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5em; list-style: none; padding: 0; }
+      .notes-post .route-strip li { border: 1px solid var(--soft-border); background: var(--surface); padding: .65em; font-size: .8125em; }
+      .notes-post .route-strip strong, .notes-post .route-strip span { display: block; }
+      .notes-post .route-strip span { margin-top: .35em; color: var(--muted); }
+      .notes-post .scene { margin: 1.5em 0; padding: 1em; border: 1px solid var(--soft-border); background: var(--surface); }
+      .notes-post .scene pre { margin: 0; padding: .75em; font-size: 1em; line-height: 1.25; letter-spacing: .12em; }
+      .notes-post .scene figcaption { margin-top: .75em; font-size: .8125em; }
+      .notes-post .scene figcaption ul { margin: .5em 0 0; }
+      .notes-post .decision { border-left: 3px solid var(--link); padding-left: 1em; }
+      .notes-post .cut-list { columns: 2; column-gap: 2em; }
+      .notes-post .cut-list li { break-inside: avoid; }
+      .notes-post td.num, .notes-post th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+      @media (max-width: 640px) { .notes-post .route-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } .notes-post .pillars { grid-template-columns: 1fr; } .notes-post .cut-list { columns: 1; } }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <header class="site-header">
+      <div class="header-content">
+        <nav lang="en" class="site-nav" aria-label="Main navigation">
+          <a href="/" aria-label="Home" title="Home"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#home"></use></svg></a>
+          <a href="/?category=game" aria-label="Game" title="Game"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#game"></use></svg></a>
+          <a href="/?category=design" aria-label="Game Design" title="Game Design"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#design"></use></svg></a>
+          <a href="/?category=note" aria-label="Note" title="Note"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#writing"></use></svg></a>
+          <a href="/about/" aria-label="About" title="About"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#about"></use></svg></a>
+          <a href="https://github.com/nyimpe" aria-label="GitHub" title="GitHub"><svg aria-hidden="true" focusable="false" width="20" height="20"><use href="/icons/navigation.svg#github"></use></svg></a>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>☾</button>
+        </nav>
+        <hr>
+      </div>
+      <img class="site-cat" src="/cat.png" width="88" height="160" alt="주황색과 흰색의 픽셀아트 고양이">
+    </header>
+    <main id="content">
+      <article class="research-post design-post asset-post notes-post">
+        <header class="post-header">
+          <h1>한 걸음 한 턴, 셋이서 내려간다: 실시간 턴제 파티 로그라이크 기획</h1>
+          <time datetime="2026-11-12">2026.11.12</time>
+          <p class="image-credit">턴의 레퍼런스: 17번 <a href="/posts/nethack/">넷핵</a> · 18번 <a href="/posts/dungeon-crawl-stone-soup/">던전 크롤 스톤 수프</a> · 23번 <a href="/posts/pathos-nethack-codex/">파토스</a> / 재미의 레퍼런스: 발더스 게이트 1·2·3, 디비니티: 오리지널 신 1·2 / 제목과 세계관은 정하지 않았다</p>
+        </header>
+
+        <p class="concept-pitch">제목과 세계관은 나중에 정한다. 이 글은 게임의 방식만 다룬다. 한 걸음이 한 턴인 고전 로그라이크의 시간 위에서, 발더스 게이트처럼 동료를 모으고 디비니티처럼 지형과 원소를 엮어, 방마다 놓인 상황을 싸움·잠입·교섭·환경 가운데 하나로 풀며 내려가는 2~3시간짜리 영구 죽음 원정이다.</p>
+        <p>턴의 뼈대는 던전 크롤 스톤 수프(DCSS), 넷핵, 파토스에서 가져온다. 입력이 없으면 세상이 멈춰 있고, 내가 한 번 움직이면 모두가 한 번 움직인다. 이 글에서는 이것을 실시간 턴제라고 부른다. 그 위에 발더스 게이트 1·2·3과 디비니티: 오리지널 신 1·2가 잘한 것 네 가지를 얹는다. 동료와 파티, 한 문제에 여러 해법, 지형과 원소의 연쇄, 눈앞에서 굴러가는 주사위다. 종족·직업·괴물은 정통 판타지의 익숙한 이름만 쓰고 고유 명사는 하나도 만들지 않았다. 아래 수치는 모두 시제품에서 확인할 가설이다.</p>
+
+        <div class="asset-summary" aria-label="기획 목표 요약">
+          <div><strong>1입력 = 1턴</strong><span>탐험과 전투의 모드 전환 없음</span></div>
+          <div><strong>3명</strong><span>혼자 시작해 동료 둘을 얻는다</span></div>
+          <div><strong>12층</strong><span>3막, 한 판 2~3시간</span></div>
+          <div><strong>3갈래 이상</strong><span>방마다 통하는 해법의 수</span></div>
+        </div>
+
+        <nav class="post-toc" aria-label="글 목차"><ol>
+          <li><a href="#pillars">설계 기둥 네 가지</a></li>
+          <li><a href="#market">시장 조사: 무엇이 팔리고 무엇을 가져오는가</a></li>
+          <li><a href="#turn">턴 엔진: 한 걸음 한 턴, 파티는 한 박자</a></li>
+          <li><a href="#dice">판정: 주사위 하나, 유리와 불리</a></li>
+          <li><a href="#field">전장: 표면, 높낮이, 빛, 소리</a></li>
+          <li><a href="#situation">상황: 방마다 해법이 셋 이상</a></li>
+          <li><a href="#tension">긴장의 경제: 닳는 것 다섯 가지</a></li>
+          <li><a href="#character">캐릭터: 혈통 × 직업 × 배경</a></li>
+          <li><a href="#companions">동료와 유대</a></li>
+          <li><a href="#oaths">서약: 금기와 권능</a></li>
+          <li><a href="#items">아이템과 감정</a></li>
+          <li><a href="#dungeon">던전과 한 판의 구조</a></li>
+          <li><a href="#replay">죽음과 다회차</a></li>
+          <li><a href="#modern">현대화: 세 고전의 불편과 이 게임의 답</a></li>
+          <li><a href="#screen">조작, 화면, 픽셀 사양</a></li>
+          <li><a href="#scope">범위, 검증 순서, 위험</a></li>
+          <li><a href="#open">남은 결정</a></li>
+          <li><a href="#sources">출처와 확인 범위</a></li>
+        </ol></nav>
+
+        <p class="table-note">좁은 화면에서는 표를 좌우로 밀어 나머지 열을 볼 수 있다.</p>
+
+        <div class="table-scroll" tabindex="0" role="region" aria-label="요청 조건과 이 기획의 답"><table class="wide-table">
+          <caption>출발 조건 일곱 가지와 이 기획의 답</caption>
+          <thead><tr><th scope="col">조건</th><th scope="col">이 기획의 답</th><th scope="col">절</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">DCSS·넷핵·파토스식 실시간 턴, 시스템은 현대화</th><td>모드 전환 없는 단일 턴 엔진. 파티 셋이 한 박자에 움직이고, 확률·의도·소음을 행동 전에 보여 준다.</td><td>3, 4, 14</td></tr>
+            <tr><th scope="row">발더스 게이트·디비니티의 재미 요소</th><td>동료와 유대, 방마다 여러 해법, 표면과 원소의 연쇄, 보이는 d20 판정, 휴식과 야영.</td><td>4~10</td></tr>
+            <tr><th scope="row">제목과 세계관은 나중에</th><td>고유 명사 없음. 방식이 세계관에 요구하는 조건만 마지막에 적는다.</td><td>17</td></tr>
+            <tr><th scope="row">생각과 판단, 긴장</th><td>정보를 모아 접근법을 고르는 구조. 체력·마력·보급·경보·부상이 판 내내 닳는다.</td><td>6, 7</td></tr>
+            <tr><th scope="row">다회차와 로그라이크</th><td>영구 죽음, 절차 생성 3막 12층, 판마다 바뀌는 축 여섯 개, 힘이 아니라 선택지가 쌓이는 해금.</td><td>12, 13</td></tr>
+            <tr><th scope="row">시장 조사와 인기 요소</th><td>스팀 상점 직접 집계와 개발사 발표·보도로 인기 요소 여덟 가지를 추리고 채택 방식을 정했다.</td><td>2</td></tr>
+            <tr><th scope="row">판타지 세계관</th><td>전사와 마법사, 엘프와 드워프, 고블린과 언데드. 익숙한 이름을 규칙의 단서로 쓴다.</td><td>6, 8</td></tr>
+          </tbody>
+        </table></div>
+
+        <section id="pillars" class="concept">
+          <h2>1. 설계 기둥 네 가지</h2>
+          <ol class="pillars" aria-label="설계 기둥">
+            <li><strong>① 한 걸음 한 턴</strong><span>시간은 내가 움직일 때만 흐른다. 탐험과 전투를 가르는 모드가 없고, 파티 셋도 같은 턴에 함께 움직인다.</span></li>
+            <li><strong>② 모든 방은 상황이다</strong><span>방에는 적이 아니라 상황이 놓인다. 싸움·잠입·교섭·환경 가운데 적어도 세 갈래가 통하고, 갈래마다 치르는 값이 다르다.</span></li>
+            <li><strong>③ 보이는 주사위, 설명되는 죽음</strong><span>확률, 피해, 소음, 발각 위험을 행동하기 전에 보여 준다. 큰 한 방은 한 턴 먼저 예고한다. 판단의 재료를 숨기지 않는다.</span></li>
+            <li><strong>④ 안에서는 닳고 밖에서는 넓어진다</strong><span>판 안에서는 체력·마력·보급이 닳고 경보가 오른다. 판 밖으로는 힘이 아니라 선택지만 가져간다.</span></li>
+          </ol>
+          <p>대상은 두 부류다. 하나는 발더스 게이트 3를 끝내고 명예 모드에 끌리지만 100시간을 다시 쓰기는 어려운 사람이다. 다른 하나는 DCSS와 넷핵을 좋아하지만 혼자 싸우는 캐릭터 하나보다 넓은 판을 원하는 사람이다. 앞쪽에게는 파티 RPG의 선택과 전술을 저녁 한 번에 끝나는 길이로 주고, 뒤쪽에게는 고전의 턴 감각을 유지한 채 동료와 교섭이라는 새 도구를 준다.</p>
+          <p class="decision">기획의 중심: 판단의 재료는 전부 보여 주고, 판단의 결과는 되돌리지 않는다.</p>
+        </section>
+
+        <section id="market" class="concept">
+          <h2>2. 시장 조사: 무엇이 팔리고 무엇을 가져오는가</h2>
+          <p>조사는 세 갈래로 했다. 첫째, 스팀 상점의 검색 결과와 상세 정보를 2026년 11월 12일에 직접 조회해 태그별 게임 수와 리뷰 수를 셌다. 둘째, 개발사 발표와 보도에서 판매량을 확인했다. 셋째, 분석 업체 Alinea Analytics의 추정치를 참고했다. 리뷰 수는 판매량이 아니다. 업계에서 흔히 쓰는 어림은 리뷰 1건당 판매 30~60장이며, 이 글에서는 크기 비교에만 쓴다.</p>
+
+          <h3>장르의 크기</h3>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="스팀 태그별 게임 수"><table class="wide-table">
+            <caption>스팀 태그별 게임 수 (2026-11-12, 게임만, 미국 상점 비로그인 검색 기준)</caption>
+            <thead><tr><th scope="col">태그</th><th scope="col" class="num">태그가 붙은 게임</th><th scope="col" class="num">그중 리뷰 점수가 있는 게임</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">픽셀 그래픽</th><td class="num">36,264</td><td class="num">12,968</td></tr>
+              <tr><th scope="row">로그라이트</th><td class="num">16,859</td><td class="num">5,104</td></tr>
+              <tr><th scope="row">로그라이크</th><td class="num">16,854</td><td class="num">5,355</td></tr>
+              <tr><th scope="row">액션 로그라이크</th><td class="num">11,982</td><td class="num">3,511</td></tr>
+              <tr><th scope="row">턴제 전술</th><td class="num">9,650</td><td class="num">3,286</td></tr>
+              <tr><th scope="row">던전 크롤러</th><td class="num">8,014</td><td class="num">2,809</td></tr>
+              <tr><th scope="row">파티 기반 RPG</th><td class="num">3,830</td><td class="num">1,396</td></tr>
+              <tr><th scope="row">CRPG</th><td class="num">2,818</td><td class="num">1,106</td></tr>
+              <tr><th scope="row">로그라이크 덱빌더</th><td class="num">2,291</td><td class="num">706</td></tr>
+              <tr><th scope="row">전통 로그라이크</th><td class="num">895</td><td class="num">269</td></tr>
+            </tbody>
+          </table></div>
+          <p>스팀은 리뷰가 10건이 되어야 점수를 매긴다. 어느 태그든 점수가 있는 게임은 전체의 30~40%뿐이다. 출시 예정작이 섞여 있고, 나온 게임의 상당수는 리뷰 10건을 모으지 못한다. 한 걸음 한 턴 방식을 가리키는 전통 로그라이크 태그는 로그라이크 전체의 20분의 1 크기다.</p>
+
+          <h3>비교군의 리뷰 수</h3>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="비교 대상 게임의 스팀 리뷰 수"><table class="wide-table">
+            <caption>비교 대상의 스팀 리뷰 수 (2026-11-12, 상점 상세 정보의 추천 수)</caption>
+            <thead><tr><th scope="col">묶음</th><th scope="col">게임</th><th scope="col">스팀 출시</th><th scope="col" class="num">리뷰 수</th></tr></thead>
+            <tbody>
+              <tr><th scope="row" rowspan="8">파티·CRPG</th><td>발더스 게이트 3</td><td>2023.08</td><td class="num">761,264</td></tr>
+              <tr><td>디비니티: 오리지널 신 2</td><td>2017.09</td><td class="num">182,011</td></tr>
+              <tr><td>다키스트 던전</td><td>2016.01</td><td class="num">141,922</td></tr>
+              <tr><td>워테일즈</td><td>2023.04</td><td class="num">32,587</td></tr>
+              <tr><td>디비니티: 오리지널 신 인핸스드 에디션</td><td>2015.10</td><td class="num">27,909</td></tr>
+              <tr><td>배틀 브라더스</td><td>2017.03</td><td class="num">26,447</td></tr>
+              <tr><td>와일더미스</td><td>2021.06</td><td class="num">16,401</td></tr>
+              <tr><td>발더스 게이트 인핸스드 에디션 / II</td><td>2013</td><td class="num">15,521 / 9,582</td></tr>
+              <tr><th scope="row" rowspan="8">런 기반 로그라이크</th><td>하데스</td><td>2020.09</td><td class="num">287,910</td></tr>
+              <tr><td>슬레이 더 스파이어 2 (얼리 액세스)</td><td>2026.03</td><td class="num">215,689</td></tr>
+              <tr><td>슬레이 더 스파이어</td><td>2019.01</td><td class="num">195,003</td></tr>
+              <tr><td>발라트로</td><td>2024.02</td><td class="num">163,038</td></tr>
+              <tr><td>하데스 II</td><td>2025.09</td><td class="num">115,823</td></tr>
+              <tr><td>노이타</td><td>2020.10</td><td class="num">82,021</td></tr>
+              <tr><td>뮤제닉스(Mewgenics)</td><td>2026.02</td><td class="num">51,521</td></tr>
+              <tr><td>인투 더 브리치</td><td>2018.02</td><td class="num">19,182</td></tr>
+              <tr><th scope="row" rowspan="12">한 걸음 한 턴 계열</th><td>스톤샤드 (얼리 액세스)</td><td>2020.02</td><td class="num">34,563</td></tr>
+              <tr><td>케이브스 오브 쿠드</td><td>2024.12</td><td class="num">12,061</td></tr>
+              <tr><td>엘린 (얼리 액세스)</td><td>2024.11</td><td class="num">8,595</td></tr>
+              <tr><td>쿼지모프(Quasimorph)</td><td>2026.07</td><td class="num">7,639</td></tr>
+              <tr><td>테일즈 오브 마이얄</td><td>2013.12</td><td class="num">6,420</td></tr>
+              <tr><td>로우 매직 에이지</td><td>2017.01</td><td class="num">3,369</td></tr>
+              <tr><td>패스 오브 아크라</td><td>2024.05</td><td class="num">3,220</td></tr>
+              <tr><td>섀터드 픽셀 던전</td><td>2022.03</td><td class="num">2,178</td></tr>
+              <tr><td>주피터 헬</td><td>2021.08</td><td class="num">1,808</td></tr>
+              <tr><td>코그마인드</td><td>2017.10</td><td class="num">1,586</td></tr>
+              <tr><td>조버스(Zorbus)</td><td>2022.09</td><td class="num">366</td></tr>
+              <tr><td>파토스</td><td>2026.11.04</td><td class="num">32 (상점 표기, 96% 긍정)</td></tr>
+            </tbody>
+          </table></div>
+
+          <h3>발표와 보도로 확인한 숫자</h3>
+          <ul>
+            <li><strong>발더스 게이트 3:</strong> 2025년 12월 블룸버그의 스벤 빈케 인터뷰를 인용한 보도 기준 2,000만 장 이상. Alinea의 추정은 약 2,320만 장이다.</li>
+            <li><strong>명예 모드:</strong> 라리안의 2주년 공지(2025.08)는 명예 모드를 끝낸 플레이어를 "50만 명"으로 적었다. 1주년 통계(2024.08)를 다룬 보도에 따르면 실패한 판은 약 120만으로 성공률이 10% 남짓이었고, 패배한 플레이어의 76%가 세이브를 스스로 지웠다.</li>
+            <li><strong>Trials of Tav:</strong> 발더스 게이트 3를 무작위 전투 연속의 로그라이크로 바꾸는 모드. PC Gamer가 2024년 6월에 따로 기사로 다뤘다.</li>
+            <li><strong>슬레이 더 스파이어 2:</strong> 얼리 액세스 첫 주 300만 장(개발사 발표). Alinea는 2주 460만 장, 5월 중순 650만 장으로 추정했고, 플레이어의 39%가 전작을 스팀에서 해 본 적이 없으며 4인 협동이 화제의 큰 동력이라고 분석했다.</li>
+            <li><strong>뮤제닉스:</strong> 고양이 넷을 데리고 싸우는 턴제 전술 로그라이크. 출시 일주일 만에 100만 장(개발자 발표).</li>
+            <li><strong>로그라이크 전체:</strong> Alinea 추정으로 2026년 스팀 매출이 5월 중순에 이미 5억 달러에 근접했다.</li>
+            <li><strong>클레르 옵스퀴르: 33 원정대:</strong> 턴제 RPG. 출시 1년 만에 800만 장(2026.04 발표).</li>
+            <li><strong>다키스트 던전:</strong> 600만 장(2022.12 개발사 발표).</li>
+            <li><strong>섀터드 픽셀 던전:</strong> 개발자의 10주년 글(2024.08) 기준 여러 플랫폼 합계 약 500만 다운로드, 판매는 약 15만 장.</li>
+            <li><strong>파토스:</strong> 무료판 누적 플레이어 100만 명 이상(보도 자료, <a href="/posts/pathos-nethack-codex/">23번 글</a>). 유료 스팀판은 출시 8일째에 리뷰 32건이다.</li>
+          </ul>
+
+          <h3>전통 로그라이크 태그 안쪽</h3>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="전통 로그라이크 태그의 리뷰 수 분포"><table class="wide-table">
+            <caption>전통 로그라이크 태그 895개의 분포 (2026-11-12)</caption>
+            <thead><tr><th scope="col">기준</th><th scope="col" class="num">게임 수</th><th scope="col">비고</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">태그가 붙은 게임</th><td class="num">895</td><td>출시 예정작 포함</td></tr>
+              <tr><th scope="row">리뷰 점수가 있음(10건 이상)</th><td class="num">269</td><td>전체의 30%</td></tr>
+              <tr><th scope="row">리뷰 100건 이상</th><td class="num">92</td><td></td></tr>
+              <tr><th scope="row">리뷰 1,000건 이상</th><td class="num">22</td><td></td></tr>
+              <tr><th scope="row">리뷰 5,000건 이상</th><td class="num">3</td><td>케이브스 오브 쿠드, 엘린, 테일즈 오브 마이얄</td></tr>
+              <tr><th scope="row">리뷰 10,000건 이상</th><td class="num">1</td><td>케이브스 오브 쿠드</td></tr>
+              <tr><th scope="row">출시일이 확정된 게임, 연도별</th><td class="num">30 → 45 → 110 → 238</td><td>2023 → 2024 → 2025 → 2026년(연말 예정 포함)</td></tr>
+            </tbody>
+          </table></div>
+
+          <h3>읽어 낸 것</h3>
+          <ul>
+            <li><strong>수요는 양쪽에 다 있다.</strong> 파티 RPG와 런 기반 로그라이크는 각각 리뷰 수십만 건 규모다. 둘을 잇는 신호도 있다. 명예 모드를 끝낸 50만 명과 실패한 120만 판, Trials of Tav 같은 로그라이크 모드, 파티를 꾸리는 전술 로그라이크인 뮤제닉스의 성공이다.</li>
+            <li><strong>전통 로그라이크라는 이름표의 천장은 낮다.</strong> 895개 중 리뷰 1,000건을 넘긴 것은 22개, 가장 큰 케이브스 오브 쿠드가 1만 2천 건이다. 한 걸음 한 턴 방식에서 가장 큰 스톤샤드(3만 5천 건)는 이 태그를 달지 않고 "하드코어 턴제 RPG"라는 소개로 팔린다.</li>
+            <li><strong>공급은 2년 사이 다섯 배가 됐다.</strong> 출시일이 확정된 전통 로그라이크는 2024년 45개에서 2026년 238개로 늘었다. 방식만으로는 눈에 띄지 않는다.</li>
+            <li><strong>무료 도달과 유료 구매는 다른 시장이다.</strong> 섀터드 픽셀 던전은 500만 다운로드에 판매 15만 장이고, 100만 명이 한 파토스의 유료 스팀판은 출시 8일째에 리뷰 32건이다. 섀터드 픽셀 던전의 스팀 리뷰 2,178건 중 영어는 877건으로, 이 방식의 팬은 비영어권에 많다.</li>
+            <li><strong>협동은 지금 가장 큰 증폭기다.</strong> 슬레이 더 스파이어 2는 플레이어의 39%가 전작을 해 보지 않은 사람이고, Alinea는 새로 붙인 협동을 그 동력으로 본다. 발더스 게이트 3와 디비니티도 협동이 되는 게임이다.</li>
+            <li><strong>파티 RPG 규칙에 한 걸음 한 턴을 얹은 자리는 비어 있다.</strong> D&amp;D식 규칙에 동료를 데리고 다니는 조버스가 366건, 로우 매직 에이지가 3,369건, 최대 6인 파티의 파토스가 32건이다. 비어 있는 자리인지 수요가 없는 자리인지는 아직 모른다. 16절의 공개 데모 단계가 그것을 확인하는 지점이다.</li>
+          </ul>
+          <p>그래서 상점에서는 전통 로그라이크가 아니라 파티 RPG를 앞세운다. 소개의 첫 문장은 "동료를 모아 내려가는 2~3시간짜리 영구 죽음 원정"이고, 한 걸음 한 턴은 그 원정을 빠르게 만드는 방법으로 설명한다.</p>
+
+          <h3>인기 요소 여덟 가지와 채택 방식</h3>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="인기 요소와 채택 방식"><table class="wide-table">
+            <caption>시장에서 추린 인기 요소와 이 기획의 채택 방식</caption>
+            <thead><tr><th scope="col">인기 요소</th><th scope="col">근거</th><th scope="col">채택 방식</th><th scope="col">절</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">조합이 넓은 빌드</th><td>슬레이 더 스파이어 2, 하데스, 발라트로, 뮤제닉스. 판마다 다른 조합이 다시 하는 이유다.</td><td>혈통 × 직업 × 배경 × 서약 × 동료 × 고유 장비. 짝수 레벨마다 재능 셋 중 하나.</td><td>8~11</td></tr>
+              <tr><th scope="row">파티와 동료</th><td>발더스 게이트 3, 디비니티 2, 다키스트 던전이 리뷰 14만~76만 건. 뮤제닉스도 4인 파티다.</td><td>주인공과 동료 둘. 성향과 개인 목표, 유대, 승계.</td><td>9</td></tr>
+              <tr><th scope="row">한 문제에 여러 해법</th><td>라리안이 n+1이라고 부르는 설계. 플레이어가 길 하나를 막아도 다음 길이 남는다.</td><td>방마다 해법 세 갈래 이상. 경험치는 해결 방식과 무관하게 같다.</td><td>6</td></tr>
+              <tr><th scope="row">시스템끼리의 연쇄</th><td>디비니티의 표면과 원소, 노이타(리뷰 8만 건).</td><td>표면과 구름 여덟 가지, 누구나 쓰는 공통 동사 여덟 개.</td><td>5</td></tr>
+              <tr><th scope="row">영구 죽음의 긴장</th><td>명예 모드 완주 50만 명, Trials of Tav.</td><td>영구 죽음이 기본. 길이를 2~3시간으로 줄이고 난도를 세 단으로 둔다.</td><td>7, 13</td></tr>
+              <tr><th scope="row">읽히는 정보</th><td>슬레이 더 스파이어의 의도 표시, 인투 더 브리치의 공격 예고, 발더스 게이트 3의 판정 화면.</td><td>확률, 의도, 소음, 발각 위험을 행동 전에 표시. 큰 한 방은 한 턴 먼저 예고.</td><td>4, 14</td></tr>
+              <tr><th scope="row">협동</th><td>슬레이 더 스파이어 2, 발더스 게이트 3, 디비니티.</td><td>출시 후 2인 협동. 처음부터 시드와 입력만으로 재현되는 구조로 만든다.</td><td>15</td></tr>
+              <tr><th scope="row">얼리 액세스로 다듬기</th><td>발더스 게이트 3, 디비니티 2, 하데스 II, 슬레이 더 스파이어 2, 스톤샤드, 케이브스 오브 쿠드.</td><td>1막부터 공개하고 막 단위로 늘린다.</td><td>16</td></tr>
+            </tbody>
+          </table></div>
+          <p>피할 것도 시장에 있다. 스톤샤드는 얼리 액세스 직후 개발진이 저장 방식을 가장 큰 결함으로 인정했고, 6년이 지난 지금 최근 30일 리뷰의 긍정 비율은 75%다. 저장 제약과 반복 노동이 불만으로 꼽힌다. 그래서 이 게임은 매 턴 자동 저장에 언제든 중단할 수 있게 하고, 같은 곳을 돌며 키우는 구조를 규칙에서 막는다.</p>
+        </section>
+
+        <section id="turn" class="concept">
+          <h2>3. 턴 엔진: 한 걸음 한 턴, 파티는 한 박자</h2>
+          <p>이 글에서 실시간 턴제는 다음을 뜻한다. 입력이 없으면 세상은 멈춰 있다. 내가 한 번 행동하면 적도, 불도, 경보도 한 번 움직인다. 전투 화면으로 넘어가지 않고, 행동 순서를 기다리지 않으며, 탐험과 전투를 가르는 모드가 없다. DCSS·넷핵·파토스가 쓰는 방식 그대로다. 걸을 때는 실시간처럼 빠르고, 멈춰 서면 얼마든지 생각할 수 있다. 주피터 헬이 상점 소개에서 "실시간처럼 반응하는 턴제"라고 내세운 감각이다. 파토스에 있는, 시간이 저절로 흐르는 실시간 토글은 넣지 않는다. 생각할 시간을 빼앗는 장치는 이 기획의 목적과 반대다.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="한 턴의 세 차례"><table class="wide-table">
+            <caption>한 턴은 세 차례로 끝난다</caption>
+            <thead><tr><th scope="col">차례</th><th scope="col">일어나는 일</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">① 아군</th><td>선두의 행동 하나와 동료 둘의 행동. 동료는 작전대로 움직이거나, 내가 끼워 넣은 명령을 따른다.</td></tr>
+              <tr><th scope="row">② 적</th><td>보이는 적과 보이지 않는 적이 모두 행동한다. 예고했던 큰 공격이 여기서 떨어진다.</td></tr>
+              <tr><th scope="row">③ 환경</th><td>불이 번지고 구름이 흩어진다. 빈사 유예와 경보 시계가 한 칸 간다.</td></tr>
+            </tbody>
+          </table></div>
+          <p>세 차례는 입력 한 번에 0.2초 안에 끝난다. 유닛은 차례 안에서 동시에 움직이고 순서 연출을 기다리지 않는다.</p>
+
+          <h3>캐릭터가 한 턴에 하는 일</h3>
+          <ul>
+            <li><strong>행동 하나:</strong> 한 칸 이동(8방향), 공격, 기술·주문, 물건 쓰기와 던지기, 공통 동사(5절), 버티기 중 하나.</li>
+            <li><strong>반응 하나:</strong> 상대 차례에 저절로 나가는 대응 한 번. 기본은 기회 공격으로, 옆에 붙은 적이 떨어져 나갈 때 친다. 직업에 따라 방패 막기, 대신 맞기, 받아치기, 주문 끊기가 된다.</li>
+            <li><strong>빠른 행동:</strong> 턴을 쓰지 않는 동작으로 턴당 한 번. 무기 세트 바꾸기는 누구나 하고, 나머지는 직업과 재능이 준다. 도적의 숨기, 음유시인의 격려가 여기에 든다.</li>
+          </ul>
+          <p>물러나는 데에는 값이 붙는다. 적 옆을 벗어나면 기회 공격을 한 번 맞는다. 다만 반응은 턴당 한 번뿐이라, 전사가 먼저 빠지며 적의 반응을 받아 주면 마법사는 같은 턴에 맞지 않고 물러난다. 누가 먼저 움직이느냐가 판단이 된다. 아군끼리는 이동으로 자리를 바꿀 수 있어 복도에서 서로 막히지 않는다.</p>
+          <p>속도는 느림(두 턴에 한 번 행동), 보통, 빠름(한 턴에 두 번 행동) 셋뿐이고 머리 위 표식으로 늘 보인다. 소수점 단위의 숨은 행동 속도는 없다.</p>
+
+          <h3>파티 셋을 한 박자로 움직이는 법</h3>
+          <p>한 걸음 한 턴 방식의 약점은 동료다. 넷핵의 애완동물은 말을 듣지 않고, 파토스의 CPU 동료는 똑똑한 애완동물처럼 움직인다. 반대로 셋을 매 턴 하나씩 조작하면 전술 게임이 되어 걷는 속도를 잃는다. 이 게임은 개입의 정도를 플레이어가 턴마다 고르게 한다.</p>
+          <ul>
+            <li><strong>따라가기(기본):</strong> 내가 직접 움직이는 한 명이 선두다. 선두가 한 번 행동하면 턴이 넘어가고, 동료 둘은 같은 턴에 작전대로 움직인다. 걷는 동안에는 입력 한 번이 곧 한 턴이다. 초상화를 누르면 선두가 바뀌고 턴은 쓰지 않는다.</li>
+            <li><strong>명령 끼워 넣기:</strong> 선두가 행동하기 전에 동료를 골라 이번 턴의 행동을 직접 정한다. 명령은 그 자리에서 실행된다. 그래서 여러 명의 행동을 원하는 순서로 엮을 수 있다.</li>
+            <li><strong>수동 턴:</strong> 켜 두면 셋을 모두 내가 움직이고 턴 넘기기로 확정한다. 수호자 방처럼 한 수가 무거운 곳에서 쓴다.</li>
+          </ul>
+          <p>명령 끼워 넣기로 한 턴에 벌어지는 일의 예다.</p>
+          <ol>
+            <li>마법사의 초상화를 눌러 오우거 발밑에 기름을 뿌린다. 바로 실행된다.</li>
+            <li>전사를 골라 고블린을 기름 위로 밀친다. 바로 실행된다.</li>
+            <li>선두인 사냥꾼이 불화살을 쏜다. 턴이 넘어가고, 적 차례에 오우거와 고블린이 불 속에서 움직인다.</li>
+          </ol>
+          <p class="decision">평소에는 한 걸음에 입력 한 번, 위험할수록 입력이 늘어난다. 모드가 바뀌는 것이 아니라 같은 턴에 내가 개입하는 정도가 달라질 뿐이다.</p>
+
+          <h3>작전과 AI의 약속</h3>
+          <p>동료마다 작전을 하나 걸어 둔다. <strong>따라붙기</strong>는 선두 옆을 지키며 선두를 치는 적을 먼저 상대한다. <strong>맞서기</strong>는 선두가 노린 적을 함께 친다. <strong>자리 지키기</strong>는 그 칸에서 닿는 적만 상대한다. 자원 사용은 따로 세 단계로 정한다. 아끼기(마력과 소모품을 쓰지 않음), 위급할 때만, 맡기기다. 포켓몬 불가사의 던전의 작전, 발더스 게이트 2의 AI 스크립트와 같은 계열이고, 판을 거듭하면 "동료 체력이 30% 아래면 치유"처럼 조건 한 줄을 직접 쓰는 기능이 열린다.</p>
+          <p>동료 AI가 판을 망치면 이 구조 전체가 무너진다. 그래서 AI가 하지 않는 일을 규칙으로 정해 둔다.</p>
+          <ul>
+            <li>위험한 표면과 구름에 스스로 들어가지 않는다.</li>
+            <li>아군이 맞는 범위 공격을 쓰지 않는다.</li>
+            <li>아끼기 상태에서는 마력과 소모품을 쓰지 않는다.</li>
+            <li>파티가 숨어 있을 때 먼저 공격하지 않는다.</li>
+            <li>명령 없이 문을 열거나 레버를 당기지 않는다.</li>
+          </ul>
+          <p>진형은 셋이다. 일렬은 복도용으로 앞·가운데·뒤 순서를 정한다. 쐐기는 방에서 선두 뒤 좌우에 선다. 흩어지기는 범위 공격에 대비해 두 칸씩 벌린다. 발더스 게이트의 진형을 격자에 옮긴 것이고, DCSS의 "지금 어디에 서야 하는가"가 "누가 어디에 서야 하는가"로 넓어진다.</p>
+          <p>판단이 없는 시간은 자동화한다. 자동 탐험, 목적지 이동, 줍기 규칙이 있고, 새 적, 함정의 낌새, 큰 소리, 갈림길에서 멈춘다. 적이 시야에 있을 때는 길게 눌러 반복하는 입력이 막힌다.</p>
+        </section>
+
+        <section id="dice" class="concept">
+          <h2>4. 판정: 주사위 하나, 유리와 불리</h2>
+          <p>모든 판정은 20면 주사위 하나로 한다. 넷핵은 행운처럼 보이지 않는 수치가 거의 모든 확률에 끼어든다. 발더스 게이트 3는 주사위를 화면 한가운데에 꺼내 놓아 굴림 자체를 구경거리로 만들었다. 이 게임은 뒤쪽을 따른다. 굴리기 전에 확률을 보여 주고, 굴린 뒤에는 내역을 기록에 남긴다.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="판정의 종류"><table class="wide-table">
+            <caption>판정 세 가지</caption>
+            <thead><tr><th scope="col">판정</th><th scope="col">굴림</th><th scope="col">굴리기 전에 보이는 것</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">명중</th><td>d20 + 명중 보정이 상대의 방어 이상</td><td>명중률, 피해 범위, 치명타 조건</td></tr>
+              <tr><th scope="row">내성</th><td>d20 + 강인·반사·의지가 주문이나 함정의 난도 이상</td><td>버틸 확률. 버텨도 효과의 절반은 받는다.</td></tr>
+              <tr><th scope="row">기술</th><td>d20 + 능력치 + 숙련이 난도(8·12·16·20) 이상</td><td>성공 확률과 실패했을 때 치를 값</td></tr>
+            </tbody>
+          </table></div>
+          <h3>수정치는 유리와 불리 하나로</h3>
+          <p>자잘한 가감 대신 유리와 불리만 쓴다. 유리하면 두 번 굴려 높은 값을, 불리하면 낮은 값을 쓴다. 둘이 겹치면 지워진다. 같은 깊이의 적을 상대로 한 기본 명중률을 75%로 잡으면 유리는 94%, 불리는 56%가 된다. 자리 하나가 확률을 이만큼 움직인다는 것을 한 규칙으로 알 수 있다.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="유리와 불리의 조건"><table class="wide-table">
+            <caption>유리와 불리가 붙는 조건</caption>
+            <thead><tr><th scope="col">구분</th><th scope="col">조건</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">유리</th><td>상대가 나를 보지 못한다(은신, 어둠, 등 뒤) · 높은 곳에서 쏜다 · 상대가 넘어졌거나 묶였다 · 동료와 상대를 사이에 두고 마주 섰다 · 동료가 돕기를 해 줬다</td></tr>
+              <tr><th scope="row">불리</th><td>적이 옆에 붙어 있는데 활이나 주문을 쏜다 · 보이지 않는 대상을 친다(어둠, 연기) · 내가 넘어졌거나 눈이 멀었거나 겁먹었다 · 낮은 곳에서 높은 곳으로 쏜다</td></tr>
+            </tbody>
+          </table></div>
+          <p>협공 규칙은 적에게도 똑같이 적용된다. 고블린 둘 사이에 끼면 둘 다 유리하게 친다. DCSS에서 넓은 방 한가운데가 위험하고 복도가 안전한 이유가 이 한 줄에 들어 있다.</p>
+          <h3>설명되는 죽음을 위한 규칙</h3>
+          <ul>
+            <li><strong>피해 폭은 좁다.</strong> 검은 4~8처럼 범위가 작다. 치명타는 주사위 20이나 기습에서 나오며 최대값에 한 번 더 굴린 값을 더한다.</li>
+            <li><strong>서기 전에 보인다.</strong> 칸에 커서를 올리면 그 칸에서 다음 적 차례에 누구에게 최대 얼마를 맞을 수 있는지 보인다.</li>
+            <li><strong>큰 한 방은 예고한다.</strong> 대상의 최대 체력을 40% 넘게 깎을 수 있는 공격은 한 턴 전에 범위와 함께 표시된다. 예고 없는 즉사, 석화, 능력치 영구 손실은 없다.</li>
+            <li><strong>실패에는 값이 붙는다.</strong> 자물쇠 따기에 실패하면 소리가 나고 도구가 닳는다. 설득에 실패하면 요구가 오르거나 선공을 내준다. 아무 일도 일어나지 않는 실패가 없으므로 될 때까지 다시 굴리는 일도 없다.</li>
+            <li><strong>영감:</strong> 판정 하나를 다시 굴리는 토큰. 파티가 함께 쓰고 셋까지 쌓인다. 배경의 신조에 맞게 행동하거나 동료의 개인 목표를 진전시키면 얻는다. 발더스 게이트 3의 영감을 가져온 것이다.</li>
+          </ul>
+          <p>난수는 전부 시드에서 나온다. 같은 시드에 같은 입력이면 같은 결과가 나오므로 되감아 보기, 일일 원정, 이후의 협동이 같은 기반 위에 선다.</p>
+        </section>
+
+        <section id="field" class="concept">
+          <h2>5. 전장: 표면, 높낮이, 빛, 소리</h2>
+          <p>디비니티: 오리지널 신이 턴제 전투에 남긴 것은 바닥이 무기라는 생각이다. 파토스도 원소 효과를 지형에 남긴다. 이 게임은 반응의 수를 표 하나로 제한하고, 그 표를 아군·적·지형이 똑같이 쓰게 한다.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="표면과 구름"><table class="wide-table">
+            <caption>표면 다섯 가지와 구름 세 가지</caption>
+            <thead><tr><th scope="col">이름</th><th scope="col">위에 서면</th><th scope="col">반응</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">물</th><td>젖는다. 번개에 약해지고 불에 강해진다.</td><td>번개가 닿으면 이어진 물 전체가 감전 · 냉기가 닿으면 얼음 · 불이 닿으면 증기</td></tr>
+              <tr><th scope="row">기름</th><td>두 턴에 한 칸만 움직인다.</td><td>불이 닿으면 한 턴에 전체로 번진다</td></tr>
+              <tr><th scope="row">불</th><td>턴마다 화상. 풀, 나무, 천, 기름으로 번진다.</td><td>물이 닿으면 꺼지고 증기 · 독안개나 독 웅덩이에 닿으면 폭발</td></tr>
+              <tr><th scope="row">얼음</th><td>움직일 때 반사 판정에 실패하면 넘어진다.</td><td>불이 닿으면 물</td></tr>
+              <tr><th scope="row">독 웅덩이</th><td>중독된다.</td><td>불이 닿으면 폭발</td></tr>
+              <tr><th scope="row">증기</th><td>시야를 가린다.</td><td>번개가 닿으면 증기 전체가 감전</td></tr>
+              <tr><th scope="row">연기</th><td>시야를 가린다. 숨기 쉽고 쏘기 어렵다.</td><td>세 턴 뒤 흩어진다</td></tr>
+              <tr><th scope="row">독안개</th><td>턴마다 독 피해.</td><td>불이 닿으면 폭발</td></tr>
+            </tbody>
+          </table></div>
+          <p>반응은 이 표가 전부다. 방에는 표면을 만드는 물건이 놓인다. 기름통과 물통과 화약통, 매달린 샹들리에, 밀면 넘어가는 기둥, 끊을 수 있는 다리와 밧줄, 끄고 켤 수 있는 화로, 수문을 여는 레버다.</p>
+
+          <h3>누구나 쓰는 동사 여덟 개</h3>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="공통 동사"><table class="wide-table">
+            <caption>직업과 무관한 공통 동사</caption>
+            <thead><tr><th scope="col">동사</th><th scope="col">하는 일</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">밀치기</th><td>옆의 대상을 한 칸 민다. 벽에 부딪히면 넘어지고, 낭떠러지면 떨어지고, 표면이면 그 위에 선다.</td></tr>
+              <tr><th scope="row">던지기</th><td>손에 든 무엇이든 던진다. 물약은 닿은 칸의 모두에게 효과를 내고 통은 터진다.</td></tr>
+              <tr><th scope="row">뛰기</th><td>두 칸을 건너뛴다. 구덩이와 표면을 넘고, 높은 곳에서 뛰어내린다.</td></tr>
+              <tr><th scope="row">담그기</th><td>무기를 옆의 표면에 담가 세 턴 동안 그 원소를 얹는다.</td></tr>
+              <tr><th scope="row">숨기</th><td>적의 시야 밖이나 어둠에서 은신을 시작한다.</td></tr>
+              <tr><th scope="row">돕기</th><td>쓰러진 동료를 일으킨다. 옆 동료의 다음 판정을 유리하게 한다. 붙은 불을 꺼 준다.</td></tr>
+              <tr><th scope="row">엿보기</th><td>문틈이나 모퉁이 너머를 한 턴 들여다보고 소리를 듣는다.</td></tr>
+              <tr><th scope="row">말 걸기</th><td>말이 통하는 상대와 교섭을 연다.</td></tr>
+            </tbody>
+          </table></div>
+          <p>앞의 여섯은 발더스 게이트 3에 있는 동작이고, 뒤의 둘은 넷핵의 #chat과 문 앞에서 귀 기울이는 고전의 습관을 동사로 만든 것이다. 동사는 적게 두고 대상을 넓힌다.</p>
+
+          <h3>높낮이, 빛, 소리</h3>
+          <ul>
+            <li><strong>높낮이:</strong> 바닥과 단(발코니, 바위턱, 성벽 위) 두 층이다. 높은 곳에서 쏘면 유리하고 올려 쏘면 불리하다. 오르는 길은 계단, 사다리, 덩굴이며 끊을 수 있다. 밀려 떨어지면 낙하 피해를 입고 넘어진다.</li>
+            <li><strong>낭떠러지와 구덩이:</strong> 아래층으로 이어진다. 적을 밀어 떨어뜨리면 그 적과 전리품이 함께 사라진다. 내가 뛰어내려 한 층을 건너뛸 수도 있지만 피해를 입고 흩어져 떨어진다.</li>
+            <li><strong>빛:</strong> 칸은 밝거나 어둡다. 어두운 칸의 대상은 숨기 쉽고 맞히기 어렵다. 엘프와 드워프는 어둠을 본다. 횃불을 든 사람은 숨을 수 없다.</li>
+            <li><strong>소리:</strong> 행동마다 소음 반경이 있고 행동 전에 고리로 보인다. 걷기 2칸(중갑은 4칸), 근접 전투 5칸, 문 부수기 8칸, 천둥과 폭발 12칸이다. 반경 안의 잠든 적은 깰 수 있고 깨어 있는 적은 소리 난 곳을 살피러 온다. 큰 소리는 층의 경보를 올린다(7절).</li>
+          </ul>
+          <p class="decision">적도 같은 표와 같은 동사를 쓴다. 고블린이 기름통을 던지고, 오우거가 동료를 낭떠러지로 민다. 내가 쓸 수 있는 수는 전부 나에게도 쓰인다.</p>
+        </section>
+
+        <section id="situation" class="concept">
+          <h2>6. 상황: 방마다 해법이 셋 이상</h2>
+          <p>고전 로그라이크의 방에는 괴물이 있고, 답은 대개 싸우거나 피하는 것이다. 발더스 게이트와 디비니티의 조우에는 사정이 있다. 누가 왜 거기 있고 무엇을 원하는지가 있어서, 말로 풀거나 훔치거나 지형으로 끝낼 수 있다. 라리안이 n+1이라고 부르는 이 설계를 방 하나의 크기로 줄여 절차 생성 던전에 넣는다. 방은 네 가지로 이루어진다.</p>
+          <ul>
+            <li><strong>누가 있는가:</strong> 무리의 구성과 우두머리, 서로의 관계.</li>
+            <li><strong>무엇을 하는 중인가:</strong> 잠, 식사, 말다툼, 순찰, 의식. DCSS의 괴물이 잠든 채 놓이는 것을 넓힌 것이다.</li>
+            <li><strong>무엇을 붙잡을 수 있는가:</strong> 통, 다리, 어둠, 우회로, 갇힌 포로 같은 손잡이.</li>
+            <li><strong>무엇이 걸려 있는가:</strong> 보물, 열쇠, 통로, 포로, 시간.</li>
+          </ul>
+          <figure class="scene">
+            <pre aria-label="상황 예시 지도">###############
+#....g...g....#
+#..g..~~~.....#
+#....~~O~..%..+
+#.....~~......#
+#..c..........#
+#######+#######
+      #@#
+      #r#
+      #w#</pre>
+            <figcaption>문 앞의 파티(@ 전사, r 도적, w 마법사). 방 안에는 잠든 고블린 셋(g), 엎질러진 술 웅덩이(~, 기름으로 취급) 한가운데에서 식사 중인 오우거(O), 화약통(%), 우리에 갇힌 포로(c), 동쪽 문(+)이 있다.
+              <ul>
+                <li><strong>싸움:</strong> 전사가 문턱을 막아 한 번에 하나만 덤비게 하고 뒤에서 쏜다. 체력과 마력이 닳고 소리로 경보가 오른다. 적의 장비를 전부 얻는다.</li>
+                <li><strong>환경:</strong> 술 웅덩이에 불씨를 던진다. 오우거가 불타고, 불이 화약통에 닿으면 폭발한다. 빠르지만 소음이 가장 크고 전리품과 포로가 위험하다.</li>
+                <li><strong>잠입:</strong> 도적 혼자 들어가 우리를 따고 포로를 데리고 나온다. 칸마다 발각 위험이 보인다. 들키면 혼자다.</li>
+                <li><strong>교섭:</strong> 오우거는 말이 통한다. 음식이나 금화로 통행을 사거나, 힘을 보여 쫓아낸다. 실패하면 선공을 내준다.</li>
+                <li><strong>지나치기:</strong> 동쪽 문이 목적이라면 방 가장자리의 어둠을 따라 간다. 포로와 경험치는 포기한다.</li>
+              </ul>
+            </figcaption>
+          </figure>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="해법 네 갈래의 값과 보상"><table class="wide-table">
+            <caption>네 갈래의 값과 보상</caption>
+            <thead><tr><th scope="col">갈래</th><th scope="col">쓰는 것</th><th scope="col">치르는 값</th><th scope="col">얻는 것</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">싸움</th><td>체력, 마력, 소모품, 자리</td><td>자원 소모, 소음과 경보</td><td>적의 장비와 금화 전부, 방 확보</td></tr>
+              <tr><th scope="row">잠입</th><td>은신과 손재주, 어둠, 연기</td><td>시간. 들키면 불리한 싸움</td><td>보물과 통로만. 자원과 경보는 그대로</td></tr>
+              <tr><th scope="row">교섭</th><td>설득, 위협, 교감, 금화, 영감</td><td>금화, 동료의 반감, 실패하면 선공 상실</td><td>통행, 정보와 지도, 거래, 임시 동맹, 새 동료</td></tr>
+              <tr><th scope="row">환경·우회</th><td>완력, 식견, 도구, 표면과 낙하</td><td>도구와 물약. 불타거나 떨어진 전리품</td><td>빠른 정리 또는 건너뛰기</td></tr>
+            </tbody>
+          </table></div>
+          <p><strong>경험치는 상황이 끝난 순간에 준다.</strong> 적을 쓰러뜨렸든, 목표를 손에 넣었든, 합의했든, 들키지 않고 지나 그 층을 떠났든 같은 양이다. 처치 수는 세지 않는다. 그래서 싸움이 유일한 정답이 되지 않고, 약한 적을 찾아다니며 키울 수도 없다. 대신 전리품은 갈래마다 다르다. 지금 파티에 필요한 것이 장비인지, 자원 보존인지, 정보인지가 갈래를 정한다.</p>
+
+          <h3>먼저 알아내는 수단</h3>
+          <p>판단은 정보에서 나온다. 정보를 얻는 일에도 값이 있다.</p>
+          <ul>
+            <li><strong>엿보기와 듣기:</strong> 한 턴을 쓴다. 문 뒤의 숫자와 덩치, 깨어 있는지를 안다.</li>
+            <li><strong>선행 정찰:</strong> 숨은 한 명만 앞세운다. 많이 알지만 들키면 그 한 명이 혼자 맞는다.</li>
+            <li><strong>식견 판정:</strong> 처음 본 괴물의 계열 규칙과 원하는 것을 알아낸다.</li>
+            <li><strong>흔적:</strong> 발자국, 핏자국, 그을음을 수색으로 읽어 다음 방을 짐작한다.</li>
+            <li><strong>심문과 잡담:</strong> 항복한 적이나 유대가 깊은 동료가 아는 것을 말한다.</li>
+            <li><strong>지도 조각:</strong> 상인에게 사거나 교섭의 대가로 받는다.</li>
+          </ul>
+
+          <h3>괴물은 계열로 읽는다</h3>
+          <p>정통 판타지를 쓰는 이유가 여기에 있다. 고블린이 겁이 많고, 언데드와는 말이 안 통하고, 트롤이 불에 약하다는 것을 플레이어는 이미 안다. 익숙한 이름이 규칙을 배우는 값을 줄인다. 계열마다 말이 통하는지, 무엇을 원하는지, 어떤 규칙을 공유하는지를 정해 두면 처음 보는 괴물도 계열만 알면 접근법이 나온다.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="괴물 계열"><table class="wide-table">
+            <caption>괴물 열 계열 (출시 목표 약 90종)</caption>
+            <thead><tr><th scope="col">계열</th><th scope="col">말이 통하나</th><th scope="col">원하는 것, 약한 것</th><th scope="col">계열 규칙</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">고블린 무리</th><td>통한다</td><td>겁, 뇌물</td><td>우두머리가 쓰러지면 사기가 꺾인다. 달아나며 다른 방에 알린다.</td></tr>
+              <tr><th scope="row">야수</th><td>교감으로만</td><td>먹이, 새끼</td><td>빠르다. 먹이를 던지면 두 턴 정신이 팔린다. 체력이 낮으면 달아난다.</td></tr>
+              <tr><th scope="row">거인류</th><td>통한다(단순)</td><td>힘 과시, 잠</td><td>큰 한 방을 예고하고 친다. 트롤은 불이나 산에 데지 않으면 상처가 아문다.</td></tr>
+              <tr><th scope="row">언데드</th><td>안 통한다</td><td>빛, 신성</td><td>소리에 둔하다. 쓰러진 뒤 다시 일어난다. 불이나 신성으로 끝내면 일어나지 않는다.</td></tr>
+              <tr><th scope="row">사람 무리</th><td>통한다</td><td>금화, 목숨, 신념</td><td>바닥의 물건을 주워 쓰고 물약을 던진다. 넷핵의 유산이다. 불리하면 항복한다.</td></tr>
+              <tr><th scope="row">수호 구조물</th><td>명령어로만</td><td>명령서, 레버</td><td>독과 정신 효과가 듣지 않는다. 정해진 구역만 지킨다.</td></tr>
+              <tr><th scope="row">점액·균류</th><td>안 통한다</td><td>없음</td><td>베면 갈라진다. 죽으면 표면이나 포자를 남긴다.</td></tr>
+              <tr><th scope="row">벌레 떼</th><td>안 통한다</td><td>불, 연기</td><td>떼로 온다. 하나가 죽으면 주변을 부른다.</td></tr>
+              <tr><th scope="row">정령·악마</th><td>통한다(거래)</td><td>계약, 반대 원소</td><td>원소 하나로 이루어져 반대 원소에 약하다. 악마는 먼저 거래를 제안한다.</td></tr>
+              <tr><th scope="row">용</th><td>통한다(오만)</td><td>보물, 아첨</td><td>수호자급. 플레이어의 턴 사이에 예고된 추가 행동을 한다.</td></tr>
+            </tbody>
+          </table></div>
+          <p><strong>사기와 전령.</strong> 무리는 우두머리가 쓰러지거나 절반이 죽으면 의지 판정을 하고, 실패하면 달아나거나 항복한다. 달아난 적은 다른 방에 알려 경보를 올리므로 쫓을지 말지를 그 자리에서 정해야 한다. 항복한 적은 놓아주거나, 심문하거나, 거점까지 끌고 가 몸값을 받는다.</p>
+
+          <h3>분쟁 층</h3>
+          <p>막마다 한 층은 두 세력이 대치하는 큰 상황이다. 광맥을 두고 다투는 코볼트와 드워프 채굴대, 포로를 잡은 광신도와 그들을 쫓는 용병 같은 틀을 쓴다. 한쪽을 돕거나, 중재하거나, 둘을 싸움 붙이고 양쪽을 털거나, 무시하고 지나간다. 결과는 뒤로 이어진다. 편든 세력은 아래층에서 안전한 야영지와 상점이 되고, 등 돌린 세력은 추격대를 보낸다. 발더스 게이트와 디비니티의 "선택이 돌아온다"를 로그라이크 한 판의 길이에 맞춘 장치다.</p>
+        </section>
+
+        <section id="tension" class="concept">
+          <h2>7. 긴장의 경제: 닳는 것 다섯 가지</h2>
+          <p>긴장은 닳는 자원에서 나온다. DCSS는 싸움이 끝나면 제자리에서 쉬어 체력과 마력을 채우고, 한없이 머무는 것만 조트의 시계로 막는다. 이 게임은 쉬는 것 자체를 자원으로 만든다. 발더스 게이트 3의 짧은 휴식과 야영 보급품이 본보기이고, 훨씬 빠듯하게 맞춘다.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="닳는 자원 다섯 가지"><table class="wide-table">
+            <caption>닳는 자원 다섯 가지</caption>
+            <thead><tr><th scope="col">자원</th><th scope="col">닳는 이유</th><th scope="col">되돌리는 법</th><th scope="col">만드는 판단</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">체력</th><td>맞으면 줄고 저절로 차지 않는다.</td><td>숨 고르기, 야영, 물약, 치유 주문</td><td>이 싸움을 할 것인가</td></tr>
+              <tr><th scope="row">마력</th><td>주문에 쓰고 저절로 차지 않는다.</td><td>야영, 마력 물약</td><td>지금 큰 주문을 쓸 것인가</td></tr>
+              <tr><th scope="row">보급</th><td>야영 한 번에 하나.</td><td>발견, 구입, 교섭</td><td>지금 쉴 것인가, 한 층 더 갈 것인가</td></tr>
+              <tr><th scope="row">경보</th><td>소리, 시간, 실패, 달아난 적.</td><td>층 안에서는 거의 내려가지 않는다.</td><td>조용히 갈 것인가, 빨리 갈 것인가</td></tr>
+              <tr><th scope="row">부상</th><td>쓰러졌다 일어날 때, 큰 한 방을 맞을 때.</td><td>야영과 치료 도구, 거점의 치유사</td><td>이 동료를 계속 앞에 세울 것인가</td></tr>
+            </tbody>
+          </table></div>
+
+          <h3>쉬는 법 두 가지</h3>
+          <ul>
+            <li><strong>숨 고르기:</strong> 야영 한 번당 두 번. 체력의 40%를 회복한다. 30턴이 지나간다.</li>
+            <li><strong>야영:</strong> 보급 하나를 쓴다. 체력과 마력이 전부 차고, 가벼운 부상 하나가 낫고, 숨 고르기 두 번이 다시 생긴다. 동료와의 대화와 유대 사건이 여기서 일어난다. 적이 없는 정리된 방이나 계단참에서만 할 수 있다.</li>
+          </ul>
+          <p>보급은 평균 두 층에 한 번 야영할 만큼만 나온다. 한 층에 전투가 서너 번이므로 야영 한 번이 전투 예닐곱 번과 숨 고르기 두 번을 감당한다. D&amp;D가 모험 하루로 잡는 분량과 같다. 싸움마다 완전히 회복할 수 없고, 그래서 6절의 다른 갈래를 찾게 된다. 넷핵의 배고픔과 달리 보급이 떨어져도 굶어 죽지 않는다. 쉴 수 없게 될 뿐이다.</p>
+          <p>야영은 안전하지 않다. 발더스 게이트 1·2에서 쉬다가 습격당하던 것을 가져온다. 습격 확률은 경보 한 단계당 15%이고 야영 전에 숫자로 보인다. 문에 쐐기를 박거나, 경계 주문을 걸거나, 분쟁 층의 우호 세력 구역에서 쉬면 내려간다.</p>
+
+          <h3>경보: 소리로 가는 시계</h3>
+          <p>머무르면 손해라는 시계는 필요하다. 다만 시간에만 묶으면 서두르라는 뜻밖에 되지 않는다. 경보는 층마다 0에서 5까지 오르고, 주로 내가 낸 소리와 실수로 오른다. 턴제 잠입 게임 Invisible, Inc.의 경보 단계를 던전에 옮긴 것이고, DCSS의 소음 규칙을 눈에 보이게 만든 것이기도 하다.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="경보 단계"><table class="wide-table">
+            <caption>층의 경보 여섯 단계</caption>
+            <thead><tr><th scope="col">단계</th><th scope="col">던전의 반응</th><th scope="col" class="num">야영 습격</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">0 고요</th><td>적 대부분이 자거나 제 할 일을 한다.</td><td class="num">0%</td></tr>
+              <tr><th scope="row">1 수상함</th><td>순찰 한 조가 돈다. 잠든 적이 쉽게 깬다.</td><td class="num">15%</td></tr>
+              <tr><th scope="row">2 경계</th><td>방마다 보초가 선다. 일부 문이 안에서 잠긴다.</td><td class="num">30%</td></tr>
+              <tr><th scope="row">3 수색</th><td>수색조가 마지막으로 소리 난 곳으로 온다.</td><td class="num">45%</td></tr>
+              <tr><th scope="row">4 총동원</th><td>계단에서 증원이 온다. 그 층의 우두머리가 준비를 마친다.</td><td class="num">60%</td></tr>
+              <tr><th scope="row">5 사냥</th><td>추격자가 직접 나선다. 쓰러뜨리거나 층을 떠날 때까지 따라온다.</td><td class="num">야영 불가</td></tr>
+            </tbody>
+          </table></div>
+          <ul>
+            <li><strong>올리는 것:</strong> 큰 소음(전투 한 번에 최대 +1), 달아난 전령(+2), 징이나 뿔피리(+2), 판정 대실패, 그리고 시간. 층에 들어온 지 300턴이 지나면 150턴마다 +1이다.</li>
+            <li><strong>막는 것:</strong> 전령을 따라잡는다. 뿔피리꾼을 먼저 쓰러뜨린다. 보초를 매수한다. 그림자의 서약 권능으로 한 단계 낮춘다.</li>
+            <li><strong>다음 층:</strong> 0에서 시작한다. 4 이상으로 떠났다면 소문이 먼저 내려가 1에서 시작한다.</li>
+            <li><strong>보상도 함께 오른다:</strong> 증원과 추격자는 좋은 장비를 들고 온다. 시끄러운 파티는 위험과 전리품을 함께 고른 것이다.</li>
+          </ul>
+
+          <h3>빈사와 부상</h3>
+          <p>체력이 0이 되면 쓰러져 빈사가 되고 세 턴의 유예가 생긴다. 그 안에 동료가 옆에서 돕기를 하거나, 치유 주문을 쓰거나, 물약을 던져 맞히면 체력 1로 일어난다. 쓰러진 채 맞으면 유예가 한 턴 줄고, 유예가 끝나면 죽는다. 발더스 게이트 3의 쓰러짐과 돕기를 숫자 하나로 줄인 것이다. 일으킬 사람이 없는 혼자일 때는 유예가 아무 뜻이 없다. 그래서 초반의 단독 구간이 가장 위험하고, 첫 동료가 생명줄이 된다.</p>
+          <p>일어난 캐릭터는 부상 하나를 얻는다. 큰 한 방을 맞았을 때도 얻는다. 팔(무기 명중 감소), 다리(뛰기와 이탈 불가), 갈비뼈(최대 체력 감소), 머리(주문과 기술 판정 감소), 눈(사거리 절반), 깊은 상처(숨 고르기 회복 절반) 여섯 가지다. 다키스트 던전과 배틀 브라더스가 보여 준 대로, 한 번의 실수가 몇 층 동안 남아야 다음 방의 판단이 달라진다.</p>
+          <p class="decision">쉬고 싶지만 쉴 수 없고, 조용히 가고 싶지만 시간이 없다. 이 두 압력 사이에서 방마다 갈래를 고르게 만드는 것이 긴장 설계의 전부다.</p>
+        </section>
+
+        <section id="character" class="concept">
+          <h2>8. 캐릭터: 혈통 × 직업 × 배경</h2>
+          <p>주인공은 혈통, 직업, 배경을 골라 만든다. DCSS의 종족과 배경, 발더스 게이트의 종족·직업·킷과 같은 뼈대다. 능력치는 DCSS의 셋에 사람을 상대하는 능력 하나를 더해 넷으로 한다.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="능력치와 기술"><table class="wide-table">
+            <caption>능력치 넷과 기술 여덟</caption>
+            <thead><tr><th scope="col">능력치</th><th scope="col">전투에서</th><th scope="col">기술</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">힘</th><td>근접 피해, 밀치는 거리, 강인 내성, 중갑</td><td>완력(문 부수기, 들기, 버티기)</td></tr>
+              <tr><th scope="row">민첩</th><td>활과 가벼운 무기의 명중, 방어, 반사 내성</td><td>은신 · 손재주(자물쇠, 함정 해제)</td></tr>
+              <tr><th scope="row">지능</th><td>비전 주문의 위력, 주문서 용량</td><td>식견(감정, 괴물 지식) · 수색(함정, 비밀문, 흔적)</td></tr>
+              <tr><th scope="row">기백</th><td>신성 주문과 권능의 위력, 의지 내성</td><td>설득 · 위협 · 교감(야수 다루기)</td></tr>
+            </tbody>
+          </table></div>
+          <p>직업은 기술 두세 개에 숙련되고 배경이 두 개를 더한다. 셋이 모여도 여덟 기술을 다 덮기 어렵다. 이 파티로는 조용히 못 여는 문이 반드시 생기고, 그것이 길을 고르게 한다.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="직업"><table class="wide-table">
+            <caption>직업 여섯과 해금 직업 넷</caption>
+            <thead><tr><th scope="col">직업</th><th scope="col">문제를 푸는 방식</th><th scope="col">고유한 것</th><th scope="col">3레벨 전문화</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">전사</th><td>길목을 막고 버틴다.</td><td>반응: 옆 동료가 맞을 공격을 대신 맞는다. 기술은 재사용 대기.</td><td>수호자 / 무기 달인</td></tr>
+              <tr><th scope="row">도적</th><td>싸우지 않고 가져온다.</td><td>빠른 행동: 숨기, 빠져나가기. 못 본 적을 치면 추가 피해.</td><td>암살자 / 재주꾼(도구와 덫)</td></tr>
+              <tr><th scope="row">마법사</th><td>전장을 바꾼다.</td><td>마력. 주문은 두루마리를 주문서에 옮겨 적어 배운다.</td><td>원소술 / 환영과 제어</td></tr>
+              <tr><th scope="row">사제</th><td>버티게 한다.</td><td>마력. 치유, 언데드 퇴치. 서약의 권능이 한 단계 강하다.</td><td>치유 / 심판</td></tr>
+              <tr><th scope="row">사냥꾼</th><td>먼저 보고 먼저 쏜다.</td><td>화살 네 종류, 덫 놓기, 흔적 읽기, 야수 길들이기.</td><td>명사수 / 조련사</td></tr>
+              <tr><th scope="row">음유시인</th><td>말로 푼다.</td><td>빠른 행동: 격려(동료의 다음 판정 유리). 영감을 만든다.</td><td>책사 / 칼춤꾼</td></tr>
+              <tr><th scope="row">해금 넷</th><td colspan="3">성기사(서약에 묶인 힘, 파계하면 다른 힘) · 주술사(체력을 마력으로 바꾸는 계약) · 수도승(맨손과 이동) · 드루이드(변신과 교감)</td></tr>
+            </tbody>
+          </table></div>
+          <ul>
+            <li><strong>혈통 여섯:</strong> 인간(재능 하나 더), 엘프(어둠을 봄, 잠과 매혹에 유리, 체력 낮음), 드워프(어둠을 봄, 독과 넘어짐에 강함, 뛰기 한 칸), 하플링(주사위 1을 다시 굴림, 숨기 유리, 양손 무기 불가), 반오크(쓰러질 피해를 야영당 한 번 체력 1로 버팀, 위협 유리), 용의 피(원소 숨결 하나와 그 원소 저항).</li>
+            <li><strong>변칙 혈통 셋(해금):</strong> 규칙을 비트는 혈통이다. DCSS의 펠리드와 미라가 본보기다. 고양이족(목숨이 둘, 무기와 갑옷 대신 발톱), 망자(물약과 치유 주문이 듣지 않고 처치로 회복), 반거인(양손 무기를 한 손에, 좁은 틈을 못 지남).</li>
+            <li><strong>배경 여덟:</strong> 군인, 좀도둑, 학자, 수행 사제, 사냥꾼의 자식, 떠돌이 광대, 몰락 귀족, 광부. 기술 숙련 둘과 시작 물건 하나, 그리고 신조를 준다. 신조에 맞게 행동하면 영감을 얻는다. 좀도둑은 들키지 않고 훔쳤을 때, 수행 사제는 피 없이 끝냈을 때다.</li>
+            <li><strong>성장:</strong> 레벨 1에서 10까지. 경험치는 파티가 함께 받는다. 홀수 레벨에는 직업의 고정 특성을, 짝수 레벨에는 재능 셋 중 하나를 고른다. 재능 후보는 직업 풀에서 둘, 공용 풀에서 하나가 나온다. 3레벨에 전문화를 고르고 4·8레벨에 능력치가 하나 오른다.</li>
+            <li><strong>겸직:</strong> 레벨이 오를 때 다른 직업 하나를 섞을 수 있다. 발더스 게이트의 전통이다. 도적 2레벨을 섞은 마법사는 숨어서 주문을 쓴다.</li>
+          </ul>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="재능 예시"><table class="wide-table">
+            <caption>재능 예시</caption>
+            <thead><tr><th scope="col">풀</th><th scope="col">재능</th><th scope="col">효과</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">공용</th><td>등 뒤의 눈</td><td>협공당해도 적이 유리해지지 않는다.</td></tr>
+              <tr><th scope="row">공용</th><td>약 던지기 명수</td><td>던진 물약의 범위가 한 칸 넓어진다.</td></tr>
+              <tr><th scope="row">전사</th><td>방패 밀치기</td><td>밀치기가 빠른 행동이 된다.</td></tr>
+              <tr><th scope="row">도적</th><td>그림자 걸음</td><td>어두운 칸 사이를 움직일 때 소음이 없다.</td></tr>
+              <tr><th scope="row">마법사</th><td>주문 조각</td><td>범위 주문에서 아군이 선 칸을 뺀다.</td></tr>
+              <tr><th scope="row">음유시인</th><td>말 끊기</td><td>반응: 주문을 외는 적에게 위협 판정을 걸어 실패시킨다.</td></tr>
+            </tbody>
+          </table></div>
+          <p>뼈대는 계획하고 살은 주워서 붙인다. 직업 특성은 정해진 레벨에 오므로 빌드를 미리 그릴 수 있고, 재능 후보와 주문 두루마리와 고유 장비는 판마다 달라 계획을 고치게 만든다. 파티 RPG의 빌드 짜는 재미와 로그라이크의 적응하는 재미를 나눠 담은 구조다.</p>
+        </section>
+
+        <section id="companions" class="concept">
+          <h2>9. 동료와 유대</h2>
+          <p>주인공은 혼자 내려가기 시작해 동료를 둘까지 얻는다. 발더스 게이트 1이 혼자 성을 나서 길에서 사람을 만나는 것과 같다. 셋으로 정한 이유는 네 가지다. 한 칸짜리 복도에서 줄이 길어지지 않는다. 매 턴 직접 지시해도 손이 많이 가지 않는다. 화면과 터치 조작에 맞는다. 그리고 역할 하나는 반드시 비게 되어 판마다 부족한 것이 달라진다.</p>
+          <ul>
+            <li><strong>얻는 길 넷:</strong> 구출(우리의 포로, 덫에 걸린 모험가), 고용(거점 게시판의 용병, 층마다 급료), 설득(대치하던 상대, 분쟁 층의 인물), 길들이기와 계약(야수, 언데드, 악마. 직업이나 서약이 필요하다).</li>
+            <li><strong>동료는 원형에서 만들어진다:</strong> 출시 목표는 원형 열둘이다. 원형마다 직업이 정해져 있고, 성향 둘과 개인 목표 하나가 판마다 붙는다.</li>
+            <li><strong>성향:</strong> 의로움, 탐욕, 호전, 신중, 호기심, 자비. 내 선택에 대한 반응을 정한다. 의로운 동료는 약자를 구하면 좋아하고 포로를 죽이면 싫어한다. 호전적인 동료는 교섭과 우회를 싫어한다.</li>
+            <li><strong>개인 목표:</strong> 갚을 빚 300금화, 특정 계열에 대한 원한, 어느 분기에 두고 온 물건, 어떤 서약의 신자 같은 것이다. 진전시키면 유대와 영감이 오른다.</li>
+          </ul>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="유대 단계"><table class="wide-table">
+            <caption>유대 0~5 (2에서 시작)</caption>
+            <thead><tr><th scope="col">유대</th><th scope="col">일어나는 일</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">0</th><td>다음 야영에서 떠난다. 들고 있던 장비를 가져간다. 탐욕스러운 동료는 배낭에서 하나를 더 훔쳐 간다.</td></tr>
+              <tr><th scope="row">1~2</th><td>변화 없음.</td></tr>
+              <tr><th scope="row">3</th><td>합동기가 열린다. 둘이 붙어 있을 때 쓰는 연계 기술이다. 야영에서 다음 층에 대해 아는 것을 말한다.</td></tr>
+              <tr><th scope="row">4</th><td>개인 목표의 결말 사건이 열린다.</td></tr>
+              <tr><th scope="row">5</th><td>고유 재능 하나. 그리고 승계가 가능해진다.</td></tr>
+            </tbody>
+          </table></div>
+          <p>유대의 변화는 그 자리에서 화면에 뜬다. 교섭 선택지 옆에는 동료가 좋아할지 싫어할지가 미리 표시된다. 발더스 게이트 3는 고른 뒤에 알려 주지만 이 게임은 고르기 전에 알려 준다. 숨겨서 놀라게 하는 것보다 알고 고르게 하는 쪽이 기둥 ③에 맞는다. 발더스 게이트 1·2에서 평판이 맞지 않는 동료가 파티를 떠나던 것도 여기에 들어 있다.</p>
+          <p><strong>승계.</strong> 주인공이 죽었을 때 유대 5인 동료가 살아 있으면 그 동료가 주인공이 되어 원정을 잇는다. 한 판에 한 번이고 서약은 사라진다. 파토스에서 주인공이 죽으면 동료를 넘겨받아 계속하는 것을, 유대를 쌓은 보상으로 바꾼 규칙이다. 동료에게 잘하는 일이 곧 목숨 하나를 버는 일이 된다.</p>
+          <p>동료도 빈사 규칙을 따른다. 죽은 동료는 거점의 신전에서 금화를 내거나 드문 부활 두루마리로만 되살린다. 발더스 게이트의 신전이 하던 일이다.</p>
+          <p class="decision">동료는 가장 좋은 전리품이고, 가장 비싼 유지비이며, 잃으면 가장 아픈 자원이다.</p>
+        </section>
+
+        <section id="oaths" class="concept">
+          <h2>10. 서약: 금기와 권능</h2>
+          <p>DCSS에서 판마다 플레이를 가장 크게 바꾸는 것은 신이다. 신은 힘을 주고 행동을 묶는다. 발더스 게이트 3의 성기사는 맹세를 어기면 파계자가 되어 다른 힘을 얻는다. 둘을 합쳐 서약으로 만든다. 제단에서 신 하나에게 맹세하면 금기 하나에 묶이고, 신이 좋아하는 행동으로 총애(0~6)를 쌓아 권능을 받는다. 신의 이름은 세계관을 정할 때 붙이고, 여기서는 영역으로만 부른다.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="서약 여섯 가지"><table class="wide-table">
+            <caption>서약 여섯 (해금 둘 별도)</caption>
+            <thead><tr><th scope="col">서약</th><th scope="col">금기</th><th scope="col">총애가 오르는 행동</th><th scope="col">권능의 예</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">칼(전쟁)</th><td>싸움이 붙은 방에서 달아나지 않는다.</td><td>정면에서 이긴 싸움, 우두머리와의 결투</td><td>함성(파티 전원 두 턴 유리), 쓰러져도 한 턴 더 싸움</td></tr>
+              <tr><th scope="row">자비</th><td>항복한 자와 잠든 자를 죽이지 않는다.</td><td>피 없이 끝낸 상황, 구출</td><td>큰 치유, 적 하나를 진정시킴</td></tr>
+              <tr><th scope="row">그림자</th><td>경보를 3 이상으로 올리지 않는다.</td><td>들키지 않고 끝낸 상황</td><td>어둠에서 어둠으로 순간 이동, 소리 지우기, 경보 한 단계 낮춤</td></tr>
+              <tr><th scope="row">황금(거래)</th><td>훔치지 않고 값을 깎지 않는다.</td><td>총애 대신 금화로 권능을 산다.</td><td>상인 부르기, 금화로 다시 굴리기, 적 매수</td></tr>
+              <tr><th scope="row">기록(지식)</th><td>모르는 물건을 감정 없이 버리거나 팔지 않는다. 글을 태우지 않는다.</td><td>새 괴물, 새 비밀, 감정</td><td>층 지도 계시, 약점 간파, 쓴 두루마리 되살리기</td></tr>
+              <tr><th scope="row">야생</th><td>야수를 먼저 치지 않는다. 금속 중갑을 입지 않는다.</td><td>길들이기, 교감으로 끝낸 상황</td><td>덩굴 속박, 야수 부르기</td></tr>
+            </tbody>
+          </table></div>
+          <ul>
+            <li>제단은 1막에 여섯 중 셋만 나타난다. 판마다 고를 수 있는 서약이 다르다.</li>
+            <li>금기는 6절의 갈래를 좁힌다. 자비의 서약은 화공을 어렵게 하고, 그림자의 서약은 시끄러운 파티를 허락하지 않는다. 강한 보상에는 값이 붙는다는 DCSS의 원칙이다.</li>
+            <li>금기를 어기면 총애가 0이 되고 신벌 사건이 한 번 온다. 그 뒤에는 파계자가 되어 권능 대신 금기 없는 파계 특성 하나를 얻는다. 실패가 다른 빌드로 이어진다.</li>
+            <li>서약은 동료의 성향과 부딪힌다. 자비의 서약과 호전적인 동료, 황금의 서약과 좀도둑 출신은 한 파티에서 오래 가기 어렵다.</li>
+            <li>해금 서약 둘: 뼈(치유 주문을 받지 않는 대신 쓰러뜨린 적을 잠시 일으켜 부린다), 변덕(금기가 없고 층마다 축복이나 재앙이 무작위로 온다. DCSS의 좀이 본보기다).</li>
+          </ul>
+        </section>
+
+        <section id="items" class="concept">
+          <h2>11. 아이템과 감정</h2>
+          <ul>
+            <li><strong>장착:</strong> 무기 세트 둘, 갑옷, 장신구 둘. 캐릭터마다 허리띠 네 칸이 있고, 싸우는 중에 한 행동으로 쓸 수 있는 소모품은 허리띠에 찬 것뿐이다. 배낭에서 꺼내려면 한 턴이 더 든다. 배낭은 파티 공용 24칸이고 무게는 없다.</li>
+            <li><strong>등급 셋:</strong> 보통, 마법(수식어 하나), 고유. 고유 장비는 규칙을 한 줄 바꾼다. 발더스 게이트 2의 이름 있는 장비가 본보기다.</li>
+            <li><strong>고유 장비의 예:</strong> 밀려난 적이 지나간 칸마다 얼음이 깔리는 방패. 던지면 다음 턴에 손으로 돌아오는 도끼. 어둠 속에서만 강한 단검. 주문을 쓸 때마다 발밑에 물이 고이는 지팡이. 마지막 것은 번개 주문과 만나면 연쇄가 되거나 자폭이 된다.</li>
+            <li><strong>양날 장비:</strong> 대가가 처음부터 적혀 있다. "피해가 크게 오르지만 숨 고르기로 회복하지 못한다" 같은 식이다. 넷핵식의 숨은 저주는 없다.</li>
+            <li><strong>소모품은 쓰임이 둘이다:</strong> 물약은 마시거나 던진다. 치유 물약도 던지면 닿은 칸의 모두를 치유하고 빈사인 동료를 일으킨다. 두루마리는 누구나 한 번 읽거나, 마법사가 주문서에 옮겨 적어 영구히 배운다. 옮겨 적으면 두루마리는 사라진다. 지금 살 것인가 앞으로 강해질 것인가를 두루마리 한 장마다 묻는다.</li>
+            <li><strong>감정:</strong> 물약과 두루마리는 판마다 이름이 가려진다. 주울 때 식견이 높으면 저절로 알아본다. 발더스 게이트의 전승 지식과 같은 방식이다. 나머지는 쓰거나 던져서 안다. 고르면 남은 후보가 보인다. 마시자마자 판이 끝나는 물약은 없고, 최악은 몇 턴의 불리함이다. 장비는 줍는 순간 전부 보인다.</li>
+            <li><strong>금화:</strong> 상점, 치유, 부활, 급료, 뇌물, 통행료, 황금의 서약. 쓸 곳이 늘 모자라게 맞춘다.</li>
+          </ul>
+        </section>
+
+        <section id="dungeon" class="concept">
+          <h2>12. 던전과 한 판의 구조</h2>
+          <ol class="route-strip" aria-label="한 판의 진행 순서">
+            <li><strong>① 1막 상층 1~4층</strong><span>혼자 시작 · 첫 동료 · 제단 셋 · 4층 수호자</span></li>
+            <li><strong>② 거점</strong><span>상인, 치유사, 용병 게시판, 신전 · 분기 고르기</span></li>
+            <li><strong>③ 2막 중층 5~8층</strong><span>지형 규칙이 있는 분기 · 분쟁 층 · 8층 수호자</span></li>
+            <li><strong>④ 거점</strong><span>서약을 한 번 바꿀 수 있다 · 마지막 보급</span></li>
+            <li><strong>⑤ 3막 심층 9~11층</strong><span>두 번째 분기 · 분쟁 층 · 가장 빠듯한 보급</span></li>
+            <li><strong>⑥ 12층 최종 상황</strong><span>목표물을 얻는 길 셋 · 여기서 판이 끝난다</span></li>
+          </ol>
+          <ul>
+            <li><strong>층:</strong> 약 44×30칸. 방은 여섯에서 아홉 개다. 손으로 만든 상황 틀이 셋, 괴물 무리와 상태와 손잡이를 조합한 조우가 셋에서 여섯이다. 한 층은 10~12분, 12층에 거점을 더해 2~3시간이 목표다.</li>
+            <li><strong>내려가는 길은 둘 이상:</strong> 계단 둘과 가끔 구덩이. 계단 옆에는 다음 층의 단서가 있다. 물소리, 널린 뼈, 그을음 같은 것이다. 식견이나 수색이 높으면 더 구체적으로 읽는다.</li>
+            <li><strong>선택 위험방:</strong> 층마다 하나둘. 시끄럽게 열 수밖에 없는 봉인 금고, 정해진 턴 뒤에 닫히는 균열(DCSS의 시간 제한 포털), 잠든 강자의 둥지, 제단이다. 들르지 않아도 되지만 가장 좋은 것은 거기에 있다.</li>
+            <li><strong>분기:</strong> 다섯 종류다. 침수 구역(물과 번개), 균류 숲(독안개와 어둠), 화산 갱도(불과 기름), 얼어붙은 묘지(얼음과 언데드), 버려진 요새(사람 무리와 함정). 2막과 3막 앞의 거점에서 각각 둘이 제시되고 하나를 고른다. DCSS의 분기처럼 지형 규칙 하나와 괴물 계열 둘을 묶는다.</li>
+            <li><strong>떠난 층은 다시 채워지지 않는다.</strong> 올라가는 길은 달아날 때를 위해 있지만 돌아가서 얻을 것은 없다.</li>
+            <li><strong>수호자:</strong> 4층과 8층의 끝에 있다. 플레이어의 턴 사이에 예고된 추가 행동을 하나 한다. 수호자의 방에도 약점이 되는 손잡이와 교섭의 여지를 둔다.</li>
+            <li><strong>최종 상황:</strong> 가장 깊은 방의 목표물을 얻으면 이긴다. 그것이 무엇인지는 세계관에서 정한다. 길은 셋이다. 지키는 자를 쓰러뜨린다. 훔쳐서 출구까지 달린다(경보는 5로 고정). 분쟁 층에서 얻은 세력이나 계약으로 넘겨받는다(대가를 치른다). 마지막 방도 상황이다.</li>
+          </ul>
+          <p>짧은 판도 따로 둔다. 1막만 떼어 레벨이 빨리 오르게 한 40분짜리 원정으로, DCSS의 스프린트에 해당하고 일일 원정의 기본 형식이 된다.</p>
+        </section>
+
+        <section id="replay" class="concept">
+          <h2>13. 죽음과 다회차</h2>
+          <p>판은 주인공이 죽고 승계할 동료가 없을 때, 또는 파티가 전멸했을 때 끝난다. 레벨, 장비, 금화, 동료는 모두 사라진다.</p>
+          <ul>
+            <li><strong>난도 세 단:</strong> 수습(전멸하면 그 막의 처음으로 한 번 돌아간다), 표준(영구 죽음, 승계 한 번), 명예(승계 없음, 수호자의 추가 행동 둘, 경보가 한 단계 빨리 오른다). 명예에서 지면 표준 기록으로 이어 갈 수 있다. 발더스 게이트 3의 명예 모드가 하는 방식이다.</li>
+            <li><strong>저장:</strong> 매 턴 자동이고 슬롯은 하나다. 언제든 그만두고 그 턴에서 이어 한다. 되돌리기는 없다.</li>
+            <li><strong>원정 보고서:</strong> 죽은 이유, 마지막 열 턴 되감기, 쓰지 않은 자원, 그 방에서 가능했던 다른 길을 보여 준다. "치유 물약 둘을 허리띠에 찬 채 죽었다"가 다음 판의 교훈이 된다. DCSS의 사망 기록 파일을 화면 한 장으로 줄인 것이다.</li>
+          </ul>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="판마다 달라지는 것"><table class="wide-table">
+            <caption>판마다 달라지는 축 여섯 개</caption>
+            <thead><tr><th scope="col">축</th><th scope="col">폭</th><th scope="col">바뀌는 것</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">주인공</th><td>혈통 9 × 직업 10 × 배경 8, 겸직</td><td>문제를 푸는 기본 방식과 숙련 기술</td></tr>
+              <tr><th scope="row">동료</th><td>원형 12 × 성향 × 개인 목표</td><td>빈 역할, 할 수 없는 선택, 합동기</td></tr>
+              <tr><th scope="row">서약</th><td>8종 중 그 판에 나타난 셋</td><td>금기가 막는 갈래와 권능이 여는 갈래</td></tr>
+              <tr><th scope="row">길</th><td>분기 5종 중 2막과 3막에서 하나씩, 계단마다 선택</td><td>지형 규칙, 괴물 계열, 유리한 원소</td></tr>
+              <tr><th scope="row">상황</th><td>수제 틀 120장 중 한 판에 약 36장, 조합 조우</td><td>방마다의 사정과 손잡이</td></tr>
+              <tr><th scope="row">전리품</th><td>고유 장비 80종 중 한 판에 8~10개, 두루마리, 재능 후보</td><td>중반 이후 빌드의 방향</td></tr>
+            </tbody>
+          </table></div>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="판 밖에 쌓이는 것"><table class="wide-table">
+            <caption>판 밖에 쌓이는 것</caption>
+            <thead><tr><th scope="col">축</th><th scope="col">내용</th><th scope="col">전투력</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">해금</th><td>직업 6→10, 혈통 6→9, 서약 6→8, 동료 원형 6→12, 분기, 상황 틀. 조건은 규칙을 가르치는 과제다. 한 층을 경보 0으로 지나면 그림자의 서약이 열린다.</td><td>선택지만. 해금된 것이 더 강하지 않다.</td></tr>
+              <tr><th scope="row">심도 등급 1~10</th><td>이기면 다음 등급이 열리고 등급마다 규칙 하나가 더해진다. 보급 감소, 경보 시계 단축, 감정 불가 같은 것이다. 슬레이 더 스파이어의 승천, 하데스의 열기와 같은 구조다.</td><td>어려워지기만 한다.</td></tr>
+              <tr><th scope="row">도전 서약</th><td>스스로 거는 제약. 단독 원정, 무살생, 무휴식, 글 읽지 않기, 맨손. 넷핵의 컨덕트다.</td><td>기록에 표시된다.</td></tr>
+              <tr><th scope="row">일일 원정과 주간 변이</th><td>같은 시드와 같은 주인공으로 하루 한 번. 변이는 "모든 물이 기름이다" 같은 규칙 하나를 비튼다.</td><td>없음</td></tr>
+              <tr><th scope="row">쓰러진 원정대</th><td>넷핵의 본즈, 파토스의 레버넌트 층. 전멸한 내 파티가 그 깊이에 망령으로 남아 장비의 복제품을 지킨다.</td><td>없음</td></tr>
+              <tr><th scope="row">원정 일지</th><td>한 판이 자동으로 글이 된다. "3층에서 트롤을 다리 아래로 밀었다. 7층에서 성기사가 떠났다." 공유할 수 있다.</td><td>없음</td></tr>
+            </tbody>
+          </table></div>
+          <p>영구 능력치와 금화 이월은 없다. 대신 첫 판은 좁게 시작한다. 직업 넷, 혈통 넷, 서약 셋으로 열고 판을 거듭하며 넓힌다. 해금은 보상이면서 학습 순서다.</p>
+        </section>
+
+        <section id="modern" class="concept">
+          <h2>14. 현대화: 세 고전의 불편과 이 게임의 답</h2>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="고전의 불편과 현대화"><table class="wide-table">
+            <caption>무엇을 어떻게 고치는가</caption>
+            <thead><tr><th scope="col">고전의 불편</th><th scope="col">어디에서</th><th scope="col">이 게임의 답</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">규칙을 게임 밖 위키에서 배운다</th><td>넷핵</td><td>모든 낱말에 겹쳐 열리는 풀이. 굴림 내역이 남는 기록창. 처음 본 것은 식견 판정으로 공개.</td></tr>
+              <tr><th scope="row">수십 개의 명령 키</th><td>넷핵, DCSS</td><td>공통 동사 여덟 개와 문맥 메뉴. 마우스, 패드, 터치가 같은 결과를 낸다.</td></tr>
+              <tr><th scope="row">보이지 않는 수정치와 속도</th><td>넷핵의 행운, DCSS의 행동 속도</td><td>유리와 불리 하나. 속도 세 단계 표식.</td></tr>
+              <tr><th scope="row">예고 없는 즉사</th><td>넷핵</td><td>큰 한 방 예고. 즉사와 영구 손실 효과 없음.</td></tr>
+              <tr><th scope="row">배고픔 시계, 머무름 시계</th><td>넷핵, DCSS</td><td>보급은 쉬는 횟수, 경보는 소리로 가는 시계.</td></tr>
+              <tr><th scope="row">싸움 뒤 매번 제자리 휴식</th><td>DCSS</td><td>자연 회복 없음. 숨 고르기 두 번과 야영.</td></tr>
+              <tr><th scope="row">안전하지만 귀찮은 절차</th><td>넷핵의 가격 감정, 제단 왕복</td><td>장비는 전부 공개. 소모품만 가볍게 감정.</td></tr>
+              <tr><th scope="row">경험치가 곧 처치</th><td>대부분</td><td>상황을 끝내면 방식과 무관하게 같은 경험치.</td></tr>
+              <tr><th scope="row">통제되지 않는 동료</th><td>넷핵의 애완동물, 파토스의 CPU 동료</td><td>같은 턴에 직접 명령. AI가 하지 않는 일 다섯 가지.</td></tr>
+              <tr><th scope="row">긴 한 판</th><td>DCSS 3~8시간, 넷핵 수십 시간</td><td>2~3시간 3막. 언제든 중단. 40분짜리 짧은 원정.</td></tr>
+              <tr><th scope="row">왜 죽었는지 모른다</th><td>넷핵</td><td>원정 보고서와 되감기.</td></tr>
+              <tr><th scope="row">조합이 많아 첫 판이 벅차다</th><td>파토스(직업 30 × 종족 21 × 특수 18)</td><td>좁게 시작해 해금으로 넓힌다.</td></tr>
+            </tbody>
+          </table></div>
+          <h3>넣지 않는 것</h3>
+          <ul class="cut-list">
+            <li><strong>배고픔과 갈증.</strong> DCSS가 이미 지웠다.</li>
+            <li><strong>무게와 소지 한도.</strong> 칸 수로 충분하다.</li>
+            <li><strong>숨은 저주, 축복·보통·저주 세 단계.</strong> 대가는 보이게 적는다.</li>
+            <li><strong>능력치 영구 손실, 레벨 흡수.</strong></li>
+            <li><strong>저절로 흐르는 실시간.</strong> 도전용 변이로만 둔다.</li>
+            <li><strong>영구 능력치 성장.</strong> 판 밖에는 선택지만 쌓인다.</li>
+            <li><strong>다시 채워지는 층.</strong> 반복해서 키울 곳이 없다.</li>
+            <li><strong>긴 대화와 컷신.</strong> 교섭은 선택지 서너 줄의 창 하나다.</li>
+          </ul>
+        </section>
+
+        <section id="screen" class="concept">
+          <h2>15. 조작, 화면, 픽셀 사양</h2>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="입력 장치별 조작"><table class="wide-table">
+            <caption>입력 장치가 달라도 결과는 같다</caption>
+            <thead><tr><th scope="col">행동</th><th scope="col">키보드·마우스</th><th scope="col">패드</th><th scope="col">터치(이후)</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">이동</th><td>방향키, 숫자패드, 목적지 클릭</td><td>스틱 8방향</td><td>목적지 탭</td></tr>
+              <tr><th scope="row">공격, 동사, 기술</th><td>대상 클릭 또는 단축 칸 → 대상 → 확정</td><td>단축 칸 버튼 → 커서 → 확정</td><td>대상 탭 → 확정</td></tr>
+              <tr><th scope="row">동료에게 명령</th><td>초상화 클릭 또는 F1~F3</td><td>어깨 버튼으로 전환</td><td>초상화 탭</td></tr>
+              <tr><th scope="row">살펴보기</th><td>마우스 올리기</td><td>커서를 옮겨 버튼</td><td>길게 누르기</td></tr>
+              <tr><th scope="row">자동 탐험, 턴 넘기기</th><td>단축키 하나씩</td><td>버튼 하나씩</td><td>화면 모서리 고정 버튼</td></tr>
+            </tbody>
+          </table></div>
+          <ul>
+            <li><strong>타일 16×16.</strong> 논리 해상도 640×360에서 가로 40칸, 세로 22칸이 한 화면에 든다. 방 하나와 이어진 복도가 다 보여야 자리 판단을 할 수 있다. 확대 단계 하나를 더 둔다.</li>
+            <li><strong>캐릭터는 한 방향 그림을 좌우로 뒤집어 쓴다.</strong> 대기 2프레임, 공격 2프레임, 피격 1프레임. 섀터드 픽셀 던전의 방식이다. 괴물 90종을 감당하기 위한 선택이다.</li>
+            <li><strong>글자는 픽셀 화면과 따로 그린다.</strong> 한글은 낮은 해상도에서 뭉개지므로 UI 글자는 기기 해상도로 그린다.</li>
+            <li><strong>정보는 겹쳐 그린다.</strong> 적 머리 위의 의도 표식, 행동 전의 소음 고리, 칸마다의 발각 위험, 다음 적 차례의 위협 범위. 표면은 색과 무늬를 함께 써서 색각이 달라도 구분된다.</li>
+            <li><strong>엔진 구조:</strong> Godot 4를 가정한다. 규칙을 계산하는 부분과 화면을 그리는 부분을 나누고, 시드와 입력 기록만으로 한 판이 재현되게 한다. 상황 틀, 괴물, 아이템은 전부 데이터로 둔다. 파토스가 엔진과 코덱스를 나눈 방식이다.</li>
+            <li><strong>플랫폼:</strong> PC(스팀)가 먼저다. 스팀 덱과 패드를 함께 지원한다. 터치는 처음부터 가능한 문법(큰 칸, 우클릭에 기대지 않기)으로 만들되 모바일 출시는 뒤로 미룬다. 2절에서 본 대로 모바일은 도달이 넓고 구매가 얇다.</li>
+            <li><strong>언어:</strong> 한국어, 영어, 중국어 간체, 일본어. 이 방식의 팬은 비영어권에 많다.</li>
+            <li><strong>협동(출시 후):</strong> 두 사람이 각자 주인공 하나와 동료 하나를 맡는다. 같은 턴에 각자 입력하고 함께 넘긴다. 턴제는 지연에 너그럽고, 결정론 구조가 이미 있으므로 입력만 주고받으면 된다.</li>
+          </ul>
+        </section>
+
+        <section id="scope" class="concept">
+          <h2>16. 범위, 검증 순서, 위험</h2>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="제작 단계"><table class="wide-table">
+            <caption>제작 단계 (일정과 인력은 정하지 않았다)</caption>
+            <thead><tr><th scope="col">단계</th><th scope="col">담는 것</th><th scope="col">다음으로 가는 조건</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">0. 종이 시제품</th><td>방 셋을 종이와 표로 돌린다. 판정 수학, 표면 표, 경보 표.</td><td>같은 방을 세 갈래로 풀었을 때 치르는 값이 서로 다르게 계산된다.</td></tr>
+              <tr><th scope="row">1. 전투 장난감</th><td>방 셋. 전사 주인공과 도적 동료. 고블린과 야수 두 계열. 표면 셋(물, 기름, 불). 명령 끼워 넣기, 확률과 의도 표시.</td><td>처음 해 보는 다섯 명 중 넷이 설명 없이 명령 끼워 넣기를 쓴다. 동료 AI 탓에 죽었다는 판이 없다.</td></tr>
+              <tr><th scope="row">2. 1막 수직 조각</th><td>4층과 수호자. 직업 셋, 혈통 셋, 동료 원형 넷, 서약 둘. 수제 상황 15장. 경보, 보급, 부상, 야영.</td><td>한 층 10~12분. 끝난 상황 중 싸움이 아닌 갈래가 30% 이상. "쉬고 싶은데 못 쉰다"는 말이 나온다.</td></tr>
+              <tr><th scope="row">3. 공개 데모와 얼리 액세스</th><td>1~2막. 직업 여섯, 혈통 여섯, 서약 여섯, 동료 원형 여덟. 상황 45장. 해금, 심도 등급, 일일 원정.</td><td>데모를 한 사람의 절반이 두 번째 판을 시작한다. 파티 RPG 쪽과 로그라이크 쪽의 반응을 따로 잰다.</td></tr>
+              <tr><th scope="row">4. 정식판</th><td>3막과 최종 상황. 직업 10, 혈통 9, 서약 8, 동료 원형 12, 괴물 90종, 상황 120장, 고유 장비 80종. 쓰러진 원정대, 명예 난도.</td><td>이긴 판의 중앙값이 2~3시간. 한 갈래만 쓰는 판이 드물다.</td></tr>
+              <tr><th scope="row">이후</th><td>2인 협동, 모바일, 모드 도구.</td><td>혼자 하는 판이 먼저 증명됐을 때.</td></tr>
+            </tbody>
+          </table></div>
+          <h3>가장 먼저 틀릴 수 있는 가설 셋</h3>
+          <ol>
+            <li><strong>한 박자 파티가 빠르면서도 내 손 안에 있다고 느껴지는가.</strong> 틀리면 이 기획의 전제가 무너진다. 그래서 1단계가 이것만 본다.</li>
+            <li><strong>세 갈래가 정말 다른 값으로 느껴지는가.</strong> 계산상 다르더라도 플레이어가 늘 한 갈래만 고르면 실패다.</li>
+            <li><strong>경보와 보급이 조급함이 아니라 긴장을 만드는가.</strong> 벌로 느껴지면 숫자가 아니라 구조를 고친다.</li>
+          </ol>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="위험과 대응"><table class="wide-table">
+            <caption>위험과 대응</caption>
+            <thead><tr><th scope="col">위험</th><th scope="col">증상</th><th scope="col">먼저 고칠 것</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">규칙이 너무 많다</th><td>첫 판을 풀이만 읽다 끝낸다.</td><td>1막에는 표면 셋, 서약 셋, 동사 여섯만 낸다. 나머지는 해금과 2막으로 미룬다.</td></tr>
+              <tr><th scope="row">동료 AI가 짜증스럽다</th><td>"동료가 불에 뛰어들었다."</td><td>AI의 약속을 먼저 지키게 한다. 그래도 안 되면 수동 턴을 기본값으로 바꾼다.</td></tr>
+              <tr><th scope="row">한 갈래가 지배한다</th><td>방마다 화공만, 또는 잠입만 한다.</td><td>전리품, 경보, 시간의 값을 다시 맞춘다. 계열마다 통하지 않는 갈래를 둔다. 언데드와는 교섭할 수 없다.</td></tr>
+              <tr><th scope="row">주사위가 억울하다</th><td>"94%가 빗나가서 죽었다."</td><td>큰 한 방 예고와 빈사 유예가 한 번의 불운을 받아 낸다. 연속 실패를 누그러뜨리는 선택 항목을 둔다.</td></tr>
+              <tr><th scope="row">판이 길어진다</th><td>3시간을 넘긴다.</td><td>수동 턴에 쓴 시간을 재서 층 크기와 방 수를 줄인다.</td></tr>
+              <tr><th scope="row">상황 틀의 제작비</th><td>같은 방을 또 본다.</td><td>수제 틀을 늘리기 전에 누가·무엇을 하는 중·손잡이의 조합 규칙에 먼저 투자한다.</td></tr>
+              <tr><th scope="row">경보가 벌처럼 느껴진다</th><td>시끄러운 빌드가 손해만 본다.</td><td>경보가 높을수록 전리품도 좋아지게 한다.</td></tr>
+              <tr><th scope="row">자리가 애매하다</th><td>로그라이크 팬에게는 너무 RPG, RPG 팬에게는 너무 로그라이크.</td><td>데모에서 두 집단을 따로 잰다. 더 반응하는 쪽의 말로 상점 문구를 쓴다.</td></tr>
+            </tbody>
+          </table></div>
+          <p class="decision">완성의 기준은 시스템의 수가 아니다. 같은 방을 두 번 만났을 때 지난번과 다른 길을 고를 이유가 있는가, 그리고 죽은 뒤에 무엇을 다르게 할지 말할 수 있는가다.</p>
+        </section>
+
+        <section id="open" class="concept">
+          <h2>17. 남은 결정</h2>
+          <p>제목과 세계관은 이 글의 범위 밖이다. 다만 방식이 세계관에 요구하는 조건은 정해졌다. 세계관은 다음 네 가지에 답하면 된다.</p>
+          <ul>
+            <li>사람들이 왜 깊은 곳으로 내려가는가, 그리고 가장 깊은 방의 목표물은 무엇인가.</li>
+            <li>지하에서 서로 다투는 세력이 누구인가. 분쟁 층의 재료다.</li>
+            <li>금기를 가진 신이 여섯에서 여덟이다. 영역은 정해져 있고 이름과 성격이 비어 있다.</li>
+            <li>주인공은 왜 혼자 떠나고, 왜 길에서 만난 사람과 함께 가는가.</li>
+          </ul>
+          <p>방식 쪽에도 시제품을 보고 정할 것이 남았다.</p>
+          <ul>
+            <li><strong>파티 인원:</strong> 셋으로 설계했다. 넷은 발더스 게이트 3와 디비니티의 표준이지만 복도와 조작의 부담이 커진다. 1단계에서 셋이 허전하면 다시 본다.</li>
+            <li><strong>명중 굴림:</strong> 주사위를 남겼다. 반드시 맞히고 방어로 피해를 깎는 방식이 판단에는 더 유리할 수 있다. 0단계에서 두 방식을 종이로 비교한다.</li>
+            <li><strong>높낮이:</strong> 2막부터 넣는 것으로 했다. 1단계 장난감에는 없다.</li>
+            <li><strong>톤과 그림:</strong> 타일 크기만 정했다. 밝기와 분위기는 세계관과 함께 정한다.</li>
+          </ul>
+        </section>
+
+        <section id="sources" class="concept">
+          <h2>18. 출처와 확인 범위</h2>
+          <p>턴과 고전 시스템의 근거는 이 블로그의 세 조사 글이다. 발더스 게이트와 디비니티의 시스템은 공개된 게임 내용에 대한 일반 지식으로 적었다. 스팀 수치는 2026-11-12에 상점 검색 결과와 상세 정보를 직접 조회한 값이며, 리뷰가 100건에 못 미치는 게임은 상세 정보에 값이 없어 상점 페이지의 표기를 썼다. 규칙, 수치, 범위는 이 기획을 위해 새로 쓴 제안이고 재미와 밸런스는 전부 시제품 검증이 남아 있다.</p>
+          <ul class="ref-list">
+            <li><a href="/posts/nethack/">17. 넷핵(NetHack)</a> — 다용도 아이템, 괴물의 아이템 사용, 애완동물, 본즈, 컨덕트, 위키 의존과 즉사의 부담.</li>
+            <li><a href="/posts/dungeon-crawl-stone-soup/">18. 던전 크롤 스톤 수프(DCSS)</a> — 설계 철학, 신과 금기, 분기, 소음과 은신, 식량 제거와 조트의 시계, 자동화.</li>
+            <li><a href="/posts/pathos-nethack-codex/">23. 파토스(Pathos)</a> — 파티와 CPU 동료, 주인공 사망 뒤 넘겨받기, 원소 효과, 레버넌트 층, 실시간 토글, 엔진과 코덱스의 분리.</li>
+            <li><a href="https://store.steampowered.com/search/?tags=454187&amp;category1=998">Steam 상점 검색: 전통 로그라이크 태그</a> — 태그별 게임 수와 리뷰 분포의 조회 출발점.</li>
+            <li><a href="https://store.steampowered.com/app/5062560/Pathos/">Steam: Pathos</a> — 출시일, 가격, 리뷰 수.</li>
+            <li><a href="https://alineaanalytics.substack.com/p/steam-dlc-data-high-attach-rates">Alinea Analytics, 2026-05-14</a> — 로그라이크 장르의 2026년 스팀 매출 추정, 슬레이 더 스파이어 2와 뮤제닉스의 추정 판매량.</li>
+            <li><a href="https://alineaanalytics.substack.com/p/slay-the-spire-2-one-of-the-best">Alinea Analytics, 2026-03-20</a> — 슬레이 더 스파이어 2의 2주 판매 추정, 전작 미경험자 39%, 협동에 대한 분석.</li>
+            <li><a href="https://www.pcgamer.com/games/card-games/even-though-i-threw-out-my-back-from-overworking-im-feeling-high-in-spirits-slay-the-spire-2-sold-3-million-copies-in-its-first-week/">PC Gamer, 2026-03-14</a> — 슬레이 더 스파이어 2 첫 주 300만 장.</li>
+            <li><a href="https://www.gameinformer.com/2026/02/17/mewgenics-hits-1-million-copies-sold">Game Informer, 2026-02-17</a> — 뮤제닉스 일주일 100만 장.</li>
+            <li><a href="https://wnhub.io/news/finance/item-49590">WN Hub, 2025-12-16</a> — 발더스 게이트 3 2,000만 장(블룸버그 인터뷰 인용).</li>
+            <li><a href="https://gamesradar.com/games/baldur-s-gate/baldurs-gate-3-has-sold-over-23m-copies-and-made-around-usd1-2b-so-far-analyst-claims-but-only-1-percent-of-players-have-crossed-the-500-hour-mark-in-playtime">GamesRadar+</a> — 발더스 게이트 3 약 2,320만 장이라는 Alinea 추정. 기사 본문은 대조하지 못하고 제목과 검색 요약으로 확인했다.</li>
+            <li><a href="https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1806698490814073">Larian Studios, Community Update #35, 2025-08-04</a> — 명예 모드를 끝낸 플레이어 50만 명.</li>
+            <li><a href="https://www.gamesradar.com/games/baldur-s-gate/baldurs-gate-3-on-honor-mode-is-apparently-one-of-the-hardest-rpgs-of-all-time-with-over-12-million-deaths-and-barely-a-10-success-rate/">GamesRadar+, 2024-08-07</a> — 1주년 통계의 명예 모드 실패 120만 판, 세이브 삭제 76%.</li>
+            <li><a href="https://www.pcgamer.com/games/baldurs-gate/this-baldur-s-gate-3-mod-turns-the-game-into-a-chaotic-roguelike-which-is-great-if-you-just-want-to-slay-some-monsters-like-you-re-in-an-old-school-d-d-campaign/">PC Gamer, 2024-06-26</a> — Trials of Tav 모드.</li>
+            <li><a href="https://www.pcgamer.com/games/baldurs-gate/baldurs-gate-3-has-at-least-24-ways-shadowheart-can-hurl-the-main-macguffin-at-you-as-part-of-larians-new-vegas-style-n1-system-for-plot-oblivious-players-it-might-be-even-more/">PC Gamer, 2024-03-27</a> — 라리안의 n+1 설계.</li>
+            <li><a href="https://www.rpgsite.net/news/20224-clair-obscur-expedition-33-sales-numbers-april-2026-8-million-copies-sold">RPG Site, 2026-04-24</a> — 클레르 옵스퀴르: 33 원정대 800만 장.</li>
+            <li><a href="https://gameworldobserver.com/2022/12/26/darkest-dungeon-sales-6-million-copies-red-hook">Game World Observer, 2022-12-26</a> — 다키스트 던전 600만 장.</li>
+            <li><a href="https://shatteredpixel.com/blog/ten-years-of-shattered-pixel-dungeon.html">Shattered Pixel, 2024-08-05</a> — 섀터드 픽셀 던전 약 500만 다운로드, 약 15만 판매.</li>
+            <li><a href="https://www.gamepressure.com/newsroom/stoneshard-rpg-hits-it-big-on-steam/za17aa">Gamepressure</a> — 스톤샤드 얼리 액세스 직후의 저장 방식 비판과 개발진의 인정. 검색 요약으로 확인했다.</li>
+            <li><a href="https://www.gog.com/en/game/jupiter_hell">GOG: Jupiter Hell</a> — "실시간처럼 반응하는 턴제"라는 상점 소개. 검색 요약으로 확인했다.</li>
+          </ul>
+          <p>확인하지 못한 것도 적어 둔다. 판매량 가운데 Alinea의 수치는 전부 추정이다. 태그별 게임 수는 비로그인 미국 상점의 검색 결과여서 지역과 설정에 따라 다를 수 있다. 리뷰 1건당 판매 30~60장이라는 어림은 게임마다 편차가 크다. 발더스 게이트 3의 1주년 통계는 라리안의 원문이 아니라 보도로 확인했다.</p>
+        </section>
+
+        <p class="post-back"><a href="/">← 모든 포스트</a></p>
+      </article>
+    </main>
+    <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
+  </body>
+</html>
