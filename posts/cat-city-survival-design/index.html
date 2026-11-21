@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="사람들이 떠난 지 백 년 된 도시에서 고양이로 사는 쿼터뷰 생존 샌드박스 기획. 지하는 쥐, 길은 들개, 지붕은 까마귀의 것이고 겨울에는 쥐가 사는 지하만 따뜻하다. 쥐 떼의 규칙, 유물 실험, 불, 굴과 식구, 한 해의 달력, 아홉 목숨과 다회차 장치를 정리했다.">
-    <title>사람 없는 백 년, 고양이의 겨울: 생존 샌드박스 기획 · nyimpe</title>
+    <meta name="description" content="사람이 사라지고 겨울이 끝나지 않는 도시에서 고양이로 사는 쿼터뷰 생존 샌드박스 기획. 지하는 쥐, 길은 들개, 지붕은 까마귀의 것이다. 고양이는 체온을 값으로 치르는 마법을 쓰고, 살아남을수록 꼬리가 갈라지며 새 마법이 열린다. 쥐 떼의 규칙, 온기와 마법, 굴과 식구, 이레 주기의 한파, 아홉 목숨과 다회차 장치를 정리했다.">
+    <title>끝나지 않는 겨울, 사람 없는 도시의 고양이: 생존 샌드박스 기획 · nyimpe</title>
     <link rel="canonical" href="https://nyimpe.github.io/posts/cat-city-survival-design/">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="ko_KR">
-    <meta property="og:title" content="사람 없는 백 년, 고양이의 겨울: 생존 샌드박스 기획">
-    <meta property="og:description" content="한 마리는 먹이고 서른 마리는 죽음이다. 사람이 떠난 도시에서 쥐 떼와 겨울을 상대로 굴 하나를 지키는 고양이 생존 샌드박스 기획.">
+    <meta property="og:title" content="끝나지 않는 겨울, 사람 없는 도시의 고양이: 생존 샌드박스 기획">
+    <meta property="og:description" content="쥐 한 마리는 먹이고 서른 마리는 죽음이다. 마법을 쓰면 몸이 식는다. 사람 없는 겨울 도시에서 굴 하나를 지키는 고양이 생존 샌드박스 기획.">
     <meta property="og:url" content="https://nyimpe.github.io/posts/cat-city-survival-design/">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/src/style.css">
@@ -20,10 +20,6 @@
       .notes-post .asset-summary div { border: 1px solid var(--soft-border); background: var(--surface); padding: .75em; font-size: .875em; }
       .notes-post .asset-summary strong, .notes-post .asset-summary span { display: block; }
       .notes-post .asset-summary span { margin-top: .4em; color: var(--muted); }
-      .notes-post .pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65em; list-style: none; padding: 0; }
-      .notes-post .pillars li { border: 1px solid var(--soft-border); background: var(--surface); padding: .75em; font-size: .875em; }
-      .notes-post .pillars strong, .notes-post .pillars span { display: block; }
-      .notes-post .pillars span { margin-top: .4em; color: var(--muted); }
       .notes-post .route-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5em; list-style: none; padding: 0; }
       .notes-post .route-strip li { border: 1px solid var(--soft-border); background: var(--surface); padding: .65em; font-size: .8125em; }
       .notes-post .route-strip strong, .notes-post .route-strip span { display: block; }
@@ -32,7 +28,8 @@
       .notes-post .cut-list { columns: 2; column-gap: 2em; }
       .notes-post .cut-list li { break-inside: avoid; }
       .notes-post td.num, .notes-post th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-      @media (max-width: 640px) { .notes-post .asset-summary, .notes-post .route-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } .notes-post .pillars { grid-template-columns: 1fr; } .notes-post .cut-list { columns: 1; } }
+      .notes-post td.num-name { white-space: nowrap; }
+      @media (max-width: 640px) { .notes-post .asset-summary, .notes-post .route-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } .notes-post .cut-list { columns: 1; } }
     </style>
   </head>
   <body>
@@ -55,41 +52,41 @@
     <main id="content">
       <article class="research-post design-post notes-post">
         <header class="post-header">
-          <h1>사람 없는 백 년, 고양이의 겨울: 생존 샌드박스 기획</h1>
+          <h1>끝나지 않는 겨울, 사람 없는 도시의 고양이: 생존 샌드박스 기획</h1>
           <time datetime="2026-11-21">2026.11.21</time>
           <p class="image-credit">제목 미정 / 틀: 프로젝트 좀보이드식 쿼터뷰 생존 샌드박스 / 수치는 전부 시제품에서 확인할 가설이다</p>
         </header>
 
-        <p class="concept-pitch">사람들이 지구를 떠난 지 백 년이 지났다. 숲이 된 도시에서 고양이들이 사람이 남긴 집과 물건으로 산다. 지하는 쥐, 길은 들개, 지붕은 까마귀의 것이다. 겨울이 오면 도시가 얼고, 따뜻한 곳은 쥐가 사는 지하뿐이다.</p>
+        <p class="concept-pitch">사람은 사라졌고 겨울은 끝나지 않는다. 눈에 묻힌 도시에서 고양이들이 사람이 남긴 집에 굴을 틀고 산다. 지하는 쥐, 길은 들개, 지붕은 까마귀의 것이다. 고양이는 마법을 쓸 수 있고, 쓸 때마다 몸이 식는다.</p>
         <figure class="book-figure">
-          <img src="./scene.webp" width="1200" height="800" alt="첫눈이 내린 늦가을, 덩굴에 덮인 낡은 상가 건물의 단면. 옥상 물탱크와 난간에 까마귀 떼가 앉아 있고 한 마리는 병뚜껑을 물었다. 길에서는 들개 세 마리가 냄새를 맡으며 지나간다. 이층 거실에서는 두 발로 선 고양이 한 마리가 바늘 창을 들고 솥 안의 작은 불 곁에 서 있고, 다른 한 마리는 선반에 유리병을 쌓고, 새끼 한 마리는 짚을 깐 서랍에서 잔다. 벽에는 돋보기가 기대어 있다. 건물 아래 물에 잠긴 지하철 굴에는 쥐들의 눈이 줄지어 빛난다.">
-          <figcaption>지붕은 까마귀, 길은 들개, 지하는 쥐의 것이다. 고양이의 굴은 그 사이에 있다. · ImageGen 콘셉트 아트</figcaption>
+          <img src="./scene.webp" width="1200" height="800" alt="눈에 덮이고 고드름이 달린 낡은 상가 건물의 단면. 옥상 물탱크와 난간에 까마귀 떼가 앉아 있고 한 마리는 반짝이는 것을 물었다. 길에서는 들개 세 마리가 눈 위의 작은 발자국을 따라간다. 이층 거실에서는 꼬리가 셋으로 갈라진 줄무늬 고양이가 꼬리 끝에 푸른 불을 켜고 서 있고, 다른 고양이는 언 생선을 앞발로 누르고 있으며 발밑에서 따뜻한 빛이 번진다. 고양이 두 마리가 담요를 깐 종이 상자 안에서 붙어 잔다. 문틈은 얼음으로 막혀 있고 선반 위에는 얼음 덩이에 든 생선이 있다. 건물 아래 얼어붙은 지하철 굴에는 쥐들의 눈이 빛난다.">
+          <figcaption>꼬리 끝의 고양이불, 언 생선을 녹이는 꾹꾹이, 얼음으로 봉한 문틈. 지붕은 까마귀, 길은 들개, 지하는 쥐의 것이다. · ImageGen 콘셉트 아트</figcaption>
         </figure>
-        <p>틀은 프로젝트 좀보이드로 대표되는 쿼터뷰 생존 샌드박스다. 집을 털고, 몸을 돌보고, 거점을 짓고, 한 번 죽으면 그 캐릭터는 끝난다. 여기에 두 아이디어를 합쳤다. 하나는 사람이 떠난 지 백 년 된 도시에서 고양이들이 사람의 유산으로 사는 세계다. 다른 하나는 얼어붙은 도시에서 고양이가 온기와 먹이를 찾아 겨울을 나는 이야기다. 앞의 것이 무대가 되고 뒤의 것이 해마다 돌아오는 고비가 됐다.</p>
-        <p>세계는 한 문단과 규칙 셋으로 줄였고, 나머지는 전부 게임의 세부다. 새로 지어낸 낱말은 쓰지 않았다. 굴, 식구, 유물, 틈처럼 원래 있는 말만 썼다.</p>
+        <p>틀은 프로젝트 좀보이드로 대표되는 쿼터뷰 생존 샌드박스다. 집을 털고, 몸을 돌보고, 거점을 지키고, 한 번 죽으면 그 캐릭터는 끝난다. 주인공은 네 발로 걷고 뛰는 보통 고양이다. 손이 없으니 도구를 만들지 않는다. 대신 고양이끼리 말이 통하고, 마법을 쓴다.</p>
+        <p>세계는 한 문단과 규칙 셋으로 줄였고, 나머지는 전부 게임의 세부다. 사람이 왜 없는지, 겨울이 왜 끝나지 않는지는 아무도 모른다. 새로 지어낸 낱말은 쓰지 않았다. 굴, 식구, 온기, 꼬리처럼 원래 있는 말만 썼다.</p>
 
         <div class="asset-summary" aria-label="기획 요약">
-          <div><strong>규칙 셋</strong><span>층마다 다른 주인, 써 봐야 아는 유물, 겨울의 온기</span></div>
+          <div><strong>규칙 셋</strong><span>층마다 다른 주인, 온기가 곧 마력, 꼬리마다 마법 하나</span></div>
           <div><strong>적 다섯</strong><span>쥐 떼, 들개, 까마귀, 부엉이, 이웃 무리</span></div>
-          <div><strong>한 해 28일</strong><span>세 철을 준비하고 한 철을 버틴다</span></div>
-          <div><strong>아홉 목숨</strong><span>죽으면 식구가 잇는다</span></div>
+          <div><strong>이레 주기</strong><span>엿새를 준비하고 가장 긴 밤을 버틴다</span></div>
+          <div><strong>아홉 꼬리, 아홉 목숨</strong><span>꼬리는 고양이의 것, 목숨은 무리의 것</span></div>
         </div>
 
         <nav class="post-toc" aria-label="글 목차"><ol>
           <li><a href="#frame">틀: 좀보이드에서 가져오는 것과 바꾸는 것</a></li>
           <li><a href="#world">세계: 한 문단과 규칙 셋</a></li>
-          <li><a href="#scale">몸집: 무릎 높이에서 본 도시</a></li>
+          <li><a href="#scale">몸: 네 발 고양이가 하는 일과 못 하는 일</a></li>
           <li><a href="#layers">층: 지하, 길, 집 안, 지붕</a></li>
+          <li><a href="#magic">온기와 마법</a></li>
           <li><a href="#rats">쥐 떼: 한 마리는 먹이, 서른 마리는 죽음</a></li>
           <li><a href="#others">나머지 넷: 들개, 까마귀, 부엉이, 이웃 무리</a></li>
           <li><a href="#senses">들키는 길: 냄새, 소리, 발자국</a></li>
-          <li><a href="#body">몸: 여덟 가지 수치</a></li>
-          <li><a href="#fight">싸움과 덫</a></li>
-          <li><a href="#loot">털기: 건물, 유물, 실험</a></li>
-          <li><a href="#fire">불: 세 단계</a></li>
+          <li><a href="#body">몸의 수치 일곱 가지</a></li>
+          <li><a href="#fight">싸움과 방비</a></li>
+          <li><a href="#loot">털기: 건물, 여는 법, 가져올 것</a></li>
           <li><a href="#den">굴과 먹이</a></li>
-          <li><a href="#family">식구</a></li>
-          <li><a href="#calendar">달력: 하루와 한 해</a></li>
+          <li><a href="#family">식구와 고양이 말</a></li>
+          <li><a href="#calendar">달력: 하루와 이레</a></li>
           <li><a href="#replay">죽음과 다회차 장치 열두 가지</a></li>
           <li><a href="#screen">화면과 조작</a></li>
           <li><a href="#scope">범위, 검증 순서, 남은 결정</a></li>
@@ -100,7 +97,7 @@
 
         <section id="frame" class="concept">
           <h2>1. 틀: 좀보이드에서 가져오는 것과 바꾸는 것</h2>
-          <p>좀보이드에서 지키고 싶은 재미는 셋이다. 빈집을 털어 물자를 모으고 아껴 쓰는 재미, 하나는 쉽지만 떼로 몰리면 죽는 적, 거점을 짓고 스스로 먹고사는 재미다. 이 셋은 그대로 두고 나머지를 고양이에 맞게 바꿨다.</p>
+          <p>좀보이드에서 지키고 싶은 재미는 셋이다. 빈집을 털어 물자를 모으고 아껴 쓰는 재미, 하나는 쉽지만 떼로 몰리면 죽는 적, 거점을 지키며 스스로 먹고사는 재미다. 이 셋은 그대로 두고 나머지를 고양이에 맞게 바꿨다.</p>
           <div class="table-scroll" role="region" aria-label="좀보이드의 요소와 이 기획에서 바뀐 모습" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">좀보이드</th><th scope="col">이 기획</th><th scope="col">바꾼 이유</th></tr></thead>
@@ -109,12 +106,12 @@
                 <tr><th scope="row">좀비 떼</th><td>쥐 떼</td><td>고양이에게 쥐는 한 마리면 먹이고 많으면 위험이다. 적이 곧 식량이 된다</td></tr>
                 <tr><th scope="row">좀비 수는 정해져 있다</th><td>쥐 수는 내가 흘린 먹이를 따라 는다</td><td>굴을 깔끔하게 굴릴수록 덜 몰린다. 압박을 내가 조절한다</td></tr>
                 <tr><th scope="row">물리면 죽는다</th><td>물리면 앓는다</td><td>손질하고 쉬면 낫는다. 물린 뒤에도 할 일이 있다</td></tr>
-                <tr><th scope="row">창문에 판자</th><td>쥐가 드나드는 틈 막기</td><td>고양이 굴의 적은 문이 아니라 틈으로 온다</td></tr>
-                <tr><th scope="row">전기와 수도가 끊긴다</th><td>겨울이 온다</td><td>전기와 수도는 백 년 전에 끊겼다. 조여 오는 것은 계절이다</td></tr>
-                <tr><th scope="row">농사</th><td>사냥, 낚시, 닭과 토끼 기르기</td><td>고양이는 고기를 먹는다</td></tr>
-                <tr><th scope="row">책으로 기술을 배운다</th><td>유물을 실험해 쓸모를 알아낸다</td><td>고양이는 글을 못 읽는다</td></tr>
-                <tr><th scope="row">차</th><td>지붕길과 수레</td><td>높은 곳이 고양이의 빠른 길이다</td></tr>
-                <tr><th scope="row">헬리콥터 사건</th><td>가장 긴 밤</td><td>겨울의 가장 추운 밤에 모두가 온기로 몰린다</td></tr>
+                <tr><th scope="row">도구 제작과 건축</th><td>물어 나르기와 마법</td><td>고양이는 손이 없다. 틈은 얼려서 막고 먹이는 녹여서 먹는다</td></tr>
+                <tr><th scope="row">창문에 판자</th><td>쥐가 드나드는 틈을 얼음으로 봉하기</td><td>고양이 굴의 적은 문이 아니라 틈으로 온다</td></tr>
+                <tr><th scope="row">전기와 수도가 끊긴다</th><td>겨울이 깊어진다</td><td>전기와 수도는 오래전에 끊겼다. 조여 오는 것은 추위다</td></tr>
+                <tr><th scope="row">사계절과 농사</th><td>겨울뿐. 사냥과 얼음낚시, 얼어 있는 사람의 먹이</td><td>아무것도 자라지 않는다. 대신 아무것도 썩지 않는다</td></tr>
+                <tr><th scope="row">쓸수록 느는 기술</th><td>살아남을수록 느는 꼬리</td><td>꼬리 하나에 마법 하나가 열린다</td></tr>
+                <tr><th scope="row">헬리콥터 사건</th><td>이레마다 오는 가장 긴 밤</td><td>가장 추운 밤에 모두가 온기로 몰린다</td></tr>
                 <tr><th scope="row">죽으면 같은 세계에 새 캐릭터</th><td>식구가 잇는 아홉 목숨</td><td>굴과 식구가 남아 있어 이어 갈 이유가 생긴다</td></tr>
               </tbody>
             </table>
@@ -123,41 +120,43 @@
 
         <section id="world" class="concept">
           <h2>2. 세계: 한 문단과 규칙 셋</h2>
-          <p>사람들이 지구를 떠난 지 백 년이 지났다. 길은 갈라져 나무가 자랐고 지붕은 절반쯤 내려앉았다. 고양이들은 사람이 남긴 건물과 물건을 쓰며 무리를 이루고 산다. 해마다 겨울이 오면 도시가 얼어붙는다. 플레이어는 작은 무리의 고양이 한 마리다.</p>
+          <p>사람은 사라졌고 겨울은 끝나지 않는다. 언제부터였는지, 왜 그런지는 아무도 모른다. 도시는 눈에 묻혔고, 사람이 남긴 집과 물건은 얼어붙은 채 그대로 있다. 고양이들은 그 집에 굴을 틀고 무리를 이루어 산다. 플레이어는 작은 무리의 고양이 한 마리다.</p>
           <ol>
             <li><strong>도시는 층마다 주인이 다르다.</strong> 지하는 쥐, 길은 들개, 지붕은 까마귀, 집 안은 고양이의 것이다. 어느 층으로 다니느냐가 누구를 상대하느냐를 정한다.</li>
-            <li><strong>사람의 물건은 써 봐야 안다.</strong> 처음 주운 물건은 쓸 줄 모른다. 실험해서 알아낸 쓸모는 무리의 전승으로 남는다.</li>
-            <li><strong>겨울에는 온기가 목숨이다.</strong> 얼지 않는 곳은 깊은 지하, 햇볕을 모으는 유리 건물, 불 곁, 식구 곁 넷뿐이다.</li>
+            <li><strong>온기가 목숨이고 마법의 값이다.</strong> 고양이는 마법을 쓸 수 있고, 쓸 때마다 체온을 치른다. 마법을 쓸지 말지가 매번 목숨을 건 셈이다.</li>
+            <li><strong>살아남을수록 꼬리가 갈라진다.</strong> 가장 긴 밤을 넘길 때마다 꼬리가 하나 늘고, 꼬리마다 마법이 하나 열린다. 아홉까지 는다.</li>
           </ol>
           <h3>정해 둔 것</h3>
           <div class="table-scroll" role="region" aria-label="세계에 대해 정해 둔 것" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">항목</th><th scope="col">결정</th><th scope="col">따라오는 것</th></tr></thead>
               <tbody>
-                <tr><th scope="row">고양이의 모습</th><td>두 발로 서고 앞발을 손처럼 쓴다. 몸집은 고양이 그대로다</td><td>장화 신은 고양이의 약속이다. 이유는 설명하지 않는다. 사람 물건은 전부 크다</td></tr>
-                <tr><th scope="row">불</th><td>중반에 알아낸다</td><td>불을 얻기 전과 후의 겨울이 다르다</td></tr>
-                <tr><th scope="row">쥐</th><td>말도 도구도 없는 짐승 떼</td><td>냄새와 온기를 따라 움직인다. 협상은 없다</td></tr>
-                <tr><th scope="row">사람이 떠난 이유</th><td>흔적으로만 보인다</td><td>고양이는 모르고 궁금해하지도 않는다. 플레이어만 짐작한다</td></tr>
-                <tr><th scope="row">분위기</th><td>평소에는 익살, 겨울에는 긴장</td><td>유물 실험과 낮잠은 웃기게, 가장 긴 밤은 조용하게</td></tr>
-                <tr><th scope="row">무대</th><td>이름 없는 한국의 작은 도시</td><td>아파트 단지, 상가, 재래시장, 학교, 하천, 지하철 한 노선</td></tr>
-                <tr><th scope="row">말</th><td>고양이끼리만 말이 통한다</td><td>까마귀와는 물건과 몸짓으로 통한다. 쥐와 개는 짐승이다</td></tr>
+                <tr><th scope="row">고양이의 모습</th><td>네 발로 걷고 뛰는 보통 고양이</td><td>물건은 물어 나른다. 도구를 만들지 않는다</td></tr>
+                <tr><th scope="row">계절</th><td>겨울뿐이다</td><td>한 해의 달력 대신 이레 주기의 한파가 있다. 겨울은 조금씩 깊어진다</td></tr>
+                <tr><th scope="row">사람과 겨울의 이유</th><td>알 수 없다</td><td>흔적으로만 보인다. 고양이는 궁금해하지 않는다. 플레이어만 짐작한다</td></tr>
+                <tr><th scope="row">말</th><td>고양이끼리 고양이의 말로 통한다</td><td>식구에게 일을 맡기고, 이웃 무리와 거래하고, 늙은 고양이에게 이야기를 듣는다</td></tr>
+                <tr><th scope="row">마법</th><td>고양이만 쓴다. 옛이야기의 힘, 싸움의 힘, 온기를 다루는 힘 세 갈래</td><td>값은 체온이다. 쥐와 개와 까마귀는 마법이 없다</td></tr>
+                <tr><th scope="row">마법을 얻는 길</th><td>꼬리가 늘며 열린다</td><td>오래 산 고양이는 꼬리가 갈라진다는 옛이야기에서 왔다</td></tr>
+                <tr><th scope="row">쥐</th><td>말도 마법도 없는 짐승 떼</td><td>냄새와 온기를 따라 움직인다. 협상은 없다</td></tr>
+                <tr><th scope="row">분위기</th><td>굴 안은 따뜻하고 익살스럽게, 굴 밖은 춥고 조용하게</td><td>낮잠과 꾹꾹이는 귀엽게, 가장 긴 밤은 긴장되게</td></tr>
+                <tr><th scope="row">무대</th><td>이름 없는 한국의 작은 도시</td><td>아파트 단지, 상가, 재래시장, 학교, 언 하천, 지하철 한 노선</td></tr>
               </tbody>
             </table>
           </div>
-          <h3>사람의 흔적</h3>
+          <h3>사람과 겨울의 흔적</h3>
           <p>설명하는 글이나 대사는 없다. 고양이는 글을 못 읽지만 플레이어는 읽을 수 있다. 그 차이가 이 세계의 유일한 수수께끼다.</p>
           <ul>
+            <li>집집마다 같은 달에 멈춰 있는 달력.</li>
             <li>문마다 붙은 같은 모양의 안내문.</li>
             <li>사료가 오래전에 바닥난 자동 급식기와 그 옆에 붙은 쪽지.</li>
-            <li>도시 밖 들판에 줄지어 서 있는 높은 철탑들.</li>
-            <li>밤마다 같은 시각에 하늘을 지나가는 밝은 별.</li>
-            <li>고양이들 사이에 전해지는, 깡통을 따 주던 이들의 이야기.</li>
+            <li>눈밭 한가운데 반쯤 녹다 만 채 얼어붙은 눈사람.</li>
+            <li>늙은 고양이들이 전하는, 깡통을 따 주던 이들의 이야기.</li>
           </ul>
         </section>
 
         <section id="scale" class="concept">
-          <h2>3. 몸집: 무릎 높이에서 본 도시</h2>
-          <p>두 발로 선 고양이는 사람 무릎 높이다. 이 크기 하나가 적의 무게와 집의 넓이와 도구의 모양을 정한다.</p>
+          <h2>3. 몸: 네 발 고양이가 하는 일과 못 하는 일</h2>
+          <p>주인공은 사람 정강이 높이의 보통 고양이다. 이 크기가 적의 무게와 집의 넓이를 정하고, 손이 없다는 점이 할 수 있는 일을 정한다.</p>
           <div class="table-scroll" role="region" aria-label="고양이 몸집에서 본 상대의 크기" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">상대</th><th scope="col">고양이에게 느껴지는 크기</th><th scope="col">뜻하는 것</th></tr></thead>
@@ -170,57 +169,124 @@
               </tbody>
             </table>
           </div>
+          <div class="table-scroll" role="region" aria-label="고양이가 하는 일과 못 하는 일" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">하는 일</th><th scope="col">못 하는 일</th></tr></thead>
+              <tbody>
+                <tr><td>걷기, 살금 걷기, 달리기</td><td>도구를 쥐고 쓰기</td></tr>
+                <tr><td>가구와 담과 나무 오르기, 두 칸 뛰어 건너기</td><td>뚜껑을 돌려 열기</td></tr>
+                <tr><td>좁은 틈 지나기</td><td>깡통 따기</td></tr>
+                <tr><td>입으로 물어 나르기, 물어서 끌기</td><td>끈 묶기</td></tr>
+                <tr><td>앞발로 치기, 당기기, 눈 파기</td><td>둥근 손잡이 돌리기</td></tr>
+                <tr><td>봉지와 상자와 천 뜯기</td><td>글 읽기</td></tr>
+                <tr><td>발톱으로 긁어 표시하기</td><td>무거운 문 열기</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>못 하는 일은 그대로 못 하게 둔다. 그 빈자리를 식구와 마법이 조금씩 메운다. 마법은 손을 대신하지 않는다. 얼리고, 녹이고, 밀어내고, 태울 뿐이다.</p>
           <h3>움직임</h3>
           <ul>
-            <li><strong>걷기, 살금, 달리기.</strong> 살금은 느리지만 소리가 없고 덮치기를 준비한다.</li>
-            <li><strong>오르기.</strong> 높이는 네 단계다. 바닥, 가구 위, 담과 낮은 지붕, 옥상. 가구와 나무와 무너진 벽이 계단이다.</li>
-            <li><strong>틈 지나기.</strong> 틈은 두 가지다. 고양이 틈은 고양이와 쥐가 지나고 개는 못 지난다. 쥐 틈은 쥐만 지난다.</li>
-            <li><strong>뛰어 건너기.</strong> 지붕과 지붕, 선반과 선반 사이 두 칸을 건넌다. 겨울에 언 곳에서는 미끄러진다.</li>
-            <li><strong>뛰어내리기.</strong> 두 층 높이까지는 다치지 않는다.</li>
+            <li><strong>높이는 네 단계다.</strong> 바닥, 가구 위, 담과 낮은 지붕, 옥상. 가구와 나무와 눈 더미가 계단이다.</li>
+            <li><strong>틈은 두 가지다.</strong> 고양이 틈은 고양이와 쥐가 지나고 개는 못 지난다. 쥐 틈은 쥐만 지난다.</li>
+            <li><strong>뛰어내리기.</strong> 두 층 높이까지는 다치지 않는다. 눈 더미 위로는 더 높은 데서도 뛴다.</li>
+            <li><strong>눈.</strong> 깊은 눈에서는 느리다. 다져진 길, 담 위, 처마 밑이 빠른 길이다.</li>
           </ul>
           <h3>나르기</h3>
           <div class="table-scroll" role="region" aria-label="물건을 나르는 방법" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">방법</th><th scope="col" class="num">양</th><th scope="col">대가</th></tr></thead>
               <tbody>
-                <tr><th scope="row">입에 물기</th><td class="num">1칸</td><td>싸울 수 없다</td></tr>
-                <tr><th scope="row">자루 (양말)</th><td class="num">6칸</td><td>없음. 자루는 유물을 알아내야 만든다</td></tr>
-                <tr><th scope="row">끌기</th><td class="num">큰 물건 1개</td><td>속도가 절반이고 끄는 소리가 난다. 오를 수 없다</td></tr>
-                <tr><th scope="row">수레 (유모차 바퀴)</th><td class="num">12칸</td><td>길로만 다닌다. 길은 들개의 층이다</td></tr>
+                <tr><th scope="row">입에 물기</th><td class="num">1칸</td><td>물고 있는 동안 물지 못하고 하악질도 못 한다</td></tr>
+                <tr><th scope="row">천에 올려 끌기</th><td class="num">3칸</td><td>속도가 절반이고 눈 위에 끌린 자국이 남는다. 오를 수 없다</td></tr>
+                <tr><th scope="row">식구와 같이 가기</th><td class="num">한 마리에 1칸</td><td>굴이 그만큼 빈다</td></tr>
+                <tr><th scope="row">눈에 묻어 두기</th><td class="num">제한 없음</td><td>나중에 다시 와야 한다. 쥐와 까마귀가 먼저 찾을 수 있다</td></tr>
               </tbody>
             </table>
           </div>
-          <p class="decision"><strong>집 한 채가 넓어진다.</strong> 좀보이드에서 1분이면 터는 집이 여기서는 한 번의 원정이다. 높은 찬장에 오를 길을 찾고, 서랍을 당겨 열고, 무엇을 두고 올지 고른다. 지도가 작아도 할 일이 많다.</p>
+          <p class="decision"><strong>한 입의 무게.</strong> 한 번에 하나만 문다. 그래서 무엇을 가져오느냐보다 몇 번 오가느냐가 계획이 된다. 좀보이드에서 1분이면 터는 집이 여기서는 한 번의 원정이고, 큰 냉동고 하나는 며칠 치 일이다. 지도가 작아도 할 일이 많다.</p>
         </section>
 
         <section id="layers" class="concept">
           <h2>4. 층: 지하, 길, 집 안, 지붕</h2>
           <p>같은 두 지점 사이에도 길이 네 가지다. 어느 층을 고르느냐가 그날의 계획이다.</p>
-          <div class="table-scroll" role="region" aria-label="네 층의 주인, 얻는 것, 위험, 겨울의 변화" tabindex="0">
+          <div class="table-scroll" role="region" aria-label="네 층의 주인, 얻는 것, 위험, 온기" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">층</th><th scope="col">주인</th><th scope="col">얻는 것</th><th scope="col">위험</th><th scope="col">겨울</th></tr></thead>
+              <thead><tr><th scope="col">층</th><th scope="col">주인</th><th scope="col">얻는 것</th><th scope="col">위험</th><th scope="col">온기</th></tr></thead>
               <tbody>
-                <tr><th scope="row">지하<br>지하철, 하수도, 지하실</th><td>쥐</td><td>쥐 사냥, 물에 잠기지 않은 창고의 유물</td><td>어둠, 떼, 침수</td><td>유일하게 얼지 않는다. 쥐가 가장 빽빽하다</td></tr>
-                <tr><th scope="row">길<br>도로, 골목, 하천변</th><td>들개</td><td>빠른 이동, 낚시, 풀밭의 작은 사냥감</td><td>냄새로 쫓긴다</td><td>눈에 발자국이 남는다. 하천이 언다</td></tr>
-                <tr><th scope="row">집 안<br>아파트, 상가, 주택</th><td>고양이</td><td>유물, 굴 자리</td><td>꺼지는 바닥, 이웃 무리</td><td>바람은 막지만 밖과 똑같이 춥다</td></tr>
-                <tr><th scope="row">지붕<br>옥상, 담, 나무 위</th><td>까마귀</td><td>들개 없는 길, 빗물, 햇볕 드는 유리 건물</td><td>낮의 까마귀, 밤의 부엉이</td><td>얼어서 미끄럽다. 유리 건물은 낮에만 따뜻하다</td></tr>
+                <tr><th scope="row">지하<br>지하철, 하수도, 지하실</th><td>쥐</td><td>쥐 사냥, 얼지 않은 물, 창고의 먹이</td><td>어둠, 떼</td><td>얼지 않는다. 도시에서 가장 따뜻하고 쥐가 가장 빽빽하다</td></tr>
+                <tr><th scope="row">길<br>도로, 골목, 언 하천</th><td>들개</td><td>빠른 이동, 얼음낚시</td><td>눈 위 발자국으로 쫓긴다</td><td>가장 춥다. 바람이 분다</td></tr>
+                <tr><th scope="row">집 안<br>아파트, 상가, 주택</th><td>고양이</td><td>언 먹이, 잠자리 재료, 굴 자리</td><td>이웃 무리, 꺼지는 바닥</td><td>바람은 막지만 밖만큼 춥다. 굴로 꾸려야 따뜻하다</td></tr>
+                <tr><th scope="row">지붕<br>옥상, 담, 나무 위</th><td>까마귀</td><td>들개 없는 길, 햇볕 드는 유리 건물</td><td>낮의 까마귀, 밤의 부엉이, 언 곳의 미끄럼</td><td>맑은 낮에만 볕이 든다</td></tr>
               </tbody>
             </table>
           </div>
-          <p class="decision"><strong>겨울이 층의 값을 뒤집는다.</strong> 봄부터 가을까지 지하는 가지 않아도 되는 곳이다. 겨울에는 그곳만 얼지 않는다. 가장 피하던 층으로 내려갈 이유를 계절이 만든다.</p>
+          <p class="decision"><strong>가장 따뜻한 곳이 가장 위험하다.</strong> 얼지 않는 곳은 지하뿐이고 그곳은 쥐의 층이다. 몸이 식을수록 내려가고 싶어지고, 내려갈수록 수를 세어야 한다.</p>
+        </section>
+
+        <section id="magic" class="concept">
+          <h2>5. 온기와 마법</h2>
+          <p>체온은 0에서 100까지다. 30 아래로 내려가면 걸음이 느려지고, 0이 되면 쓰러진다. 쓰러진 고양이는 식구가 굴로 물어 오지 않으면 죽는다. 마법은 이 체온을 값으로 치른다. 마력이라는 수치는 따로 없다.</p>
+          <div class="table-scroll" role="region" aria-label="체온이 오르고 내리는 때" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">체온이 깎이는 때</th><th scope="col">체온이 오르는 때</th></tr></thead>
+              <tbody>
+                <tr><td>굴 밖에 있는 동안. 길에서 가장 빠르다</td><td>식구와 붙어 있을 때</td></tr>
+                <tr><td>밤, 바람, 눈보라</td><td>잠자리에서 잘 때</td></tr>
+                <tr><td>털이 젖었을 때</td><td>먹이를 먹은 뒤</td></tr>
+                <tr><td>마법을 쓸 때</td><td>맑은 낮의 볕, 불 곁, 깊은 지하</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>처음부터 하는 몸짓 셋</h3>
+          <p>고양이가 원래 하는 몸짓에 약한 마법이 실려 있다. 꼬리가 하나여도 쓴다.</p>
+          <div class="table-scroll" role="region" aria-label="처음부터 쓰는 몸짓 세 가지" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">몸짓</th><th scope="col">하는 일</th><th scope="col" class="num">체온</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">꾹꾹이</th><td>앞발로 누른 것을 녹인다. 언 먹이, 눈, 얼어붙은 문틈, 하천의 얼음</td><td class="num">5</td></tr>
+                <tr><th scope="row">골골</th><td>붙어 있는 식구의 상처와 병이 빨리 낫는다. 나도 낫는다</td><td class="num">분마다 3</td></tr>
+                <tr><th scope="row">하악질</th><td>바람이 실려 앞의 쥐 몇 마리를 밀어낸다. 떼가 겁을 잃는 문턱을 잠깐 올린다</td><td class="num">5</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>꼬리로 여는 마법 아홉</h3>
+          <div class="table-scroll" role="region" aria-label="꼬리가 늘며 열리는 아홉 가지 마법" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">갈래</th><th scope="col">마법</th><th scope="col">하는 일</th><th scope="col">치르는 것</th></tr></thead>
+              <tbody>
+                <tr><th scope="row" rowspan="3">옛이야기</th><td class="num-name">그림자 걸음</td><td>그림자 안에서는 보이지 않는다. 달리면 풀린다</td><td>체온 10</td></tr>
+                <tr><td class="num-name">밤눈</td><td>어둠 속을 낮처럼 본다. 지나간 흔적과 죽은 고양이의 혼이 보인다</td><td>켜 둔 동안 분마다 2</td></tr>
+                <tr><td class="num-name">고양이불</td><td>꼬리 끝에 뜨겁지 않은 푸른 불이 붙는다. 빛 안으로는 쥐 떼가 들어오지 못한다</td><td>분마다 3. 멀리서 까마귀와 이웃이 본다</td></tr>
+                <tr><th scope="row" rowspan="3">싸움</th><td class="num-name">서리 발톱</td><td>할퀸 상대가 느려진다. 물과 틈을 얼린다</td><td>체온 10</td></tr>
+                <tr><td class="num-name">불 꼬리</td><td>꼬리를 휘둘러 태운다. 땔감에 불을 붙인다</td><td>체온 20. 마른 집에 번진다</td></tr>
+                <tr><td class="num-name">큰 울음</td><td>둘레의 떼가 한동안 달아난다</td><td>체온 25. 온 동네가 듣는다</td></tr>
+                <tr><th scope="row" rowspan="3">온기</th><td class="num-name">털 세우기</td><td>한동안 체온이 절반만 깎인다</td><td>체온 10. 그동안 살금 걷지 못한다</td></tr>
+                <tr><td class="num-name">온기 가두기</td><td>돌 하나에 체온을 담아 둔다. 나중에 품으면 돌려받는다</td><td>담은 만큼. 돌은 하루에 절반씩 식는다</td></tr>
+                <tr><td class="num-name">온기 나누기</td><td>닿은 식구에게 체온을 건넨다. 쓰러진 식구를 깨운다</td><td>건넨 만큼</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>꼬리</h3>
+          <ul>
+            <li><strong>느는 때.</strong> 가장 긴 밤을 살아서 넘길 때마다 꼬리가 하나 갈라진다. 아홉까지 는다.</li>
+            <li><strong>고르기.</strong> 꼬리가 늘 때 세 갈래에서 하나씩, 마법 셋이 나오고 그 가운데 하나를 고른다. 아홉 꼬리 고양이도 아홉 가지 가운데 여덟만 안다.</li>
+            <li><strong>보이는 성장.</strong> 꼬리 수는 누구에게나 보인다. 이웃 무리와 까마귀가 꼬리 많은 고양이를 다르게 대한다.</li>
+            <li><strong>죽으면.</strong> 꼬리는 그 고양이의 것이다. 죽으면 같이 사라진다.</li>
+          </ul>
+          <p class="decision"><strong>체온이 곧 마력인 이유.</strong> 마력을 따로 두면 마법은 차면 쓰는 것이 된다. 체온으로 치르면 마법은 추울수록 쓰고 싶고 추울수록 쓰기 무서운 것이 된다. 불 꼬리로 불을 피우면 따뜻해지지만 피우느라 몸이 식는다. 고양이불로 쥐 떼를 막는 동안 몸은 계속 식는다. 굴이 따뜻하고 배가 부른 고양이만 마법을 넉넉히 쓴다. 그래서 굴과 먹이가 마법의 바탕이 된다.</p>
         </section>
 
         <section id="rats" class="concept">
-          <h2>5. 쥐 떼: 한 마리는 먹이, 서른 마리는 죽음</h2>
+          <h2>6. 쥐 떼: 한 마리는 먹이, 서른 마리는 죽음</h2>
           <p>쥐는 생각이 없는 짐승 떼다. 실제 쥐의 습성 다섯 가지로만 움직인다. 규칙을 아는 만큼 쉬워지는 적이다.</p>
           <div class="table-scroll" role="region" aria-label="쥐 떼의 다섯 가지 규칙과 대처" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">규칙</th><th scope="col">게임에서</th><th scope="col">플레이어가 하는 일</th></tr></thead>
               <tbody>
-                <tr><th scope="row">먹이를 따라 는다</th><td>구역의 쥐 수는 닿을 수 있는 먹이의 양을 따라 이레마다 늘거나 준다</td><td>먹이를 유리병과 깡통에 넣는다. 찌꺼기를 굴 밖에 버린다</td></tr>
-                <tr><th scope="row">벽을 따라 다닌다</th><td>벽에 붙은 칸으로만 다니고 트인 바닥 세 칸 이상은 꺼린다</td><td>다니는 길에 덫을 놓는다. 저장 선반을 벽에서 뗀다</td></tr>
-                <tr><th scope="row">낯선 물건을 피한다</th><td>새로 놓은 덫과 물건은 이틀 동안 피한다</td><td>덫을 미리 놓고 미끼만 올려 익숙해지게 한다</td></tr>
-                <tr><th scope="row">갉아서 뚫는다</th><td>종이는 바로, 플라스틱 통은 2시간, 나무 문은 6시간. 유리와 쇠는 못 뚫는다</td><td>틈을 쇠 수세미와 깡통 판으로 막는다</td></tr>
+                <tr><th scope="row">먹이와 온기를 따라 모인다</th><td>녹인 먹이와 찌꺼기는 냄새가 난다. 구역의 쥐 수는 닿을 수 있는 먹이를 따라 이레마다 늘거나 준다</td><td>먹이를 언 채로 둔다. 찌꺼기를 굴 밖 멀리 버린다</td></tr>
+                <tr><th scope="row">벽을 따라 다닌다</th><td>벽에 붙은 칸으로만 다니고 트인 바닥 세 칸 이상은 꺼린다</td><td>먹이를 벽에서 떨어진 높은 가구 위에 둔다. 다니는 길목에서 기다린다</td></tr>
+                <tr><th scope="row">낯선 것을 피한다</th><td>새로 놓인 물건 둘레는 이틀 동안 피한다</td><td>방울을 미리 흩어 놓아 익숙해지게 한다</td></tr>
+                <tr><th scope="row">갉아서 뚫는다</th><td>종이는 바로, 천 뭉치는 2시간, 나무 문은 6시간. 얼음과 쇠는 못 뚫는다</td><td>틈을 서리 발톱으로 얼려 봉한다</td></tr>
                 <tr><th scope="row">수가 모이면 겁을 잃는다</th><td>여덟 마리 아래면 고양이를 보고 달아난다. 그 위면 덮친다</td><td>수를 세고 들어간다</td></tr>
               </tbody>
             </table>
@@ -232,37 +298,37 @@
               <tbody>
                 <tr><th scope="row">보통</th><td class="num">8마리부터</td></tr>
                 <tr><th scope="row">내 영역 표시 안</th><td class="num">16마리부터</td></tr>
-                <tr><th scope="row">겨울</th><td class="num">위의 절반</td></tr>
+                <tr><th scope="row">가장 긴 밤</th><td class="num">위의 절반</td></tr>
                 <tr><th scope="row">하악질을 한 직후</th><td class="num">잠깐 4마리 더</td></tr>
+                <tr><th scope="row">고양이불의 빛 안</th><td class="num">들어오지 못한다</td></tr>
               </tbody>
             </table>
           </div>
           <ul>
             <li><strong>사냥.</strong> 살금 다가가 덮치면 한 번에 잡는다. 들키면 달아나고, 달아난 쥐는 무리를 부르지 않는다.</li>
-            <li><strong>물림.</strong> 물리면 상처가 나고 다섯 번에 한 번은 열이 오른다. 핥아 손질하고 하루 쉬면 낫는다.</li>
-            <li><strong>저장고의 대가.</strong> 저장고가 커질수록 냄새가 멀리 간다. 밀폐한 먹이는 냄새가 없다. 그래서 유리병과 깡통이 집 털기의 첫째 목표다.</li>
-            <li><strong>쥐막이.</strong> 선반 다리에 깡통을 끼우면 쥐가 못 오른다. 옛 곳간이 쓰던 방법이다.</li>
+            <li><strong>물림.</strong> 물리면 상처가 나고 다섯 번에 한 번은 열이 오른다. 핥아 손질하고 골골거리며 하루 쉬면 낫는다.</li>
+            <li><strong>먹이를 지키는 세 가지.</strong> 눈에 묻으면 냄새가 약해지지만 쥐가 파낸다. 높은 가구 위는 쥐가 오르기 어렵다. 서리 발톱으로 얼음 덩이에 가두면 쥐가 뚫지 못한다. 대신 먹을 때 녹이느라 체온이 든다.</li>
           </ul>
-          <p class="decision"><strong>쥐가 있는 곳.</strong> 사람이 떠나면 사람이 버린 음식으로 살던 도시 쥐는 크게 준다. 남은 쥐는 두 곳에 산다. 하나는 물가다. 사람 없는 곳의 쥐는 강둑 같은 축축한 곳을 좋아해서, 물에 잠긴 지하가 쥐의 층이 됐다. 다른 하나는 고양이 굴 둘레다. 이제 먹이를 쌓아 두는 것은 고양이다. 굴이 넉넉해질수록 쥐가 모이므로, 잘 사는 것과 위험해지는 것이 같은 일이다.</p>
+          <p class="decision"><strong>쥐가 있는 곳.</strong> 쥐도 얼어 죽는다. 그래서 얼지 않는 지하에 가장 많고, 그다음이 고양이 굴 둘레다. 굴은 따뜻하고 녹인 먹이가 있다. 굴이 넉넉해질수록 쥐가 모이므로, 잘 사는 것과 위험해지는 것이 같은 일이다.</p>
         </section>
 
         <section id="others" class="concept">
-          <h2>6. 나머지 넷: 들개, 까마귀, 부엉이, 이웃 무리</h2>
+          <h2>7. 나머지 넷: 들개, 까마귀, 부엉이, 이웃 무리</h2>
           <div class="table-scroll" role="region" aria-label="쥐를 뺀 네 가지 상대의 행동과 대처" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">상대</th><th scope="col">때와 곳</th><th scope="col">행동</th><th scope="col">상대하는 법</th><th scope="col">얻는 것</th></tr></thead>
               <tbody>
-                <tr><th scope="row">들개 무리<br>3~6마리</th><td>낮과 해질녘, 길</td><td>냄새 흔적을 따라와 무리로 몬다. 오르지 못하고 틈을 못 지난다. 나무 밑에서 2시간까지 기다린다</td><td>높은 곳과 틈으로 따돌린다. 물을 건너 흔적을 끊는다. 고기를 던져 시간을 번다</td><td>없음</td></tr>
-                <tr><th scope="row">까마귀 떼<br>10~30마리</th><td>낮, 지붕</td><td>낯선 고양이를 보면 울어서 둘레에 알린다. 둥지에 다가가면 떼로 쫀다. 반짝이는 것을 훔친다</td><td>둥지를 돌아간다. 반짝이는 것을 놓아두고 물건을 주고받는다</td><td>높은 곳의 유물, 경고 울음</td></tr>
-                <tr><th scope="row">부엉이<br>도시에 두세 마리</th><td>밤, 트인 곳</td><td>지붕 위나 눈밭을 여섯 칸 넘게 건너는 고양이를 덮친다. 우는 소리가 들린 밤에만 사냥한다</td><td>지붕 아래와 나무 밑으로 다닌다. 우는 밤에는 나가지 않는다</td><td>없음</td></tr>
-                <tr><th scope="row">이웃 무리<br>지도에 셋</th><td>언제나, 집 안</td><td>발톱 자국과 냄새로 영역을 표시한다. 넘어오면 경고하고 다시 넘어오면 싸운다</td><td>선물하고 거래한다. 혼인으로 식구를 얻는다. 싸워서 영역을 넓힌다</td><td>전승, 식구, 겨울의 합가</td></tr>
+                <tr><th scope="row">들개 무리<br>3~6마리</th><td>낮과 해질녘, 길</td><td>눈 위 발자국과 냄새를 따라와 무리로 몬다. 오르지 못하고 틈을 못 지난다. 나무 밑에서 2시간까지 기다린다</td><td>높은 곳과 틈으로 따돌린다. 눈 오는 동안 움직인다. 먹이를 던져 두고 달아난다</td><td>없음</td></tr>
+                <tr><th scope="row">까마귀 떼<br>10~30마리</th><td>낮, 지붕</td><td>낯선 고양이를 보면 울어서 둘레에 알린다. 둥지에 다가가면 떼로 쫀다. 묻어 둔 먹이를 파 간다</td><td>둥지를 돌아간다. 반짝이는 것을 놓아두고 물건을 주고받는다</td><td>높은 곳의 물건, 경고 울음</td></tr>
+                <tr><th scope="row">부엉이<br>도시에 두세 마리</th><td>밤, 트인 곳</td><td>지붕 위나 눈밭을 여섯 칸 넘게 건너는 고양이를 덮친다. 우는 소리가 들린 밤에만 사냥한다</td><td>처마 밑과 나무 밑으로 다닌다. 그림자 걸음으로 건넌다</td><td>없음</td></tr>
+                <tr><th scope="row">이웃 무리<br>지도에 셋</th><td>언제나, 집 안</td><td>발톱 자국과 냄새로 영역을 표시한다. 넘어오면 경고하고 다시 넘어오면 싸운다. 우두머리는 꼬리가 여럿이고 마법을 쓴다</td><td>말을 건다. 선물하고 거래한다. 가장 긴 밤에 굴을 합친다. 싸워서 영역을 넓힌다</td><td>이야기, 식구, 합친 굴의 온기</td></tr>
               </tbody>
             </table>
           </div>
           <h3>까마귀의 기억</h3>
           <p>까마귀는 고양이 한 마리가 아니라 무리를 기억한다. 호의는 네 단계다.</p>
           <ol class="route-strip">
-            <li><strong>원수</strong><span>보이면 떼로 쫀다. 저장고를 노린다</span></li>
+            <li><strong>원수</strong><span>보이면 떼로 쫀다. 묻어 둔 먹이를 찾아 판다</span></li>
             <li><strong>경계</strong><span>보이면 울어서 들개와 이웃에게 알린다</span></li>
             <li><strong>모른 척</strong><span>둥지만 피하면 건드리지 않는다</span></li>
             <li><strong>이웃</strong><span>들개와 부엉이가 오면 울어 준다. 물건을 주고받는다</span></li>
@@ -270,143 +336,137 @@
           <p>까마귀를 죽이면 원수가 되고, 그 기억은 캐릭터가 죽어도 무리에 남는다. 반짝이는 것을 꾸준히 놓아두면 이웃이 되고, 그것도 남는다.</p>
           <h3>이웃 무리의 성격</h3>
           <ul>
-            <li><strong>순한 무리.</strong> 영역이 좁고 거래를 반긴다. 겨울에 합가를 먼저 청한다.</li>
-            <li><strong>깐깐한 무리.</strong> 영역 표시를 자주 고친다. 선물이 쌓여야 말을 섞는다. 전승이 많다.</li>
-            <li><strong>사나운 무리.</strong> 영역을 넓히려 든다. 겨울에 굶으면 남의 저장고를 턴다.</li>
+            <li><strong>순한 무리.</strong> 영역이 좁고 거래를 반긴다. 가장 긴 밤에 굴을 합치자고 먼저 청한다.</li>
+            <li><strong>깐깐한 무리.</strong> 영역 표시를 자주 고친다. 선물이 쌓여야 말을 섞는다. 아는 이야기가 많다.</li>
+            <li><strong>사나운 무리.</strong> 영역을 넓히려 든다. 굶으면 남의 먹이를 턴다. 우두머리의 꼬리가 가장 많다.</li>
           </ul>
+          <p>이웃 우두머리의 꼬리 수는 멀리서도 보인다. 꼬리 셋 달린 우두머리가 있는 무리의 영역에 꼬리 하나로 들어가는 것은 쥐 서른 마리 굴에 들어가는 것과 같다.</p>
         </section>
 
         <section id="senses" class="concept">
-          <h2>7. 들키는 길: 냄새, 소리, 발자국</h2>
-          <div class="table-scroll" role="region" aria-label="들키는 세 가지 길과 가리는 법" tabindex="0">
+          <h2>8. 들키는 길: 냄새, 소리, 발자국</h2>
+          <div class="table-scroll" role="region" aria-label="들키는 길과 가리는 법" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">길</th><th scope="col">누가 따라오나</th><th scope="col">얼마나 가나</th><th scope="col">가리는 법</th></tr></thead>
               <tbody>
-                <tr><th scope="row">먹이 냄새</th><td>쥐, 까마귀</td><td>저장량에 비례한다</td><td>유리병과 깡통에 밀폐한다</td></tr>
-                <tr><th scope="row">지나간 흔적</th><td>들개</td><td>맑은 날 6시간. 비가 오면 바로 지워진다</td><td>물을 건넌다. 높은 길로 다닌다. 비 오는 날 움직인다</td></tr>
+                <tr><th scope="row">눈 위 발자국</th><td>들개, 이웃 무리</td><td>이틀. 새 눈이 오면 덮인다</td><td>눈 오는 동안 움직인다. 담 위와 처마 밑으로 다닌다</td></tr>
+                <tr><th scope="row">끌린 자국</th><td>들개, 이웃 무리, 까마귀</td><td>발자국보다 뚜렷하다</td><td>여러 번 물어 나른다. 식구와 간다</td></tr>
+                <tr><th scope="row">먹이 냄새</th><td>쥐, 까마귀</td><td>녹인 양에 비례한다</td><td>언 채로 둔다. 먹을 만큼만 녹인다</td></tr>
                 <tr><th scope="row">피 냄새</th><td>쥐, 들개</td><td>상처를 손질할 때까지</td><td>핥아서 손질한다</td></tr>
-                <tr><th scope="row">소리</th><td>모두</td><td>끌기와 깨뜨리기가 가장 크다</td><td>살금 걷는다. 물건을 물어 나른다</td></tr>
-                <tr><th scope="row">눈 위 발자국</th><td>들개, 이웃 무리</td><td>이틀. 새 눈이 오면 덮인다</td><td>눈 오는 동안 움직인다. 담 위로 다닌다</td></tr>
-                <tr><th scope="row">연기</th><td>이웃 무리, 들개</td><td>낮에는 멀리, 밤에는 불빛으로</td><td>굴 안 깊이 화덕을 둔다. 밤에만 땐다</td></tr>
+                <tr><th scope="row">소리</th><td>모두</td><td>큰 울음, 깨지는 유리, 터지는 깡통이 가장 크다</td><td>살금 걷는다. 조용히 여는 길을 찾는다</td></tr>
+                <tr><th scope="row">빛과 연기</th><td>까마귀, 이웃 무리</td><td>고양이불과 불은 밤에 멀리 보인다</td><td>창 없는 방에서 켠다. 필요한 동안만 켠다</td></tr>
               </tbody>
             </table>
           </div>
-          <p>고양이 쪽에도 감각이 있다. 킁킁거리면 화면에 흔적이 보인다. 들개가 지나간 길, 이웃 무리의 영역 표시, 쥐가 다니는 벽이 색 띠로 드러난다. 밤에는 색이 빠지지만 어둠 속에서도 보인다.</p>
+          <p>고양이 쪽에도 감각이 있다. 킁킁거리면 가까운 흔적이 보인다. 들개가 지나간 길, 이웃 무리의 영역 표시, 쥐가 다니는 벽이 색 띠로 드러난다. 밤눈을 켜면 더 멀리, 더 오래된 흔적까지 보인다.</p>
         </section>
 
         <section id="body" class="concept">
-          <h2>8. 몸: 여덟 가지 수치</h2>
-          <div class="table-scroll" role="region" aria-label="고양이의 여덟 가지 수치" tabindex="0">
+          <h2>9. 몸의 수치 일곱 가지</h2>
+          <div class="table-scroll" role="region" aria-label="고양이의 일곱 가지 수치" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">수치</th><th scope="col">나빠지는 때</th><th scope="col">나빠지면</th><th scope="col">돌보는 법</th></tr></thead>
               <tbody>
-                <tr><th scope="row">배고픔</th><td>늘, 추우면 더 빨리</td><td>힘과 체온이 떨어진다</td><td>고기와 생선</td></tr>
-                <tr><th scope="row">목마름</th><td>늘, 겨울에는 물이 언다</td><td>판단이 흐려지고 걸음이 느려진다</td><td>빗물, 하천, 녹인 얼음</td></tr>
-                <tr><th scope="row">체온</th><td>겨울, 밤, 바람, 젖었을 때</td><td>느려지다가 쓰러진다</td><td>열원 넷, 잠자리</td></tr>
-                <tr><th scope="row">젖음</th><td>비, 눈, 물</td><td>체온이 빠르게 깎인다</td><td>마른 곳에서 털 손질</td></tr>
-                <tr><th scope="row">털</th><td>싸움, 진창, 손질을 거를 때</td><td>젖기 쉽고 상처가 덧난다</td><td>핥아서 손질한다. 시간이 든다</td></tr>
+                <tr><th scope="row">체온</th><td>굴 밖, 밤, 바람, 젖은 털, 마법</td><td>느려지다가 쓰러진다. 마법을 못 쓴다</td><td>식구, 잠자리, 먹이, 볕, 불, 지하</td></tr>
+                <tr><th scope="row">배고픔</th><td>늘, 추울수록 더 빨리</td><td>체온이 더 빨리 깎인다</td><td>고기와 생선. 언 것은 녹여서</td></tr>
+                <tr><th scope="row">목마름</th><td>늘</td><td>걸음이 느려진다</td><td>꾹꾹이로 녹인 눈. 눈을 그냥 먹으면 체온이 깎인다</td></tr>
+                <tr><th scope="row">털</th><td>젖음, 싸움, 손질을 거를 때</td><td>체온이 빨리 깎이고 상처가 덧난다</td><td>마른 곳에서 핥아 손질한다. 시간이 든다</td></tr>
                 <tr><th scope="row">졸음</th><td>깨어 있는 동안</td><td>덮치기와 오르기를 놓친다</td><td>하루에 낮잠 한 번, 밤잠 한 번</td></tr>
-                <tr><th scope="row">상처와 병</th><td>물림, 떨어짐, 상한 고기</td><td>열이 오르고 냄새로 들킨다</td><td>손질하고 쉰다. 끓인 물로 씻는다</td></tr>
-                <tr><th scope="row">기분</th><td>굶주림, 식구의 죽음, 좁은 굴</td><td>일이 느려지고 식구가 떠난다</td><td>놀이, 상자, 캣닢, 볕 쬐기</td></tr>
+                <tr><th scope="row">상처와 병</th><td>물림, 떨어짐, 상한 먹이</td><td>열이 오르고 냄새로 들킨다</td><td>손질하고 쉰다. 골골거린다</td></tr>
+                <tr><th scope="row">기분</th><td>굶주림, 식구의 죽음, 좁은 굴</td><td>식구가 일을 미루고 떠난다</td><td>놀이, 상자, 캣닢, 볕 쬐기</td></tr>
               </tbody>
             </table>
           </div>
-          <p class="decision"><strong>잠이 장소를 만든다.</strong> 고양이는 하루에 열두 시간에서 열여섯 시간을 잔다. 게임에서는 하루에 두 번 자야 한다. 밖에서 낮잠 잘 곳, 곧 높고 좁고 마른 자리가 원정의 중간 거점이 된다. 지도에 그런 자리를 표시해 두는 것이 길을 아는 것이다.</p>
+          <p class="decision"><strong>잠이 장소를 만든다.</strong> 고양이는 하루에 열두 시간에서 열여섯 시간을 잔다. 게임에서는 하루에 두 번 자야 한다. 밖에서 낮잠 잘 곳, 곧 높고 좁고 마르고 볕 드는 자리가 원정의 중간 거점이 된다. 지도에 그런 자리를 표시해 두는 것이 길을 아는 것이다.</p>
         </section>
 
         <section id="fight" class="concept">
-          <h2>9. 싸움과 덫</h2>
-          <p>싸움은 쥐와 까마귀 한두 마리, 이웃 고양이를 상대로만 성립한다. 나머지는 피한다. 쥐 떼는 싸움보다 덫과 틈 막기로 줄인다.</p>
-          <div class="table-scroll" role="region" aria-label="무기와 몸짓" tabindex="0">
+          <h2>10. 싸움과 방비</h2>
+          <p>무기는 없다. 발톱과 이빨과 마법이 전부다. 싸움은 쥐와 까마귀 한두 마리, 이웃 고양이를 상대로만 성립하고 나머지는 피한다.</p>
+          <div class="table-scroll" role="region" aria-label="싸움에 쓰는 몸짓과 마법" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">수단</th><th scope="col">쓰임</th><th scope="col">얻는 길</th></tr></thead>
+              <thead><tr><th scope="col">수단</th><th scope="col">쓰임</th><th scope="col">값</th></tr></thead>
               <tbody>
-                <tr><th scope="row">발톱</th><td>빠르고 가깝다. 쥐는 두 번에 잡는다</td><td>처음부터</td></tr>
-                <tr><th scope="row">덮치기</th><td>살금 상태에서 두 칸을 뛰어 한 번에 잡는다</td><td>처음부터</td></tr>
-                <tr><th scope="row">하악질</th><td>쥐 몇 마리를 쫓고 떼의 문턱을 잠깐 올린다</td><td>처음부터</td></tr>
-                <tr><th scope="row">바늘 창</th><td>두 칸 찌르기. 쥐를 한 번에 잡는다</td><td>바늘의 쓸모를 알아낸 뒤</td></tr>
-                <tr><th scope="row">가위날</th><td>넓게 벤다. 여럿에게 닿는다</td><td>가위를 뜯는 법을 알아낸 뒤</td></tr>
-                <tr><th scope="row">새총</th><td>멀리 쏜다. 까마귀를 죽이지 않고 쫓는다</td><td>고무줄의 쓸모를 알아낸 뒤</td></tr>
-                <tr><th scope="row">냄비 뚜껑</th><td>막는다. 부엉이의 첫 발톱을 버틴다</td><td>주우면 바로</td></tr>
+                <tr><th scope="row">발톱</th><td>빠르고 가깝다. 쥐는 두 번에 잡는다</td><td>없음</td></tr>
+                <tr><th scope="row">덮치기</th><td>살금 상태에서 두 칸을 뛰어 한 번에 잡는다</td><td>없음. 들키면 못 쓴다</td></tr>
+                <tr><th scope="row">물고 버티기</th><td>한 마리를 물어 끝낸다. 그동안 다른 쥐에게 물린다</td><td>없음</td></tr>
+                <tr><th scope="row">하악질</th><td>앞의 몇 마리를 밀어내고 문턱을 올린다. 물러날 틈을 번다</td><td>체온 5</td></tr>
+                <tr><th scope="row">서리 발톱</th><td>할퀸 상대가 느려진다. 좁은 길목에서 떼를 한 줄로 만든다</td><td>체온 10</td></tr>
+                <tr><th scope="row">불 꼬리</th><td>넓게 태운다. 떼에 가장 세다</td><td>체온 20. 집이 탄다</td></tr>
+                <tr><th scope="row">큰 울음</th><td>둘레의 떼를 한동안 흩는다. 마지막 수다</td><td>체온 25. 모두가 듣는다</td></tr>
               </tbody>
             </table>
           </div>
-          <div class="table-scroll" role="region" aria-label="덫과 방비" tabindex="0">
+          <div class="table-scroll" role="region" aria-label="굴을 지키는 방비" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">덫과 방비</th><th scope="col">하는 일</th><th scope="col">재료</th></tr></thead>
+              <thead><tr><th scope="col">방비</th><th scope="col">하는 일</th><th scope="col">약점</th></tr></thead>
               <tbody>
-                <tr><th scope="row">물통 덫</th><td>쥐가 다니는 벽 옆에 두면 밤새 여러 마리를 잡는다</td><td>양동이, 막대, 미끼</td></tr>
-                <tr><th scope="row">틈 막기</th><td>쥐 틈을 막는다. 쥐가 갉지 못한다</td><td>쇠 수세미, 깡통 판, 유리 조각</td></tr>
-                <tr><th scope="row">쥐막이</th><td>선반과 기둥을 못 오르게 한다</td><td>깡통</td></tr>
-                <tr><th scope="row">방울 줄</th><td>건드리면 울려서 식구를 깨운다</td><td>방울, 실</td></tr>
-                <tr><th scope="row">영역 기둥</th><td>긁어서 표시한다. 작은 쥐 무리와 이웃이 넘지 않는다. 사흘마다 다시 긁는다</td><td>나무 기둥</td></tr>
+                <tr><th scope="row">천 뭉치로 틈 막기</th><td>물어다 틈에 밀어 넣는다. 바람을 막는다</td><td>쥐가 2시간이면 갉는다</td></tr>
+                <tr><th scope="row">얼음으로 틈 봉하기</th><td>서리 발톱으로 얼린다. 쥐가 뚫지 못한다</td><td>굴이 따뜻해지면 녹는다</td></tr>
+                <tr><th scope="row">영역 긁기</th><td>기둥과 문틀을 긁어 표시한다. 작은 쥐 무리와 이웃이 넘지 않는다</td><td>사흘마다 다시 긁는다. 큰 떼에게는 안 통한다</td></tr>
+                <tr><th scope="row">방울 흩어 놓기</th><td>쥐가 다니는 벽 밑에 물어다 놓는다. 건드리면 울려서 식구가 깬다</td><td>이틀은 쥐가 피해 다녀서 안 울린다</td></tr>
+                <tr><th scope="row">지키는 식구</th><td>굴에 남아 쥐를 쫓는다</td><td>원정에 데려갈 식구가 준다</td></tr>
               </tbody>
             </table>
           </div>
         </section>
 
         <section id="loot" class="concept">
-          <h2>10. 털기: 건물, 유물, 실험</h2>
-          <p>백 년이 지나 사람의 먹을 것은 거의 남아 있지 않다. 터는 것은 재료와 유물이다. 예외는 통조림이다. 백 년 넘게 가라앉아 있던 배의 통조림이 먹어도 되는 상태로 나온 일이 실제로 있다. 게임에서 통조림은 드문 보물이다. 녹슬거나 부푼 것은 먹으면 앓고, 멀쩡한 것은 따개의 쓸모를 알아내야 열 수 있다.</p>
-          <div class="table-scroll" role="region" aria-label="건물 종류와 나오는 물건" tabindex="0">
+          <h2>11. 털기: 건물, 여는 법, 가져올 것</h2>
+          <p>겨울이 끝나지 않아서 사람이 남긴 먹이는 얼어붙은 채 썩지 않았다. 집 털기의 목표는 언 먹이와 잠자리 재료다. 손이 없으므로 집마다 어떻게 여느냐가 수수께끼다.</p>
+          <div class="table-scroll" role="region" aria-label="건물 종류와 나오는 것" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">건물</th><th scope="col">주로 나오는 것</th><th scope="col">조심할 것</th></tr></thead>
               <tbody>
-                <tr><th scope="row">아파트</th><td>그릇, 천, 바늘과 실, 상자</td><td>높은 층의 꺼진 바닥. 이웃 무리의 영역</td></tr>
-                <tr><th scope="row">상가와 편의점</th><td>유리병, 빈 깡통, 소금, 드물게 통조림</td><td>깨진 유리. 길가라 들개가 지난다</td></tr>
-                <tr><th scope="row">재래시장</th><td>그물, 큰 솥, 소금, 독</td><td>지붕이 내려앉아 까마귀가 많다</td></tr>
-                <tr><th scope="row">철물점</th><td>철사, 못, 쇠 수세미, 톱날</td><td>무거워서 끌어야 한다</td></tr>
-                <tr><th scope="row">문구점</th><td>가위, 고무줄, 구슬, 돋보기</td><td>종이 더미에 쥐가 산다</td></tr>
-                <tr><th scope="row">낚시 가게</th><td>낚싯줄, 바늘, 뜰채</td><td>드물다. 하천변에만 있다</td></tr>
-                <tr><th scope="row">학교</th><td>과학실의 돋보기와 유리 그릇, 급식실의 큰 솥</td><td>넓고 트여서 밤에는 부엉이가 든다</td></tr>
-                <tr><th scope="row">동물 병원</th><td>이동장, 캣닢 씨, 깃털 장난감</td><td>없음. 대신 드물다</td></tr>
-                <tr><th scope="row">유리 온실</th><td>겨울 낮의 온기, 화분, 씨</td><td>지붕이라 까마귀의 층이다</td></tr>
-                <tr><th scope="row">지하철역</th><td>물에 잠기지 않은 창고의 온전한 유물</td><td>쥐의 층이다</td></tr>
+                <tr><th scope="row">아파트</th><td>냉장고 속 언 먹이, 담요, 상자, 봉지 사료</td><td>높은 층의 꺼진 바닥. 이웃 무리의 영역</td></tr>
+                <tr><th scope="row">상가와 편의점</th><td>봉지 먹이, 통조림, 반짝이는 것</td><td>깨진 유리. 길가라 들개가 지난다</td></tr>
+                <tr><th scope="row">재래시장</th><td>생선 가게의 냉동고, 건어물, 스티로폼 상자</td><td>지붕이 내려앉아 까마귀가 많다</td></tr>
+                <tr><th scope="row">냉동 창고</th><td>도시에서 가장 큰 먹이 더미</td><td>쥐도 안다. 문이 무겁다</td></tr>
+                <tr><th scope="row">학교</th><td>급식실의 냉동고, 체육관의 매트</td><td>넓고 트여서 밤에는 부엉이가 든다</td></tr>
+                <tr><th scope="row">동물 병원</th><td>사료 포대, 이동장, 캣닢</td><td>드물다</td></tr>
+                <tr><th scope="row">문구점</th><td>구슬과 방울, 종이</td><td>종이 더미에 쥐가 산다</td></tr>
+                <tr><th scope="row">유리 온실</th><td>맑은 낮의 볕. 낮잠 자리</td><td>지붕이라 까마귀의 층이다</td></tr>
+                <tr><th scope="row">지하철역</th><td>얼지 않은 물, 창고의 먹이, 온기</td><td>쥐의 층이다</td></tr>
               </tbody>
             </table>
           </div>
-          <h3>건물의 상태</h3>
-          <ul>
-            <li><strong>멀쩡한 곳.</strong> 콘크리트 건물의 낮은 층. 굴 자리가 된다.</li>
-            <li><strong>내려앉은 곳.</strong> 지붕이 무너져 하늘이 보인다. 잔해가 계단이 되고 까마귀가 든다.</li>
-            <li><strong>잠긴 곳.</strong> 지하와 낮은 길. 장마와 봄에 더 잠긴다.</li>
-            <li><strong>나무가 뚫은 곳.</strong> 줄기가 창을 지나 자랐다. 층과 층을 잇는 길이다.</li>
-          </ul>
-          <h3>실험</h3>
-          <p>플레이어는 그 물건이 무엇인지 알아봐도 고양이는 쓸 줄 모른다. 실험은 여섯 가지다. 냄새 맡기, 깨물기, 쳐서 떨어뜨리기, 물에 넣기, 햇볕에 두기, 불에 대기. 물건마다 맞는 실험이 한두 가지 있고, 틀린 실험은 물건을 망가뜨리기도 한다. 선반의 물건을 밀어 떨어뜨리는 버릇이 이 세계의 연구다.</p>
-          <div class="table-scroll" role="region" aria-label="유물과 알아내는 쓸모" tabindex="0">
+          <h3>여는 법</h3>
+          <div class="table-scroll" role="region" aria-label="물건과 문을 여는 방법" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">유물</th><th scope="col">맞는 실험</th><th scope="col">알아내는 쓸모</th></tr></thead>
+              <thead><tr><th scope="col">대상</th><th scope="col">여는 법</th><th scope="col">대가</th></tr></thead>
               <tbody>
-                <tr><th scope="row">유리병</th><td>냄새 맡기</td><td>뚜껑을 닫으면 냄새가 안 난다. 쥐가 못 뚫는 저장</td></tr>
-                <tr><th scope="row">빈 깡통</th><td>불에 대기</td><td>솥. 잘라서 틈 막는 판과 쥐막이</td></tr>
-                <tr><th scope="row">깡통 따개</th><td>깨물기</td><td>통조림을 연다. 이야기 속의 물건이다</td></tr>
-                <tr><th scope="row">양말</th><td>깨물기</td><td>자루</td></tr>
-                <tr><th scope="row">바늘과 실</th><td>깨물기</td><td>창, 꿰매기, 낚시</td></tr>
-                <tr><th scope="row">소금</th><td>냄새 맡기</td><td>고기와 생선을 오래 둔다</td></tr>
-                <tr><th scope="row">쇠 수세미</th><td>깨물기</td><td>쥐가 갉지 못한다. 틈 막기</td></tr>
-                <tr><th scope="row">방울</th><td>쳐서 떨어뜨리기</td><td>경보</td></tr>
-                <tr><th scope="row">거울 조각</th><td>햇볕에 두기</td><td>까마귀를 꾄다. 멀리 신호한다</td></tr>
-                <tr><th scope="row">고무줄</th><td>깨물기</td><td>새총</td></tr>
-                <tr><th scope="row">숟가락</th><td>쳐서 떨어뜨리기</td><td>삽, 냉장고 문을 여는 지렛대</td></tr>
-                <tr><th scope="row">우산</th><td>쳐서 떨어뜨리기</td><td>펴지면 비 가림. 원정의 지붕</td></tr>
-                <tr><th scope="row">돋보기</th><td>햇볕에 두기</td><td>맑은 날 불을 붙인다</td></tr>
-                <tr><th scope="row">유모차 바퀴</th><td>쳐서 떨어뜨리기</td><td>굴러간다. 수레</td></tr>
-                <tr><th scope="row">종이 상자</th><td>아무것이나</td><td>들어가면 기분이 좋다. 잠자리</td></tr>
+                <tr><th scope="row">봉지, 종이 상자</th><td>물어뜯는다</td><td>없음</td></tr>
+                <tr><th scope="row">낮은 서랍과 찬장</th><td>앞발로 당긴다</td><td>시간</td></tr>
+                <tr><th scope="row">높은 찬장</th><td>가구를 타고 올라가 밀어 떨어뜨린다</td><td>소리. 깨지는 것은 깨진다</td></tr>
+                <tr><th scope="row">레버 손잡이 문</th><td>뛰어 매달린다</td><td>없음</td></tr>
+                <tr><th scope="row">둥근 손잡이 문</th><td>못 연다. 깨진 창, 환기구, 벽의 틈을 찾는다</td><td>돌아가는 길</td></tr>
+                <tr><th scope="row">얼어붙은 냉장고와 냉동고</th><td>꾹꾹이로 문틈을 녹이고 앞발로 당긴다. 식구와 같이 당기면 빠르다</td><td>체온, 시간</td></tr>
+                <tr><th scope="row">유리병</th><td>높은 데서 떨어뜨려 깬다</td><td>큰 소리. 유리 조각을 밟으면 다친다</td></tr>
+                <tr><th scope="row">통조림</th><td>못 연다. 불 위에 올려 터뜨린다</td><td>불 꼬리가 있어야 한다. 가장 큰 소리</td></tr>
               </tbody>
             </table>
           </div>
-          <p>알아낸 쓸모는 굴의 벽에 그림으로 남는다. 이것이 전승이다. 이웃 무리와 거래하면 실험 없이 배울 수도 있다. 사람이 남긴 그림도 실마리가 된다. 낚시 가게 간판의 물고기가 그렇다.</p>
-        </section>
-
-        <section id="fire" class="concept">
-          <h2>11. 불: 세 단계</h2>
-          <ol class="pillars">
-            <li><strong>불 이전</strong><span>지하, 유리 건물, 식구의 체온으로만 버틴다. 겨울마다 쥐의 층으로 내려간다. 고기는 말려서만 둔다.</span></li>
-            <li><strong>불씨</strong><span>돋보기로 맑은 날 한낮에만 붙인다. 땔감 한 묶음이 3시간이고, 재에 묻으면 12시간을 간다. 겨울에는 맑은 날이 드물어서 꺼뜨리지 않는 것이 일이다.</span></li>
-            <li><strong>화덕</strong><span>깡통과 돌로 짓는다. 물을 끓이고, 얼음을 녹이고, 고기를 훈제한다. 쥐와 들개가 불을 꺼린다.</span></li>
-          </ol>
-          <p class="decision"><strong>불의 값.</strong> 불은 겨울을 쉽게 만들고 세 가지를 받아 간다. 땔감을 모을 시간, 연기가 알리는 굴의 위치, 백 년 묵은 마른 건물에 번질 위험이다. 불을 얻고도 지하로 내려가는 해가 있어야 한다.</p>
+          <h3>가져올 것</h3>
+          <div class="table-scroll" role="region" aria-label="사람이 남긴 것 가운데 고양이에게 쓸모 있는 것" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">물건</th><th scope="col">쓸모</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">언 생선과 고기, 봉지 사료, 건어물</th><td>먹이. 녹여서 먹는다</td></tr>
+                <tr><th scope="row">종이 상자</th><td>잠자리. 좁을수록 따뜻하다. 들어가면 기분이 좋다</td></tr>
+                <tr><th scope="row">스티로폼 상자</th><td>가장 따뜻한 잠자리</td></tr>
+                <tr><th scope="row">짚, 신문지, 솜</th><td>잠자리 속. 젖어도 덜 식는다</td></tr>
+                <tr><th scope="row">담요와 옷</th><td>잠자리와 틈 막기. 젖으면 얼어서 차다</td></tr>
+                <tr><th scope="row">종이와 나무 조각</th><td>땔감. 불 꼬리가 있어야 쓴다</td></tr>
+                <tr><th scope="row">큰 솥</th><td>불을 담는 자리. 여럿이 끌어야 한다</td></tr>
+                <tr><th scope="row">매끈한 돌과 벽돌</th><td>온기를 가두는 돌</td></tr>
+                <tr><th scope="row">방울</th><td>흩어 놓으면 경보</td></tr>
+                <tr><th scope="row">구슬, 병뚜껑, 거울 조각</th><td>까마귀에게 주는 것</td></tr>
+                <tr><th scope="row">이동장</th><td>문이 닫히는 잠자리. 새끼를 둔다</td></tr>
+                <tr><th scope="row">캣닢, 깃털, 실뭉치</th><td>기분</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>처음 보는 물건은 쓸모가 표시되지 않는다. 냄새 맡고, 쳐 보고, 들어가 보고, 물어 보면 알게 된다. 늙은 고양이나 이웃 무리에게 물어도 된다. 알게 된 것은 무리의 이야기로 남는다.</p>
         </section>
 
         <section id="den" class="concept">
@@ -414,118 +474,116 @@
           <h3>굴 자리를 고르는 기준</h3>
           <ul>
             <li><strong>입구가 고양이 틈이다.</strong> 들개가 못 들어온다.</li>
-            <li><strong>쥐 틈을 다 막을 수 있다.</strong> 틈이 적은 방일수록 좋다.</li>
-            <li><strong>2층 이상이다.</strong> 쥐가 덜 오른다. 대신 물과 땔감을 올려야 한다.</li>
-            <li><strong>남쪽 창이 있다.</strong> 겨울 낮에 볕이 든다.</li>
-            <li><strong>지붕이 멀쩡하다.</strong> 젖지 않는다.</li>
+            <li><strong>쥐 틈이 적다.</strong> 막을 틈이 적을수록 좋다.</li>
+            <li><strong>방이 작다.</strong> 작은 방이 빨리 데워진다.</li>
+            <li><strong>2층 이상이다.</strong> 쥐가 덜 오른다. 대신 먹이를 물고 올라야 한다.</li>
+            <li><strong>남쪽 창이 있다.</strong> 맑은 낮에 볕이 든다.</li>
           </ul>
-          <div class="table-scroll" role="region" aria-label="굴에 두는 시설" tabindex="0">
+          <div class="table-scroll" role="region" aria-label="굴에 꾸리는 것" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">시설</th><th scope="col">하는 일</th><th scope="col">재료</th></tr></thead>
+              <thead><tr><th scope="col">꾸리는 것</th><th scope="col">하는 일</th><th scope="col">필요한 것</th></tr></thead>
               <tbody>
-                <tr><th scope="row">잠자리</th><td>잠의 질과 밤의 체온. 식구가 붙어 자면 한 마리마다 더 따뜻하다</td><td>상자, 짚. 좁을수록 따뜻하다. 천은 물기를 머금어서 짚만 못하다</td></tr>
-                <tr><th scope="row">저장 선반</th><td>유리병과 깡통을 둔다</td><td>판자, 깡통 쥐막이</td></tr>
-                <tr><th scope="row">말림대</th><td>맑은 날 이틀이면 고기와 생선이 마른다</td><td>막대, 실</td></tr>
-                <tr><th scope="row">물독</th><td>빗물을 받는다. 겨울에는 언다</td><td>독, 큰 그릇</td></tr>
-                <tr><th scope="row">화덕</th><td>11절</td><td>깡통, 돌</td></tr>
-                <tr><th scope="row">닭장과 토끼장</th><td>달걀과 고기. 겨울에도 먹이가 난다</td><td>철사, 판자, 풀과 씨</td></tr>
-                <tr><th scope="row">화분</th><td>캣닢, 닭 모이로 쓸 풀과 씨</td><td>화분, 흙, 씨</td></tr>
-                <tr><th scope="row">전승 벽</th><td>알아낸 유물을 그림으로 남긴다</td><td>숯, 진흙</td></tr>
+                <tr><th scope="row">잠자리</th><td>잠의 질과 밤의 체온. 붙어 자는 식구 한 마리마다 더 따뜻하다</td><td>상자, 짚과 솜. 물어다 쌓는다</td></tr>
+                <tr><th scope="row">막은 틈</th><td>바람과 쥐를 막는다</td><td>천 뭉치, 서리 발톱</td></tr>
+                <tr><th scope="row">먹이 자리</th><td>벽에서 떨어진 높은 가구 위, 창밖의 눈 더미, 얼음 덩이</td><td>자리 고르기, 서리 발톱</td></tr>
+                <tr><th scope="row">온기 돌</th><td>낮에 남는 체온을 담아 두고 밤에 품는다</td><td>돌, 온기 가두기</td></tr>
+                <tr><th scope="row">불 자리</th><td>굴을 데운다. 통조림을 연다. 눈을 녹인다</td><td>큰 솥, 땔감, 불 꼬리</td></tr>
+                <tr><th scope="row">긁는 기둥</th><td>영역 표시</td><td>나무 기둥이나 문틀</td></tr>
+                <tr><th scope="row">놀 자리</th><td>기분</td><td>상자, 캣닢, 볕 드는 창가</td></tr>
               </tbody>
             </table>
           </div>
+          <p class="decision"><strong>따뜻한 굴과 닫힌 굴은 서로를 깎는다.</strong> 굴을 데울수록 틈을 봉한 얼음이 녹고, 먹이가 녹아 냄새가 퍼진다. 불을 피우면 따뜻하지만 쥐가 드나들 틈이 열린다. 얼마나 데우고 얼마나 닫아 둘지가 굴 살림의 중심이다.</p>
           <h3>먹이</h3>
           <div class="table-scroll" role="region" aria-label="먹이를 얻는 길" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">먹이</th><th scope="col">철</th><th scope="col">곳</th><th scope="col">조건</th></tr></thead>
+              <thead><tr><th scope="col">먹이</th><th scope="col">곳</th><th scope="col">조건</th></tr></thead>
               <tbody>
-                <tr><th scope="row">쥐</th><td>사철</td><td>지하, 굴 둘레</td><td>수를 세고 들어간다</td></tr>
-                <tr><th scope="row">물고기</th><td>봄~가을. 겨울은 얼음 구멍</td><td>하천</td><td>낚싯줄과 바늘, 또는 뜰채</td></tr>
-                <tr><th scope="row">참새와 비둘기</th><td>사철</td><td>지붕, 나무</td><td>까마귀의 층이다</td></tr>
-                <tr><th scope="row">개구리와 메뚜기</th><td>여름</td><td>풀밭, 물가</td><td>길가라 들개가 지난다</td></tr>
-                <tr><th scope="row">닭과 달걀, 토끼</th><td>사철</td><td>굴</td><td>봄에 잡아 와 기른다</td></tr>
+                <tr><th scope="row">사람이 남긴 언 먹이</th><td>집, 가게, 창고</td><td>여는 법을 찾고, 물어 나르고, 녹인다. 캘수록 준다</td></tr>
+                <tr><th scope="row">쥐</th><td>지하, 굴 둘레</td><td>수를 세고 들어간다. 줄지 않는다</td></tr>
+                <tr><th scope="row">물고기</th><td>언 하천</td><td>꾹꾹이로 얼음에 구멍을 내고 앞발로 낚아챈다. 길 한가운데라 들개가 본다</td></tr>
+                <tr><th scope="row">참새와 비둘기</th><td>지붕, 나무</td><td>까마귀의 층이다</td></tr>
+                <tr><th scope="row">통조림</th><td>가게, 찬장</td><td>드물다. 불이 있어야 연다</td></tr>
               </tbody>
             </table>
           </div>
-          <p>두는 법은 넷이다. 말리기, 소금에 절이기, 훈제, 겨울의 얼리기. 언 고기는 불이나 체온으로 녹여야 먹는다. 얼음을 그냥 먹으면 체온이 깎인다.</p>
+          <p>사람이 남긴 먹이는 줄기만 한다. 가까운 집부터 비어 가므로 원정이 점점 멀어진다. 쥐와 물고기는 줄지 않지만 위험하다. 초반에는 집을 털고, 꼬리가 늘수록 사냥으로 옮겨 가게 된다.</p>
         </section>
 
         <section id="family" class="concept">
-          <h2>13. 식구</h2>
-          <p>시작은 셋이다. 플레이어, 전승을 조금 아는 늙은 고양이, 새끼 한 마리. 직접 움직이는 것은 한 마리고 나머지에게는 일을 맡긴다.</p>
+          <h2>13. 식구와 고양이 말</h2>
+          <p>시작은 셋이다. 플레이어, 꼬리 셋 달린 늙은 고양이, 새끼 한 마리. 직접 움직이는 것은 한 마리고 나머지에게는 말로 일을 맡긴다.</p>
           <div class="table-scroll" role="region" aria-label="식구에게 맡기는 일" tabindex="0">
             <table>
               <thead><tr><th scope="col">맡기는 일</th><th scope="col">하는 것</th></tr></thead>
               <tbody>
                 <tr><th scope="row">지키기</th><td>굴에 남아 쥐를 쫓고 방울이 울리면 깨운다</td></tr>
                 <tr><th scope="row">사냥</th><td>굴 둘레에서 쥐와 새를 잡아 온다. 다쳐서 돌아오기도 한다</td></tr>
-                <tr><th scope="row">손질</th><td>말리고 절이고 불씨를 지킨다</td></tr>
-                <tr><th scope="row">돌보기</th><td>새끼와 앓는 식구를 돌본다</td></tr>
-                <tr><th scope="row">따라오기</th><td>원정에 같이 간다. 짐을 나르고 끌기를 돕는다</td></tr>
+                <tr><th scope="row">데우기</th><td>잠자리에 누워 골골거린다. 앓는 식구와 새끼가 낫는다</td></tr>
+                <tr><th scope="row">따라오기</th><td>원정에 같이 간다. 한 입씩 더 나르고 같이 당긴다</td></tr>
+                <tr><th scope="row">찾으러 가기</th><td>쓰러진 식구를 굴로 물어 온다</td></tr>
               </tbody>
             </table>
           </div>
+          <h3>고양이 말이 하는 일</h3>
           <ul>
-            <li><strong>한 마리의 값.</strong> 하루에 먹이 한 몫을 먹고, 붙어 자면 잠자리를 그만큼 데운다.</li>
-            <li><strong>겨울의 셈.</strong> 겨울 이레 동안 식구 수에 7을 곱한 몫이 있어야 한다. 넷이면 스물여덟 몫이다. 가을마다 이 셈을 한다.</li>
-            <li><strong>새끼.</strong> 봄에 태어나 가을부터 일한다. 첫 겨울에는 먹기만 한다.</li>
-            <li><strong>들어오는 길.</strong> 떠돌이를 받아들이거나, 이웃 무리와 혼인하거나, 겨울에 합가한다.</li>
+            <li><strong>이야기 듣기.</strong> 늙은 고양이는 물건의 쓸모, 안전한 낮잠 자리, 이웃 무리의 성격을 안다. 물으면 지도에 표시된다. 이것이 좀보이드의 책과 지도 자리를 맡는다.</li>
+            <li><strong>거래.</strong> 이웃 무리와 먹이, 잠자리 재료, 이야기를 바꾼다. 영역을 지나갈 허락도 산다.</li>
+            <li><strong>부르기.</strong> 멀리서 울어 식구를 부른다. 들개와 까마귀도 듣는다.</li>
+            <li><strong>짧은 말.</strong> 대화는 길지 않다. 선택지 서너 개로 끝난다.</li>
+          </ul>
+          <h3>식구의 셈</h3>
+          <ul>
+            <li><strong>한 마리의 값.</strong> 하루에 먹이 한 몫을 먹고, 붙어 자면 잠자리를 그만큼 데우고, 한 입을 더 나른다.</li>
+            <li><strong>이레의 셈.</strong> 가장 긴 밤에는 나갈 수 없다. 그 전에 식구 수만큼의 몫과 여유분을 굴에 쌓아야 한다.</li>
+            <li><strong>식구의 꼬리.</strong> 식구도 가장 긴 밤을 넘기면 꼬리가 는다. 꼬리 많은 식구는 맡은 일을 더 잘한다.</li>
+            <li><strong>들어오는 길.</strong> 떠돌이를 받아들이거나, 이웃 무리와 굴을 합치거나, 새끼가 태어난다.</li>
             <li><strong>나가는 길.</strong> 굶주리거나 기분이 바닥나면 떠난다.</li>
           </ul>
         </section>
 
         <section id="calendar" class="concept">
-          <h2>14. 달력: 하루와 한 해</h2>
-          <p>고양이는 대체로 새벽과 해질녘에 가장 활발하다. 그 습성을 하루의 뼈대로 쓴다. 하루는 실제 시간으로 24분이다. 한 철은 이레, 한 해는 28일이고 약 11시간이다. 가을 나흘째 아침에 시작해서 첫눈까지 나흘이 남는다.</p>
+          <h2>14. 달력: 하루와 이레</h2>
+          <p>계절은 없다. 시간의 단위는 하루와 이레다. 하루는 실제 시간으로 24분이고, 이레는 약 세 시간이다. 고양이는 대체로 새벽과 해질녘에 가장 활발하다. 그 습성을 하루의 뼈대로 쓴다.</p>
           <h3>하루</h3>
           <ol class="route-strip">
-            <li><strong>새벽 5~8시</strong><span>고양이의 시간. 눈과 발이 가장 좋다. 쥐가 굴로 돌아간다</span></li>
-            <li><strong>낮 8~17시</strong><span>까마귀와 들개의 시간. 낮잠을 잔다. 맑으면 말리고 불을 붙인다</span></li>
-            <li><strong>해질녘 17~20시</strong><span>고양이의 시간. 멀리 나갔다 돌아올 마지막 틈이다</span></li>
-            <li><strong>밤 20~5시</strong><span>쥐와 부엉이의 시간. 쥐가 지상으로 올라와 저장고를 찾는다</span></li>
+            <li><strong>새벽 6~9시</strong><span>고양이의 시간. 눈과 발이 가장 좋다. 쥐가 굴로 돌아간다</span></li>
+            <li><strong>낮 9~16시</strong><span>까마귀와 들개의 시간. 맑으면 볕이 든다. 낮잠을 잔다</span></li>
+            <li><strong>해질녘 16~19시</strong><span>고양이의 시간. 멀리 나갔다 돌아올 마지막 틈이다</span></li>
+            <li><strong>밤 19~6시</strong><span>쥐와 부엉이의 시간. 가장 춥다. 쥐가 올라와 먹이를 찾는다</span></li>
           </ol>
-          <h3>한 해</h3>
-          <div class="table-scroll" role="region" aria-label="철마다 하는 일과 사건" tabindex="0">
-            <table class="wide-table">
-              <thead><tr><th scope="col">철</th><th scope="col">하는 일</th><th scope="col">사건</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">봄</th><td>새끼를 받고 닭과 토끼를 잡아 온다</td><td>눈 녹은 물에 지하가 잠겨 쥐가 올라온다. 까마귀가 둥지를 틀어 지붕이 사납다</td></tr>
-                <tr><th scope="row">여름</th><td>멀리 나가 건물을 턴다</td><td>장마 사흘. 흔적이 씻겨 원정하기 좋고, 불은 못 붙이고, 고기는 빨리 상한다</td></tr>
-                <tr><th scope="row">가을</th><td>말리고 절이고 굴의 틈을 막는다</td><td>맑은 날이 많아 불씨를 얻기 좋다. 이웃 무리가 거래하러 온다</td></tr>
-                <tr><th scope="row">겨울</th><td>버틴다</td><td>아래 표</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="table-scroll" role="region" aria-label="겨울 이레의 흐름" tabindex="0">
+          <h3>이레</h3>
+          <div class="table-scroll" role="region" aria-label="이레 주기의 흐름" tabindex="0">
             <table>
-              <thead><tr><th scope="col">겨울의 날</th><th scope="col">일어나는 일</th></tr></thead>
+              <thead><tr><th scope="col">날</th><th scope="col">일어나는 일</th></tr></thead>
               <tbody>
-                <tr><th scope="row">1~2일</th><td>첫눈. 발자국이 남기 시작한다. 하천 가장자리가 언다</td></tr>
-                <tr><th scope="row">3~5일</th><td>혹한. 물독이 얼고 지붕길이 미끄럽다. 밖에서는 체온이 빠르게 깎인다. 쥐가 겁을 잃는 문턱이 절반이 된다</td></tr>
-                <tr><th scope="row">6일</th><td>가장 긴 밤. 한 해에서 가장 춥고 밤이 가장 길다. 쥐와 굶주린 이웃이 온기와 먹이로 몰린다</td></tr>
-                <tr><th scope="row">7일</th><td>풀리기 시작한다. 남은 몫을 세고 봄을 기다린다</td></tr>
+                <tr><th scope="row">1~2일 풀림</th><td>맑고 덜 춥다. 낮에 볕이 든다. 멀리 나가기 좋다. 발자국이 오래 남는다</td></tr>
+                <tr><th scope="row">3~4일 눈</th><td>눈이 온다. 발자국이 덮여 들개를 따돌리기 좋다. 멀리 보이지 않는다</td></tr>
+                <tr><th scope="row">5~6일 조임</th><td>맑고 몹시 춥다. 지붕길이 얼어 미끄럽다. 까마귀가 일찍 모여 앉는다</td></tr>
+                <tr><th scope="row">7일 가장 긴 밤</th><td>눈보라가 치고 해가 거의 뜨지 않는다. 밖에서는 체온이 몇 분을 못 버틴다. 쥐가 겁을 잃는 문턱이 절반이 되고, 굶주린 이웃이 온기와 먹이로 몰린다. 살아서 넘기면 꼬리가 하나 갈라진다</td></tr>
               </tbody>
             </table>
           </div>
-          <p>겨울의 세기는 해마다 다르다. 순한 해, 보통 해, 혹독한 해가 있다. 가을에 조짐이 보인다. 까마귀가 일찍 모이고 털이 두껍게 난다.</p>
+          <h3>깊어지는 겨울</h3>
+          <p>겨울은 끝나지 않고 깊어진다. 가장 긴 밤을 한 번 넘길 때마다 밖에서 체온이 깎이는 속도가 한 단계 오르고, 가까운 집의 먹이는 줄어 있다. 고양이 쪽은 꼬리가 하나 늘고 굴이 조금 나아져 있다. 겨울이 깊어지는 속도와 무리가 자라는 속도의 경주가 이 게임의 긴 흐름이다. 첫 가장 긴 밤까지는 엿새가 주어진다.</p>
         </section>
 
         <section id="replay" class="concept">
           <h2>15. 죽음과 다회차 장치 열두 가지</h2>
-          <p>캐릭터가 죽으면 그 고양이는 끝이다. 목숨 하나를 쓰고, 식구 가운데 하나를 골라 이어서 한다. 아홉 번째가 죽거나 식구가 하나도 남지 않으면 그 무리의 이야기가 끝난다.</p>
+          <p>캐릭터가 죽으면 그 고양이는 끝이다. 꼬리와 마법도 같이 사라진다. 무리는 목숨 하나를 쓰고, 플레이어는 식구 가운데 하나를 골라 이어서 한다. 아홉 번째가 죽거나 식구가 하나도 남지 않으면 그 무리의 이야기가 끝난다.</p>
           <ol>
-            <li><strong>아홉 목숨.</strong> 죽어도 굴과 식구와 저장고는 남는다. 죽은 자리에 떨어진 짐은 쥐와 까마귀가 가져가기 전에 찾아올 수 있다.</li>
-            <li><strong>전승 벽.</strong> 알아낸 유물은 무리에 남는다. 세대가 지날수록 쓸 줄 아는 물건이 는다.</li>
-            <li><strong>새 무리는 빈 벽에서 시작한다.</strong> 플레이어는 돋보기가 무엇인지 알지만 새 무리는 모른다. 아는 만큼 빨리 실험한다.</li>
-            <li><strong>옛 무리의 굴.</strong> 같은 도시에서 새 무리를 시작하면 끝난 무리의 굴이 폐허로 남아 있다. 그 벽의 그림을 찾으면 전승 일부를 되찾는다.</li>
-            <li><strong>도시의 시드.</strong> 건물과 길은 같고 유물의 자리, 꺼진 바닥, 잠긴 곳이 바뀐다.</li>
-            <li><strong>해마다 다른 겨울.</strong> 순한 해에 넉넉히 쌓아 혹독한 해를 넘긴다.</li>
-            <li><strong>까마귀의 기억.</strong> 원수와 이웃이 무리에 남는다. 앞 세대의 행동을 뒤 세대가 물려받는다.</li>
-            <li><strong>이웃 무리의 조합.</strong> 순한 무리 셋인 판과 사나운 무리 둘인 판은 다른 게임이다.</li>
-            <li><strong>시작 식구.</strong> 집 안 출신은 틈과 가구를, 지붕 출신은 오르기와 까마귀를, 하천 출신은 낚시와 물을 잘 안다.</li>
-            <li><strong>사람의 흔적.</strong> 판마다 다른 조각이 놓인다. 여러 판을 해야 그림이 이어진다.</li>
-            <li><strong>도전 시작.</strong> 한겨울에 시작하기, 식구 없이 혼자, 불을 끝내 못 얻는 해.</li>
-            <li><strong>무리의 연대기.</strong> 끝난 무리마다 몇 해를 살았고 누가 어떻게 죽었는지 남는다.</li>
+            <li><strong>아홉 목숨.</strong> 죽어도 굴과 식구와 먹이는 남는다. 꼬리는 다시 하나부터다.</li>
+            <li><strong>꼬리마다 셋 중 하나.</strong> 같은 아홉 꼬리라도 고양이마다 아는 마법이 다르다. 불 꼬리를 못 얻은 판은 통조림을 끝내 못 연다.</li>
+            <li><strong>혼.</strong> 밤눈을 켜면 앞서 죽은 고양이의 혼이 죽은 자리에 앉아 있다. 다가가면 그 고양이가 알던 것 하나를 알려 준다. 먹이 자리, 낮잠 자리, 안전한 길 같은 것이다.</li>
+            <li><strong>이야기.</strong> 알아낸 물건의 쓸모와 길은 무리에 남는다. 늙은 고양이가 죽으면 그가 혼자 알던 이야기는 사라진다.</li>
+            <li><strong>옛 무리의 굴.</strong> 같은 도시에서 새 무리를 시작하면 끝난 무리의 굴이 남아 있다. 잠자리와 온기 돌이 그대로 얼어 있다.</li>
+            <li><strong>도시의 시드.</strong> 건물과 길은 같고 먹이의 자리, 열린 창, 꺼진 바닥이 바뀐다.</li>
+            <li><strong>겨울의 성격.</strong> 판마다 깊어지는 빠르기와 눈 오는 날의 수가 다르다.</li>
+            <li><strong>까마귀의 기억.</strong> 원수와 이웃이 무리에 남는다. 앞 캐릭터의 행동을 뒤 캐릭터가 물려받는다.</li>
+            <li><strong>이웃 무리의 조합.</strong> 순한 무리 셋인 판과 꼬리 다섯 우두머리가 있는 판은 다른 게임이다.</li>
+            <li><strong>시작 식구.</strong> 집 안 출신은 틈과 가구를, 지붕 출신은 오르기와 까마귀를, 하천 출신은 얼음과 물고기를 잘 안다.</li>
+            <li><strong>흔적.</strong> 사람과 겨울의 흔적이 판마다 다른 조각으로 놓인다. 여러 판을 해야 그림이 이어진다.</li>
+            <li><strong>무리의 연대기.</strong> 끝난 무리마다 가장 긴 밤을 몇 번 넘겼고 누가 어떻게 죽었는지 남는다.</li>
           </ol>
         </section>
 
@@ -535,10 +593,11 @@
             <li><strong>시점.</strong> 등각 쿼터뷰, 2D 픽셀. 실내에 들어가면 앞벽이 잘려 방이 보인다.</li>
             <li><strong>높이.</strong> 가구 위와 지붕 위에 올라서면 아래층이 옅어진다. 지하와 지붕은 층을 바꿔 본다.</li>
             <li><strong>크기의 표현.</strong> 문손잡이는 화면 위쪽 끝에 걸리고, 식탁 다리는 기둥처럼 보인다.</li>
-            <li><strong>어둠.</strong> 밤과 지하에서도 색이 빠진 채로 보인다. 쥐의 눈만 빛난다.</li>
-            <li><strong>킁킁.</strong> 누르고 있는 동안 흔적과 영역 표시가 색 띠로 보인다.</li>
+            <li><strong>체온의 표현.</strong> 숫자보다 몸으로 보인다. 입김이 짙어지고, 몸을 웅크리고, 떨고, 화면 가장자리에 서리가 낀다.</li>
+            <li><strong>꼬리의 표현.</strong> 꼬리 수가 그대로 캐릭터에 그려진다. 성장이 화면에서 바로 읽힌다.</li>
+            <li><strong>눈.</strong> 발자국이 실제로 찍히고 눈이 오면 덮인다.</li>
             <li><strong>수 세기.</strong> 보이는 쥐 떼 위에 마릿수가 뜬다. 문턱을 넘으면 색이 바뀐다.</li>
-            <li><strong>조작.</strong> 키보드와 마우스가 먼저다. 이동, 살금, 달리기, 오르기, 물기와 놓기, 실험, 하악질, 킁킁.</li>
+            <li><strong>조작.</strong> 키보드와 마우스가 먼저다. 이동, 살금, 달리기, 오르기, 물기와 놓기, 앞발, 킁킁, 몸짓 셋, 꼬리 마법.</li>
           </ul>
         </section>
 
@@ -547,55 +606,60 @@
           <h3>시제품에서 확인할 순서</h3>
           <ol>
             <li><strong>집 한 채와 지하실, 쥐 떼.</strong> 다섯 규칙과 문턱만으로 수 세고 들어가는 판단이 재미있는지 본다.</li>
-            <li><strong>높이와 들개.</strong> 가구와 담을 타고 따돌리는 움직임이 손에 붙는지 본다.</li>
-            <li><strong>겨울 이레.</strong> 체온, 잠자리, 지하로 내려가는 결정이 긴장을 만드는지 본다.</li>
-            <li><strong>유물 실험.</strong> 여섯 가지 실험이 귀찮지 않고 웃긴지 본다.</li>
+            <li><strong>체온과 몸짓 셋.</strong> 언 먹이를 물어 와 녹여 먹는 한 바퀴가 돌아가는지, 마법을 쓸 때마다 망설이게 되는지 본다.</li>
+            <li><strong>높이와 눈, 들개.</strong> 발자국을 남기지 않고 담과 가구로 따돌리는 움직임이 손에 붙는지 본다.</li>
+            <li><strong>가장 긴 밤과 꼬리.</strong> 엿새 준비와 하룻밤 버티기, 꼬리 고르기가 다음 이레를 하고 싶게 만드는지 본다.</li>
             <li><strong>식구.</strong> 일 맡기기와 목숨 잇기가 이어 할 이유가 되는지 본다.</li>
           </ol>
           <h3>덜어 낸 것</h3>
           <ul class="cut-list">
-            <li>차와 연료</li>
-            <li>전기와 발전기</li>
-            <li>총</li>
+            <li>봄, 여름, 가을</li>
+            <li>도구와 제작</li>
+            <li>농사와 가축</li>
+            <li>차, 전기, 총</li>
             <li>사람 캐릭터</li>
-            <li>긴 대화. 고양이 말은 짧은 선택지다</li>
+            <li>손을 대신하는 마법</li>
+            <li>따로 두는 마력 수치</li>
             <li>쥐의 우두머리와 세력</li>
             <li>바람과 냄새의 방향</li>
-            <li>작물 농사</li>
             <li>여럿이 같이 하는 판</li>
           </ul>
           <h3>남은 결정</h3>
           <ul>
-            <li><strong>제목.</strong> 아직 없다. 아홉 목숨과 겨울을 겹친 '아홉 겨울'을 후보로 적어 둔다. 같은 이름의 게임이 있는지는 확인하지 않았다.</li>
+            <li><strong>제목.</strong> 아직 없다.</li>
+            <li><strong>겨울이 어디까지 깊어지는지.</strong> 아홉 번째 가장 긴 밤 뒤에도 깊어지면 끝내 죽는 게임이 되고, 멈추면 아홉 꼬리로 눌러사는 게임이 된다.</li>
             <li><strong>식구를 직접 바꿔 가며 움직일지.</strong> 지금은 죽었을 때만 바꾼다.</li>
-            <li><strong>사람의 흔적을 다 모으면 무엇이 일어나는지.</strong> 지금은 그림 한 장이 이어질 뿐이다.</li>
+            <li><strong>천에 올려 끄는 것을 둘지.</strong> 빼면 한 입의 무게가 더 뚜렷해지고 오가는 일이 는다.</li>
+            <li><strong>흔적을 다 모으면 무엇이 일어나는지.</strong> 지금은 그림 한 장이 이어질 뿐이다. 이유는 끝까지 밝히지 않는다.</li>
             <li><strong>가구 높이를 어떻게 그릴지.</strong> 등각 2D에서 네 단계 높이가 읽히는지가 가장 큰 제작 위험이다.</li>
-            <li><strong>지도의 크기.</strong> 고양이 몸집이면 건물 마흔 채쯤으로도 넓다고 본다.</li>
           </ul>
+          <h3>고친 기록</h3>
+          <p>2026-11-21에 처음 올린 판에서 세 가지를 바꿨다. 두 발로 서서 앞발을 손처럼 쓰던 고양이를 네 발로 걷는 보통 고양이로 바꿨다. 네 철이 도는 한 해를 끝나지 않는 겨울로 바꿨다. 고양이의 말과 마법을 넣었다. 이에 따라 유물 실험과 도구 제작, 닭과 토끼 기르기, 한 해의 달력을 빼고 온기와 마법, 꼬리, 이레 주기를 넣었다.</p>
         </section>
 
         <section id="sources" class="concept">
           <h2>18. 근거와 확인 범위</h2>
           <p>아래는 2026-11-21에 각 페이지를 열어 확인한 것이다. 기획의 규칙은 여기에 기대되, 수치는 게임에 맞게 다시 정했다.</p>
           <ul class="ref-list">
-            <li>틀과 참고작: <a href="https://store.steampowered.com/app/108600/Project_Zomboid/">Project Zomboid</a>(1993년 켄터키, 등각 시점 생존 샌드박스), <a href="https://en.wikipedia.org/wiki/Tokyo_Jungle">Tokyo Jungle</a>(사람이 사라진 도쿄에서 동물이 세대를 이어 산다), <a href="https://en.wikipedia.org/wiki/Stray_(video_game)">Stray</a>(사람 없는 도시의 고양이와 떼 지어 덮치는 저크), <a href="https://store.steampowered.com/app/305620/The_Long_Dark/">The Long Dark</a>(좀비 없이 추위와 싸우는 생존), <a href="https://en.wikipedia.org/wiki/Root_(board_game)">Root</a>(고양이 후작을 비롯한 숲 동물 세력), <a href="https://en.wikipedia.org/wiki/Flow_(2024_film)">Flow</a>(물에 잠긴 세계의 고양이), <a href="https://en.wikipedia.org/wiki/Warriors_(novel_series)">Warriors</a>(영역을 나눠 가진 고양이 무리), <a href="https://en.wikipedia.org/wiki/Puss_in_Boots">장화 신은 고양이</a>.</li>
-            <li>사람이 떠난 도시: <a href="https://en.wikipedia.org/wiki/The_World_Without_Us">The World Without Us</a>, <a href="https://www.scientificamerican.com/article/an-earth-without-people/">저자 앨런 와이즈먼 인터뷰</a>(펌프가 멈추면 48시간 안에 뉴욕 지하가 잠긴다), <a href="https://www.discovermagazine.com/earth-without-people-1944">Earth Without People</a>(쓰레기가 끊기면 십 년쯤 안에 도시 쥐가 크게 줄고, 들고양이와 들개는 처음에 번성한다).</li>
-            <li>고양이: <a href="https://en.wikipedia.org/wiki/Cat">Cat</a>(대체로 새벽과 해질녘에 활동, 하루 12~16시간 수면, 고기만 먹는 동물, 어깨 높이 23~25cm), <a href="https://www.merckvetmanual.com/multimedia/table/normal-rectal-temperature-ranges">정상 체온 38.1~39.2℃</a>, <a href="https://www.veterinaryirelandjournal.com/small-animal/333-the-heat-is-on-the-feline-tnz">고양이가 편한 온도 30~38℃</a>, <a href="https://www.alleycat.org/community-cat-care/winter-weather-tips/">길고양이 겨울 쉼터</a>(짚을 쓰고 담요와 수건은 쓰지 않는다. 쉼터는 작을수록 따뜻하다), <a href="https://shakespeare.mit.edu/romeo_juliet/romeo_juliet.3.1.html">로미오와 줄리엣 3막 1장</a>(고양이의 아홉 목숨).</li>
-            <li>쥐: <a href="https://en.wikipedia.org/wiki/Brown_rat">Brown rat</a>(몸길이 15~28cm, 한 해 최대 다섯 배, 사람 없는 곳에서는 강둑 같은 축축한 곳), <a href="https://ipm.ucanr.edu/PMG/PESTNOTES/pn74106.html">캘리포니아대 쥐 방제 안내</a>(벽에 붙여 놓는 덫, 나무와 플라스틱을 갉는다, 철망과 쇠 수세미로 막는다), <a href="https://extensionpubs.unl.edu/publication/g1737/2007/html/view">네브래스카대 쥐 방제 안내</a>(새 물건을 피하므로 덫을 미리 놓아 익숙하게 한다), <a href="https://pubmed.ncbi.nlm.nih.gov/11801285/">고양이 냄새에 대한 쥐의 방어 행동</a>, <a href="https://www.cdc.gov/rat-bite-fever/about/index.html">쥐물림열</a>, <a href="https://en.wikipedia.org/wiki/Hawadax_Island">하와닥스섬</a>(사람 없는 섬에서 쥐가 이백 년 넘게 살았다).</li>
+            <li>틀과 참고작: <a href="https://store.steampowered.com/app/108600/Project_Zomboid/">Project Zomboid</a>(1993년 켄터키, 등각 시점 생존 샌드박스), <a href="https://store.steampowered.com/app/305620/The_Long_Dark/">The Long Dark</a>(좀비 없이 추위와 싸우는 생존), <a href="https://en.wikipedia.org/wiki/Tokyo_Jungle">Tokyo Jungle</a>(사람이 사라진 도쿄에서 동물이 세대를 이어 산다), <a href="https://en.wikipedia.org/wiki/Stray_(video_game)">Stray</a>(사람 없는 도시의 고양이와 떼 지어 덮치는 저크), <a href="https://en.wikipedia.org/wiki/Flow_(2024_film)">Flow</a>(사람 없는 세계를 건너는 말 없는 고양이), <a href="https://en.wikipedia.org/wiki/Warriors_(novel_series)">Warriors</a>(영역을 나눠 가진 고양이 무리), <a href="https://en.wikipedia.org/wiki/Root_(board_game)">Root</a>(고양이 후작을 비롯한 숲 동물 세력).</li>
+            <li>꼬리와 몸짓: <a href="https://en.wikipedia.org/wiki/Nekomata">네코마타</a>(오래 산 고양이는 꼬리가 둘로 갈라져 요괴가 된다는 일본의 옛이야기), <a href="https://shakespeare.mit.edu/romeo_juliet/romeo_juliet.3.1.html">로미오와 줄리엣 3막 1장</a>(고양이의 아홉 목숨), <a href="https://en.wikipedia.org/wiki/Kneading_(cats)">꾹꾹이</a>, <a href="https://en.wikipedia.org/wiki/Purr">골골거림</a>, <a href="https://en.wikipedia.org/wiki/Goose_bumps">털 세우기</a>(털을 세우면 공기층이 생겨 덜 식는다), <a href="https://en.wikipedia.org/wiki/Tapetum_lucidum">고양이 눈의 반사막</a>(어두운 데서 잘 본다).</li>
+            <li>고양이: <a href="https://en.wikipedia.org/wiki/Cat">Cat</a>(대체로 새벽과 해질녘에 활동, 하루 12~16시간 수면, 고기만 먹는 동물, 어깨 높이 23~25cm), <a href="https://www.merckvetmanual.com/multimedia/table/normal-rectal-temperature-ranges">정상 체온 38.1~39.2℃</a>, <a href="https://www.veterinaryirelandjournal.com/small-animal/333-the-heat-is-on-the-feline-tnz">고양이가 편한 온도 30~38℃</a>, <a href="https://www.alleycat.org/community-cat-care/winter-weather-tips/">길고양이 겨울 쉼터</a>(짚을 쓰고 담요와 수건은 쓰지 않는다. 쉼터는 작을수록 따뜻하다).</li>
+            <li>쥐: <a href="https://en.wikipedia.org/wiki/Brown_rat">Brown rat</a>(몸길이 15~28cm, 한 해 최대 다섯 배), <a href="https://ipm.ucanr.edu/PMG/PESTNOTES/pn74106.html">캘리포니아대 쥐 방제 안내</a>(벽에 붙여 놓는 덫, 나무와 플라스틱을 갉는다, 철망과 쇠 수세미로 막는다), <a href="https://extensionpubs.unl.edu/publication/g1737/2007/html/view">네브래스카대 쥐 방제 안내</a>(새 물건을 피한다), <a href="https://pubmed.ncbi.nlm.nih.gov/11801285/">고양이 냄새에 대한 쥐의 방어 행동</a>, <a href="https://www.cdc.gov/rat-bite-fever/about/index.html">쥐물림열</a>, <a href="https://www.discovermagazine.com/earth-without-people-1944">Earth Without People</a>(사람의 쓰레기가 끊기면 도시 쥐는 크게 준다).</li>
             <li>까마귀, 부엉이, 개: <a href="https://urban.uw.edu/news/crows-hold-grudges-against-individual-humans-for-up-to-17-years">워싱턴대 까마귀 연구</a>(잡은 사람의 얼굴을 길게는 17년 기억하고, 잡힌 적 없는 까마귀도 배운다), <a href="https://www.audubon.org/magazine/seattle-girl-befriends-neighborhood-crows-making-bird-lovers-everywhere-jealous">까마귀가 물건을 두고 간 시애틀의 사례</a>, <a href="https://en.wikipedia.org/wiki/Eurasian_eagle-owl">수리부엉이</a>(몸길이 56~75cm), <a href="https://en.wikipedia.org/wiki/Dietary_biology_of_the_Eurasian_eagle-owl">수리부엉이의 먹이</a>(집고양이를 잡은 기록이 드물게 있다), <a href="https://www.cleanfutures.org/dogs-of-chernobyl">체르노빌의 개들</a>(대피 때 남겨진 개의 후손 수백 마리).</li>
-            <li>그 밖: <a href="https://en.wikipedia.org/wiki/Ground_source_heat_pump">땅속 온도</a>(몇 미터 아래는 한 해 내내 연평균 기온에 가깝다), <a href="https://en.wikipedia.org/wiki/Bertrand_(steamboat)">버트런드호</a>(1865년에 가라앉은 배의 통조림이 1974년 검사에서 먹어도 되는 상태였다), <a href="https://hgic.clemson.edu/factsheet/safe-handling-of-canned-goods/">통조림 보관 안내</a>, <a href="https://askdruniverse.wsu.edu/2022/10/07/honey-last-forever/">꿀이 상하지 않는 이유</a>.</li>
+            <li>그 밖: <a href="https://en.wikipedia.org/wiki/Ground_source_heat_pump">땅속 온도</a>(몇 미터 아래는 한 해 내내 연평균 기온에 가깝다), <a href="https://en.wikipedia.org/wiki/Bertrand_(steamboat)">버트런드호</a>(1865년에 가라앉은 배의 통조림이 1974년 검사에서 먹어도 되는 상태였다).</li>
           </ul>
           <p>확인하지 못했거나 게임을 위해 정한 것도 적어 둔다.</p>
           <ul>
-            <li>와이즈먼의 책은 직접 읽지 않았다. 인터뷰와 기사, 위키백과 요약으로 확인했다.</li>
-            <li>쥐가 유리를 못 뚫는다는 것은 자료에서 확인하지 못했다. 쇠는 확인했고, 유리는 게임의 규칙으로 정했다.</li>
-            <li>쥐가 새 덫을 피하는 기간은 실제로는 두 주쯤이라고 한다. 게임의 이틀은 한 철이 이레인 달력에 맞춘 값이다.</li>
-            <li>쥐가 벽을 따라 다닌다는 것은 실험실 연구와 방제 안내에 기댄 것이다.</li>
+            <li>끝나지 않는 겨울과 고양이의 마법은 이 세계의 약속이다. 근거를 대지 않는다.</li>
+            <li>얼어 있던 먹이가 얼마든지 오래 간다는 것도 약속이다. 실제 냉동 식품의 보관 기간은 확인하지 않았다.</li>
+            <li>꼬리는 옛이야기에서 둘까지 갈라진다. 아홉까지 느는 것은 아홉 목숨에 맞춘 것이다.</li>
+            <li>고양이가 혼을 본다는 것, 고양이 요괴가 불을 다룬다는 것, 골골거림이 몸을 낫게 한다는 것은 흔히 듣는 이야기를 기억으로 쓴 것이다.</li>
+            <li>고양이가 앞발로 물고기를 낚아챈다는 것, 스티로폼 상자가 가장 따뜻하다는 것, 불 위의 깡통이 터진다는 것, 높은 데서 떨어져도 덜 다친다는 것도 기억으로 썼다.</li>
+            <li>쥐가 얼음을 못 뚫는다는 것은 확인하지 못했다. 쇠는 확인했고, 얼음은 게임의 규칙으로 정했다.</li>
+            <li>쥐가 새 물건을 피하는 기간은 실제로는 두 주쯤이라고 한다. 게임의 이틀은 이레 주기에 맞춘 값이다.</li>
             <li>쥐가 여덟 마리부터 겁을 잃는다는 문턱은 지어낸 규칙이다. 고양이 냄새를 꺼린다는 연구에서 출발했을 뿐이다.</li>
             <li>부엉이가 고양이를 잡는 일은 드물다. 게임에서는 밤의 지붕을 막는 장치로 키웠다.</li>
-            <li>선반 다리의 쥐막이, 물통 덫, 돋보기로 불 붙이기, 고양이가 높은 데서 떨어져도 덜 다친다는 것은 기억으로 썼다.</li>
-            <li>백 년 뒤 도시에 닭과 토끼가 야생으로 남아 있다는 것은 가정이다.</li>
-            <li>하루 24분, 한 해 28일을 비롯한 수치는 전부 시제품에서 확인할 가설이다.</li>
+            <li>하루 24분, 체온 100, 마법의 값을 비롯한 수치는 전부 시제품에서 확인할 가설이다.</li>
           </ul>
         </section>
 
