@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="말 세 종류가 가위바위보처럼 서로 이기고 지는 오토배틀 기획. 창은 말을, 말은 활을, 활은 창을 이기고, 이기는 쪽이 피해를 두 배로 준다. 세 종류의 수치는 같다. 다섯 칸 한 줄에 세우면 맨 앞끼리 싸운다. 상대는 다른 사람이 남긴 기록이고, 쥔 말은 보이지만 줄의 차례는 가려져 있다. 상성과 등급의 셈, 무엇을 쥘지와 어떻게 세울지를 계산한 값을 정리했다.">
-    <title>셋이 물고 물린다: 상성 하나로 짜는 오토배틀 기획 · nyimpe</title>
+    <meta name="description" content="열두 띠 동물이 다섯 속성으로 서로 이기고 지는 오토배틀 기획. 물은 불을, 불은 쇠를, 쇠는 나무를, 나무는 흙을, 흙은 물을 이기고, 이기는 쪽이 피해를 두 배로 준다. 동물의 수치는 모두 같다. 다섯 칸 한 줄에 세우면 맨 앞끼리 싸운다. 상대는 다른 사람이 남긴 기록이고, 쥔 동물은 보이지만 줄의 차례는 가려져 있다. 상성과 등급의 셈, 가게에서 줄이 자라는 모습, 읽기의 값을 계산해 정리했다.">
+    <title>다섯이 물고 물린다: 열두 띠와 오행으로 짜는 오토배틀 기획 · nyimpe</title>
     <link rel="canonical" href="https://nyimpe.github.io/posts/rps-auto-battler-design/">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="ko_KR">
-    <meta property="og:title" content="셋이 물고 물린다: 상성 하나로 짜는 오토배틀 기획">
-    <meta property="og:description" content="창은 말을, 말은 활을, 활은 창을 이긴다. 수치는 같고 관계만 다르다. 무엇을 쥘지와 어떤 차례로 세울지가 게임의 전부다.">
+    <meta property="og:title" content="다섯이 물고 물린다: 열두 띠와 오행으로 짜는 오토배틀 기획">
+    <meta property="og:description" content="물은 불을, 불은 쇠를, 쇠는 나무를, 나무는 흙을, 흙은 물을 이긴다. 열두 띠 동물은 수치가 같고 속성만 다르다. 무엇을 쥘지와 어떤 차례로 세울지가 게임의 전부다.">
     <meta property="og:url" content="https://nyimpe.github.io/posts/rps-auto-battler-design/">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/src/style.css">
@@ -67,25 +67,25 @@
     <main id="content">
       <article class="research-post design-post notes-post">
         <header class="post-header">
-          <h1>셋이 물고 물린다: 상성 하나로 짜는 오토배틀 기획</h1>
+          <h1>다섯이 물고 물린다: 열두 띠와 오행으로 짜는 오토배틀 기획</h1>
           <time datetime="2026-11-25">2026.11.25</time>
-          <p class="image-credit">제목과 소재 미정 / 틀: 다른 사람의 기록과 붙는 오토배틀 / 창, 말, 활은 임시 이름이고 수치는 전부 시제품에서 확인할 가설이다</p>
+          <p class="image-credit">제목 미정 / 소재: 열두 띠 동물 / 틀: 다른 사람의 기록과 붙는 오토배틀 / 수치는 전부 시제품에서 확인할 가설이다</p>
         </header>
 
-        <p class="concept-pitch">말은 세 종류다. 창은 말을 이기고, 말은 활을 이기고, 활은 창을 이긴다. 세 종류의 수치는 똑같고, 다른 것은 이 관계 하나뿐이다. 말을 사서 한 줄로 세우면 맨 앞끼리 알아서 싸운다. 무엇을 쥘지와 어떤 차례로 세울지가 게임의 전부다.</p>
-        <p>가위바위보에서 가져온 것은 관계다. 셋이 서로 이기고 지며, 늘 이기는 것이 없다. 이 관계를 오토배틀의 바닥에 깔았다. 말끼리 맞붙을 때 한 번, 무엇을 살지 고를 때 한 번, 줄을 세울 때 한 번, 같은 관계가 세 번 쓰인다.</p>
-        <p>가위바위보와 다른 점도 있다. 이기는 관계라고 그 자리에서 끝나지 않는다. 이기는 쪽은 피해를 두 배로 줄 뿐이고, 등급이 높은 말은 그것을 뒤집는다. 그리고 한 번이 아니라 다섯 번을 이어서 낸다. 줄의 차례가 곧 다섯 번 낼 것을 미리 적어 둔 것이다.</p>
+        <p class="concept-pitch">동물은 열두 띠다. 저마다 물, 불, 쇠, 나무, 흙 가운데 한 속성을 타고났다. 물은 불을 이기고, 불은 쇠를, 쇠는 나무를, 나무는 흙을, 흙은 물을 이긴다. 동물의 수치는 모두 같고, 다른 것은 속성뿐이다. 동물을 사서 한 줄로 세우면 맨 앞끼리 알아서 싸운다. 무엇을 쥘지와 어떤 차례로 세울지가 게임의 전부다.</p>
+        <p>가위바위보에서 가져온 것은 관계다. 서로 이기고 지며, 늘 이기는 것이 없다. 이 관계를 오토배틀의 바닥에 깔았다. 동물끼리 맞붙을 때 한 번, 무엇을 살지 고를 때 한 번, 줄을 세울 때 한 번, 같은 관계가 세 번 쓰인다.</p>
+        <p>가위바위보와 다른 점도 있다. 고리가 셋이 아니라 다섯이다. 그래서 만나도 이기지도 지지도 않는 사이가 생긴다. 이기는 관계라고 그 자리에서 끝나지도 않는다. 이기는 쪽은 피해를 두 배로 줄 뿐이고, 등급이 높은 동물은 그것을 뒤집는다. 그리고 한 번이 아니라 다섯 번을 이어서 낸다. 줄의 차례가 곧 다섯 번 낼 것을 미리 적어 둔 것이다.</p>
 
         <div class="asset-summary" aria-label="기획 요약">
-          <div><strong>상성 셋</strong><span>창이 말을, 말이 활을, 활이 창을 이긴다. 이기는 쪽이 피해 두 배</span></div>
+          <div><strong>다섯 속성</strong><span>물이 불을, 불이 쇠를, 쇠가 나무를, 나무가 흙을, 흙이 물을 이긴다. 이기는 쪽이 피해 두 배</span></div>
+          <div><strong>열두 띠</strong><span>동물마다 속성 하나. 수치는 모두 같다. 같은 동물 셋이 합쳐진다</span></div>
           <div><strong>한 줄 다섯 칸</strong><span>맨 앞끼리 싸우고, 쓰러지면 뒤가 나온다</span></div>
-          <div><strong>등급</strong><span>같은 말 셋이 합쳐진다. 한 등급 높으면 상성을 뒤집는다</span></div>
-          <div><strong>기록 대전</strong><span>상대가 쥔 말은 보이고 줄의 차례는 가려져 있다</span></div>
+          <div><strong>기록 대전</strong><span>상대가 쥔 동물은 보이고 줄의 차례는 가려져 있다</span></div>
         </div>
 
         <nav class="post-toc" aria-label="글 목차"><ol>
           <li><a href="#frame">틀: 가위바위보에서 가져오는 것</a></li>
-          <li><a href="#triangle">상성 셋</a></li>
+          <li><a href="#cast">열두 띠와 다섯 속성</a></li>
           <li><a href="#line">줄과 싸움</a></li>
           <li><a href="#duel">맞대결의 셈</a></li>
           <li><a href="#level">등급: 상성을 뒤집는 길</a></li>
@@ -95,7 +95,7 @@
           <li><a href="#record">상대는 사람의 기록</a></li>
           <li><a href="#shop">가게와 대회</a></li>
           <li><a href="#screen">화면과 조작</a></li>
-          <li><a href="#theme">소재 후보 둘</a></li>
+          <li><a href="#unused">십이지에서 쓰지 않은 관계</a></li>
           <li><a href="#scope">범위, 검증 순서, 남은 결정</a></li>
           <li><a href="#sources">근거와 확인 범위</a></li>
         </ol></nav>
@@ -108,60 +108,82 @@
             <table class="wide-table">
               <thead><tr><th scope="col">가위바위보</th><th scope="col">이 기획</th><th scope="col">바꾼 이유</th></tr></thead>
               <tbody>
-                <tr><th scope="row">셋이 서로 이기고 진다</th><td>말 세 종류가 서로 이기고 진다</td><td>그대로. 이것이 바닥이다</td></tr>
-                <tr><th scope="row">늘 이기는 것이 없다</th><td>세 종류의 수치가 같다. 어느 하나가 더 세지 않다</td><td>그대로. 한 종류가 세면 그것만 사게 된다</td></tr>
+                <tr><th scope="row">셋이 서로 이기고 진다</th><td>다섯 속성이 고리를 이뤄 서로 이기고 진다</td><td>열두 띠가 타고난 속성이 다섯이다. 고리는 옛 오행의 상극 그대로다</td></tr>
+                <tr><th scope="row">늘 이기는 것이 없다</th><td>동물의 수치가 모두 같다. 어느 속성도 더 세지 않다</td><td>그대로. 한 속성이 세면 그것만 사게 된다</td></tr>
+                <tr><th scope="row">무엇을 내든 승패가 갈린다</th><td>속성마다 하나를 이기고 하나에게 진다. 나머지 둘과는 상성이 없다</td><td>고리가 다섯이면 생기는 일이다. 외울 것은 화살표 다섯 개다</td></tr>
                 <tr><th scope="row">이기는 관계면 바로 이긴다</th><td>이기는 쪽이 피해를 두 배로 준다. 등급이 높으면 뒤집힌다</td><td>키우는 재미가 남아야 오토배틀이다</td></tr>
                 <tr><th scope="row">한 번 낸다</th><td>다섯을 차례로 세워 이어서 낸다</td><td>무엇을 냈느냐에 더해 어떤 차례로 냈느냐가 생긴다</td></tr>
-                <tr><th scope="row">서로 못 본 채 낸다</th><td>상대가 쥔 말은 보이고, 줄의 차례는 가려져 있다</td><td>찍기가 아니라 읽기가 되려면 읽을 거리가 있어야 한다</td></tr>
-                <tr><th scope="row">같은 것을 내면 비긴다</th><td>같은 종류, 같은 등급이 만나면 같이 쓰러진다</td><td>그대로. 판 전체가 비기는 일은 100판에 7판쯤이다</td></tr>
+                <tr><th scope="row">서로 못 본 채 낸다</th><td>상대가 쥔 동물은 보이고, 줄의 차례는 가려져 있다</td><td>찍기가 아니라 읽기가 되려면 읽을 거리가 있어야 한다</td></tr>
               </tbody>
             </table>
           </div>
-          <p>오토배틀에서는 셋을 가져온다. 사서 세우면 싸움은 저절로 굴러간다. 같은 말 셋이 합쳐져 등급이 오른다. 상대는 다른 사람이 남긴 기록이라 기다릴 사람이 없다. 종족과 직업 시너지, 아이템, 말마다 다른 특기는 넣지 않았다.</p>
+          <p>오토배틀에서는 셋을 가져온다. 사서 세우면 싸움은 저절로 굴러간다. 같은 동물 셋이 합쳐져 등급이 오른다. 상대는 다른 사람이 남긴 기록이라 기다릴 사람이 없다. 종족과 직업 시너지, 아이템, 동물마다 다른 특기는 넣지 않았다.</p>
         </section>
 
-        <section id="triangle" class="concept">
-          <h2>2. 상성 셋</h2>
+        <section id="cast" class="concept">
+          <h2>2. 열두 띠와 다섯 속성</h2>
+          <p>해가 바뀔 무렵 열두 띠 동물이 모여 밀어내기 대회를 연다. 나는 한 편의 대장이고, 찾아온 동물을 받아 다섯 마리를 한 줄로 세운다. 맨 앞끼리 밀고, 밀려난 동물은 줄 밖에서 구경하다가 다음 판에 다시 선다. 무대는 이것이 전부이고 임시다.</p>
           <figure class="board-figure">
-            <svg viewBox="0 0 420 250" role="img" aria-labelledby="tri-title">
-              <title id="tri-title">창에서 말로, 말에서 활로, 활에서 창으로 화살표가 도는 그림</title>
-              <defs><marker id="tri-tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="tip" d="M0 0L10 5L0 10z"></path></marker></defs>
-              <circle class="cell" cx="210" cy="55" r="38"></circle>
-              <circle class="cell" cx="330" cy="195" r="38"></circle>
-              <circle class="cell" cx="90" cy="195" r="38"></circle>
-              <text x="210" y="61">창</text>
-              <text x="330" y="201">말</text>
-              <text x="90" y="201">활</text>
-              <path class="rel" d="M240 88L300 158" marker-end="url(#tri-tip)"></path>
-              <path class="rel" d="M286 195L134 195" marker-end="url(#tri-tip)"></path>
-              <path class="rel" d="M120 158L180 88" marker-end="url(#tri-tip)"></path>
-              <text class="side" x="300" y="115">막아선다</text>
-              <text class="side" x="210" y="215">덮친다</text>
-              <text class="side" x="120" y="115">멀리서 쏜다</text>
+            <svg viewBox="0 0 420 320" role="img" aria-labelledby="ring-title">
+              <title id="ring-title">물에서 불로, 불에서 쇠로, 쇠에서 나무로, 나무에서 흙으로, 흙에서 물로 화살표가 도는 오각형 그림</title>
+              <defs><marker id="ring-tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="tip" d="M0 0L10 5L0 10z"></path></marker></defs>
+              <circle class="cell" cx="210" cy="55" r="36"></circle>
+              <circle class="cell" cx="319" cy="134" r="36"></circle>
+              <circle class="cell" cx="278" cy="263" r="36"></circle>
+              <circle class="cell" cx="142" cy="263" r="36"></circle>
+              <circle class="cell" cx="101" cy="134" r="36"></circle>
+              <text x="210" y="54">물</text><text class="side" x="210" y="72">쥐·돼지</text>
+              <text x="319" y="133">불</text><text class="side" x="319" y="151">뱀·말</text>
+              <text x="278" y="262">쇠</text><text class="side" x="278" y="280">원숭이·닭</text>
+              <text x="142" y="262">나무</text><text class="side" x="142" y="280">호랑이·토끼</text>
+              <text x="101" y="133">흙</text><text class="side" x="101" y="151">소·용·양·개</text>
+              <path class="rel" d="M242 78L283 108" marker-end="url(#ring-tip)"></path>
+              <path class="rel" d="M307 172L291 221" marker-end="url(#ring-tip)"></path>
+              <path class="rel" d="M238 263L184 263" marker-end="url(#ring-tip)"></path>
+              <path class="rel" d="M130 225L114 176" marker-end="url(#ring-tip)"></path>
+              <path class="rel" d="M134 110L176 80" marker-end="url(#ring-tip)"></path>
+              <text class="side" x="292" y="80">끈다</text>
+              <text class="side" x="340" y="205">녹인다</text>
+              <text class="side" x="210" y="298">벤다</text>
+              <text class="side" x="82" y="205">뚫는다</text>
+              <text class="side" x="128" y="80">막는다</text>
             </svg>
-            <figcaption>화살표가 가리키는 쪽이 진다. 창이 말을, 말이 활을, 활이 창을 이긴다.</figcaption>
+            <figcaption>화살표가 가리키는 쪽이 진다. 물은 불을 끄고, 불은 쇠를 녹이고, 쇠는 나무를 베고, 나무는 흙을 뚫고, 흙은 물을 막는다.</figcaption>
           </figure>
+          <div class="table-scroll" role="region" aria-label="속성별 동물과 상성" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">속성</th><th scope="col">동물</th><th scope="col">이기는 속성</th><th scope="col">지는 속성</th><th scope="col">상성이 없는 속성</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">물</th><td>쥐, 돼지</td><td>불</td><td>흙</td><td>쇠, 나무</td></tr>
+                <tr><th scope="row">불</th><td>뱀, 말</td><td>쇠</td><td>물</td><td>나무, 흙</td></tr>
+                <tr><th scope="row">쇠</th><td>원숭이, 닭</td><td>나무</td><td>불</td><td>물, 흙</td></tr>
+                <tr><th scope="row">나무</th><td>호랑이, 토끼</td><td>흙</td><td>쇠</td><td>물, 불</td></tr>
+                <tr><th scope="row">흙</th><td>소, 용, 양, 개</td><td>물</td><td>나무</td><td>불, 쇠</td></tr>
+              </tbody>
+            </table>
+          </div>
           <ul>
             <li><strong>이기는 쪽은 피해를 두 배로 준다.</strong> 지는 쪽의 피해는 그대로다. 상성이 하는 일은 이것 하나다.</li>
-            <li><strong>세 종류의 힘과 몸은 같다.</strong> 1등급은 셋 다 힘 2, 몸 8이다. 다른 것은 누구를 이기느냐뿐이다.</li>
-            <li><strong>종류는 셋에서 늘리지 않는다.</strong> 관계 셋은 한 번 보면 외워진다. 다섯이면 관계가 열 개다.</li>
+            <li><strong>열두 동물의 힘과 몸은 같다.</strong> 1등급은 모두 힘 2, 몸 8이다. 다른 것은 속성뿐이다. 같은 속성의 두 동물, 이를테면 쥐와 돼지는 싸움에서 똑같다.</li>
+            <li><strong>동물의 속성은 옛 짝 그대로다.</strong> 쥐가 물이고 호랑이가 나무인 것은 십이지에 오행을 붙이는 오랜 방식에서 가져왔다. 흙만 동물이 넷이다.</li>
+            <li><strong>상성은 속성으로 읽는다.</strong> 동물 그림만으로는 닭이 호랑이를 이기는지 알 수 없다. 그래서 동물마다 속성의 색을 입힌다. 색은 11절에 있다.</li>
           </ul>
-          <p>소재를 정하지 않았으므로 창, 말, 활은 임시 이름이다. 누가 누구를 이기는지 한눈에 떠오르는 것으로 골랐다. 소재 후보 둘은 12절에 있다.</p>
+          <p>십이지에는 이 고리 말고도 잘 맞는 사이와 부딪치는 사이를 정한 관계가 여럿 있다. 그것들은 쓰지 않았다. 12절에 조사한 것을 적어 뒀다.</p>
         </section>
 
         <section id="line" class="concept">
           <h2>3. 줄과 싸움</h2>
-          <p>내 판은 다섯 칸짜리 한 줄이다. 대기석은 없다. 쥔 말이 곧 줄이다. 상대도 한 줄을 마주 세운다.</p>
+          <p>내 판은 다섯 칸짜리 한 줄이다. 대기석은 없다. 쥔 동물이 곧 줄이다. 상대도 한 줄을 마주 세운다.</p>
           <h3>싸움의 규칙 넷</h3>
           <ol>
-            <li><strong>맨 앞의 말끼리 싸운다.</strong> 박자마다 둘이 한꺼번에 친다. 맞은 만큼 몸이 깎인다.</li>
-            <li><strong>상성에서 이기는 말은 피해를 두 배로 준다.</strong></li>
-            <li><strong>쓰러지면 뒤의 말이 나온다.</strong> 살아남은 말은 깎인 몸 그대로 다음 상대를 맞는다.</li>
+            <li><strong>맨 앞의 동물끼리 싸운다.</strong> 박자마다 둘이 한꺼번에 민다. 밀린 만큼 몸이 깎인다.</li>
+            <li><strong>상성에서 이기는 동물은 피해를 두 배로 준다.</strong></li>
+            <li><strong>쓰러지면 뒤의 동물이 나온다.</strong> 살아남은 동물은 깎인 몸 그대로 다음 상대를 맞는다.</li>
             <li><strong>줄이 먼저 빈 쪽이 진다.</strong> 같이 비면 비긴 판이다.</li>
           </ol>
           <figure class="board-figure">
             <svg viewBox="0 0 460 130" role="img" aria-labelledby="line-title">
-              <title id="line-title">내 줄 말, 창, 활과 상대 줄 창, 말, 활이 마주 선 그림. 내 활과 상대 창이 맨 앞에서 맞붙는다</title>
+              <title id="line-title">내 줄 뱀, 돼지, 개와 상대 줄 쥐, 말, 닭이 마주 선 그림. 내 개와 상대 쥐가 맨 앞에서 맞붙는다</title>
               <rect class="cell" x="20" y="35" width="60" height="60"></rect>
               <rect class="cell" x="90" y="35" width="60" height="60"></rect>
               <rect class="cell front" x="160" y="35" width="60" height="60"></rect>
@@ -169,27 +191,29 @@
               <rect class="cell front" x="240" y="35" width="60" height="60"></rect>
               <rect class="cell" x="310" y="35" width="60" height="60"></rect>
               <rect class="cell" x="380" y="35" width="60" height="60"></rect>
-              <text x="50" y="71">말</text><text x="120" y="71">창</text><text x="190" y="71">활</text>
-              <text x="270" y="71">창</text><text x="340" y="71">말</text><text x="410" y="71">활</text>
+              <text x="50" y="64">뱀</text><text x="120" y="64">돼지</text><text x="190" y="64">개</text>
+              <text class="side" x="50" y="84">불</text><text class="side" x="120" y="84">물</text><text class="side" x="190" y="84">흙</text>
+              <text x="270" y="64">쥐</text><text x="340" y="64">말</text><text x="410" y="64">닭</text>
+              <text class="side" x="270" y="84">물</text><text class="side" x="340" y="84">불</text><text class="side" x="410" y="84">쇠</text>
               <text class="side" x="120" y="22">내 줄</text><text class="side" x="340" y="22">상대 줄</text>
               <text class="side" x="190" y="115">맨 앞</text><text class="side" x="270" y="115">맨 앞</text>
             </svg>
-            <figcaption>상대가 창, 말, 활의 차례로 세웠다. 나는 활, 창, 말의 차례로 세웠다. 내 말마다 자기가 이기는 상대를 만난다.</figcaption>
+            <figcaption>상대가 쥐, 말, 닭의 차례로 세웠다. 나는 개, 돼지, 뱀의 차례로 세웠다. 내 동물마다 자기가 이기는 속성을 만난다.</figcaption>
           </figure>
           <p>위 그림의 싸움은 이렇게 풀린다. 양쪽 다 1등급이다.</p>
           <div class="table-scroll" role="region" aria-label="그림의 싸움이 풀리는 차례" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">맞붙는 말</th><th scope="col">걸린 박자</th><th scope="col">결과</th></tr></thead>
+              <thead><tr><th scope="col">맞붙는 동물</th><th scope="col">걸린 박자</th><th scope="col">결과</th></tr></thead>
               <tbody>
-                <tr><th scope="row">내 활과 상대 창</th><td class="num">2</td><td>창이 쓰러진다. 내 활은 몸 4가 남는다</td></tr>
-                <tr><th scope="row">내 활(몸 4)과 상대 말</th><td class="num">1</td><td>활이 쓰러진다. 상대 말은 몸 6이 남는다</td></tr>
-                <tr><th scope="row">내 창과 상대 말(몸 6)</th><td class="num">2</td><td>말이 쓰러진다. 내 창은 몸 4가 남는다</td></tr>
-                <tr><th scope="row">내 창(몸 4)과 상대 활</th><td class="num">1</td><td>창이 쓰러진다. 상대 활은 몸 6이 남는다</td></tr>
-                <tr><th scope="row">내 말과 상대 활(몸 6)</th><td class="num">2</td><td>활이 쓰러진다. 내 말이 몸 4로 남아 내가 이긴다</td></tr>
+                <tr><th scope="row">내 개(흙)와 상대 쥐(물)</th><td class="num">2</td><td>쥐가 쓰러진다. 내 개는 몸 4가 남는다</td></tr>
+                <tr><th scope="row">내 개(몸 4)와 상대 말(불)</th><td class="num">2</td><td>상성이 없다. 개가 쓰러지고 말은 몸 4가 남는다</td></tr>
+                <tr><th scope="row">내 돼지(물)와 상대 말(몸 4)</th><td class="num">1</td><td>말이 쓰러진다. 내 돼지는 몸 6이 남는다</td></tr>
+                <tr><th scope="row">내 돼지(몸 6)와 상대 닭(쇠)</th><td class="num">3</td><td>상성이 없다. 돼지가 쓰러지고 닭은 몸 2가 남는다</td></tr>
+                <tr><th scope="row">내 뱀(불)과 상대 닭(몸 2)</th><td class="num">1</td><td>닭이 쓰러진다. 내 뱀이 몸 6으로 남아 내가 이긴다</td></tr>
               </tbody>
             </table>
           </div>
-          <p>양쪽이 쥔 말은 똑같다. 차례만 달랐다. 한 판은 여덟 박자였고, 화면에서는 30초 안쪽이다.</p>
+          <p>내 세 마리를 세우는 법은 여섯 가지다. 이 상대에게 셋은 이기고, 둘은 비기고, 하나는 진다. 뱀, 개, 돼지의 차례로 세우면 맨 앞의 뱀이 자기를 이기는 쥐부터 만나고, 끝에 상대의 닭이 몸 2로 남아 진다. 한 판은 아홉 박자였고, 화면에서는 30초 안쪽이다.</p>
         </section>
 
         <section id="duel" class="concept">
@@ -199,122 +223,124 @@
             <table class="wide-table">
               <thead><tr><th scope="col">만난 것</th><th scope="col">걸리는 박자</th><th scope="col">결과</th></tr></thead>
               <tbody>
-                <tr><th scope="row">내가 이기는 종류</th><td class="num">2</td><td>상대가 쓰러지고 나는 몸이 절반 남는다</td></tr>
-                <tr><th scope="row">같은 종류</th><td class="num">4</td><td>같이 쓰러진다</td></tr>
-                <tr><th scope="row">나를 이기는 종류</th><td class="num">2</td><td>내가 쓰러지고 상대는 몸이 절반 남는다</td></tr>
+                <tr><th scope="row">내가 이기는 속성</th><td class="num">2</td><td>상대가 쓰러지고 나는 몸이 절반 남는다</td></tr>
+                <tr><th scope="row">같은 속성, 상성이 없는 속성</th><td class="num">4</td><td>같이 쓰러진다</td></tr>
+                <tr><th scope="row">나를 이기는 속성</th><td class="num">2</td><td>내가 쓰러지고 상대는 몸이 절반 남는다</td></tr>
               </tbody>
             </table>
           </div>
-          <p>몸이 절반 남은 말은 다음 상대에게 그만큼 약하다.</p>
-          <div class="table-scroll" role="region" aria-label="몸이 절반 남은 말이 다음에 만나는 것" tabindex="0">
+          <p>몸이 절반 남은 동물은 다음 상대에게 그만큼 약하다.</p>
+          <div class="table-scroll" role="region" aria-label="몸이 절반 남은 동물이 다음에 만나는 것" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">절반 남은 말이 만난 것</th><th scope="col">결과</th></tr></thead>
+              <thead><tr><th scope="col">절반 남은 동물이 만난 것</th><th scope="col">결과</th></tr></thead>
               <tbody>
-                <tr><th scope="row">또 이기는 종류</th><td>같이 쓰러진다</td></tr>
-                <tr><th scope="row">같은 종류</th><td>쓰러진다. 상대는 몸이 절반 남는다</td></tr>
-                <tr><th scope="row">자기를 이기는 종류</th><td>한 박자에 쓰러진다. 상대는 몸 8 가운데 6이 남는다</td></tr>
+                <tr><th scope="row">또 이기는 속성</th><td>같이 쓰러진다</td></tr>
+                <tr><th scope="row">같은 속성, 상성이 없는 속성</th><td>쓰러진다. 상대는 몸이 절반 남는다</td></tr>
+                <tr><th scope="row">자기를 이기는 속성</th><td>한 박자에 쓰러진다. 상대는 몸 8 가운데 6이 남는다</td></tr>
               </tbody>
             </table>
           </div>
-          <p class="decision">상성으로 한 번 이기면 말 하나를 잡고, 다음 말의 절반을 더 깎는다. 말 하나의 값이 한 개 반이 되는 셈이다. 줄을 세울 때 노리는 것은 이 한 개 반을 여러 번 얻는 것이다.</p>
+          <p>속성이 고르게 섞여 있다면, 아무 동물 둘이 만날 때 열 번에 네 번은 상성이 걸리고, 네 번은 상성이 없고, 두 번은 같은 속성이다.</p>
+          <p class="decision">상성으로 한 번 이기면 동물 하나를 잡고, 다음 동물의 절반을 더 깎는다. 동물 하나의 값이 한 개 반이 되는 셈이다. 줄을 세울 때 노리는 것은 이 한 개 반을 여러 번 얻는 것이다. 다섯 속성에서는 상성이 걸리는 만남이 절반이 안 되므로, 걸리는 자리를 찾아 세우는 것이 더 귀하다.</p>
         </section>
 
         <section id="level" class="concept">
           <h2>5. 등급: 상성을 뒤집는 길</h2>
-          <p>같은 종류, 같은 등급의 말 셋이 모이면 저절로 합쳐져 한 등급 오른다. 등급은 셋까지다.</p>
+          <p>같은 동물, 같은 등급 셋이 모이면 저절로 합쳐져 한 등급 오른다. 쥐 셋이어야 한다. 쥐 둘과 돼지 하나는 속성이 같아도 합쳐지지 않는다. 등급은 셋까지다.</p>
           <div class="table-scroll" role="region" aria-label="등급별 수치" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">등급</th><th scope="col" class="num">힘</th><th scope="col" class="num">몸</th><th scope="col" class="num">들어간 말</th></tr></thead>
+              <thead><tr><th scope="col">등급</th><th scope="col" class="num">힘</th><th scope="col" class="num">몸</th><th scope="col" class="num">들어간 동물</th><th scope="col" class="num">한 동물만 노려 모을 때 드는 동전</th></tr></thead>
               <tbody>
-                <tr><th scope="row">1등급</th><td class="num">2</td><td class="num">8</td><td class="num">1</td></tr>
-                <tr><th scope="row">2등급</th><td class="num">3</td><td class="num">16</td><td class="num">3</td></tr>
-                <tr><th scope="row">3등급</th><td class="num">4</td><td class="num">32</td><td class="num">9</td></tr>
+                <tr><th scope="row">1등급</th><td class="num">2</td><td class="num">8</td><td class="num">1</td><td class="num">3</td></tr>
+                <tr><th scope="row">2등급</th><td class="num">3</td><td class="num">16</td><td class="num">3</td><td class="num">약 19 (흙은 24)</td></tr>
+                <tr><th scope="row">3등급</th><td class="num">4</td><td class="num">32</td><td class="num">9</td><td class="num">약 59 (흙은 73)</td></tr>
               </tbody>
             </table>
           </div>
-          <p>등급이 오를 때마다 힘이 1 늘고 몸이 두 배가 된다. 계산해 본 맞대결은 아래와 같다. 창을 보기로 들었고 세 종류 모두 같다.</p>
+          <p>등급이 오를 때마다 힘이 1 늘고 몸이 두 배가 된다. 드는 동전은 그 동물이 나올 때마다 사고, 안 나오면 가게를 다시 뽑는다고 치고 계산했다. 대회 하나에 받는 동전은 많아야 100이다. 계산해 본 맞대결은 아래와 같다. 뱀(불)을 보기로 들었고 어느 동물이든 같다.</p>
           <div class="table-scroll" role="region" aria-label="등급이 다른 맞대결을 계산한 결과" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">내 말</th><th scope="col">상대</th><th scope="col">결과</th></tr></thead>
+              <thead><tr><th scope="col">내 동물</th><th scope="col">상대</th><th scope="col">결과</th></tr></thead>
               <tbody>
-                <tr><th scope="row">2등급 창</th><td>1등급 활 하나</td><td class="win">이긴다. 몸 16 가운데 4가 남는다</td></tr>
-                <tr><th scope="row">2등급 창</th><td>1등급 활 둘</td><td class="lose">진다</td></tr>
-                <tr><th scope="row">2등급 창</th><td>1등급 창 셋</td><td class="lose">진다. 마지막 창이 몸 2로 남는다</td></tr>
-                <tr><th scope="row">2등급 창</th><td>1등급 말 셋</td><td class="win">이긴다. 몸 4가 남는다</td></tr>
-                <tr><th scope="row">3등급 창</th><td>2등급 활 하나</td><td class="win">이긴다. 몸 32 가운데 8이 남는다</td></tr>
-                <tr><th scope="row">3등급 창</th><td>2등급 창, 말, 활 하나씩</td><td class="lose">진다. 어떤 차례로 만나도 진다</td></tr>
+                <tr><th scope="row">2등급 뱀</th><td>1등급 물 하나</td><td class="win">이긴다. 몸 16 가운데 4가 남는다</td></tr>
+                <tr><th scope="row">2등급 뱀</th><td>1등급 물 둘</td><td class="lose">진다</td></tr>
+                <tr><th scope="row">2등급 뱀</th><td>상성이 없는 1등급 둘</td><td class="win">이긴다. 몸 4가 남는다</td></tr>
+                <tr><th scope="row">2등급 뱀</th><td>상성이 없는 1등급 셋</td><td class="lose">진다. 마지막 동물이 몸 2로 남는다</td></tr>
+                <tr><th scope="row">2등급 뱀</th><td>1등급 쇠 셋</td><td class="win">이긴다. 몸 4가 남는다</td></tr>
+                <tr><th scope="row">3등급 뱀</th><td>2등급 물 하나</td><td class="win">이긴다. 몸 32 가운데 8이 남는다</td></tr>
+                <tr><th scope="row">3등급 뱀</th><td>상성이 없는 2등급 셋</td><td class="lose">진다. 마지막 동물이 몸 4로 남는다</td></tr>
               </tbody>
             </table>
           </div>
           <ul>
-            <li><strong>한 등급 높으면 상성을 뒤집는다.</strong> 자기를 이기는 종류와 만나도 이긴다. 다만 몸이 4분의 1만 남는다.</li>
-            <li><strong>합친 말은 낱개 셋보다 조금 약하다.</strong> 2등급 하나는 같은 종류 1등급 셋에게 진다. 합쳐서 얻는 것은 힘이 아니라 칸이다. 줄이 다섯 칸뿐이라 판이 갈수록 합치지 않고는 말을 더 쥘 수 없다.</li>
-            <li><strong>한 말에 다 모으면 진다.</strong> 말 아홉 개를 3등급 하나로 만든 줄은 같은 아홉 개를 세 종류 2등급으로 나눈 줄에게 어느 차례로도 진다.</li>
+            <li><strong>한 등급 높으면 상성을 뒤집는다.</strong> 자기를 이기는 속성과 만나도 이긴다. 다만 몸이 4분의 1만 남는다.</li>
+            <li><strong>합친 동물은 낱개 셋보다 조금 약하다.</strong> 2등급 하나는 상성이 없는 1등급 셋에게 진다. 합쳐서 얻는 것은 힘이 아니라 칸이다. 줄이 다섯 칸뿐이라 판이 갈수록 합치지 않고는 동물을 더 쥘 수 없다.</li>
+            <li><strong>2등급이 이 게임의 보통 등급이다.</strong> 동물이 열둘이라 같은 동물 셋을 모으는 데 동전이 스무 개 가까이 든다. 3등급은 대회에서 받는 동전의 절반을 넘게 써야 하나를 만든다.</li>
           </ul>
         </section>
 
         <section id="hold" class="concept">
           <h2>6. 무엇을 쥘까</h2>
-          <p>판마다 말을 셋쯤 산다. 그래서 셋째 판에는 말 아홉 개어치, 다섯째 판에는 열다섯 개어치, 일곱째 판에는 스물한 개어치를 쥔다. 같은 값으로 만들 수 있는 줄을 모두 만들어 서로 붙여 봤다. 줄의 차례는 아무렇게나 세웠고, 이기면 1점, 지면 −1점으로 쳐서 평균을 냈다.</p>
-          <div class="table-scroll" role="region" aria-label="같은 값의 줄끼리 붙인 평균 점수" tabindex="0">
+          <p>가게를 단순하게 도는 구매자를 만들어 대회 4,000번을 돌렸다. 이 구매자는 빈 칸이 있으면 아무 동물이나 사고, 쥔 동물과 같은 동물이 나오면 짝 없는 1등급을 팔아서라도 사고, 동전이 남으면 가게를 다시 뽑는다. 속성은 보지 않는다.</p>
+          <div class="table-scroll" role="region" aria-label="판마다 줄이 자라는 모습" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">쥔 값</th><th scope="col">줄</th><th scope="col">모양</th><th scope="col" class="num">평균 점수</th></tr></thead>
+              <thead><tr><th scope="col">판</th><th scope="col" class="num">줄에 든 동물 수</th><th scope="col">가장 흔한 줄</th><th scope="col" class="num">그 줄의 비율</th></tr></thead>
               <tbody>
-                <tr><th scope="row" rowspan="4">말 9개</th><td>창2 창1, 말2, 활1 활1</td><td>세 종류, 한쪽으로 조금 기욺</td><td class="num win">+0.19</td></tr>
-                <tr><td>창2 창2, 말1 말1, 활1</td><td>세 종류, 한쪽으로 많이 기욺</td><td class="num win">+0.15</td></tr>
-                <tr><td>창2, 말2, 활2</td><td>세 종류, 똑같이. 세 칸만 쓴다</td><td class="num lose">−0.13</td></tr>
-                <tr><td>창3</td><td>한 종류, 한 칸</td><td class="num lose">−0.44</td></tr>
-                <tr><th scope="row" rowspan="2">말 15개</th><td>창2 창2, 말2 말2, 활2</td><td>세 종류</td><td class="num win">+0.38</td></tr>
-                <tr><td>창3 창2 창2</td><td>한 종류</td><td class="num lose">−0.23</td></tr>
-                <tr><th scope="row" rowspan="2">말 21개</th><td>창3, 말2 말2, 활2 활2</td><td>세 종류</td><td class="num win">+0.28</td></tr>
-                <tr><td>창3 창3 창2</td><td>한 종류</td><td class="num lose">−0.25</td></tr>
+                <tr><th scope="row">첫째</th><td class="num">3.0</td><td>1등급 셋</td><td class="num">99%</td></tr>
+                <tr><th scope="row">둘째</th><td class="num">5.2</td><td>1등급 다섯</td><td class="num">77%</td></tr>
+                <tr><th scope="row">셋째</th><td class="num">7.3</td><td>2등급 하나, 1등급 넷</td><td class="num">63%</td></tr>
+                <tr><th scope="row">넷째</th><td class="num">9.2</td><td>2등급 둘, 1등급 셋</td><td class="num">63%</td></tr>
+                <tr><th scope="row">다섯째</th><td class="num">10.7</td><td>2등급 셋, 1등급 둘</td><td class="num">58%</td></tr>
+                <tr><th scope="row">여섯째</th><td class="num">12.0</td><td>2등급 넷, 1등급 하나</td><td class="num">45%</td></tr>
+                <tr><th scope="row">일곱째</th><td class="num">12.8</td><td>2등급 넷, 1등급 하나</td><td class="num">80%</td></tr>
+                <tr><th scope="row">여덟째부터</th><td class="num">13.1에서 13.3</td><td>2등급 넷, 1등급 하나</td><td class="num">91%에서 94%</td></tr>
               </tbody>
             </table>
           </div>
-          <p>창을 말로, 말을 활로, 활을 창으로 돌린 줄은 같은 줄이다. 점수도 같다.</p>
+          <p>줄에 든 동물 수는 등급에 들어간 동물을 다 센 것이다. 2등급 하나는 셋이다.</p>
           <ul>
-            <li><strong>세 종류를 다 쥔 줄이 세다.</strong> 어느 값에서든 가장 점수가 높은 줄은 세 종류를 다 쥐고 있었다. 한 종류만 쥔 줄은 어느 값에서든 바닥이었다.</li>
-            <li><strong>그래도 똑같이 나누지는 않는다.</strong> 칸은 다섯이고 종류는 셋이라 어느 한쪽이 많아진다. 그 기운 쪽이 상대에게 읽힌다.</li>
-            <li><strong>기운 쪽에도 상성이 있다.</strong> 창이 많은 줄(창2 창2 말1 말1 활1)을 말이 많은 줄(말2 말2 활1 활1 창1)과 아무 차례로나 붙이면 100판에 72판을 이기고 24판을 진다. 활이 많은 줄과 붙이면 거꾸로 24판을 이기고 72판을 진다.</li>
+            <li><strong>둘째 판에 줄이 찬다.</strong> 그 뒤로는 같은 동물을 모아 합치는 것이 곧 크는 것이다.</li>
+            <li><strong>일곱째 판쯤에 멈춘다.</strong> 2등급 넷과 1등급 하나를 쥐면 같은 동물 둘을 더 놓을 칸이 없다. 3등급이 한 번이라도 선 대회는 100번에 6번이었다. 그 뒤의 판에서 할 일은 요즘 판세에 맞춰 동물을 바꿔 끼우는 것과, 2등급을 팔아 3등급 하나를 노리는 것이다.</li>
+            <li><strong>여러 속성을 쥔 줄이 세다.</strong> 여섯째 판의 줄끼리 아무 차례로나 붙여, 이기면 1점, 지면 −1점으로 평균을 냈다. 속성을 둘만 쥔 줄은 −0.14, 셋은 0.00, 넷은 +0.21이었다. 한 속성만 쥔 줄은 −0.39, 다섯을 다 쥔 줄은 +0.48이었는데 둘 다 표본이 스무 개가 안 된다.</li>
           </ul>
-          <p class="decision">가게에서 고르는 것은 종류가 아니라 기울기다. 세 종류를 다 쥐는 것은 정해져 있고, 어느 쪽에 등급을 올릴지가 남는다. 요즘 창이 많이 보이면 활을 올린다. 이것도 가위바위보다.</p>
+          <h3>기운 줄끼리 만나면</h3>
+          <p>2등급 둘을 한 속성에 몰고 나머지를 1등급 셋으로 채운 줄 셋을 서로 붙였다. 차례는 양쪽 다 아무렇게나 세웠다.</p>
+          <div class="table-scroll" role="region" aria-label="한 속성에 기운 줄끼리의 결과" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">내 줄</th><th scope="col">상대 줄</th><th scope="col" class="num">이김 / 비김 / 짐</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">나무2 나무2, 물1 불1 쇠1</th><td>흙2 흙2, 물1 불1 쇠1</td><td class="num win">90 / 8 / 1</td></tr>
+                <tr><th scope="row">나무2 나무2, 물1 불1 쇠1</th><td>쇠2 쇠2, 물1 불1 흙1</td><td class="num lose">1 / 7 / 93</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>숫자는 100판 가운데 이긴 판, 비긴 판, 진 판이다. 반올림이라 합이 100이 아닐 수 있다. 쇠에 기운 줄을 만났을 때는 상대의 예순 가지 차례 가운데 마흔여덟 가지에서 내가 이길 차례가 아예 없었다.</p>
+          <p class="decision">한 속성에 몰면 그 속성이 이기는 쪽에게는 거의 다 이기고, 지는 쪽에게는 차례로도 못 뒤집는다. 상대는 사고 나서야 보이므로 모는 것은 판세에 거는 내기다. 고루 쥐면 이 내기를 피하고, 대신 줄 세우기로 겨룬다. 가게에서 고르는 것은 얼마나 걸지다.</p>
         </section>
 
         <section id="order" class="concept">
           <h2>7. 줄 세우기가 가위바위보다</h2>
-          <p>쥔 말이 같아도 차례에 따라 결과가 갈린다. 가장 작은 보기는 창, 말, 활을 하나씩 쥔 두 줄이다. 세우는 법은 저마다 여섯 가지이고, 맞붙는 경우는 서른여섯 가지다.</p>
+          <p>쥔 동물이 같아도 차례에 따라 결과가 갈린다. 다섯 속성을 1등급 하나씩 쥔 두 줄을 보자. 세우는 법은 저마다 120가지이고, 맞붙는 경우는 14,400가지다.</p>
           <ul>
-            <li><strong>여섯 가지는 이긴다.</strong> 상대 줄의 칸마다 그것을 이기는 말을 세웠을 때다. 3절의 그림이 이 경우다.</li>
-            <li><strong>여섯 가지는 진다.</strong> 상대가 내 줄에 그렇게 세웠을 때다.</li>
-            <li><strong>스물네 가지는 비긴다.</strong></li>
+            <li><strong>100에 37은 이기고, 37은 지고, 26은 비긴다.</strong></li>
+            <li><strong>상대의 어느 차례에도 답이 있다.</strong> 상대가 어떻게 세웠든 내 120가지 가운데 39가지에서 49가지가 그것을 이긴다.</li>
+            <li><strong>가장 확실한 답은 칸마다 이기는 속성을 세우는 것이다.</strong> 3절의 그림이 이 경우다.</li>
           </ul>
-          <p>가위바위보와 같은 모양이다. 상대의 차례를 알면 이기는 차례가 하나 있고, 모르면 찍어야 한다. 말이 늘고 등급이 섞이면 비기는 경우가 줄고 이기고 지는 경우가 는다.</p>
-          <h3>기울기에서 져도 차례로 이긴다</h3>
-          <p>6절의 창이 많은 줄과 활이 많은 줄을 다시 본다. 내 2등급 창 둘을 상대의 2등급 활 둘이 이기므로, 아무렇게나 세우면 100판에 72판을 진다. 상대가 활2, 활2, 창1, 창1, 말1의 차례로 세웠다고 하자.</p>
-          <div class="table-scroll" role="region" aria-label="같은 말을 다른 차례로 세운 결과" tabindex="0">
-            <table class="wide-table">
-              <thead><tr><th scope="col">내가 세운 차례</th><th scope="col">벌어진 일</th><th scope="col">결과</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">창2, 창2, 말1, 말1, 활1</th><td>창 둘이 상대의 활 하나와 맞바꿔진다. 남은 1등급 셋으로는 모자란다</td><td class="lose">진다</td></tr>
-                <tr><th scope="row">창2, 말1, 활1, 말1, 창2</th><td>앞의 넷으로 상대의 활 둘을 없앤다. 맨 뒤에 아껴 둔 창2가 남은 창 둘과 말을 혼자 쓰러뜨린다</td><td class="win">이긴다</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p>상대의 서른 가지 차례 가운데 내가 이길 차례를 못 찾는 것은 하나도 없었다. 불리한 쪽에서 가장 잘 세운 차례 하나(활1, 말1, 창2, 말1, 창2)는 상대의 서른 가지 차례 가운데 67%를 이겼고, 가장 못 세운 차례는 7%를 이겼다.</p>
+          <p>가위바위보와 같은 모양이다. 상대의 차례를 알면 이기는 차례가 있고, 모르면 찍어야 한다.</p>
           <h3>읽는 만큼 이긴다</h3>
-          <p>세 종류를 다 쥔 줄끼리 아무 둘이나 골라 붙였을 때, 내가 상대를 얼마나 아느냐에 따라 결과가 이렇게 달라졌다.</p>
+          <p>6절의 구매자가 만든 줄 가운데 아무 둘이나 골라 붙였을 때, 내가 상대를 얼마나 아느냐에 따라 결과가 이렇게 달라졌다.</p>
           <div class="table-scroll" role="region" aria-label="상대를 아는 정도에 따른 결과" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">아는 것</th><th scope="col">세우는 법</th><th scope="col" class="num">말 9개</th><th scope="col" class="num">말 15개</th><th scope="col" class="num">말 21개</th></tr></thead>
+              <thead><tr><th scope="col">아는 것</th><th scope="col">세우는 법</th><th scope="col" class="num">셋째 판</th><th scope="col" class="num">여섯째 판</th><th scope="col" class="num">아홉째 판</th></tr></thead>
               <tbody>
-                <tr><th scope="row">아무것도 모른다</th><td>아무렇게나</td><td class="num">46 / 8 / 45</td><td class="num">47 / 7 / 45</td><td class="num">47 / 7 / 47</td></tr>
-                <tr><th scope="row">상대가 쥔 말</th><td>상대의 모든 차례에 고르게 잘 듣는 차례</td><td class="num">61 / 8 / 31</td><td class="num">66 / 5 / 29</td><td class="num">64 / 6 / 30</td></tr>
-                <tr><th scope="row">상대의 차례까지</th><td>그 차례를 이기는 차례</td><td class="num win">97 / 2 / 1</td><td class="num win">89 / 2 / 10</td><td class="num win">89 / 2 / 9</td></tr>
+                <tr><th scope="row">아무것도 모른다</th><td>아무렇게나</td><td class="num">45 / 9 / 46</td><td class="num">46 / 6 / 48</td><td class="num">46 / 8 / 46</td></tr>
+                <tr><th scope="row">상대가 쥔 동물</th><td>상대의 모든 차례에 고르게 잘 듣는 차례</td><td class="num">53 / 8 / 39</td><td class="num">53 / 5 / 42</td><td class="num">55 / 8 / 38</td></tr>
+                <tr><th scope="row">상대의 차례까지</th><td>그 차례를 이기는 차례</td><td class="num win">82 / 5 / 13</td><td class="num win">83 / 3 / 14</td><td class="num win">88 / 4 / 8</td></tr>
               </tbody>
             </table>
           </div>
-          <p>숫자는 100판 가운데 이긴 판, 비긴 판, 진 판이다. 반올림이라 합이 100이 아닐 수 있다.</p>
-          <p class="decision">상대가 쥔 말을 보는 것만으로 이기는 판이 47에서 66으로 는다. 차례까지 맞히면 89가 된다. 그 사이의 23판이 읽기의 몫이다. 게임은 이 23판을 놓고 벌어진다.</p>
+          <p>숫자는 100판 가운데 이긴 판, 비긴 판, 진 판이다. 여섯째 판의 줄끼리는 상대의 차례 100가지 가운데 84가지에 이기는 답이 있었다. 나머지 16가지는 쥔 것에서 이미 진 판이다.</p>
+          <p class="decision">상대가 쥔 동물을 보는 것만으로는 이기는 판이 46에서 53으로 는다. 차례까지 맞히면 83이 된다. 그 사이의 30판이 읽기의 몫이다. 쥔 것을 보는 값은 작고 차례를 맞히는 값은 크다. 그래서 상대의 지난 줄이 가장 값진 읽을 거리다.</p>
         </section>
 
         <section id="tells" class="concept">
@@ -323,14 +349,15 @@
             <table class="wide-table">
               <thead><tr><th scope="col">읽을 거리</th><th scope="col">언제 보이나</th><th scope="col">무엇을 알려 주나</th></tr></thead>
               <tbody>
-                <tr><th scope="row">판세</th><td>가게에서</td><td>이번 차례의 기록들이 쥔 창, 말, 활의 비율. 무엇을 올릴지 정한다</td></tr>
-                <tr><th scope="row">상대가 쥔 말</th><td>줄을 세울 때</td><td>종류와 등급. 차례는 가려져 있다. 어디에 무엇을 세울지 정한다</td></tr>
+                <tr><th scope="row">판세</th><td>가게에서</td><td>이번 차례의 기록들이 쥔 다섯 속성의 비율. 무엇을 모을지 정한다</td></tr>
+                <tr><th scope="row">상대가 쥔 동물</th><td>줄을 세울 때</td><td>동물과 등급. 차례는 가려져 있다. 어디에 무엇을 세울지 정한다</td></tr>
                 <tr><th scope="row">상대의 지난 줄</th><td>줄을 세울 때</td><td>그 사람이 바로 앞 판에 세운 차례와 그 판의 승패. 버릇을 본다</td></tr>
               </tbody>
             </table>
           </div>
           <ul>
-            <li><strong>가장 센 말을 어디에 두는 사람인가.</strong> 2등급을 맨 앞에 세우는 사람이 있고 맨 뒤에 아끼는 사람이 있다. 지난 줄에 그것이 보인다. 맨 앞에 세우는 사람에게는 그 말을 이기는 종류를 맨 앞에 낸다.</li>
+            <li><strong>판세는 고리를 따라 돈다.</strong> 흙이 많이 보이면 나무가 솔깃하다. 나무가 늘면 쇠가, 쇠가 늘면 불이, 불이 늘면 물이, 물이 늘면 다시 흙이 솔깃해진다.</li>
+            <li><strong>가장 센 동물을 어디에 두는 사람인가.</strong> 2등급을 맨 앞에 세우는 사람이 있고 맨 뒤에 아끼는 사람이 있다. 지난 줄에 그것이 보인다. 맨 앞에 세우는 사람에게는 그 동물을 이기는 속성을 맨 앞에 낸다.</li>
             <li><strong>이긴 줄을 또 세우는 사람인가.</strong> 가위바위보 실험에서 이긴 사람은 같은 것을 다시 내는 일이 많았다. 지난 판을 이긴 기록이면 같은 차례를 먼저 의심한다.</li>
             <li><strong>나도 같은 것을 읽힌다.</strong> 내가 세운 줄은 다음 판에 내 지난 줄로 남의 화면에 뜬다.</li>
           </ul>
@@ -338,16 +365,16 @@
 
         <section id="record" class="concept">
           <h2>9. 상대는 사람의 기록</h2>
-          <p>줄을 세우고 싸움을 시작하면 그 판의 내 줄이 기록으로 남는다. 기록에는 몇째 판인지, 쥔 말, 세운 차례, 지난 판의 차례와 승패가 적힌다. 나는 같은 차례에 남은 다른 사람의 기록과 붙는다. 기다릴 사람도 시간 제한도 없다.</p>
+          <p>줄을 세우고 싸움을 시작하면 그 판의 내 줄이 기록으로 남는다. 기록에는 몇째 판인지, 쥔 동물, 세운 차례, 지난 판의 차례와 승패가 적힌다. 나는 같은 차례에 남은 다른 사람의 기록과 붙는다. 기다릴 사람도 시간 제한도 없다.</p>
           <div class="table-scroll" role="region" aria-label="기록 대전의 한계와 대처" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">한계</th><th scope="col">뜻하는 것</th><th scope="col">대처</th></tr></thead>
               <tbody>
-                <tr><th scope="row">기록은 나를 보고 세우지 않았다</th><td>기록의 줄은 그때 그 사람이 만난 다른 상대를 보고 세운 것이다. 서로 반응하는 읽기는 없다</td><td>받아들인다. 대신 쥔 말과 지난 줄을 보여 줘서 맞히기를 깊게 한다</td></tr>
-                <tr><th scope="row">살아 있는 쪽이 유리하다</th><td>나는 기록의 말을 보고 세운다. 7절의 셈으로는 그것만으로 100판에 66판을 이긴다</td><td>모두가 같은 조건이다. 내 기록이 지킨 비율은 남의 기록이 지킨 비율과만 견준다</td></tr>
-                <tr><th scope="row">처음에는 기록이 없다</th><td>붙을 상대가 모자란다</td><td>만들어 둔 기록을 섞는다. 버릇이 뚜렷한 기록으로 읽는 법을 가르친다. 센 말을 늘 앞에 세우는 기록, 이긴 줄을 또 세우는 기록이다</td></tr>
+                <tr><th scope="row">기록은 나를 보고 세우지 않았다</th><td>기록의 줄은 그때 그 사람이 만난 다른 상대를 보고 세운 것이다. 서로 반응하는 읽기는 없다</td><td>받아들인다. 대신 쥔 동물과 지난 줄을 보여 줘서 맞히기를 깊게 한다</td></tr>
+                <tr><th scope="row">살아 있는 쪽이 유리하다</th><td>나는 기록의 동물을 보고 세운다. 7절의 셈으로는 그것만으로 100판에 53판을 이긴다</td><td>모두가 같은 조건이다. 내 기록이 지킨 비율은 남의 기록이 지킨 비율과만 견준다</td></tr>
+                <tr><th scope="row">처음에는 기록이 없다</th><td>붙을 상대가 모자란다</td><td>만들어 둔 기록을 섞는다. 버릇이 뚜렷한 기록으로 읽는 법을 가르친다. 센 동물을 늘 앞에 세우는 기록, 이긴 줄을 또 세우는 기록이다</td></tr>
                 <tr><th scope="row">줄을 보고 끄면 다시 할 수 있다</th><td>차례를 알고 세우면 읽기가 없다</td><td>상대의 줄은 내 줄을 정한 뒤에만 내려온다. 싸움 도중에 끄면 진 판으로 친다</td></tr>
-                <tr><th scope="row">쥔 값이 다른 기록</th><td>말을 더 쥔 기록과 붙으면 읽기와 상관없이 진다</td><td>같은 차례의 기록끼리만 붙인다. 이긴 판 수가 비슷한 기록을 먼저 고른다</td></tr>
+                <tr><th scope="row">쥔 값이 다른 기록</th><td>동물을 더 쥔 기록과 붙으면 읽기와 상관없이 진다</td><td>같은 차례의 기록끼리만 붙인다. 이긴 판 수가 비슷한 기록을 먼저 고른다</td></tr>
               </tbody>
             </table>
           </div>
@@ -356,18 +383,31 @@
         <section id="shop" class="concept">
           <h2>10. 가게와 대회</h2>
           <ol class="route-strip">
-            <li><strong>가게</strong><span>판세를 보고 말을 산다. 같은 말 셋은 합쳐진다</span></li>
-            <li><strong>상대 보기</strong><span>상대가 쥔 말과 지난 줄이 뜬다</span></li>
+            <li><strong>가게</strong><span>판세를 보고 동물을 산다. 같은 동물 셋은 합쳐진다</span></li>
+            <li><strong>상대 보기</strong><span>상대가 쥔 동물과 지난 줄이 뜬다</span></li>
             <li><strong>줄 세우기</strong><span>다섯 칸의 차례를 정한다</span></li>
             <li><strong>싸움</strong><span>손을 못 댄다. 30초 안쪽이다</span></li>
           </ol>
           <ul>
-            <li><strong>판마다 동전 10을 받는다.</strong> 말은 3, 가게를 다시 뽑는 값은 1이다. 남은 동전은 다음 판으로 넘어간다.</li>
-            <li><strong>가게에는 1등급 말 셋이 나온다.</strong> 종류는 아무렇게나 나온다.</li>
-            <li><strong>줄이 꽉 차면 합쳐질 말만 살 수 있다.</strong> 자리를 내려면 판다. 팔면 그 말에 들어간 말 하나에 동전 1을 받는다.</li>
-            <li><strong>말을 산 뒤에 상대가 보인다.</strong> 상대를 보고 사는 것이 아니다. 살 때 보는 것은 판세이고, 상대를 보고 정하는 것은 차례다.</li>
+            <li><strong>판마다 동전 10을 받는다.</strong> 동물은 3, 가게를 다시 뽑는 값은 1이다. 남은 동전은 다음 판으로 넘어간다.</li>
+            <li><strong>가게에는 1등급 동물 셋이 나온다.</strong> 흙의 네 동물은 다른 동물이 열 번 나올 때 일곱 번꼴로 나온다. 이유는 아래에 있다.</li>
+            <li><strong>줄이 꽉 차면 합쳐질 동물만 살 수 있다.</strong> 자리를 내려면 판다. 팔면 그 동물에 들어간 동물 하나에 동전 1을 받는다.</li>
+            <li><strong>동물을 산 뒤에 상대가 보인다.</strong> 상대를 보고 사는 것이 아니다. 살 때 보는 것은 판세이고, 상대를 보고 정하는 것은 차례다.</li>
             <li><strong>차례는 값 없이 얼마든지 고친다.</strong></li>
           </ul>
+          <h3>흙이 넷이라 생기는 쏠림</h3>
+          <p>흙만 동물이 넷이다. 가게에서 동물을 어떤 비율로 내느냐에 따라 6절의 구매자들이 만든 줄이 이렇게 달라졌다. 점수는 그 속성이 줄의 4할을 넘는 줄의 평균이고, 아홉째 판의 값이다.</p>
+          <div class="table-scroll" role="region" aria-label="가게 비율에 따른 속성 쏠림" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">가게 비율</th><th scope="col" class="num">줄에서 흙의 몫</th><th scope="col" class="num">나무에 기운 줄</th><th scope="col" class="num">물에 기운 줄</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">열두 동물이 고르게</th><td class="num">32%</td><td class="num win">+0.17</td><td class="num lose">−0.20</td></tr>
+                <tr><th scope="row">다섯 속성이 고르게 (흙 동물은 절반)</th><td class="num">13%</td><td class="num lose">−0.11</td><td class="num win">+0.10</td></tr>
+                <tr><th scope="row">흙 동물을 0.7배로</th><td class="num">21%</td><td class="num">+0.02</td><td class="num">−0.03</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>흙이 흔하면 흙을 이기는 나무가 득을 보고 흙에게 지는 물이 손해를 본다. 흙이 드물면 거꾸로다. 0.7배에서 다섯 속성의 몫이 19%에서 21%로 모였다. 그래서 이 값을 쓴다. 대신 흙 동물 하나를 2등급으로 모으는 데는 동전이 다섯 개쯤 더 든다.</p>
           <div class="table-scroll" role="region" aria-label="대회의 단위" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">단위</th><th scope="col">이기는 법</th><th scope="col">걸리는 시간</th></tr></thead>
@@ -380,7 +420,7 @@
           <ul>
             <li><strong>비긴 판은 세지 않는다.</strong> 이긴 것도 진 것도 아니고 다음 판으로 넘어간다.</li>
             <li><strong>대회 도중에 나가도 된다.</strong> 상대가 기록이라 언제 돌아와도 이어서 한다.</li>
-            <li><strong>비긴 판을 빼면 대회는 길어야 열 판이다.</strong> 열째 판에 쥔 값은 말 서른 개어치이고, 다섯 칸에 3등급이 둘이나 셋 선다.</li>
+            <li><strong>비긴 판을 빼면 대회는 길어야 열 판이다.</strong> 6절의 셈대로면 일곱째 판쯤에 줄이 다 자라고, 남은 판은 바꿔 끼우기와 줄 세우기로 겨룬다.</li>
           </ul>
         </section>
 
@@ -388,75 +428,55 @@
           <h2>11. 화면과 조작</h2>
           <ul>
             <li><strong>세로 화면이 먼저다.</strong> 위에 상대의 줄, 가운데에 내 줄, 아래에 가게가 있다. 컴퓨터에서는 같은 화면을 가로로 넓힌다.</li>
-            <li><strong>상성 그림은 늘 떠 있다.</strong> 화면 구석에 2절의 세모가 작게 있다. 세 종류는 색과 모양이 둘 다 달라서 색만으로 가르지 않는다.</li>
-            <li><strong>줄을 세우는 동안 상대 쪽.</strong> 상대가 쥔 말이 종류별로 묶여 보이고 다섯 칸은 가려져 있다. 그 아래에 지난 줄이 작게 놓인다.</li>
-            <li><strong>내 말을 들면 미리 보인다.</strong> 말을 집으면 상대가 쥔 말 가운데 이기는 것과 지는 것에 표시가 뜬다.</li>
+            <li><strong>속성은 색으로 보인다.</strong> 물은 검정, 불은 빨강, 쇠는 하양, 나무는 파랑, 흙은 노랑이다. 옛 오방색 그대로다. 동물의 몸이나 테두리에 이 색을 입히고, 색을 못 가리는 사람을 위해 속성 글자나 무늬를 함께 둔다.</li>
+            <li><strong>상성 그림은 늘 떠 있다.</strong> 화면 구석에 2절의 오각형이 작게 있다.</li>
+            <li><strong>줄을 세우는 동안 상대 쪽.</strong> 상대가 쥔 동물이 속성별로 묶여 보이고 다섯 칸은 가려져 있다. 그 아래에 지난 줄이 작게 놓인다.</li>
+            <li><strong>내 동물을 들면 미리 보인다.</strong> 동물을 집으면 상대가 쥔 동물 가운데 이기는 것과 지는 것에 표시가 뜬다. 상성이 없는 것에는 아무 표시도 없다.</li>
             <li><strong>뒤집기.</strong> 상대의 다섯 칸이 앞에서부터 한 칸씩 열린다. 이 순간이 게임의 얼굴이다.</li>
             <li><strong>싸움.</strong> 박자마다 끊어서 보여 준다. 두 배로 들어가는 피해는 숫자가 크게 뜬다. 빨리 넘길 수 있다.</li>
-            <li><strong>조작.</strong> 끌어다 놓기와, 말을 누르고 칸을 누르기 두 가지를 다 받는다.</li>
+            <li><strong>조작.</strong> 끌어다 놓기와, 동물을 누르고 칸을 누르기 두 가지를 다 받는다.</li>
           </ul>
         </section>
 
-        <section id="theme" class="concept">
-          <h2>12. 소재 후보 둘</h2>
-          <p>규칙은 소재를 가리지 않는다. 셋이 서로 이기고 지는 까닭이 한눈에 떠오르면 된다. 후보는 둘이고 아직 고르지 않았다.</p>
-          <div class="table-scroll" role="region" aria-label="임시 이름과 두 소재의 짝" tabindex="0">
+        <section id="unused" class="concept">
+          <h2>12. 십이지에서 쓰지 않은 관계</h2>
+          <p>십이지에는 동물끼리의 사이를 정한 관계가 여럿 있다. 조사해 보니 거의 다 잘 맞는다와 부딪친다여서 이기고 지는 방향이 없었다. 그래서 승패는 속성의 고리에만 맡기고 아래 것들은 뺐다.</p>
+          <div class="table-scroll" role="region" aria-label="십이지의 전통 관계" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">임시 이름</th><th scope="col">판타지</th><th scope="col">동물 대전</th></tr></thead>
+              <thead><tr><th scope="col">관계</th><th scope="col">묶음</th><th scope="col">방향</th><th scope="col">뒤에 쓴다면</th></tr></thead>
               <tbody>
-                <tr><th scope="row">창. 말을 이긴다</th><td>기사. 궁수를 이긴다</td><td>덩치. 맹수를 이긴다</td></tr>
-                <tr><th scope="row">말. 활을 이긴다</th><td>궁수. 마법사를 이긴다</td><td>맹수. 작은 것을 이긴다</td></tr>
-                <tr><th scope="row">활. 창을 이긴다</th><td>마법사. 기사를 이긴다</td><td>작은 것. 덩치를 이긴다</td></tr>
+                <tr><th scope="row">삼합</th><td>원숭이·쥐·용 / 호랑이·말·개 / 뱀·닭·소 / 돼지·토끼·양</td><td>없다. 셋이 뭉친다</td><td>셋을 다 쥐면 받는 덤</td></tr>
+                <tr><th scope="row">육합</th><td>쥐와 소, 호랑이와 돼지, 토끼와 개, 용과 닭, 뱀과 원숭이, 말과 양</td><td>없다. 둘이 잘 맞는다</td><td>줄에서 나란히 서면 받는 덤</td></tr>
+                <tr><th scope="row">충</th><td>쥐와 말, 소와 양, 호랑이와 원숭이, 토끼와 닭, 용과 개, 뱀과 돼지</td><td>없다. 마주 보고 부딪친다</td><td>만나면 서로 두 배로 미는 맞수</td></tr>
+                <tr><th scope="row">원진</th><td>쥐와 양, 소와 말, 호랑이와 닭, 토끼와 원숭이, 용과 돼지, 뱀과 개</td><td>앞의 동물이 뒤의 동물을 꺼린다</td><td>꺼리는 상대 앞에서 힘이 빠진다</td></tr>
+                <tr><th scope="row">형</th><td>호랑이가 뱀을, 뱀이 원숭이를, 원숭이가 호랑이를 / 소가 개를, 개가 양을, 양이 소를 / 쥐와 토끼는 서로 / 용, 말, 닭, 돼지는 자기끼리</td><td>있다</td><td>세 마리 고리가 둘뿐이라 바닥으로는 못 쓴다</td></tr>
               </tbody>
             </table>
           </div>
-          <h3>판타지: 기사, 궁수, 마법사</h3>
-          <p>모험가 길드끼리 겨루는 대항전이다. 나는 길드장이고, 주점에서 모험가를 맞아들여 다섯 명을 한 줄로 내보낸다. 대항전은 맨 앞끼리 한 명씩 겨루고, 진 사람은 물러났다가 다음 판에 다시 나온다.</p>
           <ul>
-            <li><strong>기사가 궁수를 이긴다.</strong> 갑옷과 방패가 화살을 막는다.</li>
-            <li><strong>궁수가 마법사를 이긴다.</strong> 주문을 다 외기 전에 화살이 먼저 닿는다.</li>
-            <li><strong>마법사가 기사를 이긴다.</strong> 마법에는 갑옷이 소용없다.</li>
-            <li><strong>등급은 견습, 정예, 영웅이다.</strong> 같은 직업 셋이 모이면 한 사람이 올라서고 둘은 뒤를 받친다.</li>
-            <li><strong>가게는 주점이다.</strong> 판세는 주점 게시판에 붙은 요즘 대항전 소식이고, 기록은 다른 길드의 출전 명단이다.</li>
+            <li><strong>원진에는 옛 풀이가 붙어 있다.</strong> 쥐는 양의 뿔을 미워하고, 소는 말이 밭 갈지 않고 노는 것을 노여워하고, 호랑이는 닭의 부리가 짧은 것을 싫어하고, 토끼는 원숭이의 허리가 굽은 것을 원망하고, 용은 돼지의 얼굴이 검은 것을 미워하고, 뱀은 개 짖는 소리에 놀란다.</li>
+            <li><strong>충은 띠 순서에서 여섯 칸 떨어진 사이다.</strong> 삼합은 네 칸씩 떨어진 셋이다.</li>
+            <li><strong>상생도 뺐다.</strong> 오행에는 물이 나무를 낳고 나무가 불을 낳는 식의 고리가 하나 더 있다. 상성이 없는 두 속성이 바로 이 사이다. 지금은 이기고 지는 고리 하나만 둔다.</li>
+            <li><strong>십이지 오토배틀은 이미 준비되는 것이 있다.</strong> Zodiac Tale은 열두 띠를 종족으로 쓰고 종족마다 시너지를 주는 혼자 하는 게임이고, 사람끼리의 대전은 없다고 적혀 있다. 이 기획은 시너지가 없고, 속성의 상성과 줄의 차례로 사람의 기록과 겨룬다.</li>
           </ul>
-          <h3>동물 대전: 덩치, 맹수, 작은 것</h3>
-          <p>동물들이 한 해에 한 번 여는 힘겨루기 대회다. 나는 무리의 우두머리이고, 무리에 들어오려는 동물을 받아 다섯 마리를 한 줄로 세운다. 맨 앞끼리 밀어내기를 하고, 밀려난 동물은 줄 밖에서 구경한다.</p>
-          <ul>
-            <li><strong>덩치가 맹수를 이긴다.</strong> 코끼리는 사자가 덤벼도 꿈쩍하지 않고 밀어낸다.</li>
-            <li><strong>맹수가 작은 것을 이긴다.</strong> 사자는 쥐를 한 발로 누른다.</li>
-            <li><strong>작은 것이 덩치를 이긴다.</strong> 쥐는 코끼리의 발밑을 파고들어 쫓아낸다. 동물 장기에서 가장 약한 쥐가 가장 센 코끼리를 잡는 것과 같다.</li>
-            <li><strong>등급이 오르면 다른 동물이 된다.</strong> 덩치는 들소, 코뿔소, 코끼리다. 맹수는 여우, 늑대, 사자다. 작은 것은 커지지 않고 수가 는다. 쥐 한 마리, 쥐 무리, 쥐 떼다.</li>
-            <li><strong>가게는 무리를 찾아온 동물들이다.</strong> 판세는 올해 대회에 많이 나온 동물이고, 기록은 다른 무리의 줄이다.</li>
-          </ul>
-          <h3>둘을 견주면</h3>
-          <div class="table-scroll" role="region" aria-label="두 소재를 견준 표" tabindex="0">
-            <table class="wide-table">
-              <thead><tr><th scope="col">견줄 것</th><th scope="col">판타지</th><th scope="col">동물 대전</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">상성이 설명 없이 읽히나</th><td>직업 상성은 다른 게임에서 많이 봤다. 다만 누가 누구를 이기는지는 게임마다 달라서 한 번은 알려 줘야 한다</td><td>덩치와 맹수, 맹수와 작은 것은 바로 읽힌다. 작은 것이 덩치를 이기는 것만 한 번 알려 주면 된다</td></tr>
-                <tr><th scope="row">한눈에 가르기</th><td>셋 다 사람 모양이다. 든 것(검과 방패, 활, 지팡이)과 색으로 가른다</td><td>크기가 달라서 그림자만으로 갈린다</td></tr>
-                <tr><th scope="row">등급의 그림</th><td>옷과 장비가 화려해진다. 같은 사람으로 보인다</td><td>다른 동물로 바뀐다. 무엇이 무엇의 윗등급인지 외워야 한다</td></tr>
-                <tr><th scope="row">겹치는 게임</th><td>판타지 오토배틀은 많다</td><td>동물을 한 줄로 세우는 오토배틀은 Super Auto Pets가 이미 있다</td></tr>
-                <tr><th scope="row">분위기</th><td>길드 대항전. 밝다</td><td>동물 대회. 더 가볍다</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="decision">시제품은 창, 말, 활 그대로 만든다. 줄 세우기가 재미있다는 것이 확인되면 두 소재의 그림을 한 벌씩 입히고, 처음 보는 사람이 설명 없이 상성을 맞히는지를 세어 고른다.</p>
         </section>
 
         <section id="scope" class="concept">
           <h2>13. 범위, 검증 순서, 남은 결정</h2>
           <h3>시제품에서 확인할 순서</h3>
           <ol>
-            <li><strong>말 다섯씩 주고 한 화면에서 둘이 번갈아 세우기.</strong> 가게도 기록도 없이 같은 말을 주고 줄만 세워 붙는다. 세울 때 망설여지는지, 열릴 때 소리가 나오는지 본다. 이것이 안 되면 나머지는 뜻이 없다.</li>
-            <li><strong>상대가 쥔 말을 보여 줬을 때.</strong> 보여 준 판과 안 보여 준 판의 이긴 비율을 센다. 계산으로는 47과 66이었다.</li>
-            <li><strong>가게와 등급.</strong> 합치는 것이 아깝게 느껴지는지, 기울기를 고르게 되는지 본다.</li>
+            <li><strong>동물 다섯씩 주고 한 화면에서 둘이 번갈아 세우기.</strong> 가게도 기록도 없이 같은 동물을 주고 줄만 세워 붙는다. 세울 때 망설여지는지, 열릴 때 소리가 나오는지 본다. 이것이 안 되면 나머지는 뜻이 없다.</li>
+            <li><strong>속성이 색으로 읽히는지.</strong> 처음 보는 사람이 오각형 그림을 한 번 보고 닭과 호랑이 가운데 누가 이기는지 맞히는지 센다.</li>
+            <li><strong>상대가 쥔 동물을 보여 줬을 때.</strong> 보여 준 판과 안 보여 준 판의 이긴 비율을 센다. 계산으로는 46과 53이었다.</li>
+            <li><strong>가게와 등급.</strong> 같은 동물 셋을 모으는 것이 지루한지, 일곱째 판 뒤에 할 일이 남는지 본다.</li>
             <li><strong>기록.</strong> 아는 사람 몇의 줄을 기록으로 남기고 서로 붙어 본다. 지난 줄을 보여 줬을 때 차례를 맞히는 비율이 오르는지 센다.</li>
           </ol>
           <h3>덜어 낸 것</h3>
           <ul class="cut-list">
-            <li>말마다 다른 수치와 특기</li>
-            <li>넷째, 다섯째 종류</li>
+            <li>동물마다 다른 수치와 특기</li>
+            <li>상생</li>
+            <li>삼합, 육합, 충, 원진, 형</li>
+            <li>음과 양</li>
             <li>종족과 직업 시너지</li>
             <li>아이템과 조합</li>
             <li>대기석</li>
@@ -468,36 +488,43 @@
           </ul>
           <h3>남은 결정</h3>
           <ul>
-            <li><strong>소재와 제목.</strong> 창, 말, 활은 임시다. 후보는 12절의 판타지와 동물 대전이고, 시제품에 그림을 입혀 보고 고른다. 제목은 소재를 고른 뒤에 정한다.</li>
-            <li><strong>종류마다 성질을 하나씩 줄지.</strong> 지금은 수치가 같고 관계만 다르다. 성질을 주면 종류의 맛이 생기고, 셋의 값이 달라져 다시 맞춰야 한다.</li>
-            <li><strong>두 배가 알맞은지.</strong> 두 배로만 계산했다. 한 배 반이면 등급이 상성을 더 쉽게 누르고, 세 배면 등급을 올릴 까닭이 준다.</li>
-            <li><strong>합친 말을 얼마나 세게 할지.</strong> 지금은 합친 말이 낱개 셋보다 조금 약하고, 3등급은 판이 꽉 찬 뒤에야 쓸모가 있다. 합치는 맛이 모자라면 몸을 더 준다.</li>
-            <li><strong>비긴 판.</strong> 아무렇게나 고른 줄끼리는 100판에 7판쯤 비겼다. 쥔 말이 똑같은 줄끼리는 100판에 31판에서 67판을 비겼다. 흔하면 남은 몸을 견주어 가른다.</li>
+            <li><strong>제목과 무대.</strong> 2절의 밀어내기 대회는 임시다. 제목은 정하지 않았다.</li>
+            <li><strong>일곱째 판 뒤가 심심한지.</strong> 6절의 구매자는 2등급 넷과 1등급 하나에서 멈췄다. 사람도 그렇다면 대기석 한 칸을 두거나, 둘만 모여도 합쳐지게 하거나, 대회를 줄인다.</li>
+            <li><strong>3등급을 둘지.</strong> 100번에 6번 서는 등급이다. 드물어서 반가운 것인지 없는 것과 같은지 본다.</li>
+            <li><strong>두 배가 알맞은지.</strong> 6절에서 기운 줄끼리 만나면 100판에 90판이 한쪽으로 갔다. 한 배 반이면 쥔 것의 몫이 줄고 차례의 몫이 는다.</li>
+            <li><strong>가게의 흙 비율.</strong> 0.7배는 속성을 보지 않는 구매자로 맞춘 값이다. 사람이 속성을 보고 사면 달라진다.</li>
+            <li><strong>같은 속성의 두 동물을 다르게 할지.</strong> 지금 쥐와 돼지는 그림만 다르다. 성질을 주면 동물의 맛이 생기고, 열둘의 값을 다시 맞춰야 한다.</li>
+            <li><strong>상생과 다른 관계를 넣을지.</strong> 상성이 없는 만남이 열 번에 네 번이다. 싱거우면 12절의 것 가운데 하나를 넣는다.</li>
+            <li><strong>비긴 판.</strong> 아무렇게나 고른 줄끼리는 100판에 6판에서 9판을 비겼다. 흔하면 남은 몸을 견주어 가른다.</li>
             <li><strong>상대를 사기 전에 보일지.</strong> 지금은 사고 나서 보인다. 먼저 보이면 상대에 맞춰 사게 되고 판세를 읽을 일이 없어진다.</li>
             <li><strong>지난 줄을 몇 판이나 보일지.</strong> 지금은 한 판이다. 여러 판을 보이면 버릇이 더 잘 보이고 볼 것이 많아진다.</li>
             <li><strong>사람끼리 바로 붙는 판을 둘지.</strong> 서로 반응하는 읽기는 거기에만 있다. 서버와 기다림이 든다.</li>
           </ul>
           <h3>고친 기록</h3>
-          <p>2026-11-25에 처음 올린 판은 가위, 돌, 보자기를 말로 쓰는 혼자 하는 대회였다. 같은 날 숨겨서 내는 작전 셋(밀기, 버티기, 돌기)과 사람의 기록으로 고쳐 썼다. 2026-11-26에 다시 통째로 고쳤다. 바닥에 둘 것은 숨겨 내는 작전이 아니라 말끼리 서로 이기고 지는 관계여서, 작전 셋과 여섯 칸 판을 빼고 세 종류의 상성과 한 줄 다섯 칸을 넣었다. 기록 대전과 임시 소재는 그대로 뒀다. 같은 날 소재 후보 둘을 12절에 적었다.</p>
+          <p>2026-11-25에 처음 올린 판은 가위, 돌, 보자기를 말로 쓰는 혼자 하는 대회였다. 같은 날 숨겨서 내는 작전 셋(밀기, 버티기, 돌기)과 사람의 기록으로 고쳐 썼다. 2026-11-26에 바닥을 서로 이기고 지는 관계로 바꿔, 창과 말과 활의 세 종류 상성과 한 줄 다섯 칸으로 다시 썼다. 같은 날 소재를 열두 띠 동물로 정하고 상성을 오행의 다섯 속성으로 바꿨다. 합치기는 같은 동물 셋으로, 상성은 이기고 지는 고리 하나만 두기로 했다. 세 종류일 때의 셈과 판타지 소재 후보는 이 글에서 뺐다. 한 줄 다섯 칸, 등급의 수치, 기록 대전은 그대로다.</p>
         </section>
 
         <section id="sources" class="concept">
           <h2>14. 근거와 확인 범위</h2>
           <p>아래는 2026-11-25와 11-26에 각 페이지를 열어 확인한 것이다.</p>
           <ul class="ref-list">
-            <li>가위바위보와 늘린 판: <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors">Rock paper scissors</a>(고르게 아무렇게나 내는 상대에게는 앞설 수 없다. 아무렇게나 내지 못하는 상대의 버릇을 알아채면 실력으로 겨룰 수 있다), <a href="https://samkass.com/theories/RPSSL.html">Sam Kass, Rock Paper Scissors Spock Lizard</a>(다섯 가지로 늘린 판. 손마다 둘을 이기고 둘에게 진다), <a href="https://sirlingames.squarespace.com/articles/rock-paper-scissors-in-strategy-games.html">Sirlin, Rock, Paper, Scissors in Strategy Games</a>(세 수의 값이 같으면 무엇을 내든 같다. 값을 다르게 하면 치우침이 생기고 읽을 것이 생긴다).</li>
+            <li>십이지의 관계: <a href="https://accesson.kr/ksq/assets/pdf/40880/journal-36-3-134.pdf">김만태, 십이지의 상호작용 관계로서 충·형에 관한 근원 고찰</a>(정신문화연구 36권 3호. 육합, 충, 원진과 그 민간 풀이, 삼합, 형의 묶음과 방향을 여기서 확인했다. 충은 서로 마주 보는 두 지지가 정면으로 부딪치는 것이고, 원진은 충하는 지지의 바로 옆자리라고 설명한다).</li>
+            <li>동물의 속성: <a href="https://en.wikipedia.org/wiki/Earthly_Branches">Earthly Branches</a>, <a href="https://ko.wikipedia.org/wiki/%EC%A7%80%EC%A7%80_(%EC%97%AD%EB%B2%95)">지지 (역법)</a>(두 곳의 표가 같다. 쥐와 돼지가 물, 호랑이와 토끼가 나무, 뱀과 말이 불, 원숭이와 닭이 쇠, 소와 용과 양과 개가 흙이다), <a href="https://en.wikipedia.org/wiki/Chinese_zodiac">Chinese zodiac</a>(삼합, 육합, 충의 묶음이 논문과 같다).</li>
+            <li>가위바위보와 늘린 판: <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors">Rock paper scissors</a>(고르게 아무렇게나 내는 상대에게는 앞설 수 없다. 아무렇게나 내지 못하는 상대의 버릇을 알아채면 실력으로 겨룰 수 있다), <a href="https://samkass.com/theories/RPSSL.html">Sam Kass, Rock Paper Scissors Spock Lizard</a>(다섯 가지로 늘린 판. 손마다 둘을 이기고 둘에게 진다. 이 기획의 다섯은 하나만 이기는 고리라 모양이 다르다), <a href="https://sirlingames.squarespace.com/articles/rock-paper-scissors-in-strategy-games.html">Sirlin, Rock, Paper, Scissors in Strategy Games</a>(세 수의 값이 같으면 무엇을 내든 같다. 값을 다르게 하면 치우침이 생기고 읽을 것이 생긴다).</li>
             <li>버릇: <a href="https://arxiv.org/abs/1404.5199">Wang, Xu, Zhou, Social cycling and conditional responses in the Rock-Paper-Scissors game</a>(Scientific Reports 4, 5830, 2014. 저장대 학생 360명이 여섯 명씩 60무리로 300판씩 했다. 이긴 사람은 같은 것을 다시 낼 확률이 뚜렷이 높았다).</li>
-            <li>틀과 참고작: <a href="https://en.wikipedia.org/wiki/Fire_Emblem">Fire Emblem</a>(창이 검을, 검이 도끼를, 도끼가 창을 이기는 무기 상성), <a href="https://en.wikipedia.org/wiki/Super_Auto_Pets">Super Auto Pets</a>(싸움은 모두 비동기다. 맨 앞끼리 싸우고 쓰러지면 뒤가 채운다), <a href="https://en.wikipedia.org/wiki/Dota_Auto_Chess">Dota Auto Chess</a>(플레이어가 손댈 수 없는 자동 싸움, 같은 말 셋이 합쳐져 한 단계 오른다), <a href="https://en.wikipedia.org/wiki/Jungle_(board_game)">Jungle (board game)</a>(동물 장기. 여덟 동물 가운데 코끼리가 가장 세고 쥐가 가장 약하지만, 쥐는 코끼리를 잡을 수 있다).</li>
+            <li>틀과 겹치는 게임: <a href="https://en.wikipedia.org/wiki/Super_Auto_Pets">Super Auto Pets</a>(싸움은 모두 비동기다. 맨 앞끼리 싸우고 쓰러지면 뒤가 채운다), <a href="https://en.wikipedia.org/wiki/Dota_Auto_Chess">Dota Auto Chess</a>(플레이어가 손댈 수 없는 자동 싸움, 같은 기물 셋이 합쳐져 한 단계 오른다), <a href="https://store.steampowered.com/app/4966890">Zodiac Tale</a>(Steam 상점 페이지. 열두 띠 종족과 시너지를 쓰는 혼자 하는 오토배틀이고 2027년 1분기 출시 예정이라고 적혀 있다. 상성이나 오행은 적혀 있지 않다).</li>
           </ul>
           <p>확인하지 못했거나 게임을 위해 정한 것도 적어 둔다.</p>
           <ul>
-            <li>3절부터 7절까지의 값은 이 글의 규칙을 짧은 프로그램으로 옮겨 계산한 것이다. 등급별 힘과 몸, 피해 두 배, 다섯 칸, 같은 말 셋의 합치기를 넣었다. 수치를 바꾸면 값도 바뀐다.</li>
-            <li>6절의 평균 점수는 같은 값으로 만들 수 있는 모든 줄을 한 번씩 고르게 만난다고 치고 낸 것이다. 실제 기록의 분포는 다를 것이다. 줄의 차례는 줄 한 쌍에 60가지까지 뽑아 붙였고, 그래서 점수는 0.03쯤 흔들린다.</li>
-            <li>7절의 아는 정도에 따른 결과는 줄 400쌍을 아무렇게나 뽑아 낸 것이다. 상대가 쥔 말만 아는 경우는 상대가 모든 차례를 고르게 세운다고 치고 계산했다. 사람은 고르게 세우지 않으므로 실제 값은 다를 것이다.</li>
-            <li>창이 말을, 말이 활을, 활이 창을 이기는 까닭은 전략 게임에서 흔히 쓰는 설명을 기억으로 쓴 것이다. 실제 싸움의 근거를 찾아보지 않았다.</li>
+            <li>3절부터 7절까지와 10절의 값은 이 글의 규칙을 짧은 프로그램으로 옮겨 계산한 것이다. 사람이 해 본 결과가 아니다. 수치를 바꾸면 값도 바뀐다.</li>
+            <li>6절, 7절, 10절의 줄은 속성을 보지 않는 단순한 구매자가 만든 것이다. 사람은 판세를 보고 사므로 실제 줄은 다를 것이다. 7절의 표는 줄 1,200쌍을 뽑아 냈고 값은 2에서 3쯤 흔들린다.</li>
+            <li>7절에서 상대가 쥔 동물만 아는 경우는 상대가 모든 차례를 고르게 세운다고 치고 계산했다. 사람은 고르게 세우지 않는다.</li>
+            <li>물이 불을, 불이 쇠를, 쇠가 나무를, 나무가 흙을, 흙이 물을 이기는 차례와 그 까닭, 상생의 차례, 오방색의 색 짝은 널리 알려진 것을 기억으로 썼다. 원문을 찾아 확인하지 않았다.</li>
+            <li>영어 위키백과 Chinese zodiac의 관계표는 긴 문서의 가운데에 있어 요약으로 읽었다. 삼합, 육합, 충은 논문과 맞춰 봤다. 해(害)와 파(破)는 제대로 확인하지 못해 12절에 넣지 않았다.</li>
+            <li>형의 묶음은 논문이 삼명통회의 것으로 소개한 내용이다. 논문에는 묶음을 다르게 보는 책도 있다고 적혀 있다.</li>
+            <li>2절의 밀어내기 대회는 게임을 위해 지은 것이다. 십이지 설화에서 가져온 것이 아니다.</li>
             <li>가위바위보 실험의 버릇이 이 게임의 줄 세우기에도 남는다는 것은 짐작이다. 실험은 한 번에 하나를 내는 판이었다.</li>
-            <li>12절의 기사, 궁수, 마법사가 서로 이기는 까닭과, 직업 상성의 방향이 게임마다 다르다는 것은 기억으로 쓴 것이다. 동물 쪽의 까닭도 놀이의 규칙에서 가져온 것이고 실제 습성을 찾아보지 않았다.</li>
-            <li>동전 10, 말 값 3, 여덟 판 우승, 한 판 1분을 비롯한 수치는 전부 시제품에서 확인할 가설이다.</li>
+            <li>동전 10, 동물 값 3, 흙 동물 0.7배, 여덟 판 우승, 한 판 1분을 비롯한 수치는 전부 시제품에서 확인할 가설이다.</li>
           </ul>
         </section>
 
