@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="가위바위보처럼 서로 못 본 채 동시에 내고, 싸움은 알아서 굴러가는 오토배틀 기획. 판마다 진형과 작전 하나를 숨겨서 낸다. 작전은 밀기, 버티기, 돌기 셋이고 서로 물고 물린다. 상대는 다른 사람이 남긴 세 판짜리 기록이다. 그 사람이 그때 무엇을 보고 무엇을 냈는지를 읽어 다음 수를 맞힌다. 작전의 규칙과 계산해 본 값, 기록 대전의 짜임, 내 기록이 읽히는 구조를 정리했다.">
-    <title>서로 안 보고 낸다: 남의 기록을 읽는 오토배틀 기획 · nyimpe</title>
+    <meta name="description" content="말 세 종류가 가위바위보처럼 서로 이기고 지는 오토배틀 기획. 창은 말을, 말은 활을, 활은 창을 이기고, 이기는 쪽이 피해를 두 배로 준다. 세 종류의 수치는 같다. 다섯 칸 한 줄에 세우면 맨 앞끼리 싸운다. 상대는 다른 사람이 남긴 기록이고, 쥔 말은 보이지만 줄의 차례는 가려져 있다. 상성과 등급의 셈, 무엇을 쥘지와 어떻게 세울지를 계산한 값을 정리했다.">
+    <title>셋이 물고 물린다: 상성 하나로 짜는 오토배틀 기획 · nyimpe</title>
     <link rel="canonical" href="https://nyimpe.github.io/posts/rps-auto-battler-design/">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="ko_KR">
-    <meta property="og:title" content="서로 안 보고 낸다: 남의 기록을 읽는 오토배틀 기획">
-    <meta property="og:description" content="판마다 작전 하나를 숨겨서 낸다. 밀기, 버티기, 돌기는 서로 물고 물린다. 상대는 다른 사람이 남긴 기록이고, 내 기록도 남에게 읽힌다.">
+    <meta property="og:title" content="셋이 물고 물린다: 상성 하나로 짜는 오토배틀 기획">
+    <meta property="og:description" content="창은 말을, 말은 활을, 활은 창을 이긴다. 수치는 같고 관계만 다르다. 무엇을 쥘지와 어떤 차례로 세울지가 게임의 전부다.">
     <meta property="og:url" content="https://nyimpe.github.io/posts/rps-auto-battler-design/">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/src/style.css">
@@ -38,6 +38,8 @@
       .notes-post .board-figure .cell { fill: var(--surface); stroke: var(--border); }
       .notes-post .board-figure .empty { fill: none; stroke: var(--soft-border); stroke-dasharray: 4 4; }
       .notes-post .board-figure .mid { stroke: var(--border); stroke-width: 2; }
+      .notes-post .board-figure .front { stroke: var(--link); stroke-width: 2; }
+      .notes-post .board-figure .rel { stroke: var(--link); stroke-width: 2; fill: none; }
       .notes-post .board-figure .go { stroke: var(--link); stroke-width: 2; fill: none; stroke-dasharray: 6 4; }
       .notes-post .board-figure .tip { fill: var(--link); }
       .notes-post .board-figure text { fill: var(--text); font-size: 15px; text-anchor: middle; }
@@ -65,35 +67,33 @@
     <main id="content">
       <article class="research-post design-post notes-post">
         <header class="post-header">
-          <h1>서로 안 보고 낸다: 남의 기록을 읽는 오토배틀 기획</h1>
+          <h1>셋이 물고 물린다: 상성 하나로 짜는 오토배틀 기획</h1>
           <time datetime="2026-11-25">2026.11.25</time>
-          <p class="image-credit">제목과 소재 미정 / 틀: 다른 사람의 기록과 붙는 오토배틀 / 말의 이름은 임시이고 수치는 전부 시제품에서 확인할 가설이다</p>
+          <p class="image-credit">제목과 소재 미정 / 틀: 다른 사람의 기록과 붙는 오토배틀 / 창, 말, 활은 임시 이름이고 수치는 전부 시제품에서 확인할 가설이다</p>
         </header>
 
-        <p class="concept-pitch">판마다 진형과 작전 하나를 숨겨서 낸다. 양쪽이 한꺼번에 뒤집고, 싸움은 알아서 굴러간다. 작전은 밀기, 버티기, 돌기 셋이고 서로 물고 물린다. 상대는 다른 사람이 남긴 세 판짜리 기록이다. 그 사람이 무엇을 보고 무엇을 냈는지를 읽어 다음 수를 맞힌다.</p>
-        <p>가위바위보를 게임에 넣은 것이 아니다. 가위바위보에서 규칙의 뼈대만 가져왔다. 서로 못 본 채 동시에 낸다. 낸 것끼리 물고 물린다. 그래서 상대가 무엇을 낼지 읽는 쪽이 이긴다. 이 뼈대를 오토배틀에 얹었다. 말을 사서 판을 키우는 것은 오토배틀 그대로이고, 판마다 작전 하나를 숨겨 내는 것이 가위바위보다.</p>
-        <p>가위바위보와 다른 점은 둘이다. 세 수의 값이 같지 않다. 내가 어떤 말을 샀느냐에 따라 밀기가 크게 통하는 판이 있고 버티기가 통하는 판이 있다. 그리고 내 말은 상대에게 보인다. 그래서 상대는 내가 무엇을 내고 싶어 하는지 안다. 나도 상대가 그것을 안다는 것을 안다. 읽기는 여기서 시작한다.</p>
+        <p class="concept-pitch">말은 세 종류다. 창은 말을 이기고, 말은 활을 이기고, 활은 창을 이긴다. 세 종류의 수치는 똑같고, 다른 것은 이 관계 하나뿐이다. 말을 사서 한 줄로 세우면 맨 앞끼리 알아서 싸운다. 무엇을 쥘지와 어떤 차례로 세울지가 게임의 전부다.</p>
+        <p>가위바위보에서 가져온 것은 관계다. 셋이 서로 이기고 지며, 늘 이기는 것이 없다. 이 관계를 오토배틀의 바닥에 깔았다. 말끼리 맞붙을 때 한 번, 무엇을 살지 고를 때 한 번, 줄을 세울 때 한 번, 같은 관계가 세 번 쓰인다.</p>
+        <p>가위바위보와 다른 점도 있다. 이기는 관계라고 그 자리에서 끝나지 않는다. 이기는 쪽은 피해를 두 배로 줄 뿐이고, 등급이 높은 말은 그것을 뒤집는다. 그리고 한 번이 아니라 다섯 번을 이어서 낸다. 줄의 차례가 곧 다섯 번 낼 것을 미리 적어 둔 것이다.</p>
 
         <div class="asset-summary" aria-label="기획 요약">
-          <div><strong>작전 셋</strong><span>밀기, 버티기, 돌기. 이긴 쪽이 첫 박자를 혼자 친다</span></div>
-          <div><strong>동시에 낸다</strong><span>가진 말은 보이고, 진형과 작전은 숨긴다</span></div>
-          <div><strong>삼세판</strong><span>한 사람의 기록과 세 판. 판이 갈수록 읽을 것이 는다</span></div>
-          <div><strong>기록 대전</strong><span>기다릴 사람이 없다. 내 기록도 남에게 읽힌다</span></div>
+          <div><strong>상성 셋</strong><span>창이 말을, 말이 활을, 활이 창을 이긴다. 이기는 쪽이 피해 두 배</span></div>
+          <div><strong>한 줄 다섯 칸</strong><span>맨 앞끼리 싸우고, 쓰러지면 뒤가 나온다</span></div>
+          <div><strong>등급</strong><span>같은 말 셋이 합쳐진다. 한 등급 높으면 상성을 뒤집는다</span></div>
+          <div><strong>기록 대전</strong><span>상대가 쥔 말은 보이고 줄의 차례는 가려져 있다</span></div>
         </div>
 
         <nav class="post-toc" aria-label="글 목차"><ol>
-          <li><a href="#frame">틀: 가위바위보와 오토배틀에서 가져오는 것</a></li>
-          <li><a href="#round">한 판의 흐름</a></li>
-          <li><a href="#board">판과 말, 싸움의 규칙</a></li>
-          <li><a href="#orders">작전 셋</a></li>
-          <li><a href="#payoff">값이 다른 가위바위보</a></li>
-          <li><a href="#tells">가진 말이 귀띔이다</a></li>
+          <li><a href="#frame">틀: 가위바위보에서 가져오는 것</a></li>
+          <li><a href="#triangle">상성 셋</a></li>
+          <li><a href="#line">줄과 싸움</a></li>
+          <li><a href="#duel">맞대결의 셈</a></li>
+          <li><a href="#level">등급: 상성을 뒤집는 길</a></li>
+          <li><a href="#hold">무엇을 쥘까</a></li>
+          <li><a href="#order">줄 세우기가 가위바위보다</a></li>
+          <li><a href="#tells">읽을 거리 셋</a></li>
           <li><a href="#record">상대는 사람의 기록</a></li>
-          <li><a href="#reading">읽기: 세 판 동안 벌어지는 일</a></li>
-          <li><a href="#mine">내 기록도 읽힌다</a></li>
-          <li><a href="#shop">짜기: 동전, 가게, 급</a></li>
-          <li><a href="#run">대회 한 번의 흐름</a></li>
-          <li><a href="#limits">기록 대전의 한계와 막을 것</a></li>
+          <li><a href="#shop">가게와 대회</a></li>
           <li><a href="#screen">화면과 조작</a></li>
           <li><a href="#scope">범위, 검증 순서, 남은 결정</a></li>
           <li><a href="#sources">근거와 확인 범위</a></li>
@@ -102,398 +102,357 @@
         <p class="table-note">좁은 화면에서는 표를 좌우로 밀어 나머지 열을 볼 수 있다.</p>
 
         <section id="frame" class="concept">
-          <h2>1. 틀: 가위바위보와 오토배틀에서 가져오는 것</h2>
+          <h2>1. 틀: 가위바위보에서 가져오는 것</h2>
           <div class="table-scroll" role="region" aria-label="가위바위보의 규칙이 이 기획에서 바뀐 모습" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">가위바위보</th><th scope="col">이 기획</th><th scope="col">바꾼 이유</th></tr></thead>
               <tbody>
-                <tr><th scope="row">셋 가운데 하나를 낸다</th><td>작전 셋 가운데 하나를 낸다. 밀기, 버티기, 돌기</td><td>그대로. 고를 것이 셋이어야 한눈에 들어온다</td></tr>
-                <tr><th scope="row">서로 못 본 채 동시에 낸다</th><td>진형과 작전을 숨겨서 내고 한꺼번에 뒤집는다</td><td>그대로. 이것이 뼈대다</td></tr>
-                <tr><th scope="row">낸 것끼리 물고 물린다</th><td>버티기가 밀기를, 밀기가 돌기를, 돌기가 버티기를 누른다</td><td>그대로. 늘 이기는 수가 없어야 읽기가 생긴다</td></tr>
-                <tr><th scope="row">이기면 그 자리에서 끝난다</th><td>이긴 쪽이 첫 박자를 혼자 친다. 나머지는 말들이 싸워서 정한다</td><td>잘 키운 판은 읽기를 한 번 져도 버틸 수 있어야 한다</td></tr>
-                <tr><th scope="row">세 수의 값이 같다</th><td>가진 말에 따라 작전의 값이 다르다</td><td>값이 같으면 무엇을 내든 같다. 값이 달라야 내고 싶은 수가 생기고, 그것이 읽힌다</td></tr>
-                <tr><th scope="row">상대에 대해 아는 것이 없다</th><td>상대가 가진 말이 보인다. 지난 판에 낸 것이 남는다</td><td>찍기가 아니라 읽기가 되려면 읽을 거리가 있어야 한다</td></tr>
-                <tr><th scope="row">삼세판</th><td>한 상대와 세 판</td><td>같은 상대와 이어서 붙어야 그 사람의 버릇이 보인다</td></tr>
+                <tr><th scope="row">셋이 서로 이기고 진다</th><td>말 세 종류가 서로 이기고 진다</td><td>그대로. 이것이 바닥이다</td></tr>
+                <tr><th scope="row">늘 이기는 것이 없다</th><td>세 종류의 수치가 같다. 어느 하나가 더 세지 않다</td><td>그대로. 한 종류가 세면 그것만 사게 된다</td></tr>
+                <tr><th scope="row">이기는 관계면 바로 이긴다</th><td>이기는 쪽이 피해를 두 배로 준다. 등급이 높으면 뒤집힌다</td><td>키우는 재미가 남아야 오토배틀이다</td></tr>
+                <tr><th scope="row">한 번 낸다</th><td>다섯을 차례로 세워 이어서 낸다</td><td>무엇을 냈느냐에 더해 어떤 차례로 냈느냐가 생긴다</td></tr>
+                <tr><th scope="row">서로 못 본 채 낸다</th><td>상대가 쥔 말은 보이고, 줄의 차례는 가려져 있다</td><td>찍기가 아니라 읽기가 되려면 읽을 거리가 있어야 한다</td></tr>
+                <tr><th scope="row">같은 것을 내면 비긴다</th><td>같은 종류, 같은 등급이 만나면 같이 쓰러진다</td><td>그대로. 판 전체가 비기는 일은 100판에 7판쯤이다</td></tr>
               </tbody>
             </table>
           </div>
-          <div class="table-scroll" role="region" aria-label="오토배틀에서 가져오는 것과 바꾸는 것" tabindex="0">
-            <table class="wide-table">
-              <thead><tr><th scope="col">흔한 오토배틀</th><th scope="col">이 기획</th><th scope="col">바꾼 이유</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">사서 세우면 싸움은 자동</th><td>그대로</td><td>틀이다</td></tr>
-                <tr><th scope="row">같은 말 셋을 합쳐 키운다</th><td>그대로</td><td>모으는 재미는 남긴다</td></tr>
-                <tr><th scope="row">다른 사람이 짜 둔 판과 붙는다</th><td>그대로. 다만 판 하나가 아니라 세 판짜리 기록과 붙는다</td><td>기다릴 사람도 시간 제한도 없다. 세 판이어야 읽을 것이 생긴다</td></tr>
-                <tr><th scope="row">판마다 다른 상대</th><td>세 판 동안 같은 상대</td><td>버릇은 이어서 봐야 보인다</td></tr>
-                <tr><th scope="row">짜고 나면 할 일이 없다</th><td>짠 다음에 작전 하나를 숨겨 낸다</td><td>상대를 보고 내리는 결정이 판마다 하나 있다</td></tr>
-                <tr><th scope="row">종족과 직업 시너지 수십 가지</th><td>없다. 말의 구실 셋과 작전 셋</td><td>머리는 조합표가 아니라 상대에게 쓴다</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <p>오토배틀에서는 셋을 가져온다. 사서 세우면 싸움은 저절로 굴러간다. 같은 말 셋이 합쳐져 등급이 오른다. 상대는 다른 사람이 남긴 기록이라 기다릴 사람이 없다. 종족과 직업 시너지, 아이템, 말마다 다른 특기는 넣지 않았다.</p>
         </section>
 
-        <section id="round" class="concept">
-          <h2>2. 한 판의 흐름</h2>
-          <ol class="route-strip">
-            <li><strong>보기</strong><span>상대가 가진 말과 지난 판에 낸 것을 본다</span></li>
-            <li><strong>짜기</strong><span>가게에서 사고, 여섯 칸에 세우고, 작전 하나를 엎어 낸다</span></li>
-            <li><strong>뒤집기</strong><span>양쪽 진형과 작전이 한꺼번에 드러난다</span></li>
-            <li><strong>싸움</strong><span>손을 못 댄다. 네 박자에서 일곱 박자면 끝난다</span></li>
-          </ol>
-          <p>한 판은 1분쯤이다. 고민은 짜기에 몰려 있고, 긴장은 뒤집기에 몰려 있다. 뒤집는 순간 작전에서 누가 이겼는지가 먼저 보이고, 싸움은 그 결과를 풀어 보여 준다.</p>
-        </section>
-
-        <section id="board" class="concept">
-          <h2>3. 판과 말, 싸움의 규칙</h2>
-          <p>내 판은 앞줄 세 칸과 뒷줄 세 칸, 여섯 칸이다. 앞줄 세 칸은 왼끝, 가운데, 오른끝이다. 상대도 같은 판을 마주 놓는다.</p>
-          <h3>싸움의 규칙 넷</h3>
-          <ol>
-            <li><strong>박자마다 양쪽이 한꺼번에 친다.</strong> 맞은 만큼 몸이 깎이고, 몸이 0이 되면 쓰러진다.</li>
-            <li><strong>앞줄의 말은 마주 선 적을 친다.</strong> 마주 선 적이 없으면 가장 가까운 적을 친다.</li>
-            <li><strong>뒷줄의 말은 치지 못한다.</strong> 활만 뒷줄에서 쏜다. 앞칸이 비면 그 뒤의 말이 앞으로 나온다.</li>
-            <li><strong>한쪽이 다 쓰러지면 끝난다.</strong> 같이 쓰러지면 비긴 판이다.</li>
-          </ol>
-          <h3>말의 구실 셋</h3>
-          <p>소재를 정하지 않았으므로 말의 이름은 구실을 그대로 붙인 임시 이름이다.</p>
-          <div class="table-scroll" role="region" aria-label="말의 구실 셋과 수치" tabindex="0">
-            <table class="wide-table">
-              <thead><tr><th scope="col">말</th><th scope="col" class="num">힘</th><th scope="col" class="num">몸</th><th scope="col">구실</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">방패</th><td class="num">2</td><td class="num">14</td><td>앞에서 오래 버틴다</td></tr>
-                <tr><th scope="row">창</th><td class="num">5</td><td class="num">8</td><td>앞에서 세게 친다</td></tr>
-                <tr><th scope="row">활</th><td class="num">4</td><td class="num">4</td><td>뒷줄에서 쏜다. 맞으면 금방 쓰러진다</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p>여기까지는 작은 오토배틀이다. 방패를 앞에, 활을 뒤에 세우면 되고 달리 고민할 것이 없다. 고민은 작전에서 생긴다.</p>
-        </section>
-
-        <section id="orders" class="concept">
-          <h2>4. 작전 셋</h2>
-          <p>판마다 작전 하나를 골라 엎어서 낸다. 작전마다 하는 일이 있고, 누르는 상대가 있다.</p>
-          <div class="table-scroll" role="region" aria-label="작전 세 가지" tabindex="0">
-            <table class="wide-table">
-              <thead><tr><th scope="col">작전</th><th scope="col">하는 일</th><th scope="col">누르는 작전</th><th scope="col">까닭</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">밀기</th><td>첫 박자에 앞줄의 힘이 두 배다</td><td>돌기</td><td>양끝이 돌아 나간 사이 얇아진 앞이 뚫린다</td></tr>
-                <tr><th scope="row">버티기</th><td>첫 두 박자 동안 앞줄이 받는 피해가 절반이다</td><td>밀기</td><td>달려든 쪽이 갖춘 줄에 부딪쳐 먼저 맞는다</td></tr>
-                <tr><th scope="row">돌기</th><td>첫 두 박자 동안 양끝의 말이 상대 뒷줄을 친다. 그동안 양끝의 말은 맞지 않는다</td><td>버티기</td><td>굳게 선 줄은 돌아 들어오는 것을 못 막는다</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="decision"><strong>선수.</strong> 상대의 작전을 누르는 작전을 낸 쪽이 선수를 잡는다. 선수를 잡으면 첫 박자를 혼자 친다. 상대는 첫 박자에 치지 못한다. 같은 작전끼리는 선수가 없다.</p>
+        <section id="triangle" class="concept">
+          <h2>2. 상성 셋</h2>
           <figure class="board-figure">
-            <svg viewBox="0 0 560 250" role="img" aria-labelledby="flank-title flank-desc">
-              <title id="flank-title">돌기를 낸 판</title>
-              <desc id="flank-desc">양쪽이 앞줄에 방패, 창, 방패를, 뒷줄 양끝에 활을 세웠다. 내가 돌기를 내서 왼끝과 오른끝의 방패가 바깥으로 돌아 상대 뒷줄의 활을 친다. 가운데 창 혼자 앞을 막는다.</desc>
-              <defs><marker id="arrow-tip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="tip" d="M0 0L10 5L0 10z"/></marker></defs>
-              <text x="52" y="43" class="side">상대 뒷줄</text>
-              <text x="52" y="89" class="side">상대 앞줄</text>
-              <text x="52" y="161" class="side">내 앞줄</text>
-              <text x="52" y="207" class="side">내 뒷줄</text>
-              <rect class="cell" x="132" y="20" width="96" height="36"/><text x="180" y="43">활</text>
-              <rect class="empty" x="242" y="20" width="96" height="36"/>
-              <rect class="cell" x="352" y="20" width="96" height="36"/><text x="400" y="43">활</text>
-              <rect class="cell" x="132" y="66" width="96" height="36"/><text x="180" y="89">방패</text>
-              <rect class="cell" x="242" y="66" width="96" height="36"/><text x="290" y="89">창</text>
-              <rect class="cell" x="352" y="66" width="96" height="36"/><text x="400" y="89">방패</text>
-              <path class="mid" d="M120 120H460"/>
-              <rect class="cell" x="132" y="138" width="96" height="36"/><text x="180" y="161">방패</text>
-              <rect class="cell" x="242" y="138" width="96" height="36"/><text x="290" y="161">창</text>
-              <rect class="cell" x="352" y="138" width="96" height="36"/><text x="400" y="161">방패</text>
-              <rect class="cell" x="132" y="184" width="96" height="36"/><text x="180" y="207">활</text>
-              <rect class="empty" x="242" y="184" width="96" height="36"/>
-              <rect class="cell" x="352" y="184" width="96" height="36"/><text x="400" y="207">활</text>
-              <path class="go" d="M130 156C96 150 96 46 128 39" marker-end="url(#arrow-tip)"/>
-              <path class="go" d="M450 156C484 150 484 46 452 39" marker-end="url(#arrow-tip)"/>
-              <text x="290" y="242" class="side">내가 돌기를 냈다. 양끝이 두 박자 동안 상대 뒷줄을 친다</text>
+            <svg viewBox="0 0 420 250" role="img" aria-labelledby="tri-title">
+              <title id="tri-title">창에서 말로, 말에서 활로, 활에서 창으로 화살표가 도는 그림</title>
+              <defs><marker id="tri-tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="tip" d="M0 0L10 5L0 10z"></path></marker></defs>
+              <circle class="cell" cx="210" cy="55" r="38"></circle>
+              <circle class="cell" cx="330" cy="195" r="38"></circle>
+              <circle class="cell" cx="90" cy="195" r="38"></circle>
+              <text x="210" y="61">창</text>
+              <text x="330" y="201">말</text>
+              <text x="90" y="201">활</text>
+              <path class="rel" d="M240 88L300 158" marker-end="url(#tri-tip)"></path>
+              <path class="rel" d="M286 195L134 195" marker-end="url(#tri-tip)"></path>
+              <path class="rel" d="M120 158L180 88" marker-end="url(#tri-tip)"></path>
+              <text class="side" x="300" y="115">막아선다</text>
+              <text class="side" x="210" y="215">덮친다</text>
+              <text class="side" x="120" y="115">멀리서 쏜다</text>
             </svg>
-            <figcaption>돌기를 내면 가운데 말 혼자 앞을 막는다. 양끝이 비운 칸 뒤의 내 활은 상대 앞줄에 드러난다.</figcaption>
+            <figcaption>화살표가 가리키는 쪽이 진다. 창이 말을, 말이 활을, 활이 창을 이긴다.</figcaption>
           </figure>
           <ul>
-            <li><strong>돌기는 뒷줄이 있어야 통한다.</strong> 상대 뒷줄이 비어 있으면 돌아 들어간 말이 칠 것이 없다.</li>
-            <li><strong>돌기는 내 뒷줄을 건다.</strong> 양끝이 나간 동안 그 뒤의 말은 상대 앞줄에 그대로 맞는다.</li>
-            <li><strong>밀기와 버티기는 앞줄에만 걸린다.</strong> 활의 힘은 두 배가 되지 않고, 뒷줄이 받는 피해는 줄지 않는다.</li>
+            <li><strong>이기는 쪽은 피해를 두 배로 준다.</strong> 지는 쪽의 피해는 그대로다. 상성이 하는 일은 이것 하나다.</li>
+            <li><strong>세 종류의 힘과 몸은 같다.</strong> 1등급은 셋 다 힘 2, 몸 8이다. 다른 것은 누구를 이기느냐뿐이다.</li>
+            <li><strong>종류는 셋에서 늘리지 않는다.</strong> 관계 셋은 한 번 보면 외워진다. 다섯이면 관계가 열 개다.</li>
+          </ul>
+          <p>소재를 정하지 않았으므로 창, 말, 활은 임시 이름이다. 누가 누구를 이기는지 한눈에 떠오르는 것으로 골랐다. 소재가 정해지면 이름과 까닭을 거기에 맞춘다.</p>
+        </section>
+
+        <section id="line" class="concept">
+          <h2>3. 줄과 싸움</h2>
+          <p>내 판은 다섯 칸짜리 한 줄이다. 대기석은 없다. 쥔 말이 곧 줄이다. 상대도 한 줄을 마주 세운다.</p>
+          <h3>싸움의 규칙 넷</h3>
+          <ol>
+            <li><strong>맨 앞의 말끼리 싸운다.</strong> 박자마다 둘이 한꺼번에 친다. 맞은 만큼 몸이 깎인다.</li>
+            <li><strong>상성에서 이기는 말은 피해를 두 배로 준다.</strong></li>
+            <li><strong>쓰러지면 뒤의 말이 나온다.</strong> 살아남은 말은 깎인 몸 그대로 다음 상대를 맞는다.</li>
+            <li><strong>줄이 먼저 빈 쪽이 진다.</strong> 같이 비면 비긴 판이다.</li>
+          </ol>
+          <figure class="board-figure">
+            <svg viewBox="0 0 460 130" role="img" aria-labelledby="line-title">
+              <title id="line-title">내 줄 말, 창, 활과 상대 줄 창, 말, 활이 마주 선 그림. 내 활과 상대 창이 맨 앞에서 맞붙는다</title>
+              <rect class="cell" x="20" y="35" width="60" height="60"></rect>
+              <rect class="cell" x="90" y="35" width="60" height="60"></rect>
+              <rect class="cell front" x="160" y="35" width="60" height="60"></rect>
+              <line class="mid" x1="230" y1="20" x2="230" y2="110"></line>
+              <rect class="cell front" x="240" y="35" width="60" height="60"></rect>
+              <rect class="cell" x="310" y="35" width="60" height="60"></rect>
+              <rect class="cell" x="380" y="35" width="60" height="60"></rect>
+              <text x="50" y="71">말</text><text x="120" y="71">창</text><text x="190" y="71">활</text>
+              <text x="270" y="71">창</text><text x="340" y="71">말</text><text x="410" y="71">활</text>
+              <text class="side" x="120" y="22">내 줄</text><text class="side" x="340" y="22">상대 줄</text>
+              <text class="side" x="190" y="115">맨 앞</text><text class="side" x="270" y="115">맨 앞</text>
+            </svg>
+            <figcaption>상대가 창, 말, 활의 차례로 세웠다. 나는 활, 창, 말의 차례로 세웠다. 내 말마다 자기가 이기는 상대를 만난다.</figcaption>
+          </figure>
+          <p>위 그림의 싸움은 이렇게 풀린다. 양쪽 다 1등급이다.</p>
+          <div class="table-scroll" role="region" aria-label="그림의 싸움이 풀리는 차례" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">맞붙는 말</th><th scope="col">걸린 박자</th><th scope="col">결과</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">내 활과 상대 창</th><td class="num">2</td><td>창이 쓰러진다. 내 활은 몸 4가 남는다</td></tr>
+                <tr><th scope="row">내 활(몸 4)과 상대 말</th><td class="num">1</td><td>활이 쓰러진다. 상대 말은 몸 6이 남는다</td></tr>
+                <tr><th scope="row">내 창과 상대 말(몸 6)</th><td class="num">2</td><td>말이 쓰러진다. 내 창은 몸 4가 남는다</td></tr>
+                <tr><th scope="row">내 창(몸 4)과 상대 활</th><td class="num">1</td><td>창이 쓰러진다. 상대 활은 몸 6이 남는다</td></tr>
+                <tr><th scope="row">내 말과 상대 활(몸 6)</th><td class="num">2</td><td>활이 쓰러진다. 내 말이 몸 4로 남아 내가 이긴다</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>양쪽이 쥔 말은 똑같다. 차례만 달랐다. 한 판은 여덟 박자였고, 화면에서는 30초 안쪽이다.</p>
+        </section>
+
+        <section id="duel" class="concept">
+          <h2>4. 맞대결의 셈</h2>
+          <p>1등급끼리 맞붙을 때의 셈은 셋만 알면 된다.</p>
+          <div class="table-scroll" role="region" aria-label="1등급끼리의 맞대결" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">만난 것</th><th scope="col">걸리는 박자</th><th scope="col">결과</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">내가 이기는 종류</th><td class="num">2</td><td>상대가 쓰러지고 나는 몸이 절반 남는다</td></tr>
+                <tr><th scope="row">같은 종류</th><td class="num">4</td><td>같이 쓰러진다</td></tr>
+                <tr><th scope="row">나를 이기는 종류</th><td class="num">2</td><td>내가 쓰러지고 상대는 몸이 절반 남는다</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>몸이 절반 남은 말은 다음 상대에게 그만큼 약하다.</p>
+          <div class="table-scroll" role="region" aria-label="몸이 절반 남은 말이 다음에 만나는 것" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">절반 남은 말이 만난 것</th><th scope="col">결과</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">또 이기는 종류</th><td>같이 쓰러진다</td></tr>
+                <tr><th scope="row">같은 종류</th><td>쓰러진다. 상대는 몸이 절반 남는다</td></tr>
+                <tr><th scope="row">자기를 이기는 종류</th><td>한 박자에 쓰러진다. 상대는 몸 8 가운데 6이 남는다</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="decision">상성으로 한 번 이기면 말 하나를 잡고, 다음 말의 절반을 더 깎는다. 말 하나의 값이 한 개 반이 되는 셈이다. 줄을 세울 때 노리는 것은 이 한 개 반을 여러 번 얻는 것이다.</p>
+        </section>
+
+        <section id="level" class="concept">
+          <h2>5. 등급: 상성을 뒤집는 길</h2>
+          <p>같은 종류, 같은 등급의 말 셋이 모이면 저절로 합쳐져 한 등급 오른다. 등급은 셋까지다.</p>
+          <div class="table-scroll" role="region" aria-label="등급별 수치" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">등급</th><th scope="col" class="num">힘</th><th scope="col" class="num">몸</th><th scope="col" class="num">들어간 말</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">1등급</th><td class="num">2</td><td class="num">8</td><td class="num">1</td></tr>
+                <tr><th scope="row">2등급</th><td class="num">3</td><td class="num">16</td><td class="num">3</td></tr>
+                <tr><th scope="row">3등급</th><td class="num">4</td><td class="num">32</td><td class="num">9</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>등급이 오를 때마다 힘이 1 늘고 몸이 두 배가 된다. 계산해 본 맞대결은 아래와 같다. 창을 보기로 들었고 세 종류 모두 같다.</p>
+          <div class="table-scroll" role="region" aria-label="등급이 다른 맞대결을 계산한 결과" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">내 말</th><th scope="col">상대</th><th scope="col">결과</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">2등급 창</th><td>1등급 활 하나</td><td class="win">이긴다. 몸 16 가운데 4가 남는다</td></tr>
+                <tr><th scope="row">2등급 창</th><td>1등급 활 둘</td><td class="lose">진다</td></tr>
+                <tr><th scope="row">2등급 창</th><td>1등급 창 셋</td><td class="lose">진다. 마지막 창이 몸 2로 남는다</td></tr>
+                <tr><th scope="row">2등급 창</th><td>1등급 말 셋</td><td class="win">이긴다. 몸 4가 남는다</td></tr>
+                <tr><th scope="row">3등급 창</th><td>2등급 활 하나</td><td class="win">이긴다. 몸 32 가운데 8이 남는다</td></tr>
+                <tr><th scope="row">3등급 창</th><td>2등급 창, 말, 활 하나씩</td><td class="lose">진다. 어떤 차례로 만나도 진다</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li><strong>한 등급 높으면 상성을 뒤집는다.</strong> 자기를 이기는 종류와 만나도 이긴다. 다만 몸이 4분의 1만 남는다.</li>
+            <li><strong>합친 말은 낱개 셋보다 조금 약하다.</strong> 2등급 하나는 같은 종류 1등급 셋에게 진다. 합쳐서 얻는 것은 힘이 아니라 칸이다. 줄이 다섯 칸뿐이라 판이 갈수록 합치지 않고는 말을 더 쥘 수 없다.</li>
+            <li><strong>한 말에 다 모으면 진다.</strong> 말 아홉 개를 3등급 하나로 만든 줄은 같은 아홉 개를 세 종류 2등급으로 나눈 줄에게 어느 차례로도 진다.</li>
           </ul>
         </section>
 
-        <section id="payoff" class="concept">
-          <h2>5. 값이 다른 가위바위보</h2>
-          <p>위의 규칙을 짧은 프로그램으로 옮겨 계산해 봤다. 숫자는 이긴 쪽에 남은 몸의 비율이다. 굵은 칸이 내가 이기는 칸이다.</p>
-          <h3>양쪽이 같은 판일 때</h3>
-          <p>둘 다 앞줄에 방패, 창, 방패를, 뒷줄 양끝에 활을 세웠다.</p>
-          <div class="table-scroll" role="region" aria-label="같은 판끼리 붙었을 때 작전별 결과" tabindex="0">
+        <section id="hold" class="concept">
+          <h2>6. 무엇을 쥘까</h2>
+          <p>판마다 말을 셋쯤 산다. 그래서 셋째 판에는 말 아홉 개어치, 다섯째 판에는 열다섯 개어치, 일곱째 판에는 스물한 개어치를 쥔다. 같은 값으로 만들 수 있는 줄을 모두 만들어 서로 붙여 봤다. 줄의 차례는 아무렇게나 세웠고, 이기면 1점, 지면 −1점으로 쳐서 평균을 냈다.</p>
+          <div class="table-scroll" role="region" aria-label="같은 값의 줄끼리 붙인 평균 점수" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">내 작전</th><th scope="col">상대가 밀기</th><th scope="col">상대가 버티기</th><th scope="col">상대가 돌기</th></tr></thead>
+              <thead><tr><th scope="col">쥔 값</th><th scope="col">줄</th><th scope="col">모양</th><th scope="col" class="num">평균 점수</th></tr></thead>
               <tbody>
-                <tr><th scope="row">밀기</th><td>비김</td><td class="lose">짐. 상대 36% 남음</td><td class="win">이김. 77% 남음</td></tr>
-                <tr><th scope="row">버티기</th><td class="win">이김. 36% 남음</td><td>비김</td><td class="lose">짐. 상대 18% 남음</td></tr>
-                <tr><th scope="row">돌기</th><td class="lose">짐. 상대 77% 남음</td><td class="win">이김. 18% 남음</td><td>비김</td></tr>
+                <tr><th scope="row" rowspan="4">말 9개</th><td>창2 창1, 말2, 활1 활1</td><td>세 종류, 한쪽으로 조금 기욺</td><td class="num win">+0.19</td></tr>
+                <tr><td>창2 창2, 말1 말1, 활1</td><td>세 종류, 한쪽으로 많이 기욺</td><td class="num win">+0.15</td></tr>
+                <tr><td>창2, 말2, 활2</td><td>세 종류, 똑같이. 세 칸만 쓴다</td><td class="num lose">−0.13</td></tr>
+                <tr><td>창3</td><td>한 종류, 한 칸</td><td class="num lose">−0.44</td></tr>
+                <tr><th scope="row" rowspan="2">말 15개</th><td>창2 창2, 말2 말2, 활2</td><td>세 종류</td><td class="num win">+0.38</td></tr>
+                <tr><td>창3 창2 창2</td><td>한 종류</td><td class="num lose">−0.23</td></tr>
+                <tr><th scope="row" rowspan="2">말 21개</th><td>창3, 말2 말2, 활2 활2</td><td>세 종류</td><td class="num win">+0.28</td></tr>
+                <tr><td>창3 창3 창2</td><td>한 종류</td><td class="num lose">−0.25</td></tr>
               </tbody>
             </table>
           </div>
-          <p>판이 같으면 작전에서 이긴 쪽이 판을 이긴다. 가위바위보 그대로다. 다만 이기는 크기가 다르다. 밀기로 돌기를 잡으면 거의 다치지 않고 이기고, 돌기로 버티기를 잡으면 겨우 이긴다. 돌기는 통해도 조금 벌고 걸리면 크게 잃는 수다.</p>
-          <h3>상대가 창 셋을 앞에 세웠을 때</h3>
-          <p>나는 위와 같은 판이고, 상대는 앞줄이 창 셋, 뒷줄이 활 둘이다. 말의 수는 같다.</p>
-          <div class="table-scroll" role="region" aria-label="상대가 창 셋을 세웠을 때 작전별 결과" tabindex="0">
+          <p>창을 말로, 말을 활로, 활을 창으로 돌린 줄은 같은 줄이다. 점수도 같다.</p>
+          <ul>
+            <li><strong>세 종류를 다 쥔 줄이 세다.</strong> 어느 값에서든 가장 점수가 높은 줄은 세 종류를 다 쥐고 있었다. 한 종류만 쥔 줄은 어느 값에서든 바닥이었다.</li>
+            <li><strong>그래도 똑같이 나누지는 않는다.</strong> 칸은 다섯이고 종류는 셋이라 어느 한쪽이 많아진다. 그 기운 쪽이 상대에게 읽힌다.</li>
+            <li><strong>기운 쪽에도 상성이 있다.</strong> 창이 많은 줄(창2 창2 말1 말1 활1)을 말이 많은 줄(말2 말2 활1 활1 창1)과 아무 차례로나 붙이면 100판에 72판을 이기고 24판을 진다. 활이 많은 줄과 붙이면 거꾸로 24판을 이기고 72판을 진다.</li>
+          </ul>
+          <p class="decision">가게에서 고르는 것은 종류가 아니라 기울기다. 세 종류를 다 쥐는 것은 정해져 있고, 어느 쪽에 등급을 올릴지가 남는다. 요즘 창이 많이 보이면 활을 올린다. 이것도 가위바위보다.</p>
+        </section>
+
+        <section id="order" class="concept">
+          <h2>7. 줄 세우기가 가위바위보다</h2>
+          <p>쥔 말이 같아도 차례에 따라 결과가 갈린다. 가장 작은 보기는 창, 말, 활을 하나씩 쥔 두 줄이다. 세우는 법은 저마다 여섯 가지이고, 맞붙는 경우는 서른여섯 가지다.</p>
+          <ul>
+            <li><strong>여섯 가지는 이긴다.</strong> 상대 줄의 칸마다 그것을 이기는 말을 세웠을 때다. 3절의 그림이 이 경우다.</li>
+            <li><strong>여섯 가지는 진다.</strong> 상대가 내 줄에 그렇게 세웠을 때다.</li>
+            <li><strong>스물네 가지는 비긴다.</strong></li>
+          </ul>
+          <p>가위바위보와 같은 모양이다. 상대의 차례를 알면 이기는 차례가 하나 있고, 모르면 찍어야 한다. 말이 늘고 등급이 섞이면 비기는 경우가 줄고 이기고 지는 경우가 는다.</p>
+          <h3>기울기에서 져도 차례로 이긴다</h3>
+          <p>6절의 창이 많은 줄과 활이 많은 줄을 다시 본다. 내 2등급 창 둘을 상대의 2등급 활 둘이 이기므로, 아무렇게나 세우면 100판에 72판을 진다. 상대가 활2, 활2, 창1, 창1, 말1의 차례로 세웠다고 하자.</p>
+          <div class="table-scroll" role="region" aria-label="같은 말을 다른 차례로 세운 결과" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">내 작전</th><th scope="col">상대가 밀기</th><th scope="col">상대가 버티기</th><th scope="col">상대가 돌기</th></tr></thead>
+              <thead><tr><th scope="col">내가 세운 차례</th><th scope="col">벌어진 일</th><th scope="col">결과</th></tr></thead>
               <tbody>
-                <tr><th scope="row">밀기</th><td>비김</td><td class="lose">짐. 상대 50% 남음</td><td class="win">이김. 70% 남음</td></tr>
-                <tr><th scope="row">버티기</th><td class="win">이김. 59% 남음</td><td>비김</td><td class="lose">짐. 상대 50% 남음</td></tr>
-                <tr><th scope="row">돌기</th><td class="lose">짐. 상대 81% 남음</td><td class="win">이김. 18% 남음</td><td class="lose">짐. 상대 12% 남음</td></tr>
+                <tr><th scope="row">창2, 창2, 말1, 말1, 활1</th><td>창 둘이 상대의 활 하나와 맞바꿔진다. 남은 1등급 셋으로는 모자란다</td><td class="lose">진다</td></tr>
+                <tr><th scope="row">창2, 말1, 활1, 말1, 창2</th><td>앞의 넷으로 상대의 활 둘을 없앤다. 맨 뒤에 아껴 둔 창2가 남은 창 둘과 말을 혼자 쓰러뜨린다</td><td class="win">이긴다</td></tr>
               </tbody>
             </table>
           </div>
-          <p>창 셋은 밀기 좋은 판이다. 그러니 나는 버티기를 내고 싶다. 상대도 그것을 안다. 상대가 한 수 더 가서 돌기를 내면 내 버티기는 진다. 그리고 이 상대에게 내 돌기는 같은 돌기끼리 붙어도 진다. 창이 양끝에서 도는 쪽이 방패가 도는 쪽보다 세기 때문이다. 같은 작전 셋인데 판에 따라 쓸 만한 수와 못 쓸 수가 갈린다.</p>
-          <h3>내 말이 하나 더 많을 때</h3>
-          <p>내 뒷줄에 활이 하나 더 있고 나머지는 같다. 아홉 칸 가운데 일곱 칸을 내가 이긴다. 지는 칸은 밀다가 버티기를 만난 칸과 돌다가 밀기를 만난 칸 둘뿐이다. 버티기를 내면 상대가 무엇을 내도 이긴다.</p>
-          <p class="decision"><strong>읽기와 키우기의 무게.</strong> 판이 비슷하면 읽기가 승부를 정하고, 한 말만큼 벌어지면 읽기로는 뒤집기 어렵다. 지금 값으로는 키우기 쪽이 조금 무겁다. 읽기를 더 무겁게 하려면 선수를 잡은 쪽이 두 박자를 혼자 치게 하면 된다. 이 저울이 이 게임에서 가장 먼저 맞춰야 할 수치다.</p>
+          <p>상대의 서른 가지 차례 가운데 내가 이길 차례를 못 찾는 것은 하나도 없었다. 불리한 쪽에서 가장 잘 세운 차례 하나(활1, 말1, 창2, 말1, 창2)는 상대의 서른 가지 차례 가운데 67%를 이겼고, 가장 못 세운 차례는 7%를 이겼다.</p>
+          <h3>읽는 만큼 이긴다</h3>
+          <p>세 종류를 다 쥔 줄끼리 아무 둘이나 골라 붙였을 때, 내가 상대를 얼마나 아느냐에 따라 결과가 이렇게 달라졌다.</p>
+          <div class="table-scroll" role="region" aria-label="상대를 아는 정도에 따른 결과" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">아는 것</th><th scope="col">세우는 법</th><th scope="col" class="num">말 9개</th><th scope="col" class="num">말 15개</th><th scope="col" class="num">말 21개</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">아무것도 모른다</th><td>아무렇게나</td><td class="num">46 / 8 / 45</td><td class="num">47 / 7 / 45</td><td class="num">47 / 7 / 47</td></tr>
+                <tr><th scope="row">상대가 쥔 말</th><td>상대의 모든 차례에 고르게 잘 듣는 차례</td><td class="num">61 / 8 / 31</td><td class="num">66 / 5 / 29</td><td class="num">64 / 6 / 30</td></tr>
+                <tr><th scope="row">상대의 차례까지</th><td>그 차례를 이기는 차례</td><td class="num win">97 / 2 / 1</td><td class="num win">89 / 2 / 10</td><td class="num win">89 / 2 / 9</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>숫자는 100판 가운데 이긴 판, 비긴 판, 진 판이다. 반올림이라 합이 100이 아닐 수 있다.</p>
+          <p class="decision">상대가 쥔 말을 보는 것만으로 이기는 판이 47에서 66으로 는다. 차례까지 맞히면 89가 된다. 그 사이의 23판이 읽기의 몫이다. 게임은 이 23판을 놓고 벌어진다.</p>
         </section>
 
         <section id="tells" class="concept">
-          <h2>6. 가진 말이 귀띔이다</h2>
-          <p>상대가 가진 말은 판을 짜기 전에 보인다. 어느 칸에 세울지는 안 보인다. 가진 말을 보면 그 사람이 내고 싶은 작전이 보인다.</p>
-          <div class="table-scroll" role="region" aria-label="가진 말에서 읽히는 작전" tabindex="0">
+          <h2>8. 읽을 거리 셋</h2>
+          <div class="table-scroll" role="region" aria-label="읽을 거리 세 가지" tabindex="0">
             <table class="wide-table">
-              <thead><tr><th scope="col">가진 말</th><th scope="col">내고 싶은 작전</th><th scope="col">약한 곳</th></tr></thead>
+              <thead><tr><th scope="col">읽을 거리</th><th scope="col">언제 보이나</th><th scope="col">무엇을 알려 주나</th></tr></thead>
               <tbody>
-                <tr><th scope="row">창이 많다</th><td>밀기. 첫 박자의 두 배가 크다</td><td>버티기에 막히면 몸이 얇아 크게 진다</td></tr>
-                <tr><th scope="row">방패와 활이 많다</th><td>버티기. 앞이 버티는 동안 뒤가 쏜다</td><td>돌기에 뒷줄이 먼저 무너진다</td></tr>
-                <tr><th scope="row">앞줄에 세울 센 말이 둘 넘는다</th><td>돌기. 양끝에 세우면 뒷줄을 빨리 잡는다</td><td>밀기에 가운데가 뚫린다</td></tr>
-                <tr><th scope="row">뒷줄이 비었다</th><td>밀기나 버티기. 돌기에 내줄 것이 없다</td><td>말의 수가 적다</td></tr>
-                <tr><th scope="row">고르게 섞였다</th><td>알 수 없다</td><td>어느 작전도 크게 통하지 않는다</td></tr>
+                <tr><th scope="row">판세</th><td>가게에서</td><td>이번 차례의 기록들이 쥔 창, 말, 활의 비율. 무엇을 올릴지 정한다</td></tr>
+                <tr><th scope="row">상대가 쥔 말</th><td>줄을 세울 때</td><td>종류와 등급. 차례는 가려져 있다. 어디에 무엇을 세울지 정한다</td></tr>
+                <tr><th scope="row">상대의 지난 줄</th><td>줄을 세울 때</td><td>그 사람이 바로 앞 판에 세운 차례와 그 판의 승패. 버릇을 본다</td></tr>
               </tbody>
             </table>
           </div>
-          <p>한쪽으로 몰아 사면 그 작전이 세지고 그만큼 읽힌다. 고르게 사면 덜 읽히고 덜 세다. 무엇을 사느냐가 얼마나 읽힐지를 정한다.</p>
-          <h3>진형은 둘째 읽기다</h3>
           <ul>
-            <li><strong>양끝에 누구를 세우나.</strong> 돌 때 나가는 말은 양끝이다. 창을 양끝에, 방패를 가운데에 세우면 돌기가 세진다. 계산해 보니 버티기를 잡았을 때 남는 몸이 18%에서 42%로 늘고, 밀기에 걸렸을 때 잃는 것도 줄었다. 대신 밀다가 버티기를 만나면 더 크게 진다.</li>
-            <li><strong>활을 어디에 세우나.</strong> 돌아 들어온 말은 같은 쪽 뒷칸부터 친다. 활을 가운데 뒤에 세우면 늦게 맞는다. 대신 가운데 앞이 쓰러지면 활이 바로 앞줄로 나온다.</li>
-            <li><strong>진형은 뒤집을 때 드러난다.</strong> 첫 판에는 모르고 낸다. 둘째 판부터는 지난 판의 진형을 보고 낸다. 상대가 진형을 그대로 둘지 고칠지도 읽을 거리다.</li>
+            <li><strong>가장 센 말을 어디에 두는 사람인가.</strong> 2등급을 맨 앞에 세우는 사람이 있고 맨 뒤에 아끼는 사람이 있다. 지난 줄에 그것이 보인다. 맨 앞에 세우는 사람에게는 그 말을 이기는 종류를 맨 앞에 낸다.</li>
+            <li><strong>이긴 줄을 또 세우는 사람인가.</strong> 가위바위보 실험에서 이긴 사람은 같은 것을 다시 내는 일이 많았다. 지난 판을 이긴 기록이면 같은 차례를 먼저 의심한다.</li>
+            <li><strong>나도 같은 것을 읽힌다.</strong> 내가 세운 줄은 다음 판에 내 지난 줄로 남의 화면에 뜬다.</li>
           </ul>
-          <h3>특기 있는 말</h3>
-          <p>구실 셋에 특기가 하나씩 붙은 말을 더한다. 특기는 작전 하나의 값을 키운다. 아래 셋은 보기이고 계산에는 넣지 않았다.</p>
-          <div class="table-scroll" role="region" aria-label="특기 있는 임시 말 세 가지" tabindex="0">
-            <table class="wide-table">
-              <thead><tr><th scope="col">임시 이름</th><th scope="col">특기</th><th scope="col">키우는 작전</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">깃발</th><td>뒷줄에 서 있는 동안 앞줄의 힘이 1 는다. 스스로는 치지 못한다</td><td>밀기. 돌기에 가장 먼저 노려진다</td></tr>
-                <tr><th scope="row">가시 방패</th><td>버티기를 낸 판에는 맞을 때마다 2를 되돌려 준다</td><td>버티기</td></tr>
-                <tr><th scope="row">날쌘 말</th><td>돌 때 한 박자를 더 돈다</td><td>돌기</td></tr>
-              </tbody>
-            </table>
-          </div>
         </section>
 
         <section id="record" class="concept">
-          <h2>7. 상대는 사람의 기록</h2>
-          <p>상대는 지금 접속해 있는 사람이 아니다. 다른 사람이 앞서 치른 세 판이 통째로 남은 기록이다. 내가 수를 내면 기록의 같은 판이 맞은편에 놓인다. 기다릴 사람이 없고 시간 제한이 없다.</p>
-          <h3>기록에 남는 것</h3>
-          <ul>
-            <li>판마다 가진 말, 진형, 작전.</li>
-            <li>그 사람이 그때 만난 상대가 낸 작전과, 그 판의 승패.</li>
-            <li>판 사이에 무엇을 사고 무엇을 옮겼는지.</li>
-          </ul>
-          <p>둘째 줄이 중요하다. 기록 속의 사람은 나와 싸운 것이 아니다. 다른 누군가와 싸우면서 이 수들을 냈다. 그 사람이 둘째 판에 무엇을 냈는지를 맞히려면, 첫 판에 그 사람에게 무슨 일이 있었는지를 알아야 한다.</p>
-          <h3>언제 무엇이 보이나</h3>
-          <div class="table-scroll" role="region" aria-label="판마다 볼 수 있는 것" tabindex="0">
-            <table class="wide-table">
-              <thead><tr><th scope="col">때</th><th scope="col">보이는 것</th><th scope="col">안 보이는 것</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">첫 판 전</th><td>상대가 가진 말. 상대가 지금까지 낸 작전의 비율</td><td>진형과 작전</td></tr>
-                <tr><th scope="row">첫 판 뒤</th><td>상대의 진형과 작전. 그때 이 사람이 만난 상대의 작전과 승패</td><td>둘째 판의 진형과 작전</td></tr>
-                <tr><th scope="row">둘째 판 전</th><td>상대가 판 사이에 새로 산 말</td><td>옮긴 진형</td></tr>
-                <tr><th scope="row">둘째 판 뒤</th><td>위와 같은 것이 한 판 더</td><td>셋째 판의 진형과 작전</td></tr>
-                <tr><th scope="row">승부 뒤</th><td>세 판의 기록 전부. 다음에 이 사람을 다시 만나면 이 만남이 기록지에 붙는다</td><td>없다</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <h3>어떤 기록과 붙나</h3>
-          <ul>
-            <li><strong>같은 차례의 기록.</strong> 내가 대회의 넷째 승부를 치르면 남의 넷째 승부 기록과 붙는다. 받은 동전이 같으니 판의 크기가 비슷하다.</li>
-            <li><strong>비슷한 전적의 기록.</strong> 그때까지 이기고 진 수가 가까운 기록을 고른다.</li>
-            <li><strong>같은 기록은 한 번만.</strong> 한 번 붙은 기록은 다시 나오지 않는다.</li>
-          </ul>
-          <p class="decision"><strong>세 판을 다 치르는 이유.</strong> 두 판을 먼저 이겨도 셋째 판을 한다. 기록의 길이가 모두 같아야 어느 기록과도 세 판을 붙일 수 있다. 이긴 판마다 동전이 붙으므로 셋째 판에도 걸린 것이 있다.</p>
-        </section>
-
-        <section id="reading" class="concept">
-          <h2>8. 읽기: 세 판 동안 벌어지는 일</h2>
-          <p>판이 갈수록 읽을 것이 는다. 첫 판은 가진 말만 보고 낸다. 둘째 판은 그 사람이 한 번 내는 것을 본 뒤에 낸다. 셋째 판은 두 번 본 뒤에 낸다.</p>
-          <p>5절의 창 셋을 세운 상대와 붙는 승부를 따라가 본다. 이기고 지는 것은 계산한 값이다.</p>
-          <div class="table-scroll" role="region" aria-label="한 승부의 세 판을 따라간 보기" tabindex="0">
-            <table class="wide-table">
-              <thead><tr><th scope="col">판</th><th scope="col">본 것</th><th scope="col">읽은 것</th><th scope="col">낸 것과 결과</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">첫 판</th><td>상대는 창 셋에 활 둘이다. 지금까지 낸 작전은 밀기가 절반을 넘는다</td><td>밀기 좋은 판이고 밀기를 자주 내는 사람이다. 한 수 더 갈 사람 같지는 않다</td><td>버티기. 상대는 밀기를 냈다. 이겼다</td></tr>
-                <tr><th scope="row">둘째 판</th><td>기록지에 이렇게 적혀 있다. 그때 이 사람은 첫 판에 돌기를 만나 이겼다. 판 사이에 활을 하나 더 샀다. 나도 활을 하나 샀다</td><td>이 사람은 방금 밀기로 이긴 사람이다. 나에게 진 것을 모른다. 이긴 수는 또 내기 쉽다</td><td>버티기. 상대는 밀기를 냈다. 이겼다</td></tr>
-                <tr><th scope="row">셋째 판</th><td>그때 이 사람은 둘째 판에 버티기를 만나 졌다. 판 사이에 산 것은 없고 진형을 고쳤다</td><td>밀기로 지고 나서 진형을 고친 사람이다. 수를 바꿨을 것이다. 버티기를 잡으려면 돌기다</td><td>밀기. 상대는 돌기를 냈다. 이겼다</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <p>둘째 판이 이 게임에만 있는 읽기다. 내 앞에서 상대는 첫 판을 졌다. 그런데 기록 속의 그 사람은 첫 판을 이겼다. 둘째 판의 수는 이긴 사람의 마음으로 낸 것이다. 내가 읽어야 하는 것은 방금 벌어진 판이 아니라 그때 그 사람이 겪은 판이다.</p>
-          <h3>사람의 버릇</h3>
-          <p>가위바위보를 300판씩 시킨 실험에서 이긴 사람은 같은 것을 다시 내는 쪽으로 기울었고, 진 사람은 다른 것으로 옮기는 쪽으로 기울었다. 이 게임의 기록에도 같은 것이 남을 것이라고 본다. 기록지가 승패를 같이 보여 주는 까닭이다.</p>
-          <ul>
-            <li><strong>이긴 수를 또 낸다.</strong> 이긴 판 다음에는 같은 작전이 나오기 쉽다.</li>
-            <li><strong>지면 바꾼다.</strong> 진 판 다음에는 다른 작전이 나오기 쉽다. 자기를 누른 작전을 누르는 것으로 가는 사람이 많을 것이다.</li>
-            <li><strong>판이 시키는 대로 낸다.</strong> 창을 모은 사람은 밀고 싶다. 얼마나 자주 그대로 내는지는 사람마다 다르다.</li>
-            <li><strong>산 것을 쓰고 싶어 한다.</strong> 판 사이에 창을 사면 밀고, 활을 사면 버틴다.</li>
-            <li><strong>진형을 고친 판에는 작전도 바꾼다.</strong></li>
-          </ul>
-          <p>뒤의 셋은 짐작이다. 기록이 쌓이면 맞는지 틀리는지 셀 수 있다.</p>
-        </section>
-
-        <section id="mine" class="concept">
-          <h2>9. 내 기록도 읽힌다</h2>
-          <p>내가 치른 승부도 기록으로 남아 다른 사람의 상대가 된다. 내가 없는 동안 내 기록이 싸운다.</p>
-          <ul>
-            <li><strong>돌아오면 보고서가 있다.</strong> 내 기록이 몇 번 불려 나가 몇 번 이겼는지, 어느 판에서 가장 많이 졌는지가 적혀 있다.</li>
-            <li><strong>가장 많이 읽힌 수.</strong> 예를 들어 이렇게 적힌다. 진 다음 판에 버티기를 냈고, 여덟 명 가운데 일곱이 돌기로 잡았다.</li>
-            <li><strong>내 버릇.</strong> 내 것만 보이는 표다. 이긴 다음에 같은 작전을 낸 비율, 진 다음에 무엇으로 바꿨는지, 첫 판의 작전 비율, 가진 말이 가리키는 작전을 그대로 낸 비율이다.</li>
-            <li><strong>지킨 비율.</strong> 내 기록이 이긴 비율이다. 등수표는 이것으로도 매긴다. 판을 잘 키우는 사람과 덜 읽히는 사람이 위로 간다.</li>
-            <li><strong>힘으로 돌아오는 보상은 없다.</strong> 기록이 이겨도 다음 대회의 동전이나 말은 늘지 않는다. 남는 것은 등수와 보고서다.</li>
-          </ul>
-          <p class="decision"><strong>남에게 보이는 것과 나만 보는 것.</strong> 남에게는 내가 낸 작전의 전체 비율만 보인다. 이긴 뒤와 진 뒤에 어떻게 바뀌는지는 나만 본다. 남은 그것을 한 승부 안에서 알아채야 한다. 다 보여 주면 읽기가 셈이 되고, 하나도 안 보여 주면 첫 판이 찍기가 된다.</p>
-        </section>
-
-        <section id="shop" class="concept">
-          <h2>10. 짜기: 동전, 가게, 급</h2>
-          <div class="table-scroll" role="region" aria-label="짜기에 쓰는 수치" tabindex="0">
-            <table>
-              <thead><tr><th scope="col">항목</th><th scope="col" class="num">값</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">대회를 시작할 때 받는 동전</th><td class="num">9</td></tr>
-                <tr><th scope="row">판마다 받는 동전</th><td class="num">6</td></tr>
-                <tr><th scope="row">판을 이기면 더 받는 동전</th><td class="num">1</td></tr>
-                <tr><th scope="row">말 하나의 값</th><td class="num">3</td></tr>
-                <tr><th scope="row">가게를 다시 뽑는 값</th><td class="num">1</td></tr>
-                <tr><th scope="row">말을 팔고 받는 동전</th><td class="num">1</td></tr>
-                <tr><th scope="row">가게에 나오는 말</th><td class="num">3</td></tr>
-                <tr><th scope="row">판에 세우지 않고 들고 있는 말</th><td class="num">2</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <ul>
-            <li><strong>같은 말 셋이 모이면 한 급 오른다.</strong> 급이 오르면 힘과 몸이 두 배다. 급은 셋까지다.</li>
-            <li><strong>진형은 판마다 얼마든지 고친다.</strong> 값은 없다.</li>
-            <li><strong>들고 있는 말도 상대에게 보인다.</strong> 판에 세울지 말지는 안 보인다. 창 하나를 들고만 있어도 상대는 밀기를 걱정한다.</li>
-            <li><strong>남은 동전은 다음 판으로 넘어간다.</strong> 이자는 없다.</li>
-          </ul>
-          <p>가게에서 내리는 결정은 둘이 겹친다. 무엇이 내 판을 세게 하느냐와, 그것을 사면 내가 얼마나 읽히느냐다. 창 넷째를 사면 밀기는 세지고 밀기를 낼 것이 더 뻔해진다.</p>
-        </section>
-
-        <section id="run" class="concept">
-          <h2>11. 대회 한 번의 흐름</h2>
-          <div class="table-scroll" role="region" aria-label="대회의 단위" tabindex="0">
-            <table class="wide-table">
-              <thead><tr><th scope="col">단위</th><th scope="col">이기는 법</th><th scope="col">걸리는 시간</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">판</th><td>상대의 말을 다 쓰러뜨린다</td><td>짜기까지 1분쯤</td></tr>
-                <tr><th scope="row">승부</th><td>한 기록과 세 판을 하고 더 많이 이긴다. 같으면 비긴 승부다</td><td>3분쯤</td></tr>
-                <tr><th scope="row">대회</th><td>승부를 여섯 번 이기면 우승이다. 세 번 지면 끝난다</td><td>길어야 30분</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <ul>
-            <li><strong>처음 두 승부는 네 칸이다.</strong> 앞줄 셋과 뒷줄 하나로 시작한다. 셋째 승부에 뒷줄 한 칸이, 다섯째 승부에 마지막 칸이 열린다.</li>
-            <li><strong>비긴 승부는 세지 않는다.</strong> 이긴 것도 진 것도 아니고 다음 기록으로 넘어간다.</li>
-            <li><strong>대회 도중에 나가도 된다.</strong> 상대가 기록이라 언제 돌아와도 이어서 한다.</li>
-            <li><strong>대회가 끝나면 내 승부들이 기록이 된다.</strong> 도중에 그만둔 대회의 승부도 끝까지 치른 것은 남는다.</li>
-          </ul>
-        </section>
-
-        <section id="limits" class="concept">
-          <h2>12. 기록 대전의 한계와 막을 것</h2>
+          <h2>9. 상대는 사람의 기록</h2>
+          <p>줄을 세우고 싸움을 시작하면 그 판의 내 줄이 기록으로 남는다. 기록에는 몇째 판인지, 쥔 말, 세운 차례, 지난 판의 차례와 승패가 적힌다. 나는 같은 차례에 남은 다른 사람의 기록과 붙는다. 기다릴 사람도 시간 제한도 없다.</p>
           <div class="table-scroll" role="region" aria-label="기록 대전의 한계와 대처" tabindex="0">
             <table class="wide-table">
               <thead><tr><th scope="col">한계</th><th scope="col">뜻하는 것</th><th scope="col">대처</th></tr></thead>
               <tbody>
-                <tr><th scope="row">기록은 나를 보고 내지 않았다</th><td>일부러 한 판을 내주고 다음 판을 노리는 속임수가 안 통한다. 있는 것은 맞히기뿐이다</td><td>받아들인다. 대신 그때 그 사람이 본 것을 보여 줘서 맞히기를 깊게 한다</td></tr>
-                <tr><th scope="row">살아 있는 쪽이 유리하다</th><td>나는 기록의 지난 판을 보고 내고, 기록은 나를 모르고 냈다. 지킨 비율은 절반에 못 미치는 것이 보통이다</td><td>지킨 비율은 다른 사람의 지킨 비율과만 견준다</td></tr>
-                <tr><th scope="row">처음에는 기록이 없다</th><td>붙을 상대가 모자란다</td><td>만들어 둔 기록을 섞는다. 버릇이 뚜렷한 기록 셋으로 읽는 법을 가르친다. 이긴 수를 또 내는 기록, 판이 시키는 대로만 내는 기록, 지면 갚으려는 기록이다</td></tr>
-                <tr><th scope="row">기록의 뒤 판을 미리 볼 수 있으면 끝이다</th><td>둘째 판의 수를 알고 내면 읽기가 없다</td><td>다음 판은 내 수를 낸 뒤에만 내려온다. 판 도중에 끄면 그 판은 진 것으로 친다</td></tr>
-                <tr><th scope="row">잘 읽히는 기록만 골라 만날 수 있으면 안 된다</th><td>쉬운 기록을 찾아다니게 된다</td><td>기록은 고를 수 없다. 같은 기록은 한 번만 만난다</td></tr>
-                <tr><th scope="row">판의 크기가 다른 기록</th><td>동전을 더 받은 기록과 붙으면 읽기와 상관없이 진다</td><td>같은 차례의 기록끼리만 붙인다</td></tr>
+                <tr><th scope="row">기록은 나를 보고 세우지 않았다</th><td>기록의 줄은 그때 그 사람이 만난 다른 상대를 보고 세운 것이다. 서로 반응하는 읽기는 없다</td><td>받아들인다. 대신 쥔 말과 지난 줄을 보여 줘서 맞히기를 깊게 한다</td></tr>
+                <tr><th scope="row">살아 있는 쪽이 유리하다</th><td>나는 기록의 말을 보고 세운다. 7절의 셈으로는 그것만으로 100판에 66판을 이긴다</td><td>모두가 같은 조건이다. 내 기록이 지킨 비율은 남의 기록이 지킨 비율과만 견준다</td></tr>
+                <tr><th scope="row">처음에는 기록이 없다</th><td>붙을 상대가 모자란다</td><td>만들어 둔 기록을 섞는다. 버릇이 뚜렷한 기록으로 읽는 법을 가르친다. 센 말을 늘 앞에 세우는 기록, 이긴 줄을 또 세우는 기록이다</td></tr>
+                <tr><th scope="row">줄을 보고 끄면 다시 할 수 있다</th><td>차례를 알고 세우면 읽기가 없다</td><td>상대의 줄은 내 줄을 정한 뒤에만 내려온다. 싸움 도중에 끄면 진 판으로 친다</td></tr>
+                <tr><th scope="row">쥔 값이 다른 기록</th><td>말을 더 쥔 기록과 붙으면 읽기와 상관없이 진다</td><td>같은 차례의 기록끼리만 붙인다. 이긴 판 수가 비슷한 기록을 먼저 고른다</td></tr>
               </tbody>
             </table>
           </div>
-          <p>찍기가 되지 않게 하는 것은 넷이다. 가진 말이 보인다. 작전의 값이 판마다 다르다. 세 판을 이어서 한다. 그때 그 사람이 본 것이 기록지에 남는다. 그래도 첫 판에는 운이 남는다. 그래서 세 판으로 했다.</p>
+        </section>
+
+        <section id="shop" class="concept">
+          <h2>10. 가게와 대회</h2>
+          <ol class="route-strip">
+            <li><strong>가게</strong><span>판세를 보고 말을 산다. 같은 말 셋은 합쳐진다</span></li>
+            <li><strong>상대 보기</strong><span>상대가 쥔 말과 지난 줄이 뜬다</span></li>
+            <li><strong>줄 세우기</strong><span>다섯 칸의 차례를 정한다</span></li>
+            <li><strong>싸움</strong><span>손을 못 댄다. 30초 안쪽이다</span></li>
+          </ol>
+          <ul>
+            <li><strong>판마다 동전 10을 받는다.</strong> 말은 3, 가게를 다시 뽑는 값은 1이다. 남은 동전은 다음 판으로 넘어간다.</li>
+            <li><strong>가게에는 1등급 말 셋이 나온다.</strong> 종류는 아무렇게나 나온다.</li>
+            <li><strong>줄이 꽉 차면 합쳐질 말만 살 수 있다.</strong> 자리를 내려면 판다. 팔면 그 말에 들어간 말 하나에 동전 1을 받는다.</li>
+            <li><strong>말을 산 뒤에 상대가 보인다.</strong> 상대를 보고 사는 것이 아니다. 살 때 보는 것은 판세이고, 상대를 보고 정하는 것은 차례다.</li>
+            <li><strong>차례는 값 없이 얼마든지 고친다.</strong></li>
+          </ul>
+          <div class="table-scroll" role="region" aria-label="대회의 단위" tabindex="0">
+            <table class="wide-table">
+              <thead><tr><th scope="col">단위</th><th scope="col">이기는 법</th><th scope="col">걸리는 시간</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">판</th><td>상대의 줄을 먼저 비운다</td><td>가게까지 1분쯤</td></tr>
+                <tr><th scope="row">대회</th><td>여덟 판을 이기면 우승이다. 세 판을 지면 끝난다</td><td>길어야 15분</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul>
+            <li><strong>비긴 판은 세지 않는다.</strong> 이긴 것도 진 것도 아니고 다음 판으로 넘어간다.</li>
+            <li><strong>대회 도중에 나가도 된다.</strong> 상대가 기록이라 언제 돌아와도 이어서 한다.</li>
+            <li><strong>비긴 판을 빼면 대회는 길어야 열 판이다.</strong> 열째 판에 쥔 값은 말 서른 개어치이고, 다섯 칸에 3등급이 둘이나 셋 선다.</li>
+          </ul>
         </section>
 
         <section id="screen" class="concept">
-          <h2>13. 화면과 조작</h2>
+          <h2>11. 화면과 조작</h2>
           <ul>
-            <li><strong>세로 화면이 먼저다.</strong> 위에 상대의 여섯 칸, 아래에 내 여섯 칸이 마주 보고, 그 아래에 가게가 있다. 컴퓨터에서는 같은 화면을 가로로 넓힌다.</li>
-            <li><strong>짜는 동안 상대 쪽.</strong> 여섯 칸은 가려져 있고, 그 위에 상대가 가진 말이 한 줄로 늘어서 있다. 판 사이에 새로 산 말에는 표시가 붙는다.</li>
-            <li><strong>작전은 패 세 장이다.</strong> 하나를 골라 엎어 놓는다. 상대 쪽에도 엎어진 패 한 장이 놓여 있다.</li>
-            <li><strong>뒤집기.</strong> 패 두 장이 먼저 뒤집히고, 선수를 잡은 쪽이 표시된 다음, 양쪽 여섯 칸이 드러난다. 이 순간이 게임의 얼굴이다.</li>
-            <li><strong>싸움.</strong> 박자마다 끊어서 보여 준다. 첫 박자에 선수를 잡은 쪽만 치는 것이 또렷이 보여야 한다. 빨리 넘길 수 있다.</li>
-            <li><strong>기록지.</strong> 화면 한쪽을 밀면 나온다. 이 승부의 지난 판, 그때 이 사람이 만난 것, 전에 이 사람을 만났을 때의 일이 적혀 있다.</li>
+            <li><strong>세로 화면이 먼저다.</strong> 위에 상대의 줄, 가운데에 내 줄, 아래에 가게가 있다. 컴퓨터에서는 같은 화면을 가로로 넓힌다.</li>
+            <li><strong>상성 그림은 늘 떠 있다.</strong> 화면 구석에 2절의 세모가 작게 있다. 세 종류는 색과 모양이 둘 다 달라서 색만으로 가르지 않는다.</li>
+            <li><strong>줄을 세우는 동안 상대 쪽.</strong> 상대가 쥔 말이 종류별로 묶여 보이고 다섯 칸은 가려져 있다. 그 아래에 지난 줄이 작게 놓인다.</li>
+            <li><strong>내 말을 들면 미리 보인다.</strong> 말을 집으면 상대가 쥔 말 가운데 이기는 것과 지는 것에 표시가 뜬다.</li>
+            <li><strong>뒤집기.</strong> 상대의 다섯 칸이 앞에서부터 한 칸씩 열린다. 이 순간이 게임의 얼굴이다.</li>
+            <li><strong>싸움.</strong> 박자마다 끊어서 보여 준다. 두 배로 들어가는 피해는 숫자가 크게 뜬다. 빨리 넘길 수 있다.</li>
             <li><strong>조작.</strong> 끌어다 놓기와, 말을 누르고 칸을 누르기 두 가지를 다 받는다.</li>
           </ul>
         </section>
 
         <section id="scope" class="concept">
-          <h2>14. 범위, 검증 순서, 남은 결정</h2>
+          <h2>12. 범위, 검증 순서, 남은 결정</h2>
           <h3>시제품에서 확인할 순서</h3>
           <ol>
-            <li><strong>말 셋과 작전 셋, 한 화면에서 둘이 번갈아 하기.</strong> 기록도 가게도 없이 같은 판을 주고 세 판을 붙는다. 작전을 고를 때 망설여지는지, 뒤집을 때 소리가 나오는지 본다. 이것이 안 되면 나머지는 뜻이 없다.</li>
-            <li><strong>선수의 크기.</strong> 한 박자를 혼자 치는 것이 알맞은지 본다. 판이 한 말만큼 벌어졌을 때 읽기로 뒤집히는 일이 열 번에 서너 번은 되게 맞춘다.</li>
-            <li><strong>가게.</strong> 한쪽으로 몰아 사는 판과 고르게 사는 판이 서로 이기고 지는지 본다.</li>
-            <li><strong>기록.</strong> 아는 사람 몇의 승부를 기록으로 남기고 서로 붙어 본다. 그때 그 사람이 본 것을 보여 줬을 때와 안 보여 줬을 때 맞히는 비율이 얼마나 다른지 센다.</li>
-            <li><strong>보고서.</strong> 내 기록이 읽혔다는 것을 보고 다음 대회에서 다르게 내게 되는지 본다.</li>
+            <li><strong>말 다섯씩 주고 한 화면에서 둘이 번갈아 세우기.</strong> 가게도 기록도 없이 같은 말을 주고 줄만 세워 붙는다. 세울 때 망설여지는지, 열릴 때 소리가 나오는지 본다. 이것이 안 되면 나머지는 뜻이 없다.</li>
+            <li><strong>상대가 쥔 말을 보여 줬을 때.</strong> 보여 준 판과 안 보여 준 판의 이긴 비율을 센다. 계산으로는 47과 66이었다.</li>
+            <li><strong>가게와 등급.</strong> 합치는 것이 아깝게 느껴지는지, 기울기를 고르게 되는지 본다.</li>
+            <li><strong>기록.</strong> 아는 사람 몇의 줄을 기록으로 남기고 서로 붙어 본다. 지난 줄을 보여 줬을 때 차례를 맞히는 비율이 오르는지 센다.</li>
           </ol>
           <h3>덜어 낸 것</h3>
           <ul class="cut-list">
-            <li>실시간 대전과 시간 제한</li>
+            <li>말마다 다른 수치와 특기</li>
+            <li>넷째, 다섯째 종류</li>
             <li>종족과 직업 시너지</li>
             <li>아이템과 조합</li>
+            <li>대기석</li>
+            <li>앞줄과 뒷줄</li>
             <li>동전의 이자</li>
-            <li>확률로 터지는 특기</li>
-            <li>넷째 작전</li>
-            <li>줄마다 따로 내는 작전</li>
-            <li>여덟 명 로비</li>
-            <li>기록이 이겨서 받는 힘</li>
+            <li>확률로 터지는 것</li>
+            <li>실시간 대전과 여덟 명 로비</li>
             <li>세계와 이야기</li>
           </ul>
           <h3>남은 결정</h3>
           <ul>
-            <li><strong>소재와 제목.</strong> 말의 이름은 임시다. 규칙이 서고 나서 정한다. 소재가 정해지면 밀기, 버티기, 돌기의 이름과 까닭도 거기에 맞춘다.</li>
-            <li><strong>선수의 크기.</strong> 첫 박자를 혼자 치는 것으로 계산했다. 먼저 치기만 하고 상대도 이어서 치게 하면 작전 셋이 물고 물리지 않았다.</li>
-            <li><strong>작전의 비율을 남에게 보일지.</strong> 지금은 보인다. 감추면 첫 판이 더 어둡다.</li>
-            <li><strong>그때 그 사람이 본 것을 어디까지 보일지.</strong> 지금은 상대의 작전과 승패만 보인다. 상대의 판까지 보이면 더 깊이 읽을 수 있고 볼 것이 많아진다.</li>
-            <li><strong>가진 말을 보일지.</strong> 지금은 보이고 진형만 감춘다. 가진 말까지 감추면 귀띔이 없어져 가위바위보에 가까워진다.</li>
-            <li><strong>두 판을 먼저 이기면 끝낼지.</strong> 끝내면 승부가 짧아지고 기록의 길이가 들쭉날쭉해진다.</li>
+            <li><strong>소재와 제목.</strong> 창, 말, 활은 임시다. 규칙이 서고 나서 정한다.</li>
+            <li><strong>종류마다 성질을 하나씩 줄지.</strong> 지금은 수치가 같고 관계만 다르다. 성질을 주면 종류의 맛이 생기고, 셋의 값이 달라져 다시 맞춰야 한다.</li>
+            <li><strong>두 배가 알맞은지.</strong> 두 배로만 계산했다. 한 배 반이면 등급이 상성을 더 쉽게 누르고, 세 배면 등급을 올릴 까닭이 준다.</li>
+            <li><strong>합친 말을 얼마나 세게 할지.</strong> 지금은 합친 말이 낱개 셋보다 조금 약하고, 3등급은 판이 꽉 찬 뒤에야 쓸모가 있다. 합치는 맛이 모자라면 몸을 더 준다.</li>
+            <li><strong>비긴 판.</strong> 아무렇게나 고른 줄끼리는 100판에 7판쯤 비겼다. 쥔 말이 똑같은 줄끼리는 100판에 31판에서 67판을 비겼다. 흔하면 남은 몸을 견주어 가른다.</li>
+            <li><strong>상대를 사기 전에 보일지.</strong> 지금은 사고 나서 보인다. 먼저 보이면 상대에 맞춰 사게 되고 판세를 읽을 일이 없어진다.</li>
+            <li><strong>지난 줄을 몇 판이나 보일지.</strong> 지금은 한 판이다. 여러 판을 보이면 버릇이 더 잘 보이고 볼 것이 많아진다.</li>
             <li><strong>사람끼리 바로 붙는 판을 둘지.</strong> 서로 반응하는 읽기는 거기에만 있다. 서버와 기다림이 든다.</li>
           </ul>
           <h3>고친 기록</h3>
-          <p>2026-11-25에 처음 올린 판은 가위, 돌, 보자기를 말로 쓰는 혼자 하는 대회였다. 가위바위보를 그대로 넣는 것이 아니라 닮은 규칙의 게임을 만들려는 것이어서 같은 날 통째로 고쳐 썼다. 세 줄 판과 버릇이 정해진 상대 아홉을 빼고, 숨겨 내는 작전 셋과 사람의 기록을 넣었다. 소재는 정하지 않고 비워 뒀다.</p>
+          <p>2026-11-25에 처음 올린 판은 가위, 돌, 보자기를 말로 쓰는 혼자 하는 대회였다. 같은 날 숨겨서 내는 작전 셋(밀기, 버티기, 돌기)과 사람의 기록으로 고쳐 썼다. 2026-11-26에 다시 통째로 고쳤다. 바닥에 둘 것은 숨겨 내는 작전이 아니라 말끼리 서로 이기고 지는 관계여서, 작전 셋과 여섯 칸 판을 빼고 세 종류의 상성과 한 줄 다섯 칸을 넣었다. 기록 대전과 임시 소재는 그대로 뒀다.</p>
         </section>
 
         <section id="sources" class="concept">
-          <h2>15. 근거와 확인 범위</h2>
-          <p>아래는 2026-11-25에 각 페이지를 열어 확인한 것이다.</p>
+          <h2>13. 근거와 확인 범위</h2>
+          <p>아래는 2026-11-25와 11-26에 각 페이지를 열어 확인한 것이다.</p>
           <ul class="ref-list">
-            <li>가위바위보: <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors">Rock paper scissors</a>(고르게 아무렇게나 내는 상대에게는 앞설 수 없다. 아무렇게나 내지 못하는 상대의 버릇을 알아채면 실력으로 겨룰 수 있다), <a href="https://sirlingames.squarespace.com/articles/rock-paper-scissors-in-strategy-games.html">Sirlin, Rock, Paper, Scissors in Strategy Games</a>(세 수의 값이 같으면 무엇을 내든 같다. 값을 다르게 하면 치우침이 생기고 읽을 것이 생긴다).</li>
-            <li>버릇: <a href="https://arxiv.org/abs/1404.5199">Wang, Xu, Zhou, Social cycling and conditional responses in the Rock-Paper-Scissors game</a>(Scientific Reports 4, 5830, 2014. 저장대 학생 360명이 여섯 명씩 60무리로 300판씩 했다. 이긴 사람은 같은 것을 다시 낼 확률이 뚜렷이 높았고, 진 사람은 이길 때의 몫이 큰 조건에서 그대로 두기보다 다른 것으로 옮기는 쪽이 많았다).</li>
-            <li>틀과 참고작: <a href="https://en.wikipedia.org/wiki/Super_Auto_Pets">Super Auto Pets</a>(싸움은 모두 비동기다. 맨 앞끼리 싸우고 쓰러지면 뒤가 채운다), <a href="https://en.wikipedia.org/wiki/Dota_Auto_Chess">Dota Auto Chess</a>(플레이어가 손댈 수 없는 자동 싸움, 같은 말 셋이 합쳐져 한 단계 오른다), <a href="https://store.steampowered.com/app/669330/Mechabellum/">Mechabellum</a>(한 상대와 여러 판을 이어서 붙으며 상대의 수를 내다보고 받아칠 것을 세운다).</li>
+            <li>가위바위보와 늘린 판: <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors">Rock paper scissors</a>(고르게 아무렇게나 내는 상대에게는 앞설 수 없다. 아무렇게나 내지 못하는 상대의 버릇을 알아채면 실력으로 겨룰 수 있다), <a href="https://samkass.com/theories/RPSSL.html">Sam Kass, Rock Paper Scissors Spock Lizard</a>(다섯 가지로 늘린 판. 손마다 둘을 이기고 둘에게 진다), <a href="https://sirlingames.squarespace.com/articles/rock-paper-scissors-in-strategy-games.html">Sirlin, Rock, Paper, Scissors in Strategy Games</a>(세 수의 값이 같으면 무엇을 내든 같다. 값을 다르게 하면 치우침이 생기고 읽을 것이 생긴다).</li>
+            <li>버릇: <a href="https://arxiv.org/abs/1404.5199">Wang, Xu, Zhou, Social cycling and conditional responses in the Rock-Paper-Scissors game</a>(Scientific Reports 4, 5830, 2014. 저장대 학생 360명이 여섯 명씩 60무리로 300판씩 했다. 이긴 사람은 같은 것을 다시 낼 확률이 뚜렷이 높았다).</li>
+            <li>틀과 참고작: <a href="https://en.wikipedia.org/wiki/Fire_Emblem">Fire Emblem</a>(창이 검을, 검이 도끼를, 도끼가 창을 이기는 무기 상성), <a href="https://en.wikipedia.org/wiki/Super_Auto_Pets">Super Auto Pets</a>(싸움은 모두 비동기다. 맨 앞끼리 싸우고 쓰러지면 뒤가 채운다), <a href="https://en.wikipedia.org/wiki/Dota_Auto_Chess">Dota Auto Chess</a>(플레이어가 손댈 수 없는 자동 싸움, 같은 말 셋이 합쳐져 한 단계 오른다).</li>
           </ul>
           <p>확인하지 못했거나 게임을 위해 정한 것도 적어 둔다.</p>
           <ul>
-            <li>5절과 6절, 8절의 이기고 지는 값은 이 글의 규칙을 짧은 프로그램으로 옮겨 계산한 것이다. 말 셋의 수치, 밀기의 두 배, 버티기의 절반, 돌기의 두 박자를 넣었다. 특기 있는 말과 급은 넣지 않았다. 수치를 바꾸면 값도 바뀐다.</li>
-            <li>계산에서 작전 셋은 뒷줄이 있는 판끼리 붙을 때 물고 물렸다. 뒷줄이 빈 판끼리는 돌기가 버티기를 누르지 못했다.</li>
-            <li>밀기, 버티기, 돌기가 서로 누르는 까닭은 흔히 하는 설명을 기억으로 쓴 것이다. 실제 싸움의 근거를 찾아보지 않았다.</li>
-            <li>가위바위보 실험의 버릇이 이 게임의 기록에도 남는다는 것은 짐작이다. 실험은 값이 같은 세 수였고, 이 게임은 값이 다르고 가진 말이 보인다.</li>
-            <li>살아 있는 쪽이 기록보다 유리하다는 것, 지킨 비율이 절반에 못 미친다는 것도 짐작이다.</li>
-            <li>Mechabellum이 한 상대와 여러 판을 잇는다는 것은 스팀 상점 설명이 아니라 이용자 글에서 읽었다.</li>
-            <li>동전 6, 말 값 3, 한 승부 3분, 여섯 번 이기면 우승을 비롯한 수치는 전부 시제품에서 확인할 가설이다.</li>
+            <li>3절부터 7절까지의 값은 이 글의 규칙을 짧은 프로그램으로 옮겨 계산한 것이다. 등급별 힘과 몸, 피해 두 배, 다섯 칸, 같은 말 셋의 합치기를 넣었다. 수치를 바꾸면 값도 바뀐다.</li>
+            <li>6절의 평균 점수는 같은 값으로 만들 수 있는 모든 줄을 한 번씩 고르게 만난다고 치고 낸 것이다. 실제 기록의 분포는 다를 것이다. 줄의 차례는 줄 한 쌍에 60가지까지 뽑아 붙였고, 그래서 점수는 0.03쯤 흔들린다.</li>
+            <li>7절의 아는 정도에 따른 결과는 줄 400쌍을 아무렇게나 뽑아 낸 것이다. 상대가 쥔 말만 아는 경우는 상대가 모든 차례를 고르게 세운다고 치고 계산했다. 사람은 고르게 세우지 않으므로 실제 값은 다를 것이다.</li>
+            <li>창이 말을, 말이 활을, 활이 창을 이기는 까닭은 전략 게임에서 흔히 쓰는 설명을 기억으로 쓴 것이다. 실제 싸움의 근거를 찾아보지 않았다.</li>
+            <li>가위바위보 실험의 버릇이 이 게임의 줄 세우기에도 남는다는 것은 짐작이다. 실험은 한 번에 하나를 내는 판이었다.</li>
+            <li>동전 10, 말 값 3, 여덟 판 우승, 한 판 1분을 비롯한 수치는 전부 시제품에서 확인할 가설이다.</li>
           </ul>
         </section>
 
-        <p class="post-back"><a href="/">← 모든 포스트</a></p>
+<p class="post-back"><a href="/">← 모든 포스트</a></p>
       </article>
     </main>
     <footer class="site-footer">Small things, made and remade. <a href="https://github.com/nyimpe/nyimpe.github.io">Source code</a></footer>
